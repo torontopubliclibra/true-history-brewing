@@ -14,6 +14,16 @@ import {
   type SessionStorage,
   type Session,
 } from '@shopify/remix-oxygen';
+import {createClient} from '@sanity/client';
+
+interface SanityEnv {
+  SANITY_PROJECT_ID: string;
+  SANITY_DATASET: string;
+  SANITY_API_VERSION?: string;
+  NODE_ENV?: string;
+}
+
+type ExtendedEnv = Env & SanityEnv;
 
 /**
  * Export a fetch handler in module format.
@@ -21,9 +31,17 @@ import {
 export default {
   async fetch(
     request: Request,
-    env: Env,
+    env: ExtendedEnv,
     executionContext: ExecutionContext,
   ): Promise<Response> {
+
+    // Create the Sanity Client
+    const sanity = createClient({
+      projectId: env.SANITY_PROJECT_ID,
+      dataset: env.SANITY_DATASET,
+      apiVersion: env.SANITY_API_VERSION ?? '2023-03-30',
+      useCdn: env.NODE_ENV === 'production',
+    });
     try {
       /**
        * Open a cache instance in the worker and a custom session instance.
@@ -70,7 +88,7 @@ export default {
       const handleRequest = createRequestHandler({
         build: remixBuild,
         mode: process.env.NODE_ENV,
-        getLoadContext: () => ({session, storefront, cart, env, waitUntil}),
+        getLoadContext: () => ({session, storefront, cart, env, waitUntil, sanity}),
       });
 
       const response = await handleRequest(request);

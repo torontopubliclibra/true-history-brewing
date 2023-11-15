@@ -7,17 +7,29 @@ import type {
   RecommendedProductsQuery,
 } from 'storefrontapi.generated';
 
+interface Context {
+  sanity: {
+    fetch: (query: string, params: object) => Promise<any>;
+  };
+}
+
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];
 };
 
-export async function loader({context}: LoaderFunctionArgs) {
+export async function loader({context}: LoaderFunctionArgs & {context: Context}) {
   const {storefront} = context;
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
   const featuredCollection = collections.nodes[0];
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
+  const sanity = await context.sanity.fetch(
+    `*[_type == "page" && _id == $id][0]`,
+    {id: 'home'}
+  );
 
-  return defer({featuredCollection, recommendedProducts});
+  console.log(sanity);
+
+  return defer({featuredCollection, recommendedProducts, sanity});
 }
 
 export default function Homepage() {
