@@ -43,7 +43,7 @@ export default {
       const {storefront} = createStorefrontClient({
         cache,
         waitUntil,
-        i18n: {language: 'EN', country: 'US'},
+        i18n: getLocaleFromRequest(request),
         publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
         privateStorefrontToken: env.PRIVATE_STOREFRONT_API_TOKEN,
         storeDomain: env.PUBLIC_STORE_DOMAIN,
@@ -91,6 +91,27 @@ export default {
     }
   },
 };
+
+/**
+ * @returns {I18nLocale}
+ * @param {Request} request
+ */
+function getLocaleFromRequest(request) {
+  const defaultLocale = {language: 'EN', country: 'US'};
+  const supportedLocales = {
+    ES: 'ES',
+    FR: 'FR',
+    DE: 'DE',
+    JP: 'JA',
+  };
+
+  const url = new URL(request.url);
+  const firstSubdomain = url.hostname.split('.')[0]?.toUpperCase();
+
+  return supportedLocales[firstSubdomain]
+    ? {language: supportedLocales[firstSubdomain], country: firstSubdomain}
+    : defaultLocale;
+}
 
 /**
  * This is a custom session implementation for your Hydrogen shop.
