@@ -6,6 +6,8 @@
   "scripts": {
     "build": "shopify hydrogen build",
     "dev": "shopify hydrogen dev --codegen",
+    "build:css": "node-sass ./styles -o ./app/styles --output-style compressed",
+    "dev:css": "npm run build:css && node-sass -rw ./styles -o ./app/styles",
     "preview": "npm run build && shopify hydrogen preview",
     "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
     "codegen": "shopify hydrogen codegen"
@@ -21,6 +23,7 @@
     "graphql-tag": "^2.12.6",
     "hydrogen-sanity": "^3.3.0",
     "isbot": "^3.6.6",
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -39,7 +42,10 @@
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^8.2.0",
     "prettier": "^2.8.4",
-    "typescript": "^5.2.2"
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0"
   },
   "engines": {
     "node": ">=16.13"

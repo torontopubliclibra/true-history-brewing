@@ -1,6 +1,7 @@
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
+import icon from './../../public/assets/thb-icon.png';
 
 /**
  * @param {HeaderProps}
@@ -10,7 +11,8 @@ export function Header({header, isLoggedIn, cart}) {
   return (
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+        {/* <strong>{shop.name}</strong> */}
+        <img src={icon} class="thb-icon" alt="True History Brewing icon" />
       </NavLink>
       <HeaderMenu
         menu={menu}

@@ -1,0 +1,14 @@
+// font imports
+@font-face {
+    font-family: "Saudagar";
+    src: url(./../../public/fonts/saudagar.ttf) format("truetype");
+};
+
+@font-face {
+    font-family: "Bogue-Regular";
+    src: url(./../../public/fonts/bogue-regular.ttf) format("truetype");
+};
+
+* {
+    font-family: "Bogue-Regular", sans-serif;
+};
