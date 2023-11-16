@@ -299,6 +299,126 @@ export type CustomerAddressCreateMutation = {
   }>;
 };
 
+export type CustomerFragment = Pick<
+  StorefrontAPI.Customer,
+  | 'acceptsMarketing'
+  | 'email'
+  | 'firstName'
+  | 'lastName'
+  | 'numberOfOrders'
+  | 'phone'
+> & {
+  addresses: {
+    nodes: Array<
+      Pick<
+        StorefrontAPI.MailingAddress,
+        | 'id'
+        | 'formatted'
+        | 'firstName'
+        | 'lastName'
+        | 'company'
+        | 'address1'
+        | 'address2'
+        | 'country'
+        | 'province'
+        | 'city'
+        | 'zip'
+        | 'phone'
+      >
+    >;
+  };
+  defaultAddress?: StorefrontAPI.Maybe<
+    Pick<
+      StorefrontAPI.MailingAddress,
+      | 'id'
+      | 'formatted'
+      | 'firstName'
+      | 'lastName'
+      | 'company'
+      | 'address1'
+      | 'address2'
+      | 'country'
+      | 'province'
+      | 'city'
+      | 'zip'
+      | 'phone'
+    >
+  >;
+};
+
+export type AddressFragment = Pick<
+  StorefrontAPI.MailingAddress,
+  | 'id'
+  | 'formatted'
+  | 'firstName'
+  | 'lastName'
+  | 'company'
+  | 'address1'
+  | 'address2'
+  | 'country'
+  | 'province'
+  | 'city'
+  | 'zip'
+  | 'phone'
+>;
+
+export type CustomerQueryVariables = StorefrontAPI.Exact<{
+  customerAccessToken: StorefrontAPI.Scalars['String']['input'];
+  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
+  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
+}>;
+
+export type CustomerQuery = {
+  customer?: StorefrontAPI.Maybe<
+    Pick<
+      StorefrontAPI.Customer,
+      | 'acceptsMarketing'
+      | 'email'
+      | 'firstName'
+      | 'lastName'
+      | 'numberOfOrders'
+      | 'phone'
+    > & {
+      addresses: {
+        nodes: Array<
+          Pick<
+            StorefrontAPI.MailingAddress,
+            | 'id'
+            | 'formatted'
+            | 'firstName'
+            | 'lastName'
+            | 'company'
+            | 'address1'
+            | 'address2'
+            | 'country'
+            | 'province'
+            | 'city'
+            | 'zip'
+            | 'phone'
+          >
+        >;
+      };
+      defaultAddress?: StorefrontAPI.Maybe<
+        Pick<
+          StorefrontAPI.MailingAddress,
+          | 'id'
+          | 'formatted'
+          | 'firstName'
+          | 'lastName'
+          | 'company'
+          | 'address1'
+          | 'address2'
+          | 'country'
+          | 'province'
+          | 'city'
+          | 'zip'
+          | 'phone'
+        >
+      >;
+    }
+  >;
+};
+
 export type OrderMoneyFragment = Pick<
   StorefrontAPI.MoneyV2,
   'amount' | 'currencyCode'
@@ -722,126 +842,6 @@ export type CustomerUpdateMutation = {
       Pick<StorefrontAPI.CustomerUserError, 'code' | 'field' | 'message'>
     >;
   }>;
-};
-
-export type CustomerFragment = Pick<
-  StorefrontAPI.Customer,
-  | 'acceptsMarketing'
-  | 'email'
-  | 'firstName'
-  | 'lastName'
-  | 'numberOfOrders'
-  | 'phone'
-> & {
-  addresses: {
-    nodes: Array<
-      Pick<
-        StorefrontAPI.MailingAddress,
-        | 'id'
-        | 'formatted'
-        | 'firstName'
-        | 'lastName'
-        | 'company'
-        | 'address1'
-        | 'address2'
-        | 'country'
-        | 'province'
-        | 'city'
-        | 'zip'
-        | 'phone'
-      >
-    >;
-  };
-  defaultAddress?: StorefrontAPI.Maybe<
-    Pick<
-      StorefrontAPI.MailingAddress,
-      | 'id'
-      | 'formatted'
-      | 'firstName'
-      | 'lastName'
-      | 'company'
-      | 'address1'
-      | 'address2'
-      | 'country'
-      | 'province'
-      | 'city'
-      | 'zip'
-      | 'phone'
-    >
-  >;
-};
-
-export type AddressFragment = Pick<
-  StorefrontAPI.MailingAddress,
-  | 'id'
-  | 'formatted'
-  | 'firstName'
-  | 'lastName'
-  | 'company'
-  | 'address1'
-  | 'address2'
-  | 'country'
-  | 'province'
-  | 'city'
-  | 'zip'
-  | 'phone'
->;
-
-export type CustomerQueryVariables = StorefrontAPI.Exact<{
-  customerAccessToken: StorefrontAPI.Scalars['String']['input'];
-  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
-  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
-}>;
-
-export type CustomerQuery = {
-  customer?: StorefrontAPI.Maybe<
-    Pick<
-      StorefrontAPI.Customer,
-      | 'acceptsMarketing'
-      | 'email'
-      | 'firstName'
-      | 'lastName'
-      | 'numberOfOrders'
-      | 'phone'
-    > & {
-      addresses: {
-        nodes: Array<
-          Pick<
-            StorefrontAPI.MailingAddress,
-            | 'id'
-            | 'formatted'
-            | 'firstName'
-            | 'lastName'
-            | 'company'
-            | 'address1'
-            | 'address2'
-            | 'country'
-            | 'province'
-            | 'city'
-            | 'zip'
-            | 'phone'
-          >
-        >;
-      };
-      defaultAddress?: StorefrontAPI.Maybe<
-        Pick<
-          StorefrontAPI.MailingAddress,
-          | 'id'
-          | 'formatted'
-          | 'firstName'
-          | 'lastName'
-          | 'company'
-          | 'address1'
-          | 'address2'
-          | 'country'
-          | 'province'
-          | 'city'
-          | 'zip'
-          | 'phone'
-        >
-      >;
-    }
-  >;
 };
 
 export type CustomerActivateMutationVariables = StorefrontAPI.Exact<{
@@ -1815,17 +1815,17 @@ interface GeneratedQueryTypes {
     return: RecommendedProductsQuery;
     variables: RecommendedProductsQueryVariables;
   };
+  '#graphql\n  query Customer(\n    $customerAccessToken: String!\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    customer(customerAccessToken: $customerAccessToken) {\n      ...Customer\n    }\n  }\n  #graphql\n  fragment CustomerOrders on Customer {\n    numberOfOrders\n    orders(\n      sortKey: PROCESSED_AT,\n      reverse: true,\n      first: $first,\n      last: $last,\n      before: $startCursor,\n      after: $endCursor\n    ) {\n      nodes {\n        ...OrderItem\n      }\n      pageInfo {\n        hasPreviousPage\n        hasNextPage\n        endCursor\n        startCursor\n      }\n    }\n  }\n  #graphql\n  fragment OrderItem on Order {\n    currentTotalPrice {\n      amount\n      currencyCode\n    }\n    financialStatus\n    fulfillmentStatus\n    id\n    lineItems(first: 10) {\n      nodes {\n        title\n        variant {\n          image {\n            url\n            altText\n            height\n            width\n          }\n        }\n      }\n    }\n    orderNumber\n    customerUrl\n    statusUrl\n    processedAt\n  }\n\n\n': {
+    return: CustomerQuery;
+    variables: CustomerQueryVariables;
+  };
   '#graphql\n  fragment OrderMoney on MoneyV2 {\n    amount\n    currencyCode\n  }\n  fragment AddressFull on MailingAddress {\n    address1\n    address2\n    city\n    company\n    country\n    countryCodeV2\n    firstName\n    formatted\n    id\n    lastName\n    name\n    phone\n    province\n    provinceCode\n    zip\n  }\n  fragment DiscountApplication on DiscountApplication {\n    value {\n      __typename\n      ... on MoneyV2 {\n        ...OrderMoney\n      }\n      ... on PricingPercentageValue {\n        percentage\n      }\n    }\n  }\n  fragment OrderLineProductVariant on ProductVariant {\n    id\n    image {\n      altText\n      height\n      url\n      id\n      width\n    }\n    price {\n      ...OrderMoney\n    }\n    product {\n      handle\n    }\n    sku\n    title\n  }\n  fragment OrderLineItemFull on OrderLineItem {\n    title\n    quantity\n    discountAllocations {\n      allocatedAmount {\n        ...OrderMoney\n      }\n      discountApplication {\n        ...DiscountApplication\n      }\n    }\n    originalTotalPrice {\n      ...OrderMoney\n    }\n    discountedTotalPrice {\n      ...OrderMoney\n    }\n    variant {\n      ...OrderLineProductVariant\n    }\n  }\n  fragment Order on Order {\n    id\n    name\n    orderNumber\n    statusUrl\n    processedAt\n    fulfillmentStatus\n    totalTaxV2 {\n      ...OrderMoney\n    }\n    totalPriceV2 {\n      ...OrderMoney\n    }\n    subtotalPriceV2 {\n      ...OrderMoney\n    }\n    shippingAddress {\n      ...AddressFull\n    }\n    discountApplications(first: 100) {\n      nodes {\n        ...DiscountApplication\n      }\n    }\n    lineItems(first: 100) {\n      nodes {\n        ...OrderLineItemFull\n      }\n    }\n  }\n  query Order(\n    $country: CountryCode\n    $language: LanguageCode\n    $orderId: ID!\n  ) @inContext(country: $country, language: $language) {\n    order: node(id: $orderId) {\n      ... on Order {\n        ...Order\n      }\n    }\n  }\n': {
     return: OrderQuery;
     variables: OrderQueryVariables;
   };
-  '#graphql\n  #graphql\n  fragment Customer on Customer {\n    acceptsMarketing\n    addresses(first: 6) {\n      nodes {\n        ...Address\n      }\n    }\n    defaultAddress {\n      ...Address\n    }\n    email\n    firstName\n    lastName\n    numberOfOrders\n    phone\n  }\n  fragment Address on MailingAddress {\n    id\n    formatted\n    firstName\n    lastName\n    company\n    address1\n    address2\n    country\n    province\n    city\n    zip\n    phone\n  }\n\n  query CustomerOrders(\n    $country: CountryCode\n    $customerAccessToken: String!\n    $endCursor: String\n    $first: Int\n    $language: LanguageCode\n    $last: Int\n    $startCursor: String\n  ) @inContext(country: $country, language: $language) {\n    customer(customerAccessToken: $customerAccessToken) {\n      ...CustomerOrders\n    }\n  }\n': {
+  '#graphql\n  #graphql\n  fragment CustomerOrders on Customer {\n    numberOfOrders\n    orders(\n      sortKey: PROCESSED_AT,\n      reverse: true,\n      first: $first,\n      last: $last,\n      before: $startCursor,\n      after: $endCursor\n    ) {\n      nodes {\n        ...OrderItem\n      }\n      pageInfo {\n        hasPreviousPage\n        hasNextPage\n        endCursor\n        startCursor\n      }\n    }\n  }\n  #graphql\n  fragment OrderItem on Order {\n    currentTotalPrice {\n      amount\n      currencyCode\n    }\n    financialStatus\n    fulfillmentStatus\n    id\n    lineItems(first: 10) {\n      nodes {\n        title\n        variant {\n          image {\n            url\n            altText\n            height\n            width\n          }\n        }\n      }\n    }\n    orderNumber\n    customerUrl\n    statusUrl\n    processedAt\n  }\n\n\n  query CustomerOrders(\n    $country: CountryCode\n    $customerAccessToken: String!\n    $endCursor: String\n    $first: Int\n    $language: LanguageCode\n    $last: Int\n    $startCursor: String\n  ) @inContext(country: $country, language: $language) {\n    customer(customerAccessToken: $customerAccessToken) {\n      ...CustomerOrders\n    }\n  }\n': {
     return: CustomerOrdersQuery;
     variables: CustomerOrdersQueryVariables;
-  };
-  '#graphql\n  query Customer(\n    $customerAccessToken: String!\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    customer(customerAccessToken: $customerAccessToken) {\n      ...Customer\n    }\n  }\n  #graphql\n  fragment Customer on Customer {\n    acceptsMarketing\n    addresses(first: 6) {\n      nodes {\n        ...Address\n      }\n    }\n    defaultAddress {\n      ...Address\n    }\n    email\n    firstName\n    lastName\n    numberOfOrders\n    phone\n  }\n  fragment Address on MailingAddress {\n    id\n    formatted\n    firstName\n    lastName\n    company\n    address1\n    address2\n    country\n    province\n    city\n    zip\n    phone\n  }\n\n': {
-    return: CustomerQuery;
-    variables: CustomerQueryVariables;
   };
   '#graphql\n  fragment PredictiveArticle on Article {\n    __typename\n    id\n    title\n    handle\n    image {\n      url\n      altText\n      width\n      height\n    }\n    trackingParameters\n  }\n  fragment PredictiveCollection on Collection {\n    __typename\n    id\n    title\n    handle\n    image {\n      url\n      altText\n      width\n      height\n    }\n    trackingParameters\n  }\n  fragment PredictivePage on Page {\n    __typename\n    id\n    title\n    handle\n    trackingParameters\n  }\n  fragment PredictiveProduct on Product {\n    __typename\n    id\n    title\n    handle\n    trackingParameters\n    variants(first: 1) {\n      nodes {\n        id\n        image {\n          url\n          altText\n          width\n          height\n        }\n        price {\n          amount\n          currencyCode\n        }\n      }\n    }\n  }\n  fragment PredictiveQuery on SearchQuerySuggestion {\n    __typename\n    text\n    styledText\n    trackingParameters\n  }\n  query predictiveSearch(\n    $country: CountryCode\n    $language: LanguageCode\n    $limit: Int!\n    $limitScope: PredictiveSearchLimitScope!\n    $searchTerm: String!\n    $types: [PredictiveSearchType!]\n  ) @inContext(country: $country, language: $language) {\n    predictiveSearch(\n      limit: $limit,\n      limitScope: $limitScope,\n      query: $searchTerm,\n      types: $types,\n    ) {\n      articles {\n        ...PredictiveArticle\n      }\n      collections {\n        ...PredictiveCollection\n      }\n      pages {\n        ...PredictivePage\n      }\n      products {\n        ...PredictiveProduct\n      }\n      queries {\n        ...PredictiveQuery\n      }\n    }\n  }\n': {
     return: PredictiveSearchQuery;
