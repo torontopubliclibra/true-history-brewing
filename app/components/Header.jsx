@@ -1,16 +1,17 @@
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
+import icon from './../../public/assets/thb-icon.png';
 
 /**
  * @param {HeaderProps}
  */
 export function Header({header, isLoggedIn, cart}) {
-  const {shop, menu} = header;
+  const {menu} = header;
   return (
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+        <img src={icon} class="thb-icon" alt="True History Brewing icon" />
       </NavLink>
       <HeaderMenu
         menu={menu}
@@ -53,6 +54,15 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           Home
         </NavLink>
       )}
+      <NavLink
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to="/taproom"
+        >
+        Taproom
+      </NavLink>
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
 
@@ -113,7 +123,7 @@ function SearchToggle() {
  * @param {{count: number}}
  */
 function CartBadge({count}) {
-  return <a href="#cart-aside">Cart {count}</a>;
+  return <a href="#cart-aside">Cart ({count})</a>;
 }
 
 /**
