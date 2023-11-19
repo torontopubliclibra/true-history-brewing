@@ -6,21 +6,68 @@
   font-family: "Bogue-Regular";
   src: url(./../../public/fonts/bogue-regular.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "Bogue-Thin";
+  src: url(./../../public/fonts/bogue-thin.ttf) format("truetype"); }
+
 * {
   font-family: "Bogue-Regular", sans-serif; }
+
+h2 {
+  font-family: "Bogue-Thin", sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #F6F6F6;
+  margin: 10px 0; }
+
+body {
+  background-image: url("./../../public/assets/wooden-bg.jpg"); }
+
+.thb-icon {
+  width: 75px;
+  height: auto; }
+
+.thb-logo {
+  width: 70%;
+  height: auto;
+  margin: 40px 0; }
+
+header {
+  background-image: url("./../../public/assets/wallpaper.png");
+  align-items: center;
+  border-bottom: solid #000000 3px;
+  display: flex;
+  height: 140px;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1; }
+
+main .main-heading, main .main-subheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid #000000 3px; }
+
+main .main-heading {
+  background-color: rgba(241, 237, 226, 0.9);
+  flex-direction: column; }
+
+main .main-subheading {
+  padding: 25px 0;
+  background-color: rgba(119, 141, 121, 0.9);
+  flex-direction: row;
+  gap: 5%; }
+  main .main-subheading .bar-sketch, main .main-subheading h2 {
+    max-width: 40%; }
 
 :root {
   --aside-width: 400px;
   --cart-aside-summary-height-with-discount: 300px;
   --cart-aside-summary-height: 250px;
   --grid-item-width: 355px;
-  --header-height: 100px;
   --color-dark: #000;
   --color-light: #fff; }
-
-.thb-icon {
-  width: 75px;
-  height: auto; }
 
 img {
   border-radius: 4px; }
@@ -125,17 +172,6 @@ aside li {
 * components/Header
 * --------------------------------------------------
 */
-.header {
-  align-items: center;
-  background-color: #778d79;
-  border-bottom: solid #000000 3px;
-  display: flex;
-  height: var(--header-height);
-  padding: 0 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1; }
-
 @media (min-width: 48em) {
   .header-menu-mobile-toggle {
     display: none; } }

@@ -9,6 +9,19 @@
     src: url(./../../public/fonts/bogue-regular.ttf) format("truetype");
 };
 
+@font-face {
+    font-family: "Bogue-Thin";
+    src: url(./../../public/fonts/bogue-thin.ttf) format("truetype");
+};
+
 * {
     font-family: "Bogue-Regular", sans-serif;
 };
+
+h2 {
+    font-family: "Bogue-Thin", sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    color: $white;
+    margin: 10px 0;
+}

@@ -1,19 +1,62 @@
 @import 'partials/variables';
 @import 'partials/typography';
 
-:root {
-  --aside-width: 400px;
-  --cart-aside-summary-height-with-discount: 300px;
-  --cart-aside-summary-height: 250px;
-  --grid-item-width: 355px;
-  --header-height: 100px;
-  --color-dark: #000;
-  --color-light: #fff;
+body {
+  background-image: url('./../../public/assets/wooden-bg.jpg');
 }
 
 .thb-icon {
   width: 75px;
   height: auto;
+}
+
+.thb-logo {
+  width: 70%;
+  height: auto;
+  margin: 40px 0;
+}
+
+header {
+  background-image: url('./../../public/assets/wallpaper.png');
+  align-items: center;
+  border-bottom: solid $black 3px;
+  display: flex;
+  height: 140px;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+main {
+  .main-heading, .main-subheading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid $black 3px;
+  }
+  .main-heading {
+    background-color: rgba($light, 0.9);
+    flex-direction: column;
+  }
+  .main-subheading {
+    padding: 25px 0;
+    background-color: rgba($color1, 0.9);
+    flex-direction: row;
+    gap: 5%;
+    .bar-sketch, h2 {
+      max-width: 40%;
+    }
+  }
+}
+
+:root {
+  --aside-width: 400px;
+  --cart-aside-summary-height-with-discount: 300px;
+  --cart-aside-summary-height: 250px;
+  --grid-item-width: 355px;
+  --color-dark: #000;
+  --color-light: #fff;
 }
 
 img {
@@ -135,17 +178,6 @@ aside li {
 * components/Header
 * --------------------------------------------------
 */
-.header {
-  align-items: center;
-  background-color: $color1;
-  border-bottom: solid $black 3px;
-  display: flex;
-  height: var(--header-height);
-  padding: 0 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
 
 .header-menu-mobile-toggle {
   @media (min-width: 48em) {
