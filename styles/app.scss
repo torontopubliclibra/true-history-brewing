@@ -12,6 +12,7 @@ body {
 
 .thb-logo {
   width: 70%;
+  max-width: 500px;
   height: auto;
   margin: 40px 0;
 }
@@ -44,8 +45,34 @@ main {
     background-color: rgba($color1, 0.9);
     flex-direction: row;
     gap: 5%;
+    h2 {
+      font-size: 30px;
+    }
     .bar-sketch, h2 {
       max-width: 40%;
+    }
+  }
+  .store {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($light, 0.9);
+
+    img {
+      aspect-ratio: 1/1;
+      max-width: 250px;
+      object-fit: cover;
+    }
+    
+    h1 {
+      display: none;
+      margin: 0;
+      padding-top: 20px;
+    }
+
+    h2 {
+      color: $black;
     }
   }
 }

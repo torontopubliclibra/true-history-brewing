@@ -29,6 +29,7 @@ body {
 
 .thb-logo {
   width: 70%;
+  max-width: 500px;
   height: auto;
   margin: 40px 0; }
 
@@ -58,8 +59,27 @@ main .main-subheading {
   background-color: rgba(119, 141, 121, 0.9);
   flex-direction: row;
   gap: 5%; }
+  main .main-subheading h2 {
+    font-size: 30px; }
   main .main-subheading .bar-sketch, main .main-subheading h2 {
     max-width: 40%; }
+
+main .store {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(241, 237, 226, 0.9); }
+  main .store img {
+    aspect-ratio: 1/1;
+    max-width: 250px;
+    object-fit: cover; }
+  main .store h1 {
+    display: none;
+    margin: 0;
+    padding-top: 20px; }
+  main .store h2 {
+    color: #000000; }
 
 :root {
   --aside-width: 400px;
