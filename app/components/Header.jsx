@@ -59,11 +59,47 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         onClick={closeAside}
         prefetch="intent"
         style={activeLinkStyle}
+        to="/"
+        >
+        Home
+      </NavLink>
+      <NavLink
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        style={activeLinkStyle}
         to="/taproom"
         >
         Taproom
       </NavLink>
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      <NavLink
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to="/bottle-shop"
+        >
+        Bottle Shop
+      </NavLink>
+      <NavLink
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to="/store"
+        >
+        Buy Online
+      </NavLink>
+      <NavLink
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to="/contact"
+        >
+        Contact
+      </NavLink>
+      {/* {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
 
         // if the url is internal, we strip the domain
@@ -86,7 +122,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             {item.title}
           </NavLink>
         );
-      })}
+      })} */}
     </nav>
   );
 }

@@ -19,7 +19,7 @@ export default function Homepage() {
         </div>
         <div className="main-subheading">
           <img src={barSketch} class="bar-sketch" alt="" />
-          <h2>Brewing low and slow since 2019</h2>
+          <h2>Brewing low & slow in Toronto, ON</h2>
         </div>
     </>
   );
