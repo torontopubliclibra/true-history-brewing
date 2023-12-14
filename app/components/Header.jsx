@@ -1,26 +1,37 @@
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
+import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
 
 /**
  * @param {HeaderProps}
  */
 export function Header({header, isLoggedIn, cart}) {
+
   const {menu} = header;
-  return (
-    <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <img src={icon} class="thb-icon" alt="True History Brewing icon" />
-      </NavLink>
-      <HeaderMenu
-        menu={menu}
-        viewport="desktop"
-        primaryDomainUrl={header.shop.primaryDomain.url}
-      />
-      <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
-    </header>
-  );
+  const location = useLocation();
+
+  if (location.pathname === '/') {
+    
+    return null
+
+  } else {
+
+    return (
+      <header className="header">
+        <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
+          <img src={icon} class="thb-icon" alt="True History Brewing icon" />
+        </NavLink>
+        <HeaderMenu
+          menu={menu}
+          viewport="desktop"
+          primaryDomainUrl={header.shop.primaryDomain.url}
+        />
+        <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+      </header>
+    )
+  }
 }
 
 /**
@@ -40,7 +51,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
       window.location.href = event.currentTarget.href;
     }
   }
-
+  
   return (
     <nav className={className} role="navigation">
       {viewport === 'mobile' && (
@@ -49,7 +60,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           onClick={closeAside}
           prefetch="intent"
           style={activeLinkStyle}
-          to="/"
+          to="/home"
         >
           Home
         </NavLink>
@@ -59,7 +70,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         onClick={closeAside}
         prefetch="intent"
         style={activeLinkStyle}
-        to="/"
+        to="/home"
         >
         Home
       </NavLink>

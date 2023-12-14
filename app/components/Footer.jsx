@@ -7,6 +7,8 @@ import {useRootLoaderData} from '~/root';
 export function Footer({menu, shop}) {
   return (
     <footer className="footer">
+      <p>Copyright True History Brewing, 2024</p>
+      <p>Website designed by <a href="https://danateagle.com">Dana Teagle</a></p>
       <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
     </footer>
   );
