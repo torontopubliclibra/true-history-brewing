@@ -5,6 +5,22 @@ body {
   background-image: url('./../../public/assets/wooden-bg.jpg');
 }
 
+.button-primary {
+  background: #D8B56E;
+  border: 5px black solid;
+  padding: 10px 25px;
+  margin: 5px;
+  color: black;
+  font-size: 20px;
+  font-family: "Bogue-Regular";
+  font-weight: 400;
+  text-transform: uppercase;
+  &:hover {
+    background: $color1;
+    text-decoration: none;
+  }
+}
+
 .thb-icon {
   width: 75px;
   height: auto;
@@ -50,6 +66,12 @@ main {
     }
     .bar-sketch, h2 {
       max-width: 40%;
+    }
+  }
+  .landing-main {
+    .landing-buttons {
+      margin: 15px;
+      margin-top: 25px;
     }
   }
   .store {
