@@ -18,12 +18,12 @@ export default function Homepage() {
           <img src={icon} className="thb-icon" alt="True History Brewing icon" />
           <h1>Welcome to True History Brewing</h1>
         </div>
-        <div className="landing-buttons">
+        <div className="landing-main">
           <p>By clicking Enter, you verify that you are 19 years of age or older</p>
-          <button>
-            <Link to="/home">Enter</Link>
-          </button>
-          <button>Exit</button>
+          <div className="landing-buttons">
+            <Link to="/home" className='button-primary'>Enter</Link>
+            <Link to="https://google.com" className='button-primary'>Exit</Link>
+          </div>
         </div>
     </>
   );
