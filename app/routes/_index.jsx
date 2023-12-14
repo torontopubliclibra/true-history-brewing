@@ -1,5 +1,5 @@
-import logo from './../../public/assets/thb-logo.png';
-import barSketch from './../../public/assets/bar-sketch.png';
+import icon from './../../public/assets/thb-icon.png';
+import {Link} from '@remix-run/react';
 
 /**
  * @type {MetaFunction}
@@ -14,12 +14,16 @@ export const meta = () => {
 export default function Homepage() {
   return (
     <>
-        <div className="main-heading">
-          <img src={logo} class="thb-logo" alt="True History Brewing logo" />
+        <div className="landing-welcome">
+          <img src={icon} className="thb-icon" alt="True History Brewing icon" />
+          <h1>Welcome to True History Brewing</h1>
         </div>
-        <div className="main-subheading">
-          <img src={barSketch} class="bar-sketch" alt="" />
-          <h2>Brewing low & slow in Toronto, ON</h2>
+        <div className="landing-buttons">
+          <p>By clicking Enter, you verify that you are 19 years of age or older</p>
+          <button>
+            <Link to="/home">Enter</Link>
+          </button>
+          <button>Exit</button>
         </div>
     </>
   );
