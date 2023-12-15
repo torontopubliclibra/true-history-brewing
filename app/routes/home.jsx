@@ -13,6 +13,23 @@ export const meta = () => {
 };
 
 export default function Homepage() {
+
+  let taproomHours = {
+    Mon: "Closed",
+    Tues: "4pm-11pm",
+    Weds: "4pm-11pm",
+    Thurs: "4pm-11pm",
+    Fri: "12pm-12am",
+    Sat: "12pm-12am",
+    Sun: "12pm-10pm"
+  };
+
+  let formattedHours = [];
+
+  for (let [key, value] of Object.entries(taproomHours)) {
+    formattedHours.push(<li>{key}: {value}</li>);
+  };
+
   return (
     <>
         <section className="main-heading">
@@ -31,9 +48,7 @@ export default function Homepage() {
             <div className="hours">
               <p>Hours this Week:</p>
               <ul>
-                <li>Mon: Closed</li>
-                <li>Tues: 4pm-11pm</li>
-                <li>Fri: 12pm-12am</li>
+                {formattedHours}
               </ul>
             </div>
             <div className="menu-buttons">
