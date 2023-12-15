@@ -37,7 +37,7 @@ export default function Homepage() {
         </section>
         <section className="main-subheading">
           <img src={barSketch} className="bar-sketch" alt="" />
-          <h2>Brewing low & slow in Toronto, ON</h2>
+          <h2>Brewing low & slow <br/><span className="location">in Toronto, ON</span></h2>
         </section>
         <section className="main-taproom">
           <h3>Come pay us a visit and we'll pour you a cold one!</h3>
