@@ -24,20 +24,33 @@ body {
   background-image: url("./../../public/assets/wooden-bg.jpg"); }
 
 .button-primary {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
   height: 20px;
   background: #D8B56E;
-  border: 4px black solid;
+  border: 4px #1F1F1F solid;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.8));
-  padding: 5px 30px 15px 30px;
+  padding: 10px 30px 10px 30px;
   margin: 5px;
-  color: black;
+  color: #1F1F1F;
   font-size: 20px;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase; }
   .button-primary:hover {
-    background: #778d79;
-    text-decoration: none; }
+    background: rgba(194, 129, 101, 0.8);
+    text-decoration: none;
+    transition: background 0.2s ease-in; }
+  .button-primary.decorative {
+    padding: 10px 20px; }
+  .button-primary .button-icon {
+    width: 20px;
+    padding-bottom: 3px; }
+  .button-primary .flourish {
+    width: 25px;
+    padding-bottom: 3px; }
 
 .thb-icon {
   width: 75px;
@@ -47,29 +60,58 @@ body {
   width: 70%;
   max-width: 750px;
   height: auto;
-  margin: 20px 0; }
+  margin: 40px 0; }
 
 header, footer {
   background-image: url("./../../public/assets/wallpaper.png");
   align-items: center;
-  min-height: 140px;
   display: flex; }
 
+.landing-header, .landing-footer {
+  height: calc(25vh - 5px); }
+
 header {
-  border-bottom: solid #1F1F1F 3px;
+  height: 125px;
+  border-bottom: solid #1F1F1F 5px;
   padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1; }
+  header .button-primary {
+    padding: 10px 20px;
+    font-size: 15px;
+    height: 15px; }
 
 footer {
+  height: 175px;
   display: flex;
   flex-direction: column;
-  border-top: solid #1F1F1F 3px;
+  justify-content: center;
+  border-top: solid #1F1F1F 5px;
   margin-top: auto; }
+  footer.landing-footer {
+    justify-content: flex-end; }
+    footer.landing-footer .credit {
+      padding-bottom: 40px; }
+  footer .credit p {
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    letter-spacing: 2px;
+    padding-bottom: 5px; }
+    footer .credit p a {
+      text-decoration: underline; }
+  footer .footer-buttons {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px; }
+    footer .footer-buttons .button-primary {
+      padding: 10px 20px;
+      font-size: 15px;
+      height: 15px; }
 
 main .landing {
-  margin: 0;
+  height: 50vh;
   padding: 0; }
   main .landing .landing-welcome {
     display: flex;
@@ -77,9 +119,8 @@ main .landing {
     gap: 30px;
     padding-left: 10%;
     background-color: rgba(119, 141, 121, 0.9);
-    border-top: solid 3px #1F1F1F;
-    border-bottom: solid 3px #1F1F1F;
-    height: 250px; }
+    border-bottom: solid 5px #1F1F1F;
+    height: 60%; }
     main .landing .landing-welcome .thb-icon {
       height: 175px;
       width: auto; }
@@ -97,35 +138,44 @@ main .landing {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-bottom: solid 3px #1F1F1F;
     background-color: rgba(241, 237, 226, 0.8);
-    height: 200px;
+    height: 40%;
     padding-left: 10%; }
     main .landing .landing-main .landing-buttons {
       display: flex;
       gap: 10px;
       margin-top: 10px;
-      margin-bottom: 20px; }
+      margin-bottom: 15px; }
     main .landing .landing-main p {
       margin-top: 10px;
       font-size: 20px; }
 
-main .main-heading, main .main-subheading {
+main .heading, main .main-subheading {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid #1F1F1F 3px; }
+  border-bottom: solid #1F1F1F 5px; }
 
-main .main-heading {
+main .heading {
   background-color: rgba(241, 237, 226, 0.9);
   flex-direction: column; }
+  main .heading h2 {
+    color: #1F1F1F;
+    max-width: 50%;
+    font-size: 80px;
+    font-family: 'Saudagar';
+    text-transform: uppercase;
+    font-style: normal; }
+    main .heading h2 .location {
+      font-family: 'Saudagar';
+      font-size: 40px;
+      font-style: italic; }
 
 main .main-subheading {
   padding: 25px 0;
-  background-color: rgba(119, 141, 121, 0.8);
+  background-color: rgba(119, 141, 121, 0.9);
   flex-direction: row;
-  gap: 5%;
-  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+  gap: 5%; }
   main .main-subheading h2 {
     max-width: 50%;
     filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8));
@@ -139,7 +189,8 @@ main .main-subheading {
       font-style: italic; }
   main .main-subheading .bar-sketch {
     max-width: 30%;
-    min-width: 400px; }
+    min-width: 400px;
+    filter: drop-shadow(-3px 3px 2px #1F1F1F); }
 
 main .main-taproom {
   color: #F1EDE2;
@@ -153,15 +204,30 @@ main .main-newsletter {
   color: #1F1F1F;
   background-color: rgba(216, 181, 110, 0.9); }
 
+main .taproom-address {
+  background-color: rgba(119, 141, 121, 0.9);
+  border-bottom: solid #1F1F1F 5px; }
+
+main .taproom-menus {
+  color: #F1EDE2;
+  background-color: rgba(121, 79, 62, 0.9);
+  border-bottom: solid #1F1F1F 5px; }
+
+main .taproom-events {
+  background-color: rgba(241, 237, 226, 0.9); }
+
 main .store {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(241, 237, 226, 0.9); }
+  background-color: rgba(119, 141, 121, 0.9);
+  padding: 20px; }
   main .store img {
-    aspect-ratio: 1/1;
-    max-width: 250px;
+    border: solid 3px #1F1F1F;
+    border-radius: 0;
+    aspect-ratio: 6/3 !important;
+    max-width: 300px;
     object-fit: cover; }
   main .store h1 {
     display: none;
