@@ -11,7 +11,7 @@ export const meta = () => {
 export default function Homepage() {
   return (
     <>
-        <section className="contact-heading">
+        <section className="heading contact-heading">
           <h2>Contact</h2>
         </section>
     </>

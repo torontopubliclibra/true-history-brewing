@@ -1,4 +1,6 @@
 import icon from './../../public/assets/thb-icon.png';
+import flourishLeft from './../../public/assets/icons/flourish-left.svg';
+import flourishRight from './../../public/assets/icons/flourish-right.svg';
 import {Link} from '@remix-run/react';
 
 /**
@@ -21,8 +23,14 @@ export default function Homepage() {
         <div className="landing-main">
           <p>By clicking Enter, you verify that you are 19 years of age or older</p>
           <div className="landing-buttons">
-            <Link to="/home" className='button-primary'>Enter</Link>
-            <Link to="https://google.com" className='button-primary'>Exit</Link>
+            <Link to="/home" className='button-primary decorative'>
+              <img src={flourishLeft} className="flourish" />
+              Enter
+              <img src={flourishRight} className="flourish" />
+            </Link>
+            <Link to="https://google.com" className='button-primary'>
+              Exit
+            </Link>
           </div>
         </div>
     </section>

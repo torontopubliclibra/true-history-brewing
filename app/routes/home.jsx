@@ -32,7 +32,7 @@ export default function Homepage() {
 
   return (
     <>
-        <section className="main-heading">
+        <section className="heading main-heading">
           <img src={logo} className="thb-logo" alt="True History Brewing logo" />
         </section>
         <section className="main-subheading">
@@ -44,7 +44,7 @@ export default function Homepage() {
           <div className="hours-address">
             <p>1154 St. Clair Avenue West</p>
             <hr/>
-            <Link to="https://maps.app.goo.gl/iyM8YKzMAZkCEQqC6">Get Directions</Link>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button-primary'>Get Directions</Link>
             <div className="hours">
               <p>Hours this Week:</p>
               <ul>
@@ -52,9 +52,9 @@ export default function Homepage() {
               </ul>
             </div>
             <div className="menu-buttons">
-              <Link to="/taproom">What's on tap right now?</Link>
-              <Link to="/taproom">Anything that's not beer?</Link>
-              <Link to="/taproom">Do you guys have food?</Link>
+              <Link to="/taproom" className='button-primary'>What's on tap right now?</Link>
+              <Link to="/taproom" className='button-primary'>Anything that's not beer?</Link>
+              <Link to="/taproom" className='button-primary'>Do you guys have food?</Link>
             </div>
           </div>
         </section>
@@ -64,11 +64,11 @@ export default function Homepage() {
             <li>15/12/23 - Lorem Ipsum Lorem</li>
             <li>26/12/23 - Lorem Ipsum Lorem Ipsum</li>
           </ul>
-          <Link to="/taproom">Check out our calendar</Link>
+          <Link to="/taproom" className='button-primary'>Check out our calendar</Link>
         </section>
         <section className="main-newsletter">
           <text>Enter your email address</text>
-          <button>Subscribe now</button>
+          <button className='button-primary'>Subscribe now</button>
           <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers</p>
         </section>
     </>
