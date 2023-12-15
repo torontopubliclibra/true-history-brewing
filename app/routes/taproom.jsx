@@ -1,5 +1,4 @@
-import logo from './../../public/assets/thb-logo.png';
-import barSketch from './../../public/assets/bar-sketch.png';
+import {Link} from '@remix-run/react';
 
 /**
  * @type {MetaFunction}
@@ -14,8 +13,8 @@ export const meta = () => {
 export default function Homepage() {
   return (
     <>
-        <section className="taproom-heading">
-          <h2>Our Taproom</h2>
+        <section className="heading taproom-heading">
+          <h2>Taproom</h2>
         </section>
         <section className="taproom-address">
             <div className="hours">
@@ -27,7 +26,7 @@ export default function Homepage() {
                 </ul>
             </div>
             <p>1154 St. Clair Avenue West</p>
-            <button>Get Directions</button>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button-primary'>Get Directions</Link>
         </section>
         <section className="taproom-menus">
           <h3>Menus</h3>

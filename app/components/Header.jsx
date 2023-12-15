@@ -1,8 +1,11 @@
-import {Await, NavLink} from '@remix-run/react';
+import {Await, NavLink, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
 import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
+import cart from './../../public/assets/icons/cart.svg';
+import signIn from './../../public/assets/icons/sign-in.svg';
+import instagram from './../../public/assets/icons/instagram.svg';
 
 /**
  * @param {HeaderProps}
@@ -15,7 +18,7 @@ export function Header({header, isLoggedIn, cart}) {
   if (location.pathname === '/') {
     
     return (
-      <header className="header">
+      <header className="header landing-header">
       </header>
     )
 
@@ -113,30 +116,6 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         >
         Contact
       </NavLink>
-      {/* {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
-        if (!item.url) return null;
-
-        // if the url is internal, we strip the domain
-        const url =
-          item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
-            ? new URL(item.url).pathname
-            : item.url;
-        return (
-          <NavLink
-            className="header-menu-item"
-            end
-            key={item.id}
-            onClick={closeAside}
-            prefetch="intent"
-            style={activeLinkStyle}
-            to={url}
-          >
-            {item.title}
-          </NavLink>
-        );
-      })} */}
     </nav>
   );
 }
@@ -148,11 +127,16 @@ function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
-        {isLoggedIn ? 'Account' : 'Sign in'}
-      </NavLink>
-      <SearchToggle />
       <CartToggle cart={cart} />
+      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}  className="button-primary">
+        {isLoggedIn ? 'Account' : 'Sign in'}
+        <img src={signIn} className="button-icon" />
+      </NavLink>
+      <Link to="https://instagram.com/truehistorybrewing" target="_blank" className="button-primary">
+        Instagram
+        <img src={instagram} className="button-icon" />
+      </Link>
+      {/* <SearchToggle /> */}
     </nav>
   );
 }
@@ -173,7 +157,10 @@ function SearchToggle() {
  * @param {{count: number}}
  */
 function CartBadge({count}) {
-  return <a href="#cart-aside">Cart ({count})</a>;
+  return <a href="#cart-aside" className="button-primary">
+    Cart ({count})
+    <img src={cart} className="button-icon" />
+  </a>;
 }
 
 /**
