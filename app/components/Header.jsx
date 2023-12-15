@@ -14,7 +14,10 @@ export function Header({header, isLoggedIn, cart}) {
 
   if (location.pathname === '/') {
     
-    return null
+    return (
+      <header className="header">
+      </header>
+    )
 
   } else {
 
