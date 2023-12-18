@@ -1,4 +1,5 @@
 import {Link} from '@remix-run/react';
+import {Schedule} from './../components/Schedule';
 
 /**
  * @type {MetaFunction}
@@ -17,14 +18,7 @@ export default function Homepage() {
           <h2>Taproom</h2>
         </section>
         <section className="taproom-address">
-            <div className="hours">
-                <p>Hours this Week:</p>
-                <ul>
-                <li>Mon: Closed</li>
-                <li>Tues: 4pm-11pm</li>
-                <li>Fri: 12pm-12am</li>
-                </ul>
-            </div>
+            <Schedule/>
             <p>1154 St. Clair Avenue West</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button-primary'>Get Directions</Link>
         </section>
