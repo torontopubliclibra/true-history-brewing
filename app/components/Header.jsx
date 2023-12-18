@@ -128,10 +128,10 @@ function HeaderCtas({isLoggedIn, cart}) {
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
       <CartToggle cart={cart} />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}  className="button-primary">
+      {/* <NavLink prefetch="intent" to="/account" style={activeLinkStyle}  className="button-primary">
         {isLoggedIn ? 'Account' : 'Sign in'}
         <img src={signIn} className="button-icon" />
-      </NavLink>
+      </NavLink> */}
       <Link to="https://instagram.com/truehistorybrewing" target="_blank" className="button-primary">
         Instagram
         <img src={instagram} className="button-icon" />
