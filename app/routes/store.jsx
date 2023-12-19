@@ -31,7 +31,7 @@ export default function Homepage() {
   return (
     <>
       <section className="heading store-heading">
-        <h2>Online Ordering</h2>
+        <h2>Online Store</h2>
       </section>
       <div className="store">
         <FeaturedCollection collection={data.featuredCollection} />

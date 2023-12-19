@@ -5,13 +5,81 @@ body {
   background-image: url('./../../public/assets/wooden-bg.jpg');
 }
 
-.button-primary {
+hr {
+  height: 8px;
+  width: 100%;
+  background-color: $color1;
+  border: solid $black 3px;
+}
+
+// .hours:before {
+//   content: " ";
+//   position: absolute;
+//   z-index: -1;
+//   top: 5px;
+//   left: 5px;
+//   right: 5px;
+//   bottom: 5px;
+//   border: solid $black 4px;
+// }
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: $light;
+  color: $black;
+  border: solid $black 4px;
+  outline: solid $color2 10px;
+  box-shadow: 0 0 0 14px $black;
+  border-radius: 15px;
+  width: 375px;
+  margin: 15px;
+  margin-top: 35px;
+  padding: 10px 35px;
+  padding-bottom: 0;
+
+  .diamond-border {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    img {
+      width: 25px;
+    }
+  }
+  h4 {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+  .schedule {
+    width: 100%;
+    margin-bottom: 20px;
+    li {
+      font-family: "Bogue-ExtraBold";
+      font-size: 18px;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      margin: 0;
+      .time {
+        font-weight: 400;
+        font-style: italic;
+      }  
+    }
+  }
+}
+
+.button {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
   height: 20px;
-  background: #D8B56E;
+  background: $color2;
   border: 4px $black solid;
   filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
   padding: 10px 30px 10px 30px;
@@ -22,9 +90,13 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   &:hover {
-    background: rgba($color3, 0.8);
+    background: $color1;
+    color: $light;
     text-decoration: none;
     transition: background 0.2s ease-in;
+    img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+    }
   }
 
   &.decorative {
@@ -39,6 +111,44 @@ body {
   .flourish {
     width: 25px;
     padding-bottom: 3px;
+  }
+}
+
+.button-primary {
+  background: $color2;
+}
+
+.button-secondary {
+  background: $color1;
+  color: $light;
+  width: 170px;
+  height: 100%;
+  margin-top: 10px;
+  font-size: 17px;
+  text-align: center;
+  line-height: 1.15;
+  &:hover {
+    background: $color3;
+    color: $black;
+    img {
+      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%);
+    }
+  }
+}
+
+.button-tertiary {
+  background: $color4;
+  color: $light;
+  font-size: 17px;
+  img {
+    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+  }
+  &:hover {
+    background: $color2;
+    color: $black;
+    img {
+      filter: none;
+    }
   }
 }
 
@@ -187,7 +297,7 @@ main {
     
     h2 {
       color: $black;
-      max-width: 50%;
+      max-width: 65%;
       font-size: 80px;
       font-family: 'Saudagar';
       text-transform: uppercase;
@@ -227,18 +337,120 @@ main {
   .main-taproom {
     color: $light;
     background-color: rgba($dark, 0.9);
+
+    .taproom-heading {
+      font-size: 30px;
+      background-color: $light;
+      border: solid $black 4px;
+      border-radius: 40px;
+      color: $black;
+      padding: 3px 30px;
+      margin: 0 5%;
+      max-width: 65%;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .taproom-info {
+      width: 95%;
+      display: flex;
+      justify-content: right;
+      .address-block {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 75px;
+        padding-left: 50px;
+      }
+      .address {
+        font-size: 30px;
+        margin-left: 10%;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+      hr {
+        background-color: $color1;
+      }
+      .button-primary {
+        margin-top: 10px;
+        margin-left: 10%;
+        width: 215px;
+        img {
+          width: 25px;
+        }
+      }
+    }
+    .menu-buttons {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
   .main-events {
+    display: flex;
+    border-top: solid $black 5px;
     color: $black;
     background-color: rgba($light, 0.9);
+    padding: 0;
+    .events-photo {
+      max-width: 45%;
+      border-right: solid $black 5px;
+      border-radius: 0;
+    }
+    h3 {
+      font-size: 35px;
+      font-family: "Bogue-ExtraBold";
+      text-transform: uppercase;
+      margin: 30px;
+      margin-bottom: 10px;
+    }
+    .main-events-content {
+      width: 100%;
+      .events-list {
+        margin-left: 40px;
+        font-size: 20px;
+        li {
+          font-style: italic;
+          .date {
+            font-style: normal;
+            font-family: "Bogue-ExtraBold";
+          }
+        }
+      }
+      .button {
+        margin-top: 15px;
+        margin-left: 40px;
+        width: 300px;
+      }
+      hr {
+        background-color: $color4;
+        border-left: none;
+        width: 90% !important;
+        margin-bottom: 20px;
+      }
+    }
   }
   .main-newsletter {
     color: $black;
     background-color: rgba($color2, 0.9);
+    border-top: solid $black 5px;
   }
   .taproom-address {
     background-color: rgba($color1, 0.9);
     border-bottom: solid $black 5px;
+    padding-left: 5%;
+    p {
+      color: $white;
+      font-size: 25px;
+      padding: 20px 0;
+      font-style: italic;
+      margin: 0;
+    }
+    .button {
+      width: 300px;
+    }
   }
   .taproom-menus {
     color: $light;
@@ -254,14 +466,24 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgba($color1, 0.9);
-    padding: 20px;
+    padding: 30px;
 
-    img {
-      border: solid 3px $black;
-      border-radius: 0;
-      aspect-ratio: 6/3 !important;
-      max-width: 300px;
-      object-fit: cover;
+    h2 {
+      color: $black;
+      font-size: 50px;
+      text-transform: uppercase;
+      font-style: normal;
+      margin-top: 0;
+    }
+
+    .recommended-product {
+      max-width: 250px;
+      img {
+        border: solid 3px $black;
+        border-radius: 0;
+        aspect-ratio: 6/3;
+        object-fit: cover;
+      }
     }
     
     h1 {

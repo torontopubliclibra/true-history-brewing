@@ -22,11 +22,11 @@ export function Footer() {
     return (
       <footer className="footer">
         <div className="footer-buttons">
-          <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button-primary'>
+          <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
             Instagram
             <img src={instagram} className="button-icon" />
           </Link>
-          <Link to="/contact" className='button-primary'>
+          <Link to="/contact" className='button button-primary'>
             Contact
             <img src={contact} className="button-icon" />
           </Link>

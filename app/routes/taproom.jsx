@@ -1,5 +1,6 @@
 import {Link} from '@remix-run/react';
 import {Schedule} from './../components/Schedule';
+import compass from './../../public/assets/icons/compass.svg';
 
 /**
  * @type {MetaFunction}
@@ -19,8 +20,8 @@ export default function Homepage() {
         </section>
         <section className="taproom-address">
             <Schedule/>
-            <p>1154 St. Clair Avenue West</p>
-            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button-primary'>Get Directions</Link>
+            <p>1154 St. Clair Avenue West, Toronto, ON</p>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
         </section>
         <section className="taproom-menus">
           <h3>Menus</h3>
@@ -32,7 +33,7 @@ export default function Homepage() {
             <li>Food</li>
           </ul>
         </section>
-        <section className="taproom-events">
+        <section className="taproom-events" id="calendar">
           <h3>Upcoming Events</h3>
           <ul className='events-views'>
             <li>List view</li>

@@ -26,7 +26,7 @@ export function Header({header, isLoggedIn, cart}) {
 
     return (
       <header className="header">
-        <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
+        <NavLink prefetch="intent" to="/home" style={activeLinkStyle} end>
           <img src={icon} class="thb-icon" alt="True History Brewing icon" />
         </NavLink>
         <HeaderMenu
@@ -105,7 +105,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         style={activeLinkStyle}
         to="/store"
         >
-        Buy Online
+        Online Store
       </NavLink>
       <NavLink
         end
@@ -128,11 +128,11 @@ function HeaderCtas({isLoggedIn, cart}) {
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
       <CartToggle cart={cart} />
-      {/* <NavLink prefetch="intent" to="/account" style={activeLinkStyle}  className="button-primary">
+      {/* <NavLink prefetch="intent" to="/account" style={activeLinkStyle}  className="button button-primary">
         {isLoggedIn ? 'Account' : 'Sign in'}
         <img src={signIn} className="button-icon" />
       </NavLink> */}
-      <Link to="https://instagram.com/truehistorybrewing" target="_blank" className="button-primary">
+      <Link to="https://instagram.com/truehistorybrewing" target="_blank" className="button button-primary">
         Instagram
         <img src={instagram} className="button-icon" />
       </Link>
@@ -157,7 +157,7 @@ function SearchToggle() {
  * @param {{count: number}}
  */
 function CartBadge({count}) {
-  return <a href="#cart-aside" className="button-primary">
+  return <a href="#cart-aside" className="button button-primary">
     Cart ({count})
     <img src={cart} className="button-icon" />
   </a>;

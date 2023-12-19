@@ -23,12 +23,12 @@ export default function Homepage() {
         <div className="landing-main">
           <p>By clicking Enter, you verify that you are 19 years of age or older</p>
           <div className="landing-buttons">
-            <Link to="/home" className='button-primary decorative'>
+            <Link to="/home" className='button button-primary decorative'>
               <img src={flourishLeft} className="flourish" />
               Enter
               <img src={flourishRight} className="flourish" />
             </Link>
-            <Link to="https://google.com" className='button-primary'>
+            <Link to="https://google.com" className='button button-primary'>
               Exit
             </Link>
           </div>
