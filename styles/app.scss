@@ -5,23 +5,103 @@ body {
   background-image: url('./../../public/assets/wooden-bg.jpg');
 }
 
+aside {
+  background: url('./../../public/assets/wooden-bg.jpg');
+  filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+  border-left: solid $black 4px;
+  height: 100vh;
+  max-width: var(--aside-width);
+  min-width: var(--aside-width);
+  position: fixed;
+  right: calc(-1 * var(--aside-width));
+  top: 0;
+  transition: transform 200ms ease-in-out;
+
+  header {
+    height: 75px !important;
+    background: $light;
+    align-items: center;
+    border-bottom: solid $black 4px;
+    display: flex;
+    height: var(--header-height);
+    justify-content: space-between;
+    padding: 0 20px;
+
+    h2 {
+      margin-bottom: 0.6rem;
+      margin-top: 0;
+    }
+
+    h3 {
+      width: 100%;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 25px;
+      text-align: right;
+    }
+
+    .close {
+      img {
+        width: 25px;
+        margin-top: 10px;
+      }
+
+      opacity: 0.8;
+      text-decoration: none;
+      transition: all 200ms;
+      width: 20px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  main {
+    height: calc(100vh - 75px);
+    background-color: rgba($color2, 0.9);
+    padding: 15px 0;
+
+    hr {
+      height: 4px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cart-main {
+      height: unset;
+      max-height: none;
+      padding: 25px;
+
+      .cart-summary-aside {
+        background: none;
+        position: unset;
+        border: none;
+        padding: 0;
+        width: unset;
+      }
+    }
+  }
+
+  p {
+    margin: 0 0 0.25rem;
+
+    &::last-child {
+      margin: 0;
+    }
+  }
+
+  li {
+    margin-bottom: 0.125rem;
+  }
+}
+
 hr {
   height: 8px;
   width: 100%;
   background-color: $color1;
   border: solid $black 3px;
+  filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
 }
-
-// .hours:before {
-//   content: " ";
-//   position: absolute;
-//   z-index: -1;
-//   top: 5px;
-//   left: 5px;
-//   right: 5px;
-//   bottom: 5px;
-//   border: solid $black 4px;
-// }
 
 .hours {
   display: flex;
@@ -33,6 +113,7 @@ hr {
   border: solid $black 4px;
   outline: solid $color2 10px;
   box-shadow: 0 0 0 14px $black;
+  filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
   border-radius: 15px;
   width: 375px;
   margin: 15px;
@@ -171,7 +252,8 @@ header, footer {
 }
 
 .landing-header, .landing-footer {
-  height: calc(25vh - 5px);
+  height: calc(50vh - 205px);
+  min-height: 100px;
 }
 
 header {
@@ -190,12 +272,19 @@ header {
 }
 
 footer {
-  height: 175px;
+  height: 225px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-top: solid $black 5px;
   margin-top: auto;
+
+  hr {
+    background-color: $color3;
+    height: 4px;
+    max-width: 90%;
+    margin: 25px 0;
+  }
 
   &.landing-footer {
     justify-content: flex-end;
@@ -204,22 +293,27 @@ footer {
     }
   }
 
-  .credit {
+  .credit, .copyright {
     p {
+      font-family: "Saudagar";
+      font-weight: 800;
       text-align: center;
       font-size: 16px;
-      font-style: italic;
       letter-spacing: 2px;
       padding-bottom: 5px;
   
       a {
+        font-family: "Saudagar";
         text-decoration: underline;
       }
     }
   }
 
+  .copyright p {
+    font-size: 20px;
+  }
+
   .footer-buttons {
-    margin-bottom: 15px;
     display: flex;
     gap: 15px;
 
@@ -233,8 +327,60 @@ footer {
 
 main {
 
+  .product {
+    display: flex;
+    background-color: rgba($color1, 0.9);
+
+    .product-image img {
+      width: 450px !important;
+      height: 300px !important;
+      object-fit: cover;
+      border: solid 5px $black;
+      filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+      border-radius: 0;
+      margin: 50px;
+    }
+
+    .product-main {
+      width: 45%;
+      margin: 50px;
+      margin-top: 75px;
+      margin-left: 0;
+
+      h1 {
+        font-size: 40px;
+        font-family: "Saudagar";
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .product-price {
+        font-size: 25px;
+        font-family: "Bogue-ExtraBold";
+        margin: 0;
+      }
+      hr {
+        background-color: $color4;
+        margin: 10px 0;
+        height: 4px;
+      }
+      .product-description {
+        font-size: 20px;
+        font-family: "Bogue-Regular";
+        margin: 0;
+      }
+      button {
+        padding: 20px 30px;
+        margin-top: 20px;
+        cursor: pointer;
+        &:hover {
+          background-color: $color4;
+        }
+      }
+    }
+  }
+
   .landing {
-    height: 50vh;
+    height: 400px;
     padding: 0;
 
     .landing-welcome {
@@ -310,27 +456,28 @@ main {
     }
   }
   .main-subheading {
-    padding: 25px 0;
+    padding: 50px 0;
     background-color: rgba($color1, 0.9);
     flex-direction: row;
     gap: 5%;
 
     h2 {
-      max-width: 50%;
+      max-width: 475px;
       filter: drop-shadow(-3px 3px 0.5px rgba($black, 0.8));
-      font-size: 80px;
+      font-size: 95px;
       font-family: 'Saudagar';
-      line-height: 1;
+      line-height: 0.9;
+      letter-spacing: 1.5;
       font-style: normal;
       .location {
         font-family: 'Saudagar';
-        font-size: 40px;
+        font-size: 50px;
         font-style: italic;
       }
     }
     .bar-sketch {
       max-width: 30%;
-      min-width: 400px;
+      min-width: 500px;
       filter: drop-shadow(-3px 3px 2px $black);
     }
   }
@@ -340,19 +487,20 @@ main {
 
     .taproom-heading {
       font-size: 30px;
-      background-color: $light;
+      background-color: $less-light;
       border: solid $black 4px;
       border-radius: 40px;
+      filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
       color: $black;
       padding: 3px 30px;
       margin: 0 5%;
-      max-width: 65%;
+      max-width: 800px;
       text-align: center;
       font-style: italic;
     }
 
     .taproom-info {
-      width: 95%;
+      width: 90%;
       display: flex;
       justify-content: right;
       .address-block {
@@ -398,6 +546,7 @@ main {
       max-width: 45%;
       border-right: solid $black 5px;
       border-radius: 0;
+      filter: sepia(20%);
     }
     h3 {
       font-size: 35px;
@@ -480,6 +629,7 @@ main {
       max-width: 250px;
       img {
         border: solid 3px $black;
+        filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
         border-radius: 0;
         aspect-ratio: 6/3;
         object-fit: cover;
@@ -516,63 +666,63 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
-aside {
-  background: var(--color-light);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
-  height: 100vh;
-  max-width: var(--aside-width);
-  min-width: var(--aside-width);
-  position: fixed;
-  right: calc(-1 * var(--aside-width));
-  top: 0;
-  transition: transform 200ms ease-in-out;
-}
+// aside {
+//   background-image: url('./../../public/assets/wooden-bg.jpg');
+//   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+//   height: 100vh;
+//   max-width: var(--aside-width);
+//   min-width: var(--aside-width);
+//   position: fixed;
+//   right: calc(-1 * var(--aside-width));
+//   top: 0;
+//   transition: transform 200ms ease-in-out;
+// }
 
-aside header {
-  align-items: center;
-  border-bottom: 1px solid var(--color-dark);
-  display: flex;
-  height: var(--header-height);
-  justify-content: space-between;
-  padding: 0 20px;
-}
+// aside header {
+//   align-items: center;
+//   border-bottom: 1px solid var(--color-dark);
+//   display: flex;
+//   height: var(--header-height);
+//   justify-content: space-between;
+//   padding: 0 20px;
+// }
 
-aside header h3 {
-  margin: 0;
-}
+// aside header h3 {
+//   margin: 0;
+// }
 
-aside header .close {
-  font-weight: bold;
-  opacity: 0.8;
-  text-decoration: none;
-  transition: all 200ms;
-  width: 20px;
-}
+// aside header .close {
+//   font-weight: bold;
+//   opacity: 0.8;
+//   text-decoration: none;
+//   transition: all 200ms;
+//   width: 20px;
+// }
 
-aside header .close:hover {
-  opacity: 1;
-}
+// aside header .close:hover {
+//   opacity: 1;
+// }
 
-aside header h2 {
-  margin-bottom: 0.6rem;
-  margin-top: 0;
-}
+// aside header h2 {
+//   margin-bottom: 0.6rem;
+//   margin-top: 0;
+// }
 
-aside main {
-  margin: 1rem;
-}
+// aside main {
+//   margin: 1rem;
+// }
 
-aside p {
-  margin: 0 0 0.25rem;
-}
+// aside p {
+//   margin: 0 0 0.25rem;
+// }
 
-aside p:last-child {
-  margin: 0;
-}
+// aside p:last-child {
+//   margin: 0;
+// }
 
-aside li {
-  margin-bottom: 0.125rem;
-}
+// aside li {
+//   margin-bottom: 0.125rem;
+// }
 
 .overlay {
   background: rgba(0, 0, 0, 0.2);
@@ -843,13 +993,6 @@ aside li {
 * routes/products.$handle.tsx
 * --------------------------------------------------
 */
-.product {
-  display: grid;
-  @media (min-width: 45em) {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 4rem;
-  }
-}
 
 .product h1 {
   margin-top: 0;
