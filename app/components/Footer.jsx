@@ -10,10 +10,6 @@ export function Footer() {
     
     return (
       <footer className="footer landing-footer">
-        <div className="credit">
-          <p>© True History Brewing, 2024</p>
-          <p>Website designed by <a href="https://danateagle.com" target="_blank">Dana Teagle</a></p>
-        </div>
       </footer>
     )
 
@@ -31,9 +27,12 @@ export function Footer() {
             <img src={contact} className="button-icon" />
           </Link>
         </div>
+        <hr/>
         <div className="credit">
-          <p>© True History Brewing, 2024</p>
           <p>Website designed by <a href="https://danateagle.com" target="_blank">Dana Teagle</a></p>
+        </div>
+        <div className="copyright">
+          <p>© True History Brewing, 2024</p>
         </div>
       </footer>
     );
