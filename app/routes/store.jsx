@@ -8,7 +8,7 @@ import {Image, Money} from '@shopify/hydrogen';
  */
 export const meta = () => {
   return [
-    {title: 'True History Brewing | Toronto, ON'},
+    {title: 'True History Brewing - Online Store'},
     {description: 'Brewing Low & Slow'},
   ];
 };

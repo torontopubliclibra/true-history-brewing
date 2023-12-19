@@ -1,3 +1,5 @@
+import arrowRight from './../../public/assets/icons/arrow-right.svg';
+
 /**
  * A side bar component with Overlay that works without JavaScript.
  * @example
@@ -25,8 +27,8 @@ export function Aside({children, heading, id = 'aside'}) {
       />
       <aside>
         <header>
-          <h3>{heading}</h3>
           <CloseAside />
+          <h3>{heading}</h3>
         </header>
         <main>{children}</main>
       </aside>
@@ -38,7 +40,7 @@ function CloseAside() {
   return (
     /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
     <a className="close" href="#" onChange={() => history.go(-1)}>
-      &times;
+      <img src={arrowRight} className="button-icon" />
     </a>
   );
 }

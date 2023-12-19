@@ -3,7 +3,7 @@
  */
 export const meta = () => {
   return [
-    {title: 'True History Brewing | Toronto, ON'},
+    {title: 'True History Brewing - Contact'},
     {description: 'Brewing Low & Slow'},
   ];
 };

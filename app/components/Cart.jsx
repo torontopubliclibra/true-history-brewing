@@ -67,22 +67,11 @@ function CartLines({lines, layout}) {
  */
 function CartLineItem({layout, line}) {
   const {id, merchandise} = line;
-  const {product, title, image, selectedOptions} = merchandise;
+  const {product, selectedOptions} = merchandise;
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
 
   return (
     <li key={id} className="cart-line">
-      {image && (
-        <Image
-          alt={title}
-          aspectRatio="1/1"
-          data={image}
-          height={100}
-          loading="lazy"
-          width={100}
-        />
-      )}
-
       <div>
         <Link
           prefetch="intent"
@@ -99,15 +88,6 @@ function CartLineItem({layout, line}) {
           </p>
         </Link>
         <CartLinePrice line={line} as="span" />
-        <ul>
-          {selectedOptions.map((option) => (
-            <li key={option.name}>
-              <small>
-                {option.name}: {option.value}
-              </small>
-            </li>
-          ))}
-        </ul>
         <CartLineQuantity line={line} />
       </div>
     </li>
@@ -142,20 +122,23 @@ export function CartSummary({cost, layout, children = null}) {
     layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
 
   return (
-    <div aria-labelledby="cart-summary" className={className}>
-      <h4>Totals</h4>
-      <dl className="cart-subtotal">
-        <dt>Subtotal</dt>
-        <dd>
-          {cost?.subtotalAmount?.amount ? (
-            <Money data={cost?.subtotalAmount} />
-          ) : (
-            '-'
-          )}
-        </dd>
-      </dl>
-      {children}
-    </div>
+    <>
+      <hr/>
+      <div aria-labelledby="cart-summary" className={className}>
+        <h4>Totals</h4>
+        <dl className="cart-subtotal">
+          <dt>Subtotal</dt>
+          <dd>
+            {cost?.subtotalAmount?.amount ? (
+              <Money data={cost?.subtotalAmount} />
+            ) : (
+              '-'
+            )}
+          </dd>
+        </dl>
+        {children}
+      </div>
+    </>
   );
 }
 
@@ -254,10 +237,10 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
       </p>
       <br />
       <Link
-        to="/collections"
+        to="/store"
         onClick={() => {
           if (layout === 'aside') {
-            window.location.href = '/collections';
+            window.location.href = '/store';
           }
         }}
       >

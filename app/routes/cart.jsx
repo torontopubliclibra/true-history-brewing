@@ -9,7 +9,7 @@ import {useRootLoaderData} from '~/root';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: `Hydrogen | Cart`}];
+  return [{title: `True History Brewing - Online Store - Cart`}];
 };
 
 /**

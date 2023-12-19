@@ -7,7 +7,7 @@ import compass from './../../public/assets/icons/compass.svg';
  */
 export const meta = () => {
   return [
-    {title: 'True History Brewing | Toronto, ON'},
+    {title: 'True History Brewing - Taproom'},
     {description: 'Brewing Low & Slow'},
   ];
 };
