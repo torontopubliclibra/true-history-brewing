@@ -27,11 +27,76 @@ h2 {
 body {
   background-image: url("./../../public/assets/wooden-bg.jpg"); }
 
+aside {
+  background: url("./../../public/assets/wooden-bg.jpg");
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.8));
+  border-left: solid #1F1F1F 4px;
+  height: 100vh;
+  max-width: var(--aside-width);
+  min-width: var(--aside-width);
+  position: fixed;
+  right: calc(-1 * var(--aside-width));
+  top: 0;
+  transition: transform 200ms ease-in-out; }
+  aside header {
+    height: 75px !important;
+    background: #F1EDE2;
+    align-items: center;
+    border-bottom: solid #1F1F1F 4px;
+    display: flex;
+    height: var(--header-height);
+    justify-content: space-between;
+    padding: 0 20px; }
+    aside header h2 {
+      margin-bottom: 0.6rem;
+      margin-top: 0; }
+    aside header h3 {
+      width: 100%;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 25px;
+      text-align: right; }
+    aside header .close {
+      opacity: 0.8;
+      text-decoration: none;
+      transition: all 200ms;
+      width: 20px; }
+      aside header .close img {
+        width: 25px;
+        margin-top: 10px; }
+      aside header .close:hover {
+        opacity: 1; }
+  aside main {
+    height: calc(100vh - 75px);
+    background-color: rgba(216, 181, 110, 0.9);
+    padding: 15px 0; }
+    aside main hr {
+      height: 4px;
+      margin-top: 10px;
+      margin-bottom: 20px; }
+    aside main .cart-main {
+      height: unset;
+      max-height: none;
+      padding: 25px; }
+      aside main .cart-main .cart-summary-aside {
+        background: none;
+        position: unset;
+        border: none;
+        padding: 0;
+        width: unset; }
+  aside p {
+    margin: 0 0 0.25rem; }
+    aside p::last-child {
+      margin: 0; }
+  aside li {
+    margin-bottom: 0.125rem; }
+
 hr {
   height: 8px;
   width: 100%;
   background-color: #778d79;
-  border: solid #1F1F1F 3px; }
+  border: solid #1F1F1F 3px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.8)); }
 
 .hours {
   display: flex;
@@ -43,6 +108,7 @@ hr {
   border: solid #1F1F1F 4px;
   outline: solid #D8B56E 10px;
   box-shadow: 0 0 0 14px #1F1F1F;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.8));
   border-radius: 15px;
   width: 375px;
   margin: 15px;
@@ -153,7 +219,8 @@ header, footer {
   display: flex; }
 
 .landing-header, .landing-footer {
-  height: calc(25vh - 5px); }
+  height: calc(50vh - 205px);
+  min-height: 100px; }
 
 header {
   height: 125px;
@@ -168,26 +235,34 @@ header {
     height: 15px; }
 
 footer {
-  height: 175px;
+  height: 225px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-top: solid #1F1F1F 5px;
   margin-top: auto; }
+  footer hr {
+    background-color: #C28165;
+    height: 4px;
+    max-width: 90%;
+    margin: 25px 0; }
   footer.landing-footer {
     justify-content: flex-end; }
     footer.landing-footer .credit {
       padding-bottom: 40px; }
-  footer .credit p {
+  footer .credit p, footer .copyright p {
+    font-family: "Saudagar";
+    font-weight: 800;
     text-align: center;
     font-size: 16px;
-    font-style: italic;
     letter-spacing: 2px;
     padding-bottom: 5px; }
-    footer .credit p a {
+    footer .credit p a, footer .copyright p a {
+      font-family: "Saudagar";
       text-decoration: underline; }
+  footer .copyright p {
+    font-size: 20px; }
   footer .footer-buttons {
-    margin-bottom: 15px;
     display: flex;
     gap: 15px; }
     footer .footer-buttons .button-primary {
@@ -195,8 +270,48 @@ footer {
       font-size: 15px;
       height: 15px; }
 
+main .product {
+  display: flex;
+  background-color: rgba(119, 141, 121, 0.9); }
+  main .product .product-image img {
+    width: 450px !important;
+    height: 300px !important;
+    object-fit: cover;
+    border: solid 5px #1F1F1F;
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.8));
+    border-radius: 0;
+    margin: 50px; }
+  main .product .product-main {
+    width: 45%;
+    margin: 50px;
+    margin-top: 75px;
+    margin-left: 0; }
+    main .product .product-main h1 {
+      font-size: 40px;
+      font-family: "Saudagar";
+      text-transform: uppercase;
+      margin: 0; }
+    main .product .product-main .product-price {
+      font-size: 25px;
+      font-family: "Bogue-ExtraBold";
+      margin: 0; }
+    main .product .product-main hr {
+      background-color: #BC4749;
+      margin: 10px 0;
+      height: 4px; }
+    main .product .product-main .product-description {
+      font-size: 20px;
+      font-family: "Bogue-Regular";
+      margin: 0; }
+    main .product .product-main button {
+      padding: 20px 30px;
+      margin-top: 20px;
+      cursor: pointer; }
+      main .product .product-main button:hover {
+        background-color: #BC4749; }
+
 main .landing {
-  height: 50vh;
+  height: 400px;
   padding: 0; }
   main .landing .landing-welcome {
     display: flex;
@@ -257,24 +372,25 @@ main .heading {
       font-style: italic; }
 
 main .main-subheading {
-  padding: 25px 0;
+  padding: 50px 0;
   background-color: rgba(119, 141, 121, 0.9);
   flex-direction: row;
   gap: 5%; }
   main .main-subheading h2 {
-    max-width: 50%;
+    max-width: 475px;
     filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8));
-    font-size: 80px;
+    font-size: 95px;
     font-family: 'Saudagar';
-    line-height: 1;
+    line-height: 0.9;
+    letter-spacing: 1.5;
     font-style: normal; }
     main .main-subheading h2 .location {
       font-family: 'Saudagar';
-      font-size: 40px;
+      font-size: 50px;
       font-style: italic; }
   main .main-subheading .bar-sketch {
     max-width: 30%;
-    min-width: 400px;
+    min-width: 500px;
     filter: drop-shadow(-3px 3px 2px #1F1F1F); }
 
 main .main-taproom {
@@ -282,17 +398,18 @@ main .main-taproom {
   background-color: rgba(121, 79, 62, 0.9); }
   main .main-taproom .taproom-heading {
     font-size: 30px;
-    background-color: #F1EDE2;
+    background-color: #D6D0C0;
     border: solid #1F1F1F 4px;
     border-radius: 40px;
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.8));
     color: #1F1F1F;
     padding: 3px 30px;
     margin: 0 5%;
-    max-width: 65%;
+    max-width: 800px;
     text-align: center;
     font-style: italic; }
   main .main-taproom .taproom-info {
-    width: 95%;
+    width: 90%;
     display: flex;
     justify-content: right; }
     main .main-taproom .taproom-info .address-block {
@@ -330,7 +447,8 @@ main .main-events {
   main .main-events .events-photo {
     max-width: 45%;
     border-right: solid #1F1F1F 5px;
-    border-radius: 0; }
+    border-radius: 0;
+    filter: sepia(20%); }
   main .main-events h3 {
     font-size: 35px;
     font-family: "Bogue-ExtraBold";
@@ -400,6 +518,7 @@ main .store {
     max-width: 250px; }
     main .store .recommended-product img {
       border: solid 3px #1F1F1F;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.8));
       border-radius: 0;
       aspect-ratio: 6/3;
       object-fit: cover; }
@@ -426,54 +545,6 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
-aside {
-  background: var(--color-light);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
-  height: 100vh;
-  max-width: var(--aside-width);
-  min-width: var(--aside-width);
-  position: fixed;
-  right: calc(-1 * var(--aside-width));
-  top: 0;
-  transition: transform 200ms ease-in-out; }
-
-aside header {
-  align-items: center;
-  border-bottom: 1px solid var(--color-dark);
-  display: flex;
-  height: var(--header-height);
-  justify-content: space-between;
-  padding: 0 20px; }
-
-aside header h3 {
-  margin: 0; }
-
-aside header .close {
-  font-weight: bold;
-  opacity: 0.8;
-  text-decoration: none;
-  transition: all 200ms;
-  width: 20px; }
-
-aside header .close:hover {
-  opacity: 1; }
-
-aside header h2 {
-  margin-bottom: 0.6rem;
-  margin-top: 0; }
-
-aside main {
-  margin: 1rem; }
-
-aside p {
-  margin: 0 0 0.25rem; }
-
-aside p:last-child {
-  margin: 0; }
-
-aside li {
-  margin-bottom: 0.125rem; }
-
 .overlay {
   background: rgba(0, 0, 0, 0.2);
   bottom: 0;
@@ -704,13 +775,6 @@ aside li {
 * routes/products.$handle.tsx
 * --------------------------------------------------
 */
-.product {
-  display: grid; }
-  @media (min-width: 45em) {
-    .product {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 4rem; } }
-
 .product h1 {
   margin-top: 0; }
 
