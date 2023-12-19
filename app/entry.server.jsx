@@ -15,7 +15,23 @@ export default async function handleRequest(
   responseHeaders,
   remixContext,
 ) {
-  const {nonce, header, NonceProvider} = createContentSecurityPolicy();
+
+  const {initialNonce, NonceProvider} = createContentSecurityPolicy();
+
+  function updateContentSecurityPolicy(initialNonce) {
+    const nonce = initialNonce.toString('base64');
+
+    const csp = `default-src 'self'; connect-src 'self' https://thb-data-3vd2n.ondigitalocean.app; script-src 'self' 'unsafe-inline' 'nonce-${nonce}'; style-src 'self' 'unsafe-inline';`;
+  
+    return {
+      initialNonce,
+      header: {
+        'Content-Security-Policy': csp,
+      },
+    };
+  }
+
+  const {header, nonce} = updateContentSecurityPolicy(initialNonce);
 
   const body = await renderToReadableStream(
     <NonceProvider>
