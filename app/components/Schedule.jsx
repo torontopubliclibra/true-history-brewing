@@ -4,7 +4,7 @@ import diamond from './../../public/assets/icons/diamond.svg';
 
 export function Schedule() {
 
-    const { schedule, setSchedule } = useContext(ScheduleContext);
+    const { schedule } = useContext(ScheduleContext);
   
     function convertTimeToAmPm(time) {
       
@@ -34,17 +34,51 @@ export function Schedule() {
       Sun: "12:00pm–10:00pm"
     };
   
-    if (schedule.publishedAt) {
-  
-      taproomHours = {
-        Mon: "Closed",
-        Tues: convertTimeToAmPm(schedule.tues_start) + `–` + convertTimeToAmPm(schedule.tues_end),
-        Weds: convertTimeToAmPm(schedule.weds_start) + `–` + convertTimeToAmPm(schedule.weds_end),
-        Thurs: convertTimeToAmPm(schedule.thurs_start) + `–` + convertTimeToAmPm(schedule.thurs_end),
-        Fri: convertTimeToAmPm(schedule.fri_start) + `–` + convertTimeToAmPm(schedule.fri_end),
-        Sat: convertTimeToAmPm(schedule.sat_start) + `–` + convertTimeToAmPm(schedule.sat_end),
-        Sun: convertTimeToAmPm(schedule.sun_start) + `–` + convertTimeToAmPm(schedule.sun_end)
-      };
+    if (schedule) {
+
+      console.log(schedule);
+
+      if (schedule.mon_service === 'closed') {
+        taproomHours.Mon = "Closed";
+      } else if ((schedule.mon_service === 'open') && schedule.mon_start && schedule.mon_end) {
+        taproomHours.Mon = convertTimeToAmPm(schedule.mon_start) + `–` + convertTimeToAmPm(schedule.mon_end)
+      }
+
+      if (schedule.tues_service === 'closed') {
+        taproomHours.Tues = "Closed";
+      } else if ((schedule.tues_service === 'open') && schedule.tues_start && schedule.tues_end) {
+        taproomHours.Tues = convertTimeToAmPm(schedule.tues_start) + `–` + convertTimeToAmPm(schedule.tues_end)
+      }
+
+      if (schedule.weds_service === 'closed') {
+        taproomHours.Weds = "Closed";
+      } else if ((schedule.weds_service === 'open') && schedule.weds_start && schedule.weds_end) {
+        taproomHours.Weds = convertTimeToAmPm(schedule.weds_start) + `–` + convertTimeToAmPm(schedule.weds_end)
+      }
+      
+      if (schedule.thurs_service === 'closed') {
+        taproomHours.Thurs = "Closed";
+      } else if ((schedule.thurs_service === 'open') && schedule.thurs_start && schedule.thurs_end) {
+        taproomHours.Thurs = convertTimeToAmPm(schedule.thurs_start) + `–` + convertTimeToAmPm(schedule.thurs_end)
+      }
+
+      if (schedule.fri_service === 'closed') {
+        taproomHours.Fri = "Closed";
+      } else if ((schedule.fri_service === 'open') && schedule.fri_start && schedule.fri_end) {
+        taproomHours.Fri = convertTimeToAmPm(schedule.fri_start) + `–` + convertTimeToAmPm(schedule.fri_end)
+      }
+
+      if (schedule.sat_service === 'closed') {
+        taproomHours.Sat = "Closed";
+      } else if ((schedule.sat_service === 'open') && schedule.sat_start && schedule.sat_end) {
+        taproomHours.Sat = convertTimeToAmPm(schedule.sat_start) + `–` + convertTimeToAmPm(schedule.sat_end)
+      }
+
+      if (schedule.sun_service === 'closed') {
+        taproomHours.Sun = "Closed";
+      } else if ((schedule.sun_service === 'open') && schedule.sun_start && schedule.sun_end) {
+        taproomHours.Sun = convertTimeToAmPm(schedule.sun_start) + `–` + convertTimeToAmPm(schedule.sun_end)
+      }
     }
   
     let formattedHours = [];
