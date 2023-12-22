@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react';
 import icon from './../../public/assets/thb-icon.png';
 import flourishLeft from './../../public/assets/icons/flourish-left.svg';
 import flourishRight from './../../public/assets/icons/flourish-right.svg';
@@ -14,6 +15,24 @@ export const meta = () => {
 };
 
 export default function Homepage() {
+
+  let [ageVerified, setAgeVerified] = useState(null);
+
+  useEffect(() => {
+    const savedAgeVerified = window.localStorage.getItem("ageVerified");
+
+    if (savedAgeVerified === "true") {
+      setAgeVerified(true);
+      window.location.replace("/home");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (ageVerified = true) {
+      window.localStorage.setItem("ageVerified", "true");
+    }
+  }, [ageVerified]);
+
   return (
     <section className='landing'>
         <div className="landing-welcome">
@@ -23,7 +42,7 @@ export default function Homepage() {
         <div className="landing-main">
           <p>By clicking Enter, you verify that you are 19 years of age or older</p>
           <div className="landing-buttons">
-            <Link to="/home" className='button button-primary decorative'>
+            <Link onClick={() => setAgeVerified(true)} to="/home" className='button button-primary decorative'>
               <img src={flourishLeft} className="flourish" />
               Enter
               <img src={flourishRight} className="flourish" />
