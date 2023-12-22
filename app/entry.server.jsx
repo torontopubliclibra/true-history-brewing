@@ -9,13 +9,23 @@ import {createContentSecurityPolicy} from '@shopify/hydrogen';
  * @param {Headers} responseHeaders
  * @param {EntryContext} remixContext
  */
+
+
+
 export default async function handleRequest(
   request,
   responseStatusCode,
   responseHeaders,
   remixContext,
 ) {
-  const {nonce, header, NonceProvider} = createContentSecurityPolicy();
+  let {nonce, header, NonceProvider} = createContentSecurityPolicy({
+    connectSrc: [
+      "'self'",
+      "'none'",
+      'ws://localhost:8002',
+      'https://thb-data-3vd2n.ondigitalocean.app/',
+    ],
+  });
 
   const body = await renderToReadableStream(
     <NonceProvider>
