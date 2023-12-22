@@ -106,6 +106,7 @@ export async function loader({context}) {
 }
 
 export const ScheduleContext = createContext(null);
+export const MenuContext = createContext(null);
 
 export default function App() {
   const nonce = useNonce();
@@ -113,16 +114,25 @@ export default function App() {
   const data = useLoaderData();
 
   const [schedule, setSchedule] = useState({});
+  const [menus, setMenus] = useState({});
+
+  const fetchSchedules = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
+    const newSchedule = await response.json();
+    setSchedule(newSchedule.data[0].attributes);
+  };
+
+  const fetchMenus = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/beer-menus`);
+    const newMenus = await response.json();
+    setMenus(newMenus.data[0].attributes);
+  };
 
   useEffect(() => {
-
-    const fetchSchedules = async () => {
-      const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
-      const newSchedule = await response.json();
-      setSchedule(newSchedule.data[0].attributes);
-    };
-
     fetchSchedules();
+    fetchMenus();
+
+    console.log('fetching new data')
   }, []);
 
   return (
@@ -134,10 +144,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <ScheduleContext.Provider value={{ schedule: schedule, setSchedule: setSchedule }}>
-          <Layout {...data}>
-            <Outlet />
-          </Layout>
+        <ScheduleContext.Provider value={{ schedule: schedule }}>
+          <MenuContext.Provider value={{ menus: menus }}>
+            <Layout {...data}>
+              <Outlet />
+            </Layout>
+          </MenuContext.Provider>
         </ScheduleContext.Provider>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />

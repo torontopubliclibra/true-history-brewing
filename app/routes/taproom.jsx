@@ -1,6 +1,8 @@
 import {Link} from '@remix-run/react';
 import {Schedule} from './../components/Schedule';
 import compass from './../../public/assets/icons/compass.svg';
+import { useContext } from 'react';
+import { MenuContext } from '../root';
 
 /**
  * @type {MetaFunction}
@@ -13,6 +15,9 @@ export const meta = () => {
 };
 
 export default function Homepage() {
+
+  const { menus } = useContext(MenuContext);
+
   return (
     <>
         <section className="heading taproom-heading">

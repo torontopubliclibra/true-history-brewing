@@ -36,8 +36,6 @@ export function Schedule() {
   
     if (schedule) {
 
-      console.log(schedule);
-
       if (schedule.mon_service === 'closed') {
         taproomHours.Mon = "Closed";
       } else if ((schedule.mon_service === 'open') && schedule.mon_start && schedule.mon_end) {
