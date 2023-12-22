@@ -1,20 +1,10 @@
-import {useState, useEffect} from 'react';
+import { useContext } from 'react';
+import { ScheduleContext } from '../root';
 import diamond from './../../public/assets/icons/diamond.svg';
 
 export function Schedule() {
 
-    const [schedule, setSchedule] = useState({});
-
-    useEffect(() => {
-  
-      const fetchSchedules = async () => {
-        const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
-        const newSchedule = await response.json();
-        setSchedule(newSchedule.data[0].attributes);
-      };
-  
-      fetchSchedules();
-    }, []);
+    const { schedule, setSchedule } = useContext(ScheduleContext);
   
     function convertTimeToAmPm(time) {
       
@@ -60,7 +50,7 @@ export function Schedule() {
     let formattedHours = [];
   
     for (let [key, value] of Object.entries(taproomHours)) {
-      formattedHours.push(<li>{key}: <span className='time'>{value}</span></li>);
+      formattedHours.push(<li key={key}>{key}: <span className='time'>{value}</span></li>);
     };
 
     return <div className="hours">

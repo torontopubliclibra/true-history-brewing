@@ -1,3 +1,4 @@
+import {useState, useEffect, createContext} from 'react';
 import {useNonce} from '@shopify/hydrogen';
 import {defer} from '@shopify/remix-oxygen';
 import {
@@ -104,10 +105,25 @@ export async function loader({context}) {
   );
 }
 
+export const ScheduleContext = createContext(null);
+
 export default function App() {
   const nonce = useNonce();
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
+
+  const [schedule, setSchedule] = useState({});
+
+  useEffect(() => {
+
+    const fetchSchedules = async () => {
+      const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
+      const newSchedule = await response.json();
+      setSchedule(newSchedule.data[0].attributes);
+    };
+
+    fetchSchedules();
+  }, []);
 
   return (
     <html lang="en">
@@ -118,9 +134,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Layout {...data}>
-          <Outlet />
-        </Layout>
+        <ScheduleContext.Provider value={{ schedule: schedule, setSchedule: setSchedule }}>
+          <Layout {...data}>
+            <Outlet />
+          </Layout>
+        </ScheduleContext.Provider>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
