@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import icon from './../../public/assets/thb-icon.png';
 import flourishLeft from './../../public/assets/icons/flourish-left.svg';
 import flourishRight from './../../public/assets/icons/flourish-right.svg';
-import {Link} from '@remix-run/react';
+import { Link } from '@remix-run/react';
 import BarLoader from "react-spinners/BarLoader";
 
 /**

@@ -1,8 +1,8 @@
-import {useState, useEffect, createContext} from 'react';
-import {Link} from '@remix-run/react';
-import {useNonce} from '@shopify/hydrogen';
-import {defer} from '@shopify/remix-oxygen';
+import { useState, useEffect, createContext } from 'react';
+import { useNonce } from '@shopify/hydrogen';
+import { defer } from '@shopify/remix-oxygen';
 import {
+  Link,
   Links,
   Meta,
   Outlet,
@@ -14,10 +14,14 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
 } from '@remix-run/react';
-import favicon from '../public/favicon.svg';
+import { Layout } from '~/components/Layout';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
-import {Layout} from '~/components/Layout';
+import favicon from '../public/favicon.svg';
+import icon from '.././public/assets/thb-icon.png';
+import logo from '.././public/assets/thb-logo.png';
+import wallpaper from '.././public/assets/wallpaper.png';
+import woodenBackground from '.././public/assets/wooden-bg.jpg';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -47,9 +51,33 @@ export function links() {
     },
     {
       rel: 'preconnect',
-      href: 'https://shop.app',
+      href: 'https://thb-data-3vd2n.ondigitalocean.app',
     },
-    {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    {
+      rel: 'preload',
+      type: 'image',
+      href: icon,
+    },
+    {
+      rel: 'preload',
+      type: 'image',
+      href: logo,
+    },
+    {
+      rel: 'preload',
+      type: 'image',
+      href: wallpaper,
+    },
+    {
+      rel: 'preload',
+      type: 'image',
+      href: woodenBackground,
+    },
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: favicon
+    },
   ];
 }
 
