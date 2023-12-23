@@ -7,7 +7,7 @@ body {
 
 aside {
   background: url('./../../public/assets/wooden-bg.jpg');
-  filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+  filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
   border-left: solid $black 4px;
   height: 100vh;
   max-width: var(--aside-width);
@@ -23,7 +23,6 @@ aside {
     align-items: center;
     border-bottom: solid $black 4px;
     display: flex;
-    height: var(--header-height);
     justify-content: space-between;
     padding: 0 20px;
 
@@ -99,8 +98,8 @@ hr {
   height: 8px;
   width: 100%;
   background-color: $color1;
-  border: solid $black 3px;
-  filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+  border: solid $black 4px;
+  filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
 }
 
 .hours {
@@ -113,7 +112,7 @@ hr {
   border: solid $black 4px;
   outline: solid $color2 10px;
   box-shadow: 0 0 0 14px $black;
-  filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+  filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
   border-radius: 15px;
   width: 375px;
   margin: 15px;
@@ -161,8 +160,8 @@ hr {
   align-items: center;
   height: 20px;
   background: $color2;
-  border: 4px $black solid;
-  filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+  border: solid $black 3px;
+  filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
   padding: 10px 30px 10px 30px;
   margin: 5px;
   color: $black;
@@ -225,7 +224,7 @@ hr {
     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
   }
   &:hover {
-    background: $color2;
+    background: $color3;
     color: $black;
     img {
       filter: none;
@@ -258,11 +257,28 @@ header, footer {
 
 header {
   height: 125px;
-  border-bottom: solid $black 5px;
+  border-bottom: solid $black 4px;
+  filter: drop-shadow(0px 3px 2px rgba($black, 0.5));
   padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1;
+
+  nav {
+    a {
+      color: $black;
+      font-family: "Bogue-Regular";
+      font-size: 14px;
+      text-transform: uppercase;
+      &:hover {
+        text-decoration: none;
+        font-weight: 600;
+      }
+      &.active {
+        font-weight: 600;
+      }
+    }
+  }
 
   .button-primary {
     padding: 10px 20px;
@@ -276,7 +292,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-top: solid $black 5px;
+  border-top: solid $black 4px;
+  filter: drop-shadow(0px -3px 2px rgba($black, 0.5));
   margin-top: auto;
 
   hr {
@@ -336,7 +353,7 @@ main {
       height: 300px !important;
       object-fit: cover;
       border: solid 5px $black;
-      filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+      filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
       border-radius: 0;
       margin: 50px;
     }
@@ -376,6 +393,26 @@ main {
           background-color: $color4;
         }
       }
+    }
+  }
+
+  .route-error {
+    min-height: calc(100vh - 358px);
+    background-color: rgba($color1, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1, h2 {
+      margin: 0
+    }
+    h1 {
+      font-size: 75px;
+      font-family: 'Saudagar';
+    }
+    h2 {
+      padding-top: 10px;
+      padding-bottom: 35px;
     }
   }
 
@@ -435,10 +472,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: solid $black 5px;
+    border-bottom: solid $black 4px;
   }
   .heading {
-    background-color: rgba($light, 0.9);
+    background-color: rgba($less-light, 0.9);
     flex-direction: column;
     
     h2 {
@@ -462,6 +499,7 @@ main {
     gap: 5%;
 
     h2 {
+      color: $light;
       max-width: 475px;
       filter: drop-shadow(-3px 3px 0.5px rgba($black, 0.8));
       font-size: 95px;
@@ -487,10 +525,10 @@ main {
 
     .taproom-heading {
       font-size: 30px;
-      background-color: $less-light;
+      background-color: $light;
       border: solid $black 4px;
       border-radius: 40px;
-      filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+      filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
       color: $black;
       padding: 3px 30px;
       margin: 0 5%;
@@ -538,13 +576,13 @@ main {
   }
   .main-events {
     display: flex;
-    border-top: solid $black 5px;
+    border-top: solid $black 4px;
     color: $black;
-    background-color: rgba($light, 0.9);
+    background-color: rgba($less-light, 0.9);
     padding: 0;
     .events-photo {
       max-width: 45%;
-      border-right: solid $black 5px;
+      border-right: solid $black 4px;
       border-radius: 0;
       filter: sepia(20%);
     }
@@ -584,11 +622,11 @@ main {
   .main-newsletter {
     color: $black;
     background-color: rgba($color2, 0.9);
-    border-top: solid $black 5px;
+    border-top: solid $black 4px;
   }
   .taproom-address {
     background-color: rgba($color1, 0.9);
-    border-bottom: solid $black 5px;
+    border-bottom: solid $black 4px;
     padding-left: 5%;
     p {
       color: $white;
@@ -604,7 +642,7 @@ main {
   .taproom-menus {
     color: $light;
     background-color: rgba($dark, 0.9);
-    border-bottom: solid $black 5px;
+    border-bottom: solid $black 4px;
   }
   .taproom-events {
     background-color: rgba($light, 0.9);
@@ -629,7 +667,7 @@ main {
       max-width: 250px;
       img {
         border: solid 3px $black;
-        filter: drop-shadow(-3px 3px 2px rgba($black, 0.8));
+        filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
         border-radius: 0;
         aspect-ratio: 6/3;
         object-fit: cover;
