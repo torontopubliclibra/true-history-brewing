@@ -16,6 +16,7 @@
   "dependencies": {
     "@fullcalendar/core": "^6.1.10",
     "@fullcalendar/daygrid": "^6.1.10",
+    "@fullcalendar/list": "^6.1.10",
     "@fullcalendar/react": "^6.1.10",
     "@remix-run/react": "2.1.0",
     "@shopify/cli": "3.50.0",
