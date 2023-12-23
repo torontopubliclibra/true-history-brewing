@@ -1,11 +1,12 @@
-import {Await, NavLink, Link} from '@remix-run/react';
+import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
 import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
 import cart from './../../public/assets/icons/cart.svg';
-import signIn from './../../public/assets/icons/sign-in.svg';
-import instagram from './../../public/assets/icons/instagram.svg';
+// import signIn from './../../public/assets/icons/sign-in.svg';
+// import instagram from './../../public/assets/icons/instagram.svg';
+import cornerRightDown from './../../public/assets/icons/corner-right-down.svg';
 
 /**
  * @param {HeaderProps}
@@ -115,16 +116,16 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
 function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
-      <HeaderMenuMobileToggle />
       <CartToggle cart={cart} />
+      <HeaderMenuMobileToggle />
       {/* <NavLink prefetch="intent" to="/account" style={activeLinkStyle}  className="button button-primary">
         {isLoggedIn ? 'Account' : 'Sign in'}
         <img src={signIn} className="button-icon" />
       </NavLink> */}
-      <Link to="https://instagram.com/truehistorybrewing" target="_blank" className="button button-primary">
+      {/* <Link to="https://instagram.com/truehistorybrewing" target="_blank" className="button button-primary">
         Instagram
         <img src={instagram} className="button-icon" />
-      </Link>
+      </Link> */}
       {/* <SearchToggle /> */}
     </nav>
   );
@@ -132,8 +133,9 @@ function HeaderCtas({isLoggedIn, cart}) {
 
 function HeaderMenuMobileToggle() {
   return (
-    <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      <h3>☰</h3>
+    <a className="button button-primary" href="#mobile-menu-aside">
+      Menu
+      <img src={cornerRightDown} className="button-icon" />
     </a>
   );
 }
