@@ -1,4 +1,5 @@
 import {useState, useEffect, createContext} from 'react';
+import {Link} from '@remix-run/react';
 import {useNonce} from '@shopify/hydrogen';
 import {defer} from '@shopify/remix-oxygen';
 import {
@@ -105,8 +106,7 @@ export async function loader({context}) {
   );
 }
 
-export const ScheduleContext = createContext(null);
-export const MenuContext = createContext(null);
+export const StrapiContext = createContext(null);
 
 export default function App() {
   const nonce = useNonce();
@@ -115,6 +115,7 @@ export default function App() {
 
   const [schedule, setSchedule] = useState({});
   const [menus, setMenus] = useState({});
+  const [events, setEvents] = useState({});
 
   const fetchSchedules = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
@@ -124,13 +125,20 @@ export default function App() {
 
   const fetchMenus = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/beer-menus`);
-    const newMenus = await response.json();
+    let newMenus = await response.json();
     setMenus(newMenus.data[0].attributes);
+  };
+
+  const fetchEvents = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/events`);
+    let newEvents = await response.json();
+    setEvents(newEvents.data[0].attributes);
   };
 
   useEffect(() => {
     fetchSchedules();
     fetchMenus();
+    fetchEvents();
 
     console.log('fetching new data')
   }, []);
@@ -144,13 +152,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <ScheduleContext.Provider value={{ schedule: schedule }}>
-          <MenuContext.Provider value={{ menus: menus }}>
-            <Layout {...data}>
-              <Outlet />
-            </Layout>
-          </MenuContext.Provider>
-        </ScheduleContext.Provider>
+        <StrapiContext.Provider value={{ schedule: schedule, menus: menus, events: events }}>
+          <Layout {...data}>
+            <Outlet />
+          </Layout>
+        </StrapiContext.Provider>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
@@ -183,15 +189,13 @@ export function ErrorBoundary() {
       </head>
       <body>
         <Layout {...rootData}>
-          <div className="route-error">
-            <h1>Oops</h1>
-            <h2>{errorStatus}</h2>
-            {errorMessage && (
-              <fieldset>
-                <pre>{errorMessage}</pre>
-              </fieldset>
-            )}
-          </div>
+          <main className="route-error">
+            <h1>{errorStatus}</h1>
+            <h2>Looks like you took a wrong turn</h2>
+            <Link to="/home" className='button button-tertiary'>
+              Go back to the Homepage
+            </Link>
+          </main>
         </Layout>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
