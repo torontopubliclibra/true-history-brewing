@@ -26,7 +26,7 @@ export function Header({header, isLoggedIn, cart}) {
 
     return (
       <header className="header">
-        <NavLink prefetch="intent" to="/home" style={activeLinkStyle} end>
+        <NavLink prefetch="intent" to="/home" className={activeLinkStyle} end>
           <img src={icon} class="thb-icon" alt="True History Brewing icon" />
         </NavLink>
         <HeaderMenu
@@ -60,22 +60,11 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
   
   return (
     <nav className={className} role="navigation">
-      {viewport === 'mobile' && (
-        <NavLink
-          end
-          onClick={closeAside}
-          prefetch="intent"
-          style={activeLinkStyle}
-          to="/home"
-        >
-          Home
-        </NavLink>
-      )}
       <NavLink
         end
         onClick={closeAside}
         prefetch="intent"
-        style={activeLinkStyle}
+        className={activeLinkStyle}
         to="/home"
         >
         Home
@@ -84,7 +73,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         end
         onClick={closeAside}
         prefetch="intent"
-        style={activeLinkStyle}
+        className={activeLinkStyle}
         to="/taproom"
         >
         Taproom
@@ -93,7 +82,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         end
         onClick={closeAside}
         prefetch="intent"
-        style={activeLinkStyle}
+        className={activeLinkStyle}
         to="/bottle-shop"
         >
         Bottle Shop
@@ -102,7 +91,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         end
         onClick={closeAside}
         prefetch="intent"
-        style={activeLinkStyle}
+        className={activeLinkStyle}
         to="/store"
         >
         Online Store
@@ -111,7 +100,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
         end
         onClick={closeAside}
         prefetch="intent"
-        style={activeLinkStyle}
+        className={activeLinkStyle}
         to="/contact"
         >
         Contact
@@ -224,14 +213,10 @@ const FALLBACK_HEADER_MENU = {
 /**
  * @param {{
  *   isActive: boolean;
- *   isPending: boolean;
  * }}
  */
-function activeLinkStyle({isActive, isPending}) {
-  return {
-    fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
-  };
+function activeLinkStyle({isActive}) {
+  return isActive ? 'active' : ''
 }
 
 /** @typedef {Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>} HeaderProps */
