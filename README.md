@@ -11,6 +11,7 @@ The site is built with React Remix, and uses [Hydrogen and Oxygen](https://shopi
 - [Hydrogen/Oxygen storefront](https://shopify.dev/custom-storefronts/hydrogen)
 - [Strapi CMS](https://strapi.io)
 - [FullCalendar](https://fullcalendar.io)
+- [react-spinners](https://www.npmjs.com/package/react-spinners)
 - [RemixIcon](https://remixicon.com)
 
 ## Setup
