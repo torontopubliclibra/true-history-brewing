@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { ScheduleContext } from '../root';
+import { StrapiContext } from '../root';
 import diamond from './../../public/assets/icons/diamond.svg';
 
 export function Schedule() {
 
-    const { schedule } = useContext(ScheduleContext);
+    const { schedule } = useContext(StrapiContext);
   
     function convertTimeToAmPm(time) {
       
@@ -82,7 +82,11 @@ export function Schedule() {
     let formattedHours = [];
   
     for (let [key, value] of Object.entries(taproomHours)) {
-      formattedHours.push(<li key={key}>{key}: <span className='time'>{value}</span></li>);
+      formattedHours.push(
+        <li key={key}>
+          {key}: <span className='time'>{value}</span>
+        </li>
+      );
     };
 
     return <div className="hours">
