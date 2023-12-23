@@ -102,6 +102,31 @@ hr {
   filter: drop-shadow(-3px 3px 2px rgba($black, 0.5));
 }
 
+.loading {
+  padding: 0;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  .thb-icon {
+    width: 200px;
+    height: auto;
+  }
+  .loader {
+    margin-top: 30px !important;
+    width: 175px;
+    background: none;
+    transform: scale(1.25);
+
+    span {
+      height: 6px !important;
+      border-radius: 0 !important;
+    }
+  }
+}
+
 .hours {
   display: flex;
   flex-direction: column;
