@@ -1,6 +1,6 @@
-import {Await, NavLink} from '@remix-run/react';
-import {Suspense} from 'react';
-import {useRootLoaderData} from '~/root';
+import { Suspense } from 'react';
+import { Await, NavLink } from '@remix-run/react';
+import { useRootLoaderData } from '~/root';
 import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
 import cart from './../../public/assets/icons/cart.svg';

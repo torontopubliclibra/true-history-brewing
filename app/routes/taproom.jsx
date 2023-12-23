@@ -108,10 +108,6 @@ export default function Homepage() {
         </section>
         <section className="taproom-events" id="calendar">
           <h3>Upcoming Events</h3>
-          <ul className='events-views'>
-            <li>List view</li>
-            <li>Calendar view</li>
-          </ul>
           <ul>
             <li>{event1.name} - {event1.date.day}/{event1.date.month}/{event1.date.year} {event1.date.hour}pm</li>
           </ul>
