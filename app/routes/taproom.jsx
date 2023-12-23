@@ -1,8 +1,9 @@
-import {Link} from '@remix-run/react';
-import {Schedule} from './../components/Schedule';
-import compass from './../../public/assets/icons/compass.svg';
 import { useContext } from 'react';
 import { StrapiContext } from '../root';
+import { Link } from '@remix-run/react';
+import { Schedule } from './../components/Schedule';
+import { Calendar } from './../components/Calendar';
+import compass from './../../public/assets/icons/compass.svg';
 
 /**
  * @type {MetaFunction}
@@ -114,6 +115,7 @@ export default function Homepage() {
           <ul>
             <li>{event1.name} - {event1.date.day}/{event1.date.month}/{event1.date.year} {event1.date.hour}pm</li>
           </ul>
+          <Calendar/>
         </section>
     </>
   );
