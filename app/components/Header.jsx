@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Await, NavLink } from '@remix-run/react';
-import { useRootLoaderData } from '~/root';
+// import { useRootLoaderData } from '~/root';
 import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
 import cart from './../../public/assets/icons/cart.svg';
@@ -28,14 +28,16 @@ export function Header({header, isLoggedIn, cart}) {
     return (
       <header className="header">
         <NavLink prefetch="intent" to="/home" className={activeLinkStyle} end>
-          <img src={icon} class="thb-icon" alt="True History Brewing icon" />
+          <img src={icon} className="thb-icon" alt="True History Brewing icon" />
         </NavLink>
         <HeaderMenu
           menu={menu}
           viewport="desktop"
           primaryDomainUrl={header.shop.primaryDomain.url}
         />
-        <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+        <HeaderSubmenu
+          cart={cart}
+        />
       </header>
     )
   }
@@ -48,8 +50,7 @@ export function Header({header, isLoggedIn, cart}) {
  *   viewport: Viewport;
  * }}
  */
-export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
-  const {publicStoreDomain} = useRootLoaderData();
+export function HeaderMenu({viewport}) {
   const className = `header-menu-${viewport}`;
 
   function closeAside(event) {
@@ -111,29 +112,20 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
 }
 
 /**
- * @param {Pick<HeaderProps, 'isLoggedIn' | 'cart'>}
+ * @param {Pick<HeaderProps, 'isLoggedIn' | 'cart'>;}
  */
-function HeaderCtas({isLoggedIn, cart}) {
+function HeaderSubmenu({cart}) {
   return (
-    <nav className="header-ctas" role="navigation">
+    <nav className="header-submenu" role="navigation">
       <CartToggle cart={cart} />
       <HeaderMenuMobileToggle />
-      {/* <NavLink prefetch="intent" to="/account" style={activeLinkStyle}  className="button button-primary">
-        {isLoggedIn ? 'Account' : 'Sign in'}
-        <img src={signIn} className="button-icon" />
-      </NavLink> */}
-      {/* <Link to="https://instagram.com/truehistorybrewing" target="_blank" className="button button-primary">
-        Instagram
-        <img src={instagram} className="button-icon" />
-      </Link> */}
-      {/* <SearchToggle /> */}
     </nav>
   );
 }
 
 function HeaderMenuMobileToggle() {
   return (
-    <a className="button button-primary" href="#mobile-menu-aside">
+    <a className="button button-primary menu-toggle" href="#mobile-menu-aside">
       Menu
       <img src={cornerRightDown} className="button-icon" />
     </a>

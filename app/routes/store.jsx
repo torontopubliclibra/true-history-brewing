@@ -1,14 +1,14 @@
-import {defer} from '@shopify/remix-oxygen';
-import {Await, useLoaderData, Link} from '@remix-run/react';
-import {Suspense} from 'react';
-import {Image, Money} from '@shopify/hydrogen';
+import { defer } from '@shopify/remix-oxygen';
+import { Await, useLoaderData, Link } from '@remix-run/react';
+import { Suspense } from 'react';
+import { Image, Money } from '@shopify/hydrogen';
 
 /**
  * @type {MetaFunction}
  */
 export const meta = () => {
   return [
-    {title: 'True History Brewing - Online Store'},
+    {title: 'Store | True History Brewing'},
     {description: 'Brewing Low & Slow'},
   ];
 };

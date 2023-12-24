@@ -1,22 +1,30 @@
+import { useContext } from 'react';
+import { StrapiContext } from '../root';
+import { Link } from '@remix-run/react';
+import { Schedule } from './../components/Schedule';
 import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
 import patioPhoto from './../../public/assets/patio-photo.jpg';
 import compass from './../../public/assets/icons/compass.svg';
 import calendar from './../../public/assets/icons/calendar.svg';
-import {Link} from '@remix-run/react';
-import {Schedule} from './../components/Schedule';
 
 /**
  * @type {MetaFunction}
  */
 export const meta = () => {
   return [
-    {title: 'True History Brewing | Toronto, ON'},
+    {title: 'True History Brewing'},
     {description: 'Brewing Low & Slow'},
   ];
 };
 
 export default function Homepage() {
+
+  const { events } = useContext(StrapiContext);
+
+  let formattedEvents = events.map((event) => {
+    return <li><span className="date">{event.date} -</span> {event.title}</li>
+  })
 
   return (
     <>
@@ -50,10 +58,7 @@ export default function Homepage() {
             <h3>Upcoming Events</h3>
             <hr/>
             <ul class="events-list">
-              <li><span className="date">15/12/23 -</span> Lorem Ipsum Lorem</li>
-              <li><span className="date">26/12/23 -</span> Lorem Ipsum Lorem Ipsum</li>
-              <li><span className="date">18/01/24 -</span> Lorem Ipsum Lorem</li>
-              <li><span className="date">31/01/24 -</span> Lorem Ipsum Lorem Ipsum</li>
+              {formattedEvents}
             </ul>
             <Link to="/taproom#calendar" className='button button-tertiary'>Check out our calendar <img src={calendar} className="button-icon" /></Link>
           </div>

@@ -18,10 +18,10 @@ import { Layout } from '~/components/Layout';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import favicon from '../public/favicon.svg';
-import icon from '.././public/assets/thb-icon.png';
-import logo from '.././public/assets/thb-logo.png';
-import wallpaper from '.././public/assets/wallpaper.png';
-import woodenBackground from '.././public/assets/wooden-bg.jpg';
+import icon from '../public/assets/thb-icon.png';
+import logo from '../public/assets/thb-logo.png';
+import wallpaper from '../public/assets/wallpaper.png';
+import woodenBackground from '../public/assets/wooden-bg.jpg';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -55,22 +55,22 @@ export function links() {
     },
     {
       rel: 'preload',
-      type: 'image',
+      as: 'image',
       href: icon,
     },
     {
       rel: 'preload',
-      type: 'image',
+      type: 'image/png',
       href: logo,
     },
     {
       rel: 'preload',
-      type: 'image',
+      type: 'image/png',
       href: wallpaper,
     },
     {
       rel: 'preload',
-      type: 'image',
+      type: 'image/png',
       href: woodenBackground,
     },
     {
@@ -134,6 +134,49 @@ export async function loader({context}) {
   );
 }
 
+export function parseTime(datetimeString) {
+  const dateTime = new Date(datetimeString);
+
+  let hour = dateTime.getHours();
+  let minute = dateTime.getMinutes();
+
+  if (hour < 10) hour = '0' + hour;
+  if (minute < 10) minute = '0' + minute;
+
+  return `${hour}:${minute}`;
+}
+
+export function parseDate(datetimeString) {
+  const dateTime = new Date(datetimeString);
+
+  let year = dateTime.getFullYear();
+  let month = dateTime.getMonth() + 1;
+  let day = dateTime.getDate();
+
+  if (month < 10) month = '0' + month;
+  if (day < 10) day = '0' + day;
+
+  return `${year}-${month}-${day}`;
+}
+
+export function convertTimeToAmPm(time) {
+      
+  const [hours, minutes] = time.split(':');
+  let formattedTime = '';
+
+  if (hours > 12) {
+    formattedTime = `${hours - 12}:${minutes}pm`;
+  } else if (hours === '12') {
+    formattedTime = `${hours}:${minutes}pm`;
+  } else if (hours === '00') {
+    formattedTime = `12:${minutes}am`;
+  } else {
+    formattedTime = `${hours}:${minutes}am`;
+  }
+
+  return formattedTime;
+}
+
 export const StrapiContext = createContext(null);
 
 export default function App() {
@@ -141,35 +184,182 @@ export default function App() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
 
-  const [schedule, setSchedule] = useState({});
-  const [menus, setMenus] = useState({});
-  const [events, setEvents] = useState({});
+  const [schedule, setSchedule] = useState({
+    Mon: "Closed",
+    Tues: "4:00pm–11:00pm",
+    Weds: "4:00pm–11:00pm",
+    Thurs: "4:00pm–11:00pm",
+    Fri: "12:00pm–12:00am",
+    Sat: "12:00pm–12:00am",
+    Sun: "12:00pm–10:00pm"
+  });
+  const [menus, setMenus] = useState({
+    beers: {
+      beer1: {},
+      beer2: {},
+      beer3: {},
+      beer4: {}
+    }
+  });
+  const [events, setEvents] = useState([]);
 
   const fetchSchedules = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
     const newSchedule = await response.json();
-    setSchedule(newSchedule.data[0].attributes);
+    let scheduleData = newSchedule.data[0].attributes;
+    let taproomHours = {};
+
+    if (schedule) {
+
+      if (scheduleData.mon_service === 'closed') {
+        taproomHours.Mon = "Closed";
+      } else if ((scheduleData.mon_service === 'open') && scheduleData.mon_start && scheduleData.mon_end) {
+        taproomHours.Mon = convertTimeToAmPm(scheduleData.mon_start) + `–` + convertTimeToAmPm(scheduleData.mon_end)
+      }
+
+      if (scheduleData.tues_service === 'closed') {
+        taproomHours.Tues = "Closed";
+      } else if ((scheduleData.tues_service === 'open') && scheduleData.tues_start && scheduleData.tues_end) {
+        taproomHours.Tues = convertTimeToAmPm(scheduleData.tues_start) + `–` + convertTimeToAmPm(scheduleData.tues_end)
+      }
+
+      if (scheduleData.weds_service === 'closed') {
+        taproomHours.Weds = "Closed";
+      } else if ((scheduleData.weds_service === 'open') && scheduleData.weds_start && scheduleData.weds_end) {
+        taproomHours.Weds = convertTimeToAmPm(scheduleData.weds_start) + `–` + convertTimeToAmPm(scheduleData.weds_end)
+      }
+      
+      if (scheduleData.thurs_service === 'closed') {
+        taproomHours.Thurs = "Closed";
+      } else if ((scheduleData.thurs_service === 'open') && scheduleData.thurs_start && scheduleData.thurs_end) {
+        taproomHours.Thurs = convertTimeToAmPm(scheduleData.thurs_start) + `–` + convertTimeToAmPm(scheduleData.thurs_end)
+      }
+
+      if (scheduleData.fri_service === 'closed') {
+        taproomHours.Fri = "Closed";
+      } else if ((scheduleData.fri_service === 'open') && scheduleData.fri_start && scheduleData.fri_end) {
+        taproomHours.Fri = convertTimeToAmPm(scheduleData.fri_start) + `–` + convertTimeToAmPm(scheduleData.fri_end)
+      }
+
+      if (scheduleData.sat_service === 'closed') {
+        taproomHours.Sat = "Closed";
+      } else if ((scheduleData.sat_service === 'open') && scheduleData.sat_start && scheduleData.sat_end) {
+        taproomHours.Sat = convertTimeToAmPm(scheduleData.sat_start) + `–` + convertTimeToAmPm(scheduleData.sat_end)
+      }
+
+      if (scheduleData.sun_service === 'closed') {
+        taproomHours.Sun = "Closed";
+      } else if ((scheduleData.sun_service === 'open') && scheduleData.sun_start && scheduleData.sun_end) {
+        taproomHours.Sun = convertTimeToAmPm(scheduleData.sun_start) + `–` + convertTimeToAmPm(scheduleData.sun_end)
+      }
+    }
+
+    setSchedule(taproomHours);
   };
 
   const fetchMenus = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/beer-menus`);
     let newMenus = await response.json();
-    setMenus(newMenus.data[0].attributes);
+    let menuData = newMenus.data[0].attributes;
+    let formattedMenus = {
+      beers: {
+        beer1: {},
+        beer2: {},
+        beer3: {},
+        beer4: {}
+      },
+    };
+
+    if (menuData.beer1_name) {
+      formattedMenus.beers.beer1 = {
+        name: menuData.beer1_name,
+        description: menuData.beer1_description,
+        price: menuData.beer1_price,
+        abv: menuData.beer1_abv,
+      }
+    }
+
+    if (menuData.beer2_name) {
+      formattedMenus.beers.beer2 = {
+        name: menuData.beer2_name,
+        description: menuData.beer2_description,
+        price: menuData.beer2_price,
+        abv: menuData.beer2_abv,
+      }
+    }
+
+    if (menuData.beer3_name) {
+      formattedMenus.beers.beer3 = {
+        name: menuData.beer3_name,
+        description: menuData.beer3_description,
+        price: menuData.beer3_price,
+        abv: menuData.beer3_abv,
+      }
+    }
+
+    if (menuData.beer4_name) {
+      formattedMenus.beers.beer4 = {
+        name: menuData.beer4_name,
+        description: menuData.beer4_description,
+        price: menuData.beer4_price,
+        abv: menuData.beer4_abv,
+      }
+    }
+
+    setMenus(formattedMenus);
   };
 
   const fetchEvents = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/events`);
     let newEvents = await response.json();
-    setEvents(newEvents.data[0].attributes);
+    let eventsData = newEvents.data[0].attributes;
+    let formattedEvents = [];
+
+    if (eventsData.event1_title) {
+        let event1 = {
+            title: eventsData.event1_title,
+            date: parseDate(eventsData.event1_date),
+            time: parseTime(eventsData.event1_date)
+        }
+        formattedEvents.push(event1)
+    }
+
+    if (eventsData.event2_title) {
+        let event2 = {
+            title: eventsData.event2_title,
+            date: parseDate(eventsData.event2_date),
+            time: parseTime(eventsData.event2_date)
+        }
+        formattedEvents.push(event2)
+    }
+
+    if (eventsData.event3_title) {
+        let event3 = {
+            title: eventsData.event3_title,
+            date: parseDate(eventsData.event3_date),
+            time: parseTime(eventsData.event3_date)
+        }
+        formattedEvents.push(event3)
+    }
+
+    if (eventsData.event4_title) {
+        let event4 = {
+            title: eventsData.event4_title,
+            date: parseDate(eventsData.event4_date),
+            time: parseTime(eventsData.event4_date)
+        }
+        formattedEvents.push(event4)
+    }
+    setEvents(formattedEvents);
   };
 
-  useEffect(() => {
-    fetchSchedules();
-    fetchMenus();
-    fetchEvents();
+  // useEffect(() => {
+  //   fetchSchedules();
+  //   fetchMenus();
+  //   fetchEvents();
 
-    console.log('fetching new data')
-  }, []);
+  //   console.log('fetching new data');
+  // }, []);
 
   return (
     <html lang="en">

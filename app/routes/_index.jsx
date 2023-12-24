@@ -1,24 +1,24 @@
 import { useState, useEffect } from 'react';
+import { Link } from '@remix-run/react';
+import BarLoader from "react-spinners/BarLoader";
 import icon from './../../public/assets/thb-icon.png';
 import flourishLeft from './../../public/assets/icons/flourish-left.svg';
 import flourishRight from './../../public/assets/icons/flourish-right.svg';
-import { Link } from '@remix-run/react';
-import BarLoader from "react-spinners/BarLoader";
 
 /**
  * @type {MetaFunction}
  */
 export const meta = () => {
   return [
-    {title: 'True History Brewing | Toronto, ON'},
+    {title: 'True History Brewing'},
     {description: 'Brewing Low & Slow'},
   ];
 };
 
 export default function Homepage() {
 
-  let [loading, setLoading] = useState(true);
-  let [ageVerified, setAgeVerified] = useState(false);
+  let [ loading, setLoading ] = useState(true);
+  let [ ageVerified, setAgeVerified ] = useState(false);
 
   const loaderStyle = {
     backgroundColor: "#1F1F1F",

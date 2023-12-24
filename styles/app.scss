@@ -271,6 +271,17 @@ hr {
   max-width: 750px;
   height: auto;
   margin: 40px 0;
+
+  // responsive to mobile
+  @media only screen and (max-width: $tablet) {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  // responsive to mobile
+  @media only screen and (max-width: $mobile) {
+    width: 85%;
+  }
 }
 
 header, footer {
@@ -522,30 +533,52 @@ main {
     }
   }
   .main-subheading {
-    padding: 50px 0;
+    padding: 30px 0;
     background-color: rgba($color1, 0.9);
     flex-direction: row;
     gap: 5%;
+    
+    // responsive to mobile
+    @media only screen and (max-width: $tablet) {
+      flex-direction: column;
+    }
 
     h2 {
       color: $light;
-      max-width: 475px;
+      max-width: 425px;
       filter: drop-shadow(-3px 3px 0.5px rgba($black, 0.8));
-      font-size: 95px;
+      font-size: 85px;
       font-family: 'Saudagar';
       line-height: 0.9;
       letter-spacing: 1.5;
       font-style: normal;
       .location {
         font-family: 'Saudagar';
-        font-size: 50px;
+        font-size: 45px;
         font-style: italic;
+      }
+
+      // responsive to mobile
+      @media only screen and (max-width: $tablet) {
+        font-size: 70px;
+        max-width: 80%;
+        text-align: center;
+        margin-top: 30px;
+
+        .location {
+          font-size: 40px;
+        }
       }
     }
     .bar-sketch {
-      max-width: 30%;
-      min-width: 500px;
+      max-width: 40%;
       filter: drop-shadow(-3px 3px 2px $black);
+
+      // responsive to mobile
+      @media only screen and (max-width: $tablet) {
+        max-width: 90%;
+        min-width: unset;
+      }
     }
   }
   .main-taproom {
@@ -844,12 +877,6 @@ img {
 * --------------------------------------------------
 */
 
-.header-menu-mobile-toggle {
-  @media (min-width: 48em) {
-    display: none;
-  }
-}
-
 .header-menu-mobile {
   display: flex;
   flex-direction: column;
@@ -857,12 +884,13 @@ img {
 }
 
 .header-menu-desktop {
-  display: none;
+  display: flex;
   grid-gap: 1rem;
-  @media (min-width: 45em) {
-    display: flex;
-    grid-gap: 1rem;
-    margin-left: 3rem;
+  margin-left: 3rem;
+
+  // responsive to mobile
+  @media only screen and (max-width: $tablet) {
+    display: none;
   }
 }
 
@@ -870,11 +898,20 @@ img {
   cursor: pointer;
 }
 
-.header-ctas {
+.header-submenu {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
   margin-left: auto;
+
+  .menu-toggle {
+    display: none;
+
+    // responsive to mobile
+    @media only screen and (max-width: $tablet) {
+      display: flex;
+    }
+  }
 }
 
 /*
