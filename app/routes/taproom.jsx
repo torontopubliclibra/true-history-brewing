@@ -1,8 +1,9 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
 import { Schedule } from './../components/Schedule';
 import { Calendar } from './../components/Calendar';
+import taproomPhoto from './../../public/assets/taproom-photo.png';
 import compass from './../../public/assets/icons/compass.svg';
 
 /**
@@ -37,9 +38,12 @@ export default function Homepage() {
           <h2>Taproom</h2>
         </section>
         <section className="taproom-address">
+          <img src={taproomPhoto} className="taproom-photo" />
+          <div className="taproom-info">
             <Schedule/>
             <p>1154 St. Clair Avenue West, Toronto, ON</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
+          </div>
         </section>
         <section className="taproom-menus">
           <h3>Menus</h3>
@@ -50,7 +54,7 @@ export default function Homepage() {
             <li>Non-alcoholic</li>
             <li>Food</li>
           </ul>
-          <ul id="menu1" className='beer-items'>
+          <ul id="menu1" className='menu'>
             {formattedBeers}
           </ul>
         </section>
