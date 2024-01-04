@@ -195,10 +195,30 @@ export default function App() {
   });
   const [menus, setMenus] = useState({
     beers: {
-      beer1: {},
-      beer2: {},
-      beer3: {},
-      beer4: {}
+      beer1: {
+        name: "Beer 1",
+        description: "Lorem ipsum",
+        price: "5",
+        abv: "4.2"
+      },
+      beer2: {
+        name: "Beer 2",
+        description: "Lorem ipsum",
+        price: "5",
+        abv: "4.2"
+      },
+      beer3: {
+        name: "Beer 3",
+        description: "Lorem ipsum",
+        price: "5",
+        abv: "4.2"
+      },
+      beer4: {
+        name: "Beer 4",
+        description: "Lorem ipsum",
+        price: "5",
+        abv: "4.2"
+      }
     }
   });
   const [events, setEvents] = useState([]);
@@ -353,13 +373,13 @@ export default function App() {
     setEvents(formattedEvents);
   };
 
-  // useEffect(() => {
-  //   fetchSchedules();
-  //   fetchMenus();
-  //   fetchEvents();
+  useEffect(() => {
+    fetchSchedules();
+    fetchMenus();
+    fetchEvents();
 
-  //   console.log('fetching new data');
-  // }, []);
+    console.log('fetching new data');
+  }, []);
 
   return (
     <html lang="en">
