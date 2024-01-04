@@ -286,7 +286,6 @@ hr {
 
 header, footer {
   background-image: url('./../../public/assets/wallpaper.png');
-  align-items: center;
   display: flex;
 }
 
@@ -296,26 +295,86 @@ header, footer {
 }
 
 header {
-  height: 125px;
+  position: relative;
+  height: 140px;
   border-bottom: solid $black 4px;
   filter: drop-shadow(0px 3px 2px rgba($black, 0.5));
-  padding: 0 1rem;
+  padding: 20px;
+  padding-bottom: 0;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 150;
 
   nav {
-    a {
-      color: $black;
-      font-family: "Bogue-Regular";
-      font-size: 14px;
-      text-transform: uppercase;
-      &:hover {
-        text-decoration: none;
-        font-weight: 600;
+
+    &.header-menu-mobile {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 1rem;
+    }
+
+    &.header-submenu {
+      display: flex;
+      grid-gap: 1rem;
+      margin-left: auto;
+    
+      .menu-toggle {
+        display: none;
+    
+        // responsive to mobile
+        @media only screen and (max-width: $tablet) {
+          display: flex;
+        }
       }
-      &.active {
-        font-weight: 600;
+    }
+
+    &.header-menu-desktop {
+      display: flex;
+      width: 100vw;
+      justify-content: center;
+      position: absolute;
+      bottom: 1px;
+
+      // responsive to mobile
+      @media only screen and (max-width: $tablet) {
+        display: none;
+      }
+
+      a {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 150px;
+        width: 180px;
+        height: 45px;
+        margin-left: -2px;
+        margin-right: -2px;
+        transform: perspective(8px) rotateX(1deg);
+        background-color: $less-light;
+        border: solid $black 3px;
+        border-radius: 25px 25px 0 0;
+        border-bottom: none;
+        .nav-text {
+          transform: perspective(8px) rotateX(-1deg);
+          font-size: 16px;
+          font-family: "Bogue-Regular";
+          text-transform: uppercase;
+          color: $black;
+        }
+        &.active {
+          background-color: $light;
+          z-index: 100;
+
+          .nav-text {
+            font-family: "Bogue-Extrabold";
+          }
+        }
+        &:hover {
+          text-decoration: none;
+          background-color: $light;
+          transition: 0.4s;
+        }
       }
     }
   }
@@ -332,6 +391,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border-top: solid $black 4px;
   filter: drop-shadow(0px -3px 2px rgba($black, 0.5));
   margin-top: auto;
@@ -687,15 +747,42 @@ main {
     border-top: solid $black 4px;
   }
   .taproom-address {
+    height: 600px;
+    display: flex;
+    position: relative;
     background-color: rgba($color1, 0.9);
     border-bottom: solid $black 4px;
-    padding-left: 5%;
+    padding: 0;
+    .taproom-photo {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      max-height: 600px;
+      object-fit: cover;
+      border: none;
+    }
+    .taproom-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+      min-width: 35vw;
+      z-index: 50;
+      background-color: rgba($color1, 0.8);
+      border-right: solid $black 4px;
+    }
     p {
       color: $white;
       font-size: 25px;
       padding: 20px 0;
       font-style: italic;
       margin: 0;
+      padding-left: 5%;
+    }
+    .hours {
+      margin: 15px;
     }
     .button {
       width: 300px;
@@ -705,6 +792,25 @@ main {
     color: $light;
     background-color: rgba($dark, 0.9);
     border-bottom: solid $black 4px;
+
+    .menu {
+      display: flex;
+      width: 80vw;
+      justify-content: space-between;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        background-color: $less-light;
+        color: $black;
+        border: solid $black 3px;
+        border-radius: 40px;
+        padding: 20px;
+      }
+    }
   }
   .taproom-events {
     background-color: rgba($light, 0.9);
@@ -877,42 +983,7 @@ img {
 * --------------------------------------------------
 */
 
-.header-menu-mobile {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 1rem;
-}
 
-.header-menu-desktop {
-  display: flex;
-  grid-gap: 1rem;
-  margin-left: 3rem;
-
-  // responsive to mobile
-  @media only screen and (max-width: $tablet) {
-    display: none;
-  }
-}
-
-.header-menu-item {
-  cursor: pointer;
-}
-
-.header-submenu {
-  align-items: center;
-  display: flex;
-  grid-gap: 1rem;
-  margin-left: auto;
-
-  .menu-toggle {
-    display: none;
-
-    // responsive to mobile
-    @media only screen and (max-width: $tablet) {
-      display: flex;
-    }
-  }
-}
 
 /*
 * --------------------------------------------------
