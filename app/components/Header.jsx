@@ -69,7 +69,7 @@ export function HeaderMenu({viewport}) {
         className={activeLinkStyle}
         to="/home"
         >
-        Home
+        <span className="nav-text">Home</span>
       </NavLink>
       <NavLink
         end
@@ -78,7 +78,7 @@ export function HeaderMenu({viewport}) {
         className={activeLinkStyle}
         to="/taproom"
         >
-        Taproom
+        <span className="nav-text">Taproom</span>
       </NavLink>
       <NavLink
         end
@@ -87,7 +87,7 @@ export function HeaderMenu({viewport}) {
         className={activeLinkStyle}
         to="/bottle-shop"
         >
-        Bottle Shop
+        <span className="nav-text">Bottle Shop</span>
       </NavLink>
       <NavLink
         end
@@ -96,7 +96,7 @@ export function HeaderMenu({viewport}) {
         className={activeLinkStyle}
         to="/store"
         >
-        Online Store
+        <span className="nav-text">Online Store</span>
       </NavLink>
       <NavLink
         end
@@ -105,7 +105,7 @@ export function HeaderMenu({viewport}) {
         className={activeLinkStyle}
         to="/contact"
         >
-        Contact
+        <span className="nav-text">Contact</span>
       </NavLink>
     </nav>
   );
