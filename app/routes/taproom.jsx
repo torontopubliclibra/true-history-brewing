@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { useLocation } from 'react-router-dom'
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
 import { Schedule } from './../components/Schedule';
@@ -19,18 +20,43 @@ export const meta = () => {
 export default function Homepage() {
 
   const { menus } = useContext(StrapiContext);
-  let formattedBeers = [];
+  const [ selectedMenu, setSelectedMenu ] = useState("beers");
+  const location = useLocation();
 
-  for (let [key, value] of Object.entries(menus.beers)) {
-    formattedBeers.push(
-      <li key={key}>
+  useEffect(() => {
+    if (location.state) {
+      setSelectedMenu(location.state.selectedMenu);
+    }
+  }, [])
+
+  let formattedMenus = {
+    beers: [],
+    food: [],
+  }
+
+  for (let [key, value] of Object.entries(menus.food)) {
+    formattedMenus.food.push(
+      <li key={key} className={`food ` + value.size}>
         <h4>{value.name}</h4>
-        <p>{value.description}</p>
-        <p>{value.price}</p>
-        <p>{value.abv}</p>
+        <p className='description'>{value.description}</p>
+        <p className='price'>${value.price}</p>
       </li>
     );
   };
+
+  for (let [key, value] of Object.entries(menus.beers)) {
+    formattedMenus.beers.push(
+      <li key={key} className='beer'>
+        <h4>{value.name} ({value.abv}%)</h4>
+        <p className='description'>{value.description}</p>
+        <p className='price'>${value.price}</p>
+      </li>
+    );
+  };
+
+  let handleMenuChange = (menu) => {
+    setSelectedMenu(menu);
+  }
 
   return (
     <>
@@ -45,17 +71,33 @@ export default function Homepage() {
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
         </section>
-        <section className="taproom-menus">
+        <section className="taproom-menus" id="menus">
           <h3>Menus</h3>
-          <p>Last updated: 21/11/23</p>
+          <p className='updated-date'>Last updated: 21/11/23</p>
           <ul className='menu-nav'>
-            <li>Beers</li>
-            <li>Wine/Seltzers/Etc.</li>
-            <li>Non-alcoholic</li>
-            <li>Food</li>
+            {
+              selectedMenu !== "beers"
+              ? <li><button onClick={() => handleMenuChange("beers")} className='button button-primary'>Beers</button></li>
+              : <li><button className='button button-primary selected'>Beers</button></li>
+            }
+            {
+              selectedMenu !== "wine-seltzers-etc"
+              ? <li><button onClick={() => handleMenuChange("wine-seltzers-etc")} className='button button-primary'>Wine, Seltzers, Etc.</button></li>
+              : <li><button className='button button-primary selected'>Wine, Seltzers, Etc.</button></li>
+            }
+            {
+              selectedMenu !== "non-alc"
+              ? <li><button onClick={() => handleMenuChange("non-alc")} className='button button-primary'>Non-alcoholic</button></li>
+              : <li><button className='button button-primary selected'>Non-alcoholic</button></li>
+            }
+            {
+              selectedMenu !== "food"
+              ? <li><button onClick={() => handleMenuChange("food")} className='button button-primary'>Food</button></li>
+              : <li><button className='button button-primary selected'>Food</button></li>
+            }
           </ul>
-          <ul id="menu1" className='menu'>
-            {formattedBeers}
+          <ul className='menu'>
+            {formattedMenus[selectedMenu]}
           </ul>
         </section>
         <section className="taproom-events" id="calendar">

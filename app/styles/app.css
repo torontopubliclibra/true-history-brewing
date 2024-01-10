@@ -24,13 +24,21 @@ h2 {
   color: #F6F6F6;
   margin: 10px 0; }
 
+html {
+  background-color: #F1EDE2; }
+
 body {
-  background-image: url("./../../public/assets/wooden-bg.jpg"); }
+  background-image: url("./../../public/assets/wooden-bg.jpg");
+  width: 100vw;
+  overflow-x: hidden; }
+
+#cart-aside {
+  z-index: 200; }
 
 aside {
   background: url("./../../public/assets/wooden-bg.jpg");
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-  border-left: solid #1F1F1F 4px;
+  border-left: solid #1F1F1F 3px;
   height: 100vh;
   max-width: var(--aside-width);
   min-width: var(--aside-width);
@@ -42,7 +50,7 @@ aside {
     height: 75px !important;
     background: #F1EDE2;
     align-items: center;
-    border-bottom: solid #1F1F1F 4px;
+    border-bottom: solid #1F1F1F 3px;
     display: flex;
     justify-content: space-between;
     padding: 0 20px; }
@@ -94,7 +102,7 @@ hr {
   height: 8px;
   width: 100%;
   background-color: #778d79;
-  border: solid #1F1F1F 4px;
+  border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
 
 .loading {
@@ -126,12 +134,13 @@ hr {
   position: relative;
   background-color: #F1EDE2;
   color: #1F1F1F;
-  border: solid #1F1F1F 4px;
+  border: solid #1F1F1F 3px;
   outline: solid #D8B56E 10px;
   box-shadow: 0 0 0 14px #1F1F1F;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   border-radius: 15px;
   width: 375px;
+  max-height: 100%;
   margin: 15px;
   margin-top: 35px;
   padding: 10px 35px;
@@ -147,14 +156,14 @@ hr {
     text-align: center;
     width: 100%;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 34px;
     letter-spacing: 2px; }
   .hours .schedule {
     width: 100%;
     margin-bottom: 20px; }
     .hours .schedule li {
       font-family: "Bogue-ExtraBold";
-      font-size: 18px;
+      font-size: 22px;
       letter-spacing: 2px;
       line-height: 1.5;
       margin: 0; }
@@ -219,7 +228,7 @@ hr {
   .button-tertiary img {
     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
   .button-tertiary:hover {
-    background: #C28165;
+    background: #D8B56E;
     color: #1F1F1F; }
     .button-tertiary:hover img {
       filter: none; }
@@ -229,8 +238,8 @@ hr {
   height: auto; }
 
 .thb-logo {
-  width: 70%;
-  max-width: 750px;
+  width: 90%;
+  max-width: 900px;
   height: auto;
   margin: 40px 0; }
   @media only screen and (max-width: 768px) {
@@ -243,20 +252,19 @@ hr {
 
 header, footer {
   background-image: url("./../../public/assets/wallpaper.png");
+  background-size: 100%;
   display: flex; }
 
 .landing-header, .landing-footer {
-  height: calc(50vh - 205px);
-  min-height: 100px; }
+  height: 100px; }
 
 header {
   position: relative;
   height: 140px;
-  border-bottom: solid #1F1F1F 4px;
+  border-bottom: solid #1F1F1F 3px;
   filter: drop-shadow(0px 3px 2px rgba(31, 31, 31, 0.5));
   padding: 20px;
   padding-bottom: 0;
-  position: sticky;
   top: 0;
   z-index: 150; }
   header nav.header-menu-mobile {
@@ -322,7 +330,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: solid #1F1F1F 4px;
+  border-top: solid #1F1F1F 3px;
   filter: drop-shadow(0px -3px 2px rgba(31, 31, 31, 0.5));
   margin-top: auto; }
   footer hr {
@@ -361,7 +369,7 @@ main .product {
     width: 450px !important;
     height: 300px !important;
     object-fit: cover;
-    border: solid 5px #1F1F1F;
+    border: solid #1F1F1F 3px;
     filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
     border-radius: 0;
     margin: 50px; }
@@ -411,7 +419,9 @@ main .route-error {
     padding-bottom: 35px; }
 
 main .landing {
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 226px);
   padding: 0; }
   main .landing .landing-welcome {
     display: flex;
@@ -419,8 +429,8 @@ main .landing {
     gap: 30px;
     padding-left: 10%;
     background-color: rgba(119, 141, 121, 0.9);
-    border-bottom: solid 5px #1F1F1F;
-    height: 60%; }
+    border-bottom: solid #1F1F1F 3px;
+    height: 50%; }
     main .landing .landing-welcome .thb-icon {
       height: 175px;
       width: auto; }
@@ -439,7 +449,7 @@ main .landing {
     flex-direction: column;
     justify-content: center;
     background-color: rgba(241, 237, 226, 0.8);
-    height: 40%;
+    height: 50%;
     padding-left: 10%; }
     main .landing .landing-main .landing-buttons {
       display: flex;
@@ -449,119 +459,102 @@ main .landing {
     main .landing .landing-main p {
       margin-top: 10px;
       font-size: 20px; }
+    main .landing .landing-main .remember-user label {
+      font-size: 18px;
+      height: 30px;
+      display: flex;
+      align-items: center; }
+      main .landing .landing-main .remember-user label input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        background-color: #F1EDE2;
+        border: solid #1F1F1F 3px;
+        border-radius: 0;
+        outline: none;
+        cursor: pointer; }
+        main .landing .landing-main .remember-user label input[type="checkbox"].checked {
+          background-color: #C28165;
+          position: relative; }
+
+main .main-heading hr {
+  height: 5px;
+  max-width: 85%;
+  background-color: #C28165; }
 
 main .heading, main .main-subheading {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid #1F1F1F 4px; }
+  border-bottom: solid #1F1F1F 3px; }
 
 main .heading {
   background-color: rgba(214, 208, 192, 0.9);
   flex-direction: column; }
   main .heading h2 {
     color: #1F1F1F;
-    max-width: 65%;
+    text-align: center;
     font-size: 80px;
     font-family: 'Saudagar';
-    text-transform: uppercase;
-    font-style: normal; }
-    main .heading h2 .location {
-      font-family: 'Saudagar';
-      font-size: 40px;
-      font-style: italic; }
-
-main .main-subheading {
-  padding: 30px 0;
-  background-color: rgba(119, 141, 121, 0.9);
-  flex-direction: row;
-  gap: 5%; }
-  @media only screen and (max-width: 768px) {
-    main .main-subheading {
-      flex-direction: column; } }
-  main .main-subheading h2 {
-    color: #F1EDE2;
-    max-width: 425px;
-    filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8));
-    font-size: 85px;
-    font-family: 'Saudagar';
-    line-height: 0.9;
-    letter-spacing: 1.5;
-    font-style: normal; }
-    main .main-subheading h2 .location {
-      font-family: 'Saudagar';
-      font-size: 45px;
-      font-style: italic; }
-    @media only screen and (max-width: 768px) {
-      main .main-subheading h2 {
-        font-size: 70px;
-        max-width: 80%;
-        text-align: center;
-        margin-top: 30px; }
-        main .main-subheading h2 .location {
-          font-size: 40px; } }
-  main .main-subheading .bar-sketch {
-    max-width: 40%;
-    filter: drop-shadow(-3px 3px 2px #1F1F1F); }
-    @media only screen and (max-width: 768px) {
-      main .main-subheading .bar-sketch {
-        max-width: 90%;
-        min-width: unset; } }
+    font-style: normal;
+    text-transform: uppercase; }
+  main .heading h2.home {
+    margin-top: 30px;
+    font-size: 60px;
+    font-style: italic;
+    text-transform: none; }
 
 main .main-taproom {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   color: #F1EDE2;
-  background-color: rgba(121, 79, 62, 0.9); }
-  main .main-taproom .taproom-heading {
-    font-size: 30px;
-    background-color: #F1EDE2;
-    border: solid #1F1F1F 4px;
-    border-radius: 40px;
-    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-    color: #1F1F1F;
-    padding: 3px 30px;
-    margin: 0 5%;
-    max-width: 800px;
-    text-align: center;
-    font-style: italic; }
-  main .main-taproom .taproom-info {
-    width: 90%;
+  background-color: rgba(119, 141, 121, 0.9); }
+  main .main-taproom .sketch-address {
     display: flex;
-    justify-content: right; }
-    main .main-taproom .taproom-info .address-block {
-      width: 40%;
-      display: flex;
-      flex-direction: column;
-      padding-top: 75px;
-      padding-left: 50px; }
-    main .main-taproom .taproom-info .address {
-      font-size: 30px;
-      margin-left: 10%;
-      font-style: italic;
-      margin-bottom: 10px; }
-    main .main-taproom .taproom-info hr {
-      background-color: #778d79; }
-    main .main-taproom .taproom-info .button-primary {
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    margin: 15px; }
+    main .main-taproom .sketch-address .bar-sketch {
+      max-width: 85%;
+      filter: drop-shadow(-3px 3px 2px #1F1F1F); }
+    main .main-taproom .sketch-address .address {
       margin-top: 10px;
-      margin-left: 10%;
-      width: 215px; }
-      main .main-taproom .taproom-info .button-primary img {
-        width: 25px; }
+      margin-bottom: 5px;
+      font-size: 26px;
+      font-style: italic;
+      color: #1F1F1F; }
+    main .main-taproom .sketch-address .button:hover {
+      background-color: #C28165; }
+  main .main-taproom .hours {
+    width: 35%;
+    height: 100%;
+    filter: drop-shadow(-3px 3px 2px #1F1F1F); }
   main .main-taproom .menu-buttons {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between; }
+    main .main-taproom .menu-buttons .button {
+      font-size: 16px;
+      line-height: 1.15;
+      text-align: center;
+      height: 40px;
+      width: 175px; }
 
 main .main-events {
   display: flex;
-  border-top: solid #1F1F1F 4px;
+  border-top: solid #1F1F1F 3px;
   color: #1F1F1F;
-  background-color: rgba(214, 208, 192, 0.9);
+  background-color: rgba(214, 208, 192, 0.8);
   padding: 0; }
   main .main-events .events-photo {
     max-width: 45%;
-    border-right: solid #1F1F1F 4px;
+    border-right: solid #1F1F1F 3px;
     border-radius: 0;
     filter: sepia(20%); }
   main .main-events h3 {
@@ -581,11 +574,15 @@ main .main-events {
           font-style: normal;
           font-family: "Bogue-ExtraBold"; }
     main .main-events .main-events-content .button {
+      background-color: #D8B56E;
       margin-top: 15px;
       margin-left: 40px;
-      width: 300px; }
+      width: 300px;
+      font-size: 18px; }
+      main .main-events .main-events-content .button:hover {
+        background-color: #778d79; }
     main .main-events .main-events-content hr {
-      background-color: #BC4749;
+      background-color: #778d79;
       border-left: none;
       width: 90% !important;
       margin-bottom: 20px; }
@@ -593,14 +590,14 @@ main .main-events {
 main .main-newsletter {
   color: #1F1F1F;
   background-color: rgba(216, 181, 110, 0.9);
-  border-top: solid #1F1F1F 4px; }
+  border-top: solid #1F1F1F 3px; }
 
 main .taproom-address {
   height: 600px;
   display: flex;
   position: relative;
   background-color: rgba(119, 141, 121, 0.9);
-  border-bottom: solid #1F1F1F 4px;
+  border-bottom: solid #1F1F1F 3px;
   padding: 0; }
   main .taproom-address .taproom-photo {
     position: absolute;
@@ -616,10 +613,10 @@ main .taproom-address {
     align-items: center;
     padding: 0 20px;
     height: 100%;
-    min-width: 35vw;
+    min-width: 45vw;
     z-index: 50;
     background-color: rgba(119, 141, 121, 0.8);
-    border-right: solid #1F1F1F 4px; }
+    border-right: solid #1F1F1F 3px; }
   main .taproom-address p {
     color: #F6F6F6;
     font-size: 25px;
@@ -633,24 +630,88 @@ main .taproom-address {
     width: 300px; }
 
 main .taproom-menus {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #F1EDE2;
   background-color: rgba(121, 79, 62, 0.9);
-  border-bottom: solid #1F1F1F 4px; }
+  border-bottom: solid #1F1F1F 3px; }
+  main .taproom-menus h3 {
+    width: 90vw;
+    font-size: 60px;
+    font-family: "Saudagar";
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+    margin: 0;
+    padding: 0; }
+  main .taproom-menus .updated-date {
+    font-size: 18px;
+    padding: 5px 25px;
+    padding-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #BC4749;
+    border: solid #1F1F1F 3px;
+    border-radius: 25px 0 0 25px;
+    border-right: 0; }
+  main .taproom-menus .menu-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px; }
+    main .taproom-menus .menu-nav .button {
+      height: 40px;
+      font-size: 20px;
+      padding: 20px 30px;
+      cursor: pointer; }
+      main .taproom-menus .menu-nav .button.selected {
+        color: #F6F6F6;
+        background-color: #778d79;
+        cursor: default; }
   main .taproom-menus .menu {
     display: flex;
-    width: 80vw;
-    justify-content: space-between; }
+    flex-flow: row wrap;
+    width: 95vw;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; }
     main .taproom-menus .menu li {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
-      width: 200px;
-      background-color: #D6D0C0;
+      background-color: rgba(214, 208, 192, 0.9);
+      font-family: "Saudagar";
       color: #1F1F1F;
+      height: 100%;
       border: solid #1F1F1F 3px;
       border-radius: 40px;
       padding: 20px; }
+      main .taproom-menus .menu li.beer {
+        width: 325px; }
+      main .taproom-menus .menu li.food.sm {
+        width: 225px; }
+      main .taproom-menus .menu li.food.med {
+        width: 275px; }
+      main .taproom-menus .menu li.food.lrg {
+        width: 325px; }
+      main .taproom-menus .menu li h4 {
+        width: 90%;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 15px; }
+      main .taproom-menus .menu li p {
+        width: 90%; }
+        main .taproom-menus .menu li p.description {
+          font-size: 16px;
+          font-style: italic;
+          margin-bottom: 6px; }
+        main .taproom-menus .menu li p.price {
+          font-size: 18px;
+          font-weight: 800; }
 
 main .taproom-events {
   background-color: rgba(241, 237, 226, 0.9); }

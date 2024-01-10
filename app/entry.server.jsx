@@ -18,13 +18,17 @@ export default async function handleRequest(
   responseHeaders,
   remixContext,
 ) {
+
   let {nonce, header, NonceProvider} = createContentSecurityPolicy({
+    defaultSrc: [
+      "*"
+    ],
     connectSrc: [
       "'self'",
-      "'none'",
+      "*",
       'ws://localhost:8002',
       'https://thb-data-3vd2n.ondigitalocean.app/',
-    ],
+    ]
   });
 
   const body = await renderToReadableStream(

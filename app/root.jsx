@@ -60,22 +60,22 @@ export function links() {
     },
     {
       rel: 'preload',
-      type: 'image/png',
+      as: 'image',
       href: logo,
     },
     {
       rel: 'preload',
-      type: 'image/png',
+      as: 'image',
       href: wallpaper,
     },
     {
       rel: 'preload',
-      type: 'image/png',
+      as: 'image',
       href: woodenBackground,
     },
     {
       rel: 'icon',
-      type: 'image/svg+xml',
+      as: 'image',
       href: favicon
     },
   ];
@@ -196,28 +196,90 @@ export default function App() {
   const [menus, setMenus] = useState({
     beers: {
       beer1: {
-        name: "Beer 1",
-        description: "Lorem ipsum",
-        price: "5",
-        abv: "4.2"
+        name: "Polish Pils",
+        description: "Polish pilsner hopped w/ Tomyski & Lunga",
+        price: "9.25",
+        abv: "4.6"
       },
       beer2: {
-        name: "Beer 2",
-        description: "Lorem ipsum",
-        price: "5",
-        abv: "4.2"
+        name: "Is It Local?",
+        description: "Dunkelweizen",
+        price: "9.25",
+        abv: "6.0"
       },
       beer3: {
-        name: "Beer 3",
-        description: "Lorem ipsum",
-        price: "5",
-        abv: "4.2"
+        name: "There's Always Money in the Banana Stand",
+        description: "Hefeweizen",
+        price: "9.25",
+        abv: "5.6"
       },
       beer4: {
-        name: "Beer 4",
-        description: "Lorem ipsum",
-        price: "5",
-        abv: "4.2"
+        name: "Office Hours",
+        description: "Rotbier",
+        price: "9.25",
+        abv: "5.1"
+      },
+      beer5: {
+        name: "Nockherberg Hell",
+        description: "Double Decocted Helles Lager",
+        price: "9.25",
+        abv: "5.1"
+      }
+    },
+    food: {
+      item1: {
+        name: "Pickles",
+        description: "Seasonal Ontario veg",
+        price: "8",
+        size: "sm"
+      },
+      item2: {
+        name: "Fried Olives",
+        description: "Stuffed w/ ricotta & lemon",
+        price: "8",
+        size: "sm"
+      },
+      item3: {
+        name: "Pretzel",
+        description: "German-style pretzel w/ yellow mustard",
+        price: "8",
+        size: "sm"
+      },
+      item4: {
+        name: "Cucumber Salad",
+        description: "Persian cucumber, red onion, buttermilk dressing, dill",
+        price: "10",
+        size: "med"
+      },
+      item5: {
+        name: "Potato Salad",
+        description: "Potatoes, dijon vinaigrette, celery, herbs",
+        price: "10",
+        size: "med"
+      },
+      item6: {
+        name: "Fried Squash Rings",
+        description: "Delicata squash, whipped ricotta, sage, honey",
+        price: "15",
+        size: "lrg"
+      },
+      item7: {
+        name: "Stuffed Banana Peppers",
+        description: "Blue cheese stuffing, tomato sauce, crostini",
+        price: "16",
+        size: "lrg"
+      },
+      item8: {
+        name: "Bratwurst",
+        description: "Pasture Butchery bratwurst on a bun w/ sauerkraut, onion, pickled jalapeno (veg option available)",
+        price: "16",
+        size: "lrg"
+      },
+      item9: {
+        name: "Pasture Burger",
+        description: "Pasture Butchery ground chuck, raclette, onion, lettuce, horseradish remoulade, brioche bun",
+        price: "18",
+        size: "lrg"
       }
     }
   });
@@ -373,13 +435,13 @@ export default function App() {
     setEvents(formattedEvents);
   };
 
-  useEffect(() => {
-    fetchSchedules();
-    fetchMenus();
-    fetchEvents();
+  // useEffect(() => {
+  //   fetchSchedules();
+  //   fetchMenus();
+  //   fetchEvents();
 
-    console.log('fetching new data');
-  }, []);
+  //   console.log('fetching new data');
+  // }, []);
 
   return (
     <html lang="en">
@@ -429,7 +491,7 @@ export function ErrorBoundary() {
       <body>
         <Layout {...rootData}>
           <main className="route-error">
-            <h1>{errorStatus}</h1>
+            <h1>{errorMessage} ({errorStatus} error)</h1>
             <h2>Looks like you took a wrong turn</h2>
             <Link to="/home" className='button button-tertiary'>
               Go back to the Homepage

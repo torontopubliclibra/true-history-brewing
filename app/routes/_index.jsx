@@ -19,6 +19,11 @@ export default function Homepage() {
 
   let [ loading, setLoading ] = useState(true);
   let [ ageVerified, setAgeVerified ] = useState(false);
+  let [ rememberUser, setRememberUser ] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setRememberUser(!rememberUser);
+  };
 
   const loaderStyle = {
     backgroundColor: "#1F1F1F",
@@ -60,13 +65,28 @@ export default function Homepage() {
             Exit
           </Link>
         </div>
+        <div className="remember-user">
+          <label>
+            <input
+              type="checkbox"
+              checked={rememberUser}
+              className={rememberUser ? "checked" : ""}
+              onChange={handleCheckboxChange}
+            />
+            Remember me on this device
+          </label>
+        </div>
       </div>
     </section>
   )
 
   let handleAgeVerification = () => {
     setAgeVerified(true);
-    window.localStorage.setItem("ageVerified", "true");
+
+    if (rememberUser) {
+      window.localStorage.setItem("ageVerified", "true");
+    }
+
     window.location.replace("/home");
   }
 

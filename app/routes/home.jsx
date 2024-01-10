@@ -30,37 +30,32 @@ export default function Homepage() {
     <>
         <section className="heading main-heading">
           <img src={logo} className="thb-logo" alt="True History Brewing logo" />
-        </section>
-        <section className="main-subheading">
-          <img src={barSketch} className="bar-sketch" alt="" />
-          <h2>Brewing low & slow <span className="location">in Toronto, ON</span></h2>
+          <hr/>
+          <h2 className="home">Brewing Low & Slow</h2>
         </section>
         <section className="main-taproom">
-          <h3 class="taproom-heading">Come pay us a visit and we'll pour you a cold one!</h3>
-          <div className="taproom-info">
-            <div className="address-block">
-              <p className='address'>1154 St. Clair Avenue West</p>
-              <hr/>
-              <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
-            </div>
-            <Schedule/>
+          <div className="sketch-address">
+            <img src={barSketch} className="bar-sketch" alt="" />
+            <p className='address'>1154 St. Clair Avenue West, Toronto, ON</p>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
+          <Schedule/>
           <div className="menu-buttons">
-              <Link to="/taproom#menu1" className='button button-secondary'>What's on tap right now?</Link>
-              <Link to="/taproom#menu2" className='button button-secondary'>Anything that's not beer?</Link>
-              <Link to="/taproom#menu3" className='button button-secondary'>Non-alcoholic options?</Link>
-              <Link to="/taproom#menu4" className='button button-secondary'>Do you guys have food?</Link>
-            </div>
+            <Link to="/taproom#menus" state={{ selectedMenu: "beers" }} className='button button-tertiary'>What's on tap right now?</Link>
+            <Link to="/taproom#menus" state={{ selectedMenu: "wine-seltzers-etc" }} className='button button-tertiary'>Anything that's not beer?</Link>
+            <Link to="/taproom#menus" state={{ selectedMenu: "non-alc" }} className='button button-tertiary'>Non-alcoholic options?</Link>
+            <Link to="/taproom#menus" state={{ selectedMenu: "food" }}  className='button button-tertiary'>Do you guys have food?</Link>
+          </div>
         </section>
         <section className="main-events">
           <img src={patioPhoto} className="events-photo" />
           <div className="main-events-content">
             <h3>Upcoming Events</h3>
             <hr/>
-            <ul class="events-list">
+            <ul className="events-list">
               {formattedEvents}
             </ul>
-            <Link to="/taproom#calendar" className='button button-tertiary'>Check out our calendar <img src={calendar} className="button-icon" /></Link>
+            <Link to="/taproom#calendar" className='button button-primary'>Check out our calendar <img src={calendar} className="button-icon" /></Link>
           </div>
         </section>
         <section className="main-newsletter">
