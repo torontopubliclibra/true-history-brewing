@@ -20,10 +20,12 @@ export const meta = () => {
 
 export default function Homepage() {
 
-  const { events } = useContext(StrapiContext);
+  const { events, currentDate } = useContext(StrapiContext);
 
-  let formattedEvents = events.map((event) => {
-    return <li><span className="date">{event.date} -</span> {event.title}</li>
+  let formattedEvents = events.map((event, index) => {
+    if (event.date >= currentDate && index < 4) {
+      return <li><span className="date">{event.date} -</span> {event.title}</li>
+    }
   })
 
   return (

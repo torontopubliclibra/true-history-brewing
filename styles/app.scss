@@ -941,43 +941,127 @@ main {
       display: none;
     }
     .fc-button-active {
-      background-color: $color2 !important;
-      color: $black !important;
+      background-color: $color1 !important;
+      color: $white !important;
       box-shadow: none !important;
     }
     .fc-button {
       text-transform: uppercase;
       padding-left: 20px;
       padding-right: 20px;
-      color: $white;
+      color: $black;
       border: solid $black 3px;
-      background-color: $color1;
+      background-color: $color2;
       border-radius: 0;
       min-width: 75px;
       transition: background-color 0.4s, color 0.4s;
       &:hover, &:active, &:focus {
-        background-color: $color2 !important;
-        color: $black !important;
+        background-color: $color1 !important;
+        color: $white !important;
         box-shadow: none !important;
       }
       &:disabled {
         opacity: 1;
         border: solid $black 3px;
-        background-color: $color2;
-        color: $black;
+        background-color: $color1;
+        color: $white !important;
         cursor: pointer;
       }
     }
+    .calendar , .fc {
+      width: 90vw !important;
+      height: 100%;
+      min-height: 300px;
+      max-height: 1000px;
+    }
     .fc {
-      width: 90vw;
       margin-top: 25px;
+
+      a:hover {
+        cursor: default !important;
+        text-decoration: none !important;
+      }
 
       h2 {
         color: $black;
       }
 
+      .fc-listMonth-view {
+        border: solid $black 3px !important;
+
+        .fc-event {
+          background-color: $light;
+        }
+      }
+
+      .fc-list-day th {
+        background-color: $color4 !important;
+        a {
+          color: $white !important;
+          font-weight: 400;
+        }
+      }
+
+      .fc-list-event-dot {
+        display: none;
+      }
+
+      .fc-daygrid-event {
+        background-color: $color4;
+        border: solid $black 2px;
+        padding: 2px 5px;
+        margin: 0px 10px;
+        text-align: center;
+      }
+
+      .fc-event {
+        td {
+          border-left: 0;
+          border-right: 0;
+        }
+        &:hover {
+          th, tr {
+            opacity: 1;
+          }
+          td {
+            background-color: unset !important;
+          }
+        }
+      }
+
+      .fc-cell-shaded {
+        background: none !important;
+        border-top: none;
+      }
+
+      .fc-daygrid-day-top a {
+        cursor: default;
+        text-decoration: none;
+        font-size: 18px;
+        padding-right: 3px;
+      }
+
       .fc-button-group {
         gap: 12px;
+      }
+
+      .fc-scrollgrid-sync-table tbody {
+        background-color: $light;
+      }
+
+      tbody {
+        border: solid $black 3px;
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      td {
+        border-top: none;
+        border: solid $black 3px;
+      }
+
+      .fc-scrollgrid-section th {
+        background: none !important;
       }
     }
   }

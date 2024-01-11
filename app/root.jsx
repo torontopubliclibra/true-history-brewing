@@ -453,7 +453,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <StrapiContext.Provider value={{ schedule: schedule, menus: menus, events: events }}>
+        <StrapiContext.Provider value={{ schedule: schedule, menus: menus, events: events, currentDate: parseDate(new Date()) }}>
           <Layout {...data}>
             <Outlet />
           </Layout>
