@@ -13,7 +13,7 @@ export function Calendar() {
             <h4>Calendar</h4>
             <FullCalendar
                 plugins={[ dayGridPlugin, listPlugin ]}
-                initialView="listMonth"
+                initialView="dayGridMonth"
                 headerToolbar={{
                     left: 'prev,next today',
                     center: 'title',

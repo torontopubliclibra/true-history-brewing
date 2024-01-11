@@ -435,13 +435,13 @@ export default function App() {
     setEvents(formattedEvents);
   };
 
-  // useEffect(() => {
-  //   fetchSchedules();
-  //   fetchMenus();
-  //   fetchEvents();
+  useEffect(() => {
+    // fetchSchedules();
+    // fetchMenus();
+    fetchEvents();
 
-  //   console.log('fetching new data');
-  // }, []);
+    console.log('fetching new data');
+  }, []);
 
   return (
     <html lang="en">
