@@ -184,6 +184,18 @@ export default function App() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
 
+  let [mobileMenuOpen, setMobileMenuOpen] = useState();
+
+  const updateMobileMenuOpen = (value) => {
+    setMobileMenuOpen(value);
+
+    if (value === true) {
+      window.location.href = "#mobile-menu-aside";
+    } else {
+      window.location.href = "#";
+    }
+  }
+
   const [schedule, setSchedule] = useState({
     Mon: "Closed",
     Tues: "4:00pm–11:00pm",
@@ -432,7 +444,12 @@ export default function App() {
         }
         formattedEvents.push(event4)
     }
-    setEvents(formattedEvents);
+
+    let sortedEvents = formattedEvents.sort((a, b) => {
+       return a.date > b.date;
+    });
+
+    setEvents(sortedEvents);
   };
 
   useEffect(() => {
@@ -441,6 +458,7 @@ export default function App() {
     fetchEvents();
 
     console.log('fetching new data');
+    
   }, []);
 
   return (
@@ -452,9 +470,9 @@ export default function App() {
         <style data-fullcalendar />
         <Links />
       </head>
-      <body>
+      <body className={mobileMenuOpen === true ? "mobile-menu-open" : ""}>
         <StrapiContext.Provider value={{ schedule: schedule, menus: menus, events: events, currentDate: parseDate(new Date()) }}>
-          <Layout {...data}>
+          <Layout {...data} mobileMenuOpen={mobileMenuOpen} updateMobileMenuOpen={updateMobileMenuOpen}>
             <Outlet />
           </Layout>
         </StrapiContext.Provider>

@@ -11,7 +11,7 @@ import cornerRightDown from './../../public/assets/icons/corner-right-down.svg';
 /**
  * @param {HeaderProps}
  */
-export function Header({header, isLoggedIn, cart}) {
+export function Header({header, cart, mobileMenuOpen, updateMobileMenuOpen}) {
 
   const {menu} = header;
   const location = useLocation();
@@ -37,6 +37,8 @@ export function Header({header, isLoggedIn, cart}) {
         />
         <HeaderSubmenu
           cart={cart}
+          mobileMenuOpen={mobileMenuOpen}
+          updateMobileMenuOpen={updateMobileMenuOpen}
         />
       </header>
     )
@@ -114,22 +116,31 @@ export function HeaderMenu({viewport}) {
 /**
  * @param {Pick<HeaderProps, 'isLoggedIn' | 'cart'>;}
  */
-function HeaderSubmenu({cart}) {
+function HeaderSubmenu({cart, mobileMenuOpen, updateMobileMenuOpen}) {
   return (
     <nav className="header-submenu" role="navigation">
       <CartToggle cart={cart} />
-      <HeaderMenuMobileToggle />
+      <HeaderMenuMobileToggle mobileMenuOpen={mobileMenuOpen} updateMobileMenuOpen={updateMobileMenuOpen} />
     </nav>
   );
 }
 
-function HeaderMenuMobileToggle() {
-  return (
-    <a className="button button-primary menu-toggle" href="#mobile-menu-aside">
-      Menu
-      <img src={cornerRightDown} className="button-icon" />
-    </a>
-  );
+function HeaderMenuMobileToggle({mobileMenuOpen, updateMobileMenuOpen}) {
+  if (mobileMenuOpen === true) {
+    return (
+      <a className="button button-primary menu-toggle" onClick={() => updateMobileMenuOpen(false)}>
+        <span className="button-label">Close</span>
+        <img src={cornerRightDown} className="button-icon" />
+      </a>
+    );
+  } else {
+    return (
+      <a className="button button-primary menu-toggle" onClick={() => updateMobileMenuOpen(true)}>
+        <span className="button-label">Menu</span>
+        <img src={cornerRightDown} className="button-icon" />
+      </a>
+    );
+  }
 }
 
 function SearchToggle() {
@@ -141,7 +152,7 @@ function SearchToggle() {
  */
 function CartBadge({count}) {
   return <a href="#cart-aside" className="button button-primary">
-    Cart ({count})
+    <span className="button-label">Cart</span> ({count})
     <img src={cart} className="button-icon" />
   </a>;
 }
