@@ -6,7 +6,7 @@ import icon from './../../public/assets/thb-icon.png';
 import cart from './../../public/assets/icons/cart.svg';
 // import signIn from './../../public/assets/icons/sign-in.svg';
 // import instagram from './../../public/assets/icons/instagram.svg';
-import cornerRightDown from './../../public/assets/icons/corner-right-down.svg';
+import mobileMenu from './../../public/assets/icons/mobile-menu.svg';
 
 /**
  * @param {HeaderProps}
@@ -134,21 +134,21 @@ function HeaderMenuMobileToggle({asideOpen, updateAsideOpen}) {
     return (
       <a className="button button-primary menu-toggle active" onClick={() => updateAsideOpen("menu", false)}>
         <span className="button-label">Close</span>
-        <img src={cornerRightDown} className="button-icon" />
+        <img src={mobileMenu} className="button-icon" />
       </a>
     );
   } else if (asideOpen.value && asideOpen.aside !== "cart") {
     return (
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
         <span className="button-label">Menu</span>
-        <img src={cornerRightDown} className="button-icon" />
+        <img src={mobileMenu} className="button-icon" />
       </a>
     );
   } else {
     return (
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
         <span className="button-label">Menu</span>
-        <img src={cornerRightDown} className="button-icon" />
+        <img src={mobileMenu} className="button-icon" />
       </a>
     );
   }
