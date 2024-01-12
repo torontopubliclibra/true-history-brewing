@@ -41,6 +41,7 @@ export default function Homepage() {
             <p className='address'>1154 St. Clair Avenue West, Toronto, ON</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
+          <hr/>
           <Schedule/>
           <div className="menu-buttons">
             <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>What's on tap right now?</Link>

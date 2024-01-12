@@ -879,7 +879,8 @@ main {
     // responsive to mobile
     @media only screen and (max-width: $tablet) {
       h2 {
-        font-size: 60px;
+        font-size: 50px;
+        margin-bottom: 0;
       }
       h2.home {
         font-size: 30px;
@@ -941,36 +942,40 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
-      .sketch-address {
+      hr {
+        background-color: $color3;
         width: 90%;
+        height: 5px;
+        margin-top: 10px;
+        margin-bottom: 25px;
+      }
+      .sketch-address {
+        width: 100%;
 
         .bar-sketch {
           padding-bottom: 10px;
-          width: 90%;
+          width: 100%;
         }
         .address {
-          width: 85%;
+          width: 83%;
           text-align: center;
           letter-spacing: 1.5px;
           padding: 10px 15px;
           margin: 0;
-          margin-top: 10px;
-          font-size: 20px;
         }
         .button {
           display: none;
         }
       }
       .hours {
-        order: 4;
-        margin-bottom: 40px !important;
+        margin-bottom: 35px;
       }
       .menu-buttons {
         flex-direction: column;
         align-items: center;
-        padding-top: 10px;
         padding-bottom: 25px;
         margin: 0;
+        margin-top: 30px;
         .button {
           width: 65%;
           max-width: 300px;
@@ -1035,17 +1040,19 @@ main {
       flex-direction: column;
 
       hr {
+        height: 5px;
         border-right: none;
         width: 100% !important;
       }
 
       .events-list {
-        margin: 10px 5% !important;
+        margin: 10px 35px !important;
       }
 
       .button {
+        max-width: 300px;
         width: 75% !important;
-        margin: 15px auto !important;
+        margin: 15px 25px !important;
         margin-bottom: 30px !important;
       }
 
@@ -1097,17 +1104,26 @@ main {
       border-right: $default-border;
     }
     p {
-      color: $black;
-      font-size: 25px;
-      padding: 20px 0;
+      text-align: center;
+      width: 75%;
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 22px;
       font-style: italic;
-      margin: 0;
+      color: $black;
+      background-color: $light;
+      border: $default-border;
+      border-radius: 25px;
+      filter: $default-shadow;
     }
     .hours {
       margin: 15px;
+      margin-bottom: 30px;
     }
     .button {
       width: 300px;
+      margin-top: 15px;
+      margin-bottom: 25px;
     }
 
     // responsive to tablet
@@ -1125,11 +1141,14 @@ main {
         padding: 25px 0;
         border-right: none;
         p {
-          display: none;
+          letter-spacing: 1.5px;
         }
         .button {
-          margin-top: 25px;
-          width: 55%;
+          margin-top: 20px;
+          width: 50%;
+        }
+        .hours {
+          margin-bottom: 30px !important;
         }
       }
     }

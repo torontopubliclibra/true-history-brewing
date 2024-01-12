@@ -66,9 +66,9 @@ export default function Homepage() {
         <section className="taproom-address">
           <img src={taproomPhoto} className="taproom-photo" />
           <div className="taproom-info">
-            <Schedule/>
             <p>1154 St. Clair Avenue West, Toronto, ON</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
+            <Schedule/>
           </div>
         </section>
         <section className="taproom-menus">
