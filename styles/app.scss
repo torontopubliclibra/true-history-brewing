@@ -12,6 +12,9 @@ body {
 
   // responsive to tablet
   @media only screen and (max-width: $tablet) {
+
+    height: calc(100% + 103px);
+
     header, #mobile-menu-aside, #cart-aside {
       position: sticky !important;
     }
@@ -331,6 +334,10 @@ hr {
     img {
       filter: none;
     }
+  }
+  .button.cart {
+    display: flex;
+    flex-direction: row-reverse;
   }
   .button-secondary:hover {
     background: $color1;
@@ -1018,7 +1025,7 @@ main {
       hr {
         background-color: $color1;
         border-left: none;
-        width: 90% !important;
+        width: 90%;
         margin-bottom: 20px;
       }
     }
@@ -1026,6 +1033,11 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       flex-direction: column;
+
+      hr {
+        border-right: none;
+        width: 100% !important;
+      }
 
       .events-list {
         margin: 10px 5% !important;
@@ -1054,6 +1066,7 @@ main {
     color: $black;
     background-color: rgba($color2, 0.9);
     border-top: $default-border;
+    margin-bottom: 103px;
   }
   .taproom-address {
     height: 600px;
@@ -1146,8 +1159,8 @@ main {
       h3 {
         display: flex;
         align-items: center;
-        font-size: 40px;
-        min-height: 100px;
+        font-size: 50px;
+        min-height: 125px;
       }
     }
 
@@ -1252,7 +1265,7 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       .updated-date {
-        top: 28px;
+        top: 45px;
         text-align: center;
         font-size: 15px;
         padding: 5px 10px;
@@ -1328,7 +1341,11 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       h3 {
-        font-size: 40px;
+        display: flex;
+        align-items: center;
+        font-size: 50px;
+        height: 70px;
+        margin-top: 10px;
       }
       .fc-button {
         &:hover, &:focus {
@@ -1444,17 +1461,19 @@ main {
         margin-top: 0;
       }
       .calendar {
-        padding-top: 30px;
+        padding-top: 10px;
         padding-bottom: 30px;
         .fc-header-toolbar {
           display: flex;
-          flex-direction: column;
+          flex-direction: column-reverse;
           justify-content: space-between;
           gap: 15px;
           margin: 0;
         }
         .fc-toolbar-chunk {
           width: 100%;
+          display: flex;
+          justify-content: center;
         }
         .fc-toolbar-chunk:nth-of-type(3) {
           height: 0;
@@ -1471,6 +1490,7 @@ main {
       .fc-toolbar-chunk:nth-of-type(1) {
         display: flex;
         gap: 12px;
+        margin-bottom: 20px;
         .fc-today-button {
           margin: 0;
         }

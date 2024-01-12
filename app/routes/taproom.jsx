@@ -71,8 +71,8 @@ export default function Homepage() {
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
         </section>
-        <section className="taproom-menus" id="menus">
-          <h3>Menus</h3>
+        <section className="taproom-menus">
+          <h3 id="menu">Menus</h3>
           <p className='updated-date'>Last updated: 21/11/23</p>
           <ul className='menu-nav'>
             {

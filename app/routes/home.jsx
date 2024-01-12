@@ -43,10 +43,10 @@ export default function Homepage() {
           </div>
           <Schedule/>
           <div className="menu-buttons">
-            <Link to="/taproom#menus" state={{ selectedMenu: "beers" }} className='button button-tertiary'>What's on tap right now?</Link>
-            <Link to="/taproom#menus" state={{ selectedMenu: "wine-seltzers-etc" }} className='button button-tertiary'>Anything that's not beer?</Link>
-            <Link to="/taproom#menus" state={{ selectedMenu: "non-alc" }} className='button button-tertiary'>Non-alcoholic options?</Link>
-            <Link to="/taproom#menus" state={{ selectedMenu: "food" }}  className='button button-tertiary'>Do you guys have food?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>What's on tap right now?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "wine-seltzers-etc" }} className='button button-tertiary'>Anything that's not beer?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "non-alc" }} className='button button-tertiary'>Non-alcoholic options?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'>Do you guys have food?</Link>
           </div>
         </section>
         <section className="main-events">

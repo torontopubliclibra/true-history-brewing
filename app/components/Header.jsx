@@ -164,21 +164,21 @@ function SearchToggle() {
 function CartBadge({count, asideOpen, updateAsideOpen}) {
   if (asideOpen.value && asideOpen.aside === "cart") {
     return (
-      <a className="button button-primary active" onClick={() => updateAsideOpen("cart", false)}>
+      <a className="button button-primary cart active" onClick={() => updateAsideOpen("cart", false)}>
         <span className="button-label">Cart</span> ({count})
         <img src={cart} className="button-icon" />
       </a>
     );
   } else if (asideOpen.value && asideOpen.aside !== "cart") {
     return (
-      <a className="button button-primary" onClick={() => updateAsideOpen("cart", true)}>
+      <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
         <img src={cart} className="button-icon" />
       </a>
     );
   } else {
     return (
-      <a className="button button-primary" onClick={() => updateAsideOpen("cart", true)}>
+      <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
         <img src={cart} className="button-icon" />
       </a>
