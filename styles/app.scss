@@ -10,8 +10,45 @@ body {
   width: 100vw;
   overflow-x: hidden;
 
-  &.mobile-menu-open {
+  // responsive to tablet
+  @media only screen and (max-width: $tablet) {
+    header, #mobile-menu-aside, #cart-aside {
+      position: sticky !important;
+    }
+    footer {
+      background-color: rgba($color1, 0.9);
+      background-image: none;
+      &.landing-footer {
+        background-image: url('./../../public/assets/wallpaper.png');
+      }
+    }
+  }
+
+  #mobile-menu-aside, #cart-aside {
+    display: none !important;
+  }
+
+  &.aside-open {
     overflow: hidden;
+
+    &.menu-open {
+      #mobile-menu-aside {
+        display: initial !important;
+      }
+      #cart-aside {
+        display: none !important;
+      }
+    }
+
+    &.cart-open {
+      #cart-aside {
+        display: initial !important;
+      }
+      #mobile-menu-aside {
+        display: none !important;
+      }
+    }
+
   }
 }
 
@@ -119,7 +156,7 @@ hr {
 .loading {
   background-color: rgba($color1, 0.9);
   padding: 0;
-  height: calc(100vh - 226px);
+  height: calc(100vh - 206px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -193,7 +230,7 @@ hr {
     }
   }
 
-  // responsive to mobile
+  // responsive to tablet
   @media only screen and (max-width: $tablet) {
     width: 65% !important;
     margin: 15px !important;
@@ -244,6 +281,31 @@ hr {
   .flourish {
     width: 25px;
     padding-bottom: 3px;
+  }
+}
+
+// responsive to tablet
+@media only screen and (max-width: $tablet) {
+  .button:hover {
+    background: $color2;
+    color: $black;
+    img {
+      filter: none;
+    }
+  }
+  .button-secondary {
+    background: $color1;
+    color: $black;
+    img {
+      filter: none;
+    }
+  }
+  .button-tertiary {
+    background: $color4;
+    color: $black;
+    img {
+      filter: none;
+    }
   }
 }
 
@@ -318,6 +380,38 @@ header, footer {
   height: 100px;
 }
 
+// responsive to tablet
+@media only screen and (max-width: $tablet) {
+  #cart-aside {
+    position: absolute;
+    top: 0;
+
+    aside {
+      position: absolute;
+      top: 103px;
+
+      header {
+        display: none;
+        height: 0;
+      }
+    }
+  }
+}
+
+// responsive to mobile
+@media only screen and (max-width: $mobile) {
+  #cart-aside {
+    &.overlay {
+      background: none !important;
+      inset: 0 0 0 100vw !important;
+    }
+    aside {
+      width: 100vw;
+      max-width: 100vw;
+    }
+  }
+}
+
 #mobile-menu-aside {
   display: none;
   position: absolute;
@@ -364,7 +458,7 @@ header, footer {
         filter: $default-shadow;
         padding: 10px 30px 10px 30px;
         margin: 5px;
-        color: $black;
+        color: $white;
         font-size: 20px;
         font-family: "Bogue-Regular";
         font-weight: 600;
@@ -416,6 +510,31 @@ header {
       display: flex;
       grid-gap: 1rem;
       margin-left: auto;
+
+      .button {
+        &:hover {
+          color: $black;
+          background-color: $color2;
+          img {
+            filter: none;
+          }
+        }
+      }
+
+      .active {
+        color: $white;
+        background-color: $color1;
+        img {
+          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+        }
+        &:hover {
+          color: $white;
+          background-color: $color1;
+          img {
+            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+          }
+        }
+      }
     
       .menu-toggle {
         display: none;
@@ -626,7 +745,7 @@ main {
   .landing {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 226px);
+    height: calc(100vh - 206px);
     padding: 0;
 
     .landing-welcome {
@@ -786,11 +905,6 @@ main {
         border-radius: 25px;
         filter: $default-shadow;
       }
-      .button {
-        &:hover {
-          background-color: $color3;
-        }
-      }
     }
     .hours {
       width: 35%;
@@ -827,15 +941,18 @@ main {
           text-align: center;
           font-size: 22px;
         }
+        .button {
+          font-size: 18px;
+        }
       }
       .menu-buttons {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
         .button {
           width: 65%;
           max-width: 300px;
-          height: 25px;
+          height: 20px;
         }
       }
     }
@@ -1288,15 +1405,23 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+      .fc {
+        margin-top: 0;
+      }
       .calendar {
         padding-bottom: 20px;
         .fc-header-toolbar {
           display: flex;
-          flex-direction: row-reverse;
+          flex-direction: column-reverse;
           justify-content: space-between;
+          gap: 15px;
+          margin-top: 0;
         }
         .fc-toolbar-chunk:nth-of-type(2) {
           width: 50%;
+        }
+        .fc-toolbar-chunk:nth-of-type(3) {
+          height: 0;
         }
         .fc-dayGridMonth-button, .fc-listMonth-button {
           display: none;
@@ -1309,7 +1434,6 @@ main {
     
       .fc-toolbar-chunk:nth-of-type(1) {
         display: flex;
-        flex-direction: column;
         gap: 12px;
         .fc-today-button {
           margin: 0;

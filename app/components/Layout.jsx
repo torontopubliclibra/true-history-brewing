@@ -12,13 +12,13 @@ import {
 /**
  * @param {LayoutProps}
  */
-export function Layout({cart, children = null, footer, header, isLoggedIn, mobileMenuOpen, updateMobileMenuOpen}) {
+export function Layout({cart, children = null, footer, header, isLoggedIn, asideOpen, updateAsideOpen}) {
   return (
     <>
       <CartAside cart={cart} />
       <SearchAside />
       <MobileMenuAside menu={header.menu} shop={header.shop} />
-      <Header header={header} cart={cart} isLoggedIn={isLoggedIn} mobileMenuOpen={mobileMenuOpen} updateMobileMenuOpen={updateMobileMenuOpen}/>
+      <Header header={header} cart={cart} isLoggedIn={isLoggedIn} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen}/>
       <main>{children}</main>
       <Suspense>
         <Await resolve={footer}>

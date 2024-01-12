@@ -184,15 +184,56 @@ export default function App() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
 
-  let [mobileMenuOpen, setMobileMenuOpen] = useState();
+  let [asideOpen, setAsideOpen] = useState({
+    value: false,
+    aside: "",
+  });
 
-  const updateMobileMenuOpen = (value) => {
-    setMobileMenuOpen(value);
+  let [bodyTags, setBodyTags] = useState("");
 
-    if (value === true) {
-      window.location.href = "#mobile-menu-aside";
+  const updateAsideOpen = (aside, value) => {
+
+    if (aside === "menu") {
+      if (value === true) {
+        setAsideOpen({
+          value: true,
+          aside: "menu"
+        });
+        setBodyTags("aside-open menu-open");
+        window.location.href = "#mobile-menu-aside";
+      } else {
+        setAsideOpen({
+          value: false,
+          aside: ""
+        });
+        setBodyTags("")
+        window.location.href = "#";
+      }
+    } else if (aside === "cart") {
+      if (value === true) {
+        setAsideOpen({
+          value: true,
+          aside: "cart"
+        });
+        setBodyTags("aside-open cart-open");
+        window.location.href = "#cart-aside";
+      } else {
+        setAsideOpen({
+          value: false,
+          aside: ""
+        });
+        setBodyTags("");
+        window.location.href = "#";
+      }
     } else {
-      window.location.href = "#";
+      if (value === false) {
+        setAsideOpen({
+          value: false,
+          aside: ""
+        });
+        setBodyTags("");
+        window.location.href = "/home#";
+      }
     }
   }
 
@@ -470,9 +511,9 @@ export default function App() {
         <style data-fullcalendar />
         <Links />
       </head>
-      <body className={mobileMenuOpen === true ? "mobile-menu-open" : ""}>
+      <body className={bodyTags}>
         <StrapiContext.Provider value={{ schedule: schedule, menus: menus, events: events, currentDate: parseDate(new Date()) }}>
-          <Layout {...data} mobileMenuOpen={mobileMenuOpen} updateMobileMenuOpen={updateMobileMenuOpen}>
+          <Layout {...data} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen}>
             <Outlet />
           </Layout>
         </StrapiContext.Provider>
