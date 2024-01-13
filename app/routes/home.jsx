@@ -6,6 +6,10 @@ import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
 import patioPhoto from './../../public/assets/patio-photo.jpg';
 import compass from './../../public/assets/icons/compass.svg';
+import beer from './../../public/assets/icons/beer.svg';
+import wine from './../../public/assets/icons/wine.svg';
+import drink from './../../public/assets/icons/drink.svg';
+import food from './../../public/assets/icons/food.svg';
 import calendar from './../../public/assets/icons/calendar.svg';
 
 /**
@@ -44,10 +48,10 @@ export default function Homepage() {
           <hr/>
           <Schedule/>
           <div className="menu-buttons">
-            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>What's on tap right now?</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "wine-seltzers-etc" }} className='button button-tertiary'>Anything that's not beer?</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "non-alc" }} className='button button-tertiary'>Non-alcoholic options?</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'>Do you guys have food?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'><img src={beer} className="button-icon"/>What's on tap right now?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "wine-seltzers-etc" }} className='button button-tertiary'><img src={wine} className="button-icon"/>Anything that's not beer?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "non-alc" }} className='button button-tertiary'><img src={drink} className="button-icon"/>Non-alcoholic options?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'><img src={food} className="button-icon"/>Do you guys have food?</Link>
           </div>
         </section>
         <section className="main-events">

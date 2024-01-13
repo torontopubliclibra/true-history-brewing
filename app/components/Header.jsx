@@ -4,8 +4,12 @@ import { Await, NavLink } from '@remix-run/react';
 import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
 import cart from './../../public/assets/icons/cart.svg';
-// import signIn from './../../public/assets/icons/sign-in.svg';
-// import instagram from './../../public/assets/icons/instagram.svg';
+import home from './../../public/assets/icons/home.svg';
+import beer from './../../public/assets/icons/beer.svg';
+import contact from './../../public/assets/icons/contact.svg';
+import instagram from './../../public/assets/icons/instagram.svg';
+import store from './../../public/assets/icons/store.svg';
+import basket from './../../public/assets/icons/basket.svg';
 import mobileMenu from './../../public/assets/icons/mobile-menu.svg';
 
 /**
@@ -76,6 +80,7 @@ export function HeaderMenu({viewport}) {
         to="/home"
         >
         <span className="nav-text">Home</span>
+        <img src={home} className="button-icon" />
       </NavLink>
       <NavLink
         end
@@ -85,6 +90,7 @@ export function HeaderMenu({viewport}) {
         to="/taproom"
         >
         <span className="nav-text">Taproom</span>
+        <img src={beer} className="button-icon" />
       </NavLink>
       <NavLink
         end
@@ -94,6 +100,7 @@ export function HeaderMenu({viewport}) {
         to="/bottle-shop"
         >
         <span className="nav-text">Bottle Shop</span>
+        <img src={store} className="button-icon" />
       </NavLink>
       <NavLink
         end
@@ -103,6 +110,7 @@ export function HeaderMenu({viewport}) {
         to="/store"
         >
         <span className="nav-text">Online Store</span>
+        <img src={basket} className="button-icon" />
       </NavLink>
       <NavLink
         end
@@ -112,6 +120,18 @@ export function HeaderMenu({viewport}) {
         to="/contact"
         >
         <span className="nav-text">Contact</span>
+        <img src={contact} className="button-icon" />
+      </NavLink>
+      <NavLink
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        className="instagram"
+        to="https://instagram.com/truehistorybrewing"
+        target="_blank"
+        >
+        <span className="nav-text">Instagram</span>
+        <img src={instagram} className="button-icon" />
       </NavLink>
     </nav>
   );
@@ -132,16 +152,16 @@ function HeaderSubmenu({cart, asideOpen, updateAsideOpen}) {
 function HeaderMenuMobileToggle({asideOpen, updateAsideOpen}) {
   if (asideOpen.value && asideOpen.aside === "menu") {
     return (
-      <a className="button button-primary menu-toggle active" onClick={() => updateAsideOpen("menu", false)}>
-        <span className="button-label">Close</span>
+      <a className="button button-primary menu-toggle menu-active" onClick={() => updateAsideOpen("menu", false)}>
         <img src={mobileMenu} className="button-icon" />
+        <span className="button-label">Menu</span>
       </a>
     );
   } else if (asideOpen.value && asideOpen.aside !== "cart") {
     return (
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
-        <span className="button-label">Menu</span>
         <img src={mobileMenu} className="button-icon" />
+        <span className="button-label">Menu</span>
       </a>
     );
   } else {
@@ -164,8 +184,8 @@ function SearchToggle() {
 function CartBadge({count, asideOpen, updateAsideOpen}) {
   if (asideOpen.value && asideOpen.aside === "cart") {
     return (
-      <a className="button button-primary cart active" onClick={() => updateAsideOpen("cart", false)}>
-        <span className="button-label">Cart</span> ({count})
+      <a className="button button-primary cart cart-active" onClick={() => updateAsideOpen("cart", false)}>
+        <span className="button-label">Cart</span>({count})
         <img src={cart} className="button-icon" />
       </a>
     );

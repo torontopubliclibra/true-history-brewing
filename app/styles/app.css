@@ -31,7 +31,9 @@ body {
   background-image: url("./../../public/assets/wooden-bg.jpg");
   width: 100vw;
   overflow-x: hidden; }
-  @media only screen and (max-width: 768px) {
+  body #mobile-menu-aside {
+    display: none !important; }
+  @media only screen and (max-width: 1070px) {
     body {
       height: calc(100% + 103px); }
       body header, body #mobile-menu-aside, body #cart-aside {
@@ -40,19 +42,18 @@ body {
         background-color: rgba(119, 141, 121, 0.8);
         background-image: none; }
         body footer.landing-footer {
-          background-image: url("./../../public/assets/wallpaper.png"); } }
-  body #mobile-menu-aside, body #cart-aside {
-    display: none !important; }
-  body.aside-open {
-    overflow: hidden; }
-    body.aside-open.menu-open #mobile-menu-aside {
-      display: initial !important; }
-    body.aside-open.menu-open #cart-aside {
-      display: none !important; }
-    body.aside-open.cart-open #cart-aside {
-      display: initial !important; }
-    body.aside-open.cart-open #mobile-menu-aside {
-      display: none !important; }
+          background-image: url("./../../public/assets/wallpaper.png"); }
+      body.aside-open.menu-open #mobile-menu-aside {
+        display: initial !important; }
+      body.aside-open.menu-open #cart-aside {
+        display: none !important; }
+      body.aside-open.cart-open #cart-aside {
+        display: initial !important; }
+      body.aside-open.cart-open #mobile-menu-aside {
+        display: none !important; } }
+  @media only screen and (max-width: 1070px) and (max-width: 480px) {
+    body.aside-open {
+      overflow: hidden; } }
 
 #cart-aside {
   z-index: 200; }
@@ -97,7 +98,7 @@ aside {
         opacity: 1; }
   aside main {
     height: calc(100vh - 75px);
-    background-color: rgba(216, 181, 110, 0.9);
+    background-color: rgba(214, 208, 192, 0.25);
     padding: 15px 0; }
     aside main hr {
       height: 4px;
@@ -155,7 +156,7 @@ hr {
   background-color: #F1EDE2;
   color: #1F1F1F;
   border: solid #1F1F1F 3px;
-  outline: solid #D8B56E 10px;
+  outline: solid #D8B56E 11px;
   box-shadow: 0 0 0 14px #1F1F1F;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   border-radius: 15px;
@@ -190,11 +191,12 @@ hr {
       .hours .schedule li .time {
         font-weight: 400;
         font-style: italic; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     .hours {
       width: 70% !important;
       margin: 15px !important;
-      padding: 10px 25px 0 !important; }
+      padding: 10px 25px 0 !important;
+      outline: solid #D8B56E 12px; }
       .hours h4 {
         font-size: 25px; }
       .hours .schedule li {
@@ -262,14 +264,16 @@ hr {
     .button-tertiary:hover img {
       filter: none; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1070px) {
   .button:hover {
     background: #D8B56E;
     color: #1F1F1F; }
     .button:hover img {
       filter: none; }
-  .button.cart {
+  .button.cart, .button.menu-toggle {
     display: flex;
+    flex-direction: row; }
+  .button.menu-active {
     flex-direction: row-reverse; }
   .button-secondary:hover {
     background: #778d79;
@@ -291,7 +295,7 @@ hr {
   max-width: 900px;
   height: auto;
   margin: 40px 0; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     .thb-logo {
       width: 80%;
       margin: 20px 0; } }
@@ -307,7 +311,7 @@ header, footer {
 .landing-header, .landing-footer {
   height: 100px; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1070px) {
   #cart-aside {
     position: absolute;
     top: 0; }
@@ -333,7 +337,7 @@ header, footer {
   #mobile-menu-aside.overlay {
     background: none !important;
     inset: 0 0 0 100vw !important; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     #mobile-menu-aside {
       display: initial; } }
   #mobile-menu-aside aside {
@@ -348,31 +352,47 @@ header, footer {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      grid-gap: 25px;
-      min-height: 85%; }
+      grid-gap: 20px;
+      height: calc(90%); }
       #mobile-menu-aside aside .header-menu-mobile a {
         display: flex;
         gap: 10px;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        height: 20px;
-        width: 60vw;
+        height: 30px;
+        width: 60%;
         min-width: 250px;
-        background: #778d79;
+        background: #D8B56E;
         border: solid #1F1F1F 3px;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         padding: 10px 30px 10px 30px;
         margin: 5px;
-        color: #F6F6F6;
-        font-size: 20px;
+        color: #1F1F1F;
+        font-size: 18px;
         font-family: "Bogue-Regular";
         font-weight: 600;
         text-transform: uppercase; }
         #mobile-menu-aside aside .header-menu-mobile a:hover {
           text-decoration: none; }
+        #mobile-menu-aside aside .header-menu-mobile a .button-icon {
+          width: 20px; }
+        @media only screen and (max-width: 480px) {
+          #mobile-menu-aside aside .header-menu-mobile a {
+            width: 70vw;
+            font-size: 22px; }
+            #mobile-menu-aside aside .header-menu-mobile a .button-icon {
+              width: 22px;
+              padding-bottom: 3px; } }
     #mobile-menu-aside aside header {
       display: none;
       height: 0; }
+
+a.instagram {
+  display: none !important; }
+
+@media only screen and (max-width: 1070px) {
+  a.instagram {
+    display: flex !important; } }
 
 header {
   position: relative;
@@ -383,7 +403,7 @@ header {
   padding-bottom: 0;
   top: 0;
   z-index: 150; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     header {
       height: 100px;
       align-items: center;
@@ -402,20 +422,26 @@ header {
       background-color: #D8B56E; }
       header nav.header-submenu .button:hover img {
         filter: none; }
-    header nav.header-submenu .active {
+    @media only screen and (max-width: 480px) {
+      header nav.header-submenu .button {
+        height: 30px;
+        font-size: 20px; }
+        header nav.header-submenu .button img {
+          width: 22px; } }
+    header nav.header-submenu .cart-active, header nav.header-submenu .menu-active {
       color: #F6F6F6;
       background-color: #778d79; }
-      header nav.header-submenu .active img {
+      header nav.header-submenu .cart-active img, header nav.header-submenu .menu-active img {
         filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-      header nav.header-submenu .active:hover {
+      header nav.header-submenu .cart-active:hover, header nav.header-submenu .menu-active:hover {
         color: #F6F6F6;
         background-color: #778d79; }
-        header nav.header-submenu .active:hover img {
+        header nav.header-submenu .cart-active:hover img, header nav.header-submenu .menu-active:hover img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-    header nav.header-submenu .menu-toggle {
+    header nav.header-submenu .menu-toggle, header nav.header-submenu .menu-active {
       display: none; }
-      @media only screen and (max-width: 768px) {
-        header nav.header-submenu .menu-toggle {
+      @media only screen and (max-width: 1070px) {
+        header nav.header-submenu .menu-toggle, header nav.header-submenu .menu-active {
           display: flex; } }
   header nav.header-menu-desktop {
     display: flex;
@@ -423,7 +449,7 @@ header {
     justify-content: center;
     position: absolute;
     bottom: 1px; }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1070px) {
       header nav.header-menu-desktop {
         display: none; } }
     header nav.header-menu-desktop a {
@@ -448,6 +474,8 @@ header {
         font-family: "Bogue-Regular";
         text-transform: uppercase;
         color: #1F1F1F; }
+      header nav.header-menu-desktop a .button-icon {
+        display: none; }
       header nav.header-menu-desktop a.active {
         background-color: #F1EDE2;
         z-index: 100; }
@@ -634,7 +662,7 @@ main .main-heading hr {
   max-width: 85%;
   background-color: #778d79; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1070px) {
   main .main-heading {
     padding: 20px 0; }
     main .main-heading hr {
@@ -661,7 +689,7 @@ main .heading {
     font-size: 60px;
     font-style: italic;
     text-transform: none; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     main .heading h2 {
       font-size: 50px;
       margin-bottom: 0; }
@@ -674,6 +702,8 @@ main .main-taproom {
   justify-content: center;
   color: #F1EDE2;
   background-color: rgba(119, 141, 121, 0.8); }
+  main .main-taproom hr {
+    display: none; }
   main .main-taproom .sketch-address {
     display: flex;
     flex-direction: column;
@@ -704,14 +734,18 @@ main .main-taproom {
     margin: 0 auto;
     margin-top: 20px;
     display: flex;
-    justify-content: space-between; }
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px; }
     main .main-taproom .menu-buttons .button {
       font-size: 16px;
       line-height: 1.15;
       text-align: center;
       height: 40px;
-      width: 175px; }
-  @media only screen and (max-width: 768px) {
+      width: 200px; }
+      main .main-taproom .menu-buttons .button img {
+        width: 25px; }
+  @media only screen and (max-width: 1070px) {
     main .main-taproom hr {
       background-color: #C28165;
       width: 90%;
@@ -740,11 +774,17 @@ main .main-taproom {
       align-items: center;
       padding-bottom: 25px;
       margin: 0;
-      margin-top: 25px; }
+      margin-top: 25px;
+      gap: 5px; }
       main .main-taproom .menu-buttons .button {
-        width: 70%;
+        justify-content: space-between;
+        width: 80%;
         height: 20px;
-        font-size: 18px; } }
+        padding: 15px; }
+        main .main-taproom .menu-buttons .button img {
+          width: 20px; }
+        main .main-taproom .menu-buttons .button:hover img {
+          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
 
 main .main-events {
   display: flex;
@@ -787,7 +827,7 @@ main .main-events {
       border-left: none;
       width: 90%;
       margin-bottom: 20px; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     main .main-events {
       flex-direction: column; }
       main .main-events hr {
@@ -866,7 +906,7 @@ main .taproom-address {
     width: 300px;
     margin-top: 15px;
     margin-bottom: 25px; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     main .taproom-address {
       flex-direction: column;
       height: auto;
@@ -902,7 +942,7 @@ main .taproom-menus {
     filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
     margin: 0;
     padding: 0; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     main .taproom-menus {
       padding-top: 0; }
       main .taproom-menus h3 {
@@ -980,7 +1020,7 @@ main .taproom-menus {
         main .taproom-menus .menu li p.price {
           font-size: 18px;
           font-weight: 800; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     main .taproom-menus .updated-date {
       top: 45px;
       text-align: center;
@@ -1042,7 +1082,7 @@ main .taproom-events {
       background-color: #778d79;
       color: #F6F6F6 !important;
       cursor: pointer; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     main .taproom-events h3 {
       display: flex;
       align-items: center;
@@ -1112,7 +1152,7 @@ main .taproom-events {
       border: solid #1F1F1F 3px; }
     main .taproom-events .fc .fc-scrollgrid-section th {
       background: none !important; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1070px) {
     main .taproom-events .fc {
       margin-top: 0; }
     main .taproom-events .calendar {
@@ -1165,7 +1205,7 @@ main .store {
       font-size: 18px; }
     main .store .recommended-product small {
       font-size: 16px; }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1070px) {
       main .store .recommended-product {
         max-width: 90%; } }
   main .store h1 {
@@ -1253,13 +1293,41 @@ img {
   max-height: calc(100vh - var(--cart-aside-summary-height-with-discount)); }
 
 .cart-line {
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(214, 208, 192, 0.8);
+  border: solid #1F1F1F 3px;
+  border-radius: 25px;
   display: flex;
-  padding: 0.75rem 0; }
+  padding: 15px 30px; }
+  .cart-line p {
+    margin: 0;
+    font-size: 18px; }
+  .cart-line span {
+    font-size: 16px; }
+  .cart-line button {
+    background-color: #D8B56E;
+    border: solid #1F1F1F 3px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .cart-line button .cart-icon {
+      border: none;
+      width: 15px; }
+    .cart-line button:hover {
+      cursor: pointer;
+      background-color: #778d79; }
 
 .cart-line img {
   height: 100%;
   display: block;
-  margin-right: 0.75rem; }
+  margin: 0;
+  border: solid #1F1F1F 3px;
+  border-radius: 0; }
 
 .cart-summary-page {
   position: relative; }
@@ -1272,8 +1340,19 @@ img {
   position: absolute;
   width: calc(var(--aside-width) - 40px); }
 
-.cart-line-quantiy {
-  display: flex; }
+.cart-line-quantity {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2px; }
+  .cart-line-quantity small {
+    font-size: 16px;
+    padding: 0 15px;
+    background-color: #F1EDE2;
+    border: solid #1F1F1F 3px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .cart-discount {
   align-items: center;
@@ -1350,7 +1429,7 @@ img {
     .recommended-products-grid {
       grid-template-columns: repeat(3, 1fr); } }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1070px) {
   .recommended-products {
     min-width: 95%; }
   .recommended-products-grid {
@@ -1469,3 +1548,7 @@ img {
 
 .account-logout {
   display: inline-block; }
+
+@media only screen and (max-width: 1070px) {
+  * {
+    border-width: 2px !important; } }

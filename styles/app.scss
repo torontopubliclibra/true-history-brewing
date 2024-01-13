@@ -10,6 +10,10 @@ body {
   width: 100vw;
   overflow-x: hidden;
 
+  #mobile-menu-aside {
+    display: none !important;
+  }
+
   // responsive to tablet
   @media only screen and (max-width: $tablet) {
 
@@ -25,33 +29,34 @@ body {
         background-image: url('./../../public/assets/wallpaper.png');
       }
     }
-  }
 
-  #mobile-menu-aside, #cart-aside {
-    display: none !important;
-  }
-
-  &.aside-open {
-    overflow: hidden;
-
-    &.menu-open {
-      #mobile-menu-aside {
-        display: initial !important;
+    &.aside-open {
+  
+      &.menu-open {
+        #mobile-menu-aside {
+          display: initial !important;
+        }
+        #cart-aside {
+          display: none !important;
+        }
       }
-      #cart-aside {
-        display: none !important;
-      }
-    }
-
-    &.cart-open {
-      #cart-aside {
-        display: initial !important;
-      }
-      #mobile-menu-aside {
-        display: none !important;
+  
+      &.cart-open {
+        #cart-aside {
+          display: initial !important;
+        }
+        #mobile-menu-aside {
+          display: none !important;
+        }
       }
     }
 
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+      &.aside-open {
+        overflow: hidden;
+      }
+    }
   }
 }
 
@@ -111,7 +116,7 @@ aside {
 
   main {
     height: calc(100vh - 75px);
-    background-color: rgba($color2, 0.9);
+    background-color: rgba($less-light, 0.25);
     padding: 15px 0;
 
     hr {
@@ -190,7 +195,7 @@ hr {
   background-color: $light;
   color: $black;
   border: $default-border;
-  outline: solid $color2 10px;
+  outline: solid $color2 11px;
   box-shadow: 0 0 0 14px $black;
   filter: $default-shadow;
   border-radius: 15px;
@@ -238,6 +243,7 @@ hr {
     width: 70% !important;
     margin: 15px !important;
     padding: 10px 25px 0 !important;
+    outline: solid $color2 12px;
     h4 {
       font-size: 25px;
     }
@@ -335,8 +341,11 @@ hr {
       filter: none;
     }
   }
-  .button.cart {
+  .button.cart, .button.menu-toggle {
     display: flex;
+    flex-direction: row;
+  }
+  .button.menu-active {
     flex-direction: row-reverse;
   }
   .button-secondary:hover {
@@ -450,29 +459,44 @@ header, footer {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      grid-gap: 25px;
-      min-height: 85%;
+      grid-gap: 20px;
+      height: calc(90%);
 
       a {
         display: flex;
         gap: 10px;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        height: 20px;
-        width: 60vw;
+        height: 30px;
+        width: 60%;
         min-width: 250px;
-        background: $color1;
+        background: $color2;
         border: $default-border;
         filter: $default-shadow;
         padding: 10px 30px 10px 30px;
         margin: 5px;
-        color: $white;
-        font-size: 20px;
+        color: $black;
+        font-size: 18px;
         font-family: "Bogue-Regular";
         font-weight: 600;
         text-transform: uppercase;
         &:hover {
           text-decoration: none;
+        }
+
+        .button-icon {
+          width: 20px;
+        }
+
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+          width: 70vw;
+          font-size: 22px;
+
+          .button-icon {
+            width: 22px;
+            padding-bottom: 3px;
+          }
         }
       }
     }
@@ -481,6 +505,17 @@ header, footer {
       display: none;
       height: 0;
     }
+  }
+}
+
+a.instagram {
+  display: none !important;
+}
+
+// responsive to tablet
+@media only screen and (max-width: $tablet) {
+  a.instagram {
+    display: flex !important;
   }
 }
 
@@ -529,7 +564,18 @@ header {
         }
       }
 
-      .active {
+      // responsive to mobile
+      @media only screen and (max-width: $mobile) {
+        .button {
+          height: 30px;
+          font-size: 20px;
+          img {
+            width: 22px;
+          }
+        }
+      }
+
+      .cart-active, .menu-active {
         color: $white;
         background-color: $color1;
         img {
@@ -544,7 +590,7 @@ header {
         }
       }
     
-      .menu-toggle {
+      .menu-toggle, .menu-active {
         display: none;
     
         // responsive to mobile
@@ -588,6 +634,9 @@ header {
           font-family: "Bogue-Regular";
           text-transform: uppercase;
           color: $black;
+        }
+        .button-icon {
+          display: none;
         }
         &.active {
           background-color: $light;
@@ -896,6 +945,10 @@ main {
     justify-content: center;
     color: $light;
     background-color: rgba($color1, 0.8);
+    
+    hr {
+      display: none;
+    }
 
     .sketch-address {
       display: flex;
@@ -931,14 +984,20 @@ main {
       margin: 0 auto;
       margin-top: 20px;
       display: flex;
-      justify-content: space-between;
+      flex-flow: row wrap;
+      justify-content: center;
+      gap: 20px;
 
       .button {
         font-size: 16px;
         line-height: 1.15;
         text-align: center;
         height: 40px;
-        width: 175px;
+        width: 200px;
+
+        img {
+          width: 25px;
+        }
       }
     }
 
@@ -980,10 +1039,20 @@ main {
         padding-bottom: 25px;
         margin: 0;
         margin-top: 25px;
+        gap: 5px;
         .button {
-          width: 70%;
+          justify-content: space-between;
+          width: 80%;
           height: 20px;
-          font-size: 18px;
+          padding: 15px;
+          img {
+            width: 20px;
+          }
+          &:hover {
+            img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
+          }
         }
       }
     }
@@ -1724,14 +1793,48 @@ img {
 }
 
 .cart-line {
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba($less-light, 0.8);
+  border: $default-border;
+  border-radius: 25px;
   display: flex;
-  padding: 0.75rem 0;
+  padding: 15px 30px;
+
+  p {
+    margin: 0;
+    font-size: 18px;
+  }
+  span {
+    font-size: 16px;
+  }
+  button {
+    background-color: $color2;
+    border: $default-border;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cart-icon {
+      border: none;
+      width: 15px;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $color1;
+    }
+  }
 }
 
 .cart-line img {
   height: 100%;
   display: block;
-  margin-right: 0.75rem;
+  margin: 0;
+  border: $default-border;
+  border-radius: 0;
 }
 
 .cart-summary-page {
@@ -1747,8 +1850,21 @@ img {
   width: calc(var(--aside-width) - 40px);
 }
 
-.cart-line-quantiy {
+.cart-line-quantity {
   display: flex;
+  flex-flow: row wrap;
+  gap: 2px;
+
+  small {
+    font-size: 16px;
+    padding: 0 15px;
+    background-color: $light;
+    border: $default-border;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .cart-discount {
@@ -1983,4 +2099,11 @@ img {
 
 .account-logout {
   display: inline-block;
+}
+
+// responsive to mobile
+@media only screen and (max-width: $tablet) {
+  * {
+    border-width: 2px !important;
+  }
 }

@@ -1,6 +1,7 @@
 import {CartForm, Image, Money} from '@shopify/hydrogen';
 import {Link} from '@remix-run/react';
 import {useVariantUrl} from '~/utils';
+import subtract from './../../public/assets/icons/subtract.svg';
 
 /**
  * @param {CartMainProps}
@@ -67,11 +68,20 @@ function CartLines({lines, layout}) {
  */
 function CartLineItem({layout, line}) {
   const {id, merchandise} = line;
-  const {product, selectedOptions} = merchandise;
+  const {product, title, image, selectedOptions} = merchandise;
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
 
   return (
     <li key={id} className="cart-line">
+      {image && (
+        <Image
+          alt={title}
+          aspectRatio="1.5/1"
+          data={image}
+          loading="lazy"
+          width={100}
+        />
+      )}
       <div>
         <Link
           prefetch="intent"
@@ -87,8 +97,8 @@ function CartLineItem({layout, line}) {
             <strong>{product.title}</strong>
           </p>
         </Link>
-        <CartLinePrice line={line} as="span" />
         <CartLineQuantity line={line} />
+        <CartLinePrice line={line} as="span" />
       </div>
     </li>
   );
@@ -167,8 +177,8 @@ function CartLineQuantity({line}) {
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
   return (
-    <div className="cart-line-quantiy">
-      <small>Quantity: {quantity} &nbsp;&nbsp;</small>
+    <div className="cart-line-quantity">
+      <small>x {quantity}</small>
       <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
         <button
           aria-label="Decrease quantity"
@@ -186,7 +196,7 @@ function CartLineQuantity({line}) {
           name="increase-quantity"
           value={nextQuantity}
         >
-          <span>&#43;</span>
+          <img src={subtract} className="cart-icon" />
         </button>
       </CartLineUpdateButton>
       &nbsp;

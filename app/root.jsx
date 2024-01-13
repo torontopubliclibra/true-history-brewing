@@ -497,8 +497,10 @@ export default function App() {
     // fetchSchedules();
     // fetchMenus();
     fetchEvents();
-
-    console.log('fetching new data');
+    setAsideOpen({
+      value: false,
+      aside: ""
+    })
     
   }, []);
 
