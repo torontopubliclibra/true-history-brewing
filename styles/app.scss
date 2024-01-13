@@ -129,13 +129,121 @@ aside {
       height: unset;
       max-height: none;
       padding: 25px;
+    
+      hr {
+        margin: 25px 0;
+        border: $thin-border;
+      }
+
+      .cart-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .cart-empty-text {
+          background-color: rgba($less-light, 0.8);
+          padding: 40px 30px;
+          border: $thin-border;
+          border-radius: 25px;
+          font-size: 20px;
+          text-align: center;
+        }
+        .button {
+          border: $thin-border;
+          max-width: 70%;
+          font-size: 16px;
+        }
+      }
+
+      .cart-line {
+        flex-flow: row wrap;
+        text-align: center;
+        justify-content: space-evenly;
+        gap: 10px;
+        background-color: rgba($less-light, 0.8);
+        border: $thin-border;
+        border-radius: 25px;
+        display: flex;
+        padding: 15px 30px;
+        padding-bottom: 25px;
+        a:hover {
+          text-decoration: none;
+        }
+        p {
+          width: 90%;
+          margin: 0;
+          font-size: 18px;
+        }
+        span {
+          text-align: center;
+          font-size: 16px;
+          padding: 0 15px;
+          background-color: $light;
+          border: $thin-border;
+          height: 30px;
+          max-width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        button {
+          background-color: $color2;
+          border: $thin-border;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .cart-icon {
+            border: none;
+            width: 18px;
+          }
+          transition: background-color 0.4s;
+          &:hover {
+            cursor: pointer;
+            background-color: $color1;
+          }
+          // responsive to tablet
+          @media only screen and (max-width: $tablet) {
+            &:hover {
+              cursor: pointer;
+              background-color: $color2;
+            }
+          }
+        }
+
+        img {
+          height: 100%;
+          display: block;
+          margin: 0;
+          border: $thin-border;
+          border-radius: 0;
+        }
+      }
 
       .cart-summary-aside {
-        background: none;
-        position: unset;
-        border: none;
-        padding: 0;
-        width: unset;
+        background-color: rgba($less-light, 0.8);
+        padding: 15px 30px;
+        border: $thin-border;
+        border-radius: 25px;
+
+        .cart-subtotal {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+
+          dt {
+            font-weight: 800;
+          }
+        }
+        input.discount {
+          width: 95%;
+          height: 20px;
+          background-color: $light;
+          border: $thin-border;
+          border-radius: 0 !important;
+        }
       }
     }
   }
@@ -729,23 +837,29 @@ main {
 
   .product {
     display: flex;
+    gap: 50px;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
     background-color: rgba($color1, 0.8);
 
     .product-image img {
-      width: 450px !important;
-      height: 300px !important;
+      width: 30%;
+      max-width: 400px;
+      height: auto;
       object-fit: cover;
       border: $default-border;
       filter: $default-shadow;
       border-radius: 0;
-      margin: 50px;
+      margin: 0;
     }
 
     .product-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       width: 45%;
-      margin: 50px;
-      margin-top: 75px;
-      margin-left: 0;
+      margin: auto 0;
 
       h1 {
         font-size: 40px;
@@ -775,6 +889,21 @@ main {
         &:hover {
           background-color: $color4;
         }
+      }
+    }
+
+    // responsive to mobile
+    @media only screen and (max-width: $tablet) {
+      background-color: rgba($less-light, 0.8);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      .product-main {
+        width: 100%;
+      }
+
+      .product-image img {
+        width: 100%;
       }
     }
   }
@@ -964,7 +1093,7 @@ main {
       .address {
         margin-top: 10px;
         margin-bottom: 15px;
-        padding: 5px 25px;
+        padding: 10px 25px;
         font-size: 22px;
         font-style: italic;
         color: $black;
@@ -1786,96 +1915,35 @@ img {
   max-height: calc(100vh - var(--cart-aside-summary-height));
   overflow-y: auto;
   width: auto;
+
+  hr {
+    margin: 25px 0;
+    border: $thin-border;
+  }
 }
 
 .cart-main.with-discount {
   max-height: calc(100vh - var(--cart-aside-summary-height-with-discount));
 }
 
-.cart-line {
-  justify-content: left;
-  align-items: center;
-  gap: 20px;
-  background-color: rgba($less-light, 0.8);
-  border: $default-border;
-  border-radius: 25px;
-  display: flex;
-  padding: 15px 30px;
-
-  p {
-    margin: 0;
-    font-size: 18px;
-  }
-  span {
-    font-size: 16px;
-  }
-  button {
-    background-color: $color2;
-    border: $default-border;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .cart-icon {
-      border: none;
-      width: 15px;
-    }
-    &:hover {
-      cursor: pointer;
-      background-color: $color1;
-    }
-  }
-}
-
-.cart-line img {
-  height: 100%;
-  display: block;
-  margin: 0;
-  border: $default-border;
-  border-radius: 0;
-}
-
 .cart-summary-page {
   position: relative;
-}
-
-.cart-summary-aside {
-  background: white;
-  border-top: 1px solid var(--color-dark);
-  bottom: 0;
-  padding-top: 0.75rem;
-  position: absolute;
-  width: calc(var(--aside-width) - 40px);
 }
 
 .cart-line-quantity {
   display: flex;
   flex-flow: row wrap;
-  gap: 2px;
-
-  small {
-    font-size: 16px;
-    padding: 0 15px;
-    background-color: $light;
-    border: $default-border;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .cart-discount {
   align-items: center;
   display: flex;
   margin-top: 0.25rem;
-}
-
-.cart-subtotal {
-  align-items: center;
-  display: flex;
 }
 /*
 * --------------------------------------------------
@@ -2024,11 +2092,6 @@ img {
 .product-images {
   display: grid;
   grid-gap: 1rem;
-}
-
-.product-image img {
-  height: auto;
-  width: 100%;
 }
 
 .product-main {

@@ -42,7 +42,7 @@ export default function Homepage() {
         <section className="main-taproom">
           <div className="sketch-address">
             <img src={barSketch} className="bar-sketch" alt="" />
-            <p className='address'>1154 St. Clair Avenue West, Toronto, ON</p>
+            <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
           <hr/>

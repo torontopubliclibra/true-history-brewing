@@ -1,7 +1,9 @@
 import {CartForm, Image, Money} from '@shopify/hydrogen';
 import {Link} from '@remix-run/react';
 import {useVariantUrl} from '~/utils';
+import add from './../../public/assets/icons/add.svg';
 import subtract from './../../public/assets/icons/subtract.svg';
+import remove from './../../public/assets/icons/remove.svg';
 
 /**
  * @param {CartMainProps}
@@ -32,7 +34,7 @@ function CartDetails({layout, cart}) {
       <CartLines lines={cart?.lines} layout={layout} />
       {cartHasItems && (
         <CartSummary cost={cart.cost} layout={layout}>
-          <CartDiscounts discountCodes={cart.discountCodes} />
+          {/* <CartDiscounts discountCodes={cart.discountCodes} /> */}
           <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
         </CartSummary>
       )}
@@ -73,16 +75,19 @@ function CartLineItem({layout, line}) {
 
   return (
     <li key={id} className="cart-line">
+      <p>
+        <strong>{product.title} x {line.quantity}</strong>
+      </p>
       {image && (
         <Image
           alt={title}
           aspectRatio="1.5/1"
           data={image}
           loading="lazy"
-          width={100}
+          width={125}
         />
       )}
-      <div>
+      <div className="cart-line-content">
         <Link
           prefetch="intent"
           to={lineItemUrl}
@@ -93,9 +98,6 @@ function CartLineItem({layout, line}) {
             }
           }}
         >
-          <p>
-            <strong>{product.title}</strong>
-          </p>
         </Link>
         <CartLineQuantity line={line} />
         <CartLinePrice line={line} as="span" />
@@ -115,7 +117,6 @@ function CartCheckoutActions({checkoutUrl}) {
       <a href={checkoutUrl} target="_self">
         <p>Continue to Checkout &rarr;</p>
       </a>
-      <br />
     </div>
   );
 }
@@ -135,7 +136,6 @@ export function CartSummary({cost, layout, children = null}) {
     <>
       <hr/>
       <div aria-labelledby="cart-summary" className={className}>
-        <h4>Totals</h4>
         <dl className="cart-subtotal">
           <dt>Subtotal</dt>
           <dd>
@@ -162,7 +162,9 @@ function CartLineRemoveButton({lineIds}) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
-      <button type="submit">Remove</button>
+      <button type="submit">
+        <img src={remove} className="cart-icon" />
+      </button>
     </CartForm>
   );
 }
@@ -178,7 +180,6 @@ function CartLineQuantity({line}) {
 
   return (
     <div className="cart-line-quantity">
-      <small>x {quantity}</small>
       <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
         <button
           aria-label="Decrease quantity"
@@ -186,7 +187,7 @@ function CartLineQuantity({line}) {
           name="decrease-quantity"
           value={prevQuantity}
         >
-          <span>&#8722; </span>
+          <img src={subtract} className="cart-icon" />
         </button>
       </CartLineUpdateButton>
       &nbsp;
@@ -196,7 +197,7 @@ function CartLineQuantity({line}) {
           name="increase-quantity"
           value={nextQuantity}
         >
-          <img src={subtract} className="cart-icon" />
+          <img src={add} className="cart-icon" />
         </button>
       </CartLineUpdateButton>
       &nbsp;
@@ -239,22 +240,22 @@ function CartLinePrice({line, priceType = 'regular', ...passthroughProps}) {
  */
 export function CartEmpty({hidden = false, layout = 'aside'}) {
   return (
-    <div hidden={hidden}>
+    <div className="cart-empty" hidden={hidden}>
       <br />
-      <p>
-        Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
-        started!
+      <p className="cart-empty-text">
+        Looks like you haven't added anything to your cart yet!
       </p>
       <br />
       <Link
         to="/store"
+        className="button button-primary"
         onClick={() => {
           if (layout === 'aside') {
             window.location.href = '/store';
           }
         }}
       >
-        Continue shopping →
+        Start shopping
       </Link>
     </div>
   );
@@ -281,7 +282,7 @@ function CartDiscounts({discountCodes}) {
             <div className="cart-discount">
               <code>{codes?.join(', ')}</code>
               &nbsp;
-              <button>Remove</button>
+              <button className="button button-primary">Remove</button>
             </div>
           </UpdateDiscountForm>
         </div>
@@ -290,9 +291,9 @@ function CartDiscounts({discountCodes}) {
       {/* Show an input to apply a discount */}
       <UpdateDiscountForm discountCodes={codes}>
         <div>
-          <input type="text" name="discountCode" placeholder="Discount code" />
+          <input className="discount" type="text" name="discountCode" placeholder="Discount code" />
           &nbsp;
-          <button type="submit">Apply</button>
+          <button className="button button-primary" type="submit">Apply</button>
         </div>
       </UpdateDiscountForm>
     </div>

@@ -19,9 +19,6 @@ import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import icon from '../public/assets/thb-icon.png';
-import logo from '../public/assets/thb-logo.png';
-import wallpaper from '../public/assets/wallpaper.png';
-import woodenBackground from '../public/assets/wooden-bg.jpg';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -57,21 +54,6 @@ export function links() {
       rel: 'preload',
       as: 'image',
       href: icon,
-    },
-    {
-      rel: 'preload',
-      as: 'image',
-      href: logo,
-    },
-    {
-      rel: 'preload',
-      as: 'image',
-      href: wallpaper,
-    },
-    {
-      rel: 'preload',
-      as: 'image',
-      href: woodenBackground,
     },
     {
       rel: 'icon',
