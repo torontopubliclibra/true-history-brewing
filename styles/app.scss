@@ -23,8 +23,6 @@ html {
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  transition: opacity 400ms ease-in-out;
-  transition: opacity 400ms;
   visibility: hidden;
   z-index: 1000;
 }
@@ -51,7 +49,7 @@ html {
 
 // responsive to mobile
 @media only screen and (max-width: $mobile) {
-  .overlay .close-outside {
+  #cart-aside .close-outside, #mobile-menu-aside .close-outside {
     display: none;
   }
 }
@@ -94,6 +92,13 @@ body {
   &.default-body {
     overflow-x: hidden;
     overflow-y: scroll;
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+      aside {
+        display: none;
+      }
+    }
   }
 
   // responsive to tablet
