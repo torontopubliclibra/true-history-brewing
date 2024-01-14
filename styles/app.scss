@@ -72,10 +72,8 @@ html {
 
 body {
   background-image: url('./../../public/assets/wooden-bg.jpg');
-  max-width: 100vw;
-  max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  width: 100vw;
+  height: 100%;
 
   #mobile-menu-aside {
     display: none !important;
@@ -84,6 +82,11 @@ body {
   &.landing {
     overflow: hidden;
     height: 100vh;
+  }
+
+  &.default-body {
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   // responsive to tablet
@@ -128,10 +131,19 @@ body {
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
       &.aside-open {
-        overflow-x: hidden;
+        overflow-x: hidden !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        max-height: 100vh !important;
 
-        footer {
+        main, footer {
           display: none;
+        }
+
+        aside {
+          main {
+            display: initial !important;
+          }
         }
       }
     }
@@ -143,7 +155,7 @@ body {
 }
 
 aside {
-  background: url('./../../public/assets/wooden-bg.jpg');
+  background-image: url('./../../public/assets/wooden-bg.jpg');
   filter: $default-shadow;
   border-left: $default-border;
   height: 100vh;
@@ -152,7 +164,6 @@ aside {
   position: fixed;
   right: calc(-1 * var(--aside-width));
   top: 0;
-  // transition: transform 200ms ease-in-out;
 
   header {
     height: 75px !important;
@@ -193,8 +204,13 @@ aside {
   }
 
   main {
-    height: 100%;
+    height: 100vh;
     background-color: rgba($less-light, 0.25);
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      height: calc(100vh - 102px);
+    }
 
     hr {
       height: 4px;
@@ -594,7 +610,7 @@ header, footer {
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
   #cart-aside {
-    position: absolute;
+    position: fixed;
     top: 0;
 
     aside {
@@ -612,9 +628,12 @@ header, footer {
 // responsive to mobile
 @media only screen and (max-width: $mobile) {
   #cart-aside {
+    position: absolute;
     aside {
       width: 100vw;
       max-width: 100vw;
+      height: calc(100vh - 102px);
+      padding-top: 50px;
     }
   }
 }
@@ -627,6 +646,16 @@ header, footer {
   // responsive to tablet
   @media only screen and (max-width: $tablet) {
     display: initial;
+    position: fixed;
+
+    main {
+      padding-top: 25px;
+    }
+  }
+
+  // responsive to tablet
+  @media only screen and (max-width: $tablet) {
+    position: absolute;
   }
 
   aside {
@@ -637,6 +666,8 @@ header, footer {
     @media only screen and (max-width: $mobile) {
       width: 100vw;
       max-width: 100vw;
+      height: calc(100vh - 102px);
+      padding-top: 50px;
     }
 
     .header-menu-mobile {
@@ -644,7 +675,7 @@ header, footer {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      grid-gap: 20px;
+      grid-gap: 10px;
       height: calc(90%);
 
       a {
@@ -693,13 +724,13 @@ header, footer {
   }
 }
 
-a.instagram {
+a.mobile-only {
   display: none !important;
 }
 
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
-  a.instagram {
+  a.mobile-only {
     display: flex !important;
   }
 }
@@ -1548,11 +1579,10 @@ main {
         p {
           letter-spacing: 1.5px;
           font-size: 22px;
+          margin-bottom: 20px;
         }
         .button {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          width: 50%;
+          display: none;
         }
         .hours {
           margin-bottom: 32px !important;

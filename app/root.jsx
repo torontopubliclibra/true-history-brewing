@@ -173,7 +173,7 @@ export default function App() {
     aside: "",
   });
 
-  let [bodyTags, setBodyTags] = useState("");
+  let [bodyTags, setBodyTags] = useState("default-body");
 
   const updateAsideOpen = (aside, value) => {
 
@@ -191,7 +191,7 @@ export default function App() {
           aside: ""
         });
         window.location.href = "#";
-        setBodyTags("");
+        setBodyTags("default-body");
       }
     } else if (aside === "cart") {
       if (value === true) {
@@ -207,7 +207,7 @@ export default function App() {
           aside: ""
         });
         window.location.href = "#";
-        setBodyTags("");
+        setBodyTags("default-body");
       }
     } else {
       if (value === false) {
@@ -216,7 +216,7 @@ export default function App() {
           aside: ""
         });
         window.location.href = "/home#";
-        setBodyTags("");
+        setBodyTags("default-body");
       }
     }
   }
@@ -318,7 +318,44 @@ export default function App() {
         price: "18",
         size: "lrg"
       }
-    }
+    },
+    nonAlc: {
+      item1: {
+        name: "Barbet sparkling water",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        price: "4"
+      },
+      item2: {
+        name: "Item 2",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        price: "3"
+      },
+      item3: {
+        name: "Item 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        price: "5"
+      },
+    },
+    wineSeltzersEtc: {
+      item1: {
+        name: "Item 1",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        price: "20",
+        abv: "8"
+      },
+      item2: {
+        name: "Item 2",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        price: "40",
+        abv: "12"
+      },
+      item3: {
+        name: "Item 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        price: "60",
+        abv: "14"
+      },
+    },
   });
   const [events, setEvents] = useState([]);
 
@@ -482,10 +519,10 @@ export default function App() {
     if (location.pathname === '/') {
       setBodyTags("landing");
     } else {
-      setBodyTags("");
+      setBodyTags("default-body");
     }
 
-    // fetchSchedules();
+    fetchSchedules();
     // fetchMenus();
     fetchEvents();
 

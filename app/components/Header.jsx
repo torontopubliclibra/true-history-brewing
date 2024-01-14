@@ -8,6 +8,7 @@ import home from './../../public/assets/icons/home.svg';
 import beer from './../../public/assets/icons/beer.svg';
 import contact from './../../public/assets/icons/contact.svg';
 import instagram from './../../public/assets/icons/instagram.svg';
+import compass from './../../public/assets/icons/compass.svg';
 import store from './../../public/assets/icons/store.svg';
 import basket from './../../public/assets/icons/basket.svg';
 import mobileMenu from './../../public/assets/icons/mobile-menu.svg';
@@ -126,12 +127,23 @@ export function HeaderMenu({viewport}) {
         end
         onClick={closeAside}
         prefetch="intent"
-        className="instagram"
+        className="mobile-only"
         to="https://instagram.com/truehistorybrewing"
         target="_blank"
         >
         <span className="nav-text">Instagram</span>
         <img src={instagram} className="button-icon" />
+      </NavLink>
+      <NavLink
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        className="mobile-only"
+        to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8"
+        target="_blank"
+        >
+        <span className="nav-text">Get Directions</span>
+        <img src={compass} className="button-icon" />
       </NavLink>
     </nav>
   );

@@ -83,15 +83,16 @@ html {
 
 body {
   background-image: url("./../../public/assets/wooden-bg.jpg");
-  max-width: 100vw;
-  max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll; }
+  width: 100vw;
+  height: 100%; }
   body #mobile-menu-aside {
     display: none !important; }
   body.landing {
     overflow: hidden;
     height: 100vh; }
+  body.default-body {
+    overflow-x: hidden;
+    overflow-y: scroll; }
   @media only screen and (max-width: 1070px) {
     body header {
       position: sticky;
@@ -114,15 +115,20 @@ body {
 
 @media only screen and (max-width: 1070px) and (max-width: 480px) {
   body.aside-open {
-    overflow-x: hidden; }
-    body.aside-open footer {
-      display: none; } }
+    overflow-x: hidden !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important; }
+    body.aside-open main, body.aside-open footer {
+      display: none; }
+    body.aside-open aside main {
+      display: initial !important; } }
 
 #cart-aside {
   z-index: 200; }
 
 aside {
-  background: url("./../../public/assets/wooden-bg.jpg");
+  background-image: url("./../../public/assets/wooden-bg.jpg");
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   border-left: solid #1F1F1F 3px;
   height: 100vh;
@@ -159,8 +165,11 @@ aside {
       aside header .close:hover {
         opacity: 1; }
   aside main {
-    height: 100%;
+    height: 100vh;
     background-color: rgba(214, 208, 192, 0.25); }
+    @media only screen and (max-width: 1070px) {
+      aside main {
+        height: calc(100vh - 102px); } }
     aside main hr {
       height: 4px;
       margin-top: 10px;
@@ -462,7 +471,7 @@ header, footer {
 
 @media only screen and (max-width: 1070px) {
   #cart-aside {
-    position: absolute;
+    position: fixed;
     top: 0; }
     #cart-aside aside {
       position: absolute;
@@ -472,9 +481,13 @@ header, footer {
         height: 0; } }
 
 @media only screen and (max-width: 480px) {
-  #cart-aside aside {
-    width: 100vw;
-    max-width: 100vw; } }
+  #cart-aside {
+    position: absolute; }
+    #cart-aside aside {
+      width: 100vw;
+      max-width: 100vw;
+      height: calc(100vh - 102px);
+      padding-top: 50px; } }
 
 #mobile-menu-aside {
   display: none;
@@ -482,20 +495,28 @@ header, footer {
   top: 0; }
   @media only screen and (max-width: 1070px) {
     #mobile-menu-aside {
-      display: initial; } }
+      display: initial;
+      position: fixed; }
+      #mobile-menu-aside main {
+        padding-top: 25px; } }
+  @media only screen and (max-width: 1070px) {
+    #mobile-menu-aside {
+      position: absolute; } }
   #mobile-menu-aside aside {
     position: absolute;
     top: 102px; }
     @media only screen and (max-width: 480px) {
       #mobile-menu-aside aside {
         width: 100vw;
-        max-width: 100vw; } }
+        max-width: 100vw;
+        height: calc(100vh - 102px);
+        padding-top: 50px; } }
     #mobile-menu-aside aside .header-menu-mobile {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      grid-gap: 20px;
+      grid-gap: 10px;
       height: calc(90%); }
       #mobile-menu-aside aside .header-menu-mobile a {
         display: flex;
@@ -530,11 +551,11 @@ header, footer {
       display: none;
       height: 0; }
 
-a.instagram {
+a.mobile-only {
   display: none !important; }
 
 @media only screen and (max-width: 1070px) {
-  a.instagram {
+  a.mobile-only {
     display: flex !important; } }
 
 header {
@@ -1166,11 +1187,10 @@ main .taproom-address {
         border-right: none; }
         main .taproom-address .taproom-info p {
           letter-spacing: 1.5px;
-          font-size: 22px; }
+          font-size: 22px;
+          margin-bottom: 20px; }
         main .taproom-address .taproom-info .button {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          width: 50%; }
+          display: none; }
         main .taproom-address .taproom-info .hours {
           margin-bottom: 32px !important; } }
 
