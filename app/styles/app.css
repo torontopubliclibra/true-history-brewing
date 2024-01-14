@@ -25,7 +25,8 @@ h2 {
   margin: 10px 0; }
 
 html {
-  background-color: #F1EDE2; }
+  background-color: #F1EDE2;
+  overflow-x: hidden; }
 
 .overlay {
   background: rgba(0, 0, 0, 0.2);
@@ -86,8 +87,7 @@ html {
 
 body {
   background-image: url("./../../public/assets/wooden-bg.jpg");
-  width: 100vw;
-  overflow-x: hidden; }
+  width: 100vw; }
   body #mobile-menu-aside {
     display: none !important; }
   body.landing {
@@ -991,8 +991,8 @@ main .main-events {
     filter: sepia(20%);
     object-fit: cover; }
   main .main-events h3 {
-    font-size: 35px;
-    font-family: "Bogue-ExtraBold";
+    font-size: 45px;
+    font-family: "Saudagar";
     text-transform: uppercase;
     margin: 30px;
     margin-bottom: 10px;
@@ -1046,7 +1046,7 @@ main .main-events {
         border-bottom: solid #1F1F1F 3px; }
       main .main-events h3 {
         text-align: center;
-        font-size: 35px;
+        font-size: 40px;
         margin: 10px 30px;
         margin-top: 20px; } }
 
@@ -1062,8 +1062,12 @@ main .main-newsletter {
   background-color: rgba(216, 181, 110, 0.9);
   border-top: solid #1F1F1F 3px; }
   main .main-newsletter p {
-    font-size: 22px;
-    line-height: 1.5; }
+    font-family: "Saudagar";
+    font-size: 26px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.5;
+    letter-spacing: 1px; }
   main .main-newsletter form {
     width: 100%;
     display: flex;
@@ -1078,15 +1082,17 @@ main .main-newsletter {
       background: #778d79;
       color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
-    main .main-newsletter p {
-      font-size: 18px; }
-    main .main-newsletter form input {
-      width: 90%; }
-    main .main-newsletter form button {
-      font-size: 18px; }
-      main .main-newsletter form button:hover {
-        background: #778d79;
-        color: #F1EDE2; } }
+    main .main-newsletter {
+      padding: 30px 5%; }
+      main .main-newsletter p {
+        font-size: 20px; }
+      main .main-newsletter form input {
+        width: 90%; }
+      main .main-newsletter form button {
+        font-size: 18px; }
+        main .main-newsletter form button:hover {
+          background: #778d79;
+          color: #F1EDE2; } }
 
 main .taproom-address {
   height: 600px;

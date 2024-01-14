@@ -3,6 +3,7 @@
 
 html {
   background-color: $light;
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -76,7 +77,7 @@ html {
 body {
   background-image: url('./../../public/assets/wooden-bg.jpg');
   width: 100vw;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   #mobile-menu-aside {
     display: none !important;
@@ -1318,8 +1319,8 @@ main {
       object-fit: cover;
     }
     h3 {
-      font-size: 35px;
-      font-family: "Bogue-ExtraBold";
+      font-size: 45px;
+      font-family: "Saudagar";
       text-transform: uppercase;
       margin: 30px;
       margin-bottom: 10px;
@@ -1392,7 +1393,7 @@ main {
 
       h3 {
         text-align: center;
-        font-size: 35px;
+        font-size: 40px;
         margin: 10px 30px;
         margin-top: 20px;
       }
@@ -1411,8 +1412,12 @@ main {
     border-top: $default-border;
 
     p {
-      font-size: 22px;
+      font-family: "Saudagar";
+      font-size: 26px;
+      font-weight: 800;
+      font-style: italic;
       line-height: 1.5;
+      letter-spacing: 1px;
     }
 
     form {
@@ -1436,8 +1441,10 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
 
+      padding: 30px 5%;
+
       p {
-        font-size: 18px;
+        font-size: 20px;
       }
 
       form {
