@@ -14,6 +14,8 @@ export default function Homepage() {
         <section className="heading bottle-shop-heading">
           <h2>Bottle Shop</h2>
         </section>
+        <section className="bottle-shop-content">
+        </section>
     </>
   );
 };

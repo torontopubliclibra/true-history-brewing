@@ -14,6 +14,8 @@ export default function Homepage() {
         <section className="heading contact-heading">
           <h2>Contact</h2>
         </section>
+        <section className="contact-content">
+        </section>
     </>
   );
 };

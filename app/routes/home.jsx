@@ -68,7 +68,7 @@ export default function Homepage() {
         <section className="main-newsletter">
           <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
           <form action="">
-            <input type="email" placeholder="Email Address" />
+            <input type="email" placeholder="Enter your email address" />
             <button className='button button-primary'>Subscribe now</button>
           </form>
         </section>
