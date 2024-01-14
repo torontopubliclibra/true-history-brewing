@@ -15,7 +15,7 @@ export function Calendar() {
                 plugins={[ dayGridPlugin, listPlugin ]}
                 initialView="listMonth"
                 headerToolbar={{
-                    left: 'prev,next today',
+                    left: 'prev,today,next',
                     center: 'title',
                     right: 'dayGridMonth,listMonth'
                 }}

@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useNonce } from '@shopify/hydrogen';
 import { defer } from '@shopify/remix-oxygen';
 import {
@@ -165,6 +166,7 @@ export default function App() {
   const nonce = useNonce();
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
+  const location = useLocation();
 
   let [asideOpen, setAsideOpen] = useState({
     value: false,
@@ -181,15 +183,15 @@ export default function App() {
           value: true,
           aside: "menu"
         });
-        setBodyTags("aside-open menu-open");
         window.location.href = "#mobile-menu-aside";
+        setBodyTags("aside-open menu-open");
       } else {
         setAsideOpen({
           value: false,
           aside: ""
         });
-        setBodyTags("")
         window.location.href = "#";
+        setBodyTags("");
       }
     } else if (aside === "cart") {
       if (value === true) {
@@ -197,15 +199,15 @@ export default function App() {
           value: true,
           aside: "cart"
         });
-        setBodyTags("aside-open cart-open");
         window.location.href = "#cart-aside";
+        setBodyTags("aside-open cart-open");
       } else {
         setAsideOpen({
           value: false,
           aside: ""
         });
-        setBodyTags("");
         window.location.href = "#";
+        setBodyTags("");
       }
     } else {
       if (value === false) {
@@ -213,8 +215,8 @@ export default function App() {
           value: false,
           aside: ""
         });
-        setBodyTags("");
         window.location.href = "/home#";
+        setBodyTags("");
       }
     }
   }
@@ -476,14 +478,24 @@ export default function App() {
   };
 
   useEffect(() => {
+
+    if (location.pathname === '/') {
+      setBodyTags("landing");
+    } else {
+      setBodyTags("");
+    }
+
     // fetchSchedules();
     // fetchMenus();
     fetchEvents();
+
     setAsideOpen({
       value: false,
       aside: ""
     })
-    
+
+    window.scrollTo({top: 0});
+
   }, []);
 
   return (

@@ -240,12 +240,10 @@ function CartLinePrice({line, priceType = 'regular', ...passthroughProps}) {
  */
 export function CartEmpty({hidden = false, layout = 'aside'}) {
   return (
-    <div className="cart-empty" hidden={hidden}>
-      <br />
+    <div hidden={hidden}>
       <p className="cart-empty-text">
         Looks like you haven't added anything to your cart yet!
       </p>
-      <br />
       <Link
         to="/store"
         className="button button-primary"

@@ -5,6 +5,10 @@ import { Link } from '@remix-run/react';
 import { Schedule } from './../components/Schedule';
 import { Calendar } from './../components/Calendar';
 import taproomPhoto from './../../public/assets/taproom-photo.png';
+import beer from './../../public/assets/icons/beer.svg';
+import wine from './../../public/assets/icons/wine.svg';
+import drink from './../../public/assets/icons/drink.svg';
+import food from './../../public/assets/icons/food.svg';
 import compass from './../../public/assets/icons/compass.svg';
 
 /**
@@ -67,7 +71,7 @@ export default function Homepage() {
           <img src={taproomPhoto} className="taproom-photo" />
           <div className="taproom-info">
             <p>1154 St. Clair Avenue W, Toronto, Ontario</p>
-            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon"/></Link>
             <Schedule/>
           </div>
         </section>
@@ -77,23 +81,23 @@ export default function Homepage() {
           <ul className='menu-nav'>
             {
               selectedMenu !== "beers"
-              ? <li><button onClick={() => handleMenuChange("beers")} className='button button-primary'>Beers</button></li>
-              : <li><button className='button button-primary selected'>Beers</button></li>
+              ? <li><button onClick={() => handleMenuChange("beers")} className='button button-primary'>Beers <img src={beer} className="button-icon"/></button></li>
+              : <li><button className='button button-primary selected'>Beers <img src={beer} className="button-icon"/></button></li>
             }
             {
               selectedMenu !== "wine-seltzers-etc"
-              ? <li><button onClick={() => handleMenuChange("wine-seltzers-etc")} className='button button-primary'>Wine, Seltzers, Etc.</button></li>
-              : <li><button className='button button-primary selected'>Wine, Seltzers, Etc.</button></li>
+              ? <li><button onClick={() => handleMenuChange("wine-seltzers-etc")} className='button button-primary'>Wine, Seltzers, Etc. <img src={wine} className="button-icon"/></button></li>
+              : <li><button className='button button-primary selected'>Wine, Seltzers, Etc. <img src={wine} className="button-icon"/></button></li>
             }
             {
               selectedMenu !== "non-alc"
-              ? <li><button onClick={() => handleMenuChange("non-alc")} className='button button-primary'>Non-alcoholic</button></li>
-              : <li><button className='button button-primary selected'>Non-alcoholic</button></li>
+              ? <li><button onClick={() => handleMenuChange("non-alc")} className='button button-primary'>Non-alcoholic <img src={drink} className="button-icon"/></button></li>
+              : <li><button className='button button-primary selected'>Non-alcoholic <img src={drink} className="button-icon"/></button></li>
             }
             {
               selectedMenu !== "food"
-              ? <li><button onClick={() => handleMenuChange("food")} className='button button-primary'>Food</button></li>
-              : <li><button className='button button-primary selected'>Food</button></li>
+              ? <li><button onClick={() => handleMenuChange("food")} className='button button-primary'>Food <img src={food} className="button-icon"/></button></li>
+              : <li><button className='button button-primary selected'>Food <img src={food} className="button-icon"/></button></li>
             }
           </ul>
           <ul className='menu'>

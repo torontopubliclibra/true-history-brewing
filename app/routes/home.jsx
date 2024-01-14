@@ -28,7 +28,7 @@ export default function Homepage() {
 
   let formattedEvents = events.map((event, index) => {
     if (event.date >= currentDate && index < 4) {
-      return <li><span className="date">{event.date.substring(8, 10)}/{event.date.substring(5, 7)}/{event.date.substring(2, 4)} -</span> {event.title}</li>
+      return <li>{event.title} <span className="date">- {event.date.substring(8, 10)}/{event.date.substring(5, 7)}/{event.date.substring(2, 4)} @ {event.time}</span></li>
     }
   })
 
@@ -48,16 +48,16 @@ export default function Homepage() {
           <hr/>
           <Schedule/>
           <div className="menu-buttons">
-            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'><img src={beer} className="button-icon"/>What's on tap right now?</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "wine-seltzers-etc" }} className='button button-tertiary'><img src={wine} className="button-icon"/>Anything that's not beer?</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "non-alc" }} className='button button-tertiary'><img src={drink} className="button-icon"/>Non-alcoholic options?</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'><img src={food} className="button-icon"/>Do you guys have food?</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'><img src={beer} className="button-icon"/>"What's on tap right now?"</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "wine-seltzers-etc" }} className='button button-tertiary'><img src={wine} className="button-icon"/>"Anything that's not beer?"</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "non-alc" }} className='button button-tertiary'><img src={drink} className="button-icon"/>"Non-alcoholic options?"</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'><img src={food} className="button-icon"/>"Do you guys have food?"</Link>
           </div>
         </section>
         <section className="main-events">
           <img src={patioPhoto} className="events-photo" />
           <div className="main-events-content">
-            <h3>Upcoming Events</h3>
+            <h3>Events at T.H.B.</h3>
             <hr/>
             <ul className="events-list">
               {formattedEvents}
@@ -66,9 +66,11 @@ export default function Homepage() {
           </div>
         </section>
         <section className="main-newsletter">
-          <text>Enter your email address</text>
-          <button className='button button-primary'>Subscribe now</button>
-          <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers</p>
+          <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
+          <form action="">
+            <input type="email" placeholder="Email Address" />
+            <button className='button button-primary'>Subscribe now</button>
+          </form>
         </section>
     </>
   );
