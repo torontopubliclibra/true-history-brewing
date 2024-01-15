@@ -1464,8 +1464,9 @@ main {
         font-size: 20px;
         li {
           font-family: "Bogue-ExtraBold";
+          font-style: italic;
           .date {
-            font-style: italic;
+            font-style: normal;
             font-family: "Bogue-Regular";
           }
         }

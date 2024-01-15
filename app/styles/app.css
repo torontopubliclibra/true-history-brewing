@@ -1082,9 +1082,10 @@ main .main-events {
       margin-left: 40px;
       font-size: 20px; }
       main .main-events .main-events-content .events-list li {
-        font-family: "Bogue-ExtraBold"; }
+        font-family: "Bogue-ExtraBold";
+        font-style: italic; }
         main .main-events .main-events-content .events-list li .date {
-          font-style: italic;
+          font-style: normal;
           font-family: "Bogue-Regular"; }
     main .main-events .main-events-content .button {
       background-color: #D8B56E;

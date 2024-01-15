@@ -122,11 +122,19 @@ export function parseTime(datetimeString) {
 
   let hour = dateTime.getHours();
   let minute = dateTime.getMinutes();
+  let meridiem = 'am';
 
-  if (hour < 10) hour = '0' + hour;
+  if (hour < 10) {
+    hour = '0' + hour
+  } else {
+    if (hour > 12) {
+      hour = hour - 12;
+      meridiem = 'pm';
+    }
+  }
   if (minute < 10) minute = '0' + minute;
 
-  return `${hour}:${minute}`;
+  return `${hour}:${minute}${meridiem}`;
 }
 
 export function parseDate(datetimeString) {
@@ -135,11 +143,24 @@ export function parseDate(datetimeString) {
   let year = dateTime.getFullYear();
   let month = dateTime.getMonth() + 1;
   let day = dateTime.getDate();
+  let hour = dateTime.getHours();
+  let minute = dateTime.getMinutes();
+
+  if (minute == 0) {
+    minute = '00';
+  } else if (hour.length > 1) {
+    minute = '0' + hour;
+  } else {
+    minute = '00';
+  }
+  if (hour < 10) {
+    hour = '0' + hour
+  }
 
   if (month < 10) month = '0' + month;
   if (day < 10) day = '0' + day;
 
-  return `${year}-${month}-${day}`;
+  return `${year}-${month}-${day}T${hour}:${minute}:00`;
 }
 
 export function convertTimeToAmPm(time) {
