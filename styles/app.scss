@@ -2,18 +2,18 @@
 @import 'partials/typography';
 
 :root {
-  max-width: 100vw;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-html {
   background-color: $light;
   max-width: 100vw;
   width: 100%;
+  overflow-x: hidden;
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
 }
 
 .overlay {
+  overflow-x: hidden;
   background: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
@@ -84,9 +84,13 @@ body {
     display: none !important;
   }
 
-  &.landing {
+  &.landing, &.loading {
     overflow: hidden;
     height: 100vh;
+  }
+
+  &.aside-open {
+    overflow-y: hidden !important;
   }
 
   &.default-body {
@@ -144,9 +148,7 @@ body {
     @media only screen and (max-width: $mobile) {
       &.aside-open {
         overflow-x: hidden !important;
-        height: 100vh !important;
-        min-height: 100vh !important;
-        max-height: 100vh !important;
+        height: calc(100vh + 50px);
 
         main, footer {
           display: none;
@@ -219,6 +221,22 @@ aside {
     height: 100vh;
     background-color: rgba($less-light, 0.25);
 
+    .cart-main {
+      height: 100%;
+      max-height: calc(100vh - 250px);
+      overflow-y: auto;
+      width: auto;
+    
+      hr {
+        margin: 25px 0;
+        border: $thin-border;
+      }
+
+      .cart-details {
+        margin-top: 30px;
+      }
+    }
+
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       height: calc(100vh - 102px);
@@ -230,7 +248,16 @@ aside {
       margin-bottom: 20px;
     }
 
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      height: calc(100vh - 102px);
+    }
+
     .cart-main {
+
+      .cart-details {
+        margin-top: 0;
+      }
 
       .cart-empty-text {
         background-color: rgba($less-light, 0.8);
@@ -251,6 +278,7 @@ aside {
       height: unset;
       max-height: none;
       padding: 25px;
+      padding-top: 0;
     
       hr {
         margin: 25px 0;
@@ -305,12 +333,18 @@ aside {
           &:hover {
             cursor: pointer;
             background-color: $color1;
+            img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
           }
           // responsive to tablet
           @media only screen and (max-width: $tablet) {
             &:hover {
               cursor: pointer;
               background-color: $color2;
+              img {
+                filter: none;
+              }
             }
           }
         }
@@ -336,6 +370,27 @@ aside {
         border: $thin-border;
         border-radius: 25px;
 
+        div a {
+          text-decoration: none;
+          text-transform: uppercase;
+          background-color: $color2;
+          border: $thin-border;
+          height: 40px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: background-color 0.4s;
+
+          &:hover {
+            background-color: $color1;
+            color: $light;
+          }
+          p {
+            margin: 0;
+          }
+        }
+
         .cart-subtotal {
           align-items: center;
           display: flex;
@@ -345,12 +400,20 @@ aside {
             font-weight: 800;
           }
         }
-        input.discount {
-          width: 95%;
-          height: 20px;
-          background-color: $light;
-          border: $thin-border;
-          border-radius: 0 !important;
+        // input.discount {
+        //   width: 95%;
+        //   height: 20px;
+        //   background-color: $light;
+        //   border: $thin-border;
+        //   border-radius: 0 !important;
+        // }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          div a:hover {
+            background-color: $color2;
+            color: $black;
+          }
         }
       }
     }
@@ -642,6 +705,7 @@ header, footer {
   #cart-aside {
     position: absolute;
     aside {
+      background: rgba($light, 0.25);
       width: 100vw;
       max-width: 100vw;
       height: calc(100vh - 102px);
@@ -659,10 +723,6 @@ header, footer {
   @media only screen and (max-width: $tablet) {
     display: initial;
     position: fixed;
-
-    main {
-      padding-top: 25px;
-    }
   }
 
   // responsive to tablet
@@ -676,6 +736,7 @@ header, footer {
 
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
+      background: rgba($light, 0.25);
       width: 100vw;
       max-width: 100vw;
       height: calc(100vh - 102px);
@@ -744,6 +805,7 @@ a.mobile-only {
 @media only screen and (max-width: $tablet) {
   a.mobile-only {
     display: flex !important;
+    background-color: $light !important;
   }
 }
 
@@ -960,7 +1022,6 @@ main {
 
   .product {
     display: flex;
-    min-height: 500px;
     gap: 50px;
     padding: 50px;
     justify-content: center;
@@ -1784,6 +1845,11 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgba($light, 0.9);
+    hr {
+      background-color: $color3;
+      width: 95%;
+      margin: 20px auto;
+    }
     h3 {
       width: 90vw;
       font-size: 60px;
@@ -1825,10 +1891,17 @@ main {
     }
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+      hr {
+        background-color: $color3;
+        width: 90%;
+        height: 4px;
+        margin: 10px auto;
+      }
       h3 {
         display: flex;
         align-items: center;
-        font-size: 50px;
+        justify-content: center;
+        font-size: 45px;
         height: 70px;
         margin-top: 10px;
       }
@@ -1845,9 +1918,9 @@ main {
     }
     .calendar , .fc {
       width: 90vw !important;
+      max-width: 2000px;
       height: 100%;
-      min-height: 300px;
-      max-height: 1000px;
+      margin-bottom: 10px;
     }
     .fc {
       margin-top: 25px;
@@ -1950,7 +2023,7 @@ main {
         padding-bottom: 30px;
         .fc-header-toolbar {
           display: flex;
-          flex-direction: column-reverse;
+          flex-direction: column;
           justify-content: space-between;
           gap: 15px;
           margin: 0;
@@ -1959,9 +2032,6 @@ main {
           width: 100%;
           display: flex;
           justify-content: center;
-        }
-        .fc-toolbar-chunk:nth-of-type(1) {
-          margin-bottom: 20px;
         }
         .fc-toolbar-chunk:nth-of-type(3) {
           height: 0;
@@ -1992,21 +2062,25 @@ main {
     border-bottom: $default-border;
     text-align: center;
 
-    h3 {
-      font-size: 25px;
-      text-transform: uppercase;
-      margin: 0;
-      margin-bottom: 10px;
-    }
-
-    p {
-      max-width: 75%;
+    .text-box {
+      padding: 30px 40px;
+      max-width: 85%;
       margin: 0 auto;
-      font-size: 16px;
-      padding: 20px;
       background-color: $light;
       border: $default-border;
       border-radius: 25px;
+
+      h3 {
+        font-size: 25px;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 16px;
+      }
     }
 
     // responsive to tablet
@@ -2163,17 +2237,7 @@ main {
 * components/Cart
 * --------------------------------------------------
 */
-.cart-main {
-  height: 100%;
-  max-height: calc(100vh - 250px);
-  overflow-y: auto;
-  width: auto;
 
-  hr {
-    margin: 25px 0;
-    border: $thin-border;
-  }
-}
 
 .cart-main.with-discount {
   max-height: calc(100vh - 300px);

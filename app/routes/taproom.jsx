@@ -128,6 +128,7 @@ export default function Homepage() {
         </section>
         <section className="taproom-events" id="calendar">
           <h3>Upcoming Events</h3>
+          <hr/>
           <Calendar/>
         </section>
     </>

@@ -223,7 +223,11 @@ function ProductForm({product, selectedVariant, variants}) {
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
         onClick={() => {
-          window.location.href = window.location.href + '#cart-aside';
+          if (window.location.href.includes('#')) {
+            window.location.href = window.location.href + 'cart-aside';
+          } else {
+            window.location.href = window.location.href + '#cart-aside';
+          }
         }}
         lines={
           selectedVariant

@@ -25,16 +25,15 @@ h2 {
   margin: 10px 0; }
 
 :root {
+  background-color: #F1EDE2;
   max-width: 100vw;
   width: 100%;
   overflow-x: hidden; }
-
-html {
-  background-color: #F1EDE2;
-  max-width: 100vw;
-  width: 100%; }
+  :root.no-scroll {
+    overflow-y: hidden; }
 
 .overlay {
+  overflow-x: hidden;
   background: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
@@ -91,9 +90,11 @@ body {
   height: 100%; }
   body #mobile-menu-aside {
     display: none !important; }
-  body.landing {
+  body.landing, body.loading {
     overflow: hidden;
     height: 100vh; }
+  body.aside-open {
+    overflow-y: hidden !important; }
   body.default-body {
     overflow-x: hidden;
     overflow-y: scroll; }
@@ -123,9 +124,7 @@ body {
 @media only screen and (max-width: 1070px) and (max-width: 480px) {
   body.aside-open {
     overflow-x: hidden !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    max-height: 100vh !important; }
+    height: calc(100vh + 50px); }
     body.aside-open main, body.aside-open footer {
       display: none; }
     body.aside-open aside main {
@@ -174,6 +173,16 @@ aside {
   aside main {
     height: 100vh;
     background-color: rgba(214, 208, 192, 0.25); }
+    aside main .cart-main {
+      height: 100%;
+      max-height: calc(100vh - 250px);
+      overflow-y: auto;
+      width: auto; }
+      aside main .cart-main hr {
+        margin: 25px 0;
+        border: solid #1F1F1F 2px; }
+      aside main .cart-main .cart-details {
+        margin-top: 30px; }
     @media only screen and (max-width: 1070px) {
       aside main {
         height: calc(100vh - 102px); } }
@@ -181,10 +190,16 @@ aside {
       height: 4px;
       margin-top: 10px;
       margin-bottom: 20px; }
+    @media only screen and (max-width: 1070px) {
+      aside main {
+        height: calc(100vh - 102px); } }
     aside main .cart-main {
       height: unset;
       max-height: none;
-      padding: 25px; }
+      padding: 25px;
+      padding-top: 0; }
+      aside main .cart-main .cart-details {
+        margin-top: 0; }
       aside main .cart-main .cart-empty-text {
         background-color: rgba(214, 208, 192, 0.8);
         padding: 40px 30px;
@@ -246,10 +261,14 @@ aside {
           aside main .cart-main .cart-line button:hover {
             cursor: pointer;
             background-color: #778d79; }
+            aside main .cart-main .cart-line button:hover img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
           @media only screen and (max-width: 1070px) {
             aside main .cart-main .cart-line button:hover {
               cursor: pointer;
-              background-color: #D8B56E; } }
+              background-color: #D8B56E; }
+              aside main .cart-main .cart-line button:hover img {
+                filter: none; } }
         aside main .cart-main .cart-line img {
           height: 100%;
           display: block;
@@ -263,18 +282,32 @@ aside {
         padding: 15px 30px;
         border: solid #1F1F1F 2px;
         border-radius: 25px; }
+        aside main .cart-main .cart-summary-aside div a {
+          text-decoration: none;
+          text-transform: uppercase;
+          background-color: #D8B56E;
+          border: solid #1F1F1F 2px;
+          height: 40px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: background-color 0.4s; }
+          aside main .cart-main .cart-summary-aside div a:hover {
+            background-color: #778d79;
+            color: #F1EDE2; }
+          aside main .cart-main .cart-summary-aside div a p {
+            margin: 0; }
         aside main .cart-main .cart-summary-aside .cart-subtotal {
           align-items: center;
           display: flex;
           justify-content: space-between; }
           aside main .cart-main .cart-summary-aside .cart-subtotal dt {
             font-weight: 800; }
-        aside main .cart-main .cart-summary-aside input.discount {
-          width: 95%;
-          height: 20px;
-          background-color: #F1EDE2;
-          border: solid #1F1F1F 2px;
-          border-radius: 0 !important; }
+        @media only screen and (max-width: 1070px) {
+          aside main .cart-main .cart-summary-aside div a:hover {
+            background-color: #D8B56E;
+            color: #1F1F1F; } }
   aside p {
     margin: 0 0 0.25rem; }
     aside p::last-child {
@@ -491,6 +524,7 @@ header, footer {
   #cart-aside {
     position: absolute; }
     #cart-aside aside {
+      background: rgba(241, 237, 226, 0.25);
       width: 100vw;
       max-width: 100vw;
       height: calc(100vh - 102px);
@@ -503,9 +537,7 @@ header, footer {
   @media only screen and (max-width: 1070px) {
     #mobile-menu-aside {
       display: initial;
-      position: fixed; }
-      #mobile-menu-aside main {
-        padding-top: 25px; } }
+      position: fixed; } }
   @media only screen and (max-width: 1070px) {
     #mobile-menu-aside {
       position: absolute; } }
@@ -514,6 +546,7 @@ header, footer {
     top: 102px; }
     @media only screen and (max-width: 480px) {
       #mobile-menu-aside aside {
+        background: rgba(241, 237, 226, 0.25);
         width: 100vw;
         max-width: 100vw;
         height: calc(100vh - 102px);
@@ -563,7 +596,8 @@ a.mobile-only {
 
 @media only screen and (max-width: 1070px) {
   a.mobile-only {
-    display: flex !important; } }
+    display: flex !important;
+    background-color: #F1EDE2 !important; } }
 
 header {
   position: relative;
@@ -710,7 +744,6 @@ main .bottle-shop-content {
 
 main .product {
   display: flex;
-  min-height: 500px;
   gap: 50px;
   padding: 50px;
   justify-content: center;
@@ -1333,6 +1366,10 @@ main .taproom-events {
   justify-content: center;
   align-items: center;
   background-color: rgba(241, 237, 226, 0.9); }
+  main .taproom-events hr {
+    background-color: #C28165;
+    width: 95%;
+    margin: 20px auto; }
   main .taproom-events h3 {
     width: 90vw;
     font-size: 60px;
@@ -1367,10 +1404,16 @@ main .taproom-events {
       color: #F6F6F6 !important;
       cursor: pointer; }
   @media only screen and (max-width: 1070px) {
+    main .taproom-events hr {
+      background-color: #C28165;
+      width: 90%;
+      height: 4px;
+      margin: 10px auto; }
     main .taproom-events h3 {
       display: flex;
       align-items: center;
-      font-size: 50px;
+      justify-content: center;
+      font-size: 45px;
       height: 70px;
       margin-top: 10px; }
     main .taproom-events .fc-button:hover, main .taproom-events .fc-button:focus {
@@ -1381,9 +1424,9 @@ main .taproom-events {
       color: #F6F6F6 !important; } }
   main .taproom-events .calendar, main .taproom-events .fc {
     width: 90vw !important;
+    max-width: 2000px;
     height: 100%;
-    min-height: 300px;
-    max-height: 1000px; }
+    margin-bottom: 10px; }
   main .taproom-events .fc {
     margin-top: 25px; }
     main .taproom-events .fc a:hover {
@@ -1444,7 +1487,7 @@ main .taproom-events {
       padding-bottom: 30px; }
       main .taproom-events .calendar .fc-header-toolbar {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: space-between;
         gap: 15px;
         margin: 0; }
@@ -1452,8 +1495,6 @@ main .taproom-events {
         width: 100%;
         display: flex;
         justify-content: center; }
-      main .taproom-events .calendar .fc-toolbar-chunk:nth-of-type(1) {
-        margin-bottom: 20px; }
       main .taproom-events .calendar .fc-toolbar-chunk:nth-of-type(3) {
         height: 0; }
       main .taproom-events .calendar .fc-dayGridMonth-button, main .taproom-events .calendar .fc-listMonth-button {
@@ -1470,19 +1511,21 @@ main .store-disclaimers {
   padding: 30px;
   border-bottom: solid #1F1F1F 3px;
   text-align: center; }
-  main .store-disclaimers h3 {
-    font-size: 25px;
-    text-transform: uppercase;
-    margin: 0;
-    margin-bottom: 10px; }
-  main .store-disclaimers p {
-    max-width: 75%;
+  main .store-disclaimers .text-box {
+    padding: 30px 40px;
+    max-width: 85%;
     margin: 0 auto;
-    font-size: 16px;
-    padding: 20px;
     background-color: #F1EDE2;
     border: solid #1F1F1F 3px;
     border-radius: 25px; }
+    main .store-disclaimers .text-box h3 {
+      font-size: 25px;
+      text-transform: uppercase;
+      margin: 0;
+      margin-bottom: 10px; }
+    main .store-disclaimers .text-box p {
+      margin: 0;
+      font-size: 16px; }
   @media only screen and (max-width: 1070px) {
     main .store-disclaimers p {
       max-width: 100%; } }
@@ -1549,15 +1592,6 @@ main .store {
 * components/Cart
 * --------------------------------------------------
 */
-.cart-main {
-  height: 100%;
-  max-height: calc(100vh - 250px);
-  overflow-y: auto;
-  width: auto; }
-  .cart-main hr {
-    margin: 25px 0;
-    border: solid #1F1F1F 2px; }
-
 .cart-main.with-discount {
   max-height: calc(100vh - 300px); }
 

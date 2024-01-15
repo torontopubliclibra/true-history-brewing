@@ -21,6 +21,11 @@ export function Calendar() {
                 }}
                 height={"auto"}
                 buttonIcons={false}
+                buttonText={{
+                    today:    'this month',
+                    month:    'calendar',
+                    list:     'list'
+                  }}
                 events={events}
             />
         </div>

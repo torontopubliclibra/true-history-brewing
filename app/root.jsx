@@ -174,6 +174,7 @@ export default function App() {
   });
 
   let [bodyTags, setBodyTags] = useState("default-body");
+  let [htmlState, setHtmlState] = useState("");
 
   const updateAsideOpen = (aside, value) => {
 
@@ -185,6 +186,7 @@ export default function App() {
         });
         window.location.href = "#mobile-menu-aside";
         setBodyTags("aside-open menu-open");
+        setHtmlState("no-scroll");
       } else {
         setAsideOpen({
           value: false,
@@ -201,6 +203,7 @@ export default function App() {
         });
         window.location.href = "#cart-aside";
         setBodyTags("aside-open cart-open");
+        setHtmlState("no-scroll");
       } else {
         setAsideOpen({
           value: false,
@@ -516,12 +519,6 @@ export default function App() {
 
   useEffect(() => {
 
-    if (location.pathname === '/') {
-      setBodyTags("landing");
-    } else {
-      setBodyTags("default-body");
-    }
-
     fetchSchedules();
     // fetchMenus();
     fetchEvents();
@@ -533,10 +530,18 @@ export default function App() {
 
     window.scrollTo({top: 0});
 
+    setHtmlState("");
+
+    if (location.pathname === '/') {
+      setBodyTags("landing");
+    } else {
+      setBodyTags("default-body");
+    }
+
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" className={htmlState}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
