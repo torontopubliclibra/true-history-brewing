@@ -254,7 +254,7 @@ aside {
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: background-color 0.4s; }
+          transition: background-color 0.4s, color 0.4s; }
           aside main .cart-main .cart-line button .cart-icon {
             border: none;
             width: 18px; }
@@ -292,7 +292,7 @@ aside {
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: background-color 0.4s; }
+          transition: background-color 0.4s, color 0.4s; }
           aside main .cart-main .cart-summary-aside div a:hover {
             background-color: #778d79;
             color: #F1EDE2; }
@@ -335,10 +335,12 @@ hr {
       height: calc(100vh - 204px); } }
   .loading .thb-icon {
     width: 200px;
-    height: auto; }
+    height: auto;
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
   .loading .loader {
     margin-top: 20px !important;
     border: solid #1F1F1F 3px;
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
     width: 225px;
     background: none; }
     .loading .loader span {
@@ -509,6 +511,9 @@ header, footer {
   height: 100px;
   padding: 0; }
 
+#cart-aside main .cart-main {
+  padding-top: 25px; }
+
 @media only screen and (max-width: 1070px) {
   #cart-aside {
     position: fixed;
@@ -668,7 +673,7 @@ header {
       margin-left: -2px;
       margin-right: -2px;
       transform: perspective(8px) rotateX(1deg);
-      transition: background-color 0.4s, margin 0.4s;
+      transition: background-color 0.4s, color 0.4s, margin 0.4s;
       background-color: #c8c4b8;
       border: solid #1F1F1F 3px;
       border-radius: 25px 25px 0 0;
@@ -844,7 +849,8 @@ main .landing {
     height: 55%; }
     main .landing .landing-welcome .thb-icon {
       height: 175px;
-      width: auto; }
+      width: auto;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
     main .landing .landing-welcome h1 {
       color: #F1EDE2;
       font-family: "Saudagar";
@@ -887,11 +893,12 @@ main .landing {
       main .landing .landing-main .remember-user label input[type="checkbox"] {
         -webkit-appearance: none;
         appearance: none;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         margin-left: 10px;
         background-color: #F1EDE2;
         border: solid #1F1F1F 3px;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         transition: 0.4s;
         border-radius: 0;
         outline: none;
@@ -910,7 +917,6 @@ main .landing {
         height: 55%;
         padding: 0; }
         main .landing .landing-main p {
-          font-size: 22px;
           max-width: 80%;
           margin: 0 auto;
           padding: 15px;
@@ -1145,28 +1151,36 @@ main .main-newsletter {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    gap: 10px; }
     main .main-newsletter form input {
       width: 100%;
       border: solid #1F1F1F 2px;
-      border-radius: 0; }
-    main .main-newsletter form button {
+      border-radius: 0;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+    main .main-newsletter form .button {
       padding: 20px 30px;
-      background: #778d79;
-      color: #F1EDE2; }
+      background: #BC4749;
+      color: #F1EDE2;
+      font-size: 18px; }
+      main .main-newsletter form .button img {
+        filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      main .main-newsletter form .button:hover {
+        cursor: pointer;
+        background-color: #778d79; }
   @media only screen and (max-width: 1070px) {
     main .main-newsletter {
       padding: 30px 5%; }
       main .main-newsletter p {
-        font-size: 20px; }
-      main .main-newsletter form input {
-        width: 90%;
-        padding: 10px 20px; }
-      main .main-newsletter form button {
         font-size: 18px; }
-        main .main-newsletter form button:hover {
-          background: #778d79;
-          color: #F1EDE2; } }
+      main .main-newsletter form input {
+        width: 80%;
+        padding: 10px 20px; }
+      main .main-newsletter form .button:hover {
+        background: #BC4749;
+        color: #F1EDE2; }
+        main .main-newsletter form .button:hover img {
+          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
 
 main .taproom-address {
   height: 600px;
@@ -1390,6 +1404,7 @@ main .taproom-events {
     color: #1F1F1F;
     border: solid #1F1F1F 3px;
     background-color: #D8B56E;
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
     border-radius: 0;
     min-width: 75px;
     transition: background-color 0.4s, color 0.4s; }
@@ -1427,6 +1442,10 @@ main .taproom-events {
     max-width: 2000px;
     height: 100%;
     margin-bottom: 10px; }
+  main .taproom-events .fc-list-table {
+    filter: drop-shadow(-5px 5px 2px #1f1f1f80); }
+  main .taproom-events .fc-scrollgrid-section-body {
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
   main .taproom-events .fc {
     margin-top: 25px; }
     main .taproom-events .fc a:hover {

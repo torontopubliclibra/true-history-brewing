@@ -4,6 +4,7 @@ import {useVariantUrl} from '~/utils';
 import add from './../../public/assets/icons/add.svg';
 import subtract from './../../public/assets/icons/subtract.svg';
 import remove from './../../public/assets/icons/remove.svg';
+import basket from './../../public/assets/icons/basket.svg';
 
 /**
  * @param {CartMainProps}
@@ -254,6 +255,7 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
         }}
       >
         Start shopping
+        <img src={basket} className="button-icon" />
       </Link>
     </div>
   );

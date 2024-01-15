@@ -11,6 +11,7 @@ import wine from './../../public/assets/icons/wine.svg';
 import drink from './../../public/assets/icons/drink.svg';
 import food from './../../public/assets/icons/food.svg';
 import calendar from './../../public/assets/icons/calendar.svg';
+import mail from './../../public/assets/icons/mail.svg';
 
 /**
  * @type {MetaFunction}
@@ -42,7 +43,7 @@ export default function Homepage() {
         <section className="main-taproom">
           <div className="sketch-address">
             <img src={barSketch} className="bar-sketch" alt="" />
-            <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
+            <p className='address'>1154 St. Clair Avenue W, Toronto, Ontario</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
           <hr/>
@@ -69,7 +70,7 @@ export default function Homepage() {
           <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
           <form action="">
             <input type="email" placeholder="Enter your email address" />
-            <button className='button button-primary'>Subscribe now</button>
+            <button className='button button-primary'>Subscribe now <img src={mail} className="button-icon" /></button>
           </form>
         </section>
     </>

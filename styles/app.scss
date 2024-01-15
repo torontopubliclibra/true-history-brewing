@@ -329,7 +329,7 @@ aside {
             border: none;
             width: 18px;
           }
-          transition: background-color 0.4s;
+          transition: background-color 0.4s, color 0.4s;
           &:hover {
             cursor: pointer;
             background-color: $color1;
@@ -380,7 +380,7 @@ aside {
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: background-color 0.4s;
+          transition: background-color 0.4s, color 0.4s;
 
           &:hover {
             background-color: $color1;
@@ -457,10 +457,12 @@ hr {
   .thb-icon {
     width: 200px;
     height: auto;
+    filter: $default-shadow;
   }
   .loader {
     margin-top: 20px !important;
     border: $default-border;
+    filter: $default-shadow;
     width: 225px;
     background: none;
 
@@ -680,6 +682,12 @@ header, footer {
 .landing-header, .landing-footer {
   height: 100px;
   padding: 0;
+}
+
+#cart-aside {
+  main .cart-main {
+    padding-top: 25px;
+  }
 }
 
 // responsive to tablet
@@ -913,7 +921,7 @@ header {
         margin-left: -2px;
         margin-right: -2px;
         transform: perspective(8px) rotateX(1deg);
-        transition: background-color 0.4s, margin 0.4s;
+        transition: background-color 0.4s, color 0.4s, margin 0.4s;
         background-color: $least-light;
         border: $default-border;
         border-radius: 25px 25px 0 0;
@@ -1153,6 +1161,7 @@ main {
       .thb-icon {
         height: 175px;
         width: auto;
+        filter: $default-shadow;
       }
 
       h1 {
@@ -1209,11 +1218,12 @@ main {
           input[type="checkbox"] {
             -webkit-appearance: none;
             appearance: none;
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             margin-left: 10px;
             background-color: $light;
             border: $default-border;
+            filter: $default-shadow;
             transition: 0.4s;
             border-radius: 0;
             outline: none;
@@ -1241,7 +1251,6 @@ main {
         padding: 0;
 
         p {
-          font-size: 22px;
           max-width: 80%;
           margin: 0 auto;
           padding: 15px;
@@ -1547,16 +1556,28 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 10px;
 
       input {
         width: 100%;
         border: $thin-border;
         border-radius: 0;
+        filter: $default-shadow;
       }
-      button {
+      .button {
         padding: 20px 30px;
-        background: $color1;
+        background: $color4;
         color: $light;
+        font-size: 18px;
+
+        img {
+          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: $color1;
+        }
       }
     }
 
@@ -1566,19 +1587,21 @@ main {
       padding: 30px 5%;
 
       p {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       form {
         input {
-          width: 90%;
+          width: 80%;
           padding: 10px 20px;
         }
-        button {
-          font-size: 18px;
+        .button {
           &:hover {
-            background: $color1;
+            background: $color4;
             color: $light;
+            img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
           }
         }
       }
@@ -1873,6 +1896,7 @@ main {
       color: $black;
       border: $default-border;
       background-color: $color2;
+      filter: $default-shadow;
       border-radius: 0;
       min-width: 75px;
       transition: background-color 0.4s, color 0.4s;
@@ -1921,6 +1945,12 @@ main {
       max-width: 2000px;
       height: 100%;
       margin-bottom: 10px;
+    }
+    .fc-list-table {
+      filter: drop-shadow(-5px 5px 2px #1f1f1f80);
+    }
+    .fc-scrollgrid-section-body {
+      filter: $default-shadow
     }
     .fc {
       margin-top: 25px;
