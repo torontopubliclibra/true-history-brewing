@@ -113,10 +113,12 @@ body {
     body .landing-header {
       position: unset; }
     body footer {
-      background-color: rgba(119, 141, 121, 0.8);
+      background-color: rgba(214, 208, 192, 0.8);
       background-image: none; }
       body footer.landing-footer {
         background-image: url("./../../public/assets/wallpaper.png"); }
+      body footer hr {
+        background-color: #778d79; }
     body.menu-open #mobile-menu-aside {
       display: initial !important; }
     body.menu-open #cart-aside {
@@ -196,8 +198,11 @@ aside {
       padding-top: 0; }
       aside main .cart-main .cart-details {
         margin-top: 0; }
+        aside main .cart-main .cart-details .button {
+          margin-top: 20px; }
       aside main .cart-main .cart-empty-text {
         background-color: rgba(214, 208, 192, 0.8);
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         padding: 40px 30px;
         border: solid #1F1F1F 2px;
         border-radius: 25px;
@@ -218,6 +223,7 @@ aside {
         justify-content: space-evenly;
         gap: 10px;
         background-color: rgba(214, 208, 192, 0.8);
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         border: solid #1F1F1F 2px;
         border-radius: 25px;
         display: flex;
@@ -244,6 +250,7 @@ aside {
         aside main .cart-main .cart-line button {
           background-color: #D8B56E;
           border: solid #1F1F1F 2px;
+          filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
           border-radius: 50%;
           width: 25px;
           height: 25px;
@@ -254,22 +261,30 @@ aside {
           aside main .cart-main .cart-line button .cart-icon {
             border: none;
             width: 18px; }
-          aside main .cart-main .cart-line button:hover {
+          aside main .cart-main .cart-line button img {
+            filter: none; }
+          aside main .cart-main .cart-line button:hover, aside main .cart-main .cart-line button:disabled {
             cursor: pointer;
             background-color: #778d79; }
-            aside main .cart-main .cart-line button:hover img {
+            aside main .cart-main .cart-line button:hover img, aside main .cart-main .cart-line button:disabled img {
               filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
           @media only screen and (max-width: 1070px) {
             aside main .cart-main .cart-line button:hover {
               cursor: pointer;
               background-color: #D8B56E; }
               aside main .cart-main .cart-line button:hover img {
-                filter: none; } }
+                filter: none; }
+            aside main .cart-main .cart-line button:disabled:hover {
+              cursor: pointer;
+              background-color: #778d79; }
+              aside main .cart-main .cart-line button:disabled:hover img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
         aside main .cart-main .cart-line img {
           height: 100%;
           display: block;
           margin: 0;
           border: solid #1F1F1F 2px;
+          filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
           border-radius: 0; }
         aside main .cart-main .cart-line:nth-of-type(1) {
           margin-top: 0; }
@@ -277,18 +292,21 @@ aside {
         background-color: rgba(214, 208, 192, 0.8);
         padding: 15px 30px;
         border: solid #1F1F1F 2px;
-        border-radius: 25px; }
+        border-radius: 25px;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
         aside main .cart-main .cart-summary-aside div a {
           text-decoration: none;
           text-transform: uppercase;
           background-color: #D8B56E;
+          font-weight: 800;
           border: solid #1F1F1F 2px;
           height: 40px;
           margin-bottom: 10px;
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: background-color 0.4s, color 0.4s; }
+          transition: background-color 0.4s, color 0.4s;
+          filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
           aside main .cart-main .cart-summary-aside div a:hover {
             background-color: #778d79;
             color: #F1EDE2; }
@@ -521,6 +539,11 @@ header, footer {
         display: none;
         height: 0; } }
 
+@media only screen and (max-width: 1070px) {
+  #cart-aside aside main {
+    padding-top: 25px;
+    height: calc(100vh - 25px); } }
+
 @media only screen and (max-width: 480px) {
   #cart-aside {
     position: absolute; }
@@ -529,7 +552,11 @@ header, footer {
       width: 100vw;
       max-width: 100vw;
       height: calc(100vh - 102px);
-      padding-top: 50px; } }
+      padding-top: 50px; }
+      #cart-aside aside main {
+        padding-top: 0 !important; }
+        #cart-aside aside main .cart-main {
+          padding-top: 0 !important; } }
 
 #mobile-menu-aside {
   display: none;
@@ -545,13 +572,17 @@ header, footer {
   #mobile-menu-aside aside {
     position: absolute;
     top: 102px; }
+    @media only screen and (max-width: 1070px) {
+      #mobile-menu-aside aside main {
+        padding-top: 10px;
+        height: calc(100vh - 10px); } }
     @media only screen and (max-width: 480px) {
       #mobile-menu-aside aside {
         background: rgba(241, 237, 226, 0.25);
         width: 100vw;
         max-width: 100vw;
-        height: calc(100vh - 102px);
-        padding-top: 50px; } }
+        padding-top: 55px;
+        height: calc(100vh - 102px); } }
     #mobile-menu-aside aside .header-menu-mobile {
       display: flex;
       flex-direction: column;
@@ -866,7 +897,11 @@ main .landing {
         width: 100%;
         height: 45%; }
         main .landing .landing-welcome h1 {
-          display: none; } }
+          display: none; }
+        main .landing .landing-welcome .thb-icon {
+          height: 150px;
+          width: auto;
+          filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); } }
   main .landing .landing-main {
     display: flex;
     flex-direction: column;
@@ -911,27 +946,30 @@ main .landing {
             background-color: #778d79; }
     @media only screen and (max-width: 1070px) {
       main .landing .landing-main {
-        height: 55%;
+        height: 60%;
         padding: 0; }
         main .landing .landing-main p {
+          font-size: 22px;
           max-width: 80%;
           margin: 0 auto;
+          margin-bottom: 10px;
           padding: 15px;
           text-align: center;
           padding-bottom: 0; }
         main .landing .landing-main .landing-buttons {
           justify-content: center; }
         main .landing .landing-main .remember-user {
-          margin: 0 auto; } }
+          margin: 0 auto;
+          margin-top: 10px; } }
 
 main .main-heading hr {
   height: 5px;
   max-width: 85%;
-  background-color: #778d79; }
+  background-color: #C28165; }
 
 @media only screen and (max-width: 1070px) {
   main .main-heading {
-    padding: 20px 0; }
+    padding: 30px 0; }
     main .main-heading hr {
       display: none; } }
 
@@ -1013,46 +1051,57 @@ main .main-taproom {
       main .main-taproom .menu-buttons .button img {
         width: 25px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom hr {
-      background-color: #C28165;
-      width: 90%;
-      height: 5px;
-      margin-top: 10px;
-      margin-bottom: 35px; }
-    main .main-taproom .sketch-address {
-      width: 100%; }
-      main .main-taproom .sketch-address .bar-sketch {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        width: 100%; }
-      main .main-taproom .sketch-address .address {
-        width: 83%;
-        text-align: center;
-        letter-spacing: 1.5px;
-        padding: 10px 15px;
+    main .main-taproom {
+      padding-top: 0 !important; }
+      main .main-taproom hr {
+        background-color: #C28165;
+        width: 90%;
+        height: 5px;
+        margin-top: 10px;
+        margin-bottom: 35px; }
+      main .main-taproom .sketch-address {
+        width: 100%;
+        margin-top: 0; }
+        main .main-taproom .sketch-address .bar-sketch {
+          padding: 30px 0;
+          padding-bottom: 10px;
+          width: 100%; }
+        main .main-taproom .sketch-address .address {
+          order: -1;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          border-radius: 0;
+          padding: 15px 15%;
+          max-width: 100vw;
+          width: 80vw;
+          font-size: 25px;
+          text-align: center;
+          letter-spacing: 1.5px;
+          margin: 0;
+          filter: none; }
+        main .main-taproom .sketch-address .button {
+          display: none; }
+      main .main-taproom .hours {
+        order: 5;
+        margin-top: 20px !important;
+        margin-bottom: 40px !important; }
+      main .main-taproom .menu-buttons {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 25px;
         margin: 0;
-        margin-bottom: 8px; }
-      main .main-taproom .sketch-address .button {
-        display: none; }
-    main .main-taproom .hours {
-      margin-bottom: 20px; }
-    main .main-taproom .menu-buttons {
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 25px;
-      margin: 0;
-      margin-top: 20px;
-      gap: 5px; }
-      main .main-taproom .menu-buttons .button {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        width: 80%;
-        height: 20px;
-        padding: 15px 20px; }
-        main .main-taproom .menu-buttons .button img {
-          width: 20px; }
-        main .main-taproom .menu-buttons .button:hover img {
-          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
+        gap: 3px; }
+        main .main-taproom .menu-buttons .button {
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          width: 75%;
+          height: 20px;
+          padding: 15px 20px; }
+          main .main-taproom .menu-buttons .button img {
+            width: 20px; }
+          main .main-taproom .menu-buttons .button:hover img {
+            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
 
 main .main-events {
   display: flex;
@@ -1067,7 +1116,7 @@ main .main-events {
     filter: sepia(20%);
     object-fit: cover; }
   main .main-events h3 {
-    font-size: 45px;
+    font-size: 55px;
     font-family: "Saudagar";
     text-transform: uppercase;
     margin: 30px;
@@ -1117,15 +1166,17 @@ main .main-events {
         main .main-events .button:hover {
           background-color: #D8B56E !important; }
       main .main-events .events-photo {
-        height: 200px;
+        height: 250px;
         max-width: 100%;
         border: none;
         border-bottom: solid #1F1F1F 3px; }
       main .main-events h3 {
         text-align: center;
-        font-size: 40px;
+        font-size: 42px;
         margin: 10px 30px;
-        margin-top: 20px; } }
+        margin-top: 20px; }
+      main .main-events .main-events-content .events-list {
+        font-size: 18px; } }
 
 main .main-newsletter {
   display: flex;
@@ -1139,12 +1190,9 @@ main .main-newsletter {
   background-color: rgba(216, 181, 110, 0.9);
   border-top: solid #1F1F1F 3px; }
   main .main-newsletter p {
-    font-family: "Saudagar";
-    font-size: 26px;
-    font-weight: 800;
+    font-size: 24px !important;
     font-style: italic;
-    line-height: 1.5;
-    letter-spacing: 1px; }
+    line-height: 1.5; }
   main .main-newsletter form {
     width: 100%;
     display: flex;
@@ -1152,6 +1200,7 @@ main .main-newsletter {
     align-items: center;
     gap: 10px; }
     main .main-newsletter form input {
+      padding: 10px 20px;
       width: 100%;
       border: solid #1F1F1F 2px;
       border-radius: 0;
@@ -1170,10 +1219,9 @@ main .main-newsletter {
     main .main-newsletter {
       padding: 30px 5%; }
       main .main-newsletter p {
-        font-size: 18px; }
+        font-size: 20px !important; }
       main .main-newsletter form input {
-        width: 80%;
-        padding: 10px 20px; }
+        width: 80%; }
       main .main-newsletter form .button:hover {
         background: #BC4749;
         color: #F1EDE2; }
@@ -1231,20 +1279,30 @@ main .taproom-address {
       height: auto;
       background-color: rgba(119, 141, 121, 0.5); }
       main .taproom-address .taproom-photo {
-        height: 200px;
+        height: 250px;
         position: unset;
         border-bottom: solid #1F1F1F 3px; }
       main .taproom-address .taproom-info {
         padding: 25px 0;
+        padding-top: 0;
         border-right: none; }
         main .taproom-address .taproom-info p {
+          background-color: #F1EDE2;
+          filter: none;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          border-radius: 0;
+          padding: 15px 15%;
+          max-width: 100vw;
           letter-spacing: 1.5px;
-          font-size: 22px;
-          margin-bottom: 20px; }
+          font-size: 25px;
+          margin-top: 0;
+          margin-bottom: 30px; }
         main .taproom-address .taproom-info .button {
           display: none; }
         main .taproom-address .taproom-info .hours {
-          margin-bottom: 32px !important; } }
+          margin-bottom: 22px !important; } }
 
 main .taproom-menus {
   position: relative;
@@ -1253,8 +1311,7 @@ main .taproom-menus {
   justify-content: center;
   align-items: center;
   color: #F1EDE2;
-  background-color: rgba(121, 79, 62, 0.9);
-  border-bottom: solid #1F1F1F 3px; }
+  background-color: rgba(121, 79, 62, 0.9); }
   main .taproom-menus h3 {
     width: 90vw;
     font-size: 60px;
@@ -1322,7 +1379,7 @@ main .taproom-menus {
       border: solid #1F1F1F 3px;
       border-radius: 40px;
       padding: 20px; }
-      main .taproom-menus .menu li.beer {
+      main .taproom-menus .menu li.beer, main .taproom-menus .menu li.wine-seltzers-etc, main .taproom-menus .menu li.non-alc {
         width: 325px; }
       main .taproom-menus .menu li.food.sm {
         width: 225px; }
@@ -1377,7 +1434,8 @@ main .taproom-events {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(241, 237, 226, 0.9); }
+  background-color: rgba(241, 237, 226, 0.9);
+  border-bottom: solid #1F1F1F 3px; }
   main .taproom-events hr {
     background-color: #C28165;
     width: 95%;
@@ -1442,6 +1500,11 @@ main .taproom-events {
     margin-bottom: 10px; }
   main .taproom-events .fc-list-table {
     filter: drop-shadow(-5px 5px 2px #1f1f1f80); }
+  main .taproom-events .fc-list-empty {
+    background-color: #F1EDE2;
+    height: 150px;
+    font-size: 22px;
+    font-style: italic; }
   main .taproom-events .fc-scrollgrid-section-body {
     filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
   main .taproom-events .fc {
@@ -1503,8 +1566,7 @@ main .taproom-events {
     main .taproom-events .fc {
       margin-top: 0; }
     main .taproom-events .calendar {
-      padding-top: 10px;
-      padding-bottom: 30px; }
+      padding: 10px 0; }
       main .taproom-events .calendar .fc-header-toolbar {
         display: flex;
         flex-direction: column;

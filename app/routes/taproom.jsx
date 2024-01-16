@@ -97,6 +97,11 @@ export default function Homepage() {
             <Schedule/>
           </div>
         </section>
+        <section className="taproom-events" id="calendar">
+          <h3>Events at T.H.B.</h3>
+          <hr/>
+          <Calendar/>
+        </section>
         <section className="taproom-menus">
           <h3 id="menu">Menus</h3>
           <p className='updated-date'>Last updated: 14/01/24</p>
@@ -125,11 +130,6 @@ export default function Homepage() {
           <ul className='menu'>
             {formattedMenus[selectedMenu]}
           </ul>
-        </section>
-        <section className="taproom-events" id="calendar">
-          <h3>Upcoming Events</h3>
-          <hr/>
-          <Calendar/>
         </section>
     </>
   );

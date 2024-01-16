@@ -68,7 +68,7 @@ export default function Homepage() {
         <section className="main-events">
           <img src={patioPhoto} className="events-photo" />
           <div className="main-events-content">
-            <h3>Events at T.H.B.</h3>
+            <h3>Upcoming Events</h3>
             <hr/>
             <ul className="events-list">
               {formattedEvents}

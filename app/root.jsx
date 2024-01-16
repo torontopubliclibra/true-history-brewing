@@ -563,14 +563,10 @@ export function ErrorBoundary() {
   const error = useRouteError();
   const rootData = useRootLoaderData();
   const nonce = useNonce();
-  let errorMessage = 'Unknown error';
   let errorStatus = 500;
 
   if (isRouteErrorResponse(error)) {
-    errorMessage = error?.data?.message ?? error.data;
     errorStatus = error.status;
-  } else if (error instanceof Error) {
-    errorMessage = error.message;
   }
 
   return (
@@ -588,7 +584,7 @@ export function ErrorBoundary() {
             <h1>Unexpected Error ({errorStatus})</h1>
             <h2>Looks like you took a wrong turn!</h2>
             <Link to="/home" className='button button-tertiary'>
-              Go back to the Homepage
+              Go back to the homepage
             </Link>
           </main>
         </Layout>

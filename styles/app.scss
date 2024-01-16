@@ -129,10 +129,14 @@ body {
       position: unset;
     }
     footer {
-      background-color: rgba($color1, 0.8);
+      background-color: rgba($less-light, 0.8);
       background-image: none;
       &.landing-footer {
         background-image: url('./../../public/assets/wallpaper.png');
+      }
+
+      hr {
+        background-color: $color1;
       }
     }
 
@@ -249,10 +253,15 @@ aside {
 
       .cart-details {
         margin-top: 0;
+
+        .button {
+          margin-top: 20px;
+        }
       }
 
       .cart-empty-text {
         background-color: rgba($less-light, 0.8);
+        filter: $default-shadow;
         padding: 40px 30px;
         border: $thin-border;
         border-radius: 25px;
@@ -283,6 +292,7 @@ aside {
         justify-content: space-evenly;
         gap: 10px;
         background-color: rgba($less-light, 0.8);
+        filter: $default-shadow;
         border: $thin-border;
         border-radius: 25px;
         display: flex;
@@ -311,6 +321,7 @@ aside {
         button {
           background-color: $color2;
           border: $thin-border;
+          filter: $default-shadow;
           border-radius: 50%;
           width: 25px;
           height: 25px;
@@ -321,8 +332,11 @@ aside {
             border: none;
             width: 18px;
           }
+          img {
+            filter: none;
+          }
           transition: background-color 0.4s, color 0.4s;
-          &:hover {
+          &:hover, &:disabled {
             cursor: pointer;
             background-color: $color1;
             img {
@@ -338,6 +352,13 @@ aside {
                 filter: none;
               }
             }
+            &:disabled:hover {
+              cursor: pointer;
+              background-color: $color1;
+              img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+              }
+            }
           }
         }
 
@@ -346,6 +367,7 @@ aside {
           display: block;
           margin: 0;
           border: $thin-border;
+          filter: $default-shadow;
           border-radius: 0;
         }
 
@@ -361,11 +383,13 @@ aside {
         padding: 15px 30px;
         border: $thin-border;
         border-radius: 25px;
+        filter: $default-shadow;
 
         div a {
           text-decoration: none;
           text-transform: uppercase;
           background-color: $color2;
+          font-weight: 800;
           border: $thin-border;
           height: 40px;
           margin-bottom: 10px;
@@ -373,6 +397,7 @@ aside {
           justify-content: center;
           align-items: center;
           transition: background-color 0.4s, color 0.4s;
+          filter: $default-shadow;
 
           &:hover {
             background-color: $color1;
@@ -700,6 +725,18 @@ header, footer {
   }
 }
 
+// responsive to tablet
+@media only screen and (max-width: $tablet) {
+  #cart-aside {
+    aside {
+      main {
+        padding-top: 25px;
+        height: calc(100vh - 25px);
+      }
+    }
+  }
+}
+
 // responsive to mobile
 @media only screen and (max-width: $mobile) {
   #cart-aside {
@@ -710,6 +747,14 @@ header, footer {
       max-width: 100vw;
       height: calc(100vh - 102px);
       padding-top: 50px;
+
+      main {
+        padding-top: 0 !important;
+
+        .cart-main {
+          padding-top: 0 !important;
+        }
+      }
     }
   }
 }
@@ -734,13 +779,21 @@ header, footer {
     position: absolute;
     top: 102px;
 
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      main {
+        padding-top: 10px;
+        height: calc(100vh - 10px);
+      }
+    }
+
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
       background: rgba($light, 0.25);
       width: 100vw;
       max-width: 100vw;
+      padding-top: 55px;
       height: calc(100vh - 102px);
-      padding-top: 50px;
     }
 
     .header-menu-mobile {
@@ -1180,6 +1233,11 @@ main {
         h1 {
           display: none;
         }
+        .thb-icon {
+          height: 150px;
+          width: auto;
+          filter: $default-shadow;
+        }
       }
     }
     .landing-main {
@@ -1240,12 +1298,14 @@ main {
 
       // responsive to mobile
       @media only screen and (max-width: $tablet) {
-        height: 55%;
+        height: 60%;
         padding: 0;
 
         p {
+          font-size: 22px;
           max-width: 80%;
           margin: 0 auto;
+          margin-bottom: 10px;
           padding: 15px;
           text-align: center;
           padding-bottom: 0;
@@ -1255,6 +1315,7 @@ main {
         }
         .remember-user {
           margin: 0 auto;
+          margin-top: 10px;
         }
       }
     }
@@ -1263,11 +1324,11 @@ main {
     hr {
       height: 5px;
       max-width: 85%;
-      background-color: $color1;
+      background-color: $color3;
     }
     // responsive to mobile
     @media only screen and (max-width: $tablet) {
-      padding: 20px 0;
+      padding: 30px 0;
       hr {
         display: none;
       }
@@ -1374,6 +1435,9 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+
+      padding-top: 0 !important;
+
       hr {
         background-color: $color3;
         width: 90%;
@@ -1383,38 +1447,47 @@ main {
       }
       .sketch-address {
         width: 100%;
+        margin-top: 0;
 
         .bar-sketch {
-          padding-top: 15px;
-          padding-bottom: 15px;
+          padding: 30px 0;
+          padding-bottom: 10px;
           width: 100%;
         }
         .address {
-          width: 83%;
+          order: -1;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          border-radius: 0;
+          padding: 15px 15%;
+          max-width: 100vw;
+          width: 80vw;
+          font-size: 25px;
           text-align: center;
           letter-spacing: 1.5px;
-          padding: 10px 15px;
           margin: 0;
-          margin-bottom: 8px;
+          filter: none;
         }
         .button {
           display: none;
         }
       }
       .hours {
-        margin-bottom: 20px;
+        order: 5;
+        margin-top: 20px !important;
+        margin-bottom: 40px !important;
       }
       .menu-buttons {
         flex-direction: column;
         align-items: center;
         padding-bottom: 25px;
         margin: 0;
-        margin-top: 20px;
-        gap: 5px;
+        gap: 3px;
         .button {
           flex-direction: row-reverse;
           justify-content: space-between;
-          width: 80%;
+          width: 75%;
           height: 20px;
           padding: 15px 20px;
           img {
@@ -1443,7 +1516,7 @@ main {
       object-fit: cover;
     }
     h3 {
-      font-size: 45px;
+      font-size: 55px;
       font-family: "Saudagar";
       text-transform: uppercase;
       margin: 30px;
@@ -1510,7 +1583,7 @@ main {
       }
 
       .events-photo {
-        height: 200px;
+        height: 250px;
         max-width: 100%;
         border: none;
         border-bottom: $default-border;
@@ -1518,10 +1591,14 @@ main {
 
       h3 {
         text-align: center;
-        font-size: 40px;
+        font-size: 42px;
         margin: 10px 30px;
         margin-top: 20px;
       }
+
+      .main-events-content .events-list {
+          font-size: 18px;
+        }
     }
   }
   .main-newsletter {
@@ -1537,12 +1614,9 @@ main {
     border-top: $default-border;
 
     p {
-      font-family: "Saudagar";
-      font-size: 26px;
-      font-weight: 800;
+      font-size: 24px !important;
       font-style: italic;
       line-height: 1.5;
-      letter-spacing: 1px;
     }
 
     form {
@@ -1553,6 +1627,7 @@ main {
       gap: 10px;
 
       input {
+        padding: 10px 20px;
         width: 100%;
         border: $thin-border;
         border-radius: 0;
@@ -1581,13 +1656,12 @@ main {
       padding: 30px 5%;
 
       p {
-        font-size: 18px;
+        font-size: 20px !important;
       }
 
       form {
         input {
           width: 80%;
-          padding: 10px 20px;
         }
         .button {
           &:hover {
@@ -1659,23 +1733,33 @@ main {
       background-color: rgba($color1, 0.5);
 
       .taproom-photo {
-        height: 200px;
+        height: 250px;
         position: unset;
         border-bottom: $default-border;
       }
       .taproom-info {
         padding: 25px 0;
+        padding-top: 0;
         border-right: none;
         p {
+          background-color: $light;
+          filter: none;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          border-radius: 0;
+          padding: 15px 15%;
+          max-width: 100vw;
           letter-spacing: 1.5px;
-          font-size: 22px;
-          margin-bottom: 20px;
+          font-size: 25px;
+          margin-top: 0;
+          margin-bottom: 30px;
         }
         .button {
           display: none;
         }
         .hours {
-          margin-bottom: 32px !important;
+          margin-bottom: 22px !important;
         }
       }
     }
@@ -1688,7 +1772,6 @@ main {
     align-items: center;
     color: $light;
     background-color: rgba($dark, 0.9);
-    border-bottom: $default-border;
 
     h3 {
       width: 90vw;
@@ -1778,7 +1861,7 @@ main {
         border-radius: 40px;
         padding: 20px;
 
-        &.beer {
+        &.beer, &.wine-seltzers-etc, &.non-alc {
           width: 325px;
         }
 
@@ -1862,6 +1945,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgba($light, 0.9);
+    border-bottom: $default-border;
     hr {
       background-color: $color3;
       width: 95%;
@@ -1942,6 +2026,12 @@ main {
     }
     .fc-list-table {
       filter: drop-shadow(-5px 5px 2px #1f1f1f80);
+    }
+    .fc-list-empty {
+      background-color: $light;
+      height: 150px;
+      font-size: 22px;
+      font-style: italic;
     }
     .fc-scrollgrid-section-body {
       filter: $default-shadow
@@ -2048,8 +2138,7 @@ main {
         margin-top: 0;
       }
       .calendar {
-        padding-top: 10px;
-        padding-bottom: 30px;
+        padding: 10px 0;
         .fc-header-toolbar {
           display: flex;
           flex-direction: column;

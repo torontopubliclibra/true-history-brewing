@@ -34,6 +34,20 @@ function CartDetails({layout, cart}) {
     <div className="cart-details">
       <CartLines lines={cart?.lines} layout={layout} />
       {cartHasItems && (
+        <Link
+          to="/shop"
+          className="button button-primary"
+          onClick={() => {
+            if (layout === 'aside') {
+              window.location.href = '/shop';
+            }
+          }}
+        >
+          Continue shopping
+          <img src={basket} className="button-icon" />
+        </Link>
+      )}
+      {cartHasItems && (
         <CartSummary cost={cart.cost} layout={layout}>
           {/* <CartDiscounts discountCodes={cart.discountCodes} /> */}
           <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
@@ -116,7 +130,7 @@ function CartCheckoutActions({checkoutUrl}) {
   return (
     <div>
       <a href={checkoutUrl} target="_self">
-        <p>Continue to Checkout</p>
+        <p>Checkout now</p>
       </a>
     </div>
   );
