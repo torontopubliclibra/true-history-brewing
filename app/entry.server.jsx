@@ -21,14 +21,21 @@ export default async function handleRequest(
 
   let {nonce, header, NonceProvider} = createContentSecurityPolicy({
     defaultSrc: [
-      "*"
+      `*`,
+      `'self'`,
+      `'none'`
     ],
     connectSrc: [
-      "'self'",
-      "*",
-      'ws://localhost:8002',
-      'https://thb-data-3vd2n.ondigitalocean.app/',
-    ]
+      `*`,
+      `'self'`,
+      `https://thb-data-3vd2n.ondigitalocean.app/`
+    ],
+    scriptSrc: [
+      `*`,
+      `'self'`,
+      `'unsafe-inline'`,
+      `'unsafe-eval'`
+    ],
   });
 
   const body = await renderToReadableStream(

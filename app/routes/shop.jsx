@@ -8,7 +8,7 @@ import { Image, Money } from '@shopify/hydrogen';
  */
 export const meta = () => {
   return [
-    {title: 'Store | True History Brewing'},
+    {title: 'Online Shop | True History Brewing'},
     {description: 'Brewing Low & Slow'},
   ];
 };
@@ -31,18 +31,18 @@ export default function Homepage() {
   return (
     <>
       <section className="heading store-heading">
-        <h2>Online Store</h2>
-      </section>
-      <section className="store-disclaimers">
-        <div className="text-box">
-          <h3>Terms and conditions</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+        <h2>Online Shop</h2>
       </section>
       <div className="store">
         <FeaturedCollection collection={data.featuredCollection} />
         <RecommendedProducts products={data.recommendedProducts} />
       </div>
+      <section className="store-disclaimers">
+        <div className="text-box">
+          <h3>Delivery and Pickup Details</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </section>
     </>
   );
 }

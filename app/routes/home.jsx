@@ -28,8 +28,18 @@ export default function Homepage() {
   const { events, currentDate } = useContext(StrapiContext);
 
   let formattedEvents = events.map((event, index) => {
+
+    let title = event.title;
+    let date = event.date.substring(8, 10) + `/` + event.date.substring(5, 7) + `/` + event.date.substring(2, 4);
+    let time = event.time;
+    let key = event + `-` + index;
+
+    if (time.substring(0, 1) == 0) {
+      time = time.substring(1, time.length);
+    }
+
     if (event.date >= currentDate && index < 4) {
-      return <li>{event.title} <span className="date">- {event.date.substring(8, 10)}/{event.date.substring(5, 7)}/{event.date.substring(2, 4)} @ {event.time}</span></li>
+      return <li key={key}>{title} <span className="date">- {date} @ {time}</span></li>
     }
   })
 

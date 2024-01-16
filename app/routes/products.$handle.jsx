@@ -15,7 +15,7 @@ import {getVariantUrl} from '~/utils';
  * @type {MetaFunction<typeof loader>}
  */
 export const meta = ({data}) => {
-  return [{title: `True History Brewing - ${data?.product.title ?? ''}`}];
+  return [{title: `${data?.product.title ?? ''} | True History Brewing`}];
 };
 
 /**

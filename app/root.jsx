@@ -124,14 +124,11 @@ export function parseTime(datetimeString) {
   let minute = dateTime.getMinutes();
   let meridiem = 'am';
 
-  if (hour < 10) {
-    hour = '0' + hour
-  } else {
-    if (hour > 12) {
-      hour = hour - 12;
-      meridiem = 'pm';
-    }
+  if (hour > 12) {
+    hour = hour - 12;
+    meridiem = 'pm';
   }
+  if (hour < 10) hour = '0' + hour;
   if (minute < 10) minute = '0' + minute;
 
   return `${hour}:${minute}${meridiem}`;
@@ -146,102 +143,82 @@ export function parseDate(datetimeString) {
   let hour = dateTime.getHours();
   let minute = dateTime.getMinutes();
 
-  if (minute == 0) {
-    minute = '00';
-  } else if (hour.length > 1) {
-    minute = '0' + hour;
-  } else {
-    minute = '00';
-  }
-  if (hour < 10) {
-    hour = '0' + hour
-  }
-
   if (month < 10) month = '0' + month;
   if (day < 10) day = '0' + day;
+  if (minute == 0) minute = '00';
+  if (hour.length > 1) minute = '0' + hour;
+  if (hour < 10) hour = '0' + hour;
 
   return `${year}-${month}-${day}T${hour}:${minute}:00`;
 }
 
 export function convertTimeToAmPm(time) {
       
-  const [hours, minutes] = time.split(':');
-  let formattedTime = '';
+  let [ hours, minutes ] = time.split(':');
+  let meridiem = 'am';
 
   if (hours > 12) {
-    formattedTime = `${hours - 12}:${minutes}pm`;
-  } else if (hours === '12') {
-    formattedTime = `${hours}:${minutes}pm`;
-  } else if (hours === '00') {
-    formattedTime = `12:${minutes}am`;
-  } else {
-    formattedTime = `${hours}:${minutes}am`;
+    hours = hours - 12;
+    meridiem = 'pm';
+  }
+  if (hours === 12) {
+    meridiem = 'pm';
   }
 
-  return formattedTime;
+  return `${hours}:${minutes}${meridiem}`;
 }
 
 export const StrapiContext = createContext(null);
 
 export default function App() {
+
   const nonce = useNonce();
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
   const location = useLocation();
-
-  let [asideOpen, setAsideOpen] = useState({
-    value: false,
+  let [ htmlState, setHtmlState ] = useState("aside-closed");
+  let [ bodyTags, setBodyTags ] = useState("default-body");
+  let [ asideOpen, setAsideOpen ] = useState({
+    open: false,
     aside: "",
   });
 
-  let [bodyTags, setBodyTags] = useState("default-body");
-  let [htmlState, setHtmlState] = useState("");
+  const updateAsideOpen = (aside, open) => {
 
-  const updateAsideOpen = (aside, value) => {
+    if (open === true) {
+      setHtmlState("aside-open");
 
-    if (aside === "menu") {
-      if (value === true) {
+      if (aside === "menu") {
+        setBodyTags("menu-open");
+
+        window.location.hash = "mobile-menu-aside";
+
         setAsideOpen({
-          value: true,
+          open: true,
           aside: "menu"
         });
-        window.location.href = "#mobile-menu-aside";
-        setBodyTags("aside-open menu-open");
-        setHtmlState("no-scroll");
-      } else {
+
+      } else if (aside === "cart") {
+        setBodyTags("cart-open");
+
+        window.location.hash = "cart-aside";
+
         setAsideOpen({
-          value: false,
-          aside: ""
-        });
-        window.location.href = "#";
-        setBodyTags("default-body");
-      }
-    } else if (aside === "cart") {
-      if (value === true) {
-        setAsideOpen({
-          value: true,
+          open: true,
           aside: "cart"
         });
-        window.location.href = "#cart-aside";
-        setBodyTags("aside-open cart-open");
-        setHtmlState("no-scroll");
-      } else {
-        setAsideOpen({
-          value: false,
-          aside: ""
-        });
-        window.location.href = "#";
-        setBodyTags("default-body");
       }
+
     } else {
-      if (value === false) {
-        setAsideOpen({
-          value: false,
-          aside: ""
-        });
-        window.location.href = "/home#";
-        setBodyTags("default-body");
-      }
+      setHtmlState("aside-closed");
+      setBodyTags("default-body");
+
+      window.location.hash = '';
+
+      setAsideOpen({
+        open: false,
+        aside: ""
+      });
     }
   }
 
@@ -544,14 +521,12 @@ export default function App() {
     // fetchMenus();
     fetchEvents();
 
+    window.scrollTo({top: 0});
+    
     setAsideOpen({
-      value: false,
+      open: false,
       aside: ""
     })
-
-    window.scrollTo({top: 0});
-
-    setHtmlState("");
 
     if (location.pathname === '/') {
       setBodyTags("landing");
@@ -603,14 +578,15 @@ export function ErrorBoundary() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>{errorStatus + ` | True History Brewing`}</title>
         <Meta />
         <Links />
       </head>
       <body>
         <Layout {...rootData}>
           <main className="route-error">
-            <h1>{errorMessage} ({errorStatus} error)</h1>
-            <h2>Looks like you took a wrong turn</h2>
+            <h1>Unexpected Error ({errorStatus})</h1>
+            <h2>Looks like you took a wrong turn!</h2>
             <Link to="/home" className='button button-tertiary'>
               Go back to the Homepage
             </Link>

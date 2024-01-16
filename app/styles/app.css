@@ -29,8 +29,15 @@ h2 {
   max-width: 100vw;
   width: 100%;
   overflow-x: hidden; }
-  :root.no-scroll {
+  :root.aside-open {
     overflow-y: hidden; }
+    @media only screen and (max-width: 480px) {
+      :root.aside-open body {
+        height: calc(100vh + 50px); }
+        :root.aside-open body main, :root.aside-open body footer {
+          display: none; }
+        :root.aside-open body aside main {
+          display: initial !important; } }
 
 .overlay {
   overflow-x: hidden;
@@ -93,8 +100,6 @@ body {
   body.landing, body.loading {
     overflow: hidden;
     height: 100vh; }
-  body.aside-open {
-    overflow-y: hidden !important; }
   body.default-body {
     overflow-x: hidden;
     overflow-y: scroll; }
@@ -112,23 +117,14 @@ body {
       background-image: none; }
       body footer.landing-footer {
         background-image: url("./../../public/assets/wallpaper.png"); }
-    body.aside-open.menu-open #mobile-menu-aside {
+    body.menu-open #mobile-menu-aside {
       display: initial !important; }
-    body.aside-open.menu-open #cart-aside {
+    body.menu-open #cart-aside {
       display: none !important; }
-    body.aside-open.cart-open #cart-aside {
+    body.cart-open #cart-aside {
       display: initial !important; }
-    body.aside-open.cart-open #mobile-menu-aside {
+    body.cart-open #mobile-menu-aside {
       display: none !important; } }
-
-@media only screen and (max-width: 1070px) and (max-width: 480px) {
-  body.aside-open {
-    overflow-x: hidden !important;
-    height: calc(100vh + 50px); }
-    body.aside-open main, body.aside-open footer {
-      display: none; }
-    body.aside-open aside main {
-      display: initial !important; } }
 
 #cart-aside {
   z-index: 200; }
@@ -743,7 +739,7 @@ main .contact-content {
   background-color: rgba(216, 181, 110, 0.8);
   height: 400px; }
 
-main .bottle-shop-content {
+main .retail-content {
   background-color: rgba(216, 181, 110, 0.8);
   height: 400px; }
 
@@ -825,6 +821,7 @@ main .route-error {
   main .route-error h1, main .route-error h2 {
     margin: 0; }
   main .route-error h1 {
+    color: #F1EDE2;
     font-size: 75px;
     font-family: 'Saudagar'; }
   main .route-error h2 {
@@ -904,14 +901,14 @@ main .landing {
         outline: none;
         cursor: pointer; }
         main .landing .landing-main .remember-user label input[type="checkbox"].checked {
-          background-color: #BC4749;
+          background-color: #778d79;
           position: relative; }
       main .landing .landing-main .remember-user label:hover {
         cursor: pointer; }
         main .landing .landing-main .remember-user label:hover input[type="checkbox"] {
-          background-color: #C28165; }
+          background-color: #778d79; }
           main .landing .landing-main .remember-user label:hover input[type="checkbox"].checked {
-            background-color: #BC4749; }
+            background-color: #778d79; }
     @media only screen and (max-width: 1070px) {
       main .landing .landing-main {
         height: 55%;
@@ -1467,10 +1464,13 @@ main .taproom-events {
       display: none; }
     main .taproom-events .fc .fc-daygrid-event {
       background-color: #BC4749;
+      color: #F1EDE2;
       border: solid #1F1F1F 2px;
       padding: 2px 5px;
       margin: 0px 10px;
       text-align: center; }
+      main .taproom-events .fc .fc-daygrid-event .fc-daygrid-event-dot {
+        display: none; }
     main .taproom-events .fc .fc-event td {
       border-left: 0;
       border-right: 0; }
@@ -1527,17 +1527,14 @@ main .taproom-events {
         margin: 0; } }
 
 main .store-disclaimers {
-  background-color: rgba(119, 141, 121, 0.8);
+  background-color: rgba(214, 208, 192, 0.8);
   padding: 30px;
-  border-bottom: solid #1F1F1F 3px;
+  border-top: solid #1F1F1F 3px;
   text-align: center; }
   main .store-disclaimers .text-box {
     padding: 30px 40px;
     max-width: 85%;
-    margin: 0 auto;
-    background-color: #F1EDE2;
-    border: solid #1F1F1F 3px;
-    border-radius: 25px; }
+    margin: 0 auto; }
     main .store-disclaimers .text-box h3 {
       font-size: 25px;
       text-transform: uppercase;
@@ -1555,7 +1552,7 @@ main .store {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(214, 208, 192, 0.8);
+  background-color: rgba(119, 141, 121, 0.8);
   padding: 30px; }
   main .store .recommended-product {
     max-width: 350px; }

@@ -3,7 +3,7 @@
  */
 export const meta = () => {
   return [
-    {title: 'Bottle Shop | True History Brewing'},
+    {title: 'Retail | True History Brewing'},
     {description: 'Brewing Low & Slow'},
   ];
 };
@@ -11,10 +11,10 @@ export const meta = () => {
 export default function Homepage() {
   return (
     <>
-        <section className="heading bottle-shop-heading">
-          <h2>Bottle Shop</h2>
+        <section className="heading retail-heading">
+          <h2>Retail</h2>
         </section>
-        <section className="bottle-shop-content">
+        <section className="retail-content">
         </section>
     </>
   );

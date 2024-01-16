@@ -7,8 +7,25 @@
   width: 100%;
   overflow-x: hidden;
 
-  &.no-scroll {
+  &.aside-open {
     overflow-y: hidden;
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+      body {
+        height: calc(100vh + 50px);
+
+        main, footer {
+          display: none;
+        }
+
+        aside {
+          main {
+            display: initial !important;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -89,10 +106,6 @@ body {
     height: 100vh;
   }
 
-  &.aside-open {
-    overflow-y: hidden !important;
-  }
-
   &.default-body {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -123,42 +136,21 @@ body {
       }
     }
 
-    &.aside-open {
-  
-      &.menu-open {
-        #mobile-menu-aside {
-          display: initial !important;
-        }
-        #cart-aside {
-          display: none !important;
-        }
+    &.menu-open {
+      #mobile-menu-aside {
+        display: initial !important;
       }
-  
-      &.cart-open {
-        #cart-aside {
-          display: initial !important;
-        }
-        #mobile-menu-aside {
-          display: none !important;
-        }
+      #cart-aside {
+        display: none !important;
       }
     }
 
-    // responsive to mobile
-    @media only screen and (max-width: $mobile) {
-      &.aside-open {
-        overflow-x: hidden !important;
-        height: calc(100vh + 50px);
-
-        main, footer {
-          display: none;
-        }
-
-        aside {
-          main {
-            display: initial !important;
-          }
-        }
+    &.cart-open {
+      #cart-aside {
+        display: initial !important;
+      }
+      #mobile-menu-aside {
+        display: none !important;
       }
     }
   }
@@ -1023,7 +1015,7 @@ main {
     height: 400px;
   }
 
-  .bottle-shop-content {
+  .retail-content {
     background-color: rgba($color2, 0.8);
     height: 400px;
   }
@@ -1129,6 +1121,7 @@ main {
       margin: 0
     }
     h1 {
+      color: $light;
       font-size: 75px;
       font-family: 'Saudagar';
     }
@@ -1229,16 +1222,16 @@ main {
             outline: none;
             cursor: pointer;
             &.checked {
-              background-color: $color4;
+              background-color: $color1;
               position: relative;
             }
           }
           &:hover {
             cursor: pointer;
             input[type="checkbox"] {
-              background-color: $color3;
+              background-color: $color1;
               &.checked {
-                background-color: $color4;
+                background-color: $color1;
               }
             }
           }
@@ -1987,10 +1980,15 @@ main {
 
       .fc-daygrid-event {
         background-color: $color4;
+        color: $light;
         border: solid $black 2px;
         padding: 2px 5px;
         margin: 0px 10px;
         text-align: center;
+
+        .fc-daygrid-event-dot {
+          display: none;
+        }
       }
 
       .fc-event {
@@ -2088,18 +2086,15 @@ main {
   }
 
   .store-disclaimers {
-    background-color: rgba($color1, 0.8);
+    background-color: rgba($less-light, 0.8);
     padding: 30px;
-    border-bottom: $default-border;
+    border-top: $default-border;
     text-align: center;
 
     .text-box {
       padding: 30px 40px;
       max-width: 85%;
       margin: 0 auto;
-      background-color: $light;
-      border: $default-border;
-      border-radius: 25px;
 
       h3 {
         font-size: 25px;
@@ -2127,7 +2122,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba($less-light, 0.8);
+    background-color: rgba($color1, 0.8);
     padding: 30px;
 
     .recommended-product {

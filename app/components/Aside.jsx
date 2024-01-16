@@ -15,18 +15,18 @@ import arrowRight from './../../public/assets/icons/arrow-right.svg';
  *   id?: string;
  * }}
  */
-export function Aside({children, heading, id = 'aside'}) {
+export function Aside({children, heading, id = 'aside', updateAsideOpen}) {
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
       <button
         className="close-outside"
         onClick={() => {
-          window.location.hash = '';
+          updateAsideOpen("", false);
         }}
       />
       <aside>
         <header>
-          <CloseAside />
+          <CloseAside updateAsideOpen={updateAsideOpen} />
           <h3>{heading}</h3>
         </header>
         <main>{children}</main>
@@ -35,10 +35,14 @@ export function Aside({children, heading, id = 'aside'}) {
   );
 }
 
-function CloseAside() {
+function CloseAside({updateAsideOpen}) {
+
   return (
     /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
-    <a className="close" href="#" onChange={() => history.go(-1)}>
+    <a
+      className="close"
+      onClick={
+        () => updateAsideOpen("", false)}>
       <img src={arrowRight} className="button-icon" />
     </a>
   );

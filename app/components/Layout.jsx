@@ -15,7 +15,7 @@ import {CartMain} from '~/components/Cart';
 export function Layout({cart, children = null, footer, header, isLoggedIn, asideOpen, updateAsideOpen}) {
   return (
     <>
-      <CartAside cart={cart} />
+      <CartAside cart={cart} updateAsideOpen={updateAsideOpen} />
       {/* <SearchAside /> */}
       <MobileMenuAside menu={header.menu} shop={header.shop} />
       <Header header={header} cart={cart} isLoggedIn={isLoggedIn} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen}/>
@@ -32,9 +32,9 @@ export function Layout({cart, children = null, footer, header, isLoggedIn, aside
 /**
  * @param {{cart: LayoutProps['cart']}}
  */
-function CartAside({cart}) {
+function CartAside({cart, updateAsideOpen}) {
   return (
-    <Aside id="cart-aside" heading="CART">
+    <Aside id="cart-aside" heading="CART" updateAsideOpen={updateAsideOpen}>
       <Suspense fallback={<p>Loading cart ...</p>}>
         <Await resolve={cart}>
           {(cart) => {
@@ -79,9 +79,9 @@ function CartAside({cart}) {
  *   shop: HeaderQuery['shop'];
  * }}
  */
-function MobileMenuAside({menu, shop}) {
+function MobileMenuAside({menu, shop, updateAsideOpen}) {
   return (
-    <Aside id="mobile-menu-aside" heading="MENU">
+    <Aside id="mobile-menu-aside" heading="MENU" updateAsideOpen={updateAsideOpen}>
       <HeaderMenu
         menu={menu}
         viewport="mobile"

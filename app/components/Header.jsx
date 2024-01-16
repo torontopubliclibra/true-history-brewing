@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Await, NavLink } from '@remix-run/react';
 // import { useRootLoaderData } from '~/root';
 import { useLocation } from 'react-router-dom';
@@ -18,24 +18,45 @@ import mobileMenu from './../../public/assets/icons/mobile-menu.svg';
  */
 export function Header({header, cart, asideOpen, updateAsideOpen}) {
 
+  let [ aside, setAside ] = useState({
+    open: false,
+    id: ""
+  });
+
+  useEffect(() => {
+    
+    if (asideOpen.open) {
+      setAside({
+        open: true,
+        id: asideOpen.aside
+      });
+    } else {
+      setAside({
+        open: false,
+        id: ""
+      });
+    }
+
+  }, [asideOpen]);
+
   const {menu} = header;
   const location = useLocation();
 
   if (location.pathname === '/') {
     
     return (
-      <header className="header landing-header">
+      <header className="landing-header">
       </header>
     )
 
   } else {
 
     return (
-      <header className="header">
+      <header>
         <a
           href="/home"
           className={activeLinkStyle}
-          onClick={asideOpen.value ? () => updateAsideOpen("", false) : null}
+          onClick={aside.open ? () => updateAsideOpen("", false) : null}
         >
           <img src={icon} className="thb-icon" alt="True History Brewing icon" />
         </a>
@@ -46,7 +67,7 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
         />
         <HeaderSubmenu
           cart={cart}
-          asideOpen={asideOpen}
+          aside={aside}
           updateAsideOpen={updateAsideOpen}
         />
       </header>
@@ -98,9 +119,9 @@ export function HeaderMenu({viewport}) {
         onClick={closeAside}
         prefetch="intent"
         className={activeLinkStyle}
-        to="/bottle-shop"
+        to="/retail"
         >
-        <span className="nav-text">Bottle Shop</span>
+        <span className="nav-text">Retail</span>
         <img src={store} className="button-icon" />
       </NavLink>
       <NavLink
@@ -108,9 +129,9 @@ export function HeaderMenu({viewport}) {
         onClick={closeAside}
         prefetch="intent"
         className={activeLinkStyle}
-        to="/store"
+        to="/shop"
         >
-        <span className="nav-text">Online Store</span>
+        <span className="nav-text">Online Shop</span>
         <img src={basket} className="button-icon" />
       </NavLink>
       <NavLink
@@ -152,24 +173,24 @@ export function HeaderMenu({viewport}) {
 /**
  * @param {Pick<HeaderProps, 'isLoggedIn' | 'cart'>;}
  */
-function HeaderSubmenu({cart, asideOpen, updateAsideOpen}) {
+function HeaderSubmenu({cart, aside, updateAsideOpen}) {
   return (
     <nav className="header-submenu" role="navigation">
-      <CartToggle cart={cart} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen} />
-      <HeaderMenuMobileToggle asideOpen={asideOpen} updateAsideOpen={updateAsideOpen} />
+      <CartToggle cart={cart} aside={aside} updateAsideOpen={updateAsideOpen} />
+      <HeaderMenuMobileToggle aside={aside} updateAsideOpen={updateAsideOpen} />
     </nav>
   );
 }
 
-function HeaderMenuMobileToggle({asideOpen, updateAsideOpen}) {
-  if (asideOpen.value && asideOpen.aside === "menu") {
+function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
+  if (aside.open && aside.id === "menu") {
     return (
       <a className="button button-primary menu-toggle menu-active" onClick={() => updateAsideOpen("menu", false)}>
         <img src={mobileMenu} className="button-icon" />
         <span className="button-label">Menu</span>
       </a>
     );
-  } else if (asideOpen.value && asideOpen.aside !== "cart") {
+  } else if (aside.open && aside.id !== "cart") {
     return (
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
         <img src={mobileMenu} className="button-icon" />
@@ -186,22 +207,22 @@ function HeaderMenuMobileToggle({asideOpen, updateAsideOpen}) {
   }
 }
 
-function SearchToggle() {
-  return <a href="#search-aside">Search</a>;
-}
+// function SearchToggle() {
+//   return <a href="#search-aside">Search</a>;
+// }
 
 /**
  * @param {{count: number}}
  */
-function CartBadge({count, asideOpen, updateAsideOpen}) {
-  if (asideOpen.value && asideOpen.aside === "cart") {
+function CartBadge({count, aside, updateAsideOpen}) {
+  if (aside.open && aside.id === "cart") {
     return (
       <a className="button button-primary cart cart-active" onClick={() => updateAsideOpen("cart", false)}>
         <span className="button-label">Cart</span>({count})
         <img src={cart} className="button-icon" />
       </a>
     );
-  } else if (asideOpen.value && asideOpen.aside !== "cart") {
+  } else if (aside.open && aside.id !== "cart") {
     return (
       <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
@@ -221,13 +242,13 @@ function CartBadge({count, asideOpen, updateAsideOpen}) {
 /**
  * @param {Pick<HeaderProps, 'cart'>}
  */
-function CartToggle({cart, asideOpen, updateAsideOpen}) {
+function CartToggle({cart, aside, updateAsideOpen}) {
   return (
-    <Suspense fallback={<CartBadge count={0} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen} />}>
+    <Suspense fallback={<CartBadge count={0} aside={aside} updateAsideOpen={updateAsideOpen} />}>
       <Await resolve={cart}>
         {(cart) => {
-          if (!cart) return <CartBadge count={0} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen} />;
-          return <CartBadge count={cart.totalQuantity || 0} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen} />;
+          if (!cart) return <CartBadge count={0} aside={aside} updateAsideOpen={updateAsideOpen} />;
+          return <CartBadge count={cart.totalQuantity || 0} aside={aside} updateAsideOpen={updateAsideOpen} />;
         }}
       </Await>
     </Suspense>
