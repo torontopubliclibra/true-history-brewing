@@ -1,0 +1,132 @@
+.cart-main.with-discount {
+    max-height: calc(100vh - 300px);
+}
+
+.cart-summary-page {
+    position: relative;
+}
+
+.cart-line-quantity {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.cart-discount {
+    align-items: center;
+    display: flex;
+    margin-top: 0.25rem;
+}
+
+.featured-collection {
+    display: block;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.featured-collection-image {
+    aspect-ratio: 1 / 1;
+    @media (min-width: 45em) {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+.featured-collection img {
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.recommended-products-grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (min-width: 45em) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.recommended-product img {
+    height: auto;
+}
+
+.collections-grid {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    margin-bottom: 2rem;
+}
+
+.collection-item img {
+    height: auto;
+}
+
+
+.collection-description {
+    margin-bottom: 1rem;
+    max-width: 95%;
+    @media (min-width: 45em) {
+        max-width: 600px;
+    }
+}
+
+.products-grid {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    margin-bottom: 2rem;
+}
+
+.product-item img {
+    height: auto;
+    width: 100%;
+}
+
+.product h1 {
+    margin-top: 0;
+}
+
+.product-images {
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.product-main {
+    align-self: start;
+    position: sticky;
+    top: 6rem;
+}
+
+.product-price-on-sale {
+    display: flex;
+    grid-gap: 0.5rem;
+}
+
+.product-price-on-sale s {
+    opacity: 0.5;
+}
+
+.product-options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 0.75rem;
+}
+
+.product-options-item {
+    padding: 0.25rem 0.5rem;
+}
+
+// responsive to tablet
+@media only screen and (max-width: $tablet) {
+    .recommended-products {
+      min-width: 95%;
+    }
+    .recommended-products-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+}

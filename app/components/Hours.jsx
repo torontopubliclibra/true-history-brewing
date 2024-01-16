@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { StrapiContext } from '../root';
 import diamond from './../../public/assets/icons/diamond.svg';
 
-export function Schedule() {
+export function Hours() {
 
     const { schedule } = useContext(StrapiContext);
   

@@ -1,0 +1,151 @@
+header, footer {
+    background-image: url('./../../public/assets/wallpaper.png');
+    background-size: 100%;
+    display: flex;
+}
+
+header {
+    height: 140px;
+    border-bottom: $default-border;
+    filter: drop-shadow(0px 3px 2px rgba($black, 0.5));
+    padding: 20px;
+    padding-bottom: 0;
+    top: 0;
+    z-index: 150;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        height: 100px;
+        align-items: center;
+        padding-top: 0;
+
+        a {
+        display: flex;
+        }
+    }
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+        .button-label {
+        display: none;
+        }
+    }
+
+    nav {
+
+        &.header-submenu {
+        display: flex;
+        grid-gap: 1rem;
+        margin-left: auto;
+
+        .button {
+            &:hover {
+            color: $black;
+            background-color: $color2;
+            img {
+                filter: none;
+            }
+            }
+        }
+
+        .cart-active, .menu-active {
+            color: $white;
+            background-color: $color1;
+            img {
+            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
+            &:hover {
+            color: $white;
+            background-color: $color1;
+            img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
+            }
+        }
+        
+        .menu-toggle, .menu-active {
+            display: none;
+        
+            // responsive to mobile
+            @media only screen and (max-width: $tablet) {
+            display: flex;
+            }
+        }
+        }
+
+        &.header-menu-desktop {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        position: absolute;
+        bottom: 1px;
+
+        // responsive to mobile
+        @media only screen and (max-width: $tablet) {
+            display: none;
+        }
+
+        a {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 150px;
+            width: 180px;
+            height: 45px;
+            margin-left: -2px;
+            margin-right: -2px;
+            transform: perspective(8px) rotateX(1deg);
+            transition: background-color 0.4s, color 0.4s, margin 0.4s;
+            background-color: $least-light;
+            border: $default-border;
+            border-radius: 25px 25px 0 0;
+            border-bottom: none;
+            &.active-link {
+            background-color: $light;
+            z-index: 100;
+
+            &:hover {
+                background-color: $light;
+                margin-left: -2px;
+                margin-right: -2px;
+            }
+            }
+            &:hover {
+            text-decoration: none;
+            background-color: $less-light;
+            margin-left: 4px;
+            margin-right: 4px;
+            }
+        }
+        }
+    }
+}
+
+footer {
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: $default-border;
+    filter: drop-shadow(0px -3px 2px rgba($black, 0.5));
+    margin-top: auto;
+
+    hr {
+        background-color: $color3;
+        height: 4px;
+        max-width: 90%;
+        margin: 25px 0;
+    }
+
+    .footer-buttons {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+.landing-header, .landing-footer {
+    height: 100px;
+    padding: 0;
+}

@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom'
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
-import { Schedule } from './../components/Schedule';
+import { Hours } from './../components/Hours';
 import { Calendar } from './../components/Calendar';
 import taproomPhoto from './../../public/assets/taproom-photo.png';
 import beer from './../../public/assets/icons/beer.svg';
@@ -92,18 +92,18 @@ export default function Homepage() {
         <section className="taproom-address">
           <img src={taproomPhoto} className="taproom-photo" />
           <div className="taproom-info">
-            <p>1154 St. Clair Avenue W, Toronto, Ontario</p>
+            <p className="address">1154 St. Clair Avenue W, Toronto, Ontario</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon"/></Link>
-            <Schedule/>
+            <Hours/>
           </div>
         </section>
         <section className="taproom-events" id="calendar">
-          <h3>Events at T.H.B.</h3>
+          <h3>Events</h3>
           <hr/>
           <Calendar/>
         </section>
-        <section className="taproom-menus">
-          <h3 id="menu">Menus</h3>
+        <section className="taproom-menus" id="menu">
+          <h3>Menus</h3>
           <p className='updated-date'>Last updated: 14/01/24</p>
           <ul className='menu-nav'>
             {

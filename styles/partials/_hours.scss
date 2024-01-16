@@ -1,0 +1,41 @@
+.hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: $light;
+    color: $black;
+    border: $default-border;
+    outline: solid $color2 11px;
+    box-shadow: 0 0 0 14px $black;
+    filter: $default-shadow;
+    border-radius: 15px;
+    width: 375px;
+    max-height: 100%;
+    margin: 15px;
+    margin-top: 35px;
+    padding: 10px 35px;
+    padding-bottom: 0;
+  
+    .diamond-border {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      img {
+        width: 25px;
+      }
+    }
+    .schedule {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      width: 70% !important;
+      margin: 15px !important;
+      padding: 10px 25px 0 !important;
+      outline: solid $color2 12px;
+    }
+  }

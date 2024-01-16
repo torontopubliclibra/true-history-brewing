@@ -1,0 +1,139 @@
+@import 'variables';
+@import 'typography';
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 206px);
+    padding: 0;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        height: calc(100vh - 204px);
+    }
+
+    .landing-welcome {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-left: 10%;
+        background-color: rgba($color1, 0.8);
+        border-bottom: $default-border;
+        height: 55%;
+
+        .thb-icon {
+        height: 175px;
+        width: auto;
+        filter: $default-shadow;
+        }
+
+        h1 {
+        color: $light;
+        font-family: "Saudagar";
+        font-size: 40px;
+        font-style: italic;
+        filter: drop-shadow(-3px 3px 0.5px rgba($black, 0.8));
+        .title {
+            font-family: "Saudagar";
+            font-size: 75px;
+            font-style: normal;
+        }
+        }
+
+        // responsive to mobile
+        @media only screen and (max-width: $tablet) {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+        height: 45%;
+        h1 {
+            display: none;
+        }
+        .thb-icon {
+            height: 150px;
+            width: auto;
+            filter: $default-shadow;
+        }
+        }
+    }
+    .landing-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba($light, 0.8);
+        height: 45%;
+        padding-left: 10%;
+
+        .landing-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        }
+
+        p {
+        margin-top: 10px;
+        font-size: 20px;
+        }
+
+        .remember-user {
+        label {
+            font-size: 18px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            background-color: $light;
+            border: $default-border;
+            filter: $default-shadow;
+            transition: 0.4s;
+            border-radius: 0;
+            outline: none;
+            cursor: pointer;
+            &.checked {
+                background-color: $color1;
+                position: relative;
+            }
+            }
+            &:hover {
+            cursor: pointer;
+            input[type="checkbox"] {
+                background-color: $color1;
+                &.checked {
+                background-color: $color1;
+                }
+            }
+            }
+        }
+        }
+
+        // responsive to mobile
+        @media only screen and (max-width: $tablet) {
+        height: 60%;
+        padding: 0;
+
+        p {
+            font-size: 22px;
+            max-width: 80%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            padding: 15px;
+            text-align: center;
+            padding-bottom: 0;
+        }
+        .landing-buttons {
+            justify-content: center;
+        }
+        .remember-user {
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        }
+    }
+}

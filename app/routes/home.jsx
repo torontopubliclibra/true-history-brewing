@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
-import { Schedule } from './../components/Schedule';
+import { Hours } from './../components/Hours';
 import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
 import patioPhoto from './../../public/assets/patio-photo.jpg';
@@ -57,7 +57,7 @@ export default function Homepage() {
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
           <hr/>
-          <Schedule/>
+          <Hours/>
           <div className="menu-buttons">
             <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'><img src={beer} className="button-icon"/>"What's on tap right now?"</Link>
             <Link to="/taproom#menu" state={{ selectedMenu: "wineSeltzersEtc" }} className='button button-tertiary'><img src={wine} className="button-icon"/>"Anything that's not beer?"</Link>

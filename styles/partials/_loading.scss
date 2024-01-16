@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'typography';
+
+.loading {
+    background-color: rgba($color1, 0.8);
+    padding: 0;
+    height: calc(100vh - 206px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        height: calc(100vh - 204px);
+    }
+
+    .thb-icon {
+        width: 200px;
+        height: auto;
+        filter: $default-shadow;
+    }
+    .loader {
+        margin-top: 20px !important;
+        border: $default-border;
+        filter: $default-shadow;
+        width: 225px;
+        background: none;
+
+        span {
+        height: 6px !important;
+        border-radius: 0 !important;
+        }
+    }
+}

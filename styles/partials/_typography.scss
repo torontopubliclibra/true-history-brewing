@@ -18,14 +18,569 @@
     src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype");
 };
 
+
+// typographic styles
+:root {
+    font-size: 18px;
+    letter-spacing: 0.75px;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        font-size: 17px;
+    }
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+        font-size: 16px;
+    }
+}
+
 * {
     font-family: "Bogue-Regular", sans-serif;
 };
 
+header, footer {
+    .button-primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        height: 15px;
+    }
+}
+
+footer {
+    .credit, .copyright {
+        p {
+          font-family: "Saudagar";
+          font-weight: 800;
+          text-align: center;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+          padding-bottom: 5px;
+      
+          a {
+            font-family: "Saudagar";
+            text-decoration: underline;
+          }
+        }
+    }
+
+    .credit p {
+        font-size: 1rem;
+    }
+    
+    .copyright p {
+        font-size: 1.2rem;
+    }
+}
+
 h2 {
-    font-family: "Bogue-Thin", sans-serif;
-    font-style: italic;
-    font-size: 30px;
-    color: $white;
+    font-family: 'Saudagar';
+    text-align: center;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 4.25rem;
+    color: $black;
     margin: 10px 0;
+
+    &.home {
+        margin-top: 30px;
+        font-size: 3.5rem;
+        font-style: italic;
+        text-transform: none;
+    }
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        font-size: 3.5rem;
+        margin-bottom: 0;
+
+        &.home {
+            display: none;
+        }
+    }
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+aside {
+    h2 {
+        margin-bottom: 0.6rem;
+        margin-top: 0;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        text-align: right;
+        width: 100%;
+        margin: 0;
+    }
+    p {
+        margin: 0 0 0.25rem;
+
+        &::last-child {
+            margin: 0;
+        }
+    }
+    li {
+        margin-bottom: 0.125rem;
+    }
+    .header-menu-mobile {
+        a {
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+            a {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .cart-empty-text {
+        background-color: rgba($less-light, 0.8);
+        filter: $default-shadow;
+        padding: 40px 30px;
+        border: $thin-border;
+        border-radius: 25px;
+        font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .cart-main {
+        .button {
+            border: $thin-border;
+            max-width: 70%;
+            margin: 0 auto;
+            font-size: 0.8rem;
+        }
+    }
+    .cart-line {
+        p {
+            width: 90%;
+            margin: 0;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        span {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+    .cart-summary-aside {
+        div a {
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            p {
+                margin: 0;
+            }
+            &:hover {
+                color: $light;
+            }
+        }
+
+        .cart-subtotal {
+            dt {
+                font-weight: 800;
+            }
+        }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+            div a:hover {
+                color: $black;
+            }
+        }
+    }
+}
+
+.address {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px 25px;
+    font-size: 1.25rem;
+    font-style: italic;
+    text-align: center;
+    color: $black;
+    background-color: $light;
+    border: $default-border;
+    border-radius: 25px;
+    filter: $default-shadow;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        filter: none;
+        border: none;
+        border-bottom: $default-border;
+        border-radius: 0;
+        padding: 15px 15%;
+        max-width: 100vw;
+        font-size: 1.6rem;
+        letter-spacing: 1.5px;
+        margin: 0;
+    }
+}
+
+main {
+
+    .main-taproom {
+        .sketch-address {
+            .address {
+                margin-top: 10px;
+                margin-bottom: 15px;
+
+                // responsive to tablet
+                @media only screen and (max-width: $tablet) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .main-events {
+        h3 {
+            font-size: 3rem;
+            font-family: "Saudagar";
+            text-transform: uppercase;
+            margin: 30px;
+            margin-bottom: 10px;
+            margin-left: 40px;
+        }
+        .main-events-content {
+            .events-list {
+                margin-left: 40px;
+                font-size: 1.25rem;
+                li {
+                  font-family: "Bogue-ExtraBold";
+                  font-style: italic;
+                  .date {
+                    font-style: normal;
+                    font-family: "Bogue-Regular";
+                  }
+                }
+            }
+        }
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+            .main-events-content .events-list {
+                text-align: center;
+                margin: 10px 35px !important;
+            }
+            h3 {
+                font-size: 2.5rem;
+                text-align: center;
+                margin: 10px 30px;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .product {
+        .product-main {
+            h1 {
+                font-size: 2.5rem;
+                font-family: "Saudagar";
+                text-transform: uppercase;
+                margin: 0;
+            }
+            .product-price {
+                font-size: 1.5rem;
+                font-family: "Bogue-ExtraBold";
+                margin: 0;
+            }
+            .product-description {
+                font-size: 1.2rem;
+                font-family: "Bogue-Regular";
+                margin: 0;
+            }
+            button {
+                padding: 20px 30px;
+                margin-top: 20px;
+                cursor: pointer;
+                &:hover {
+                    background-color: $color4;
+                }
+            }
+        }
+    }
+
+    .taproom-address {
+        .address {
+            width: 90%;
+            margin-top: 15px;
+        }
+        .button {
+            width: 300px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+            .address {
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+            .button {
+                display: none;
+            }
+        }
+    }
+
+    .taproom-menus {
+        h3 {
+            width: 90vw;
+            font-family: "Saudagar";
+            filter: $default-shadow;
+            margin: 0;
+            padding: 0;
+        }
+        .updated-date {
+            font-style: italic;
+            padding: 5px 40px;
+            padding-right: 20px;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            background-color: $color4;
+            filter: $default-shadow;
+            border: $default-border;
+            border-radius: 25px 0 0 25px;
+            border-right: 0;
+        }
+        .menu-nav .button {
+            height: 40px;
+            font-size: 1.2rem;
+            padding: 20px 30px;
+            cursor: pointer;
+    
+            &.selected {
+                color: $white;
+                background-color: $color1;
+                cursor: default;
+                
+                img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+                }
+            }
+        }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+            h3 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            .updated-date {
+                order: 5;
+                position: initial;
+                font-size: 1.2rem;
+                text-align: center;
+                width: 100%;
+                border: $default-border;
+                border-left: 0;
+                border-right: 0;
+                margin-bottom: 15px;
+            }
+            .menu-nav .button {
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+.route-error {
+    h1, h2 {
+        margin: 0
+    }
+    h1 {
+        color: $light;
+        font-size: 75px;
+        font-family: 'Saudagar';
+    }
+    h2 {
+        padding-top: 10px;
+        padding-bottom: 35px;
+    }
+}
+
+.hours {
+    h4 {
+        font-size: 1.75rem;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+    }
+    .schedule {
+        li {
+            font-family: "Bogue-ExtraBold";
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            margin: 0;
+            .time {
+              font-weight: 400;
+              font-style: italic;
+            }  
+        }
+    }
+}
+
+.button {
+    background: $color2;
+    border: $default-border;
+    filter: $default-shadow;
+    color: $black;
+    font-size: 1rem;
+    font-family: "Bogue-Regular";
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.15;
+    height: 20px;
+    padding: 10px 30px 10px 30px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    &:hover {
+      background: $color1;
+      color: $light;
+      text-decoration: none;
+      transition: background 0.2s ease-in;
+      img {
+        filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+      }
+    }
+  
+    &.decorative {
+      padding: 10px 20px;
+    }
+  
+    .button-icon {
+      width: 20px;
+      padding-bottom: 3px;
+    }
+  
+    .flourish {
+      width: 25px;
+      padding-bottom: 3px;
+    }
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        font-size: 1.2rem;
+    }
+}
+
+.button-secondary {
+    background: $color1;
+    width: 170px;
+    height: 100%;
+    margin-top: 10px;
+    &:hover {
+      background: $color3;
+      color: $black;
+      img {
+        filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%);
+      }
+    }
+}
+
+.button-tertiary {
+    background: $color4;
+    color: $light;
+    img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+    }
+    &:hover {
+      background: $color2;
+      color: $black;
+      img {
+        filter: none;
+      }
+    }
+}
+
+.button-secondary, .button-tertiary {
+    font-size: 0.8rem;
+    color: $light;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        font-size: 1rem;
+    }
+}
+
+// responsive to tablet
+@media only screen and (max-width: $tablet) {
+    .button:hover {
+      background: $color2;
+      color: $black;
+      img {
+        filter: none;
+      }
+    }
+    .button.cart, .button.menu-toggle {
+      display: flex;
+      flex-direction: row;
+    }
+    .button.menu-active {
+      flex-direction: row-reverse;
+    }
+    .button-secondary:hover {
+      background: $color1;
+      color: $black;
+      img {
+        filter: none;
+      }
+    }
+    .button-tertiary:hover {
+      background: $color4;
+      color: $light;
+      img {
+        filter: none;
+      }
+    }
+}
+
+nav.header-submenu {
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+        .button {
+          height: 28px;
+          font-size: 1.2rem;
+          img {
+            width: 22px;
+          }
+        }
+    }
+}
+
+nav.header-menu-desktop {
+
+    a {
+        .nav-text {
+            transform: perspective(8px) rotateX(-1deg);
+            font-size: 16px;
+            font-family: "Bogue-Regular";
+            text-transform: uppercase;
+            color: $black;
+        }
+        .button-icon {
+            display: none;
+        }
+        &.active-link {
+            .nav-text {
+              font-family: "Bogue-Extrabold";
+            }
+        }
+    }
 }
