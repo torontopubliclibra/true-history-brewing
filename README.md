@@ -1,10 +1,10 @@
 # True History Brewing
 
 ## About
-This is a website and online storefront I'm currently building for True History Brewing, a brewery and taproom in the west-end of Toronto, Ontario.
+This is a website and online shop for True History Brewing, a brewery and taproom in Toronto, Ontario, Canada. It will be launching in late January 2024.
 
 ## Development
-The site is built with React Remix, and uses [Hydrogen and Oxygen](https://shopify.dev/custom-storefronts/hydrogen) as a headless Shopify storefront, as well as [Strapi](https://strapi.io) as a headless CMS for non-storefront data ([database repo here](https://github.com/torontopubliclibra/true-history-brewing-data)), and the style is written with SCSS. I wireframed the project using Figma, and am currently in the development process, aiming for a projected launch in early 2024. Please check back soon.
+The website is built with React Remix, and uses [Hydrogen](https://shopify.dev/custom-storefronts/hydrogen) as a headless Shopify storefront for online orders, and [Strapi](https://strapi.io) as a headless CMS for non-storefront related variable data (hours, events, menus, etc.). You can find the repo for the CMS [here](https://github.com/torontopubliclibra/true-history-brewing-data). The site's custom design was wireframed using Figma, and styled with SCSS.
 
 ## Attributions
 - [Remix framework](https://remix.run)
