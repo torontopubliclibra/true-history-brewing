@@ -246,11 +246,11 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
         Looks like you haven't added anything to your cart yet!
       </p>
       <Link
-        to="/store"
+        to="/shop"
         className="button button-primary"
         onClick={() => {
           if (layout === 'aside') {
-            window.location.href = '/store';
+            window.location.href = '/shop';
           }
         }}
       >
