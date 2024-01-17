@@ -1,7 +1,12 @@
+// imports
 import { useContext } from 'react';
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
+
+// component imports
 import { Hours } from './../components/Hours';
+
+// asset imports
 import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
 import patioPhoto from './../../public/assets/patio-photo.jpg';

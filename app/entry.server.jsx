@@ -1,7 +1,8 @@
-import {RemixServer} from '@remix-run/react';
+// imports
+import { RemixServer } from '@remix-run/react';
 import isbot from 'isbot';
-import {renderToReadableStream} from 'react-dom/server';
-import {createContentSecurityPolicy} from '@shopify/hydrogen';
+import { renderToReadableStream } from 'react-dom/server';
+import { createContentSecurityPolicy } from '@shopify/hydrogen';
 
 /**
  * @param {Request} request
@@ -10,8 +11,6 @@ import {createContentSecurityPolicy} from '@shopify/hydrogen';
  * @param {EntryContext} remixContext
  */
 
-
-
 export default async function handleRequest(
   request,
   responseStatusCode,
@@ -19,7 +18,7 @@ export default async function handleRequest(
   remixContext,
 ) {
 
-  let {nonce, header, NonceProvider} = createContentSecurityPolicy({
+  let { nonce, header, NonceProvider } = createContentSecurityPolicy({
     defaultSrc: [
       `*`,
       `'self'`,

@@ -1,15 +1,9 @@
-import {Suspense} from 'react';
-import {defer, redirect} from '@shopify/remix-oxygen';
-import {Await, Link, useLoaderData} from '@remix-run/react';
-
-import {
-  Image,
-  Money,
-  VariantSelector,
-  getSelectedProductOptions,
-  CartForm,
-} from '@shopify/hydrogen';
-import {getVariantUrl} from '~/utils';
+// imports
+import { Suspense } from 'react';
+import { defer, redirect } from '@shopify/remix-oxygen';
+import { Await, Link, useLoaderData } from '@remix-run/react';
+import { Image, Money, VariantSelector, getSelectedProductOptions, CartForm } from '@shopify/hydrogen';
+import { getVariantUrl } from '~/utils';
 
 /**
  * @type {MetaFunction<typeof loader>}
@@ -22,8 +16,8 @@ export const meta = ({data}) => {
  * @param {LoaderFunctionArgs}
  */
 export async function loader({params, request, context}) {
-  const {handle} = params;
-  const {storefront} = context;
+  const { handle } = params;
+  const { storefront } = context;
 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>

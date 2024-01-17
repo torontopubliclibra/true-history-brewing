@@ -1,13 +1,10 @@
+// imports
 import {Await} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Aside} from '~/components/Aside';
 import {Footer} from '~/components/Footer';
 import {Header, HeaderMenu} from '~/components/Header';
 import {CartMain} from '~/components/Cart';
-// import {
-//   PredictiveSearchForm,
-//   PredictiveSearchResults,
-// } from '~/components/Search';
 
 /**
  * @param {LayoutProps}
@@ -16,7 +13,6 @@ export function Layout({cart, children = null, footer, header, isLoggedIn, aside
   return (
     <>
       <CartAside cart={cart} updateAsideOpen={updateAsideOpen} />
-      {/* <SearchAside /> */}
       <MobileMenuAside menu={header.menu} shop={header.shop} />
       <Header header={header} cart={cart} isLoggedIn={isLoggedIn} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen}/>
       <main>{children}</main>
@@ -46,33 +42,6 @@ function CartAside({cart, updateAsideOpen}) {
   );
 }
 
-// function SearchAside() {
-//   return (
-//     <Aside id="search-aside" heading="SEARCH">
-//       <div className="predictive-search">
-//         <br />
-//         <PredictiveSearchForm>
-//           {({fetchResults, inputRef}) => (
-//             <div>
-//               <input
-//                 name="q"
-//                 onChange={fetchResults}
-//                 onFocus={fetchResults}
-//                 placeholder="Search"
-//                 ref={inputRef}
-//                 type="search"
-//               />
-//               &nbsp;
-//               <button type="submit">Search</button>
-//             </div>
-//           )}
-//         </PredictiveSearchForm>
-//         <PredictiveSearchResults />
-//       </div>
-//     </Aside>
-//   );
-// }
-
 /**
  * @param {{
  *   menu: HeaderQuery['menu'];
@@ -101,6 +70,7 @@ function MobileMenuAside({menu, shop, updateAsideOpen}) {
  * }} LayoutProps
  */
 
-/** @typedef {import('storefrontapi.generated').CartApiQueryFragment} CartApiQueryFragment */
+/** @typedef {import('
+ * frontapi.generated').CartApiQueryFragment} CartApiQueryFragment */
 /** @typedef {import('storefrontapi.generated').FooterQuery} FooterQuery */
 /** @typedef {import('storefrontapi.generated').HeaderQuery} HeaderQuery */

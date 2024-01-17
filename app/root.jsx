@@ -1,3 +1,4 @@
+// imports
 import { useState, useEffect, createContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNonce } from '@shopify/hydrogen';
@@ -15,12 +16,19 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
 } from '@remix-run/react';
+
+// component imports
 import { Layout } from '~/components/Layout';
+
+// style imports
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
+
+// asset imports
 import favicon from '../public/favicon.svg';
 import icon from '../public/assets/thb-icon.png';
 
+// should revalidate function
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -39,6 +47,10 @@ export const shouldRevalidate = ({formMethod, currentUrl, nextUrl}) => {
   return false;
 };
 
+// initialize Strapi CMS context
+export const StrapiContext = createContext(null);
+
+// header and footer links
 export function links() {
   return [
     {rel: 'stylesheet', href: resetStyles},
@@ -64,6 +76,7 @@ export function links() {
   ];
 }
 
+// root loader
 /**
  * @return {LoaderReturnData}
  */
@@ -72,6 +85,7 @@ export const useRootLoaderData = () => {
   return root?.data;
 };
 
+// storefront loader
 /**
  * @param {LoaderFunctionArgs}
  */
@@ -117,23 +131,42 @@ export async function loader({context}) {
   );
 }
 
-export function parseTime(datetimeString) {
-  const dateTime = new Date(datetimeString);
+// parse time from string
+export function parseTime(type, string) {
 
-  let hour = dateTime.getHours();
-  let minute = dateTime.getMinutes();
+  let hour = '';
+  let minute = '';
   let meridiem = 'am';
+
+  if (type === "datetime") {
+    let dateTime = new Date(string);
+
+    hour = dateTime.getHours();
+    minute = dateTime.getMinutes();
+
+  } else if (type === "time") {
+    [ hour, minute ] = string.split(':');
+
+  }
 
   if (hour > 12) {
     hour = hour - 12;
     meridiem = 'pm';
+  } else if (hour == 12) {
+    meridiem = 'pm';
+  } else if (hour == 0) {
+    hour = 12;
+  } else if (hour < 10) {
+    hour = '0' + hour;
   }
-  if (hour < 10) hour = '0' + hour;
-  if (minute < 10) minute = '0' + minute;
+
+  if (minute < 10 && minute.length <= 1) minute = '0' + minute;
+  if (minute == '0') minute = '0' + minute;
 
   return `${hour}:${minute}${meridiem}`;
 }
 
+// parse date from string
 export function parseDate(datetimeString) {
   const dateTime = new Date(datetimeString);
 
@@ -152,30 +185,15 @@ export function parseDate(datetimeString) {
   return `${year}-${month}-${day}T${hour}:${minute}:00`;
 }
 
-export function convertTimeToAmPm(time) {
-      
-  let [ hours, minutes ] = time.split(':');
-  let meridiem = 'am';
-
-  if (hours > 12) {
-    hours = hours - 12;
-    meridiem = 'pm';
-  }
-  if (hours === 12) {
-    meridiem = 'pm';
-  }
-
-  return `${hours}:${minutes}${meridiem}`;
-}
-
-export const StrapiContext = createContext(null);
-
+// App component
 export default function App() {
 
-  const nonce = useNonce();
-  /** @type {LoaderReturnData} */
   const data = useLoaderData();
   const location = useLocation();
+  const nonce = useNonce();
+  /** @type {LoaderReturnData} */
+
+  // initial state variables
   let [ htmlState, setHtmlState ] = useState("aside-closed");
   let [ bodyTags, setBodyTags ] = useState("default-body");
   let [ asideOpen, setAsideOpen ] = useState({
@@ -183,26 +201,25 @@ export default function App() {
     aside: "",
   });
 
+  // update aside open state
   const updateAsideOpen = (aside, open) => {
 
     if (open === true) {
       setHtmlState("aside-open");
 
       if (aside === "menu") {
+
         setBodyTags("menu-open");
-
         window.location.hash = "mobile-menu-aside";
-
         setAsideOpen({
           open: true,
           aside: "menu"
         });
 
       } else if (aside === "cart") {
+
         setBodyTags("cart-open");
-
         window.location.hash = "cart-aside";
-
         setAsideOpen({
           open: true,
           aside: "cart"
@@ -210,11 +227,10 @@ export default function App() {
       }
 
     } else {
+
       setHtmlState("aside-closed");
       setBodyTags("default-body");
-
       window.location.hash = '';
-
       setAsideOpen({
         open: false,
         aside: ""
@@ -222,7 +238,8 @@ export default function App() {
     }
   }
 
-  const [schedule, setSchedule] = useState({
+  // initial hours
+  const [ hours, setHours ] = useState({
     Mon: "Closed",
     Tues: "4:00pm–11:00pm",
     Weds: "4:00pm–11:00pm",
@@ -231,7 +248,9 @@ export default function App() {
     Sat: "12:00pm–12:00am",
     Sun: "12:00pm–10:00pm"
   });
-  const [menus, setMenus] = useState({
+
+  // initial menus
+  const [ menus, setMenus ] = useState({
     beers: {
       beer1: {
         name: "Polish Pils",
@@ -358,62 +377,66 @@ export default function App() {
       },
     },
   });
-  const [events, setEvents] = useState([]);
 
-  const fetchSchedules = async () => {
+  // initial events
+  const [ events, setEvents ] = useState([]);
+
+  // fetch hours from Strapi CMS
+  const fetchHours = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
-    const newSchedule = await response.json();
-    let scheduleData = newSchedule.data[0].attributes;
+    const newHours = await response.json();
+    let hoursData = newHours.data[0].attributes;
     let taproomHours = {};
 
-    if (schedule) {
+    if (hours) {
 
-      if (scheduleData.mon_service === 'closed') {
+      if (hoursData.mon_service === 'closed') {
         taproomHours.Mon = "Closed";
-      } else if ((scheduleData.mon_service === 'open') && scheduleData.mon_start && scheduleData.mon_end) {
-        taproomHours.Mon = convertTimeToAmPm(scheduleData.mon_start) + `–` + convertTimeToAmPm(scheduleData.mon_end)
+      } else if ((hoursData.mon_service === 'open') && hoursData.mon_start && hoursData.mon_end) {
+        taproomHours.Mon = parseTime("time", hoursData.mon_start) + `–` + parseTime("time", hoursData.mon_end)
       }
 
-      if (scheduleData.tues_service === 'closed') {
+      if (hoursData.tues_service === 'closed') {
         taproomHours.Tues = "Closed";
-      } else if ((scheduleData.tues_service === 'open') && scheduleData.tues_start && scheduleData.tues_end) {
-        taproomHours.Tues = convertTimeToAmPm(scheduleData.tues_start) + `–` + convertTimeToAmPm(scheduleData.tues_end)
+      } else if ((hoursData.tues_service === 'open') && hoursData.tues_start && hoursData.tues_end) {
+        taproomHours.Tues = parseTime("time", hoursData.tues_start) + `–` + parseTime("time", hoursData.tues_end)
       }
 
-      if (scheduleData.weds_service === 'closed') {
+      if (hoursData.weds_service === 'closed') {
         taproomHours.Weds = "Closed";
-      } else if ((scheduleData.weds_service === 'open') && scheduleData.weds_start && scheduleData.weds_end) {
-        taproomHours.Weds = convertTimeToAmPm(scheduleData.weds_start) + `–` + convertTimeToAmPm(scheduleData.weds_end)
+      } else if ((hoursData.weds_service === 'open') && hoursData.weds_start && hoursData.weds_end) {
+        taproomHours.Weds = parseTime("time", hoursData.weds_start) + `–` + parseTime("time", hoursData.weds_end)
       }
       
-      if (scheduleData.thurs_service === 'closed') {
+      if (hoursData.thurs_service === 'closed') {
         taproomHours.Thurs = "Closed";
-      } else if ((scheduleData.thurs_service === 'open') && scheduleData.thurs_start && scheduleData.thurs_end) {
-        taproomHours.Thurs = convertTimeToAmPm(scheduleData.thurs_start) + `–` + convertTimeToAmPm(scheduleData.thurs_end)
+      } else if ((hoursData.thurs_service === 'open') && hoursData.thurs_start && hoursData.thurs_end) {
+        taproomHours.Thurs = parseTime("time", hoursData.thurs_start) + `–` + parseTime("time", hoursData.thurs_end)
       }
 
-      if (scheduleData.fri_service === 'closed') {
+      if (hoursData.fri_service === 'closed') {
         taproomHours.Fri = "Closed";
-      } else if ((scheduleData.fri_service === 'open') && scheduleData.fri_start && scheduleData.fri_end) {
-        taproomHours.Fri = convertTimeToAmPm(scheduleData.fri_start) + `–` + convertTimeToAmPm(scheduleData.fri_end)
+      } else if ((hoursData.fri_service === 'open') && hoursData.fri_start && hoursData.fri_end) {
+        taproomHours.Fri = parseTime("time", hoursData.fri_start) + `–` + parseTime("time", hoursData.fri_end)
       }
 
-      if (scheduleData.sat_service === 'closed') {
+      if (hoursData.sat_service === 'closed') {
         taproomHours.Sat = "Closed";
-      } else if ((scheduleData.sat_service === 'open') && scheduleData.sat_start && scheduleData.sat_end) {
-        taproomHours.Sat = convertTimeToAmPm(scheduleData.sat_start) + `–` + convertTimeToAmPm(scheduleData.sat_end)
+      } else if ((hoursData.sat_service === 'open') && hoursData.sat_start && hoursData.sat_end) {
+        taproomHours.Sat = parseTime("time", hoursData.sat_start) + `–` + parseTime("time", hoursData.sat_end)
       }
 
-      if (scheduleData.sun_service === 'closed') {
+      if (hoursData.sun_service === 'closed') {
         taproomHours.Sun = "Closed";
-      } else if ((scheduleData.sun_service === 'open') && scheduleData.sun_start && scheduleData.sun_end) {
-        taproomHours.Sun = convertTimeToAmPm(scheduleData.sun_start) + `–` + convertTimeToAmPm(scheduleData.sun_end)
+      } else if ((hoursData.sun_service === 'open') && hoursData.sun_start && hoursData.sun_end) {
+        taproomHours.Sun = parseTime("time", hoursData.sun_start) + `–` + parseTime("time", hoursData.sun_end)
       }
     }
 
-    setSchedule(taproomHours);
+    setHours(taproomHours);
   };
 
+  // fetch menus from Strapi CMS
   const fetchMenus = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/beer-menus`);
     let newMenus = await response.json();
@@ -466,6 +489,7 @@ export default function App() {
     setMenus(formattedMenus);
   };
 
+  // fetch events from Strapi CMS
   const fetchEvents = async () => {
     const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/events`);
     let newEvents = await response.json();
@@ -476,7 +500,7 @@ export default function App() {
         let event1 = {
             title: eventsData.event1_title,
             date: parseDate(eventsData.event1_date),
-            time: parseTime(eventsData.event1_date)
+            time: parseTime("datetime", eventsData.event1_date)
         }
         formattedEvents.push(event1)
     }
@@ -485,7 +509,7 @@ export default function App() {
         let event2 = {
             title: eventsData.event2_title,
             date: parseDate(eventsData.event2_date),
-            time: parseTime(eventsData.event2_date)
+            time: parseTime("datetime", eventsData.event2_date)
         }
         formattedEvents.push(event2)
     }
@@ -494,7 +518,7 @@ export default function App() {
         let event3 = {
             title: eventsData.event3_title,
             date: parseDate(eventsData.event3_date),
-            time: parseTime(eventsData.event3_date)
+            time: parseTime("datetime", eventsData.event3_date)
         }
         formattedEvents.push(event3)
     }
@@ -503,7 +527,7 @@ export default function App() {
         let event4 = {
             title: eventsData.event4_title,
             date: parseDate(eventsData.event4_date),
-            time: parseTime(eventsData.event4_date)
+            time: parseTime("datetime", eventsData.event4_date)
         }
         formattedEvents.push(event4)
     }
@@ -515,9 +539,10 @@ export default function App() {
     setEvents(sortedEvents);
   };
 
+  // fetch data and reset on page load
   useEffect(() => {
 
-    fetchSchedules();
+    fetchHours();
     // fetchMenus();
     fetchEvents();
 
@@ -536,6 +561,7 @@ export default function App() {
 
   }, []);
 
+  // default root return
   return (
     <html lang="en" className={htmlState}>
       <head>
@@ -546,7 +572,7 @@ export default function App() {
         <Links />
       </head>
       <body className={bodyTags}>
-        <StrapiContext.Provider value={{ schedule: schedule, menus: menus, events: events, currentDate: parseDate(new Date()) }}>
+        <StrapiContext.Provider value={{ hours: hours, menus: menus, events: events, currentDate: parseDate(new Date()) }}>
           <Layout {...data} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen}>
             <Outlet />
           </Layout>
@@ -559,6 +585,7 @@ export default function App() {
   );
 }
 
+// error boundary
 export function ErrorBoundary() {
   const error = useRouteError();
   const rootData = useRootLoaderData();
@@ -569,6 +596,7 @@ export function ErrorBoundary() {
     errorStatus = error.status;
   }
 
+  // error page return
   return (
     <html lang="en">
       <head>
@@ -596,6 +624,7 @@ export function ErrorBoundary() {
   );
 }
 
+// customer validation
 /**
  * Validates the customer access token and returns a boolean and headers
  * @see https://shopify.dev/docs/api/storefront/latest/objects/CustomerAccessToken
@@ -631,6 +660,7 @@ async function validateCustomerAccessToken(session, customerAccessToken) {
   return {isLoggedIn, headers};
 }
 
+// menu fragment
 const MENU_FRAGMENT = `#graphql
   fragment MenuItem on MenuItem {
     id
@@ -657,6 +687,7 @@ const MENU_FRAGMENT = `#graphql
   }
 `;
 
+// header query
 const HEADER_QUERY = `#graphql
   fragment Shop on Shop {
     id
@@ -688,6 +719,7 @@ const HEADER_QUERY = `#graphql
   ${MENU_FRAGMENT}
 `;
 
+// footer query
 const FOOTER_QUERY = `#graphql
   query Footer(
     $country: CountryCode

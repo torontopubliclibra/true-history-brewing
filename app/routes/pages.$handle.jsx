@@ -1,5 +1,6 @@
-import {json} from '@shopify/remix-oxygen';
-import {useLoaderData} from '@remix-run/react';
+// imports
+import { json } from '@shopify/remix-oxygen';
+import { useLoaderData } from '@remix-run/react';
 
 /**
  * @type {MetaFunction<typeof loader>}

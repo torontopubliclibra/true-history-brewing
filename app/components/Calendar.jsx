@@ -1,5 +1,8 @@
+// imports
 import { useContext } from 'react';
 import { StrapiContext } from '../root';
+
+// component imports
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import listPlugin from '@fullcalendar/list'

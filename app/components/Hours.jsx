@@ -1,14 +1,17 @@
+// imports
 import { useContext } from 'react';
 import { StrapiContext } from '../root';
+
+// asset imports
 import diamond from './../../public/assets/icons/diamond.svg';
 
 export function Hours() {
 
-    const { schedule } = useContext(StrapiContext);
+    const { hours } = useContext(StrapiContext);
   
     let formattedHours = [];
   
-    for (let [key, value] of Object.entries(schedule)) {
+    for (let [key, value] of Object.entries(hours)) {
       formattedHours.push(
         <li key={key}>
           {key}: <span className='time'>{value}</span>

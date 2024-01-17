@@ -3,12 +3,10 @@
     font-family: "Saudagar";
     src: url(./../../public/fonts/saudagar.ttf) format("truetype");
 };
-
 @font-face {
     font-family: "Bogue-Regular";
     src: url(./../../public/fonts/bogue-regular.ttf) format("truetype");
 };
-
 @font-face {
     font-family: "Bogue-Thin";
     src: url(./../../public/fonts/bogue-thin.ttf) format("truetype");
@@ -17,7 +15,6 @@
     font-family: "Bogue-ExtraBold";
     src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype");
 };
-
 
 // typographic styles
 :root {
@@ -418,14 +415,15 @@ main {
     }
     .schedule {
         li {
-            font-family: "Bogue-ExtraBold";
-            font-size: 1.15rem;
+            font-family: "Bogue-Extrabold";
+            font-size: 1.2rem;
             letter-spacing: 2px;
             line-height: 1.5;
             margin: 0;
             .time {
-              font-weight: 400;
-              font-style: italic;
+                font-family: "Bogue-Regular";
+                font-size: 1.1rem;
+                font-style: italic;
             }  
         }
     }
@@ -569,18 +567,15 @@ nav.header-menu-desktop {
     a {
         .nav-text {
             transform: perspective(8px) rotateX(-1deg);
-            font-size: 16px;
-            font-family: "Bogue-Regular";
+            font-size: 1.1rem;
+            padding-top: 5px;
+            font-family: "Saudagar";
+            font-weight: 800;
             text-transform: uppercase;
             color: $black;
         }
         .button-icon {
             display: none;
-        }
-        &.active-link {
-            .nav-text {
-              font-family: "Bogue-Extrabold";
-            }
         }
     }
 }

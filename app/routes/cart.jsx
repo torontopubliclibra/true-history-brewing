@@ -1,9 +1,12 @@
-import {Await} from '@remix-run/react';
-import {Suspense} from 'react';
-import {CartForm} from '@shopify/hydrogen';
-import {json} from '@shopify/remix-oxygen';
-import {CartMain} from '~/components/Cart';
-import {useRootLoaderData} from '~/root';
+// imports
+import { Await } from '@remix-run/react';
+import { Suspense } from 'react';
+import { CartForm } from '@shopify/hydrogen';
+import { json } from '@shopify/remix-oxygen';
+import { useRootLoaderData } from '~/root';
+
+// component imports
+import { CartMain } from '~/components/Cart';
 
 /**
  * @type {MetaFunction}

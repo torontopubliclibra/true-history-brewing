@@ -1,3 +1,4 @@
+// imports
 import {useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import {parseGid} from '@shopify/hydrogen';
 

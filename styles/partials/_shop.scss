@@ -1,3 +1,107 @@
+@import 'variables';
+@import 'typography';
+
+.store-disclaimers {
+    background-color: rgba($less-light, 0.8);
+    padding: 30px;
+    border-top: $default-border;
+    text-align: center;
+
+    .text-box {
+      padding: 30px 40px;
+      max-width: 85%;
+      margin: 0 auto;
+
+      h3 {
+        font-size: 25px;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .store {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color1, 0.8);
+    padding: 30px;
+
+    .recommended-product {
+      max-width: 350px;
+      img {
+        border: solid 3px $black;
+        filter: $default-shadow;
+        border-radius: 0;
+        aspect-ratio: 6/3;
+        object-fit: cover;
+      }
+      h4 {
+        font-family: "Saudagar";
+        font-weight: 800;
+        font-size: 24px;
+      }
+      small {
+        font-size: 16px;
+        line-height: 0.75;
+      }
+
+      &:hover {
+        small div {
+          text-decoration: none;
+        }
+      }
+    }
+    
+    h1 {
+      display: none;
+      margin: 0;
+      padding-top: 20px;
+    }
+
+    h2 {
+      color: $black;
+      font-size: 50px;
+      text-transform: uppercase;
+      font-style: normal;
+      margin-top: 0;
+    }
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      text-align: center;
+      padding-top: 0;
+
+      .recommended-product {
+        width: 100%;
+        margin: 0 auto;
+
+        small {
+          font-size: 18px;
+        }
+      }
+      
+      h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
 .cart-main.with-discount {
     max-height: calc(100vh - 300px);
 }

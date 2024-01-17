@@ -1,3 +1,4 @@
+// imports
 import {flattenConnection} from '@shopify/hydrogen';
 
 /**

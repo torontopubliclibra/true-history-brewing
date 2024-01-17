@@ -1,6 +1,11 @@
+// imports
 import { useState, useEffect } from 'react';
 import { Link } from '@remix-run/react';
+
+// component imports
 import BarLoader from "react-spinners/BarLoader";
+
+// asset imports
 import icon from './../../public/assets/thb-icon.png';
 import flourishLeft from './../../public/assets/icons/flourish-left.svg';
 import flourishRight from './../../public/assets/icons/flourish-right.svg';

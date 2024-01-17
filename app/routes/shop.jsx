@@ -1,3 +1,4 @@
+// imports
 import { defer } from '@shopify/remix-oxygen';
 import { Await, useLoaderData, Link } from '@remix-run/react';
 import { Suspense } from 'react';

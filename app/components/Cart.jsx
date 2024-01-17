@@ -1,6 +1,9 @@
-import {CartForm, Image, Money} from '@shopify/hydrogen';
-import {Link} from '@remix-run/react';
-import {useVariantUrl} from '~/utils';
+// imports
+import { CartForm, Image, Money } from '@shopify/hydrogen';
+import { Link } from '@remix-run/react';
+import { useVariantUrl } from '~/utils';
+
+// asset imports
 import add from './../../public/assets/icons/add.svg';
 import subtract from './../../public/assets/icons/subtract.svg';
 import remove from './../../public/assets/icons/remove.svg';

@@ -1,12 +1,13 @@
-import {useLocation} from '@remix-run/react';
-import {useMemo} from 'react';
+// imports
+import { useLocation } from '@remix-run/react';
+import { useMemo } from 'react';
 
 /**
  * @param {string} handle
  * @param {SelectedOption[]} selectedOptions
  */
 export function useVariantUrl(handle, selectedOptions) {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   return useMemo(() => {
     return getVariantUrl({

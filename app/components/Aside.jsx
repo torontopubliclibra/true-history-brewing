@@ -1,3 +1,4 @@
+// asset imports
 import arrowRight from './../../public/assets/icons/arrow-right.svg';
 
 /**

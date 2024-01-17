@@ -1,5 +1,8 @@
+// imports
 import {Link} from '@remix-run/react';
 import {useLocation} from 'react-router-dom';
+
+// asset imports
 import instagram from './../../public/assets/icons/instagram.svg';
 import contact from './../../public/assets/icons/contact.svg';
 

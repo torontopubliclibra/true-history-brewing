@@ -1,9 +1,14 @@
+// imports
 import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom'
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
+
+// component imports
 import { Hours } from './../components/Hours';
 import { Calendar } from './../components/Calendar';
+
+// asset imports
 import taproomPhoto from './../../public/assets/taproom-photo.png';
 import beer from './../../public/assets/icons/beer.svg';
 import wine from './../../public/assets/icons/wine.svg';
