@@ -21,9 +21,9 @@ export function Aside({children, heading, id = 'aside', updateAsideOpen}) {
     <div aria-modal className="overlay" id={id} role="dialog">
       <button
         className="close-outside"
-        onClick={() => {
-          updateAsideOpen("", false);
-        }}
+        onClick={
+          () => updateAsideOpen("", false)
+        }
       />
       <aside>
         <header>
@@ -43,7 +43,8 @@ function CloseAside({updateAsideOpen}) {
     <a
       className="close"
       onClick={
-        () => updateAsideOpen("", false)}>
+        () => updateAsideOpen("", false)
+      }>
       <img src={arrowRight} className="button-icon" />
     </a>
   );

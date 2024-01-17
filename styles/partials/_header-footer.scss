@@ -2,8 +2,7 @@
 @import 'typography';
 
 header, footer {
-    background-image: url('./../../public/assets/wallpaper.png');
-    background-size: 100%;
+    max-width: 1500px;
     display: flex;
 }
 
@@ -29,8 +28,10 @@ header {
 
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
+        background-image: url('./../../public/assets/wallpaper.png');
+        background-size: 100%;
         .button-label {
-        display: none;
+            display: none;
         }
     }
 
@@ -41,32 +42,35 @@ header {
         grid-gap: 1rem;
         margin-left: auto;
 
-        .button {
-            &:hover {
-            color: $black;
-            background-color: $color2;
-            img {
-                filter: none;
-            }
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+            .button {
+                &:hover {
+                    color: $black;
+                    background-color: $color2;
+                    img {
+                        filter: none;
+                    }
+                }
             }
         }
 
-        .cart-active, .menu-active {
-            color: $white;
-            background-color: $color1;
-            img {
-            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-            }
-            &:hover {
-            color: $white;
-            background-color: $color1;
-            img {
+            .cart-active, .menu-active {
+                color: $white;
+                background-color: $color1;
+                img {
                 filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+                }
+                &:hover {
+                    color: $white;
+                    background-color: $color1;
+                    img {
+                        filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+                    }
+                }
             }
-            }
-        }
         
-        .menu-toggle, .menu-active {
+            .menu-toggle, .menu-active {
             display: none;
         
             // responsive to mobile
@@ -78,7 +82,7 @@ header {
 
         &.header-menu-desktop {
         display: flex;
-        width: 100vw;
+        width: 100%;
         justify-content: center;
         position: absolute;
         bottom: 1px;
@@ -126,6 +130,7 @@ header {
 }
 
 footer {
+    background-color: $less-light;
     height: 225px;
     display: flex;
     flex-direction: column;
@@ -136,7 +141,7 @@ footer {
     margin-top: auto;
 
     hr {
-        background-color: $color3;
+        background-color: $color1;
         height: 4px;
         max-width: 90%;
         margin: 25px 0;

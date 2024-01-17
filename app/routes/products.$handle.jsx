@@ -96,7 +96,7 @@ function redirectToFirstVariant({product, request}) {
   );
 }
 
-export default function Product() {
+export default function Product({updateAsideOpen}) {
   /** @type {LoaderReturnData} */
   const {product, variants} = useLoaderData();
   const {selectedVariant} = product;
@@ -107,6 +107,7 @@ export default function Product() {
         selectedVariant={selectedVariant}
         product={product}
         variants={variants}
+        updateAsideOpen={updateAsideOpen}
       />
     </div>
   );
@@ -137,7 +138,7 @@ function ProductImage({image}) {
  *   variants: Promise<ProductVariantsQuery>;
  * }}
  */
-function ProductMain({selectedVariant, product, variants}) {
+function ProductMain({selectedVariant, product, variants, updateAsideOpen}) {
   const {title, descriptionHtml} = product;
   return (
     <div className="product-main">
@@ -151,6 +152,7 @@ function ProductMain({selectedVariant, product, variants}) {
             product={product}
             selectedVariant={selectedVariant}
             variants={[]}
+            updateAsideOpen={updateAsideOpen}
           />
         }
       >
@@ -163,6 +165,7 @@ function ProductMain({selectedVariant, product, variants}) {
               product={product}
               selectedVariant={selectedVariant}
               variants={data.product?.variants.nodes || []}
+              updateAsideOpen={updateAsideOpen}
             />
           )}
         </Await>
@@ -204,7 +207,7 @@ function ProductPrice({selectedVariant}) {
  *   variants: Array<ProductVariantFragment>;
  * }}
  */
-function ProductForm({product, selectedVariant, variants}) {
+function ProductForm({product, selectedVariant, variants, updateAsideOpen}) {
   return (
     <div className="product-form">
       <VariantSelector
@@ -216,13 +219,13 @@ function ProductForm({product, selectedVariant, variants}) {
       </VariantSelector>
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
-        onClick={() => {
-          if (window.location.href.includes('#')) {
-            window.location.href = window.location.href + 'cart-aside';
-          } else {
-            window.location.href = window.location.href + '#cart-aside';
-          }
-        }}
+        // onClick={() => {
+        //   if (window.location.href.includes('#')) {
+        //     window.location.href = window.location.href + 'cart-aside';
+        //   } else {
+        //     window.location.href = window.location.href + '#cart-aside';
+        //   }
+        // }}
         lines={
           selectedVariant
             ? [
@@ -233,6 +236,7 @@ function ProductForm({product, selectedVariant, variants}) {
               ]
             : []
         }
+        updateAsideOpen={updateAsideOpen}
       >
         {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
       </AddToCartButton>
@@ -281,7 +285,7 @@ function ProductOptions({option}) {
  *   onClick?: () => void;
  * }}
  */
-function AddToCartButton({analytics, children, disabled, lines, onClick}) {
+function AddToCartButton({analytics, children, disabled, lines, onClick, updateAsideOpen}) {
   return (
     <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
       {(fetcher) => (
@@ -293,7 +297,9 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
           />
           <button
             type="submit"
-            onClick={onClick}
+            onClick={
+              () => updateAsideOpen("cart", true)
+            }
             disabled={disabled ?? fetcher.state !== 'idle'}
             className='button button-primary'
           >

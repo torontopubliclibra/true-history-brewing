@@ -51,6 +51,7 @@ export default function Homepage() {
     //   body: JSON.stringify(details),
     // });
     setSubmitStatus("Submit");
+    console.log(messageDetails);
     // let result = await response.json();
     // alert(result.status);
   };

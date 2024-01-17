@@ -13,7 +13,7 @@ export function Layout({cart, children = null, footer, header, isLoggedIn, aside
   return (
     <>
       <CartAside cart={cart} updateAsideOpen={updateAsideOpen} />
-      <MobileMenuAside menu={header.menu} shop={header.shop} />
+      <MobileMenuAside menu={header.menu} shop={header.shop} updateAsideOpen={updateAsideOpen} />
       <Header header={header} cart={cart} isLoggedIn={isLoggedIn} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen}/>
       <main>{children}</main>
       <Suspense>

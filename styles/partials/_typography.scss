@@ -98,7 +98,62 @@ h2 {
 }
 
 h3 {
+    text-transform: uppercase;
     font-size: 3rem;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        font-size: 3.5rem;
+    }
+}
+
+.landing-welcome {
+    h1 {
+        color: $light;
+        font-family: "Saudagar";
+        font-size: 40px;
+        font-style: italic;
+        filter: drop-shadow(-3px 3px 0.5px rgba($black, 0.8));
+        
+        .title {
+            font-family: "Saudagar";
+            font-size: 75px;
+            font-style: normal;
+        }
+    }
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        h1 {
+            display: none;
+        }
+    }
+}
+
+.landing-main {
+    p {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+    .remember-user {
+        label {
+            font-size: 1rem;
+        }
+    }
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        p {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 15px;
+            text-align: center;
+            padding-bottom: 0;
+        }
+        .remember-user {
+            label {
+                font-size: 1rem;
+            }
+        }
+    }
 }
 
 aside {
@@ -190,6 +245,9 @@ aside {
         .cart-subtotal {
             dt {
                 font-weight: 800;
+            }
+            a {
+                font-size: 0.8rem;
             }
         }
 
@@ -337,11 +395,16 @@ main {
         }
     }
 
+    .taproom-events {
+        h2 {
+            text-transform: none;
+        }
+    }
+
     .taproom-menus {
         h3 {
             width: 90vw;
             font-family: "Saudagar";
-            filter: $default-shadow;
             margin: 0;
             padding: 0;
         }
@@ -517,7 +580,7 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -570,6 +633,7 @@ nav.header-submenu {
 nav.header-menu-desktop {
 
     a {
+        filter: $default-shadow;
         .nav-text {
             transform: perspective(8px) rotateX(-1deg);
             font-size: 1.1rem;

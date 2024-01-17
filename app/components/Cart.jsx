@@ -160,7 +160,7 @@ export function CartSummary({cost, layout, children = null}) {
             {cost?.subtotalAmount?.amount ? (
               <Money data={cost?.subtotalAmount} />
             ) : (
-              '-'
+              '–'
             )}
           </dd>
         </dl>

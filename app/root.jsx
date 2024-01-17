@@ -204,7 +204,7 @@ export default function App() {
   // update aside open state
   const updateAsideOpen = (aside, open) => {
 
-    if (open === true) {
+    if (open) {
       setHtmlState("aside-open");
 
       if (aside === "menu") {
@@ -548,10 +548,7 @@ export default function App() {
 
     window.scrollTo({top: 0});
     
-    setAsideOpen({
-      open: false,
-      aside: ""
-    })
+    updateAsideOpen("", false)
 
     if (location.pathname === '/') {
       setBodyTags("landing");

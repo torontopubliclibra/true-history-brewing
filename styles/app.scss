@@ -9,10 +9,18 @@
 @import 'partials/shop';
 
 :root {
+  background-image: url('./../../public/assets/wallpaper.png');
+  background-size: 100%;
   background-color: $light;
-  max-width: 100vw;
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+
+  // responsive to mobile
+  @media only screen and (max-width: $mobile) {
+    background-image: url('./../../public/assets/wooden-bg.jpg');
+  }
 
   &.aside-open {
     overflow-y: hidden;
@@ -37,9 +45,11 @@
 }
 
 body {
-  background-image: url('./../../public/assets/wooden-bg.jpg');
-  width: 100vw;
+  width: 105vw;
+  max-width: 1500px;
   height: 100%;
+  margin-left: -5px;
+  margin-right: -5px;
 
   #mobile-menu-aside {
     display: none !important;
@@ -76,21 +86,15 @@ body {
     .landing-header {
       position: unset;
     }
-    footer {
-      background-color: rgba($less-light, 0.8);
-      background-image: none;
-      &.landing-footer {
-        background-image: url('./../../public/assets/wallpaper.png');
-      }
-
-      hr {
-        background-color: $color1;
-      }
-    }
 
     &.menu-open {
       #mobile-menu-aside {
         display: initial !important;
+
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+          background-color: rgba($less-light, 0.25);
+        }
       }
       #cart-aside {
         display: none !important;
@@ -100,6 +104,11 @@ body {
     &.cart-open {
       #cart-aside {
         display: initial !important;
+
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+          background-color: rgba($less-light, 0.25);
+        }
       }
       #mobile-menu-aside {
         display: none !important;
@@ -119,6 +128,7 @@ hr {
 .thb-icon {
   width: 75px;
   height: auto;
+  filter: $default-shadow;
 }
 
 .thb-logo {
@@ -140,11 +150,74 @@ hr {
 }
 
 main {
+  background-image: url('./../../public/assets/wooden-bg.jpg');
+  border-left: $default-border;
+  border-right: $default-border;
 
   .contact-content {
     background-color: rgba($color1, 0.8);
-    height: 400px;
     padding-top: 15px;
+
+    .contact-form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 0 20px;
+
+      .form-field {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+      }
+
+      .double-field {
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .small-field {
+        width: 30%;
+        max-width: 125px;
+        justify-content: left;
+      }
+
+      input, textarea {
+        min-width: 100%;
+        padding: 5px 15px;
+        border: $thin-border;
+        border-radius: 0;
+        filter: $default-shadow;
+      }
+
+      textarea {
+        min-height: 100px;
+      }
+
+      .button {
+        padding: 20px 30px;
+        background: $color4;
+        color: $light;
+
+        img {
+          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: $color1;
+        }
+      }
+    }
 
     .contact-nav {
       display: flex;
@@ -157,10 +230,23 @@ main {
 
         &:hover {
           background-color: $color4;
+          color: $light;
         }
         &.selected {
           background-color: $color4;
           color: $light;
+        }
+      }
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        .button {
+          width: 90vw;
+          max-width: 350px;
         }
       }
     }
@@ -331,8 +417,8 @@ main {
         }
         .address {
           order: -1;
-          max-width: 100vw;
-          width: 80vw;
+          max-width: 100%;
+          width: 80%;
           padding-bottom: 30px;
         }
         .button {
@@ -470,7 +556,6 @@ main {
         padding: 20px 30px;
         background: $color4;
         color: $light;
-        font-size: 18px;
 
         img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
@@ -518,7 +603,7 @@ main {
     .taproom-photo {
       position: absolute;
       top: 0;
-      width: 100vw;
+      width: 100%;
       max-height: 600px;
       object-fit: cover;
       border: none;
@@ -531,7 +616,7 @@ main {
       align-items: center;
       padding: 0 20px;
       height: 100%;
-      min-width: 45vw;
+      min-width: 45%;
       z-index: 50;
       background-color: rgba($color1, 0.8);
       border-right: $default-border;
@@ -589,7 +674,7 @@ main {
     .menu {
       display: flex;
       flex-flow: row wrap;
-      width: 95vw;
+      width: 95%;
       justify-content: center;
       align-items: center;
       gap: 20px;
@@ -694,10 +779,8 @@ main {
       margin: 20px auto;
     }
     h3 {
-      width: 90vw;
-      font-size: 60px;
+      width: 90%;
       font-family: "Saudagar";
-      filter: $default-shadow;
       margin: 0;
       padding: 0;
     }
@@ -717,7 +800,6 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 45px;
         height: 70px;
         margin-top: 10px;
       }
