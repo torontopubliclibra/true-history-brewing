@@ -95,9 +95,13 @@ aside .header-menu-mobile a {
   font-weight: 800;
   text-transform: uppercase; }
 
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
 @media only screen and (max-width: 480px) {
   aside .header-menu-mobile a {
-    font-size: 1.5rem; } }
+    font-size: 1.4rem; } }
 
 aside .cart-empty-text {
   background-color: rgba(214, 208, 192, 0.8);
@@ -143,6 +147,8 @@ aside .cart-summary-aside .cart-subtotal dt {
     color: #1F1F1F; } }
 
 .address {
+  font-family: "Saudagar";
+  font-weight: 800;
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 10px 25px;
@@ -162,7 +168,7 @@ aside .cart-summary-aside .cart-subtotal dt {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -226,12 +232,12 @@ main .product .product-main button {
 
 main .taproom-address .address {
   width: 90%;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 5px; }
 
 main .taproom-address .button {
-  width: 300px;
   margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 0; }
 
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
@@ -353,9 +359,6 @@ main .taproom-menus .menu-nav .button {
   .button .flourish {
     width: 25px;
     padding-bottom: 3px; }
-  @media only screen and (max-width: 1070px) {
-    .button {
-      font-size: 1.2rem; } }
 
 .button-secondary {
   background: #778d79;
@@ -524,9 +527,13 @@ aside .header-menu-mobile a {
   font-weight: 800;
   text-transform: uppercase; }
 
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
 @media only screen and (max-width: 480px) {
   aside .header-menu-mobile a {
-    font-size: 1.5rem; } }
+    font-size: 1.4rem; } }
 
 aside .cart-empty-text {
   background-color: rgba(214, 208, 192, 0.8);
@@ -572,6 +579,8 @@ aside .cart-summary-aside .cart-subtotal dt {
     color: #1F1F1F; } }
 
 .address {
+  font-family: "Saudagar";
+  font-weight: 800;
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 10px 25px;
@@ -591,7 +600,7 @@ aside .cart-summary-aside .cart-subtotal dt {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -655,12 +664,12 @@ main .product .product-main button {
 
 main .taproom-address .address {
   width: 90%;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 5px; }
 
 main .taproom-address .button {
-  width: 300px;
   margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 0; }
 
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
@@ -782,9 +791,6 @@ main .taproom-menus .menu-nav .button {
   .button .flourish {
     width: 25px;
     padding-bottom: 3px; }
-  @media only screen and (max-width: 1070px) {
-    .button {
-      font-size: 1.2rem; } }
 
 .button-secondary {
   background: #778d79;
@@ -1056,9 +1062,13 @@ aside .header-menu-mobile a {
   font-weight: 800;
   text-transform: uppercase; }
 
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
 @media only screen and (max-width: 480px) {
   aside .header-menu-mobile a {
-    font-size: 1.5rem; } }
+    font-size: 1.4rem; } }
 
 aside .cart-empty-text {
   background-color: rgba(214, 208, 192, 0.8);
@@ -1104,6 +1114,8 @@ aside .cart-summary-aside .cart-subtotal dt {
     color: #1F1F1F; } }
 
 .address {
+  font-family: "Saudagar";
+  font-weight: 800;
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 10px 25px;
@@ -1123,7 +1135,7 @@ aside .cart-summary-aside .cart-subtotal dt {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -1187,12 +1199,12 @@ main .product .product-main button {
 
 main .taproom-address .address {
   width: 90%;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 5px; }
 
 main .taproom-address .button {
-  width: 300px;
   margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 0; }
 
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
@@ -1314,9 +1326,6 @@ main .taproom-menus .menu-nav .button {
   .button .flourish {
     width: 25px;
     padding-bottom: 3px; }
-  @media only screen and (max-width: 1070px) {
-    .button {
-      font-size: 1.2rem; } }
 
 .button-secondary {
   background: #778d79;
@@ -1412,6 +1421,438 @@ nav.header-menu-desktop a .button-icon {
     .loading .loader span {
       height: 6px !important;
       border-radius: 0 !important; }
+
+@font-face {
+  font-family: "Saudagar";
+  src: url(./../../public/fonts/saudagar.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Regular";
+  src: url(./../../public/fonts/bogue-regular.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Thin";
+  src: url(./../../public/fonts/bogue-thin.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-ExtraBold";
+  src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
+
+:root {
+  font-size: 18px;
+  letter-spacing: 0.75px; }
+  @media only screen and (max-width: 1070px) {
+    :root {
+      font-size: 17px; } }
+  @media only screen and (max-width: 480px) {
+    :root {
+      font-size: 16px; } }
+
+* {
+  font-family: "Bogue-Regular", sans-serif; }
+
+header .button-primary, footer .button-primary {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  height: 15px; }
+
+footer .credit p, footer .copyright p {
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding-bottom: 5px; }
+  footer .credit p a, footer .copyright p a {
+    font-family: "Saudagar";
+    text-decoration: underline; }
+
+footer .credit p {
+  font-size: 1rem; }
+
+footer .copyright p {
+  font-size: 1.2rem; }
+
+h2 {
+  font-family: 'Saudagar';
+  text-align: center;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 4.25rem;
+  color: #1F1F1F;
+  margin: 10px 0; }
+  h2.home {
+    margin-top: 30px;
+    font-size: 3.5rem;
+    font-style: italic;
+    text-transform: none; }
+  @media only screen and (max-width: 1070px) {
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 0; }
+      h2.home {
+        display: none; } }
+
+h3 {
+  font-size: 3rem; }
+
+aside h2 {
+  margin-bottom: 0.6rem;
+  margin-top: 0; }
+
+aside h3 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: right;
+  width: 100%;
+  margin: 0; }
+
+aside p {
+  margin: 0 0 0.25rem; }
+  aside p::last-child {
+    margin: 0; }
+
+aside li {
+  margin-bottom: 0.125rem; }
+
+aside .header-menu-mobile a {
+  font-weight: 800;
+  text-transform: uppercase; }
+
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
+@media only screen and (max-width: 480px) {
+  aside .header-menu-mobile a {
+    font-size: 1.4rem; } }
+
+aside .cart-empty-text {
+  background-color: rgba(214, 208, 192, 0.8);
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  padding: 40px 30px;
+  border: solid #1F1F1F 2px;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 20px; }
+
+aside .cart-main .button {
+  border: solid #1F1F1F 2px;
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 0.8rem; }
+
+aside .cart-line p {
+  width: 90%;
+  margin: 0; }
+
+aside .cart-line a:hover {
+  text-decoration: none; }
+
+aside .cart-line span {
+  text-align: center;
+  font-size: 0.8rem; }
+
+aside .cart-summary-aside div a {
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase; }
+  aside .cart-summary-aside div a p {
+    margin: 0; }
+  aside .cart-summary-aside div a:hover {
+    color: #F1EDE2; }
+
+aside .cart-summary-aside .cart-subtotal dt {
+  font-weight: 800; }
+
+@media only screen and (max-width: 1070px) {
+  aside .cart-summary-aside div a:hover {
+    color: #1F1F1F; } }
+
+.address {
+  font-family: "Saudagar";
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px 25px;
+  font-size: 1.25rem;
+  font-style: italic;
+  text-align: center;
+  color: #1F1F1F;
+  background-color: #F1EDE2;
+  border: solid #1F1F1F 3px;
+  border-radius: 25px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+  @media only screen and (max-width: 1070px) {
+    .address {
+      filter: none;
+      border: none;
+      border-bottom: solid #1F1F1F 3px;
+      border-radius: 0;
+      padding: 15px 15%;
+      max-width: 100vw;
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+      margin: 0; } }
+
+main .main-taproom .sketch-address .address {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+  @media only screen and (max-width: 1070px) {
+    main .main-taproom .sketch-address .address {
+      margin: 0; } }
+
+main .main-events h3 {
+  font-size: 3rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 30px;
+  margin-bottom: 10px;
+  margin-left: 40px; }
+
+main .main-events .main-events-content .events-list {
+  margin-left: 40px;
+  font-size: 1.25rem; }
+  main .main-events .main-events-content .events-list li {
+    font-family: "Bogue-ExtraBold";
+    font-style: italic; }
+    main .main-events .main-events-content .events-list li .date {
+      font-style: normal;
+      font-family: "Bogue-Regular"; }
+
+@media only screen and (max-width: 1070px) {
+  main .main-events .main-events-content .events-list {
+    text-align: center;
+    margin: 10px 35px !important; }
+  main .main-events h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 10px 30px;
+    margin-top: 20px; } }
+
+main .product .product-main h1 {
+  font-size: 2.5rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 0; }
+
+main .product .product-main .product-price {
+  font-size: 1.5rem;
+  font-family: "Bogue-ExtraBold";
+  margin: 0; }
+
+main .product .product-main .product-description {
+  font-size: 1.2rem;
+  font-family: "Bogue-Regular";
+  margin: 0; }
+
+main .product .product-main button {
+  padding: 20px 30px;
+  margin-top: 20px;
+  cursor: pointer; }
+  main .product .product-main button:hover {
+    background-color: #BC4749; }
+
+main .taproom-address .address {
+  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 5px; }
+
+main .taproom-address .button {
+  margin-top: 15px;
+  margin-bottom: 0; }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-address .address {
+    margin-top: 0;
+    margin-bottom: 30px; }
+  main .taproom-address .button {
+    display: none; } }
+
+main .taproom-menus h3 {
+  width: 90vw;
+  font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  margin: 0;
+  padding: 0; }
+
+main .taproom-menus .updated-date {
+  font-style: italic;
+  padding: 5px 40px;
+  padding-right: 20px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: #BC4749;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  border: solid #1F1F1F 3px;
+  border-radius: 25px 0 0 25px;
+  border-right: 0; }
+
+main .taproom-menus .menu-nav .button {
+  height: 40px;
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  cursor: pointer; }
+  main .taproom-menus .menu-nav .button.selected {
+    color: #F6F6F6;
+    background-color: #778d79;
+    cursor: default; }
+    main .taproom-menus .menu-nav .button.selected img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-menus h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px; }
+  main .taproom-menus .updated-date {
+    order: 5;
+    position: initial;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    border: solid #1F1F1F 3px;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 15px; }
+  main .taproom-menus .menu-nav .button {
+    justify-content: space-between; } }
+
+.route-error h1, .route-error h2 {
+  margin: 0; }
+
+.route-error h1 {
+  color: #F1EDE2;
+  font-size: 75px;
+  font-family: 'Saudagar'; }
+
+.route-error h2 {
+  padding-top: 10px;
+  padding-bottom: 35px; }
+
+.hours h4 {
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%; }
+
+.hours .schedule li {
+  font-family: "Bogue-Extrabold";
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0; }
+  .hours .schedule li .time {
+    font-family: "Bogue-Regular";
+    font-size: 1.1rem;
+    font-style: italic; }
+
+.button {
+  background: #D8B56E;
+  border: solid #1F1F1F 3px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  color: #1F1F1F;
+  font-size: 1rem;
+  font-family: "Bogue-Regular";
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  height: 20px;
+  padding: 10px 30px 10px 30px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; }
+  .button:hover {
+    background: #778d79;
+    color: #F1EDE2;
+    text-decoration: none;
+    transition: background 0.2s ease-in; }
+    .button:hover img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button.decorative {
+    padding: 10px 20px; }
+  .button .button-icon {
+    width: 20px;
+    padding-bottom: 3px; }
+  .button .flourish {
+    width: 25px;
+    padding-bottom: 3px; }
+
+.button-secondary {
+  background: #778d79;
+  width: 170px;
+  height: 100%;
+  margin-top: 10px; }
+  .button-secondary:hover {
+    background: #C28165;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
+
+.button-tertiary {
+  background: #BC4749;
+  color: #F1EDE2; }
+  .button-tertiary img {
+    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button-tertiary:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button-tertiary:hover img {
+      filter: none; }
+
+.button-secondary, .button-tertiary {
+  font-size: 0.8rem;
+  color: #F1EDE2; }
+  @media only screen and (max-width: 1070px) {
+    .button-secondary, .button-tertiary {
+      font-size: 1rem; } }
+
+@media only screen and (max-width: 1070px) {
+  .button:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button:hover img {
+      filter: none; }
+  .button.cart, .button.menu-toggle {
+    display: flex;
+    flex-direction: row; }
+  .button.menu-active {
+    flex-direction: row-reverse; }
+  .button-secondary:hover {
+    background: #778d79;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: none; }
+  .button-tertiary:hover {
+    background: #BC4749;
+    color: #F1EDE2; }
+    .button-tertiary:hover img {
+      filter: none; } }
+
+@media only screen and (max-width: 480px) {
+  nav.header-submenu .button {
+    height: 28px;
+    font-size: 1.2rem; }
+    nav.header-submenu .button img {
+      width: 22px; } }
+
+nav.header-menu-desktop a .nav-text {
+  transform: perspective(8px) rotateX(-1deg);
+  font-size: 1.1rem;
+  padding-top: 5px;
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1F1F1F; }
+
+nav.header-menu-desktop a .button-icon {
+  display: none; }
 
 header, footer {
   background-image: url("./../../public/assets/wallpaper.png");
@@ -1617,9 +2058,13 @@ aside .header-menu-mobile a {
   font-weight: 800;
   text-transform: uppercase; }
 
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
 @media only screen and (max-width: 480px) {
   aside .header-menu-mobile a {
-    font-size: 1.5rem; } }
+    font-size: 1.4rem; } }
 
 aside .cart-empty-text {
   background-color: rgba(214, 208, 192, 0.8);
@@ -1665,6 +2110,8 @@ aside .cart-summary-aside .cart-subtotal dt {
     color: #1F1F1F; } }
 
 .address {
+  font-family: "Saudagar";
+  font-weight: 800;
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 10px 25px;
@@ -1684,7 +2131,7 @@ aside .cart-summary-aside .cart-subtotal dt {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -1748,12 +2195,12 @@ main .product .product-main button {
 
 main .taproom-address .address {
   width: 90%;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 5px; }
 
 main .taproom-address .button {
-  width: 300px;
   margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 0; }
 
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
@@ -1875,9 +2322,6 @@ main .taproom-menus .menu-nav .button {
   .button .flourish {
     width: 25px;
     padding-bottom: 3px; }
-  @media only screen and (max-width: 1070px) {
-    .button {
-      font-size: 1.2rem; } }
 
 .button-secondary {
   background: #778d79;
@@ -2259,6 +2703,438 @@ a.mobile-only {
     display: flex !important;
     background-color: #F1EDE2 !important; } }
 
+@font-face {
+  font-family: "Saudagar";
+  src: url(./../../public/fonts/saudagar.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Regular";
+  src: url(./../../public/fonts/bogue-regular.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Thin";
+  src: url(./../../public/fonts/bogue-thin.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-ExtraBold";
+  src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
+
+:root {
+  font-size: 18px;
+  letter-spacing: 0.75px; }
+  @media only screen and (max-width: 1070px) {
+    :root {
+      font-size: 17px; } }
+  @media only screen and (max-width: 480px) {
+    :root {
+      font-size: 16px; } }
+
+* {
+  font-family: "Bogue-Regular", sans-serif; }
+
+header .button-primary, footer .button-primary {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  height: 15px; }
+
+footer .credit p, footer .copyright p {
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding-bottom: 5px; }
+  footer .credit p a, footer .copyright p a {
+    font-family: "Saudagar";
+    text-decoration: underline; }
+
+footer .credit p {
+  font-size: 1rem; }
+
+footer .copyright p {
+  font-size: 1.2rem; }
+
+h2 {
+  font-family: 'Saudagar';
+  text-align: center;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 4.25rem;
+  color: #1F1F1F;
+  margin: 10px 0; }
+  h2.home {
+    margin-top: 30px;
+    font-size: 3.5rem;
+    font-style: italic;
+    text-transform: none; }
+  @media only screen and (max-width: 1070px) {
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 0; }
+      h2.home {
+        display: none; } }
+
+h3 {
+  font-size: 3rem; }
+
+aside h2 {
+  margin-bottom: 0.6rem;
+  margin-top: 0; }
+
+aside h3 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: right;
+  width: 100%;
+  margin: 0; }
+
+aside p {
+  margin: 0 0 0.25rem; }
+  aside p::last-child {
+    margin: 0; }
+
+aside li {
+  margin-bottom: 0.125rem; }
+
+aside .header-menu-mobile a {
+  font-weight: 800;
+  text-transform: uppercase; }
+
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
+@media only screen and (max-width: 480px) {
+  aside .header-menu-mobile a {
+    font-size: 1.4rem; } }
+
+aside .cart-empty-text {
+  background-color: rgba(214, 208, 192, 0.8);
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  padding: 40px 30px;
+  border: solid #1F1F1F 2px;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 20px; }
+
+aside .cart-main .button {
+  border: solid #1F1F1F 2px;
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 0.8rem; }
+
+aside .cart-line p {
+  width: 90%;
+  margin: 0; }
+
+aside .cart-line a:hover {
+  text-decoration: none; }
+
+aside .cart-line span {
+  text-align: center;
+  font-size: 0.8rem; }
+
+aside .cart-summary-aside div a {
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase; }
+  aside .cart-summary-aside div a p {
+    margin: 0; }
+  aside .cart-summary-aside div a:hover {
+    color: #F1EDE2; }
+
+aside .cart-summary-aside .cart-subtotal dt {
+  font-weight: 800; }
+
+@media only screen and (max-width: 1070px) {
+  aside .cart-summary-aside div a:hover {
+    color: #1F1F1F; } }
+
+.address {
+  font-family: "Saudagar";
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px 25px;
+  font-size: 1.25rem;
+  font-style: italic;
+  text-align: center;
+  color: #1F1F1F;
+  background-color: #F1EDE2;
+  border: solid #1F1F1F 3px;
+  border-radius: 25px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+  @media only screen and (max-width: 1070px) {
+    .address {
+      filter: none;
+      border: none;
+      border-bottom: solid #1F1F1F 3px;
+      border-radius: 0;
+      padding: 15px 15%;
+      max-width: 100vw;
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+      margin: 0; } }
+
+main .main-taproom .sketch-address .address {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+  @media only screen and (max-width: 1070px) {
+    main .main-taproom .sketch-address .address {
+      margin: 0; } }
+
+main .main-events h3 {
+  font-size: 3rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 30px;
+  margin-bottom: 10px;
+  margin-left: 40px; }
+
+main .main-events .main-events-content .events-list {
+  margin-left: 40px;
+  font-size: 1.25rem; }
+  main .main-events .main-events-content .events-list li {
+    font-family: "Bogue-ExtraBold";
+    font-style: italic; }
+    main .main-events .main-events-content .events-list li .date {
+      font-style: normal;
+      font-family: "Bogue-Regular"; }
+
+@media only screen and (max-width: 1070px) {
+  main .main-events .main-events-content .events-list {
+    text-align: center;
+    margin: 10px 35px !important; }
+  main .main-events h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 10px 30px;
+    margin-top: 20px; } }
+
+main .product .product-main h1 {
+  font-size: 2.5rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 0; }
+
+main .product .product-main .product-price {
+  font-size: 1.5rem;
+  font-family: "Bogue-ExtraBold";
+  margin: 0; }
+
+main .product .product-main .product-description {
+  font-size: 1.2rem;
+  font-family: "Bogue-Regular";
+  margin: 0; }
+
+main .product .product-main button {
+  padding: 20px 30px;
+  margin-top: 20px;
+  cursor: pointer; }
+  main .product .product-main button:hover {
+    background-color: #BC4749; }
+
+main .taproom-address .address {
+  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 5px; }
+
+main .taproom-address .button {
+  margin-top: 15px;
+  margin-bottom: 0; }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-address .address {
+    margin-top: 0;
+    margin-bottom: 30px; }
+  main .taproom-address .button {
+    display: none; } }
+
+main .taproom-menus h3 {
+  width: 90vw;
+  font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  margin: 0;
+  padding: 0; }
+
+main .taproom-menus .updated-date {
+  font-style: italic;
+  padding: 5px 40px;
+  padding-right: 20px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: #BC4749;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  border: solid #1F1F1F 3px;
+  border-radius: 25px 0 0 25px;
+  border-right: 0; }
+
+main .taproom-menus .menu-nav .button {
+  height: 40px;
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  cursor: pointer; }
+  main .taproom-menus .menu-nav .button.selected {
+    color: #F6F6F6;
+    background-color: #778d79;
+    cursor: default; }
+    main .taproom-menus .menu-nav .button.selected img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-menus h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px; }
+  main .taproom-menus .updated-date {
+    order: 5;
+    position: initial;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    border: solid #1F1F1F 3px;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 15px; }
+  main .taproom-menus .menu-nav .button {
+    justify-content: space-between; } }
+
+.route-error h1, .route-error h2 {
+  margin: 0; }
+
+.route-error h1 {
+  color: #F1EDE2;
+  font-size: 75px;
+  font-family: 'Saudagar'; }
+
+.route-error h2 {
+  padding-top: 10px;
+  padding-bottom: 35px; }
+
+.hours h4 {
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%; }
+
+.hours .schedule li {
+  font-family: "Bogue-Extrabold";
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0; }
+  .hours .schedule li .time {
+    font-family: "Bogue-Regular";
+    font-size: 1.1rem;
+    font-style: italic; }
+
+.button {
+  background: #D8B56E;
+  border: solid #1F1F1F 3px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  color: #1F1F1F;
+  font-size: 1rem;
+  font-family: "Bogue-Regular";
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  height: 20px;
+  padding: 10px 30px 10px 30px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; }
+  .button:hover {
+    background: #778d79;
+    color: #F1EDE2;
+    text-decoration: none;
+    transition: background 0.2s ease-in; }
+    .button:hover img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button.decorative {
+    padding: 10px 20px; }
+  .button .button-icon {
+    width: 20px;
+    padding-bottom: 3px; }
+  .button .flourish {
+    width: 25px;
+    padding-bottom: 3px; }
+
+.button-secondary {
+  background: #778d79;
+  width: 170px;
+  height: 100%;
+  margin-top: 10px; }
+  .button-secondary:hover {
+    background: #C28165;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
+
+.button-tertiary {
+  background: #BC4749;
+  color: #F1EDE2; }
+  .button-tertiary img {
+    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button-tertiary:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button-tertiary:hover img {
+      filter: none; }
+
+.button-secondary, .button-tertiary {
+  font-size: 0.8rem;
+  color: #F1EDE2; }
+  @media only screen and (max-width: 1070px) {
+    .button-secondary, .button-tertiary {
+      font-size: 1rem; } }
+
+@media only screen and (max-width: 1070px) {
+  .button:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button:hover img {
+      filter: none; }
+  .button.cart, .button.menu-toggle {
+    display: flex;
+    flex-direction: row; }
+  .button.menu-active {
+    flex-direction: row-reverse; }
+  .button-secondary:hover {
+    background: #778d79;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: none; }
+  .button-tertiary:hover {
+    background: #BC4749;
+    color: #F1EDE2; }
+    .button-tertiary:hover img {
+      filter: none; } }
+
+@media only screen and (max-width: 480px) {
+  nav.header-submenu .button {
+    height: 28px;
+    font-size: 1.2rem; }
+    nav.header-submenu .button img {
+      width: 22px; } }
+
+nav.header-menu-desktop a .nav-text {
+  transform: perspective(8px) rotateX(-1deg);
+  font-size: 1.1rem;
+  padding-top: 5px;
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1F1F1F; }
+
+nav.header-menu-desktop a .button-icon {
+  display: none; }
+
 .hours {
   display: flex;
   flex-direction: column;
@@ -2293,6 +3169,1072 @@ a.mobile-only {
       margin: 15px !important;
       padding: 10px 25px 0 !important;
       outline: solid #D8B56E 12px; } }
+
+@font-face {
+  font-family: "Saudagar";
+  src: url(./../../public/fonts/saudagar.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Regular";
+  src: url(./../../public/fonts/bogue-regular.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Thin";
+  src: url(./../../public/fonts/bogue-thin.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-ExtraBold";
+  src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
+
+:root {
+  font-size: 18px;
+  letter-spacing: 0.75px; }
+  @media only screen and (max-width: 1070px) {
+    :root {
+      font-size: 17px; } }
+  @media only screen and (max-width: 480px) {
+    :root {
+      font-size: 16px; } }
+
+* {
+  font-family: "Bogue-Regular", sans-serif; }
+
+header .button-primary, footer .button-primary {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  height: 15px; }
+
+footer .credit p, footer .copyright p {
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding-bottom: 5px; }
+  footer .credit p a, footer .copyright p a {
+    font-family: "Saudagar";
+    text-decoration: underline; }
+
+footer .credit p {
+  font-size: 1rem; }
+
+footer .copyright p {
+  font-size: 1.2rem; }
+
+h2 {
+  font-family: 'Saudagar';
+  text-align: center;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 4.25rem;
+  color: #1F1F1F;
+  margin: 10px 0; }
+  h2.home {
+    margin-top: 30px;
+    font-size: 3.5rem;
+    font-style: italic;
+    text-transform: none; }
+  @media only screen and (max-width: 1070px) {
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 0; }
+      h2.home {
+        display: none; } }
+
+h3 {
+  font-size: 3rem; }
+
+aside h2 {
+  margin-bottom: 0.6rem;
+  margin-top: 0; }
+
+aside h3 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: right;
+  width: 100%;
+  margin: 0; }
+
+aside p {
+  margin: 0 0 0.25rem; }
+  aside p::last-child {
+    margin: 0; }
+
+aside li {
+  margin-bottom: 0.125rem; }
+
+aside .header-menu-mobile a {
+  font-weight: 800;
+  text-transform: uppercase; }
+
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
+@media only screen and (max-width: 480px) {
+  aside .header-menu-mobile a {
+    font-size: 1.4rem; } }
+
+aside .cart-empty-text {
+  background-color: rgba(214, 208, 192, 0.8);
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  padding: 40px 30px;
+  border: solid #1F1F1F 2px;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 20px; }
+
+aside .cart-main .button {
+  border: solid #1F1F1F 2px;
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 0.8rem; }
+
+aside .cart-line p {
+  width: 90%;
+  margin: 0; }
+
+aside .cart-line a:hover {
+  text-decoration: none; }
+
+aside .cart-line span {
+  text-align: center;
+  font-size: 0.8rem; }
+
+aside .cart-summary-aside div a {
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase; }
+  aside .cart-summary-aside div a p {
+    margin: 0; }
+  aside .cart-summary-aside div a:hover {
+    color: #F1EDE2; }
+
+aside .cart-summary-aside .cart-subtotal dt {
+  font-weight: 800; }
+
+@media only screen and (max-width: 1070px) {
+  aside .cart-summary-aside div a:hover {
+    color: #1F1F1F; } }
+
+.address {
+  font-family: "Saudagar";
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px 25px;
+  font-size: 1.25rem;
+  font-style: italic;
+  text-align: center;
+  color: #1F1F1F;
+  background-color: #F1EDE2;
+  border: solid #1F1F1F 3px;
+  border-radius: 25px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+  @media only screen and (max-width: 1070px) {
+    .address {
+      filter: none;
+      border: none;
+      border-bottom: solid #1F1F1F 3px;
+      border-radius: 0;
+      padding: 15px 15%;
+      max-width: 100vw;
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+      margin: 0; } }
+
+main .main-taproom .sketch-address .address {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+  @media only screen and (max-width: 1070px) {
+    main .main-taproom .sketch-address .address {
+      margin: 0; } }
+
+main .main-events h3 {
+  font-size: 3rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 30px;
+  margin-bottom: 10px;
+  margin-left: 40px; }
+
+main .main-events .main-events-content .events-list {
+  margin-left: 40px;
+  font-size: 1.25rem; }
+  main .main-events .main-events-content .events-list li {
+    font-family: "Bogue-ExtraBold";
+    font-style: italic; }
+    main .main-events .main-events-content .events-list li .date {
+      font-style: normal;
+      font-family: "Bogue-Regular"; }
+
+@media only screen and (max-width: 1070px) {
+  main .main-events .main-events-content .events-list {
+    text-align: center;
+    margin: 10px 35px !important; }
+  main .main-events h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 10px 30px;
+    margin-top: 20px; } }
+
+main .product .product-main h1 {
+  font-size: 2.5rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 0; }
+
+main .product .product-main .product-price {
+  font-size: 1.5rem;
+  font-family: "Bogue-ExtraBold";
+  margin: 0; }
+
+main .product .product-main .product-description {
+  font-size: 1.2rem;
+  font-family: "Bogue-Regular";
+  margin: 0; }
+
+main .product .product-main button {
+  padding: 20px 30px;
+  margin-top: 20px;
+  cursor: pointer; }
+  main .product .product-main button:hover {
+    background-color: #BC4749; }
+
+main .taproom-address .address {
+  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 5px; }
+
+main .taproom-address .button {
+  margin-top: 15px;
+  margin-bottom: 0; }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-address .address {
+    margin-top: 0;
+    margin-bottom: 30px; }
+  main .taproom-address .button {
+    display: none; } }
+
+main .taproom-menus h3 {
+  width: 90vw;
+  font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  margin: 0;
+  padding: 0; }
+
+main .taproom-menus .updated-date {
+  font-style: italic;
+  padding: 5px 40px;
+  padding-right: 20px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: #BC4749;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  border: solid #1F1F1F 3px;
+  border-radius: 25px 0 0 25px;
+  border-right: 0; }
+
+main .taproom-menus .menu-nav .button {
+  height: 40px;
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  cursor: pointer; }
+  main .taproom-menus .menu-nav .button.selected {
+    color: #F6F6F6;
+    background-color: #778d79;
+    cursor: default; }
+    main .taproom-menus .menu-nav .button.selected img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-menus h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px; }
+  main .taproom-menus .updated-date {
+    order: 5;
+    position: initial;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    border: solid #1F1F1F 3px;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 15px; }
+  main .taproom-menus .menu-nav .button {
+    justify-content: space-between; } }
+
+.route-error h1, .route-error h2 {
+  margin: 0; }
+
+.route-error h1 {
+  color: #F1EDE2;
+  font-size: 75px;
+  font-family: 'Saudagar'; }
+
+.route-error h2 {
+  padding-top: 10px;
+  padding-bottom: 35px; }
+
+.hours h4 {
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%; }
+
+.hours .schedule li {
+  font-family: "Bogue-Extrabold";
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0; }
+  .hours .schedule li .time {
+    font-family: "Bogue-Regular";
+    font-size: 1.1rem;
+    font-style: italic; }
+
+.button {
+  background: #D8B56E;
+  border: solid #1F1F1F 3px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  color: #1F1F1F;
+  font-size: 1rem;
+  font-family: "Bogue-Regular";
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  height: 20px;
+  padding: 10px 30px 10px 30px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; }
+  .button:hover {
+    background: #778d79;
+    color: #F1EDE2;
+    text-decoration: none;
+    transition: background 0.2s ease-in; }
+    .button:hover img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button.decorative {
+    padding: 10px 20px; }
+  .button .button-icon {
+    width: 20px;
+    padding-bottom: 3px; }
+  .button .flourish {
+    width: 25px;
+    padding-bottom: 3px; }
+
+.button-secondary {
+  background: #778d79;
+  width: 170px;
+  height: 100%;
+  margin-top: 10px; }
+  .button-secondary:hover {
+    background: #C28165;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
+
+.button-tertiary {
+  background: #BC4749;
+  color: #F1EDE2; }
+  .button-tertiary img {
+    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button-tertiary:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button-tertiary:hover img {
+      filter: none; }
+
+.button-secondary, .button-tertiary {
+  font-size: 0.8rem;
+  color: #F1EDE2; }
+  @media only screen and (max-width: 1070px) {
+    .button-secondary, .button-tertiary {
+      font-size: 1rem; } }
+
+@media only screen and (max-width: 1070px) {
+  .button:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button:hover img {
+      filter: none; }
+  .button.cart, .button.menu-toggle {
+    display: flex;
+    flex-direction: row; }
+  .button.menu-active {
+    flex-direction: row-reverse; }
+  .button-secondary:hover {
+    background: #778d79;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: none; }
+  .button-tertiary:hover {
+    background: #BC4749;
+    color: #F1EDE2; }
+    .button-tertiary:hover img {
+      filter: none; } }
+
+@media only screen and (max-width: 480px) {
+  nav.header-submenu .button {
+    height: 28px;
+    font-size: 1.2rem; }
+    nav.header-submenu .button img {
+      width: 22px; } }
+
+nav.header-menu-desktop a .nav-text {
+  transform: perspective(8px) rotateX(-1deg);
+  font-size: 1.1rem;
+  padding-top: 5px;
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1F1F1F; }
+
+nav.header-menu-desktop a .button-icon {
+  display: none; }
+
+.calendar, .fc {
+  width: 90vw !important;
+  max-width: 2000px;
+  height: 100%;
+  margin-bottom: 10px; }
+
+.calendar .fc-button-active {
+  background-color: #778d79 !important;
+  color: #F6F6F6 !important;
+  box-shadow: none !important; }
+
+.calendar .fc-button {
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #1F1F1F;
+  border: solid #1F1F1F 3px;
+  background-color: #D8B56E;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  border-radius: 0;
+  min-width: 75px;
+  transition: background-color 0.4s, color 0.4s; }
+  .calendar .fc-button:hover, .calendar .fc-button:active, .calendar .fc-button:focus {
+    background-color: #778d79 !important;
+    color: #F6F6F6 !important;
+    box-shadow: none !important; }
+  .calendar .fc-button:disabled {
+    opacity: 1;
+    border: solid #1F1F1F 3px;
+    background-color: #778d79;
+    color: #F6F6F6 !important;
+    cursor: pointer; }
+
+.calendar .fc-toolbar-title {
+  font-family: "Bogue-Regular"; }
+
+.calendar .fc-list-table {
+  filter: drop-shadow(-5px 5px 2px #1f1f1f80); }
+
+.calendar .fc-list-empty {
+  background-color: #F1EDE2;
+  height: 150px;
+  font-size: 22px;
+  font-style: italic; }
+
+.calendar .fc-scrollgrid-section-body {
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+
+.calendar .fc {
+  margin-top: 25px; }
+  .calendar .fc a:hover {
+    cursor: default !important;
+    text-decoration: none !important; }
+  .calendar .fc h2 {
+    color: #1F1F1F; }
+  .calendar .fc .fc-listMonth-view {
+    border: solid #1F1F1F 3px !important; }
+    .calendar .fc .fc-listMonth-view .fc-event {
+      background-color: #F1EDE2; }
+  .calendar .fc .fc-list-day th {
+    background-color: #BC4749 !important; }
+    .calendar .fc .fc-list-day th a {
+      color: #F6F6F6 !important;
+      font-weight: 400; }
+  .calendar .fc .fc-list-event-dot {
+    display: none; }
+  .calendar .fc .fc-daygrid-event {
+    background-color: #BC4749;
+    color: #F1EDE2;
+    border: solid #1F1F1F 2px;
+    padding: 2px 5px;
+    margin: 0px 10px;
+    text-align: center; }
+    .calendar .fc .fc-daygrid-event .fc-daygrid-event-dot {
+      display: none; }
+  .calendar .fc .fc-event td {
+    border-left: 0;
+    border-right: 0; }
+  .calendar .fc .fc-event:hover th, .calendar .fc .fc-event:hover tr {
+    opacity: 1; }
+  .calendar .fc .fc-event:hover td {
+    background-color: unset !important; }
+  .calendar .fc .fc-cell-shaded {
+    background: none !important;
+    border-top: none; }
+  .calendar .fc .fc-daygrid-day-top a {
+    cursor: default;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 3px; }
+  .calendar .fc .fc-button-group {
+    gap: 12px; }
+  .calendar .fc .fc-scrollgrid-sync-table tbody {
+    background-color: #F1EDE2; }
+  .calendar .fc tbody {
+    border: solid #1F1F1F 3px;
+    border-top: 0;
+    padding-top: 0; }
+  .calendar .fc td {
+    border-top: none;
+    border: solid #1F1F1F 3px; }
+  .calendar .fc .fc-scrollgrid-section th {
+    background: none !important; }
+
+@media only screen and (max-width: 1070px) {
+  .fc {
+    margin-top: 0; }
+  .calendar {
+    padding: 0;
+    padding-bottom: 10px; }
+    .calendar .fc-header-toolbar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 0 !important; }
+    .calendar .fc-toolbar-title {
+      margin-top: 10px; }
+    .calendar .fc-toolbar-chunk {
+      width: 100%;
+      display: flex;
+      justify-content: center; }
+    .calendar .fc-toolbar-chunk:nth-of-type(3) {
+      height: 0; }
+    .calendar .fc-dayGridMonth-button, .calendar .fc-listMonth-button {
+      display: none; } }
+
+@media only screen and (max-width: 480px) {
+  .fc-toolbar-chunk:nth-of-type(1) {
+    display: flex;
+    gap: 12px; }
+    .fc-toolbar-chunk:nth-of-type(1) .fc-today-button {
+      margin: 0; } }
+
+@font-face {
+  font-family: "Saudagar";
+  src: url(./../../public/fonts/saudagar.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Regular";
+  src: url(./../../public/fonts/bogue-regular.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-Thin";
+  src: url(./../../public/fonts/bogue-thin.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Bogue-ExtraBold";
+  src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
+
+:root {
+  font-size: 18px;
+  letter-spacing: 0.75px; }
+  @media only screen and (max-width: 1070px) {
+    :root {
+      font-size: 17px; } }
+  @media only screen and (max-width: 480px) {
+    :root {
+      font-size: 16px; } }
+
+* {
+  font-family: "Bogue-Regular", sans-serif; }
+
+header .button-primary, footer .button-primary {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  height: 15px; }
+
+footer .credit p, footer .copyright p {
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding-bottom: 5px; }
+  footer .credit p a, footer .copyright p a {
+    font-family: "Saudagar";
+    text-decoration: underline; }
+
+footer .credit p {
+  font-size: 1rem; }
+
+footer .copyright p {
+  font-size: 1.2rem; }
+
+h2 {
+  font-family: 'Saudagar';
+  text-align: center;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 4.25rem;
+  color: #1F1F1F;
+  margin: 10px 0; }
+  h2.home {
+    margin-top: 30px;
+    font-size: 3.5rem;
+    font-style: italic;
+    text-transform: none; }
+  @media only screen and (max-width: 1070px) {
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 0; }
+      h2.home {
+        display: none; } }
+
+h3 {
+  font-size: 3rem; }
+
+aside h2 {
+  margin-bottom: 0.6rem;
+  margin-top: 0; }
+
+aside h3 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: right;
+  width: 100%;
+  margin: 0; }
+
+aside p {
+  margin: 0 0 0.25rem; }
+  aside p::last-child {
+    margin: 0; }
+
+aside li {
+  margin-bottom: 0.125rem; }
+
+aside .header-menu-mobile a {
+  font-weight: 800;
+  text-transform: uppercase; }
+
+@media only screen and (max-width: 1070px) {
+  aside .header-menu-mobile a {
+    font-size: 1.25rem; } }
+
+@media only screen and (max-width: 480px) {
+  aside .header-menu-mobile a {
+    font-size: 1.4rem; } }
+
+aside .cart-empty-text {
+  background-color: rgba(214, 208, 192, 0.8);
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  padding: 40px 30px;
+  border: solid #1F1F1F 2px;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 20px; }
+
+aside .cart-main .button {
+  border: solid #1F1F1F 2px;
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 0.8rem; }
+
+aside .cart-line p {
+  width: 90%;
+  margin: 0; }
+
+aside .cart-line a:hover {
+  text-decoration: none; }
+
+aside .cart-line span {
+  text-align: center;
+  font-size: 0.8rem; }
+
+aside .cart-summary-aside div a {
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase; }
+  aside .cart-summary-aside div a p {
+    margin: 0; }
+  aside .cart-summary-aside div a:hover {
+    color: #F1EDE2; }
+
+aside .cart-summary-aside .cart-subtotal dt {
+  font-weight: 800; }
+
+@media only screen and (max-width: 1070px) {
+  aside .cart-summary-aside div a:hover {
+    color: #1F1F1F; } }
+
+.address {
+  font-family: "Saudagar";
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px 25px;
+  font-size: 1.25rem;
+  font-style: italic;
+  text-align: center;
+  color: #1F1F1F;
+  background-color: #F1EDE2;
+  border: solid #1F1F1F 3px;
+  border-radius: 25px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+  @media only screen and (max-width: 1070px) {
+    .address {
+      filter: none;
+      border: none;
+      border-bottom: solid #1F1F1F 3px;
+      border-radius: 0;
+      padding: 15px 15%;
+      max-width: 100vw;
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+      margin: 0; } }
+
+main .main-taproom .sketch-address .address {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+  @media only screen and (max-width: 1070px) {
+    main .main-taproom .sketch-address .address {
+      margin: 0; } }
+
+main .main-events h3 {
+  font-size: 3rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 30px;
+  margin-bottom: 10px;
+  margin-left: 40px; }
+
+main .main-events .main-events-content .events-list {
+  margin-left: 40px;
+  font-size: 1.25rem; }
+  main .main-events .main-events-content .events-list li {
+    font-family: "Bogue-ExtraBold";
+    font-style: italic; }
+    main .main-events .main-events-content .events-list li .date {
+      font-style: normal;
+      font-family: "Bogue-Regular"; }
+
+@media only screen and (max-width: 1070px) {
+  main .main-events .main-events-content .events-list {
+    text-align: center;
+    margin: 10px 35px !important; }
+  main .main-events h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 10px 30px;
+    margin-top: 20px; } }
+
+main .product .product-main h1 {
+  font-size: 2.5rem;
+  font-family: "Saudagar";
+  text-transform: uppercase;
+  margin: 0; }
+
+main .product .product-main .product-price {
+  font-size: 1.5rem;
+  font-family: "Bogue-ExtraBold";
+  margin: 0; }
+
+main .product .product-main .product-description {
+  font-size: 1.2rem;
+  font-family: "Bogue-Regular";
+  margin: 0; }
+
+main .product .product-main button {
+  padding: 20px 30px;
+  margin-top: 20px;
+  cursor: pointer; }
+  main .product .product-main button:hover {
+    background-color: #BC4749; }
+
+main .taproom-address .address {
+  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 5px; }
+
+main .taproom-address .button {
+  margin-top: 15px;
+  margin-bottom: 0; }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-address .address {
+    margin-top: 0;
+    margin-bottom: 30px; }
+  main .taproom-address .button {
+    display: none; } }
+
+main .taproom-menus h3 {
+  width: 90vw;
+  font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  margin: 0;
+  padding: 0; }
+
+main .taproom-menus .updated-date {
+  font-style: italic;
+  padding: 5px 40px;
+  padding-right: 20px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: #BC4749;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  border: solid #1F1F1F 3px;
+  border-radius: 25px 0 0 25px;
+  border-right: 0; }
+
+main .taproom-menus .menu-nav .button {
+  height: 40px;
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  cursor: pointer; }
+  main .taproom-menus .menu-nav .button.selected {
+    color: #F6F6F6;
+    background-color: #778d79;
+    cursor: default; }
+    main .taproom-menus .menu-nav .button.selected img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+
+@media only screen and (max-width: 1070px) {
+  main .taproom-menus h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px; }
+  main .taproom-menus .updated-date {
+    order: 5;
+    position: initial;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    border: solid #1F1F1F 3px;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 15px; }
+  main .taproom-menus .menu-nav .button {
+    justify-content: space-between; } }
+
+.route-error h1, .route-error h2 {
+  margin: 0; }
+
+.route-error h1 {
+  color: #F1EDE2;
+  font-size: 75px;
+  font-family: 'Saudagar'; }
+
+.route-error h2 {
+  padding-top: 10px;
+  padding-bottom: 35px; }
+
+.hours h4 {
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%; }
+
+.hours .schedule li {
+  font-family: "Bogue-Extrabold";
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0; }
+  .hours .schedule li .time {
+    font-family: "Bogue-Regular";
+    font-size: 1.1rem;
+    font-style: italic; }
+
+.button {
+  background: #D8B56E;
+  border: solid #1F1F1F 3px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  color: #1F1F1F;
+  font-size: 1rem;
+  font-family: "Bogue-Regular";
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  height: 20px;
+  padding: 10px 30px 10px 30px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; }
+  .button:hover {
+    background: #778d79;
+    color: #F1EDE2;
+    text-decoration: none;
+    transition: background 0.2s ease-in; }
+    .button:hover img {
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button.decorative {
+    padding: 10px 20px; }
+  .button .button-icon {
+    width: 20px;
+    padding-bottom: 3px; }
+  .button .flourish {
+    width: 25px;
+    padding-bottom: 3px; }
+
+.button-secondary {
+  background: #778d79;
+  width: 170px;
+  height: 100%;
+  margin-top: 10px; }
+  .button-secondary:hover {
+    background: #C28165;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
+
+.button-tertiary {
+  background: #BC4749;
+  color: #F1EDE2; }
+  .button-tertiary img {
+    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  .button-tertiary:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button-tertiary:hover img {
+      filter: none; }
+
+.button-secondary, .button-tertiary {
+  font-size: 0.8rem;
+  color: #F1EDE2; }
+  @media only screen and (max-width: 1070px) {
+    .button-secondary, .button-tertiary {
+      font-size: 1rem; } }
+
+@media only screen and (max-width: 1070px) {
+  .button:hover {
+    background: #D8B56E;
+    color: #1F1F1F; }
+    .button:hover img {
+      filter: none; }
+  .button.cart, .button.menu-toggle {
+    display: flex;
+    flex-direction: row; }
+  .button.menu-active {
+    flex-direction: row-reverse; }
+  .button-secondary:hover {
+    background: #778d79;
+    color: #1F1F1F; }
+    .button-secondary:hover img {
+      filter: none; }
+  .button-tertiary:hover {
+    background: #BC4749;
+    color: #F1EDE2; }
+    .button-tertiary:hover img {
+      filter: none; } }
+
+@media only screen and (max-width: 480px) {
+  nav.header-submenu .button {
+    height: 28px;
+    font-size: 1.2rem; }
+    nav.header-submenu .button img {
+      width: 22px; } }
+
+nav.header-menu-desktop a .nav-text {
+  transform: perspective(8px) rotateX(-1deg);
+  font-size: 1.1rem;
+  padding-top: 5px;
+  font-family: "Saudagar";
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1F1F1F; }
+
+nav.header-menu-desktop a .button-icon {
+  display: none; }
+
+.store-disclaimers {
+  background-color: rgba(214, 208, 192, 0.8);
+  padding: 30px;
+  border-top: solid #1F1F1F 3px;
+  text-align: center; }
+  .store-disclaimers .text-box {
+    padding: 30px 40px;
+    max-width: 85%;
+    margin: 0 auto; }
+    .store-disclaimers .text-box h3 {
+      font-size: 25px;
+      text-transform: uppercase;
+      margin: 0;
+      margin-bottom: 10px; }
+    .store-disclaimers .text-box p {
+      margin: 0;
+      font-size: 16px; }
+  @media only screen and (max-width: 1070px) {
+    .store-disclaimers p {
+      max-width: 100%; } }
+
+.store {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(119, 141, 121, 0.8);
+  padding: 30px; }
+  .store .recommended-product {
+    max-width: 350px; }
+    .store .recommended-product img {
+      border: solid 3px #1F1F1F;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      border-radius: 0;
+      aspect-ratio: 6/3;
+      object-fit: cover; }
+    .store .recommended-product h4 {
+      font-family: "Saudagar";
+      font-weight: 800;
+      font-size: 24px; }
+    .store .recommended-product small {
+      font-size: 16px;
+      line-height: 0.75; }
+    .store .recommended-product:hover small div {
+      text-decoration: none; }
+  .store h1 {
+    display: none;
+    margin: 0;
+    padding-top: 20px; }
+  .store h2 {
+    color: #1F1F1F;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-style: normal;
+    margin-top: 0; }
+  @media only screen and (max-width: 1070px) {
+    .store {
+      text-align: center;
+      padding-top: 0; }
+      .store .recommended-product {
+        width: 100%;
+        margin: 0 auto; }
+        .store .recommended-product small {
+          font-size: 18px; }
+      .store h2 {
+        font-size: 40px;
+        margin-bottom: 20px; } }
 
 .cart-main.with-discount {
   max-height: calc(100vh - 300px); }
@@ -2479,11 +4421,24 @@ hr {
       width: 90%; } }
 
 main .contact-content {
-  background-color: rgba(216, 181, 110, 0.8);
-  height: 400px; }
+  background-color: rgba(119, 141, 121, 0.8);
+  height: 400px;
+  padding-top: 15px; }
+  main .contact-content .contact-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px; }
+    main .contact-content .contact-nav .button {
+      height: 40px;
+      cursor: pointer; }
+      main .contact-content .contact-nav .button:hover {
+        background-color: #BC4749; }
+      main .contact-content .contact-nav .button.selected {
+        background-color: #BC4749;
+        color: #F1EDE2; }
 
 main .retail-content {
-  background-color: rgba(216, 181, 110, 0.8);
+  background-color: rgba(119, 141, 121, 0.8);
   height: 400px; }
 
 main .product {
@@ -2545,8 +4500,8 @@ main .main-heading hr {
 @media only screen and (max-width: 1070px) {
   main .main-heading {
     background: #F1EDE2 !important;
-    border-bottom: none;
-    padding: 30px 0; }
+    border-bottom: 0 !important;
+    padding: 30px 0 15px 0; }
     main .main-heading hr {
       margin-top: 20px; } }
 
@@ -2576,7 +4531,8 @@ main .main-taproom {
     main .main-taproom .sketch-address .bar-sketch {
       width: 80%;
       max-width: 500px;
-      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      padding-bottom: 5px; }
   main .main-taproom .hours {
     width: 35%;
     height: 100%;
@@ -2613,7 +4569,8 @@ main .main-taproom {
         main .main-taproom .sketch-address .address {
           order: -1;
           max-width: 100vw;
-          width: 80vw; }
+          width: 80vw;
+          padding-bottom: 30px; }
         main .main-taproom .sketch-address .button {
           display: none; }
       main .main-taproom .hours {
@@ -2764,8 +4721,9 @@ main .taproom-address {
     background-color: rgba(119, 141, 121, 0.8);
     border-right: solid #1F1F1F 3px; }
   main .taproom-address .hours {
+    width: 75%;
     margin: 15px;
-    margin-bottom: 30px; }
+    margin-bottom: 20px; }
   @media only screen and (max-width: 1070px) {
     main .taproom-address {
       flex-direction: column;
@@ -2780,7 +4738,9 @@ main .taproom-address {
         padding-top: 0;
         border-right: none; }
         main .taproom-address .taproom-info .hours {
-          margin-bottom: 22px !important; } }
+          margin-bottom: 25px !important; }
+        main .taproom-address .taproom-info .address {
+          order: -1; } }
 
 main .taproom-menus {
   position: relative;
@@ -2881,31 +4841,6 @@ main .taproom-events {
     padding: 0; }
   main .taproom-events h4 {
     display: none; }
-  main .taproom-events .fc-button-active {
-    background-color: #778d79 !important;
-    color: #F6F6F6 !important;
-    box-shadow: none !important; }
-  main .taproom-events .fc-button {
-    text-transform: uppercase;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: #1F1F1F;
-    border: solid #1F1F1F 3px;
-    background-color: #D8B56E;
-    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-    border-radius: 0;
-    min-width: 75px;
-    transition: background-color 0.4s, color 0.4s; }
-    main .taproom-events .fc-button:hover, main .taproom-events .fc-button:active, main .taproom-events .fc-button:focus {
-      background-color: #778d79 !important;
-      color: #F6F6F6 !important;
-      box-shadow: none !important; }
-    main .taproom-events .fc-button:disabled {
-      opacity: 1;
-      border: solid #1F1F1F 3px;
-      background-color: #778d79;
-      color: #F6F6F6 !important;
-      cursor: pointer; }
   @media only screen and (max-width: 1070px) {
     main .taproom-events hr {
       background-color: #C28165;
@@ -2925,168 +4860,6 @@ main .taproom-events {
     main .taproom-events .fc-button:disabled:hover {
       background-color: #778d79 !important;
       color: #F6F6F6 !important; } }
-  main .taproom-events .calendar, main .taproom-events .fc {
-    width: 90vw !important;
-    max-width: 2000px;
-    height: 100%;
-    margin-bottom: 10px; }
-  main .taproom-events .fc-list-table {
-    filter: drop-shadow(-5px 5px 2px #1f1f1f80); }
-  main .taproom-events .fc-list-empty {
-    background-color: #F1EDE2;
-    height: 150px;
-    font-size: 22px;
-    font-style: italic; }
-  main .taproom-events .fc-scrollgrid-section-body {
-    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
-  main .taproom-events .fc {
-    margin-top: 25px; }
-    main .taproom-events .fc a:hover {
-      cursor: default !important;
-      text-decoration: none !important; }
-    main .taproom-events .fc h2 {
-      color: #1F1F1F; }
-    main .taproom-events .fc .fc-listMonth-view {
-      border: solid #1F1F1F 3px !important; }
-      main .taproom-events .fc .fc-listMonth-view .fc-event {
-        background-color: #F1EDE2; }
-    main .taproom-events .fc .fc-list-day th {
-      background-color: #BC4749 !important; }
-      main .taproom-events .fc .fc-list-day th a {
-        color: #F6F6F6 !important;
-        font-weight: 400; }
-    main .taproom-events .fc .fc-list-event-dot {
-      display: none; }
-    main .taproom-events .fc .fc-daygrid-event {
-      background-color: #BC4749;
-      color: #F1EDE2;
-      border: solid #1F1F1F 2px;
-      padding: 2px 5px;
-      margin: 0px 10px;
-      text-align: center; }
-      main .taproom-events .fc .fc-daygrid-event .fc-daygrid-event-dot {
-        display: none; }
-    main .taproom-events .fc .fc-event td {
-      border-left: 0;
-      border-right: 0; }
-    main .taproom-events .fc .fc-event:hover th, main .taproom-events .fc .fc-event:hover tr {
-      opacity: 1; }
-    main .taproom-events .fc .fc-event:hover td {
-      background-color: unset !important; }
-    main .taproom-events .fc .fc-cell-shaded {
-      background: none !important;
-      border-top: none; }
-    main .taproom-events .fc .fc-daygrid-day-top a {
-      cursor: default;
-      text-decoration: none;
-      font-size: 18px;
-      padding-right: 3px; }
-    main .taproom-events .fc .fc-button-group {
-      gap: 12px; }
-    main .taproom-events .fc .fc-scrollgrid-sync-table tbody {
-      background-color: #F1EDE2; }
-    main .taproom-events .fc tbody {
-      border: solid #1F1F1F 3px;
-      border-top: 0;
-      padding-top: 0; }
-    main .taproom-events .fc td {
-      border-top: none;
-      border: solid #1F1F1F 3px; }
-    main .taproom-events .fc .fc-scrollgrid-section th {
-      background: none !important; }
-  @media only screen and (max-width: 1070px) {
-    main .taproom-events .fc {
-      margin-top: 0; }
-    main .taproom-events .calendar {
-      padding: 10px 0; }
-      main .taproom-events .calendar .fc-header-toolbar {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 15px;
-        margin: 0; }
-      main .taproom-events .calendar .fc-toolbar-chunk {
-        width: 100%;
-        display: flex;
-        justify-content: center; }
-      main .taproom-events .calendar .fc-toolbar-chunk:nth-of-type(3) {
-        height: 0; }
-      main .taproom-events .calendar .fc-dayGridMonth-button, main .taproom-events .calendar .fc-listMonth-button {
-        display: none; } }
-  @media only screen and (max-width: 480px) {
-    main .taproom-events .fc-toolbar-chunk:nth-of-type(1) {
-      display: flex;
-      gap: 12px; }
-      main .taproom-events .fc-toolbar-chunk:nth-of-type(1) .fc-today-button {
-        margin: 0; } }
-
-main .store-disclaimers {
-  background-color: rgba(214, 208, 192, 0.8);
-  padding: 30px;
-  border-top: solid #1F1F1F 3px;
-  text-align: center; }
-  main .store-disclaimers .text-box {
-    padding: 30px 40px;
-    max-width: 85%;
-    margin: 0 auto; }
-    main .store-disclaimers .text-box h3 {
-      font-size: 25px;
-      text-transform: uppercase;
-      margin: 0;
-      margin-bottom: 10px; }
-    main .store-disclaimers .text-box p {
-      margin: 0;
-      font-size: 16px; }
-  @media only screen and (max-width: 1070px) {
-    main .store-disclaimers p {
-      max-width: 100%; } }
-
-main .store {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(119, 141, 121, 0.8);
-  padding: 30px; }
-  main .store .recommended-product {
-    max-width: 350px; }
-    main .store .recommended-product img {
-      border: solid 3px #1F1F1F;
-      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-      border-radius: 0;
-      aspect-ratio: 6/3;
-      object-fit: cover; }
-    main .store .recommended-product h4 {
-      font-family: "Saudagar";
-      font-weight: 800;
-      font-size: 24px; }
-    main .store .recommended-product small {
-      font-size: 16px;
-      line-height: 0.75; }
-    main .store .recommended-product:hover small div {
-      text-decoration: none; }
-  main .store h1 {
-    display: none;
-    margin: 0;
-    padding-top: 20px; }
-  main .store h2 {
-    color: #1F1F1F;
-    font-size: 50px;
-    text-transform: uppercase;
-    font-style: normal;
-    margin-top: 0; }
-  @media only screen and (max-width: 1070px) {
-    main .store {
-      text-align: center;
-      padding-top: 0; }
-      main .store .recommended-product {
-        width: 100%;
-        margin: 0 auto; }
-        main .store .recommended-product small {
-          font-size: 18px; }
-      main .store h2 {
-        font-size: 40px;
-        margin-bottom: 20px; } }
 
 @media only screen and (max-width: 1070px) {
   * {

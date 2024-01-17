@@ -142,12 +142,32 @@ hr {
 main {
 
   .contact-content {
-    background-color: rgba($color2, 0.8);
+    background-color: rgba($color1, 0.8);
     height: 400px;
+    padding-top: 15px;
+
+    .contact-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      .button {
+        height: 40px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color4;
+        }
+        &.selected {
+          background-color: $color4;
+          color: $light;
+        }
+      }
+    }
   }
 
   .retail-content {
-    background-color: rgba($color2, 0.8);
+    background-color: rgba($color1, 0.8);
     height: 400px;
   }
 
@@ -225,8 +245,8 @@ main {
     // responsive to mobile
     @media only screen and (max-width: $tablet) {
       background: $light !important;
-      border-bottom: none;
-      padding: 30px 0;
+      border-bottom: 0 !important;
+      padding: 30px 0 15px 0;
       hr {
         margin-top: 20px;
       }
@@ -262,6 +282,7 @@ main {
         width: 80%;
         max-width: 500px;
         filter: $default-shadow;
+        padding-bottom: 5px;
       }
     }
     .hours {
@@ -312,6 +333,7 @@ main {
           order: -1;
           max-width: 100vw;
           width: 80vw;
+          padding-bottom: 30px;
         }
         .button {
           display: none;
@@ -515,8 +537,9 @@ main {
       border-right: $default-border;
     }
     .hours {
+      width: 75%;
       margin: 15px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     // responsive to tablet
@@ -535,7 +558,10 @@ main {
         padding-top: 0;
         border-right: none;
         .hours {
-          margin-bottom: 22px !important;
+          margin-bottom: 25px !important;
+        }
+        .address {
+          order: -1;
         }
       }
     }

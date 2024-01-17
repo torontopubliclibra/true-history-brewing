@@ -128,10 +128,18 @@ aside {
             font-weight: 800;
             text-transform: uppercase;
         }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+            a {
+                font-size: 1.25rem;
+            }
+        }
+
         // responsive to mobile
         @media only screen and (max-width: $mobile) {
             a {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
         }
     }
@@ -195,6 +203,8 @@ aside {
 }
 
 .address {
+    font-family: "Saudagar";
+    font-weight: 800;
     margin-top: 10px;
     margin-bottom: 15px;
     padding: 10px 25px;
@@ -215,7 +225,7 @@ aside {
         border-radius: 0;
         padding: 15px 15%;
         max-width: 100vw;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         letter-spacing: 1.5px;
         margin: 0;
     }
@@ -308,11 +318,11 @@ main {
         .address {
             width: 90%;
             margin-top: 15px;
+            margin-bottom: 5px;
         }
         .button {
-            width: 300px;
             margin-top: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 0;
         }
 
         // responsive to tablet
@@ -469,11 +479,6 @@ main {
     .flourish {
       width: 25px;
       padding-bottom: 3px;
-    }
-
-    // responsive to tablet
-    @media only screen and (max-width: $tablet) {
-        font-size: 1.2rem;
     }
 }
 
