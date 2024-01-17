@@ -89,6 +89,14 @@ export default function Homepage() {
     setSelectedMenu(menu);
   }
 
+  let buttonClass = (button) => {
+    if (button == selectedMenu) {
+      return 'button button-primary selected';
+    } else {
+      return 'button button-primary';
+    }
+  }
+
   return (
     <>
         <section className="heading taproom-heading">
@@ -97,9 +105,9 @@ export default function Homepage() {
         <section className="taproom-address">
           <img src={taproomPhoto} className="taproom-photo" />
           <div className="taproom-info">
-            <p className="address">1154 St. Clair Avenue W, Toronto, Ontario</p>
-            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon"/></Link>
             <Hours/>
+            <p className="address">1154 St. Clair Avenue West, Toronto, Ontario</p>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon"/></Link>
           </div>
         </section>
         <section className="taproom-events" id="calendar">
@@ -111,26 +119,26 @@ export default function Homepage() {
           <h3>Menus</h3>
           <p className='updated-date'>Last updated: 14/01/24</p>
           <ul className='menu-nav'>
-            {
-              selectedMenu !== "beers"
-              ? <li><button onClick={() => handleMenuChange("beers")} className='button button-primary'>Beers <img src={beer} className="button-icon"/></button></li>
-              : <li><button className='button button-primary selected'>Beers <img src={beer} className="button-icon"/></button></li>
-            }
-            {
-              selectedMenu !== "wineSeltzersEtc"
-              ? <li><button onClick={() => handleMenuChange("wineSeltzersEtc")} className='button button-primary'>Wine, Seltzers, Etc. <img src={wine} className="button-icon"/></button></li>
-              : <li><button className='button button-primary selected'>Wine, Seltzers, Etc. <img src={wine} className="button-icon"/></button></li>
-            }
-            {
-              selectedMenu !== "nonAlc"
-              ? <li><button onClick={() => handleMenuChange("nonAlc")} className='button button-primary'>Non-alcoholic <img src={drink} className="button-icon"/></button></li>
-              : <li><button className='button button-primary selected'>Non-alcoholic <img src={drink} className="button-icon"/></button></li>
-            }
-            {
-              selectedMenu !== "food"
-              ? <li><button onClick={() => handleMenuChange("food")} className='button button-primary'>Food <img src={food} className="button-icon"/></button></li>
-              : <li><button className='button button-primary selected'>Food <img src={food} className="button-icon"/></button></li>
-            }
+            <li>
+              <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
+                Beers <img src={beer} className="button-icon"/>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleMenuChange("wineSeltzersEtc")} className={buttonClass("wineSeltzersEtc")}>
+                Wine, Seltzers, Etc. <img src={wine} className="button-icon"/>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleMenuChange("nonAlc")} className={buttonClass("nonAlc")}>
+                Non-alcoholic <img src={drink} className="button-icon"/>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleMenuChange("food")} className={buttonClass("food")}>
+                Food <img src={food} className="button-icon"/>
+              </button>
+            </li>
           </ul>
           <ul className='menu'>
             {formattedMenus[selectedMenu]}
