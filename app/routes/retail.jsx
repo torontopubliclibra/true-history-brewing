@@ -15,6 +15,7 @@ export default function Homepage() {
           <h2>Retail</h2>
         </section>
         <section className="retail-content">
+          <h3>Currently under construction</h3>
         </section>
     </>
   );

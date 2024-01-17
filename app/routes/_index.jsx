@@ -79,6 +79,7 @@ export default function Homepage() {
               className={rememberUser ? "checked" : ""}
               onChange={handleCheckboxChange}
             />
+            <span class="checkmark"></span>
           </label>
         </div>
       </div>

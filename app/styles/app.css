@@ -32,6 +32,9 @@ header .button-primary, footer .button-primary {
   font-size: 0.9rem;
   height: 15px; }
 
+.shop, .product {
+  color: #F1EDE2; }
+
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
   font-weight: 800;
@@ -207,7 +210,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -291,6 +294,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -337,17 +341,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -366,6 +383,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -428,7 +449,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -506,6 +527,9 @@ header .button-primary, footer .button-primary {
   font-size: 0.9rem;
   height: 15px; }
 
+.shop, .product {
+  color: #F1EDE2; }
+
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
   font-weight: 800;
@@ -681,7 +705,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -765,6 +789,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -811,17 +836,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -840,6 +878,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -902,7 +944,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -992,29 +1034,48 @@ nav.header-menu-desktop a {
     .landing .landing-main .remember-user label {
       height: 30px;
       display: flex;
-      align-items: center; }
-      .landing .landing-main .remember-user label input[type="checkbox"] {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 20px;
-        height: 20px;
+      align-items: center;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: pointer; }
+      .landing .landing-main .remember-user label .checkmark {
         margin-left: 10px;
-        background-color: #F1EDE2;
+        margin-bottom: 2px;
+        height: 20px;
+        width: 20px;
         border: solid #1F1F1F 3px;
+        background-color: #F1EDE2;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-        transition: 0.4s;
-        border-radius: 0;
-        outline: none;
-        cursor: pointer; }
-        .landing .landing-main .remember-user label input[type="checkbox"].checked {
-          background-color: #778d79;
-          position: relative; }
+        transition: background-color 0.4s; }
+        .landing .landing-main .remember-user label .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 7px;
+          top: 3px;
+          width: 3px;
+          height: 8px;
+          border: solid #F1EDE2;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+      .landing .landing-main .remember-user label input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0; }
+        .landing .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark {
+          background-color: #BC4749; }
+          .landing .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark:after {
+            display: block; }
       .landing .landing-main .remember-user label:hover {
         cursor: pointer; }
-        .landing .landing-main .remember-user label:hover input[type="checkbox"] {
-          background-color: #778d79; }
-          .landing .landing-main .remember-user label:hover input[type="checkbox"].checked {
-            background-color: #778d79; }
+        .landing .landing-main .remember-user label:hover input[type="checkbox"] ~ .checkmark {
+          background-color: rgba(188, 71, 73, 0.5); }
     @media only screen and (max-width: 1070px) {
       .landing .landing-main {
         height: 50%;
@@ -1057,6 +1118,9 @@ header .button-primary, footer .button-primary {
   padding: 10px 20px;
   font-size: 0.9rem;
   height: 15px; }
+
+.shop, .product {
+  color: #F1EDE2; }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -1233,7 +1297,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -1317,6 +1381,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -1363,17 +1428,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -1392,6 +1470,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -1454,7 +1536,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -1557,6 +1639,9 @@ header .button-primary, footer .button-primary {
   font-size: 0.9rem;
   height: 15px; }
 
+.shop, .product {
+  color: #F1EDE2; }
+
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
   font-weight: 800;
@@ -1732,7 +1817,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -1816,6 +1901,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -1862,17 +1948,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -1891,6 +1990,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -1953,7 +2056,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -2011,17 +2114,16 @@ header {
   z-index: 150; }
   @media only screen and (max-width: 1070px) {
     header {
+      background-image: url("./../../public/assets/wallpaper.png");
+      background-size: 100%;
       height: 100px;
       align-items: center;
       padding-top: 0; }
       header a {
         display: flex; } }
   @media only screen and (max-width: 480px) {
-    header {
-      background-image: url("./../../public/assets/wallpaper.png");
-      background-size: 100%; }
-      header .button-label {
-        display: none; } }
+    header .button-label {
+      display: none; } }
   header nav.header-submenu {
     display: flex;
     grid-gap: 1rem;
@@ -2095,6 +2197,10 @@ footer {
   border-top: solid #1F1F1F 3px;
   filter: drop-shadow(0px -3px 2px rgba(31, 31, 31, 0.5));
   margin-top: auto; }
+  footer.landing-footer {
+    background-image: url("./../../public/assets/wallpaper.png");
+    background-size: 100%;
+    background-position: 50%; }
   footer hr {
     background-color: #778d79;
     height: 4px;
@@ -2141,6 +2247,9 @@ header .button-primary, footer .button-primary {
   padding: 10px 20px;
   font-size: 0.9rem;
   height: 15px; }
+
+.shop, .product {
+  color: #F1EDE2; }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -2317,7 +2426,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -2401,6 +2510,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -2447,17 +2557,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -2476,6 +2599,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -2538,7 +2665,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -2594,7 +2721,7 @@ aside {
   top: 0; }
   @media only screen and (max-width: 480px) {
     aside {
-      background-color: none; } }
+      background-image: none; } }
   aside header {
     height: 75px !important;
     background: #F1EDE2;
@@ -2868,7 +2995,8 @@ aside {
         height: 30px;
         width: 60%;
         min-width: 250px;
-        background: #D8B56E;
+        background: #F1EDE2;
+        color: #1F1F1F;
         border: solid #1F1F1F 3px;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         padding: 10px 30px 10px 30px;
@@ -2892,8 +3020,7 @@ a.mobile-only {
 
 @media only screen and (max-width: 1070px) {
   a.mobile-only {
-    display: flex !important;
-    background-color: #F1EDE2 !important; } }
+    display: flex !important; } }
 
 @font-face {
   font-family: "Saudagar";
@@ -2928,6 +3055,9 @@ header .button-primary, footer .button-primary {
   padding: 10px 20px;
   font-size: 0.9rem;
   height: 15px; }
+
+.shop, .product {
+  color: #F1EDE2; }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -3104,7 +3234,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -3188,6 +3318,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -3234,17 +3365,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -3263,6 +3407,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -3325,7 +3473,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -3438,6 +3586,9 @@ header .button-primary, footer .button-primary {
   font-size: 0.9rem;
   height: 15px; }
 
+.shop, .product {
+  color: #F1EDE2; }
+
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
   font-weight: 800;
@@ -3613,7 +3764,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -3697,6 +3848,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -3743,17 +3895,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -3772,6 +3937,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -3834,7 +4003,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -4046,6 +4215,9 @@ header .button-primary, footer .button-primary {
   font-size: 0.9rem;
   height: 15px; }
 
+.shop, .product {
+  color: #F1EDE2; }
+
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
   font-weight: 800;
@@ -4221,7 +4393,7 @@ aside .cart-summary-aside .cart-subtotal a {
       border-radius: 0;
       padding: 15px 15%;
       max-width: 100vw;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: 1.5px;
       margin: 0; } }
 
@@ -4305,6 +4477,7 @@ main .taproom-events h2 {
 main .taproom-menus h3 {
   width: 90vw;
   font-family: "Saudagar";
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
   padding: 0; }
 
@@ -4351,17 +4524,30 @@ main .taproom-menus .menu-nav .button {
   main .taproom-menus .menu-nav .button {
     justify-content: space-between; } }
 
-.route-error h1, .route-error h2 {
-  margin: 0; }
-
-.route-error h1 {
-  color: #F1EDE2;
-  font-size: 75px;
-  font-family: 'Saudagar'; }
-
-.route-error h2 {
-  padding-top: 10px;
-  padding-bottom: 35px; }
+.route-error {
+  border-radius: 25px; }
+  .route-error .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #D6D0C0;
+    border: solid #1F1F1F 3px; }
+    .route-error .error-message h1, .route-error .error-message h2 {
+      margin: 0; }
+    .route-error .error-message h1 {
+      color: #1F1F1F;
+      font-size: 3rem;
+      font-family: 'Saudagar'; }
+    .route-error .error-message h2 {
+      color: #1F1F1F;
+      font-size: 1.75rem;
+      padding: 10px 0; }
+    .route-error .error-message .button {
+      max-width: 50%; }
 
 .hours h4 {
   font-size: 1.75rem;
@@ -4380,6 +4566,10 @@ main .taproom-menus .menu-nav .button {
     font-family: "Bogue-Regular";
     font-size: 1.1rem;
     font-style: italic; }
+
+@media only screen and (max-width: 1070px) {
+  .hours h4 {
+    font-size: 1.5rem; } }
 
 .button {
   background: #D8B56E;
@@ -4442,7 +4632,7 @@ main .taproom-menus .menu-nav .button {
   color: #F1EDE2; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
-      font-size: 0.9rem; } }
+      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button:hover {
@@ -4486,71 +4676,143 @@ nav.header-menu-desktop a {
   nav.header-menu-desktop a .button-icon {
     display: none; }
 
-.store-disclaimers {
-  background-color: rgba(214, 208, 192, 0.8);
+.shop-nav {
+  padding: 10px 0;
+  background-color: rgba(119, 141, 121, 0.8);
+  border-bottom: solid #1F1F1F 3px; }
+  .shop-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px; }
+    .shop-nav ul li {
+      margin: 0; }
+  .shop-nav .button {
+    height: 40px;
+    cursor: pointer; }
+    .shop-nav .button:hover {
+      background-color: #BC4749;
+      color: #F1EDE2; }
+    .shop-nav .button.selected {
+      background-color: #BC4749;
+      color: #F1EDE2; }
+  @media only screen and (max-width: 1070px) {
+    .shop-nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 0; }
+      .shop-nav .button {
+        width: 90vw;
+        max-width: 350px; } }
+
+.product {
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(214, 208, 192, 0.8); }
+  .product .product-image img {
+    width: 30%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border: solid #1F1F1F 3px;
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+    border-radius: 0;
+    margin: 0; }
+  .product .product-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    margin: 0; }
+    .product .product-main hr {
+      background-color: #BC4749;
+      margin: 10px 0;
+      height: 4px; }
+  @media only screen and (max-width: 1070px) {
+    .product {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+      padding: 40px 30px; }
+      .product .product-main {
+        width: 100%; }
+        .product .product-main button {
+          margin: 20px auto 0;
+          width: 80%; }
+          .product .product-main button:hover {
+            background-color: #D8B56E; }
+      .product .product-image img {
+        width: 100%; } }
+
+.shop-disclaimers {
+  background-color: rgba(216, 181, 110, 0.8);
   padding: 30px;
   border-top: solid #1F1F1F 3px;
   text-align: center; }
-  .store-disclaimers .text-box {
+  .shop-disclaimers .text-box {
     padding: 30px 40px;
     max-width: 85%;
     margin: 0 auto; }
-    .store-disclaimers .text-box h3 {
+    .shop-disclaimers .text-box h3 {
       font-size: 25px;
       text-transform: uppercase;
       margin: 0;
       margin-bottom: 10px; }
-    .store-disclaimers .text-box p {
+    .shop-disclaimers .text-box p {
       margin: 0;
       font-size: 16px; }
   @media only screen and (max-width: 1070px) {
-    .store-disclaimers p {
+    .shop-disclaimers p {
       max-width: 100%; } }
 
-.store {
+.shop {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(119, 141, 121, 0.8);
+  background-color: rgba(214, 208, 192, 0.9);
   padding: 30px; }
-  .store .recommended-product {
+  .shop .recommended-product {
     max-width: 350px; }
-    .store .recommended-product img {
+    .shop .recommended-product img {
       border: solid 3px #1F1F1F;
       filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
       border-radius: 0;
       aspect-ratio: 6/3;
       object-fit: cover; }
-    .store .recommended-product h4 {
+    .shop .recommended-product h4 {
       font-family: "Saudagar";
       font-weight: 800;
       font-size: 24px; }
-    .store .recommended-product small {
+    .shop .recommended-product small {
       font-size: 16px;
       line-height: 0.75; }
-    .store .recommended-product:hover small div {
+    .shop .recommended-product:hover small div {
       text-decoration: none; }
-  .store h1 {
+  .shop h1 {
     display: none;
     margin: 0;
     padding-top: 20px; }
-  .store h2 {
+  .shop h2 {
     color: #1F1F1F;
     font-size: 50px;
     text-transform: uppercase;
     font-style: normal;
     margin-top: 0; }
   @media only screen and (max-width: 1070px) {
-    .store {
+    .shop {
       text-align: center;
       padding-top: 0; }
-      .store .recommended-product {
+      .shop .recommended-product {
         width: 100%;
         margin: 0 auto; }
-        .store .recommended-product small {
+        .shop .recommended-product small {
           font-size: 18px; }
-      .store h2 {
+      .shop h2 {
         font-size: 40px;
         margin-bottom: 20px; } }
 
@@ -4670,7 +4932,8 @@ nav.header-menu-desktop a {
   justify-content: center; }
   @media only screen and (max-width: 480px) {
     :root {
-      background-image: url("./../../public/assets/wooden-bg.jpg"); } }
+      background-image: url("./../../public/assets/wooden-bg.jpg");
+      background-size: 100%; } }
   :root.aside-open {
     overflow-y: hidden; }
     @media only screen and (max-width: 480px) {
@@ -4750,6 +5013,7 @@ hr {
 
 main {
   background-image: url("./../../public/assets/wooden-bg.jpg");
+  background-size: 100%;
   border-left: solid #1F1F1F 3px;
   border-right: solid #1F1F1F 3px; }
   main .contact-content {
@@ -4781,12 +5045,19 @@ main {
         width: 30%;
         max-width: 125px;
         justify-content: left; }
+        main .contact-content .contact-form .small-field input {
+          width: 100%; }
+      main .contact-content .contact-form label {
+        text-transform: uppercase; }
       main .contact-content .contact-form input, main .contact-content .contact-form textarea {
         min-width: 100%;
         padding: 5px 15px;
         border: solid #1F1F1F 2px;
         border-radius: 0;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+      main .contact-content .contact-form input[type="radio"] {
+        padding: 0;
+        min-width: unset; }
       main .contact-content .contact-form textarea {
         min-height: 100px; }
       main .contact-content .contact-form .button {
@@ -4798,10 +5069,25 @@ main {
         main .contact-content .contact-form .button:hover {
           cursor: pointer;
           background-color: #778d79; }
+    @media only screen and (max-width: 1070px) {
+      main .contact-content .contact-form {
+        max-width: 70%;
+        width: 100%;
+        margin: 20px auto;
+        margin-left: 7%; }
+        main .contact-content .contact-form .button {
+          max-width: 70%;
+          width: 100%;
+          margin-left: 14%;
+          margin-top: 20px; }
+      main .contact-content .form-field {
+        width: 100%; } }
     main .contact-content .contact-nav {
       display: flex;
       justify-content: center;
       gap: 20px; }
+      main .contact-content .contact-nav li {
+        margin: 0; }
       main .contact-content .contact-nav .button {
         height: 40px;
         cursor: pointer; }
@@ -4819,51 +5105,31 @@ main {
           main .contact-content .contact-nav .button {
             width: 90vw;
             max-width: 350px; } }
+  main .recommended-products h3 {
+    font-family: "Saudagar";
+    color: #1F1F1F;
+    background-color: #778d79;
+    border: solid #1F1F1F 3px;
+    font-size: 2.5rem;
+    padding: 20px 50px;
+    max-width: 100%;
+    text-align: center; }
   main .retail-content {
     background-color: rgba(119, 141, 121, 0.8);
-    height: 400px; }
-  main .product {
+    height: 200px;
     display: flex;
-    gap: 50px;
-    padding: 50px;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: rgba(214, 208, 192, 0.8); }
-    main .product .product-image img {
-      width: 30%;
-      max-width: 400px;
-      height: auto;
-      object-fit: cover;
+    align-items: center; }
+    main .retail-content h3 {
+      font-family: "Saudagar";
+      color: #1F1F1F;
+      background-color: #D6D0C0;
       border: solid #1F1F1F 3px;
-      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-      border-radius: 0;
-      margin: 0; }
-    main .product .product-main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 45%;
-      margin: 0; }
-      main .product .product-main hr {
-        background-color: #BC4749;
-        margin: 10px 0;
-        height: 4px; }
-    @media only screen and (max-width: 1070px) {
-      main .product {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 20px;
-        padding: 40px 30px; }
-        main .product .product-main {
-          width: 100%; }
-          main .product .product-main button {
-            margin: 20px auto 0;
-            width: 80%; }
-            main .product .product-main button:hover {
-              background-color: #D8B56E; }
-        main .product .product-image img {
-          width: 100%; } }
+      font-size: 2.5rem;
+      padding: 20px 50px;
+      max-width: 100%;
+      text-align: center; }
   main .route-error {
     min-height: calc(100vh - 358px);
     background-color: rgba(119, 141, 121, 0.8);
@@ -5119,7 +5385,7 @@ main {
     justify-content: center;
     align-items: center;
     color: #F1EDE2;
-    background-color: rgba(121, 79, 62, 0.9); }
+    background-color: rgba(121, 79, 62, 0.8); }
     main .taproom-menus .menu-nav {
       display: flex;
       justify-content: center;

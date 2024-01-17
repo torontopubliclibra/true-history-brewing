@@ -599,18 +599,20 @@ export function ErrorBoundary() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>{errorStatus + ` | True History Brewing`}</title>
+        <title>{errorStatus + ` Error | True History Brewing`}</title>
         <Meta />
         <Links />
       </head>
       <body>
         <Layout {...rootData}>
           <main className="route-error">
-            <h1>Unexpected Error ({errorStatus})</h1>
-            <h2>Looks like you took a wrong turn!</h2>
-            <Link to="/home" className='button button-tertiary'>
-              Go back to the homepage
-            </Link>
+            <div className="error-message">
+              <h1>{errorStatus} Error</h1>
+              <h2>Looks like you took a wrong turn!</h2>
+              <Link to="/home" className='button button-tertiary'>
+                Go back to the homepage
+              </Link>
+            </div>
           </main>
         </Layout>
         <ScrollRestoration nonce={nonce} />

@@ -1,10 +1,7 @@
-// imports
 import { Suspense, useState, useEffect } from 'react';
 import { Await, NavLink } from '@remix-run/react';
+// import { useRootLoaderData } from '~/root';
 import { useLocation } from 'react-router-dom';
-import { useRootLoaderData } from '~/root';
-
-// asset imports
 import icon from './../../public/assets/thb-icon.png';
 import cart from './../../public/assets/icons/cart.svg';
 import home from './../../public/assets/icons/home.svg';
@@ -209,6 +206,10 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
     );
   }
 }
+
+// function SearchToggle() {
+//   return <a href="#search-aside">Search</a>;
+// }
 
 /**
  * @param {{count: number}}

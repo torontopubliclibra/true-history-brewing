@@ -14,7 +14,7 @@ aside {
 
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
-      background-color: none;
+      background-image: none;
     }
 
   
@@ -411,34 +411,35 @@ aside {
         height: 30px;
         width: 60%;
         min-width: 250px;
-        background: $color2;
+        background: $light;
+        color: $black;
         border: $default-border;
         filter: $default-shadow;
         padding: 10px 30px 10px 30px;
         margin: 5px;
         &:hover {
-        text-decoration: none;
+          text-decoration: none;
         }
 
         .button-icon {
-        width: 20px;
+          width: 20px;
         }
 
         // responsive to mobile
         @media only screen and (max-width: $mobile) {
-        width: 70vw;
+          width: 70vw;
 
-        .button-icon {
-            width: 22px;
-            padding-bottom: 3px;
-        }
+          .button-icon {
+              width: 22px;
+              padding-bottom: 3px;
+          }
         }
     }
     }
 
     header {
-    display: none;
-    height: 0;
+      display: none;
+      height: 0;
     }
 }
 }
@@ -449,8 +450,13 @@ display: none !important;
   
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
-a.mobile-only {
-    display: flex !important;
-    background-color: $light !important;
-}
+  a.mobile-only {
+      display: flex !important;
+      // background-color: $color2 !important;
+      // color: $black !important;
+      
+      // .button-icon {
+      //   filter: none !important;
+      // }
+  }
 }

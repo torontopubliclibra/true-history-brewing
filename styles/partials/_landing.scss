@@ -62,32 +62,62 @@
                 height: 30px;
                 display: flex;
                 align-items: center;
-                input[type="checkbox"] {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    width: 20px;
-                    height: 20px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                cursor: pointer;
+
+                .checkmark {
                     margin-left: 10px;
-                    background-color: $light;
+                    margin-bottom: 2px;
+                    height: 20px;
+                    width: 20px;
                     border: $default-border;
+                    background-color: $light;
                     filter: $default-shadow;
-                    transition: 0.4s;
-                    border-radius: 0;
-                    outline: none;
+                    transition: background-color 0.4s;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                        left: 7px;
+                        top: 3px;
+                        width: 3px;
+                        height: 8px;
+                        border: solid $light;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
+
+                input[type="checkbox"] {
+                    position: absolute;
+                    opacity: 0;
                     cursor: pointer;
+                    height: 0;
+                    width: 0;
                     &.checked {
-                        background-color: $color1;
-                        position: relative;
+                        ~ .checkmark {
+                            background-color: $color4;
+
+                            &:after {
+                                display: block;
+                            }
+                        }
                     }
                 }
                 &:hover {
-                cursor: pointer;
-                input[type="checkbox"] {
-                    background-color: $color1;
-                    &.checked {
-                    background-color: $color1;
+                    cursor: pointer;
+                    input[type="checkbox"] {
+                        ~ .checkmark {
+                            background-color: rgba($color4, 0.5);
+                        }
                     }
-                }
+                    
                 }
             }
         }

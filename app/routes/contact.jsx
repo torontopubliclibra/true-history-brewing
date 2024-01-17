@@ -149,13 +149,13 @@ export default function Homepage() {
               </button>
             </li>
             <li>
-              <button onClick={() => handleContactChange("licensee")} className={buttonClass("licensee")}>
-                Licensees & retailers
+              <button onClick={() => handleContactChange("events")} className={buttonClass("events")}>
+                Event booking
               </button>
             </li>
             <li>
-              <button onClick={() => handleContactChange("events")} className={buttonClass("events")}>
-                Event booking
+              <button onClick={() => handleContactChange("licensee")} className={buttonClass("licensee")}>
+                Licensees & retailers
               </button>
             </li>
           </ul>

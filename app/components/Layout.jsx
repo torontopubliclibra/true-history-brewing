@@ -9,7 +9,7 @@ import {CartMain} from '~/components/Cart';
 /**
  * @param {LayoutProps}
  */
-export function Layout({cart, children = null, footer, header, isLoggedIn, asideOpen, updateAsideOpen}) {
+export function Layout({cart, children = null, footer, header, isLoggedIn, asideOpen = {open: false, id: ""}, updateAsideOpen}) {
   return (
     <>
       <CartAside cart={cart} updateAsideOpen={updateAsideOpen} />

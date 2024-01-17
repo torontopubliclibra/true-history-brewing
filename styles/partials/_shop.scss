@@ -1,8 +1,107 @@
 @import 'variables';
 @import 'typography';
 
-.store-disclaimers {
-    background-color: rgba($less-light, 0.8);
+.shop-nav {
+  padding: 10px 0;
+  background-color: rgba($color1, 0.8);
+  border-bottom: $default-border;
+  
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+    li {
+      margin: 0;
+    }
+  }
+
+  .button {
+    height: 40px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color4;
+      color: $light;
+    }
+    &.selected {
+      background-color: $color4;
+      color: $light;
+    }
+  }
+
+  // responsive to tablet
+  @media only screen and (max-width: $tablet) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    .button {
+      width: 90vw;
+      max-width: 350px;
+    }
+  }
+}
+
+.product {
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($less-light, 0.8);
+
+  .product-image img {
+    width: 30%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border: $default-border;
+    filter: $default-shadow;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .product-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    margin: 0;
+
+    hr {
+      background-color: $color4;
+      margin: 10px 0;
+      height: 4px;
+    }
+  }
+
+  // responsive to tablet
+  @media only screen and (max-width: $tablet) {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 40px 30px;
+    .product-main {
+      width: 100%;
+      button {
+        margin: 20px auto 0;
+        width: 80%;
+        &:hover {
+          background-color: $color2;
+        }
+      }
+    }
+    .product-image img {
+      width: 100%;
+    }
+  }
+}
+
+.shop-disclaimers {
+    background-color: rgba($color2, 0.8);
     padding: 30px;
     border-top: $default-border;
     text-align: center;
@@ -33,12 +132,12 @@
     }
   }
 
-  .store {
+  .shop {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba($color1, 0.8);
+    background-color: rgba($less-light, 0.9);
     padding: 30px;
 
     .recommended-product {
