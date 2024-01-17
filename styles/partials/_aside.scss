@@ -20,7 +20,7 @@ aside {
   
     header {
       height: 75px !important;
-      background: $light;
+      background: $less-light;
       align-items: center;
       border-bottom: $default-border;
       display: flex;
@@ -92,7 +92,7 @@ aside {
         }
   
         .cart-empty-text {
-          background-color: rgba($less-light, 0.8);
+          background-color: $light;
           filter: $default-shadow;
           padding: 40px 30px;
           border: $thin-border;
@@ -114,7 +114,7 @@ aside {
           text-align: center;
           justify-content: space-evenly;
           gap: 10px;
-          background-color: rgba($less-light, 0.8);
+          background-color: $light;
           filter: $default-shadow;
           border: $thin-border;
           border-radius: 25px;
@@ -192,7 +192,7 @@ aside {
         }
   
         .cart-summary-aside {
-          background-color: rgba($less-light, 0.8);
+          background-color: $light;
           padding: 15px 30px;
           border: $thin-border;
           border-radius: 25px;

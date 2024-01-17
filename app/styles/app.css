@@ -292,7 +292,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -787,7 +787,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -1379,7 +1379,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -1899,7 +1899,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -2107,10 +2107,10 @@ header, footer {
 header {
   height: 140px;
   border-bottom: solid #1F1F1F 3px;
-  filter: drop-shadow(0px 3px 2px rgba(31, 31, 31, 0.5));
   padding: 20px;
   padding-bottom: 0;
   top: 0;
+  position: relative;
   z-index: 150; }
   @media only screen and (max-width: 1070px) {
     header {
@@ -2189,18 +2189,21 @@ header {
 
 footer {
   background-color: #D6D0C0;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   height: 225px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: solid #1F1F1F 3px;
-  filter: drop-shadow(0px -3px 2px rgba(31, 31, 31, 0.5));
+  border: solid #1F1F1F 3px;
+  border-bottom: none;
   margin-top: auto; }
   footer.landing-footer {
     background-image: url("./../../public/assets/wallpaper.png");
     background-size: 100%;
-    background-position: 50%; }
+    background-position: 50%;
+    border-left: none;
+    border-right: none; }
   footer hr {
     background-color: #778d79;
     height: 4px;
@@ -2508,7 +2511,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -2724,7 +2727,7 @@ aside {
       background-image: none; } }
   aside header {
     height: 75px !important;
-    background: #F1EDE2;
+    background: #D6D0C0;
     align-items: center;
     border-bottom: solid #1F1F1F 3px;
     display: flex;
@@ -2775,7 +2778,7 @@ aside {
         aside main .cart-main .cart-details .button {
           margin-top: 20px; }
       aside main .cart-main .cart-empty-text {
-        background-color: rgba(214, 208, 192, 0.8);
+        background-color: #F1EDE2;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         padding: 40px 30px;
         border: solid #1F1F1F 2px;
@@ -2788,7 +2791,7 @@ aside {
         text-align: center;
         justify-content: space-evenly;
         gap: 10px;
-        background-color: rgba(214, 208, 192, 0.8);
+        background-color: #F1EDE2;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         border: solid #1F1F1F 2px;
         border-radius: 25px;
@@ -2847,7 +2850,7 @@ aside {
         aside main .cart-main .cart-line:nth-of-type(1) {
           margin-top: 0; }
       aside main .cart-main .cart-summary-aside {
-        background-color: rgba(214, 208, 192, 0.8);
+        background-color: #F1EDE2;
         padding: 15px 30px;
         border: solid #1F1F1F 2px;
         border-radius: 25px;
@@ -3316,7 +3319,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -3846,7 +3849,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -4475,7 +4478,7 @@ main .taproom-events h2 {
   text-transform: none; }
 
 main .taproom-menus h3 {
-  width: 90vw;
+  width: 90%;
   font-family: "Saudagar";
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   margin: 0;
@@ -4953,7 +4956,7 @@ body {
   body #mobile-menu-aside {
     display: none !important; }
   body #cart-aside {
-    z-index: 200; }
+    z-index: 250; }
   body.landing, body.loading {
     overflow: hidden;
     height: 100vh; }
@@ -4964,27 +4967,29 @@ body {
       body.default-body aside {
         display: none; } }
   @media only screen and (max-width: 1070px) {
-    body header {
-      position: sticky;
-      z-index: 1000; }
-    body .landing-header {
-      position: unset; }
-    body.menu-open #mobile-menu-aside {
-      display: initial !important; } }
-  @media only screen and (max-width: 1070px) and (max-width: 480px) {
-    body.menu-open #mobile-menu-aside {
-      background-color: rgba(214, 208, 192, 0.25); } }
+    body {
+      margin: 0; }
+      body header {
+        position: sticky;
+        z-index: 1000; }
+      body .landing-header {
+        position: unset; }
+      body.menu-open #mobile-menu-aside {
+        display: initial !important; } }
+    @media only screen and (max-width: 1070px) and (max-width: 480px) {
+      body.menu-open #mobile-menu-aside {
+        background-color: rgba(214, 208, 192, 0.25); } }
   @media only screen and (max-width: 1070px) {
-    body.menu-open #cart-aside {
-      display: none !important; }
-    body.cart-open #cart-aside {
-      display: initial !important; } }
-  @media only screen and (max-width: 1070px) and (max-width: 480px) {
-    body.cart-open #cart-aside {
-      background-color: rgba(214, 208, 192, 0.25); } }
+      body.menu-open #cart-aside {
+        display: none !important; }
+      body.cart-open #cart-aside {
+        display: initial !important; } }
+    @media only screen and (max-width: 1070px) and (max-width: 480px) {
+      body.cart-open #cart-aside {
+        background-color: rgba(214, 208, 192, 0.25); } }
   @media only screen and (max-width: 1070px) {
-    body.cart-open #mobile-menu-aside {
-      display: none !important; } }
+      body.cart-open #mobile-menu-aside {
+        display: none !important; } }
 
 hr {
   height: 8px;
@@ -4992,6 +4997,20 @@ hr {
   background-color: #778d79;
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+
+h3.demo-text {
+  font-size: 2.5rem;
+  margin: 0;
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (max-width: 1070px) {
+    h3.demo-text {
+      display: none; } }
 
 .thb-icon {
   width: 75px;
@@ -5015,7 +5034,14 @@ main {
   background-image: url("./../../public/assets/wooden-bg.jpg");
   background-size: 100%;
   border-left: solid #1F1F1F 3px;
-  border-right: solid #1F1F1F 3px; }
+  border-right: solid #1F1F1F 3px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  z-index: 200; }
+  @media only screen and (max-width: 1070px) {
+    main {
+      z-index: 100;
+      border-left: none;
+      border-right: none; } }
   main .contact-content {
     background-color: rgba(119, 141, 121, 0.8);
     padding-top: 15px; }
@@ -5107,7 +5133,7 @@ main {
             max-width: 350px; } }
   main .recommended-products h3 {
     font-family: "Saudagar";
-    color: #1F1F1F;
+    color: #F1EDE2;
     background-color: #778d79;
     border: solid #1F1F1F 3px;
     font-size: 2.5rem;
@@ -5116,7 +5142,7 @@ main {
     text-align: center; }
   main .retail-content {
     background-color: rgba(119, 141, 121, 0.8);
-    height: 200px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -5225,6 +5251,7 @@ main {
           margin: 0;
           gap: 3px; }
           main .main-taproom .menu-buttons .button {
+            font-size: 0.9rem;
             flex-direction: row-reverse;
             justify-content: space-between;
             width: 75%;

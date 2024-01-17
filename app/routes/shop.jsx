@@ -85,8 +85,6 @@ export default function Homepage() {
   let shopNavItems = () => {
     let navItems = [];
 
-    console.log(shopCategories);
-
     if (shopCategories) {
       for (let i = 0; i < shopCategories.length; i++) {
         let category = shopCategories[i];
@@ -128,7 +126,6 @@ export default function Homepage() {
 
 function SelectedCollection({selectedCategory, shopCollections}) {
 
-  console.log(shopCollections);
   let collection = {};
   
   if (shopCollections) {
@@ -171,8 +168,6 @@ function SelectedCollection({selectedCategory, shopCollections}) {
       <br />
     </div>
   )
-
-//  console.log(collections);
 
 //  if (!collection) return null;
 //  const image = collection?.image;
