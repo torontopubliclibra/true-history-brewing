@@ -1,5 +1,5 @@
 // imports
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
 
@@ -31,6 +31,7 @@ export const meta = () => {
 export default function Homepage() {
 
   const { events, currentDate } = useContext(StrapiContext);
+  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe now');
 
   let formattedEvents = events.map((event, index) => {
 
@@ -48,6 +49,20 @@ export default function Homepage() {
     }
   })
 
+  let handleSubscribe = async (event) => {
+
+    event.preventDefault();
+
+    let { email } = event.target.elements;
+    console.log(email.value + ' is now subscribed');
+    setNewsletterBtn('Subscribed');
+    event.target.reset();
+
+    setTimeout(() => {
+      setNewsletterBtn('Subscribe now');
+    }, 3000);
+  }
+
   return (
     <>
         <section className="heading main-heading">
@@ -58,7 +73,7 @@ export default function Homepage() {
         <section className="main-taproom">
           <div className="sketch-address">
             <img src={barSketch} className="bar-sketch" alt="" />
-            <p className='address'>1154 St. Clair Avenue W, Toronto, Ontario</p>
+            <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
           <hr/>
@@ -83,9 +98,9 @@ export default function Homepage() {
         </section>
         <section className="main-newsletter">
           <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
-          <form action="">
-            <input type="email" placeholder="Enter your email address" />
-            <button className='button button-primary'>Subscribe now <img src={mail} className="button-icon" /></button>
+          <form onSubmit={handleSubscribe}>
+            <input type="email" id="email" placeholder="Enter your email address" required />
+            <button type="submit" className='button button-primary' >{newsletterBtn} <img src={mail} className="button-icon" /></button>
           </form>
         </section>
     </>
