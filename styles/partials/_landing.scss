@@ -110,7 +110,7 @@
                         }
                     }
                 }
-                &:hover {
+                &:hover, &:focus {
                     cursor: pointer;
                     input[type="checkbox"] {
                         ~ .checkmark {

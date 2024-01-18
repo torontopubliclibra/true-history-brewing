@@ -1072,9 +1072,9 @@ nav.header-menu-desktop a {
           background-color: #BC4749; }
           .landing .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark:after {
             display: block; }
-      .landing .landing-main .remember-user label:hover {
+      .landing .landing-main .remember-user label:hover, .landing .landing-main .remember-user label:focus {
         cursor: pointer; }
-        .landing .landing-main .remember-user label:hover input[type="checkbox"] ~ .checkmark {
+        .landing .landing-main .remember-user label:hover input[type="checkbox"] ~ .checkmark, .landing .landing-main .remember-user label:focus input[type="checkbox"] ~ .checkmark {
           background-color: rgba(188, 71, 73, 0.5); }
     @media only screen and (max-width: 1070px) {
       .landing .landing-main {
@@ -2198,14 +2198,6 @@ footer {
   border: solid #1F1F1F 3px;
   border-bottom: none;
   margin-top: auto; }
-  @media only screen and (max-width: 1070px) {
-    footer {
-      border-left: none;
-      border-right: none; } }
-  footer.landing-footer {
-    background: none;
-    border-left: none;
-    border-right: none; }
   footer hr {
     background-color: #C28165;
     height: 4px;
@@ -2214,6 +2206,21 @@ footer {
   footer .footer-buttons {
     display: flex;
     gap: 15px; }
+  @media only screen and (max-width: 1070px) {
+    footer {
+      filter: none;
+      border-left: none;
+      border-right: none; } }
+  footer.landing-footer {
+    background: none;
+    border-left: none;
+    border-right: none; }
+    @media only screen and (max-width: 480px) {
+      footer.landing-footer {
+        background: unset;
+        background-image: url("./../../public/assets/wallpaper.png");
+        background-size: 100%;
+        background-position: -150px; } }
 
 .landing-header, .landing-footer {
   height: 100px;
@@ -4941,7 +4948,8 @@ nav.header-menu-desktop a {
   width: 100vw;
   overflow-x: hidden;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
   @media only screen and (max-width: 480px) {
     :root {
       background-image: url("./../../public/assets/wooden-bg.jpg");

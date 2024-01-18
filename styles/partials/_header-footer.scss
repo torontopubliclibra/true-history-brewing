@@ -141,18 +141,6 @@ footer {
     border-bottom: none;
     margin-top: auto;
 
-    // responsive to mobile
-    @media only screen and (max-width: $tablet) {
-        border-left: none;
-        border-right: none;
-    }
-
-    &.landing-footer {
-        background: none;
-        border-left: none;
-        border-right: none;
-    }
-
     hr {
         background-color: $color3;
         height: 4px;
@@ -163,6 +151,27 @@ footer {
     .footer-buttons {
         display: flex;
         gap: 15px;
+    }
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        filter: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    &.landing-footer {
+        background: none;
+        border-left: none;
+        border-right: none;
+
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+            background: unset;
+            background-image: url('./../../public/assets/wallpaper.png');
+            background-size: 100%;
+            background-position: -150px;
+        }
     }
 }
 
