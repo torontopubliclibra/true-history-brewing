@@ -230,11 +230,15 @@ export default function App() {
 
       setHtmlState("aside-closed");
       setBodyTags("default-body");
-      window.location.hash = '';
       setAsideOpen({
         open: false,
         aside: ""
       });
+      
+      if (window.location.hash) {
+        window.location.hash = '';
+      }
+
     }
 
     window.scrollTo({top: 0});
