@@ -382,7 +382,7 @@ main {
   }
 
   .route-error {
-    min-height: calc(100vh - 358px);
+    min-height: 500px;
     background-color: rgba($color1, 0.8);
     display: flex;
     flex-direction: column;

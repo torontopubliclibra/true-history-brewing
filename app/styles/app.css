@@ -2196,8 +2196,8 @@ footer {
   justify-content: center;
   align-items: center;
   border: solid #1F1F1F 3px;
-  border-bottom: none;
-  margin-top: auto; }
+  margin-top: 0;
+  margin-bottom: 75px; }
   footer hr {
     background-color: #C28165;
     height: 4px;
@@ -2210,7 +2210,9 @@ footer {
     footer {
       filter: none;
       border-left: none;
-      border-right: none; } }
+      border-right: none;
+      border-bottom: none;
+      margin-bottom: 0; } }
   footer.landing-footer {
     background: none;
     border-left: none;
@@ -5200,7 +5202,7 @@ main {
           padding: 50px;
           margin: 0; } }
   main .route-error {
-    min-height: calc(100vh - 358px);
+    min-height: 500px;
     background-color: rgba(119, 141, 121, 0.8);
     display: flex;
     flex-direction: column;

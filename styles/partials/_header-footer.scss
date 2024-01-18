@@ -138,8 +138,8 @@ footer {
     justify-content: center;
     align-items: center;
     border: $default-border;
-    border-bottom: none;
-    margin-top: auto;
+    margin-top: 0;
+    margin-bottom: 75px;
 
     hr {
         background-color: $color3;
@@ -158,6 +158,8 @@ footer {
         filter: none;
         border-left: none;
         border-right: none;
+        border-bottom: none;
+        margin-bottom: 0;
     }
 
     &.landing-footer {
