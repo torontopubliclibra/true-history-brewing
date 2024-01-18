@@ -141,16 +141,20 @@ footer {
     border-bottom: none;
     margin-top: auto;
 
+    // responsive to mobile
+    @media only screen and (max-width: $tablet) {
+        border-left: none;
+        border-right: none;
+    }
+
     &.landing-footer {
-        background-image: url('./../../public/assets/wallpaper.png');
-        background-size: 100%;
-        background-position: 50%;
+        background: none;
         border-left: none;
         border-right: none;
     }
 
     hr {
-        background-color: $color1;
+        background-color: $color3;
         height: 4px;
         max-width: 90%;
         margin: 25px 0;

@@ -305,7 +305,7 @@ const FALLBACK_HEADER_MENU = {
  * }}
  */
 function activeLinkStyle({isActive}) {
-  return isActive ? 'active-link' : ''
+  return isActive ? 'active-link' : 'inactive-link'
 }
 
 /** @typedef {Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>} HeaderProps */

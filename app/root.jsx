@@ -236,6 +236,8 @@ export default function App() {
         aside: ""
       });
     }
+
+    window.scrollTo({top: 0});
   }
 
   // initial hours
@@ -545,8 +547,6 @@ export default function App() {
     fetchHours();
     // fetchMenus();
     fetchEvents();
-
-    window.scrollTo({top: 0});
     
     updateAsideOpen("", false)
 

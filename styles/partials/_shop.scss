@@ -2,7 +2,7 @@
 @import 'typography';
 
 .shop-nav {
-  padding: 10px 0;
+  padding: 20px;
   background-color: rgba($color1, 0.8);
   border-bottom: $default-border;
   
@@ -14,6 +14,18 @@
 
     li {
       margin: 0;
+    }
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+
+      .button {
+        width: 90vw;
+        max-width: 350px;
+      }
     }
   }
 
@@ -183,7 +195,6 @@
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       text-align: center;
-      padding-top: 0;
 
       .recommended-product {
         width: 100%;

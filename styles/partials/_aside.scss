@@ -329,10 +329,7 @@ aside {
 @media only screen and (max-width: $tablet) {
     #cart-aside {
         aside {
-            main {
-                padding-top: 25px;
-                height: calc(100vh - 25px);
-            }
+          height: calc(100vh - 102px);
         }
     }
 }
@@ -345,8 +342,8 @@ aside {
         aside {
             width: 100vw;
             max-width: 100vw;
-            height: calc(100vh - 102px);
-            padding-top: 50px;
+            height: calc(100% - 204px);
+            padding-top: 20px;
 
             main {
                 padding-top: 0 !important;
@@ -381,18 +378,19 @@ aside {
   
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
-        main {
-          padding-top: 10px;
-          height: calc(100vh - 10px);
-        }
+      height: calc(100vh - 142px);
+
+      main {
+        padding-top: 30px;
+      }
     }
   
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
         width: 100vw;
         max-width: 100vw;
-        padding-top: 55px;
-        height: calc(100vh - 102px);
+        padding-top: 75px;
+        height: calc(100% - 204px);
     }
   
     .header-menu-mobile {

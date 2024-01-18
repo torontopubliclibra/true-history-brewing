@@ -2198,14 +2198,16 @@ footer {
   border: solid #1F1F1F 3px;
   border-bottom: none;
   margin-top: auto; }
+  @media only screen and (max-width: 1070px) {
+    footer {
+      border-left: none;
+      border-right: none; } }
   footer.landing-footer {
-    background-image: url("./../../public/assets/wallpaper.png");
-    background-size: 100%;
-    background-position: 50%;
+    background: none;
     border-left: none;
     border-right: none; }
   footer hr {
-    background-color: #778d79;
+    background-color: #C28165;
     height: 4px;
     max-width: 90%;
     margin: 25px 0; }
@@ -2942,9 +2944,8 @@ aside {
         height: 0; } }
 
 @media only screen and (max-width: 1070px) {
-  #cart-aside aside main {
-    padding-top: 25px;
-    height: calc(100vh - 25px); } }
+  #cart-aside aside {
+    height: calc(100vh - 102px); } }
 
 @media only screen and (max-width: 480px) {
   #cart-aside {
@@ -2952,8 +2953,8 @@ aside {
     #cart-aside aside {
       width: 100vw;
       max-width: 100vw;
-      height: calc(100vh - 102px);
-      padding-top: 50px; }
+      height: calc(100% - 204px);
+      padding-top: 20px; }
       #cart-aside aside main {
         padding-top: 0 !important; }
         #cart-aside aside main .cart-main {
@@ -2974,15 +2975,16 @@ aside {
     position: absolute;
     top: 102px; }
     @media only screen and (max-width: 1070px) {
-      #mobile-menu-aside aside main {
-        padding-top: 10px;
-        height: calc(100vh - 10px); } }
+      #mobile-menu-aside aside {
+        height: calc(100vh - 142px); }
+        #mobile-menu-aside aside main {
+          padding-top: 30px; } }
     @media only screen and (max-width: 480px) {
       #mobile-menu-aside aside {
         width: 100vw;
         max-width: 100vw;
-        padding-top: 55px;
-        height: calc(100vh - 102px); } }
+        padding-top: 75px;
+        height: calc(100% - 204px); } }
     #mobile-menu-aside aside .header-menu-mobile {
       display: flex;
       flex-direction: column;
@@ -4680,7 +4682,7 @@ nav.header-menu-desktop a {
     display: none; }
 
 .shop-nav {
-  padding: 10px 0;
+  padding: 20px;
   background-color: rgba(119, 141, 121, 0.8);
   border-bottom: solid #1F1F1F 3px; }
   .shop-nav ul {
@@ -4690,6 +4692,14 @@ nav.header-menu-desktop a {
     gap: 20px; }
     .shop-nav ul li {
       margin: 0; }
+    @media only screen and (max-width: 1070px) {
+      .shop-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0; }
+        .shop-nav ul .button {
+          width: 90vw;
+          max-width: 350px; } }
   .shop-nav .button {
     height: 40px;
     cursor: pointer; }
@@ -4808,8 +4818,7 @@ nav.header-menu-desktop a {
     margin-top: 0; }
   @media only screen and (max-width: 1070px) {
     .shop {
-      text-align: center;
-      padding-top: 0; }
+      text-align: center; }
       .shop .recommended-product {
         width: 100%;
         margin: 0 auto; }
@@ -4999,18 +5008,27 @@ hr {
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
 
 h3.demo-text {
-  font-size: 2.5rem;
+  border: solid #1F1F1F 3px;
+  border-top: none;
+  background-color: #778d79;
+  padding: 2px 12px;
+  font-size: 1.25rem;
   margin: 0;
   position: absolute;
-  top: 15px;
-  width: 100%;
+  top: 0;
+  left: 0;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center; }
   @media only screen and (max-width: 1070px) {
     h3.demo-text {
-      display: none; } }
+      border-top: solid #1F1F1F 3px;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      top: 35px;
+      left: 15px;
+      width: unset; } }
 
 .thb-icon {
   width: 75px;
@@ -5131,15 +5149,26 @@ main {
           main .contact-content .contact-nav .button {
             width: 90vw;
             max-width: 350px; } }
-  main .recommended-products h3 {
-    font-family: "Saudagar";
-    color: #F1EDE2;
-    background-color: #778d79;
-    border: solid #1F1F1F 3px;
-    font-size: 2.5rem;
-    padding: 20px 50px;
-    max-width: 100%;
-    text-align: center; }
+  main .recommended-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    main .recommended-products h3 {
+      font-family: "Saudagar";
+      color: #F1EDE2;
+      background-color: #778d79;
+      border: solid #1F1F1F 3px;
+      font-size: 2.5rem;
+      padding: 20px 50px;
+      max-width: 100%;
+      text-align: center; }
+      @media only screen and (max-width: 1070px) {
+        main .recommended-products h3 {
+          width: 70%;
+          font-size: 1.5rem;
+          padding: 50px;
+          margin: 0; } }
   main .retail-content {
     background-color: rgba(119, 141, 121, 0.8);
     height: 400px;
@@ -5156,6 +5185,12 @@ main {
       padding: 20px 50px;
       max-width: 100%;
       text-align: center; }
+      @media only screen and (max-width: 1070px) {
+        main .retail-content h3 {
+          width: 60%;
+          font-size: 1.5rem;
+          padding: 50px;
+          margin: 0; } }
   main .route-error {
     min-height: calc(100vh - 358px);
     background-color: rgba(119, 141, 121, 0.8);
@@ -5291,10 +5326,10 @@ main {
       main .main-events {
         flex-direction: column; }
         main .main-events hr {
-          min-width: 100%;
+          width: 80%;
           max-width: unset;
-          margin: 0;
-          border-right: 0;
+          margin: 0 auto;
+          border: solid #1F1F1F 2px !important;
           height: 4px; }
         main .main-events .button {
           max-width: 350px;
