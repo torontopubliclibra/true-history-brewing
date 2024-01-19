@@ -18,14 +18,36 @@
   justify-content: center;
   align-items: center;
 
+  &.aside-closed {
+    header * {
+      animation: none;
+    }
+  }
+
   // responsive to mobile
   @media only screen and (max-width: $mobile) {
     background-image: url('./../../public/assets/wooden-bg.jpg');
     background-size: 100%;
+
+    &.aside-closed {
+      * {
+        animation: none;
+      }
+    }
+
+    header * {
+      animation: $secondary-animation !important;
+    }
   }
 
   &.aside-open {
     overflow-y: hidden;
+
+    header {
+      * {
+        animation: none;
+      }
+    }
 
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
@@ -46,6 +68,10 @@
   }
 }
 
+body, header, footer, main, section {
+  animation: none;
+}
+
 body {
   width: 105vw;
   max-width: 1500px;
@@ -54,16 +80,25 @@ body {
   margin-right: -5px;
 
   #mobile-menu-aside {
-    display: none !important;
+    display: initial !important;
+    
+    animation: none;
+    * {
+      animation: $secondary-animation;
+    }
   }
 
   #cart-aside {
     z-index: 250;
+
+    animation: none;
+    * {
+      animation: $secondary-animation;
+    }
   }
 
   &.landing, &.loading {
     overflow: hidden;
-    height: 100vh;
   }
 
   &.default-body {
@@ -193,8 +228,58 @@ main {
     border-right: none;
   }
 
-  .contact-content {
+  .contact-nav {
+    padding: 20px;
     background-color: rgba($color1, 0.8);
+    border-bottom: $default-border;
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      li {
+        margin: 0;
+      }
+
+      .button {
+        height: 40px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color4;
+          color: $light;
+        }
+        &.selected {
+          background-color: $color4;
+          color: $light;
+        }
+      }
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        .button {
+          width: 90vw;
+          max-width: 350px;
+
+          &:hover {
+            background-color: $color2;
+            color: $black;
+          }
+          &.selected:hover {
+            background-color: $color4;
+            color: $light;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-content {
+    background-color: rgba($color2, 0.8);
     padding-top: 15px;
 
     .contact-form {
@@ -244,6 +329,7 @@ main {
         border: $thin-border;
         border-radius: 0;
         filter: $default-shadow;
+        background-color: $light;
       }
 
       input[type="radio"] {
@@ -288,42 +374,6 @@ main {
       }
       .form-field {
         width: 100%;
-      }
-    }
-
-    .contact-nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-
-      li {
-        margin: 0;
-      }
-
-      .button {
-        height: 40px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: $color4;
-          color: $light;
-        }
-        &.selected {
-          background-color: $color4;
-          color: $light;
-        }
-      }
-
-      // responsive to tablet
-      @media only screen and (max-width: $tablet) {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-
-        .button {
-          width: 90vw;
-          max-width: 350px;
-        }
       }
     }
   }
@@ -476,16 +526,17 @@ main {
       }
       .sketch-address {
         width: 100%;
-        margin-top: 0;
+        margin: 0;
 
         .bar-sketch {
-          padding: 30px 0;
+          padding: 30px 20px;
           padding-bottom: 10px;
-          width: 100%;
+          width: 95%;
         }
         .address {
           order: -1;
-          max-width: 100%;
+          width: 100%;
+          padding: 20px 10%;
           width: 80%;
           padding-bottom: 30px;
         }
@@ -530,6 +581,7 @@ main {
     background-color: rgba($less-light, 0.8);
     padding: 0;
     .events-photo {
+      animation: $secondary-animation;
       max-width: 45%;
       border-right: $default-border;
       border-radius: 0;
@@ -602,7 +654,7 @@ main {
     border-top: $default-border;
 
     p {
-      font-size: 24px !important;
+      font-size: 1.25rem;
       font-style: italic;
       line-height: 1.5;
     }
@@ -643,7 +695,7 @@ main {
       padding: 30px 5%;
 
       p {
-        font-size: 20px !important;
+        font-size: 1.15rem;
       }
 
       form {
@@ -670,6 +722,7 @@ main {
     border-bottom: $default-border;
     padding: 0;
     .taproom-photo {
+      animation: $secondary-animation;
       position: absolute;
       top: 0;
       width: 100%;
@@ -679,6 +732,7 @@ main {
       border-radius: 0;
     }
     .taproom-info {
+      animation: $secondary-animation;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -716,6 +770,8 @@ main {
         }
         .address {
           order: -1;
+          padding: 20px 10%;
+          width: 80%;
         }
       }
     }
@@ -749,6 +805,7 @@ main {
       gap: 20px;
 
       li {
+        animation: $secondary-animation;
         display: flex;
         flex-direction: column;
         justify-content: left;
@@ -761,6 +818,10 @@ main {
         border: $default-border;
         border-radius: 40px;
         padding: 20px;
+
+        * {
+          animation: $secondary-animation;
+        }
 
         &.beer, &.wine-seltzers-etc, &.non-alc {
           width: 325px;

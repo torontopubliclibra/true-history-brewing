@@ -111,9 +111,9 @@ export default function Homepage() {
           {shopNavItems()}
         </ul>
       </section>
-      <div className="shop">
+      <section className="shop">
         <SelectedCollection selectedCategory={selectedCategory} shopCollections={shopCollections} />
-      </div>
+      </section>
       <section className="shop-disclaimers">
         <div className="text-box">
           <h3>Delivery and Pickup Details</h3>

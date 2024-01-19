@@ -11,6 +11,7 @@ aside {
     position: fixed;
     right: calc(-1 * 400px);
     top: 0;
+    animation: none;
 
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
@@ -239,6 +240,7 @@ aside {
 }
 
 .overlay {
+  animation: none;
     overflow-x: hidden;
     background: rgba(0, 0, 0, 0.2);
     top: 0;

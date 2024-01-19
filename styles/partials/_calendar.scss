@@ -8,6 +8,14 @@
   margin-bottom: 10px;
 }
 
+.fc * {
+  animation: none;
+}
+
+.fc-daygrid-event, .fc-list-event-time, .fc-list-event-title {
+  animation: $secondary-animation;
+}
+
 .calendar {
   .fc-button-active {
     background-color: $color1 !important;

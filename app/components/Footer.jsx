@@ -16,7 +16,30 @@ export function Footer() {
       </footer>
     )
 
-  } else {
+  } else if (location.pathname.includes('/contact')) {
+      return (
+        <footer className="footer">
+          <div className="footer-buttons">
+            <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
+              Instagram
+              <img src={instagram} className="button-icon" />
+            </Link>
+            <div className='button button-primary selected'>
+              Contact
+              <img src={contact} className="button-icon" />
+            </div>
+          </div>
+          <hr/>
+          <div className="credit">
+            <p>Website designed by <a href="https://danateagle.com" target="_blank">Dana Teagle</a></p>
+          </div>
+          <div className="copyright">
+            <p>© True History Brewing, 2024</p>
+          </div>
+        </footer>
+      )
+  
+    } else {
 
     return (
       <footer className="footer">
@@ -38,7 +61,7 @@ export function Footer() {
           <p>© True History Brewing, 2024</p>
         </div>
       </footer>
-    );
+    )
 
   };
 };

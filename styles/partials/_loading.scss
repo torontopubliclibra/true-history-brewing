@@ -3,16 +3,17 @@
 
 .loading {
     background-color: rgba($color1, 0.8);
+    border-bottom: $default-border;
     padding: 0;
-    height: calc(100vh - 206px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 453px;
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
-        height: calc(100vh - 204px);
+        height: calc(100vh - 210px);
     }
 
     .thb-icon {
