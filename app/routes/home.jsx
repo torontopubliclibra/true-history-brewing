@@ -9,7 +9,7 @@ import { Hours } from './../components/Hours';
 // asset imports
 import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
-import patioPhoto from './../../public/assets/patio-photo.jpg';
+import patioPhoto from './../../public/assets/patio-photo.png';
 import compass from './../../public/assets/icons/compass.svg';
 import beer from './../../public/assets/icons/beer.svg';
 import wine from './../../public/assets/icons/wine.svg';
