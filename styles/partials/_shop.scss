@@ -124,7 +124,7 @@
       margin: 0 auto;
 
       h3 {
-        font-size: 25px;
+        font-size: 1.25rem;
         text-transform: uppercase;
         margin: 0;
         margin-bottom: 10px;
@@ -132,14 +132,19 @@
   
       p {
         margin: 0;
-        font-size: 16px;
+        font-size: 0.9rem;
       }
     }
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
-      p {
+      padding: 15px;
+      .text-box {
         max-width: 100%;
+        padding: 10px;
+        p {
+          max-width: 100%;
+        }
       }
     }
   }

@@ -47,7 +47,7 @@ export default function Homepage() {
 
   for (let [key, value] of Object.entries(menus.food)) {
     formattedMenus.food.push(
-      <li key={key} className={`food ` + value.size}>
+      <li key={`food ` + key} className={`food ` + value.size}>
         <h4>{value.name}</h4>
         <p className='description'>{value.description}</p>
         <p className='price'>${value.price}</p>
@@ -57,7 +57,7 @@ export default function Homepage() {
 
   for (let [key, value] of Object.entries(menus.beers)) {
     formattedMenus.beers.push(
-      <li key={key} className='beer'>
+      <li key={`beer ` + key} className='beer'>
         <h4>{value.name} ({value.abv}%)</h4>
         <p className='description'>{value.description}</p>
         <p className='price'>${value.price}</p>
@@ -67,7 +67,7 @@ export default function Homepage() {
 
   for (let [key, value] of Object.entries(menus.nonAlc)) {
     formattedMenus.nonAlc.push(
-      <li key={key} className='non-alc'>
+      <li key={`non-alc ` + key} className='non-alc'>
         <h4>{value.name}</h4>
         <p className='description'>{value.description}</p>
         <p className='price'>${value.price}</p>
@@ -77,7 +77,7 @@ export default function Homepage() {
 
   for (let [key, value] of Object.entries(menus.wineSeltzersEtc)) {
     formattedMenus.wineSeltzersEtc.push(
-      <li key={key} className='wine-seltzers-etc'>
+      <li key={`wine-seltzers-etc` + key} className='wine-seltzers-etc'>
         <h4>{value.name} ({value.abv}%)</h4>
         <p className='description'>{value.description}</p>
         <p className='price'>${value.price}</p>
@@ -107,7 +107,7 @@ export default function Homepage() {
           <div className="taproom-info">
             <Hours/>
             <p className="address">1154 St. Clair Avenue West, Toronto, Ontario</p>
-            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-primary'>Get Directions <img src={compass} className="button-icon"/></Link>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Get Directions <img src={compass} className="button-icon"/></Link>
           </div>
         </section>
         <section className="taproom-events" id="calendar">

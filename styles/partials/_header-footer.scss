@@ -38,22 +38,22 @@ header {
     nav {
 
         &.header-submenu {
-        display: flex;
-        grid-gap: 1rem;
-        margin-left: auto;
+            display: flex;
+            grid-gap: 1rem;
+            margin-left: auto;
 
-        // responsive to mobile
-        @media only screen and (max-width: $mobile) {
-            .button {
-                &:hover {
-                    color: $black;
-                    background-color: $color2;
-                    img {
-                        filter: none;
+            // responsive to mobile
+            @media only screen and (max-width: $mobile) {
+                .button {
+                    &:hover {
+                        color: $black;
+                        background-color: $color2;
+                        img {
+                            filter: none;
+                        }
                     }
                 }
             }
-        }
 
             .cart-active, .menu-active {
                 color: $white;
@@ -81,50 +81,58 @@ header {
         }
 
         &.header-menu-desktop {
+        animation: $secondary-animation;
         display: flex;
         width: 100%;
         justify-content: center;
         position: absolute;
         bottom: 1px;
 
-        // responsive to mobile
-        @media only screen and (max-width: $tablet) {
-            display: none;
-        }
+            // responsive to mobile
+            @media only screen and (max-width: $tablet) {
+                display: none;
+            }
 
-        a {
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 150px;
-            width: 180px;
-            height: 45px;
-            margin-left: -2px;
-            margin-right: -2px;
-            transform: perspective(8px) rotateX(1deg);
-            transition: background-color 0.4s, color 0.4s, margin 0.4s;
-            background-color: $least-light;
-            border: $default-border;
-            border-radius: 25px 25px 0 0;
-            border-bottom: none;
-            &.active-link {
-            background-color: $light;
-            z-index: 100;
-
-            &:hover {
-                background-color: $light;
+            a {
+                animation: $secondary-animation;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 150px;
+                width: 180px;
+                height: 45px;
                 margin-left: -2px;
                 margin-right: -2px;
+                transform: perspective(8px) rotateX(1deg);
+                transition: background-color 0.4s, color 0.4s, margin 0.4s;
+                background-color: $least-light;
+                border: $default-border;
+                border-radius: 25px 25px 0 0;
+                border-bottom: none;
+
+                span, img {
+                    animation: $secondary-animation;
+                }
+                
+                &.active-link {
+                    background-color: $light;
+                    z-index: 100;
+
+                    &:hover {
+                        background-color: $light;
+                        margin-left: -2px;
+                        margin-right: -2px;
+                    }
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: $less-light;
+                    margin-left: 4px;
+                    margin-right: 4px;
+                }
             }
-            }
-            &:hover {
-            text-decoration: none;
-            background-color: $less-light;
-            margin-left: 4px;
-            margin-right: 4px;
-            }
-        }
         }
     }
 }
@@ -151,6 +159,14 @@ footer {
     .footer-buttons {
         display: flex;
         gap: 15px;
+
+        .selected {
+            background-color: $color1;
+            color: $light;
+            img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
+        }
     }
 
     // responsive to tablet
@@ -166,6 +182,8 @@ footer {
         background: none;
         border-left: none;
         border-right: none;
+        border-bottom: none;
+        margin-bottom: 0;
 
         // responsive to mobile
         @media only screen and (max-width: $mobile) {
@@ -177,7 +195,16 @@ footer {
     }
 }
 
-.landing-header, .landing-footer {
+.landing-header {
     height: 100px;
-    padding: 0;
+}
+.landing-footer {
+    display: none;
+    border-top: none;
+    height: 100px;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        display: initial;
+    }
 }

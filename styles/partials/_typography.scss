@@ -1,3 +1,5 @@
+@import 'animations';
+
 // font imports
 @font-face {
     font-family: "Saudagar";
@@ -34,6 +36,7 @@
 
 * {
     font-family: "Bogue-Regular", sans-serif;
+    animation: $default-animation;
 };
 
 header, footer {
@@ -217,7 +220,6 @@ aside {
             border: $thin-border;
             max-width: 70%;
             margin: 0 auto;
-            font-size: 0.8rem;
         }
     }
     .cart-line {
@@ -285,11 +287,16 @@ aside {
         border: none;
         border-bottom: $default-border;
         border-radius: 0;
-        padding: 15px 15%;
+        padding: 10px 15px;
+        padding-bottom: 0;
         max-width: 100vw;
-        font-size: 1.6rem;
         letter-spacing: 1.5px;
         margin: 0;
+    }
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+        font-size: 1.1rem;
     }
 }
 
@@ -565,6 +572,7 @@ main {
     }
   
     .button-icon {
+    animation: none;
       width: 20px;
       padding-bottom: 3px;
     }
@@ -601,6 +609,14 @@ main {
       img {
         filter: none;
       }
+    }
+}
+
+.button-quaternary:hover {
+    background-color: $color3;
+    color: $black;
+    img {
+        filter: none;
     }
 }
 

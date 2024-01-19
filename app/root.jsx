@@ -194,7 +194,7 @@ export default function App() {
   /** @type {LoaderReturnData} */
 
   // initial state variables
-  let [ htmlState, setHtmlState ] = useState("aside-closed");
+  let [ htmlState, setHtmlState ] = useState("default-html");
   let [ bodyTags, setBodyTags ] = useState("default-body");
   let [ asideOpen, setAsideOpen ] = useState({
     open: false,
@@ -203,6 +203,8 @@ export default function App() {
 
   // update aside open state
   const updateAsideOpen = (aside, open) => {
+
+    window.scrollTo({top: 0});
 
     if (open) {
       setHtmlState("aside-open");
@@ -240,8 +242,6 @@ export default function App() {
       }
 
     }
-
-    window.scrollTo({top: 0});
   }
 
   // initial hours

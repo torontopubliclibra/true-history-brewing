@@ -53,7 +53,7 @@ export default function Homepage() {
   )
 
   let landingPage = (
-    <section className='landing'>
+    <section className='landing-section'>
       <div className="landing-welcome">
         <img src={icon} className="thb-icon" alt="True History Brewing icon" />
         <h1>Welcome to <br/><span className="title">True History Brewing</span></h1>

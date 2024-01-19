@@ -141,8 +141,8 @@ export default function Homepage() {
         <section className="heading contact-heading">
           <h2>Contact</h2>
         </section>
-        <section className="contact-content">
-          <ul className='contact-nav'>
+        <section className="contact-nav">
+        <ul>
             <li>
               <button onClick={() => handleContactChange("general")} className={buttonClass("general")}>
                 General inquiries
@@ -159,6 +159,8 @@ export default function Homepage() {
               </button>
             </li>
           </ul>
+      </section>
+        <section className="contact-content">
           <ContactForm />
         </section>
     </>
