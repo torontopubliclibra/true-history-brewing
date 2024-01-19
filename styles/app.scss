@@ -34,6 +34,10 @@
         animation: none;
       }
     }
+
+    header * {
+      animation: $secondary-animation !important;
+    }
   }
 
   &.aside-open {
@@ -78,7 +82,7 @@ body {
   #mobile-menu-aside {
     display: initial !important;
     
-    animation: $secondary-animation;
+    animation: none;
     * {
       animation: $secondary-animation;
     }
@@ -87,7 +91,7 @@ body {
   #cart-aside {
     z-index: 250;
 
-    animation: $secondary-animation;
+    animation: none;
     * {
       animation: $secondary-animation;
     }
@@ -260,6 +264,15 @@ main {
         .button {
           width: 90vw;
           max-width: 350px;
+
+          &:hover {
+            background-color: $color2;
+            color: $black;
+          }
+          &.selected:hover {
+            background-color: $color4;
+            color: $light;
+          }
         }
       }
     }
@@ -513,17 +526,18 @@ main {
       }
       .sketch-address {
         width: 100%;
-        margin-top: 0;
+        margin: 0;
 
         .bar-sketch {
-          padding: 30px 0;
+          padding: 30px 20px;
           padding-bottom: 10px;
-          width: 100%;
+          width: 95%;
         }
         .address {
           order: -1;
-          max-width: 100%;
           width: 100%;
+          padding: 20px 10%;
+          width: 80%;
           padding-bottom: 30px;
         }
         .button {
@@ -756,8 +770,8 @@ main {
         }
         .address {
           order: -1;
-          padding: 20px 5px;
-          width: 100%;
+          padding: 20px 10%;
+          width: 80%;
         }
       }
     }

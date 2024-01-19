@@ -197,14 +197,19 @@ footer {
 
 .landing-header {
     height: 100px;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        height: calc(50vh - 228px);
+    }
 }
 .landing-footer {
     display: none;
     border-top: none;
-    height: 100px;
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
         display: initial;
+        height: calc(50vh - 228px);
     }
 }
