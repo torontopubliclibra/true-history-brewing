@@ -33,19 +33,59 @@ export default function Homepage() {
   const { events, currentDate } = useContext(StrapiContext);
   const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe now');
 
-  let formattedEvents = events.map((event, index) => {
+  // parse time from string
+  let parseDate = (string) => {
+
+    let dateTime = new Date(string);
+    let month = dateTime.getMonth() + 1;
+    let day = dateTime.getDate();
+    let year = dateTime.getFullYear();
+    let shortYear = year.toString().substring(2, 4);
+
+    if (month < 10) month = '0' + month;
+    if (day < 10) day = '0' + day;
+
+    return `${day}/${month}/${shortYear}`;
+  }
+
+  // parse time from string
+  let parseTime = (string) => {
+
+    let dateTime = new Date(string);
+    let hour = dateTime.getHours();
+    let minute = dateTime.getMinutes();
+    let meridiem = 'am';
+
+    if (hour > 12) {
+      hour = hour - 12;
+      meridiem = 'pm';
+    } else if (hour == 12) {
+      meridiem = 'pm';
+    } else if (hour == 0) {
+      hour = 12;
+    } else if (hour < 10) {
+      hour = '0' + hour;
+    }
+
+    if (minute < 10 && minute.length <= 1) minute = '0' + minute;
+    if (minute == '0') minute = '0' + minute;
+
+    return `${hour}:${minute}${meridiem}`;
+  }
+
+  let formattedEvents = events.events.map((event, index) => {
 
     let title = event.title;
-    let date = event.date.substring(8, 10) + `/` + event.date.substring(5, 7) + `/` + event.date.substring(2, 4);
-    let time = event.time;
+    let date = event.start;
+    let time = parseTime(event.start);
     let key = event + `-` + index;
 
     if (time.substring(0, 1) == 0) {
       time = time.substring(1, time.length);
     }
 
-    if (event.date >= currentDate && index < 4) {
-      return <li key={key}>{title} <span className="date">- {date} @ {time}</span></li>
+    if (date >= currentDate && index < 3) {
+      return <li key={key}>{title} <span className="date">- {parseDate(date)} @ {time}</span></li>
     }
   })
 

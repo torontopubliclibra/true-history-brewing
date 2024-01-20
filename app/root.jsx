@@ -131,60 +131,6 @@ export async function loader({context}) {
   );
 }
 
-// parse time from string
-export function parseTime(type, string) {
-
-  let hour = '';
-  let minute = '';
-  let meridiem = 'am';
-
-  if (type === "datetime") {
-    let dateTime = new Date(string);
-
-    hour = dateTime.getHours();
-    minute = dateTime.getMinutes();
-
-  } else if (type === "time") {
-    [ hour, minute ] = string.split(':');
-
-  }
-
-  if (hour > 12) {
-    hour = hour - 12;
-    meridiem = 'pm';
-  } else if (hour == 12) {
-    meridiem = 'pm';
-  } else if (hour == 0) {
-    hour = 12;
-  } else if (hour < 10) {
-    hour = '0' + hour;
-  }
-
-  if (minute < 10 && minute.length <= 1) minute = '0' + minute;
-  if (minute == '0') minute = '0' + minute;
-
-  return `${hour}:${minute}${meridiem}`;
-}
-
-// parse date from string
-export function parseDate(datetimeString) {
-  const dateTime = new Date(datetimeString);
-
-  let year = dateTime.getFullYear();
-  let month = dateTime.getMonth() + 1;
-  let day = dateTime.getDate();
-  let hour = dateTime.getHours();
-  let minute = dateTime.getMinutes();
-
-  if (month < 10) month = '0' + month;
-  if (day < 10) day = '0' + day;
-  if (minute == 0) minute = '00';
-  if (hour.length > 1) minute = '0' + hour;
-  if (hour < 10) hour = '0' + hour;
-
-  return `${year}-${month}-${day}T${hour}:${minute}:00`;
-}
-
 // App component
 export default function App() {
 
@@ -245,312 +191,331 @@ export default function App() {
   }
 
   // initial hours
-  const [ hours, setHours ] = useState({
-    Mon: "Closed",
-    Tues: "4:00pm–11:00pm",
-    Weds: "4:00pm–11:00pm",
-    Thurs: "4:00pm–11:00pm",
-    Fri: "12:00pm–12:00am",
-    Sat: "12:00pm–12:00am",
-    Sun: "12:00pm–10:00pm"
+  let [ hours, setHours ] = useState({
+    mon: {
+      service: "closed",
+      start: "",
+      end: ""
+    },
+    tues: {
+      service: "open",
+      start: "4:00pm",
+      end: "11:00pm"
+    },
+    weds: {
+      service: "open",
+      start: "4:00pm",
+      end: "11:00pm"
+    },
+    thurs: {
+      service: "open",
+      start: "4:00pm",
+      end: "11:00pm"
+    },
+    fri: {
+      service: "open",
+      start: "12:00pm",
+      end: "12:00am"
+    },
+    sat: {
+      service: "open",
+      start: "12:00pm",
+      end: "12:00am"
+    },
+    sun: {
+      service: "open",
+      start: "12:00pm",
+      end: "10:00pm"
+    },
+    updatedAt: "",
   });
 
   // initial menus
   const [ menus, setMenus ] = useState({
     beers: {
-      beer1: {
-        name: "Polish Pils",
-        description: "Polish pilsner hopped w/ Tomyski & Lunga",
-        price: "9.25",
-        abv: "4.6"
-      },
-      beer2: {
-        name: "Is It Local?",
-        description: "Dunkelweizen",
-        price: "9.25",
-        abv: "6.0"
-      },
-      beer3: {
-        name: "There's Always Money in the Banana Stand",
-        description: "Hefeweizen",
-        price: "9.25",
-        abv: "5.6"
-      },
-      beer4: {
-        name: "Office Hours",
-        description: "Rotbier",
-        price: "9.25",
-        abv: "5.1"
-      },
-      beer5: {
-        name: "Nockherberg Hell",
-        description: "Double Decocted Helles Lager",
-        price: "9.25",
-        abv: "5.1"
-      }
+      items: [],
+      updatedAt: "",
     },
     food: {
-      item1: {
-        name: "Pickles",
-        description: "Seasonal Ontario veg",
-        price: "8",
-        size: "sm"
-      },
-      item2: {
-        name: "Fried Olives",
-        description: "Stuffed w/ ricotta & lemon",
-        price: "8",
-        size: "sm"
-      },
-      item3: {
-        name: "Pretzel",
-        description: "German-style pretzel w/ yellow mustard",
-        price: "8",
-        size: "sm"
-      },
-      item4: {
-        name: "Cucumber Salad",
-        description: "Persian cucumber, red onion, buttermilk dressing, dill",
-        price: "10",
-        size: "med"
-      },
-      item5: {
-        name: "Potato Salad",
-        description: "Potatoes, dijon vinaigrette, celery, herbs",
-        price: "10",
-        size: "med"
-      },
-      item6: {
-        name: "Fried Squash Rings",
-        description: "Delicata squash, whipped ricotta, sage, honey",
-        price: "15",
-        size: "lrg"
-      },
-      item7: {
-        name: "Stuffed Banana Peppers",
-        description: "Blue cheese stuffing, tomato sauce, crostini",
-        price: "16",
-        size: "lrg"
-      },
-      item8: {
-        name: "Bratwurst",
-        description: "Pasture Butchery bratwurst on a bun w/ sauerkraut, onion, pickled jalapeno (veg option available)",
-        price: "16",
-        size: "lrg"
-      },
-      item9: {
-        name: "Pasture Burger",
-        description: "Pasture Butchery ground chuck, raclette, onion, lettuce, horseradish remoulade, brioche bun",
-        price: "18",
-        size: "lrg"
-      }
+      items: [],
+      updatedAt: "",
     },
     nonAlc: {
-      item1: {
-        name: "Barbet sparkling water",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        price: "4"
-      },
-      item2: {
-        name: "Item 2",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        price: "3"
-      },
-      item3: {
-        name: "Item 3",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        price: "5"
-      },
+      items: [],
+      updatedAt: "",
     },
     wineSeltzersEtc: {
-      item1: {
-        name: "Item 1",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        price: "20",
-        abv: "8"
-      },
-      item2: {
-        name: "Item 2",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        price: "40",
-        abv: "12"
-      },
-      item3: {
-        name: "Item 3",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        price: "60",
-        abv: "14"
-      },
+      items: [],
+      updatedAt: "",
     },
   });
 
   // initial events
-  const [ events, setEvents ] = useState([]);
+  const [ events, setEvents ] = useState(
+    {
+      events: [],
+      updatedAt: ""
+    }
+  );
+
+  // parse time from string
+  let parseTime = (string) => {
+
+    let [ hour, minute ] = string.split(':');
+    let meridiem = 'am';
+
+    if (hour > 12) {
+      hour = hour - 12;
+      meridiem = 'pm';
+    } else if (hour == 12) {
+      meridiem = 'pm';
+    } else if (hour == 0) {
+      hour = 12;
+    } else if (hour < 10) {
+      hour = '0' + hour;
+    }
+
+    if (minute < 10 && minute.length <= 1) minute = '0' + minute;
+    if (minute == '0') minute = '0' + minute;
+
+    return `${hour}:${minute}${meridiem}`;
+  }
+
+  // parse date from string
+  let parseDate = (datetimeString) => {
+    const dateTime = new Date(datetimeString);
+
+    let year = dateTime.getFullYear();
+    let month = dateTime.getMonth() + 1;
+    let day = dateTime.getDate();
+    let hour = dateTime.getHours();
+    let minute = dateTime.getMinutes();
+
+    if (month < 10) month = '0' + month;
+    if (day < 10) day = '0' + day;
+    if (minute == 0) minute = '00';
+    if (hour.length > 1) minute = '0' + hour;
+    if (hour < 10) hour = '0' + hour;
+
+    return `${year}-${month}-${day}T${hour}:${minute}:00`;
+  }
 
   // fetch hours from Strapi CMS
   const fetchHours = async () => {
-    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/schedules`);
-    const newHours = await response.json();
-    let hoursData = newHours.data[0].attributes;
-    let taproomHours = {};
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/hours?populate=*`);
+    const data = await response.json();
+    let hoursData = data.data[0].attributes;
+    let newHours = hours;
 
-    if (hours) {
-
-      if (hoursData.mon_service === 'closed') {
-        taproomHours.Mon = "Closed";
-      } else if ((hoursData.mon_service === 'open') && hoursData.mon_start && hoursData.mon_end) {
-        taproomHours.Mon = parseTime("time", hoursData.mon_start) + `–` + parseTime("time", hoursData.mon_end)
+    let setDayHours = (day) => {
+      newHours[day].service = hoursData[day].service;
+      if (hoursData[day].start) {
+        newHours[day].start = parseTime(hoursData[day].start);
       }
-
-      if (hoursData.tues_service === 'closed') {
-        taproomHours.Tues = "Closed";
-      } else if ((hoursData.tues_service === 'open') && hoursData.tues_start && hoursData.tues_end) {
-        taproomHours.Tues = parseTime("time", hoursData.tues_start) + `–` + parseTime("time", hoursData.tues_end)
-      }
-
-      if (hoursData.weds_service === 'closed') {
-        taproomHours.Weds = "Closed";
-      } else if ((hoursData.weds_service === 'open') && hoursData.weds_start && hoursData.weds_end) {
-        taproomHours.Weds = parseTime("time", hoursData.weds_start) + `–` + parseTime("time", hoursData.weds_end)
-      }
-      
-      if (hoursData.thurs_service === 'closed') {
-        taproomHours.Thurs = "Closed";
-      } else if ((hoursData.thurs_service === 'open') && hoursData.thurs_start && hoursData.thurs_end) {
-        taproomHours.Thurs = parseTime("time", hoursData.thurs_start) + `–` + parseTime("time", hoursData.thurs_end)
-      }
-
-      if (hoursData.fri_service === 'closed') {
-        taproomHours.Fri = "Closed";
-      } else if ((hoursData.fri_service === 'open') && hoursData.fri_start && hoursData.fri_end) {
-        taproomHours.Fri = parseTime("time", hoursData.fri_start) + `–` + parseTime("time", hoursData.fri_end)
-      }
-
-      if (hoursData.sat_service === 'closed') {
-        taproomHours.Sat = "Closed";
-      } else if ((hoursData.sat_service === 'open') && hoursData.sat_start && hoursData.sat_end) {
-        taproomHours.Sat = parseTime("time", hoursData.sat_start) + `–` + parseTime("time", hoursData.sat_end)
-      }
-
-      if (hoursData.sun_service === 'closed') {
-        taproomHours.Sun = "Closed";
-      } else if ((hoursData.sun_service === 'open') && hoursData.sun_start && hoursData.sun_end) {
-        taproomHours.Sun = parseTime("time", hoursData.sun_start) + `–` + parseTime("time", hoursData.sun_end)
+      if (hoursData[day].end) {
+        newHours[day].end = parseTime(hoursData[day].end);
       }
     }
 
-    setHours(taproomHours);
+    if (hoursData) {
+      setDayHours('mon');
+      setDayHours('tues');
+      setDayHours('weds');
+      setDayHours('thurs');
+      setDayHours('fri');
+      setDayHours('sat');
+      setDayHours('sun');
+      
+      if (hours !== newHours) {
+        newHours['updatedAt'] = hoursData.updatedAt;
+        setHours(newHours);
+      }
+
+    }
+  };
+
+  let formatPrice = (price) => {
+    return "$" + price.toFixed(2);
+  }
+
+  let formatAbv = (abv) => {
+    return abv.toFixed(1) + "%";
+  }
+
+  // fetch menus from Strapi CMS
+  const fetchBeerMenus = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/beer-menus?populate=*`);
+    let data = await response.json();
+    let beerMenuData = data.data[0].attributes.beer;
+    let updatedAt = new Date(data.data[0].attributes.updatedAt);
+    let newBeers = {
+      items: [],
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+    }
+    if (beerMenuData) {
+      beerMenuData.forEach((beer) => {
+        let newBeer = {
+          title: beer.title,
+          abv: formatAbv(beer.abv),
+          price: formatPrice(beer.price),
+        }
+
+        if (beer.description) {
+          newBeer.description = beer.description;
+        }
+
+        newBeers.items.push(newBeer);
+      });
+    }
+    
+    let updatedMenus = menus;
+    if (newBeers !== updatedMenus.beers) {
+      updatedMenus.beers = newBeers;
+      setMenus(updatedMenus);
+    };
   };
 
   // fetch menus from Strapi CMS
-  const fetchMenus = async () => {
-    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/beer-menus`);
-    let newMenus = await response.json();
-    let menuData = newMenus.data[0].attributes;
-    let formattedMenus = {
-      beers: {
-        beer1: {},
-        beer2: {},
-        beer3: {},
-        beer4: {}
-      },
+  const fetchWineSeltzersEtcMenus = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/wine-seltzers-etc-menus?populate=*`);
+    let data = await response.json();
+    let wineSeltzersEtcMenuData = data.data[0].attributes.beverage;
+    let updatedAt = new Date(data.data[0].attributes.updatedAt);
+    let newWineSeltzersEtc = {
+      items: [],
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+    }
+    if (wineSeltzersEtcMenuData) {
+      wineSeltzersEtcMenuData.forEach((beverage) => {
+        let newBeverage = {
+          title: beverage.title,
+          price: formatPrice(beverage.price),
+        }
+        if (beverage.abv) {
+          newBeverage.abv = formatAbv(beverage.abv);
+        }
+        if (beverage.description) {
+          newBeverage.description = beverage.description;
+        }
+        newWineSeltzersEtc.items.push(newBeverage);
+      });
+    }
+
+    let updatedMenus = menus;
+    if (newWineSeltzersEtc !== updatedMenus.wineSeltzersEtc) {
+      updatedMenus.wineSeltzersEtc = newWineSeltzersEtc;
+      setMenus(updatedMenus);
     };
+  };
 
-    if (menuData.beer1_name) {
-      formattedMenus.beers.beer1 = {
-        name: menuData.beer1_name,
-        description: menuData.beer1_description,
-        price: menuData.beer1_price,
-        abv: menuData.beer1_abv,
-      }
+  // fetch menus from Strapi CMS
+  const fetchNonAlcMenus = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/non-alc-menus?populate=*`);
+    let data = await response.json();
+    let nonAlcMenuData = data.data[0].attributes.beverage;
+    let updatedAt = new Date(data.data[0].attributes.updatedAt);
+    let newNonAlc = {
+      items: [],
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+    }
+    if (nonAlcMenuData) {
+      nonAlcMenuData.forEach((beverage) => {
+        let newBeverage = {
+          title: beverage.title,
+          price: formatPrice(beverage.price),
+        }
+        if (beverage.abv) {
+          newBeverage.abv = formatAbv(beverage.abv);
+        }
+        if (beverage.description) {
+          newBeverage.description = beverage.description;
+        }
+        newNonAlc.items.push(newBeverage);
+      });
     }
 
-    if (menuData.beer2_name) {
-      formattedMenus.beers.beer2 = {
-        name: menuData.beer2_name,
-        description: menuData.beer2_description,
-        price: menuData.beer2_price,
-        abv: menuData.beer2_abv,
-      }
-    }
+    let updatedMenus = menus;
+    if (newNonAlc !== updatedMenus.nonAlc) {
+      updatedMenus.nonAlc = newNonAlc;
+      setMenus(updatedMenus);
+    };
+  };
 
-    if (menuData.beer3_name) {
-      formattedMenus.beers.beer3 = {
-        name: menuData.beer3_name,
-        description: menuData.beer3_description,
-        price: menuData.beer3_price,
-        abv: menuData.beer3_abv,
-      }
+  // fetch menus from Strapi CMS
+  const fetchFoodMenus = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/food-menus?populate=*`);
+    let data = await response.json();
+    let foodMenusData = data.data[0].attributes.item;
+    let updatedAt = new Date(data.data[0].attributes.updatedAt);
+    let newFoods = {
+      items: [],
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
     }
-
-    if (menuData.beer4_name) {
-      formattedMenus.beers.beer4 = {
-        name: menuData.beer4_name,
-        description: menuData.beer4_description,
-        price: menuData.beer4_price,
-        abv: menuData.beer4_abv,
-      }
+    if (foodMenusData) {
+      foodMenusData.forEach((item) => {
+        let newItem = {
+          title: item.title,
+          price: formatPrice(item.price),
+          size: item.size,
+        }
+        if (item.description) {
+          newItem.description = item.description;
+        }
+        newFoods.items.push(newItem);
+      });
     }
-
-    setMenus(formattedMenus);
+    let updatedMenus = menus;
+    if (newFoods !== updatedMenus.food) {
+      updatedMenus.food = newFoods;
+      setMenus(updatedMenus);
+    };
   };
 
   // fetch events from Strapi CMS
   const fetchEvents = async () => {
-    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/events`);
-    let newEvents = await response.json();
-    let eventsData = newEvents.data[0].attributes;
-    let formattedEvents = [];
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/events-lists?populate=*`);
+    let data = await response.json();
+    let eventsData = data.data[0].attributes;
+    let updatedAt = new Date(data.data[0].attributes.updatedAt);
+    let newEvents = {
+      events: [],
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+    };
 
-    if (eventsData.event1_title) {
-        let event1 = {
-            title: eventsData.event1_title,
-            date: parseDate(eventsData.event1_date),
-            time: parseTime("datetime", eventsData.event1_date)
+    if (eventsData) {
+      eventsData.event.forEach((event) => {
+        let newEvent = {
+          title: event.title,
+          start: parseDate(event.start),
         }
-        formattedEvents.push(event1)
+        if (event.end) {
+          newEvent.end = event.start.substring(0, 10) + event.end;
+          newEvent.allDay = false;
+        }
+        newEvents.events.push(newEvent);
+      });
     }
 
-    if (eventsData.event2_title) {
-        let event2 = {
-            title: eventsData.event2_title,
-            date: parseDate(eventsData.event2_date),
-            time: parseTime("datetime", eventsData.event2_date)
-        }
-        formattedEvents.push(event2)
-    }
+    let updatedEvents = events;
+    if (newEvents !== updatedEvents) {
 
-    if (eventsData.event3_title) {
-        let event3 = {
-            title: eventsData.event3_title,
-            date: parseDate(eventsData.event3_date),
-            time: parseTime("datetime", eventsData.event3_date)
-        }
-        formattedEvents.push(event3)
-    }
-
-    if (eventsData.event4_title) {
-        let event4 = {
-            title: eventsData.event4_title,
-            date: parseDate(eventsData.event4_date),
-            time: parseTime("datetime", eventsData.event4_date)
-        }
-        formattedEvents.push(event4)
-    }
-
-    let sortedEvents = formattedEvents.sort((a, b) => {
-       return a.date > b.date;
-    });
-
-    setEvents(sortedEvents);
+      newEvents.events = newEvents.events.sort((a, b) => {
+        return a.start > b.start;
+      })
+      updatedEvents = newEvents;
+      setEvents(updatedEvents);
+    };
   };
 
   // fetch data and reset on page load
   useEffect(() => {
 
     fetchHours();
-    // fetchMenus();
     fetchEvents();
+    fetchBeerMenus();
+    fetchWineSeltzersEtcMenus();
+    fetchNonAlcMenus();
+    fetchFoodMenus();
     
     updateAsideOpen("", false)
 

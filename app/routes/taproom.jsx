@@ -38,52 +38,62 @@ export default function Homepage() {
     }
   }, [])
 
-  let formattedMenus = {
+  let formattedmenus = {
     beers: [],
     food: [],
     nonAlc: [],
     wineSeltzersEtc: []
   }
 
-  for (let [key, value] of Object.entries(menus.food)) {
-    formattedMenus.food.push(
-      <li key={`food ` + key} className={`food ` + value.size}>
-        <h4>{value.name}</h4>
-        <p className='description'>{value.description}</p>
-        <p className='price'>${value.price}</p>
+  menus.beers.items.forEach((beer, index) => {
+    formattedmenus.beers.push(
+      <li key={`beer-` + index} className='beer'>
+        <h4>{beer.title} ({beer.abv})</h4>
+        {beer.description ? <p className='description'>{beer.description}</p> : null}
+        <p className='price'>{beer.price}</p>
       </li>
     );
-  };
+  });
 
-  for (let [key, value] of Object.entries(menus.beers)) {
-    formattedMenus.beers.push(
-      <li key={`beer ` + key} className='beer'>
-        <h4>{value.name} ({value.abv}%)</h4>
-        <p className='description'>{value.description}</p>
-        <p className='price'>${value.price}</p>
+  menus.food.items.forEach((item, index) => {
+    formattedmenus.food.push(
+      <li key={`food-` + index} className={`food ` + item.size}>
+        <h4>{item.title}</h4>
+        {item.description ? <p className='description'>{item.description}</p> : null}
+        <p className='price'>{item.price}</p>
       </li>
     );
-  };
+  });
 
-  for (let [key, value] of Object.entries(menus.nonAlc)) {
-    formattedMenus.nonAlc.push(
-      <li key={`non-alc ` + key} className='non-alc'>
-        <h4>{value.name}</h4>
-        <p className='description'>{value.description}</p>
-        <p className='price'>${value.price}</p>
+  menus.nonAlc.items.forEach((beverage, index) => {
+    formattedmenus.nonAlc.push(
+      <li key={`non-alc-` + index} className='non-alc'>
+        <h4>{beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}</h4>
+        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+        <p className='price'>{beverage.price}</p>
       </li>
     );
-  };
+  });
 
-  for (let [key, value] of Object.entries(menus.wineSeltzersEtc)) {
-    formattedMenus.wineSeltzersEtc.push(
-      <li key={`wine-seltzers-etc` + key} className='wine-seltzers-etc'>
-        <h4>{value.name} ({value.abv}%)</h4>
-        <p className='description'>{value.description}</p>
-        <p className='price'>${value.price}</p>
+  menus.wineSeltzersEtc.items.forEach((beverage, index) => {
+    formattedmenus.wineSeltzersEtc.push(
+      <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
+        <h4>{beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}</h4>
+        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+        <p className='price'>{beverage.price}</p>
       </li>
     );
-  };
+  });
+
+  let updatedDate = (datetimeString) => {
+    let day = datetimeString.substring(2, 4);
+    let month = datetimeString.substring(0, 1);
+    if (month < 10) {
+      month = `0${month}`;
+    }
+    let year = datetimeString.substring(5, 9);
+    return `Last updated: ${day}/${month}/${year}`
+  }
 
   let handleMenuChange = (menu) => {
     setSelectedMenu(menu);
@@ -117,7 +127,8 @@ export default function Homepage() {
         </section>
         <section className="taproom-menus" id="menu">
           <h3>Menus</h3>
-          <p className='updated-date'>Last updated: 14/01/24</p>
+          <p className='updated-date'>{updatedDate(menus[selectedMenu].updatedAt)}</p>
+          {/* <p className='updated-date'>Last updated: 14/01/24</p> */}
           <ul className='menu-nav'>
             <li>
               <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
@@ -141,7 +152,7 @@ export default function Homepage() {
             </li>
           </ul>
           <ul className='menu'>
-            {formattedMenus[selectedMenu]}
+            {formattedmenus[selectedMenu]}
           </ul>
         </section>
     </>

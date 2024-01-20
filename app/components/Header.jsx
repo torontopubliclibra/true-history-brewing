@@ -146,7 +146,15 @@ export function HeaderMenu({viewport}) {
         <span className="nav-text">Contact</span>
         <img src={contact} className="button-icon" />
       </NavLink>
-      <NavLink
+      <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
+        <span className="nav-text">Instagram</span>
+        <img src={instagram} className="button-icon" />
+      </a>
+      <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
+        <span className="nav-text">Get Directions</span>
+        <img src={compass} className="button-icon" />
+      </a>
+      {/* <NavLink
         end
         onClick={closeAside}
         prefetch="intent"
@@ -167,7 +175,7 @@ export function HeaderMenu({viewport}) {
         >
         <span className="nav-text">Get Directions</span>
         <img src={compass} className="button-icon" />
-      </NavLink>
+      </NavLink> */}
     </nav>
   );
 }
