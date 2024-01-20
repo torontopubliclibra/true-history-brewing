@@ -317,8 +317,17 @@ main {
         justify-content: space-between;
       }
 
+      .medium-field {
+        width: 45%;
+        justify-content: left;
+
+        input {
+          width: 100%;
+        }
+      }
+
       .small-field {
-        width: 40%;
+        width: 25%;
         justify-content: left;
 
         input {

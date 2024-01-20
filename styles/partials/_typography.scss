@@ -338,8 +338,20 @@ main {
         // responsive to tablet
         @media only screen and (max-width: $tablet) {
             .main-events-content .events-list {
-                text-align: center;
                 margin: 10px 35px !important;
+                text-align: center;
+
+                li {
+                    font-size: 1.4rem;
+                    .dash {
+                        display: none;
+                    }
+                    .date {
+                        display: block;
+                        width: 100%;
+                        font-size: 1.25rem;
+                    }
+                  }
             }
             h3 {
                 font-size: 2.5rem;

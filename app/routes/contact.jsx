@@ -236,7 +236,7 @@ export default function Homepage() {
               required />
           </div>
           <div className="double-field">
-            <div className="small-field">
+            <div className="medium-field">
               <label htmlFor="guests"># of guests:</label>
               <input
                 type="number"
@@ -247,7 +247,7 @@ export default function Homepage() {
             </div>
             <div className="small-field">
               <label htmlFor="dining" className="radio">
-                Dining? Y/N
+                Dining?
                 <input
                   type="radio"
                   id="dining"

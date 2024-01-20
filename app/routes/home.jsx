@@ -117,7 +117,7 @@ export default function Homepage() {
 
     if (date >= currentDate && counter < 4) {
       counter++;
-      return <li key={key}>{title} <span className="date">- {parseDate(date)} | {start}{end}</span></li>
+      return <li key={key}>{title} <span className="date"><span className="dash">- </span>{parseDate(date)} | {start}{end}</span></li>
     }
   })
 
