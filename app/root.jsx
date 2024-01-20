@@ -424,7 +424,7 @@ export default function App() {
           title: beverage.title,
           price: formatPrice(beverage.price),
         }
-        if (beverage.abv) {
+        if (beverage.abv || beverage.abv === 0) {
           newBeverage.abv = formatAbv(beverage.abv);
         }
         if (beverage.description) {

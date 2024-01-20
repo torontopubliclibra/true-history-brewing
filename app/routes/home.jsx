@@ -73,18 +73,21 @@ export default function Homepage() {
     return `${hour}:${minute}${meridiem}`;
   }
 
-  let formattedEvents = events.events.map((event, index) => {
+  let counter = 1;
+
+  let formattedEvents = events.events.map((event) => {
 
     let title = event.title;
     let date = event.start;
     let time = parseTime(event.start);
-    let key = event + `-` + index;
+    let key = event + `-` + counter;
 
     if (time.substring(0, 1) == 0) {
       time = time.substring(1, time.length);
     }
 
-    if (date >= currentDate && index < 3) {
+    if (date >= currentDate && counter < 4) {
+      counter++;
       return <li key={key}>{title} <span className="date">- {parseDate(date)} @ {time}</span></li>
     }
   })
