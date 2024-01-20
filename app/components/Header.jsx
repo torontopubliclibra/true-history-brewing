@@ -56,7 +56,6 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
       <header>
         <a
           href="/home"
-          className={activeLinkStyle}
           onClick={aside.open ? () => updateAsideOpen("", false) : null}
         >
           <img src={icon} className="thb-icon" alt="True History Brewing icon" />
@@ -154,28 +153,6 @@ export function HeaderMenu({viewport}) {
         <span className="nav-text">Get Directions</span>
         <img src={compass} className="button-icon" />
       </a>
-      {/* <NavLink
-        end
-        onClick={closeAside}
-        prefetch="intent"
-        className="mobile-only"
-        to="https://instagram.com/truehistorybrewing"
-        target="_blank"
-        >
-        <span className="nav-text">Instagram</span>
-        <img src={instagram} className="button-icon" />
-      </NavLink>
-      <NavLink
-        end
-        onClick={closeAside}
-        prefetch="intent"
-        className="mobile-only"
-        to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8"
-        target="_blank"
-        >
-        <span className="nav-text">Get Directions</span>
-        <img src={compass} className="button-icon" />
-      </NavLink> */}
     </nav>
   );
 }

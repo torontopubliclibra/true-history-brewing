@@ -12,7 +12,7 @@
   animation: none;
 }
 
-.fc-daygrid-event, .fc-list-event-time, .fc-list-event-title {
+.fc-daygrid-event {
   animation: $secondary-animation;
 }
 
@@ -86,6 +86,33 @@
       a {
         color: $white !important;
         font-weight: 400;
+      }
+    }
+
+    .fc-list-event {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-top: -1px;
+      margin-bottom: -1px;
+
+      &:last-of-type {
+        .fc-list-event-time, .fc-list-event-title {
+          border-bottom: solid $black 1px;
+        }
+      }
+
+      .fc-list-event-time, .fc-list-event-title {
+        width: 50%;
+      }
+      .fc-list-event-time {
+        text-align: right;
+      }
+      .fc-list-event-title {
+        text-align: left;
+      }
+      .fc-list-event-graphic {
+        display: none;
       }
     }
 

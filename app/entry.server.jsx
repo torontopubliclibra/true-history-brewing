@@ -21,8 +21,7 @@ export default async function handleRequest(
   let { nonce, header, NonceProvider } = createContentSecurityPolicy({
     defaultSrc: [
       `*`,
-      `'self'`,
-      `'none'`
+      `'self'`
     ],
     connectSrc: [
       `*`,
@@ -32,7 +31,6 @@ export default async function handleRequest(
     scriptSrc: [
       `*`,
       `'self'`,
-      `'unsafe-inline'`,
       `'unsafe-eval'`
     ],
   });

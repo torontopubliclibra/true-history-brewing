@@ -48,9 +48,13 @@ export default function Homepage() {
   menus.beers.items.forEach((beer, index) => {
     formattedmenus.beers.push(
       <li key={`beer-` + index} className='beer'>
-        <h4>{beer.title} ({beer.abv})</h4>
+        <h4>
+          {beer.title} ({beer.abv})
+        </h4>
         {beer.description ? <p className='description'>{beer.description}</p> : null}
-        <p className='price'>{beer.price}</p>
+        <p className='price'>
+          {beer.price} / {beer.ml}ml
+        </p>
       </li>
     );
   });
@@ -58,9 +62,13 @@ export default function Homepage() {
   menus.food.items.forEach((item, index) => {
     formattedmenus.food.push(
       <li key={`food-` + index} className={`food ` + item.size}>
-        <h4>{item.title}</h4>
+        <h4>
+          {item.title}
+        </h4>
         {item.description ? <p className='description'>{item.description}</p> : null}
-        <p className='price'>{item.price}</p>
+        <p className='price'>
+          {item.price}
+        </p>
       </li>
     );
   });
@@ -68,9 +76,14 @@ export default function Homepage() {
   menus.nonAlc.items.forEach((beverage, index) => {
     formattedmenus.nonAlc.push(
       <li key={`non-alc-` + index} className='non-alc'>
-        <h4>{beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}</h4>
+        <h4>
+          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+        </h4>
         {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-        <p className='price'>{beverage.price}</p>
+        <p className='price'>
+          {beverage.price}
+          {beverage.ml ? ` / ${beverage.ml}ml` : null}
+        </p>
       </li>
     );
   });
@@ -78,9 +91,14 @@ export default function Homepage() {
   menus.wineSeltzersEtc.items.forEach((beverage, index) => {
     formattedmenus.wineSeltzersEtc.push(
       <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
-        <h4>{beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}</h4>
+        <h4>
+          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+        </h4>
         {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-        <p className='price'>{beverage.price}</p>
+        <p className='price'>
+          {beverage.price}
+          {beverage.ml ? ` / ${beverage.ml}ml` : null}
+        </p>
       </li>
     );
   });

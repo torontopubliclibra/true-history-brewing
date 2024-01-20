@@ -37,15 +37,30 @@ export default function Homepage() {
   let parseDate = (string) => {
 
     let dateTime = new Date(string);
-    let month = dateTime.getMonth() + 1;
+    let monthName = dateTime.toLocaleString('default', { month: 'short' });
     let day = dateTime.getDate();
-    let year = dateTime.getFullYear();
-    let shortYear = year.toString().substring(2, 4);
+    let weekDay = dateTime.toLocaleString('default', { weekday: 'long' });
+    day = day.toString();
 
-    if (month < 10) month = '0' + month;
-    if (day < 10) day = '0' + day;
+    if (weekDay == 'Monday') weekDay = 'Mon';
+    if (weekDay == 'Tuesday') weekDay = 'Tues';
+    if (weekDay == 'Wednesday') weekDay = 'Weds';
+    if (weekDay == 'Thursday') weekDay = 'Thurs';
+    if (weekDay == 'Friday') weekDay = 'Fri';
+    if (weekDay == 'Saturday') weekDay = 'Sat';
+    if (weekDay == 'Sunday') weekDay = 'Sun';
 
-    return `${day}/${month}/${shortYear}`;
+    if (day.endsWith('1')) {
+      day = day + 'st';
+    } else if (day.endsWith('2')) {
+      day = day + 'nd';
+    } else if (day.endsWith('3')) {
+      day = day + 'rd';
+    } else {
+      day = day + 'th';
+    }
+
+    return `${weekDay} ${monthName} ${day}`;
   }
 
   // parse time from string
@@ -68,9 +83,12 @@ export default function Homepage() {
     }
 
     if (minute < 10 && minute.length <= 1) minute = '0' + minute;
-    if (minute == '0') minute = '0' + minute;
 
-    return `${hour}:${minute}${meridiem}`;
+    if (minute == '00') {
+      return `${hour}${meridiem}`
+    } else {
+      return `${hour}:${minute}${meridiem}`;
+    }
   }
 
   let counter = 1;
@@ -79,16 +97,27 @@ export default function Homepage() {
 
     let title = event.title;
     let date = event.start;
-    let time = parseTime(event.start);
+    let start = parseTime(event.start);
     let key = event + `-` + counter;
+    let end = null;
 
-    if (time.substring(0, 1) == 0) {
-      time = time.substring(1, time.length);
+    if (start.substring(0, 1) == 0) {
+      start = start.substring(1, start.length);
+    }
+
+    if (event.end) {
+      end = parseTime(event.end);
+      end = `–${end}`;
+      if (start.includes('am') && end.includes('am')) {
+        start = start.replace('am', '');
+      } else if (start.includes('pm') && end.includes('pm')) {
+        start = start.replace('pm', '');
+      }
     }
 
     if (date >= currentDate && counter < 4) {
       counter++;
-      return <li key={key}>{title} <span className="date">- {parseDate(date)} @ {time}</span></li>
+      return <li key={key}>{title} <span className="date">- {parseDate(date)} | {start}{end}</span></li>
     }
   })
 
@@ -115,7 +144,7 @@ export default function Homepage() {
         </section>
         <section className="main-taproom">
           <div className="sketch-address">
-            <img src={barSketch} className="bar-sketch" alt="" />
+            <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" />
             <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
@@ -129,7 +158,7 @@ export default function Homepage() {
           </div>
         </section>
         <section className="main-events">
-          <img src={patioPhoto} className="events-photo" />
+          <img src={patioPhoto} className="events-photo" alt="A photo of people enjoying themselves on the True History patio" />
           <div className="main-events-content">
             <h3>Upcoming Events</h3>
             <hr/>

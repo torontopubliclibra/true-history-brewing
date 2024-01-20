@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { useNonce } from '@shopify/hydrogen';
 import { defer } from '@shopify/remix-oxygen';
 import {
-  Link,
   Links,
   Meta,
   Outlet,
@@ -26,6 +25,9 @@ import appStyles from './styles/app.css';
 
 // asset imports
 import favicon from '../public/favicon.svg';
+import wallpaper from '../public/assets/wallpaper.png';
+import woodenBackground from '../public/assets/wooden-bg.png';
+import logo from '../public/assets/thb-logo.png';
 import icon from '../public/assets/thb-icon.png';
 
 // should revalidate function
@@ -69,10 +71,25 @@ export function links() {
       href: icon,
     },
     {
+      rel: 'preload',
+      as: 'image',
+      href: logo,
+    },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: wallpaper,
+    },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: woodenBackground,
+    },
+    {
       rel: 'icon',
       as: 'image',
       href: favicon
-    },
+    }
   ];
 }
 
@@ -199,33 +216,33 @@ export default function App() {
     },
     tues: {
       service: "open",
-      start: "4:00pm",
-      end: "11:00pm"
+      start: "4pm",
+      end: "11pm"
     },
     weds: {
       service: "open",
-      start: "4:00pm",
-      end: "11:00pm"
+      start: "4pm",
+      end: "11pm"
     },
     thurs: {
       service: "open",
-      start: "4:00pm",
-      end: "11:00pm"
+      start: "4pm",
+      end: "11pm"
     },
     fri: {
       service: "open",
-      start: "12:00pm",
-      end: "12:00am"
+      start: "12pm",
+      end: "12am"
     },
     sat: {
       service: "open",
-      start: "12:00pm",
-      end: "12:00am"
+      start: "12pm",
+      end: "12am"
     },
     sun: {
       service: "open",
-      start: "12:00pm",
-      end: "10:00pm"
+      start: "12pm",
+      end: "10pm"
     },
     updatedAt: "",
   });
@@ -278,7 +295,11 @@ export default function App() {
     if (minute < 10 && minute.length <= 1) minute = '0' + minute;
     if (minute == '0') minute = '0' + minute;
 
-    return `${hour}:${minute}${meridiem}`;
+    if (minute == '00') {
+      return `${hour}${meridiem}`
+    } else {
+      return `${hour}:${minute}${meridiem}`;
+    }
   }
 
   // parse date from string
@@ -335,7 +356,12 @@ export default function App() {
   };
 
   let formatPrice = (price) => {
-    return "$" + price.toFixed(2);
+    let priceString = price.toString();
+    if (priceString.includes('.')) {
+      return "$" + price.toFixed(2);
+    } else {
+      return "$" + price;
+    }
   }
 
   let formatAbv = (abv) => {
@@ -358,6 +384,7 @@ export default function App() {
           title: beer.title,
           abv: formatAbv(beer.abv),
           price: formatPrice(beer.price),
+          ml: beer.ml,
         }
 
         if (beer.description) {
@@ -394,6 +421,9 @@ export default function App() {
         if (beverage.abv) {
           newBeverage.abv = formatAbv(beverage.abv);
         }
+        if (beverage.ml) {
+          newBeverage.ml = beverage.ml;
+        }
         if (beverage.description) {
           newBeverage.description = beverage.description;
         }
@@ -423,6 +453,9 @@ export default function App() {
         let newBeverage = {
           title: beverage.title,
           price: formatPrice(beverage.price),
+        }
+        if (beverage.ml) {
+          newBeverage.ml = beverage.ml;
         }
         if (beverage.abv || beverage.abv === 0) {
           newBeverage.abv = formatAbv(beverage.abv);
@@ -489,7 +522,7 @@ export default function App() {
           start: parseDate(event.start),
         }
         if (event.end) {
-          newEvent.end = event.start.substring(0, 10) + event.end;
+          newEvent.end = newEvent.start.substring(0, 10) + `T` + event.end;
           newEvent.allDay = false;
         }
         newEvents.events.push(newEvent);
@@ -557,9 +590,14 @@ export function ErrorBoundary() {
   const rootData = useRootLoaderData();
   const nonce = useNonce();
   let errorStatus = 500;
+  let errorMessage = `Oops! Something went wrong!`;
 
   if (isRouteErrorResponse(error)) {
     errorStatus = error.status;
+  }
+
+  if (errorStatus.toString().startsWith('4')) {
+    errorMessage = `Looks like you took a wrong turn!`;
   }
 
   // error page return
@@ -577,10 +615,10 @@ export function ErrorBoundary() {
           <main className="route-error">
             <div className="error-message">
               <h1>{errorStatus} Error</h1>
-              <h2>Looks like you took a wrong turn!</h2>
-              <Link to="/home" className='button button-tertiary'>
+              <h2>{errorMessage}</h2>
+              <a href="/home" className='button button-tertiary'>
                 Go back to the homepage
-              </Link>
+              </a>
             </div>
           </main>
         </Layout>
