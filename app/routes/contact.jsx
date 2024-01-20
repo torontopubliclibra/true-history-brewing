@@ -257,8 +257,6 @@ export default function Homepage() {
                 />
                 <span class="radio-button"></span>
               </label>
-              {/* <label htmlFor="dining">Dining? Y/N</label>
-              <input type="radio" id="dining" required /> */}
             </div>
           </div>
           <div className="form-field">
@@ -278,7 +276,7 @@ export default function Homepage() {
               required />
           </div>
           { submitStatus === "Send email"
-            ? <button className="button" type="submit" disabled>{submitStatus}</button>
+            ? <button className="button" type="submit">{submitStatus}</button>
             : <button className="button" type="submit" disabled>{submitStatus}</button>
           }
         </form>
@@ -300,7 +298,7 @@ export default function Homepage() {
             </li>
             <li>
               <button onClick={() => handleContactChange("events")} className={buttonClass("events")}>
-                Event booking
+                Event requests
               </button>
             </li>
             <li>
