@@ -71,10 +71,11 @@ export default function Homepage() {
           </Link>
         </div>
         <div className="remember-user">
-          <label>
+          <label for="remember-user">
             Remember me on this device:
             <input
               type="checkbox"
+              id="remember-user"
               checked={rememberUser}
               className={rememberUser ? "checked" : ""}
               onChange={handleCheckboxChange}

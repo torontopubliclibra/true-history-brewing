@@ -283,6 +283,14 @@ main {
     padding-top: 15px;
 
     .contact-form {
+
+      .button:disabled {
+        background-color: $color1;
+        &:hover {
+          cursor: default;
+        }
+      }
+
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
@@ -309,13 +317,95 @@ main {
         justify-content: space-between;
       }
 
-      .small-field {
-        width: 30%;
-        max-width: 125px;
+      .medium-field {
+        width: 45%;
         justify-content: left;
 
         input {
           width: 100%;
+        }
+      }
+
+      .small-field {
+        width: 25%;
+        justify-content: left;
+
+        input {
+          width: 100%;
+        }
+
+        .radio {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          .radio-button {
+            position: absolute;
+            top: 42px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border: $thin-border;
+            background-color: $light;
+            filter: $default-shadow;
+            border-radius: 50%;
+            transition: background-color 0.4s;
+
+            // responsive to tablet
+            @media only screen and (max-width: $tablet) {
+              top: 37px;
+            }
+
+            &:after {
+              content: "";
+              position: absolute;
+              display: none;
+              left: 7px;
+              top: 3px;
+              width: 3px;
+              height: 8px;
+              border: solid $light;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+
+          &:hover input ~ .radio-button {
+            background-color: rgba($color1, 0.5);
+
+            // responsive to tablet
+            @media only screen and (max-width: $tablet) {
+              background-color: $light;
+            }
+          }
+
+          input:checked ~ .radio-button {
+            background-color: $color1;
+          }
+
+          .radio-button:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+
+          input:checked ~ .radio-button:after {
+            display: block;
+          }
         }
       }
 
@@ -504,6 +594,7 @@ main {
       gap: 20px;
 
       .button {
+        flex-grow: 0.3;
         height: 40px;
         width: 200px;
 
@@ -552,7 +643,7 @@ main {
       .menu-buttons {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 25px;
+        padding-bottom: 10px;
         margin: 0;
         gap: 3px;
         .button {
@@ -714,7 +805,7 @@ main {
     }
   }
   .taproom-address {
-    height: 600px;
+    height: 675px;
     display: flex;
     position: relative;
     background-color: rgba($color1, 0.8);
@@ -725,7 +816,7 @@ main {
       position: absolute;
       top: 0;
       width: 100%;
-      max-height: 600px;
+      max-height: 675px;
       object-fit: cover;
       border: none;
       border-radius: 0;
@@ -843,7 +934,7 @@ main {
           text-transform: uppercase;
           font-size: 20px;
           margin: 0;
-          margin-bottom: 15px;
+          margin-bottom: 5px;
         }
         
         p {

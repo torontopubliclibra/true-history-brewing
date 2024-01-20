@@ -19,12 +19,12 @@ export function Hours() {
         </li>
       } else if (value['service'] === 'open') {
         dayHours = <li key={key + `-hours`}>
-          {key}: <span className='time'>{value.start}– {value.end}</span>
+          {key}: <span className='time'>{value.start} – {value.end}</span>
         </li>
       } else if (value['service'] === 'bottle shop') {
         showAsterisk = true;
         dayHours = <li key={key + `-hours`}>
-          {key}: <span className='time'>{value.start}–{value.end}<span className="symbol">*</span></span>
+          {key}: <span className='time'>{value.start} – {value.end}<span className="symbol">*</span></span>
         </li>
       }
       formattedHours.push(dayHours);
