@@ -9,7 +9,7 @@ import beer from './../../public/assets/icons/beer.svg';
 import contact from './../../public/assets/icons/contact.svg';
 import instagram from './../../public/assets/icons/instagram.svg';
 import compass from './../../public/assets/icons/compass.svg';
-import store from './../../public/assets/icons/store.svg';
+import retail from './../../public/assets/icons/retail.svg';
 import basket from './../../public/assets/icons/basket.svg';
 import mobileMenu from './../../public/assets/icons/mobile-menu.svg';
 
@@ -123,7 +123,7 @@ export function HeaderMenu({viewport}) {
         to="/retail"
         >
         <span className="nav-text">Retail</span>
-        <img src={store} className="button-icon" />
+        <img src={retail} className="button-icon" />
       </NavLink>
       <NavLink
         end
@@ -145,14 +145,14 @@ export function HeaderMenu({viewport}) {
         <span className="nav-text">Contact</span>
         <img src={contact} className="button-icon" />
       </NavLink>
-      <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
-        <span className="nav-text">Instagram</span>
-        <img src={instagram} className="button-icon" />
-      </a>
-      <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
-        <span className="nav-text">Get Directions</span>
-        <img src={compass} className="button-icon" />
-      </a>
+      <div className="mobile-only-links">
+        <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
+          <img src={compass} className="button-icon compass" />
+        </a>
+        <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
+          <img src={instagram} className="button-icon" />
+        </a>
+      </div>
     </nav>
   );
 }

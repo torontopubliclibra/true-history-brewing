@@ -24,6 +24,7 @@
   }
   .fc-button {
     text-transform: uppercase;
+    font-weight: 800;
     padding-left: 20px;
     padding-right: 20px;
     color: $black;
@@ -99,6 +100,11 @@
       &:last-of-type {
         .fc-list-event-time, .fc-list-event-title {
           border-bottom: solid $black 1px;
+
+          // responsive to tablet
+          @media only screen and (max-width: $tablet) {
+            border-bottom: none;
+          }
         }
       }
 

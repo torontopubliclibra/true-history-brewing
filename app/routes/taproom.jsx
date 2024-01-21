@@ -15,6 +15,7 @@ import wine from './../../public/assets/icons/wine.svg';
 import drink from './../../public/assets/icons/drink.svg';
 import food from './../../public/assets/icons/food.svg';
 import compass from './../../public/assets/icons/compass.svg';
+import retail from './../../public/assets/icons/retail.svg';
 
 /**
  * @type {MetaFunction}
@@ -31,77 +32,6 @@ export default function Homepage() {
   const { menus } = useContext(StrapiContext);
   const [ selectedMenu, setSelectedMenu ] = useState("beers");
   const location = useLocation();
-
-  useEffect(() => {
-    if (location.state) {
-      setSelectedMenu(location.state.selectedMenu);
-    }
-  }, [])
-
-  let formattedMenus = {
-    beers: [],
-    food: [],
-    nonAlc: [],
-    wineSeltzersEtc: []
-  }
-
-  menus.beers.items.forEach((beer, index) => {
-    formattedMenus.beers.push(
-      <li key={`beer-` + index} className='beer'>
-        <h4>
-          {beer.title} ({beer.abv})
-        </h4>
-        {beer.description ? <p className='description'>{beer.description}</p> : null}
-        <p className='price'>
-          {beer.price} / {beer.ml}ml
-        </p>
-      </li>
-    );
-  });
-
-  menus.food.items.forEach((item, index) => {
-    formattedMenus.food.push(
-      <li key={`food-` + index} className={`food ` + item.size}>
-        <h4>
-          {item.title}
-        </h4>
-        {item.description ? <p className='description'>{item.description}</p> : null}
-        <p className='price'>
-          {item.price}
-        </p>
-      </li>
-    );
-  });
-
-  menus.nonAlc.items.forEach((beverage, index) => {
-    formattedMenus.nonAlc.push(
-      <li key={`non-alc-` + index} className='non-alc'>
-        <h4>
-          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
-        </h4>
-        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-        <p className='price'>
-          {beverage.price}
-          {beverage.ml ? ` / ${beverage.ml}ml` : null}
-        </p>
-      </li>
-    );
-  });
-
-  menus.wineSeltzersEtc.items.forEach((beverage, index) => {
-    formattedMenus.wineSeltzersEtc.push(
-      <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
-        <h4>
-          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
-        </h4>
-        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-        <p className='price'>
-          {beverage.price}
-          {beverage.ml ? ` / ${beverage.ml}ml` : null}
-        </p>
-      </li>
-    );
-  });
 
   let updatedDate = (datetimeString) => {
     let day = datetimeString.substring(2, 4);
@@ -125,17 +55,102 @@ export default function Homepage() {
     }
   }
 
+  let formattedMenus = {
+    beers: [],
+    food: [],
+    nonAlc: [],
+    wineSeltzersEtc: []
+  }
+
+  let timeStamps = {
+    beers: "",
+    food: "",
+    nonAlc: "",
+    wineSeltzersEtc: ""
+  }
+
+  menus.beers.items.forEach((beer, index) => {
+    formattedMenus.beers.push(
+      <li key={`beer-` + index} className='beer'>
+        <h4>
+          {beer.title} ({beer.abv})
+        </h4>
+        {beer.description ? <p className='description'>{beer.description}</p> : null}
+        <p className='price'>
+          {beer.price} / {beer.ml}ml
+        </p>
+      </li>
+    );
+    timeStamps.beers = updatedDate(menus.beers.updatedAt);
+  });
+
+  menus.food.items.forEach((item, index) => {
+    formattedMenus.food.push(
+      <li key={`food-` + index} className={`food ` + item.size}>
+        <h4>
+          {item.title}
+        </h4>
+        {item.description ? <p className='description'>{item.description}</p> : null}
+        <p className='price'>
+          {item.price}
+        </p>
+      </li>
+    );
+    timeStamps.food = updatedDate(menus.food.updatedAt);
+  });
+
+  menus.nonAlc.items.forEach((beverage, index) => {
+    formattedMenus.nonAlc.push(
+      <li key={`non-alc-` + index} className='non-alc'>
+        <h4>
+          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+        </h4>
+        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+        <p className='price'>
+          {beverage.price}
+          {beverage.ml ? ` / ${beverage.ml}ml` : null}
+        </p>
+      </li>
+    );
+    timeStamps.nonAlc = updatedDate(menus.nonAlc.updatedAt);
+  });
+
+  menus.wineSeltzersEtc.items.forEach((beverage, index) => {
+    formattedMenus.wineSeltzersEtc.push(
+      <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
+        <h4>
+          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+        </h4>
+        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+        <p className='price'>
+          {beverage.price}
+          {beverage.ml ? ` / ${beverage.ml}ml` : null}
+        </p>
+      </li>
+    );
+    timeStamps.wineSeltzersEtc = updatedDate(menus.wineSeltzersEtc.updatedAt);
+  });
+
+  useEffect(() => {
+    if (location.state) {
+      setSelectedMenu(location.state.selectedMenu);
+    }
+  }, [])
+
   return (
     <>
         <section className="heading taproom-heading">
           <h2>Taproom</h2>
         </section>
-        <section className="taproom-address" id="info">
+        <section className="taproom-address">
           <img src={taproomPhoto} className="taproom-photo" />
-          <div className="taproom-info">
+          <div className="taproom-info" id="info">
             <Hours/>
             <p className="address">1154 St. Clair Avenue West, Toronto, Ontario</p>
-            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Get Directions <img src={compass} className="button-icon"/></Link>
+            <div className="taproom-buttons">
+              <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Directions<img src={compass} className="button-icon"/></Link>
+              <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Bottle shop<img src={retail} className="button-icon"/></Link>
+            </div>
           </div>
         </section>
         <section className="taproom-events" id="calendar">
@@ -145,7 +160,7 @@ export default function Homepage() {
         </section>
         <section className="taproom-menus" id="menu">
           <h3>Menus</h3>
-          <p className='updated-date'>{updatedDate(menus[selectedMenu].updatedAt)}</p>
+          <p className='updated-date'>{timeStamps[selectedMenu]}</p>
           <ul className='menu-nav'>
             <li>
               <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>

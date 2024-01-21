@@ -302,7 +302,9 @@ main {
         .sketch-address {
             .address {
                 margin-top: 10px;
-                margin-bottom: 15px;
+                margin-bottom: 0;
+                padding-left: 40px;
+                padding-right: 40px;
 
                 // responsive to tablet
                 @media only screen and (max-width: $tablet) {
@@ -342,14 +344,14 @@ main {
                 text-align: center;
 
                 li {
-                    font-size: 1.4rem;
+                    font-size: 1.25rem;
                     .dash {
                         display: none;
                     }
                     .date {
                         display: block;
                         width: 100%;
-                        font-size: 1.25rem;
+                        font-size: 1rem;
                     }
                   }
             }
@@ -518,7 +520,7 @@ main {
 
 .hours {
     h4 {
-        font-size: 1.75rem;
+        font-size: 2rem;
         letter-spacing: 2px;
         text-align: center;
         text-transform: uppercase;
@@ -528,13 +530,13 @@ main {
         li {
             font-family: "Bogue-Extrabold";
             text-transform: capitalize;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             letter-spacing: 2px;
             line-height: 1.5;
             margin: 0;
             .time {
                 font-family: "Bogue-Regular";
-                font-size: 1.1rem;
+                font-size: 1.15rem;
                 font-style: italic;
             }
             .symbol {
@@ -576,7 +578,7 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
         h4 {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
         }
     }
 }
@@ -655,11 +657,7 @@ main {
 }
 
 .button-quaternary:hover {
-    background-color: $color3;
-    color: $black;
-    img {
-        filter: none;
-    }
+    background-color: $color4;
 }
 
 .button-secondary, .button-tertiary {
@@ -674,7 +672,7 @@ main {
 
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
-    .button:hover, &:focus {
+    .button:hover {
       background: $color2;
       color: $black;
       img {
@@ -688,14 +686,14 @@ main {
     .button.menu-active {
       flex-direction: row-reverse;
     }
-    .button-secondary:hover, .button-secondary:focus {
+    .button-secondary:hover {
       background: $color1;
       color: $black;
       img {
         filter: none;
       }
     }
-    .button-tertiary:hover, .button-tertiary:focus {
+    .button-tertiary:hover {
       background: $color4;
       color: $light;
       img {

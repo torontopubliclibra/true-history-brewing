@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { useLocation } from 'react-router-dom'
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
 import clock from './../../public/assets/icons/clock.svg';
@@ -18,9 +19,21 @@ export const meta = () => {
 export default function Homepage() {
 
   const { retail } = useContext(StrapiContext);
+  const [ selectedItems, setSelectedItems ] = useState("beers");
+  const location = useLocation();
 
   let formattedItems = {
     beers: []
+  }
+
+  let updatedDate = (datetimeString) => {
+    let day = datetimeString.substring(2, 4);
+    let month = datetimeString.substring(0, 1);
+    if (month < 10) {
+      month = `0${month}`;
+    }
+    let year = datetimeString.substring(5, 9);
+    return `Last updated: ${day}/${month}/${year}`
   }
 
   retail.beers.items.forEach((beer, index) => {
@@ -47,56 +60,58 @@ export default function Homepage() {
       </li>
       <div className="mobile-line-item">
         <h4>{beer.title} ({beer.abv})</h4>
-        <p>{beer.style}</p>
-        <p>{beer.price} / {beer.ml}ml</p>
+        <p className="description">{beer.style}</p>
+        <p className="price">{beer.price} / {beer.ml}ml</p>
       </div>
       </>
     );
   });
 
-  let updatedDate = (datetimeString) => {
-    let day = datetimeString.substring(2, 4);
-    let month = datetimeString.substring(0, 1);
-    if (month < 10) {
-      month = `0${month}`;
+  useEffect(() => {
+    if (location.state) {
+      setSelectedItems(location.state.selectedItems);
     }
-    let year = datetimeString.substring(5, 9);
-    return `Last updated: ${day}/${month}/${year}`
-  }
+  }, [])
 
   return (
     <>
-        <section className="heading retail-heading">
-          <h2>Retail</h2>
+      <section className="heading retail-heading">
+        <h2>Retail</h2>
         </section>
-        <section className="retail-content">
+        <section className="retail-content" id="items">
           <h3>What's in the Fridge?</h3>
-          <ul className="fridge-list">
-            <li className='line-item header'>
-              <ul>
-                <li className="title">
-                  Name
+          {
+            formattedItems[selectedItems].length > 0
+            ? <>
+              <ul className="fridge-list">
+                <li className='line-item header'>
+                  <ul>
+                    <li className="title">
+                      Name
+                    </li>
+                    <li className="style">
+                      Style
+                    </li>
+                    <li className="abv">
+                      ABV
+                    </li>
+                    <li className="ml">
+                      Size
+                    </li>
+                    <li className="price">
+                      Price
+                    </li>
+                  </ul>
                 </li>
-                <li className="style">
-                  Style
-                </li>
-                <li className="abv">
-                  ABV
-                </li>
-                <li className="ml">
-                  Size
-                </li>
-                <li className="price">
-                  Price
-                </li>
+                {formattedItems[selectedItems]}
               </ul>
-            </li>
-            {formattedItems.beers}
-          </ul>
-          <p className='updated-date'>{updatedDate(retail.beers.updatedAt)}</p>
+              <p className='updated-date'>{updatedDate(retail.beers.updatedAt)}</p>
+            </>
+            : null
+          }
           <div className="links">
             <Link to="/taproom#info" className='button button-tertiary'>Taproom hours<img src={clock} className="button-icon"/></Link>
-            <Link to="/taproom#menu" className='button button-tertiary'>Beers on tap<img src={beer} className="button-icon"/></Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>Beers on tap<img src={beer} className="button-icon"/></Link>
             <Link to="/shop" className='button button-tertiary'>Online shop<img src={basket} className="button-icon"/></Link>
           </div>
         </section>

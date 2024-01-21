@@ -156,7 +156,7 @@ body {
 }
 
 hr {
-  height: 8px;
+  height: 4px;
   width: 100%;
   background-color: $color1;
   border: $default-border;
@@ -502,8 +502,8 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
-      padding-top: 50px;
-      padding-bottom: 50px;
+      padding-top: 40px;
+      padding-bottom: 30px;
     }
 
     .updated-date {
@@ -521,6 +521,7 @@ main {
 
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
+        margin-bottom: 30px;
         padding: 5px 20px;
         width: 105%;
         border-radius: 0;
@@ -599,8 +600,8 @@ main {
         max-width: 80%;
 
         .mobile-line-item {
-          padding-top: 5px;
-          padding-bottom: 15px;
+          padding-top: 10px;
+          padding-bottom: 20px;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -612,6 +613,21 @@ main {
 
           h4 {
             font-size: 1.2rem;
+          }
+
+          p {
+            font-size: 1.1rem;
+            width: 90%;
+  
+            &.description {
+              font-style: italic;
+              margin-bottom: 6px;
+            }
+  
+            &.price {
+              font-size: 1rem;
+              font-weight: 800;
+            }
           }
 
           &:last-of-type {
@@ -677,7 +693,6 @@ main {
 
   .main-heading {
     hr {
-      height: 5px;
       max-width: 85%;
       background-color: $color3;
     }
@@ -715,24 +730,23 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 45%;
+      width: 50%;
       margin: 15px;
+      margin-bottom: 0;
       .bar-sketch {
-        width: 80%;
-        max-width: 500px;
+        width: 90%;
         filter: $default-shadow;
         padding-bottom: 5px;
       }
     }
     .hours {
       width: 35%;
-      height: 100%;
       filter: $default-shadow;
     }
     .menu-buttons {
       width: 95%;
       margin: 0 auto;
-      margin-top: 20px;
+      margin-top: 35px;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
@@ -740,12 +754,7 @@ main {
 
       .button {
         flex-grow: 0.3;
-        height: 40px;
-        width: 200px;
-
-        img {
-          width: 25px;
-        }
+        justify-content: space-between;
       }
     }
 
@@ -756,7 +765,6 @@ main {
       hr {
         background-color: $color3;
         width: 90%;
-        height: 5px;
         margin-top: 10px;
         margin-bottom: 35px;
       }
@@ -793,8 +801,6 @@ main {
         gap: 3px;
         .button {
           font-size: 0.9rem;
-          flex-direction: row-reverse;
-          justify-content: space-between;
           width: 75%;
           height: 20px;
           padding: 15px 20px;
@@ -826,16 +832,25 @@ main {
     .main-events-content {
       width: 100%;
       .button {
-        background-color: $color2;
+        justify-content: space-between;
+        background-color: $color1;
+        color: $light;
         margin-top: 15px;
         margin-left: 40px;
         width: 350px;
+        img {
+          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+        }
         &:hover {
-          background-color: $color1;
+          background-color: $color2;
+          color: $black;
+          img {
+            filter: none;
+          }
         }
       }
       hr {
-        background-color: $color1;
+        background-color: $color3;
         border-left: none;
         width: 90%;
         margin-bottom: 20px;
@@ -851,7 +866,6 @@ main {
         max-width: unset;
         margin: 0 auto;
         border: $thin-border !important;
-        height: 4px;
       }
 
       .button {
@@ -885,7 +899,7 @@ main {
     gap: 15px;
     padding: 30px 10%;
     color: $black;
-    background-color: rgba($color2, 0.9);
+    background-color: rgba($color2, 0.75);
     border-top: $default-border;
 
     p {
@@ -927,7 +941,7 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
 
-      padding: 30px 5%;
+      padding: 20px 5%;
 
       p {
         font-size: 1.15rem;
@@ -978,6 +992,11 @@ main {
       z-index: 50;
       background-color: rgba($color1, 0.8);
       border-right: $default-border;
+
+      .taproom-buttons {
+        display: flex;
+        gap: 20px;
+      }
     }
     .hours {
       width: 75%;
@@ -1000,6 +1019,9 @@ main {
         padding: 25px 0;
         padding-top: 0;
         border-right: none;
+        .taproom-buttons {
+          display: none;
+        }
         .hours {
           margin-bottom: 25px !important;
         }
@@ -1077,22 +1099,20 @@ main {
         h4 {
           width: 90%;
           text-transform: uppercase;
-          font-size: 20px;
-          margin: 0;
-          margin-bottom: 5px;
+          font-size: 1.2rem;
         }
         
         p {
+          font-size: 1.1rem;
           width: 90%;
 
           &.description {
-            font-size: 16px;
             font-style: italic;
             margin-bottom: 6px;
           }
 
           &.price {
-            font-size: 18px;
+            font-size: 1rem;
             font-weight: 800;
           }
         }
@@ -1158,7 +1178,6 @@ main {
       hr {
         background-color: $color3;
         width: 90%;
-        height: 4px;
         margin: 10px auto;
       }
       h3 {
