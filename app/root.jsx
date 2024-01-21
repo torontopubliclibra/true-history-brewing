@@ -247,6 +247,14 @@ export default function App() {
     updatedAt: "",
   });
 
+  // initial retail items
+  const [ retail, setRetail ] = useState({
+    beers: {
+      items: [],
+      updatedAt: "",
+    },
+  });
+
   // initial menus
   const [ menus, setMenus ] = useState({
     beers: {
@@ -367,6 +375,36 @@ export default function App() {
   let formatAbv = (abv) => {
     return abv.toFixed(1) + "%";
   }
+
+  // fetch retail items from Strapi CMS
+  const fetchRetail = async () => {
+    const response = await fetch(`https://thb-data-3vd2n.ondigitalocean.app/api/bottle-shop-lists?populate=*`);
+    let data = await response.json();
+    let beerItemsData = data.data[0].attributes.beer;
+    let updatedAt = new Date(data.data[0].attributes.updatedAt);
+    let newBeers = {
+      items: [],
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+    }
+    if (beerItemsData) {
+      beerItemsData.forEach((beer) => {
+        let newBeer = {
+          title: beer.title,
+          abv: formatAbv(beer.abv),
+          price: formatPrice(beer.price),
+          ml: beer.ml,
+          style: beer.style,
+        }
+        newBeers.items.push(newBeer);
+      });
+    }
+    
+    let updatedRetail = retail;
+    if (newBeers !== retail.beers) {
+      updatedRetail.beers = newBeers;
+      setRetail(updatedRetail);
+    };
+  };
 
   // fetch menus from Strapi CMS
   const fetchBeerMenus = async () => {
@@ -545,6 +583,7 @@ export default function App() {
 
     fetchHours();
     fetchEvents();
+    fetchRetail();
     fetchBeerMenus();
     fetchWineSeltzersEtcMenus();
     fetchNonAlcMenus();
@@ -571,7 +610,7 @@ export default function App() {
         <Links />
       </head>
       <body className={bodyTags}>
-        <StrapiContext.Provider value={{ hours: hours, menus: menus, events: events, currentDate: parseDate(new Date()) }}>
+        <StrapiContext.Provider value={{ retail: retail, hours: hours, menus: menus, events: events, currentDate: parseDate(new Date()) }}>
           <Layout {...data} asideOpen={asideOpen} updateAsideOpen={updateAsideOpen}>
             <Outlet />
           </Layout>

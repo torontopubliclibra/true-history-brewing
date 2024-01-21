@@ -674,7 +674,7 @@ main {
 
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
-    .button:hover {
+    .button:hover, &:focus {
       background: $color2;
       color: $black;
       img {
@@ -688,14 +688,14 @@ main {
     .button.menu-active {
       flex-direction: row-reverse;
     }
-    .button-secondary:hover {
+    .button-secondary:hover, .button-secondary:focus {
       background: $color1;
       color: $black;
       img {
         filter: none;
       }
     }
-    .button-tertiary:hover {
+    .button-tertiary:hover, .button-tertiary:focus {
       background: $color4;
       color: $light;
       img {

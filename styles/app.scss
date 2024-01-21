@@ -494,29 +494,174 @@ main {
   }
 
   .retail-content {
-    background-color: rgba($color1, 0.8);
-    height: 400px;
+    background-color: rgba($dark, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    h3 {
-      font-family: "Saudagar";
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .updated-date {
+      font-style: italic;
+      font-size: 1.15rem;
       color: $black;
-      background-color: $less-light;
-      border: $default-border;
-      font-size: 2.5rem;
-      padding: 20px 50px;
-      max-width: 100%;
+      padding: 5px 100px;
       text-align: center;
+      background-color: $color2;
+      filter: $default-shadow;
+      border: $default-border;
+      border-radius: 25px;
+      margin-bottom: 20px;
+
 
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
-        width: 60%;
-        font-size: 1.5rem;
-        padding: 50px;
+        padding: 5px 20px;
+        width: 105%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    .fridge-list {
+      background-color: $less-light;
+      border: $default-border;
+      outline: solid $color1 11px;
+      box-shadow: 0 0 0 14px $black;
+      filter: $default-shadow;
+      border-radius: 25px;
+      width: 90%;
+      margin-bottom: 40px;
+
+      .mobile-line-item {
+        display: none;
+      }
+
+      .line-item {
+        border-bottom: $thin-border;
         margin: 0;
+
+        ul {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding-top: 15px;
+          padding-bottom: 15px;
+  
+          li {
+            font-size: 1.15rem;
+            font-family: "Saudagar";
+            font-weight: 800;
+            font-style: italic;
+            margin: 0;
+  
+            &.title {
+              width: 35%;
+            }
+            &.style {
+              width: 30%;
+            }
+            &.abv, &.ml {
+              width: 7%;
+            }
+            &.price {
+              width: 10%;
+            }
+          }
+        }
+
+        &.header {
+          background-color: $color2;
+          color: $black;
+          border-radius: 23px 23px 0 0;
+
+          ul li {
+            font-family: "Bogue-Regular";
+            font-size: 1.25rem;
+
+          }
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+          border-bottom: none;
+        }
+      }
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        max-width: 80%;
+
+        .mobile-line-item {
+          padding-top: 5px;
+          padding-bottom: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          border-bottom: $thin-border;
+          font-family: "Saudagar";
+          font-style: italic;
+
+          h4 {
+            font-size: 1.2rem;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+        }
+
+        .line-item {
+          display: none;
+        }
+      }
+    }
+
+    h3 {
+      font-family: "Saudagar";
+      color: $light;
+      filter: $default-shadow;
+      font-size: 3rem;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 30px;
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        font-size: 2rem;
+      }
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      gap: 20px;
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        flex-direction: column;
+        gap: 5px;
+
+        .button {
+          width: 90%;
+          justify-content: space-between;
+
+          &:hover {
+            img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
+          }
+        }
       }
     }
   }

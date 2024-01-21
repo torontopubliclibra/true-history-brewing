@@ -38,7 +38,7 @@ export default function Homepage() {
     }
   }, [])
 
-  let formattedmenus = {
+  let formattedMenus = {
     beers: [],
     food: [],
     nonAlc: [],
@@ -46,7 +46,7 @@ export default function Homepage() {
   }
 
   menus.beers.items.forEach((beer, index) => {
-    formattedmenus.beers.push(
+    formattedMenus.beers.push(
       <li key={`beer-` + index} className='beer'>
         <h4>
           {beer.title} ({beer.abv})
@@ -60,7 +60,7 @@ export default function Homepage() {
   });
 
   menus.food.items.forEach((item, index) => {
-    formattedmenus.food.push(
+    formattedMenus.food.push(
       <li key={`food-` + index} className={`food ` + item.size}>
         <h4>
           {item.title}
@@ -74,7 +74,7 @@ export default function Homepage() {
   });
 
   menus.nonAlc.items.forEach((beverage, index) => {
-    formattedmenus.nonAlc.push(
+    formattedMenus.nonAlc.push(
       <li key={`non-alc-` + index} className='non-alc'>
         <h4>
           {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
@@ -89,7 +89,7 @@ export default function Homepage() {
   });
 
   menus.wineSeltzersEtc.items.forEach((beverage, index) => {
-    formattedmenus.wineSeltzersEtc.push(
+    formattedMenus.wineSeltzersEtc.push(
       <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
         <h4>
           {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
@@ -130,7 +130,7 @@ export default function Homepage() {
         <section className="heading taproom-heading">
           <h2>Taproom</h2>
         </section>
-        <section className="taproom-address">
+        <section className="taproom-address" id="info">
           <img src={taproomPhoto} className="taproom-photo" />
           <div className="taproom-info">
             <Hours/>
@@ -146,7 +146,6 @@ export default function Homepage() {
         <section className="taproom-menus" id="menu">
           <h3>Menus</h3>
           <p className='updated-date'>{updatedDate(menus[selectedMenu].updatedAt)}</p>
-          {/* <p className='updated-date'>Last updated: 14/01/24</p> */}
           <ul className='menu-nav'>
             <li>
               <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
@@ -170,7 +169,7 @@ export default function Homepage() {
             </li>
           </ul>
           <ul className='menu'>
-            {formattedmenus[selectedMenu]}
+            {formattedMenus[selectedMenu]}
           </ul>
         </section>
     </>
