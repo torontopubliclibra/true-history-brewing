@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom'
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
+import beerCans from './../../public/assets/beer-cans.png';
 import clock from './../../public/assets/icons/clock.svg';
 import beer from './../../public/assets/icons/beer.svg';
 import basket from './../../public/assets/icons/basket.svg';
@@ -20,11 +21,8 @@ export default function Homepage() {
 
   const { retail } = useContext(StrapiContext);
   const [ selectedItems, setSelectedItems ] = useState("beers");
+  const [ retailItems, setRetailItems ] = useState({});
   const location = useLocation();
-
-  let formattedItems = {
-    beers: []
-  }
 
   let updatedDate = (datetimeString) => {
     let day = datetimeString.substring(2, 4);
@@ -36,47 +34,67 @@ export default function Homepage() {
     return `Last updated: ${day}/${month}/${year}`
   }
 
-  retail.beers.items.forEach((beer, index) => {
-    formattedItems.beers.push(
-      <>
-      <li key={`beer-` + index} className='line-item'>
-        <ul>
-          <li className="title">
-            {beer.title}
-          </li>
-          <li className="style">
-            {beer.style}
-          </li>
-          <li className="abv">
-            {beer.abv}
-          </li>
-          <li className="ml">
-            {beer.ml}ml
-          </li>
-          <li className="price">
-            {beer.price}
-          </li>
-        </ul>
-      </li>
-      <div className="mobile-line-item">
-        <h4>{beer.title} ({beer.abv})</h4>
-        <p className="description">{beer.style}</p>
-        <p className="price">{beer.price} / {beer.ml}ml</p>
-      </div>
-      </>
-    );
-  });
+  let formattedItems = {
+    beers: []
+  }
+
+  if (retailItems.beers) {
+    retailItems.beers.items.forEach((beer, index) => {
+      formattedItems.beers.push(
+        <>
+        <li key={`beer-` + index} className='line-item'>
+          <ul>
+            <li className="title">
+              {beer.title}
+            </li>
+            <li className="style">
+              {beer.style}
+            </li>
+            <li className="abv">
+              {beer.abv}
+            </li>
+            <li className="ml">
+              {beer.ml}ml
+            </li>
+            <li className="price">
+              {beer.price}
+            </li>
+          </ul>
+        </li>
+        <div className="mobile-line-item">
+          <h4>{beer.title} ({beer.abv})</h4>
+          <p className="description">{beer.style}</p>
+          <p className="price">{beer.price} / {beer.ml}ml</p>
+        </div>
+        </>
+      );
+    });
+  }
 
   useEffect(() => {
     if (location.state) {
       setSelectedItems(location.state.selectedItems);
+    } else {
+      setSelectedItems("beers");
     }
   }, [])
+
+  useEffect(() => {
+    setRetailItems(retail);
+  }, [retail])
 
   return (
     <>
       <section className="heading retail-heading">
         <h2>Retail</h2>
+        </section>
+        <section className="retail-info">
+          <div className="retail-buttons">
+            <Link to="/taproom#info" className='button button-quaternary'>Taproom hours<img src={clock} className="button-icon"/></Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-quaternary'>Beers on tap<img src={beer} className="button-icon"/></Link>
+            <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon"/></Link>
+          </div>
+          <img src={beerCans} className="retail-photo" alt="" />
         </section>
         <section className="retail-content" id="items">
           <h3>What's in the Fridge?</h3>
@@ -105,15 +123,10 @@ export default function Homepage() {
                 </li>
                 {formattedItems[selectedItems]}
               </ul>
-              <p className='updated-date'>{updatedDate(retail.beers.updatedAt)}</p>
+              <p className='updated-date'>{updatedDate(retailItems.beers.updatedAt)}</p>
             </>
             : null
           }
-          <div className="links">
-            <Link to="/taproom#info" className='button button-tertiary'>Taproom hours<img src={clock} className="button-icon"/></Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>Beers on tap<img src={beer} className="button-icon"/></Link>
-            <Link to="/shop" className='button button-tertiary'>Online shop<img src={basket} className="button-icon"/></Link>
-          </div>
         </section>
     </>
   );

@@ -115,7 +115,7 @@ export default function Homepage() {
 
     if (date >= currentDate && counter < 4) {
       counter++;
-      return <li key={key}>{title} <span className="date"><span className="dash">- </span>{parseDate(date)} | {start}{end}</span></li>
+      return <li key={key}>{title} <span className="date"> {parseDate(date)} | {start}{end}</span></li>
     }
   })
 
@@ -135,12 +135,12 @@ export default function Homepage() {
 
   return (
     <>
-        <section className="heading main-heading">
+        <section className="heading home-heading">
           <img src={logo} className="thb-logo" alt="True History Brewing logo" />
           <hr/>
           <h2 className="home">Brewing Low & Slow</h2>
         </section>
-        <section className="main-taproom">
+        <section className="home-taproom">
           <div className="sketch-address">
             <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" />
             <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
@@ -153,9 +153,9 @@ export default function Homepage() {
             <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'>"Do you guys have food?"<img src={food} className="button-icon"/></Link>
           </div>
         </section>
-        <section className="main-events">
+        <section className="home-events">
           <img src={patioPhoto} className="events-photo" alt="A photo of people enjoying themselves on the True History patio" />
-          <div className="main-events-content">
+          <div className="home-events-content">
             <h3>Upcoming Events</h3>
             <hr/>
             <ul className="events-list">
@@ -164,7 +164,7 @@ export default function Homepage() {
             <Link to="/taproom#calendar" className='button button-primary'>Check out the calendar <img src={calendar} className="button-icon" /></Link>
           </div>
         </section>
-        <section className="main-newsletter">
+        <section className="home-newsletter">
           <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
           <form onSubmit={handleSubscribe}>
             <input type="email" id="email" placeholder="Enter your email address" required />

@@ -80,7 +80,7 @@ body {
   margin-right: -5px;
 
   #mobile-menu-aside {
-    display: initial !important;
+    display: none !important;
     
     animation: none;
     * {
@@ -204,7 +204,7 @@ h3.demo-text {
   // responsive to mobile
   @media only screen and (max-width: $tablet) {
     width: 80%;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   // responsive to mobile
@@ -279,7 +279,7 @@ main {
   }
 
   .contact-content {
-    background-color: rgba($color2, 0.8);
+    background-color: rgba($less-light, 0.8);
     padding-top: 15px;
 
     .contact-form {
@@ -414,12 +414,17 @@ main {
       }
 
       input, textarea {
+        font-size: 1rem;
         min-width: 100%;
         padding: 5px 15px;
         border: $thin-border;
         border-radius: 0;
         filter: $default-shadow;
         background-color: $light;
+      }
+
+      textarea {
+        min-height: 100px;
       }
 
       input[type="radio"] {
@@ -493,6 +498,54 @@ main {
     }
   }
 
+  .retail-info {
+    display: flex;
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    background-color: rgba($color1, 0.8);
+    border-bottom: $default-border;
+
+    .retail-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 35%;
+      border-right: $default-border;
+      padding: 20px;
+      animation: none;
+
+      .button {
+        min-width: 60%;
+      }
+    }
+
+    .retail-photo {
+      animation: $secondary-animation;
+      height: 350px;
+      width: 65%;
+      object-fit: cover;
+    }
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      flex-direction: column-reverse;
+      height: 100%;
+
+      .retail-photo {
+        height: 70%;
+        max-height: 250px;
+        width: 100%;
+      }
+
+      .retail-buttons {
+        display: none;
+      }
+    }
+  }
+
   .retail-content {
     background-color: rgba($dark, 0.8);
     display: flex;
@@ -521,6 +574,7 @@ main {
 
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
+        font-size: 1.2rem;
         margin-bottom: 30px;
         padding: 5px 20px;
         width: 105%;
@@ -581,6 +635,7 @@ main {
           background-color: $color2;
           color: $black;
           border-radius: 23px 23px 0 0;
+          border-bottom: $default-border;
 
           ul li {
             font-family: "Bogue-Regular";
@@ -598,6 +653,7 @@ main {
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
         max-width: 80%;
+        outline: solid $color1 12px;
 
         .mobile-line-item {
           padding-top: 10px;
@@ -656,30 +712,6 @@ main {
         font-size: 2rem;
       }
     }
-    .links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
-      gap: 20px;
-
-      // responsive to tablet
-      @media only screen and (max-width: $tablet) {
-        flex-direction: column;
-        gap: 5px;
-
-        .button {
-          width: 90%;
-          justify-content: space-between;
-
-          &:hover {
-            img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-            }
-          }
-        }
-      }
-    }
   }
 
   .route-error {
@@ -691,7 +723,7 @@ main {
     align-items: center;
   }
 
-  .main-heading {
+  .home-heading {
     hr {
       max-width: 85%;
       background-color: $color3;
@@ -716,7 +748,7 @@ main {
     background-color: rgba($light, 0.9);
     flex-direction: column;
   }
-  .main-taproom {
+  .home-taproom {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -780,9 +812,9 @@ main {
         .address {
           order: -1;
           width: 100%;
-          padding: 20px 10%;
+          padding: 10px 10%;
           width: 80%;
-          padding-bottom: 30px;
+          padding-bottom: 20px;
         }
         .button {
           display: none;
@@ -816,7 +848,7 @@ main {
       }
     }
   }
-  .main-events {
+  .home-events {
     display: flex;
     border-top: $default-border;
     color: $black;
@@ -824,20 +856,21 @@ main {
     padding: 0;
     .events-photo {
       animation: $secondary-animation;
-      max-width: 45%;
+      max-width: 50%;
       border-right: $default-border;
       border-radius: 0;
       object-fit: cover;
     }
-    .main-events-content {
+    .home-events-content {
       width: 100%;
+      padding-bottom: 30px;
       .button {
         justify-content: space-between;
         background-color: $color1;
         color: $light;
         margin-top: 15px;
         margin-left: 40px;
-        width: 350px;
+        width: 325px;
         img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
         }
@@ -872,9 +905,13 @@ main {
         max-width: 350px;
         width: 70% !important;
         margin: 15px auto !important;
-        margin-bottom: 30px !important;
+        margin-top: 20px !important;
         &:hover {
-          background-color: $color2 !important;
+          background-color: $color1 !important;
+          color: $light !important;
+          img {
+            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important;
+          }
         }
       }
 
@@ -885,12 +922,17 @@ main {
         border-bottom: $default-border;
       }
 
-      .main-events-content .events-list {
+      .home-events-content {
+        padding-bottom: 20px;
+
+        .events-list {
+          text-align: center;
           font-size: 18px;
         }
+      }
     }
   }
-  .main-newsletter {
+  .home-newsletter {
     display: flex;
     flex-direction: column;
     justify-content: center;

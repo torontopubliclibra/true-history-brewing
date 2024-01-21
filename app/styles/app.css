@@ -229,16 +229,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -246,29 +246,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -309,9 +301,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -392,7 +382,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -440,7 +431,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -782,16 +773,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -799,29 +790,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -862,9 +845,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -945,7 +926,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -993,7 +975,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -1431,16 +1413,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -1448,29 +1430,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -1511,9 +1485,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -1594,7 +1566,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -1642,7 +1615,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -2007,16 +1980,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -2024,29 +1997,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -2087,9 +2052,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -2170,7 +2133,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -2218,7 +2182,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -2714,16 +2678,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -2731,29 +2695,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -2794,9 +2750,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -2877,7 +2831,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -2925,7 +2880,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -3590,16 +3545,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -3607,29 +3562,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -3670,9 +3617,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -3753,7 +3698,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -3801,7 +3747,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -4180,16 +4126,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -4197,29 +4143,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -4260,9 +4198,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -4343,7 +4279,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -4391,7 +4328,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -4893,16 +4830,16 @@ aside .cart-summary-aside .cart-subtotal a {
       letter-spacing: 1.5px;
       margin: 0; } }
 
-main .main-taproom .sketch-address .address {
+main .home-taproom .sketch-address .address {
   margin-top: 10px;
   margin-bottom: 0;
   padding-left: 40px;
   padding-right: 40px; }
   @media only screen and (max-width: 1070px) {
-    main .main-taproom .sketch-address .address {
+    main .home-taproom .sketch-address .address {
       margin: 0; } }
 
-main .main-events h3 {
+main .home-events h3 {
   font-size: 3rem;
   font-family: "Saudagar";
   text-transform: uppercase;
@@ -4910,29 +4847,21 @@ main .main-events h3 {
   margin-bottom: 10px;
   margin-left: 40px; }
 
-main .main-events .main-events-content .events-list {
-  margin-left: 40px;
-  font-size: 1.25rem; }
-  main .main-events .main-events-content .events-list li {
-    font-family: "Bogue-ExtraBold";
+main .home-events .home-events-content .events-list {
+  margin: 10px 40px !important; }
+  main .home-events .home-events-content .events-list li {
+    font-size: 1.25rem;
+    font-weight: 800;
     font-style: italic; }
-    main .main-events .main-events-content .events-list li .date {
-      font-style: normal;
-      font-family: "Bogue-Regular"; }
+    main .home-events .home-events-content .events-list li .date {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal; }
 
 @media only screen and (max-width: 1070px) {
-  main .main-events .main-events-content .events-list {
-    margin: 10px 35px !important;
-    text-align: center; }
-    main .main-events .main-events-content .events-list li {
-      font-size: 1.25rem; }
-      main .main-events .main-events-content .events-list li .dash {
-        display: none; }
-      main .main-events .main-events-content .events-list li .date {
-        display: block;
-        width: 100%;
-        font-size: 1rem; }
-  main .main-events h3 {
+  main .home-events h3 {
     font-size: 2.5rem;
     text-align: center;
     margin: 10px 30px;
@@ -4973,9 +4902,7 @@ main .taproom-address .button {
 @media only screen and (max-width: 1070px) {
   main .taproom-address .address {
     margin-top: 0;
-    margin-bottom: 30px; }
-  main .taproom-address .button {
-    display: none; } }
+    margin-bottom: 30px; } }
 
 main .taproom-events h2 {
   text-transform: none; }
@@ -5056,7 +4983,8 @@ main .taproom-menus .menu-nav .button {
       max-width: 50%; }
 
 .hours h4 {
-  font-size: 2rem;
+  font-family: "Saudagar";
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -5104,7 +5032,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 1.75rem; } }
+    font-size: 2rem; } }
 
 .button {
   background: #D8B56E;
@@ -5296,16 +5224,16 @@ nav.header-menu-desktop a {
         width: 100%; } }
 
 .shop-disclaimers {
-  background-color: rgba(216, 181, 110, 0.8);
+  background-color: rgba(216, 181, 110, 0.75);
   padding: 30px;
   border-top: solid #1F1F1F 3px;
   text-align: center; }
   .shop-disclaimers .text-box {
     padding: 30px 40px;
-    max-width: 85%;
+    max-width: 75%;
     margin: 0 auto; }
     .shop-disclaimers .text-box h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
       margin: 0;
       margin-bottom: 10px; }
@@ -5318,6 +5246,8 @@ nav.header-menu-desktop a {
       .shop-disclaimers .text-box {
         max-width: 100%;
         padding: 10px; }
+        .shop-disclaimers .text-box h3 {
+          font-size: 1.2rem; }
         .shop-disclaimers .text-box p {
           max-width: 100%; } }
 
@@ -5326,7 +5256,7 @@ nav.header-menu-desktop a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(214, 208, 192, 0.9);
+  background-color: rgba(214, 208, 192, 0.8);
   padding: 30px; }
   .shop .recommended-product {
     max-width: 350px; }
@@ -5514,7 +5444,7 @@ body {
   margin-left: -5px;
   margin-right: -5px; }
   body #mobile-menu-aside {
-    display: initial !important;
+    display: none !important;
     animation: none; }
     body #mobile-menu-aside * {
       animation: fade-in 0.8s ease-in-out; }
@@ -5599,7 +5529,7 @@ h3.demo-text {
   @media only screen and (max-width: 1070px) {
     .thb-logo {
       width: 80%;
-      margin: 20px 0; } }
+      margin: 10px 0; } }
   @media only screen and (max-width: 480px) {
     .thb-logo {
       width: 90%; } }
@@ -5650,7 +5580,7 @@ main {
               background-color: #BC4749;
               color: #F1EDE2; } }
   main .contact-content {
-    background-color: rgba(216, 181, 110, 0.8);
+    background-color: rgba(214, 208, 192, 0.8);
     padding-top: 15px; }
     main .contact-content .contact-form {
       width: 100%;
@@ -5745,12 +5675,15 @@ main {
       main .contact-content .contact-form label {
         text-transform: uppercase; }
       main .contact-content .contact-form input, main .contact-content .contact-form textarea {
+        font-size: 1rem;
         min-width: 100%;
         padding: 5px 15px;
         border: solid #1F1F1F 2px;
         border-radius: 0;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         background-color: #F1EDE2; }
+      main .contact-content .contact-form textarea {
+        min-height: 100px; }
       main .contact-content .contact-form input[type="radio"] {
         padding: 0;
         min-width: unset; }
@@ -5798,6 +5731,40 @@ main {
           font-size: 1.5rem;
           padding: 50px;
           margin: 0; } }
+  main .retail-info {
+    display: flex;
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(119, 141, 121, 0.8);
+    border-bottom: solid #1F1F1F 3px; }
+    main .retail-info .retail-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 35%;
+      border-right: solid #1F1F1F 3px;
+      padding: 20px;
+      animation: none; }
+      main .retail-info .retail-buttons .button {
+        min-width: 60%; }
+    main .retail-info .retail-photo {
+      animation: fade-in 0.8s ease-in-out;
+      height: 350px;
+      width: 65%;
+      object-fit: cover; }
+    @media only screen and (max-width: 1070px) {
+      main .retail-info {
+        flex-direction: column-reverse;
+        height: 100%; }
+        main .retail-info .retail-photo {
+          height: 70%;
+          max-height: 250px;
+          width: 100%; }
+        main .retail-info .retail-buttons {
+          display: none; } }
   main .retail-content {
     background-color: rgba(121, 79, 62, 0.8);
     display: flex;
@@ -5821,6 +5788,7 @@ main {
       margin-bottom: 20px; }
       @media only screen and (max-width: 1070px) {
         main .retail-content .updated-date {
+          font-size: 1.2rem;
           margin-bottom: 30px;
           padding: 5px 20px;
           width: 105%;
@@ -5864,7 +5832,8 @@ main {
         main .retail-content .fridge-list .line-item.header {
           background-color: #D8B56E;
           color: #1F1F1F;
-          border-radius: 23px 23px 0 0; }
+          border-radius: 23px 23px 0 0;
+          border-bottom: solid #1F1F1F 3px; }
           main .retail-content .fridge-list .line-item.header ul li {
             font-family: "Bogue-Regular";
             font-size: 1.25rem; }
@@ -5873,7 +5842,8 @@ main {
           border-bottom: none; }
       @media only screen and (max-width: 1070px) {
         main .retail-content .fridge-list {
-          max-width: 80%; }
+          max-width: 80%;
+          outline: solid #778d79 12px; }
           main .retail-content .fridge-list .mobile-line-item {
             padding-top: 10px;
             padding-bottom: 20px;
@@ -5912,21 +5882,6 @@ main {
       @media only screen and (max-width: 1070px) {
         main .retail-content h3 {
           font-size: 2rem; } }
-    main .retail-content .links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
-      gap: 20px; }
-      @media only screen and (max-width: 1070px) {
-        main .retail-content .links {
-          flex-direction: column;
-          gap: 5px; }
-          main .retail-content .links .button {
-            width: 90%;
-            justify-content: space-between; }
-            main .retail-content .links .button:hover img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
   main .route-error {
     min-height: 500px;
     background-color: rgba(119, 141, 121, 0.8);
@@ -5934,15 +5889,15 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-  main .main-heading hr {
+  main .home-heading hr {
     max-width: 85%;
     background-color: #C28165; }
   @media only screen and (max-width: 1070px) {
-    main .main-heading {
+    main .home-heading {
       background: #F1EDE2 !important;
       border-bottom: 0 !important;
       padding: 30px 0 15px 0; }
-      main .main-heading hr {
+      main .home-heading hr {
         margin-top: 20px; } }
   main .heading, main .main-subheading {
     display: flex;
@@ -5952,28 +5907,28 @@ main {
   main .heading {
     background-color: rgba(241, 237, 226, 0.9);
     flex-direction: column; }
-  main .main-taproom {
+  main .home-taproom {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     background-color: rgba(119, 141, 121, 0.8); }
-    main .main-taproom hr {
+    main .home-taproom hr {
       display: none; }
-    main .main-taproom .sketch-address {
+    main .home-taproom .sketch-address {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 50%;
       margin: 15px;
       margin-bottom: 0; }
-      main .main-taproom .sketch-address .bar-sketch {
+      main .home-taproom .sketch-address .bar-sketch {
         width: 90%;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         padding-bottom: 5px; }
-    main .main-taproom .hours {
+    main .home-taproom .hours {
       width: 35%;
       filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
-    main .main-taproom .menu-buttons {
+    main .home-taproom .menu-buttons {
       width: 95%;
       margin: 0 auto;
       margin-top: 35px;
@@ -5981,107 +5936,114 @@ main {
       flex-flow: row wrap;
       justify-content: center;
       gap: 20px; }
-      main .main-taproom .menu-buttons .button {
+      main .home-taproom .menu-buttons .button {
         flex-grow: 0.3;
         justify-content: space-between; }
     @media only screen and (max-width: 1070px) {
-      main .main-taproom {
+      main .home-taproom {
         padding-top: 0 !important; }
-        main .main-taproom hr {
+        main .home-taproom hr {
           background-color: #C28165;
           width: 90%;
           margin-top: 10px;
           margin-bottom: 35px; }
-        main .main-taproom .sketch-address {
+        main .home-taproom .sketch-address {
           width: 100%;
           margin: 0; }
-          main .main-taproom .sketch-address .bar-sketch {
+          main .home-taproom .sketch-address .bar-sketch {
             padding: 30px 20px;
             padding-bottom: 10px;
             width: 95%; }
-          main .main-taproom .sketch-address .address {
+          main .home-taproom .sketch-address .address {
             order: -1;
             width: 100%;
-            padding: 20px 10%;
+            padding: 10px 10%;
             width: 80%;
-            padding-bottom: 30px; }
-          main .main-taproom .sketch-address .button {
+            padding-bottom: 20px; }
+          main .home-taproom .sketch-address .button {
             display: none; }
-        main .main-taproom .hours {
+        main .home-taproom .hours {
           order: 5;
           margin-top: 20px !important;
           margin-bottom: 40px !important; }
-        main .main-taproom .menu-buttons {
+        main .home-taproom .menu-buttons {
           flex-direction: column;
           align-items: center;
           padding-bottom: 10px;
           margin: 0;
           gap: 3px; }
-          main .main-taproom .menu-buttons .button {
+          main .home-taproom .menu-buttons .button {
             font-size: 0.9rem;
             width: 75%;
             height: 20px;
             padding: 15px 20px; }
-            main .main-taproom .menu-buttons .button img {
+            main .home-taproom .menu-buttons .button img {
               width: 20px; }
-            main .main-taproom .menu-buttons .button:hover img {
+            main .home-taproom .menu-buttons .button:hover img {
               filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
-  main .main-events {
+  main .home-events {
     display: flex;
     border-top: solid #1F1F1F 3px;
     color: #1F1F1F;
     background-color: rgba(214, 208, 192, 0.8);
     padding: 0; }
-    main .main-events .events-photo {
+    main .home-events .events-photo {
       animation: fade-in 0.8s ease-in-out;
-      max-width: 45%;
+      max-width: 50%;
       border-right: solid #1F1F1F 3px;
       border-radius: 0;
       object-fit: cover; }
-    main .main-events .main-events-content {
-      width: 100%; }
-      main .main-events .main-events-content .button {
+    main .home-events .home-events-content {
+      width: 100%;
+      padding-bottom: 30px; }
+      main .home-events .home-events-content .button {
         justify-content: space-between;
         background-color: #778d79;
         color: #F1EDE2;
         margin-top: 15px;
         margin-left: 40px;
-        width: 350px; }
-        main .main-events .main-events-content .button img {
+        width: 325px; }
+        main .home-events .home-events-content .button img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-        main .main-events .main-events-content .button:hover {
+        main .home-events .home-events-content .button:hover {
           background-color: #D8B56E;
           color: #1F1F1F; }
-          main .main-events .main-events-content .button:hover img {
+          main .home-events .home-events-content .button:hover img {
             filter: none; }
-      main .main-events .main-events-content hr {
+      main .home-events .home-events-content hr {
         background-color: #C28165;
         border-left: none;
         width: 90%;
         margin-bottom: 20px; }
     @media only screen and (max-width: 1070px) {
-      main .main-events {
+      main .home-events {
         flex-direction: column; }
-        main .main-events hr {
+        main .home-events hr {
           width: 80%;
           max-width: unset;
           margin: 0 auto;
           border: solid #1F1F1F 2px !important; }
-        main .main-events .button {
+        main .home-events .button {
           max-width: 350px;
           width: 70% !important;
           margin: 15px auto !important;
-          margin-bottom: 30px !important; }
-          main .main-events .button:hover {
-            background-color: #D8B56E !important; }
-        main .main-events .events-photo {
+          margin-top: 20px !important; }
+          main .home-events .button:hover {
+            background-color: #778d79 !important;
+            color: #F1EDE2 !important; }
+            main .home-events .button:hover img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important; }
+        main .home-events .events-photo {
           height: 250px;
           max-width: 100%;
           border: none;
           border-bottom: solid #1F1F1F 3px; }
-        main .main-events .main-events-content .events-list {
-          font-size: 18px; } }
-  main .main-newsletter {
+        main .home-events .home-events-content {
+          padding-bottom: 20px; }
+          main .home-events .home-events-content .events-list {
+            text-align: center;
+            font-size: 18px; } }
+  main .home-newsletter {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6092,42 +6054,42 @@ main {
     color: #1F1F1F;
     background-color: rgba(216, 181, 110, 0.75);
     border-top: solid #1F1F1F 3px; }
-    main .main-newsletter p {
+    main .home-newsletter p {
       font-size: 1.25rem;
       font-style: italic;
       line-height: 1.5; }
-    main .main-newsletter form {
+    main .home-newsletter form {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px; }
-      main .main-newsletter form input {
+      main .home-newsletter form input {
         padding: 10px 20px;
         width: 100%;
         border: solid #1F1F1F 2px;
         border-radius: 0;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
-      main .main-newsletter form .button {
+      main .home-newsletter form .button {
         padding: 20px 30px;
         background: #BC4749;
         color: #F1EDE2; }
-        main .main-newsletter form .button img {
+        main .home-newsletter form .button img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-        main .main-newsletter form .button:hover {
+        main .home-newsletter form .button:hover {
           cursor: pointer;
           background-color: #778d79; }
     @media only screen and (max-width: 1070px) {
-      main .main-newsletter {
+      main .home-newsletter {
         padding: 20px 5%; }
-        main .main-newsletter p {
+        main .home-newsletter p {
           font-size: 1.15rem; }
-        main .main-newsletter form input {
+        main .home-newsletter form input {
           width: 80%; }
-        main .main-newsletter form .button:hover {
+        main .home-newsletter form .button:hover {
           background: #BC4749;
           color: #F1EDE2; }
-          main .main-newsletter form .button:hover img {
+          main .home-newsletter form .button:hover img {
             filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
   main .taproom-address {
     height: 675px;
