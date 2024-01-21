@@ -9,6 +9,7 @@ import { Hours } from './../components/Hours';
 import { Calendar } from './../components/Calendar';
 
 // asset imports
+import patioPhoto from './../../public/assets/patio-photo.png';
 import taproomPhoto from './../../public/assets/taproom-photo.png';
 import beer from './../../public/assets/icons/beer.svg';
 import wine from './../../public/assets/icons/wine.svg';
@@ -168,11 +169,6 @@ export default function Homepage() {
             </div>
           </div>
         </section>
-        <section className="taproom-events" id="calendar">
-          <h3>Events</h3>
-          <hr/>
-          <Calendar/>
-        </section>
         <section className="taproom-menus" id="menu">
           <h3>Menus</h3>
           <p className='updated-date'>{timeStamps[selectedMenu]}</p>
@@ -201,6 +197,14 @@ export default function Homepage() {
           <ul className='menu'>
             {formattedMenus[selectedMenu]}
           </ul>
+        </section>
+        <section className="taproom-banner">
+          <img src={patioPhoto} className="banner-photo" alt="A photo of people enjoying themselves on the True History patio" />
+        </section>
+        <section className="taproom-events" id="calendar">
+          <h3>Events</h3>
+          <hr/>
+          <Calendar/>
         </section>
     </>
   );

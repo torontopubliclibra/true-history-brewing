@@ -11,7 +11,6 @@ aside {
     position: fixed;
     right: calc(-1 * 400px);
     top: 0;
-    animation: none;
 
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
@@ -330,9 +329,10 @@ aside {
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
     #cart-aside {
-        aside {
-          height: calc(100vh - 102px);
-        }
+
+      aside {
+        height: calc(100vh - 102px);
+      }
     }
 }
   

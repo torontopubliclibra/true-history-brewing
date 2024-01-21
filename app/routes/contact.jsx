@@ -273,7 +273,6 @@ export default function Homepage() {
             <label htmlFor="message">Message:</label>
             <textarea
               id="message"
-              wrap="hard"
               value={message}
               onChange={(event) => handleFieldChange("message", event)}
               required />
