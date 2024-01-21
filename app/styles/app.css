@@ -4562,6 +4562,8 @@ nav.header-menu-desktop a {
     border: solid #1F1F1F 3px;
     border-top: 0;
     padding-top: 0; }
+  .calendar .fc .fc-scrollgrid, .calendar .fc .fc-scrollgrid-section-header * {
+    border: none; }
   .calendar .fc td {
     border-top: none;
     border: solid #1F1F1F 3px; }
@@ -5998,7 +6000,7 @@ main {
     margin: 0;
     padding: 0;
     height: 500px;
-    border-bottom: solid #1F1F1F 3px; }
+    border-top: solid #1F1F1F 3px; }
     main .taproom-banner .banner-photo {
       animation: fade-in 0.8s ease-in-out;
       width: 100%;
@@ -6073,52 +6075,62 @@ main {
             text-align: center;
             font-size: 18px; } }
   main .home-newsletter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     gap: 15px;
     padding: 30px 10%;
-    background-color: rgba(216, 181, 110, 0.75);
+    background-color: rgba(121, 79, 62, 0.8);
     border-top: solid #1F1F1F 3px; }
-    main .home-newsletter p {
-      font-family: "Saudagar";
-      font-size: 1.5rem;
-      font-style: italic;
-      line-height: 1.5;
-      font-weight: 800; }
-    main .home-newsletter form {
-      width: 100%;
+    main .home-newsletter .newsletter-content {
+      width: 90%;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 10px; }
-      main .home-newsletter form input {
-        padding: 10px 20px;
-        width: 500px;
-        border: solid #1F1F1F 2px;
-        border-radius: 0;
-        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
-      main .home-newsletter form .button {
-        padding: 20px 30px;
-        background: #BC4749;
-        color: #F1EDE2; }
-        main .home-newsletter form .button img {
-          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-        main .home-newsletter form .button:hover {
-          cursor: pointer;
-          background-color: #778d79; }
-    @media only screen and (max-width: 1070px) {
-      main .home-newsletter {
-        padding: 20px 5%; }
-        main .home-newsletter p {
-          font-size: 1.3rem; }
-        main .home-newsletter form .button:hover {
+      background-color: #D6D0C0;
+      border: solid #1F1F1F 3px;
+      padding: 40px;
+      padding-bottom: 20px; }
+      main .home-newsletter .newsletter-content p {
+        font-family: "Saudagar";
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.5;
+        font-weight: 800;
+        padding-bottom: 20px; }
+      main .home-newsletter .newsletter-content form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; }
+        main .home-newsletter .newsletter-content form input {
+          padding: 10px 20px;
+          width: 500px;
+          border: solid #1F1F1F 2px;
+          border-radius: 0;
+          filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
+        main .home-newsletter .newsletter-content form .button {
+          padding: 20px 30px;
           background: #BC4749;
           color: #F1EDE2; }
-          main .home-newsletter form .button:hover img {
-            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
+          main .home-newsletter .newsletter-content form .button img {
+            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+          main .home-newsletter .newsletter-content form .button:hover {
+            cursor: pointer;
+            background-color: #778d79; }
+    @media only screen and (max-width: 1070px) {
+      main .home-newsletter {
+        padding: 20px; }
+        main .home-newsletter .newsletter-content {
+          padding: 20px; }
+          main .home-newsletter .newsletter-content p {
+            font-size: 1.1rem; }
+          main .home-newsletter .newsletter-content form .button:hover {
+            background: #BC4749;
+            color: #F1EDE2; }
+            main .home-newsletter .newsletter-content form .button:hover img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
     @media only screen and (max-width: 480px) {
       main .home-newsletter form input {
         max-width: 85%; } }

@@ -876,7 +876,7 @@ main {
     margin: 0;
     padding: 0;
     height: 500px;
-    border-bottom: $default-border;
+    border-top: $default-border;
     .banner-photo {
       animation: $secondary-animation;
       width: 100%;
@@ -978,69 +978,82 @@ main {
     }
   }
   .home-newsletter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     gap: 15px;
     padding: 30px 10%;
-    background-color: rgba($color2, 0.75);
+    background-color: rgba($dark, 0.8);
     border-top: $default-border;
 
-    p {
-      font-family: "Saudagar";
-      font-size: 1.5rem;
-      font-style: italic;
-      line-height: 1.5;
-      font-weight: 800;
-    }
-
-    form {
-      width: 100%;
+    .newsletter-content {
+      width: 90%;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 10px;
+      background-color: $less-light;
+      border: $default-border;
+      padding: 40px;
+      padding-bottom: 20px;
 
-      input {
-        padding: 10px 20px;
-        width: 500px;
-        border: $thin-border;
-        border-radius: 0;
-        filter: $default-shadow;
+      p {
+        font-family: "Saudagar";
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.5;
+        font-weight: 800;
+        padding-bottom: 20px;
       }
-      .button {
-        padding: 20px 30px;
-        background: $color4;
-        color: $light;
-
-        img {
-          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+  
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+  
+        input {
+          padding: 10px 20px;
+          width: 500px;
+          border: $thin-border;
+          border-radius: 0;
+          filter: $default-shadow;
         }
-
-        &:hover {
-          cursor: pointer;
-          background-color: $color1;
+        .button {
+          padding: 20px 30px;
+          background: $color4;
+          color: $light;
+  
+          img {
+            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+          }
+  
+          &:hover {
+            cursor: pointer;
+            background-color: $color1;
+          }
         }
       }
     }
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
-      padding: 20px 5%;
+      padding: 20px;
 
-      p {
-        font-size: 1.3rem;
-      }
-
-      form {
-        .button {
-          &:hover {
-            background: $color4;
-            color: $light;
-            img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+      .newsletter-content {
+        padding: 20px;
+        p {
+          font-size: 1.1rem;
+        }
+  
+        form {
+          .button {
+            &:hover {
+              background: $color4;
+              color: $light;
+              img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+              }
             }
           }
         }

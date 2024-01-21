@@ -167,11 +167,13 @@ export default function Homepage() {
           </div>
         </section>
         <section className="home-newsletter">
-          <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
-          <form onSubmit={handleSubscribe}>
-            <input type="email" placeholder="Enter your email address" required />
-            <button type="submit" className='button button-primary' >{newsletterBtn} <img src={mail} className="button-icon" /></button>
-          </form>
+          <div className="newsletter-content">
+            <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
+            <form onSubmit={handleSubscribe}>
+              <input type="email" placeholder="Enter your email address" required />
+              <button type="submit" className='button button-primary' >{newsletterBtn} <img src={mail} className="button-icon" /></button>
+            </form>
+          </div>
         </section>
     </>
   );
