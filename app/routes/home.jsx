@@ -9,7 +9,8 @@ import { Hours } from './../components/Hours';
 // asset imports
 import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
-import patioPhoto from './../../public/assets/patio-photo.png';
+import exteriorPhoto from './../../public/assets/exterior-photo.png';
+import clock from './../../public/assets/icons/clock.svg';
 import beer from './../../public/assets/icons/beer.svg';
 import retail from './../../public/assets/icons/retail.svg';
 import food from './../../public/assets/icons/food.svg';
@@ -29,7 +30,7 @@ export const meta = () => {
 export default function Homepage() {
 
   const { events, currentDate } = useContext(StrapiContext);
-  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe');
+  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe to Newsletter');
 
   // parse time from string
   let parseDate = (string) => {
@@ -129,7 +130,7 @@ export default function Homepage() {
     event.target.reset();
 
     setTimeout(() => {
-      setNewsletterBtn('Subscribe');
+      setNewsletterBtn('Subscribe to Newsletter');
     }, 3000);
   }
 
@@ -148,26 +149,27 @@ export default function Homepage() {
           <hr/>
           <Hours/>
           <div className="menu-buttons">
+            <Link to="/taproom#info" className='button button-tertiary mobile-only'>"What are your hours?"<img src={clock} className="button-icon"/></Link>
             <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>"What's on tap right now?"<img src={beer} className="button-icon"/></Link>
             <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-tertiary'>"What's in the fridge?"<img src={retail} className="button-icon"/></Link>
             <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'>"Do you guys have food?"<img src={food} className="button-icon"/></Link>
           </div>
         </section>
         <section className="home-events">
-          <img src={patioPhoto} className="events-photo" alt="A photo of people enjoying themselves on the True History patio" />
+          <img src={exteriorPhoto} className="events-photo" alt="" />
           <div className="home-events-content">
             <h3>Upcoming Events</h3>
             <hr/>
             <ul className="events-list">
               {formattedEvents}
             </ul>
-            <Link to="/taproom#calendar" className='button button-primary'>Check out the calendar <img src={calendar} className="button-icon" /></Link>
+            <Link to="/taproom#calendar" className='button button-primary'>Full events calendar <img src={calendar} className="button-icon" /></Link>
           </div>
         </section>
         <section className="home-newsletter">
           <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
           <form onSubmit={handleSubscribe}>
-            <input type="email" id="email" placeholder="Enter your email address" required />
+            <input type="email" placeholder="Enter your email address" required />
             <button type="submit" className='button button-primary' >{newsletterBtn} <img src={mail} className="button-icon" /></button>
           </form>
         </section>
