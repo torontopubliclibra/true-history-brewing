@@ -30,7 +30,7 @@ export const meta = () => {
 export default function Homepage() {
 
   const { events, currentDate } = useContext(StrapiContext);
-  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe to Newsletter');
+  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe');
 
   // parse time from string
   let parseDate = (string) => {
@@ -130,7 +130,7 @@ export default function Homepage() {
     event.target.reset();
 
     setTimeout(() => {
-      setNewsletterBtn('Subscribe to Newsletter');
+      setNewsletterBtn('Subscribe');
     }, 3000);
   }
 

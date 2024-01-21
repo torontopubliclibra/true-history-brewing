@@ -5581,11 +5581,16 @@ main {
               background-color: #BC4749;
               color: #F1EDE2; } }
   main .contact-content {
-    background-color: rgba(214, 208, 192, 0.8);
-    padding-top: 15px; }
+    background-color: rgba(121, 79, 62, 0.8);
+    padding: 30px 10%; }
     main .contact-content .contact-form {
-      width: 100%;
-      max-width: 500px;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+      background-color: rgba(214, 208, 192, 0.8);
+      border: solid #1F1F1F 3px;
+      padding: 40px;
+      padding-bottom: 20px;
       margin: 0 auto;
       margin-top: 20px;
       display: flex;
@@ -5593,19 +5598,23 @@ main {
       justify-content: center;
       align-items: center;
       gap: 10px;
-      padding: 0 20px; }
+      padding: 40px;
+      padding-left: 10px; }
+      main .contact-content .contact-form .button {
+        margin-top: 30px;
+        margin-left: 50px; }
       main .contact-content .contact-form .button:disabled {
         background-color: #778d79; }
         main .contact-content .contact-form .button:disabled:hover {
           cursor: default; }
       main .contact-content .contact-form .form-field {
-        min-width: 100%;
+        min-width: 75%;
         display: flex;
         flex-direction: column;
         justify-content: left;
         align-items: flex-start; }
       main .contact-content .contact-form .double-field {
-        min-width: 100%;
+        min-width: 75%;
         display: flex;
         flex-direction: row;
         justify-content: space-between; }
@@ -5700,18 +5709,19 @@ main {
           cursor: pointer;
           background-color: #778d79; }
     @media only screen and (max-width: 1070px) {
-      main .contact-content .contact-form {
-        max-width: 70%;
-        width: 100%;
-        margin: 20px auto;
-        margin-left: 7%; }
-        main .contact-content .contact-form .button {
+      main .contact-content {
+        padding: 20px; }
+        main .contact-content .contact-form {
+          margin: 0 auto !important;
+          width: 87% !important;
+          max-width: 600px !important; }
+        main .contact-content .form-field, main .contact-content .double-field {
+          width: 50% !important; }
+        main .contact-content .button {
           max-width: 70%;
           width: 100%;
           margin-left: 14%;
-          margin-top: 20px; }
-      main .contact-content .form-field {
-        width: 100%; } }
+          margin-top: 20px; } }
   main .recommended-products {
     display: flex;
     flex-direction: column;
@@ -6087,7 +6097,7 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #D6D0C0;
+      background-color: rgba(214, 208, 192, 0.8);
       border: solid #1F1F1F 3px;
       padding: 40px;
       padding-bottom: 20px; }
@@ -6113,7 +6123,8 @@ main {
         main .home-newsletter .newsletter-content form .button {
           padding: 20px 30px;
           background: #BC4749;
-          color: #F1EDE2; }
+          color: #F1EDE2;
+          justify-content: space-between; }
           main .home-newsletter .newsletter-content form .button img {
             filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
           main .home-newsletter .newsletter-content form .button:hover {
