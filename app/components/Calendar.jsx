@@ -25,9 +25,6 @@ export function Calendar() {
                 height={"auto"}
                 buttonIcons={false}
                 buttonText={{
-                    today: 'This Month',
-                    prev: 'Previous',
-                    next: 'Next',
                     month: 'Calendar',
                     list: 'List'
                   }}

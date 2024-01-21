@@ -279,10 +279,31 @@ main {
   }
 
   .contact-content {
-    background-color: rgba($less-light, 0.8);
-    padding-top: 15px;
+    background-color: rgba($dark, 0.8);
+    padding: 30px 10%;
 
     .contact-form {
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+      background-color: rgba($less-light, 0.8);
+      border: $default-border;
+      padding: 40px;
+      padding-bottom: 20px;
+      margin: 0 auto;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 40px;
+      padding-left: 10px;
+
+      .button {
+        margin-top: 30px;
+        margin-left: 50px;
+      }
 
       .button:disabled {
         background-color: $color1;
@@ -291,19 +312,8 @@ main {
         }
       }
 
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 0 20px;
-
       .form-field {
-        min-width: 100%;
+        min-width: 75%;
         display: flex;
         flex-direction: column;
         justify-content: left;
@@ -311,7 +321,7 @@ main {
       }
 
       .double-field {
-        min-width: 100%;
+        min-width: 75%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -452,25 +462,39 @@ main {
       }
     }
 
-    // responsive to mobile
+    // responsive to tablet
     @media only screen and (max-width: $tablet) {
+      padding: 20px;
+
       .contact-form {
+        margin: 0 auto !important;
+        width: 87% !important;
+        max-width: 600px !important;
+      }
+
+      .form-field, .double-field {
+        width: 50% !important;
+      }
+
+      .button {
         max-width: 70%;
         width: 100%;
-        margin: 20px auto;
-        margin-left: 7%;
-
-        .button {
-          max-width: 70%;
-          width: 100%;
-          margin-left: 14%;
-          margin-top: 20px;
-        }
-      }
-      .form-field {
-        width: 100%;
+        margin-left: 14%;
+        margin-top: 20px;
       }
     }
+
+    // // responsive to mobile
+    // @media only screen and (max-width: $tablet) {
+    //   .contact-form {
+    //     max-width: 70%;
+    //     width: 100%;
+    //     margin: 20px auto;
+    //     margin-left: 7%;
+
+        
+    //   }
+    // }
   }
 
   .recommended-products {
@@ -991,7 +1015,7 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: $less-light;
+      background-color: rgba($less-light, 0.8);
       border: $default-border;
       padding: 40px;
       padding-bottom: 20px;
@@ -1023,6 +1047,7 @@ main {
           padding: 20px 30px;
           background: $color4;
           color: $light;
+          justify-content: space-between;
   
           img {
             filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
