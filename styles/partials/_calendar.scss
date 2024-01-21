@@ -180,6 +180,10 @@
       padding-top: 0;
     }
 
+    .fc-scrollgrid, .fc-scrollgrid-section-header * {
+      border: none;
+    }
+
     td {
       border-top: none;
       border: $default-border;

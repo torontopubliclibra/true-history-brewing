@@ -25,9 +25,11 @@ export function Calendar() {
                 height={"auto"}
                 buttonIcons={false}
                 buttonText={{
-                    today: 'this month',
-                    month: 'calendar',
-                    list: 'list'
+                    today: 'This Month',
+                    prev: 'Previous',
+                    next: 'Next',
+                    month: 'Calendar',
+                    list: 'List'
                   }}
                 events={events}
             />

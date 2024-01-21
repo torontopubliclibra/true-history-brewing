@@ -198,13 +198,13 @@ export default function Homepage() {
             {formattedMenus[selectedMenu]}
           </ul>
         </section>
-        <section className="taproom-banner">
-          <img src={patioPhoto} className="banner-photo" alt="A photo of people enjoying themselves on the True History patio" />
-        </section>
         <section className="taproom-events" id="calendar">
           <h3>Events</h3>
           <hr/>
           <Calendar/>
+        </section>
+        <section className="taproom-banner">
+          <img src={patioPhoto} className="banner-photo" alt="A photo of people enjoying themselves on the True History patio" />
         </section>
     </>
   );
