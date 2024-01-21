@@ -31,6 +31,7 @@ export default function Homepage() {
 
   const { menus } = useContext(StrapiContext);
   const [ selectedMenu, setSelectedMenu ] = useState("beers");
+  const [ menuItems, setMenuItems ] = useState({});
   const location = useLocation();
 
   let updatedDate = (datetimeString) => {
@@ -69,73 +70,87 @@ export default function Homepage() {
     wineSeltzersEtc: ""
   }
 
-  menus.beers.items.forEach((beer, index) => {
-    formattedMenus.beers.push(
-      <li key={`beer-` + index} className='beer'>
-        <h4>
-          {beer.title} ({beer.abv})
-        </h4>
-        {beer.description ? <p className='description'>{beer.description}</p> : null}
-        <p className='price'>
-          {beer.price} / {beer.ml}ml
-        </p>
-      </li>
-    );
-    timeStamps.beers = updatedDate(menus.beers.updatedAt);
-  });
+  if (menuItems.beers) {
+    menuItems.beers.items.forEach((beer, index) => {
+      formattedMenus.beers.push(
+        <li key={`beer-` + index} className='beer'>
+          <h4>
+            {beer.title} ({beer.abv})
+          </h4>
+          {beer.description ? <p className='description'>{beer.description}</p> : null}
+          <p className='price'>
+            {beer.price} / {beer.ml}ml
+          </p>
+        </li>
+      );
+      timeStamps.beers = updatedDate(menuItems.beers.updatedAt);
+    });
+  }
 
-  menus.food.items.forEach((item, index) => {
-    formattedMenus.food.push(
-      <li key={`food-` + index} className={`food ` + item.size}>
-        <h4>
-          {item.title}
-        </h4>
-        {item.description ? <p className='description'>{item.description}</p> : null}
-        <p className='price'>
-          {item.price}
-        </p>
-      </li>
-    );
-    timeStamps.food = updatedDate(menus.food.updatedAt);
-  });
+  if (menuItems.food) {
+    menuItems.food.items.forEach((item, index) => {
+      formattedMenus.food.push(
+        <li key={`food-` + index} className={`food ` + item.size}>
+          <h4>
+            {item.title}
+          </h4>
+          {item.description ? <p className='description'>{item.description}</p> : null}
+          <p className='price'>
+            {item.price}
+          </p>
+        </li>
+      );
+      timeStamps.food = updatedDate(menuItems.food.updatedAt);
+    });
+  }
 
-  menus.nonAlc.items.forEach((beverage, index) => {
-    formattedMenus.nonAlc.push(
-      <li key={`non-alc-` + index} className='non-alc'>
-        <h4>
-          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
-        </h4>
-        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-        <p className='price'>
-          {beverage.price}
-          {beverage.ml ? ` / ${beverage.ml}ml` : null}
-        </p>
-      </li>
-    );
-    timeStamps.nonAlc = updatedDate(menus.nonAlc.updatedAt);
-  });
+  if (menuItems.nonAlc) {
+    menuItems.nonAlc.items.forEach((beverage, index) => {
+      formattedMenus.nonAlc.push(
+        <li key={`non-alc-` + index} className='non-alc'>
+          <h4>
+            {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+          </h4>
+          {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+          <p className='price'>
+            {beverage.price}
+            {beverage.ml ? ` / ${beverage.ml}ml` : null}
+          </p>
+        </li>
+      );
+      timeStamps.nonAlc = updatedDate(menuItems.nonAlc.updatedAt);
+    });
+  }
 
-  menus.wineSeltzersEtc.items.forEach((beverage, index) => {
-    formattedMenus.wineSeltzersEtc.push(
-      <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
-        <h4>
-          {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
-        </h4>
-        {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-        <p className='price'>
-          {beverage.price}
-          {beverage.ml ? ` / ${beverage.ml}ml` : null}
-        </p>
-      </li>
-    );
-    timeStamps.wineSeltzersEtc = updatedDate(menus.wineSeltzersEtc.updatedAt);
-  });
+  if (menuItems.wineSeltzersEtc) {
+    menuItems.wineSeltzersEtc.items.forEach((beverage, index) => {
+      formattedMenus.wineSeltzersEtc.push(
+        <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
+          <h4>
+            {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+          </h4>
+          {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+          <p className='price'>
+            {beverage.price}
+            {beverage.ml ? ` / ${beverage.ml}ml` : null}
+          </p>
+        </li>
+      );
+      timeStamps.wineSeltzersEtc = updatedDate(menuItems.wineSeltzersEtc.updatedAt);
+    });
+  }
 
   useEffect(() => {
     if (location.state) {
       setSelectedMenu(location.state.selectedMenu);
+    } else {
+      setSelectedMenu("beers");
     }
   }, [])
+
+  useEffect(() => {
+    setMenuItems(menus);
+  }, [menus])
 
   return (
     <>

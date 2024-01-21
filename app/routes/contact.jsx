@@ -58,7 +58,16 @@ export default function Homepage() {
         setBusinessAddress(event.target.value);
       }
       if (field == "guests") {
-        setGuests(event.target.value);
+
+        let guestValue = event.target.value;
+
+        if (guestValue.length > 1 && guestValue.startsWith("0")) {
+          guestValue = guestValue.substring(1);
+        } else if (guestValue > 40) {
+          guestValue = 40;
+        }
+
+        setGuests(guestValue);
       }
       if (field == "dining") {
         setDining(event.target.value);
@@ -149,7 +158,7 @@ export default function Homepage() {
           </div>
           <div className="form-field">
             <label htmlFor="message">Message:</label>
-            <input
+            <textarea
               id="message"
               value={message}
               onChange={(event) => handleFieldChange("message", event)}
@@ -202,7 +211,7 @@ export default function Homepage() {
           </div>
           <div className="form-field">
             <label htmlFor="message">Message:</label>
-            <input
+            <textarea
               id="message"
               value={message}
               onChange={(event) => handleFieldChange("message", event)}
@@ -241,6 +250,7 @@ export default function Homepage() {
               <input
                 type="number"
                 id="guests"
+                max="40"
                 value={guests}
                 onChange={(event) => handleFieldChange("guests", event)}
                 required />
@@ -261,15 +271,16 @@ export default function Homepage() {
           </div>
           <div className="form-field">
             <label htmlFor="message">Message:</label>
-            <input
+            <textarea
               id="message"
+              wrap="hard"
               value={message}
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
           <div className="form-field">
             <label htmlFor="special">Special requests:</label>
-            <input
+            <textarea
               id="special"
               value={special}
               onChange={(event) => handleFieldChange("special", event)}

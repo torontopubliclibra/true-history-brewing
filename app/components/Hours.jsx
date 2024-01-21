@@ -31,7 +31,7 @@ export function Hours() {
     };
 
     return <div className="hours">
-      <h4>Hours this Week</h4>
+      <h4>Taproom Hours</h4>
       <div className="diamond-border">
         <img src={diamond} className="button-icon" />
         <img src={diamond} className="button-icon" />

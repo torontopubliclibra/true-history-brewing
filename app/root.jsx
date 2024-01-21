@@ -167,44 +167,44 @@ export default function App() {
   // update aside open state
   const updateAsideOpen = (aside, open) => {
 
-    window.scrollTo({top: 0});
+    window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
 
-    if (open) {
-      setHtmlState("aside-open");
+    setTimeout(() => {
+      if (open) {
+        setHtmlState("aside-open");
+  
+        if (aside === "menu") {
+  
+          setBodyTags("menu-open");
+          window.location.hash = "mobile-menu-aside";
+          setAsideOpen({
+            open: true,
+            aside: "menu"
+          });
+  
+        } else if (aside === "cart") {
+  
+          setBodyTags("cart-open");
+          window.location.hash = "cart-aside";
+          setAsideOpen({
+            open: true,
+            aside: "cart"
+          });
+        }} else {
 
-      if (aside === "menu") {
-
-        setBodyTags("menu-open");
-        window.location.hash = "mobile-menu-aside";
-        setAsideOpen({
-          open: true,
-          aside: "menu"
-        });
-
-      } else if (aside === "cart") {
-
-        setBodyTags("cart-open");
-        window.location.hash = "cart-aside";
-        setAsideOpen({
-          open: true,
-          aside: "cart"
-        });
-      }
-
-    } else {
-
-      setHtmlState("aside-closed");
-      setBodyTags("default-body");
-      setAsideOpen({
-        open: false,
-        aside: ""
-      });
-      
-      if (window.location.hash) {
-        window.location.hash = '';
-      }
-
-    }
+          setHtmlState("aside-closed");
+          setBodyTags("default-body");
+          setAsideOpen({
+            open: false,
+            aside: ""
+          });
+          
+          if (window.location.hash) {
+            window.location.hash = '';
+          }
+    
+        }
+    }, 250);
   }
 
   // initial hours
