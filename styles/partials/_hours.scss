@@ -40,5 +40,11 @@
       margin: 15px !important;
       padding: 10px 25px 0 !important;
       outline: solid $color2 12px;
+
+      .diamond-border {
+        img {
+          width: 20px;
+        }
+      }
     }
   }

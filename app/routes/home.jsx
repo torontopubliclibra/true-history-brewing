@@ -10,10 +10,8 @@ import { Hours } from './../components/Hours';
 import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
 import patioPhoto from './../../public/assets/patio-photo.png';
-import compass from './../../public/assets/icons/compass.svg';
 import beer from './../../public/assets/icons/beer.svg';
-import wine from './../../public/assets/icons/wine.svg';
-import drink from './../../public/assets/icons/drink.svg';
+import retail from './../../public/assets/icons/retail.svg';
 import food from './../../public/assets/icons/food.svg';
 import calendar from './../../public/assets/icons/calendar.svg';
 import mail from './../../public/assets/icons/mail.svg';
@@ -31,7 +29,7 @@ export const meta = () => {
 export default function Homepage() {
 
   const { events, currentDate } = useContext(StrapiContext);
-  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe now');
+  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe');
 
   // parse time from string
   let parseDate = (string) => {
@@ -131,7 +129,7 @@ export default function Homepage() {
     event.target.reset();
 
     setTimeout(() => {
-      setNewsletterBtn('Subscribe now');
+      setNewsletterBtn('Subscribe');
     }, 3000);
   }
 
@@ -146,15 +144,13 @@ export default function Homepage() {
           <div className="sketch-address">
             <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" />
             <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
-            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Get Directions <img src={compass} className="button-icon" /></Link>
           </div>
           <hr/>
           <Hours/>
           <div className="menu-buttons">
-            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'><img src={beer} className="button-icon"/>"What's on tap right now?"</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "wineSeltzersEtc" }} className='button button-tertiary'><img src={wine} className="button-icon"/>"Anything that's not beer?"</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "nonAlc" }} className='button button-tertiary'><img src={drink} className="button-icon"/>"Non-alcoholic options?"</Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'><img src={food} className="button-icon"/>"Do you guys have food?"</Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>"What's on tap right now?"<img src={beer} className="button-icon"/></Link>
+            <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-tertiary'>"What's in the fridge?"<img src={retail} className="button-icon"/></Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'>"Do you guys have food?"<img src={food} className="button-icon"/></Link>
           </div>
         </section>
         <section className="main-events">
@@ -165,7 +161,7 @@ export default function Homepage() {
             <ul className="events-list">
               {formattedEvents}
             </ul>
-            <Link to="/taproom#calendar" className='button button-primary'>Check out our calendar <img src={calendar} className="button-icon" /></Link>
+            <Link to="/taproom#calendar" className='button button-primary'>Check out the calendar <img src={calendar} className="button-icon" /></Link>
           </div>
         </section>
         <section className="main-newsletter">

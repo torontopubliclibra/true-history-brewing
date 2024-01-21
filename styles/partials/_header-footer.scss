@@ -98,6 +98,10 @@ header {
                 display: none;
             }
 
+            .mobile-only-links {
+                display: none !important;
+            }
+
             a {
                 animation: $secondary-animation;
                 cursor: pointer;
@@ -143,7 +147,7 @@ header {
 }
 
 footer {
-    background-color: $less-light;
+    background-color: rgba($light, 0.75);
     filter: $default-shadow;
     height: 225px;
     display: flex;

@@ -403,7 +403,7 @@ aside {
         grid-gap: 10px;
         height: calc(90%);
 
-    a {
+      a {
         display: flex;
         gap: 10px;
         justify-content: space-between;
@@ -423,6 +423,10 @@ aside {
 
         .button-icon {
           width: 20px;
+
+          &.compass {
+            width: 27px;
+          }
         }
 
         // responsive to mobile
@@ -434,7 +438,25 @@ aside {
               padding-bottom: 3px;
           }
         }
-    }
+      }
+        
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        .mobile-only-links {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          margin-top: 30px;
+          a {
+            display: flex;
+            max-width: unset;
+            min-width: unset;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: $color2 !important;
+          }
+        }
+      }
     }
 
     header {
@@ -442,21 +464,4 @@ aside {
       height: 0;
     }
 }
-}
-  
-a.mobile-only {
-display: none !important;
-}
-  
-// responsive to tablet
-@media only screen and (max-width: $tablet) {
-  a.mobile-only {
-      display: flex !important;
-      // background-color: $color2 !important;
-      // color: $black !important;
-      
-      // .button-icon {
-      //   filter: none !important;
-      // }
-  }
 }
