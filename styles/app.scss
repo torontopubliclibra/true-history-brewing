@@ -499,7 +499,12 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
 
     .updated-date {
       font-style: italic;
@@ -512,10 +517,20 @@ main {
       border: $default-border;
       border-radius: 25px;
       margin-bottom: 20px;
+
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        padding: 5px 20px;
+        width: 105%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+      }
     }
 
     .fridge-list {
-      background-color: $light;
+      background-color: $less-light;
       border: $default-border;
       outline: solid $color1 11px;
       box-shadow: 0 0 0 14px $black;
@@ -524,17 +539,14 @@ main {
       width: 90%;
       margin-bottom: 40px;
 
+      .mobile-line-item {
+        display: none;
+      }
+
       .line-item {
         border-bottom: $thin-border;
         margin: 0;
 
-        &.header {
-          border-radius: 23px 23px 0 0;
-          ul {
-            padding-top: 10px;
-            padding-bottom: 10px;
-          }
-        }
         ul {
           display: flex;
           justify-content: space-around;
@@ -552,7 +564,7 @@ main {
             &.title {
               width: 35%;
             }
-            &.description {
+            &.style {
               width: 30%;
             }
             &.abv, &.ml {
@@ -567,16 +579,49 @@ main {
         &.header {
           background-color: $color2;
           color: $black;
+          border-radius: 23px 23px 0 0;
 
           ul li {
-            font-family: "Bogue-Extrabold";
-            font-style: normal;
+            font-family: "Bogue-Regular";
+            font-size: 1.25rem;
+
           }
         }
 
         &:last-of-type {
           margin-bottom: 0;
           border-bottom: none;
+        }
+      }
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        max-width: 80%;
+
+        .mobile-line-item {
+          padding-top: 5px;
+          padding-bottom: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          border-bottom: $thin-border;
+          font-family: "Saudagar";
+          font-style: italic;
+
+          h4 {
+            font-size: 1.2rem;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+        }
+
+        .line-item {
+          display: none;
         }
       }
     }
@@ -592,7 +637,7 @@ main {
 
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
     }
     .links {
@@ -601,6 +646,23 @@ main {
       align-items: center;
       width: 80%;
       gap: 20px;
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        flex-direction: column;
+        gap: 5px;
+
+        .button {
+          width: 90%;
+          justify-content: space-between;
+
+          &:hover {
+            img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
+          }
+        }
+      }
     }
   }
 

@@ -17,21 +17,22 @@ export const meta = () => {
 
 export default function Homepage() {
 
-  const { menus } = useContext(StrapiContext);
+  const { retail } = useContext(StrapiContext);
 
   let formattedItems = {
     beers: []
   }
 
-  menus.beers.items.forEach((beer, index) => {
+  retail.beers.items.forEach((beer, index) => {
     formattedItems.beers.push(
+      <>
       <li key={`beer-` + index} className='line-item'>
         <ul>
           <li className="title">
             {beer.title}
           </li>
-          <li className="description">
-            {beer.description}
+          <li className="style">
+            {beer.style}
           </li>
           <li className="abv">
             {beer.abv}
@@ -44,6 +45,12 @@ export default function Homepage() {
           </li>
         </ul>
       </li>
+      <div className="mobile-line-item">
+        <h4>{beer.title} ({beer.abv})</h4>
+        <p>{beer.style}</p>
+        <p>{beer.price} / {beer.ml}ml</p>
+      </div>
+      </>
     );
   });
 
@@ -70,7 +77,7 @@ export default function Homepage() {
                 <li className="title">
                   Name
                 </li>
-                <li className="description">
+                <li className="style">
                   Style
                 </li>
                 <li className="abv">
@@ -86,11 +93,11 @@ export default function Homepage() {
             </li>
             {formattedItems.beers}
           </ul>
-          <p className='updated-date'>{updatedDate(menus.beers.updatedAt)}</p>
+          <p className='updated-date'>{updatedDate(retail.beers.updatedAt)}</p>
           <div className="links">
-            <Link to="/taproom#info" className='button button-tertiary'>Taproom hours <img src={clock} className="button-icon"/></Link>
-            <Link to="/taproom#menu" className='button button-tertiary'>Beers on tap right now <img src={beer} className="button-icon"/></Link>
-            <Link to="/shop" className='button button-tertiary'>Online shop <img src={basket} className="button-icon"/></Link>
+            <Link to="/taproom#info" className='button button-tertiary'>Taproom hours<img src={clock} className="button-icon"/></Link>
+            <Link to="/taproom#menu" className='button button-tertiary'>Beers on tap<img src={beer} className="button-icon"/></Link>
+            <Link to="/shop" className='button button-tertiary'>Online shop<img src={basket} className="button-icon"/></Link>
           </div>
         </section>
     </>

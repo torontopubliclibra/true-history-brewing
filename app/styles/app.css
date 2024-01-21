@@ -5795,8 +5795,11 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-radius: 25px; }
+    align-items: center; }
+    @media only screen and (max-width: 1070px) {
+      main .retail-content {
+        padding-top: 50px;
+        padding-bottom: 50px; } }
     main .retail-content .updated-date {
       font-style: italic;
       font-size: 1.15rem;
@@ -5808,8 +5811,15 @@ main {
       border: solid #1F1F1F 3px;
       border-radius: 25px;
       margin-bottom: 20px; }
+      @media only screen and (max-width: 1070px) {
+        main .retail-content .updated-date {
+          padding: 5px 20px;
+          width: 105%;
+          border-radius: 0;
+          border-left: none;
+          border-right: none; } }
     main .retail-content .fridge-list {
-      background-color: #F1EDE2;
+      background-color: #D6D0C0;
       border: solid #1F1F1F 3px;
       outline: solid #778d79 11px;
       box-shadow: 0 0 0 14px #1F1F1F;
@@ -5817,14 +5827,11 @@ main {
       border-radius: 25px;
       width: 90%;
       margin-bottom: 40px; }
+      main .retail-content .fridge-list .mobile-line-item {
+        display: none; }
       main .retail-content .fridge-list .line-item {
         border-bottom: solid #1F1F1F 2px;
         margin: 0; }
-        main .retail-content .fridge-list .line-item.header {
-          border-radius: 23px 23px 0 0; }
-          main .retail-content .fridge-list .line-item.header ul {
-            padding-top: 10px;
-            padding-bottom: 10px; }
         main .retail-content .fridge-list .line-item ul {
           display: flex;
           justify-content: space-around;
@@ -5839,7 +5846,7 @@ main {
             margin: 0; }
             main .retail-content .fridge-list .line-item ul li.title {
               width: 35%; }
-            main .retail-content .fridge-list .line-item ul li.description {
+            main .retail-content .fridge-list .line-item ul li.style {
               width: 30%; }
             main .retail-content .fridge-list .line-item ul li.abv, main .retail-content .fridge-list .line-item ul li.ml {
               width: 7%; }
@@ -5847,13 +5854,35 @@ main {
               width: 10%; }
         main .retail-content .fridge-list .line-item.header {
           background-color: #D8B56E;
-          color: #1F1F1F; }
+          color: #1F1F1F;
+          border-radius: 23px 23px 0 0; }
           main .retail-content .fridge-list .line-item.header ul li {
-            font-family: "Bogue-Extrabold";
-            font-style: normal; }
+            font-family: "Bogue-Regular";
+            font-size: 1.25rem; }
         main .retail-content .fridge-list .line-item:last-of-type {
           margin-bottom: 0;
           border-bottom: none; }
+      @media only screen and (max-width: 1070px) {
+        main .retail-content .fridge-list {
+          max-width: 80%; }
+          main .retail-content .fridge-list .mobile-line-item {
+            padding-top: 5px;
+            padding-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: solid #1F1F1F 2px;
+            font-family: "Saudagar";
+            font-style: italic; }
+            main .retail-content .fridge-list .mobile-line-item h4 {
+              font-size: 1.2rem; }
+            main .retail-content .fridge-list .mobile-line-item:last-of-type {
+              margin-bottom: 0;
+              border-bottom: none; }
+          main .retail-content .fridge-list .line-item {
+            display: none; } }
     main .retail-content h3 {
       font-family: "Saudagar";
       color: #F1EDE2;
@@ -5864,13 +5893,22 @@ main {
       margin-bottom: 30px; }
       @media only screen and (max-width: 1070px) {
         main .retail-content h3 {
-          font-size: 1.5rem; } }
+          font-size: 2rem; } }
     main .retail-content .links {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 80%;
       gap: 20px; }
+      @media only screen and (max-width: 1070px) {
+        main .retail-content .links {
+          flex-direction: column;
+          gap: 5px; }
+          main .retail-content .links .button {
+            width: 90%;
+            justify-content: space-between; }
+            main .retail-content .links .button:hover img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
   main .route-error {
     min-height: 500px;
     background-color: rgba(119, 141, 121, 0.8);
