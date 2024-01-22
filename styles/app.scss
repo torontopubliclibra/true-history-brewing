@@ -437,6 +437,10 @@ main {
         min-height: 100px;
       }
 
+      input[type="number"] {
+        max-width: 75px;
+      }
+
       input[type="radio"] {
         padding: 0;
         min-width: unset;
@@ -447,6 +451,7 @@ main {
       }
 
       .button {
+        width: 300px;
         padding: 20px 30px;
         background: $color4;
         color: $light;
@@ -470,17 +475,27 @@ main {
         margin: 0 auto !important;
         width: 87% !important;
         max-width: 600px !important;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      label {
+        font-size: 0.9rem;
       }
 
       .form-field, .double-field {
-        width: 50% !important;
+        min-width: 85% !important;
       }
 
       .button {
         max-width: 70%;
         width: 100%;
-        margin-left: 14%;
-        margin-top: 20px;
+        margin-left: 0;
+        margin-top: 15px !important;
+
+        &:hover {
+          background-color: $color4 !important;
+        }
       }
     }
 
@@ -812,6 +827,18 @@ main {
         filter: $default-shadow;
         padding-bottom: 5px;
       }
+      .bar-sketch-2 {
+        object-fit: cover;
+        width: 95%;
+        height: calc(100% - 90px);
+        background-color: $light;
+        color: $black;
+        border: $default-border;
+        filter: $default-shadow;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
     }
     .hours {
       width: 35%;
@@ -855,6 +882,15 @@ main {
           padding: 30px 20px;
           padding-bottom: 10px;
         }
+        .bar-sketch-2 {
+          height: 350px;
+          width: 100%;
+          border-radius: 0;
+          border-right: none;
+          border-left: none;
+          margin-top: 30px;
+          margin-bottom: 25px;
+        }
         .address {
           order: -1;
           width: 100%;
@@ -876,8 +912,7 @@ main {
         margin: 0;
         gap: 3px;
         .button {
-          font-size: 0.9rem;
-          width: 75%;
+          width: 80%;
           height: 20px;
           padding: 15px 20px;
           img {
@@ -934,12 +969,12 @@ main {
       width: 100%;
       padding-bottom: 30px;
       .button {
+        max-width: 75%;
         justify-content: space-between;
-        background-color: $color1;
+        background-color: $color4;
         color: $light;
         margin-top: 15px;
         margin-left: 40px;
-        width: 325px;
         img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
         }
@@ -971,12 +1006,11 @@ main {
       }
 
       .button {
-        max-width: 350px;
         width: 70% !important;
         margin: 15px auto !important;
         margin-top: 20px !important;
         &:hover {
-          background-color: $color1 !important;
+          background-color: $color4 !important;
           color: $light !important;
           img {
             filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important;
@@ -1039,23 +1073,26 @@ main {
         input {
           padding: 10px 20px;
           width: 500px;
+          background-color: $light;
           border: $thin-border;
           border-radius: 0;
           filter: $default-shadow;
         }
         .button {
           padding: 20px 30px;
-          background: $color4;
+          background: $color1;
           color: $light;
-          justify-content: space-between;
-  
           img {
             filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
           }
-  
+          justify-content: space-between;
+          cursor: pointer;
           &:hover {
-            cursor: pointer;
-            background-color: $color1;
+            background-color: $color2;
+            color: $black;
+            img {
+              filter: none;
+            }
           }
         }
       }
@@ -1072,9 +1109,10 @@ main {
         }
   
         form {
+          gap: 5px;
           .button {
             &:hover {
-              background: $color4;
+              background: $color1;
               color: $light;
               img {
                 filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
@@ -1139,7 +1177,7 @@ main {
     @media only screen and (max-width: $tablet) {
       flex-direction: column;
       height: auto;
-      background-color: rgba($color1, 0.5);
+      background-color: rgba($color1, 0.8);
 
       .taproom-photo {
         height: 250px;
@@ -1147,6 +1185,7 @@ main {
         border-bottom: $default-border;
       }
       .taproom-info {
+        background: none;
         padding: 25px 0;
         padding-top: 0;
         border-right: none;
