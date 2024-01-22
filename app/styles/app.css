@@ -392,13 +392,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -431,7 +431,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -470,6 +470,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -480,22 +481,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -517,10 +517,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -936,13 +936,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -975,7 +975,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -1014,6 +1014,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -1024,22 +1025,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -1061,10 +1061,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -1576,13 +1576,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -1615,7 +1615,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -1654,6 +1654,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -1664,22 +1665,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -1701,10 +1701,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -2143,13 +2143,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -2182,7 +2182,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -2221,6 +2221,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -2231,22 +2232,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -2268,10 +2268,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -2841,13 +2841,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -2880,7 +2880,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -2919,6 +2919,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -2929,22 +2930,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -2966,10 +2966,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -3707,13 +3707,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -3746,7 +3746,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -3785,6 +3785,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -3795,22 +3796,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -3832,10 +3832,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -4288,13 +4288,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -4327,7 +4327,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -4366,6 +4366,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -4376,22 +4377,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -4413,10 +4413,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -4994,13 +4994,13 @@ main .taproom-menus .menu-nav .button {
 .hours .schedule li {
   font-family: "Bogue-Extrabold";
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   line-height: 1.5;
   margin: 0; }
   .hours .schedule li .time {
     font-family: "Bogue-Regular";
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-style: italic; }
   .hours .schedule li .symbol {
     font-family: "Bogue-Extrabold"; }
@@ -5033,7 +5033,7 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2rem; } }
+    font-size: 2.25rem; } }
 
 .button {
   background: #D8B56E;
@@ -5072,6 +5072,7 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary {
   background: #778d79;
+  color: #F1EDE2;
   width: 170px;
   height: 100%;
   margin-top: 10px; }
@@ -5082,22 +5083,21 @@ main .taproom-menus .menu-nav .button {
       filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
-  background: #BC4749;
-  color: #F1EDE2; }
+  background: #D8B56E;
+  color: #1F1F1F; }
   .button-tertiary img {
-    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+    filter: none; }
   .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
+    background: #BC4749;
+    color: #F1EDE2; }
     .button-tertiary:hover img {
-      filter: none; }
+      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
 
 .button-quaternary:hover {
   background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
-  font-size: 0.8rem;
-  color: #F1EDE2; }
+  font-size: 0.8rem; }
   @media only screen and (max-width: 1070px) {
     .button-secondary, .button-tertiary {
       font-size: 1rem; } }
@@ -5119,10 +5119,10 @@ main .taproom-menus .menu-nav .button {
     .button-secondary:hover img {
       filter: none; }
   .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
+    background: #D8B56E;
+    color: #1F1F1F; }
     .button-tertiary:hover img {
-      filter: none; } }
+      filter: none !important; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -5225,14 +5225,20 @@ nav.header-menu-desktop a {
         width: 100%; } }
 
 .shop-disclaimers {
-  background-color: rgba(216, 181, 110, 0.75);
+  background-color: rgba(121, 79, 62, 0.75);
   padding: 30px;
   border-top: solid #1F1F1F 3px;
   text-align: center; }
   .shop-disclaimers .text-box {
-    padding: 30px 40px;
-    max-width: 75%;
-    margin: 0 auto; }
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(214, 208, 192, 0.8);
+    border: solid #1F1F1F 3px;
+    padding: 40px; }
     .shop-disclaimers .text-box h3 {
       font-size: 1.5rem;
       text-transform: uppercase;
@@ -5243,12 +5249,11 @@ nav.header-menu-desktop a {
       font-size: 0.9rem; }
   @media only screen and (max-width: 1070px) {
     .shop-disclaimers {
-      padding: 15px; }
+      padding: 20px; }
       .shop-disclaimers .text-box {
-        max-width: 100%;
-        padding: 10px; }
+        padding: 30px; }
         .shop-disclaimers .text-box h3 {
-          font-size: 1.2rem; }
+          font-size: 1.5rem; }
         .shop-disclaimers .text-box p {
           max-width: 100%; } }
 
@@ -5694,12 +5699,15 @@ main {
         background-color: #F1EDE2; }
       main .contact-content .contact-form textarea {
         min-height: 100px; }
+      main .contact-content .contact-form input[type="number"] {
+        max-width: 75px; }
       main .contact-content .contact-form input[type="radio"] {
         padding: 0;
         min-width: unset; }
       main .contact-content .contact-form textarea {
         min-height: 100px; }
       main .contact-content .contact-form .button {
+        width: 300px;
         padding: 20px 30px;
         background: #BC4749;
         color: #F1EDE2; }
@@ -5714,14 +5722,20 @@ main {
         main .contact-content .contact-form {
           margin: 0 auto !important;
           width: 87% !important;
-          max-width: 600px !important; }
+          max-width: 600px !important;
+          padding-top: 30px;
+          padding-bottom: 30px; }
+        main .contact-content label {
+          font-size: 0.9rem; }
         main .contact-content .form-field, main .contact-content .double-field {
-          width: 50% !important; }
+          min-width: 85% !important; }
         main .contact-content .button {
           max-width: 70%;
           width: 100%;
-          margin-left: 14%;
-          margin-top: 20px; } }
+          margin-left: 0;
+          margin-top: 15px !important; }
+          main .contact-content .button:hover {
+            background-color: #BC4749 !important; } }
   main .recommended-products {
     display: flex;
     flex-direction: column;
@@ -5948,6 +5962,17 @@ main {
         width: 95%;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         padding-bottom: 5px; }
+      main .home-taproom .sketch-address .bar-sketch-2 {
+        object-fit: cover;
+        width: 95%;
+        height: calc(100% - 90px);
+        background-color: #F1EDE2;
+        color: #1F1F1F;
+        border: solid #1F1F1F 3px;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        border-radius: 25px;
+        margin-bottom: 10px;
+        margin-top: 10px; }
     main .home-taproom .hours {
       width: 35%;
       filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
@@ -5979,6 +6004,14 @@ main {
             max-width: 500px;
             padding: 30px 20px;
             padding-bottom: 10px; }
+          main .home-taproom .sketch-address .bar-sketch-2 {
+            height: 350px;
+            width: 100%;
+            border-radius: 0;
+            border-right: none;
+            border-left: none;
+            margin-top: 30px;
+            margin-bottom: 25px; }
           main .home-taproom .sketch-address .address {
             order: -1;
             width: 100%;
@@ -5996,8 +6029,7 @@ main {
           margin: 0;
           gap: 3px; }
           main .home-taproom .menu-buttons .button {
-            font-size: 0.9rem;
-            width: 75%;
+            width: 80%;
             height: 20px;
             padding: 15px 20px; }
             main .home-taproom .menu-buttons .button img {
@@ -6038,12 +6070,12 @@ main {
       width: 100%;
       padding-bottom: 30px; }
       main .home-events .home-events-content .button {
+        max-width: 75%;
         justify-content: space-between;
-        background-color: #778d79;
+        background-color: #BC4749;
         color: #F1EDE2;
         margin-top: 15px;
-        margin-left: 40px;
-        width: 325px; }
+        margin-left: 40px; }
         main .home-events .home-events-content .button img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
         main .home-events .home-events-content .button:hover {
@@ -6065,12 +6097,11 @@ main {
           margin: 0 auto;
           border: solid #1F1F1F 2px !important; }
         main .home-events .button {
-          max-width: 350px;
           width: 70% !important;
           margin: 15px auto !important;
           margin-top: 20px !important; }
           main .home-events .button:hover {
-            background-color: #778d79 !important;
+            background-color: #BC4749 !important;
             color: #F1EDE2 !important; }
             main .home-events .button:hover img {
               filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important; }
@@ -6117,19 +6148,23 @@ main {
         main .home-newsletter .newsletter-content form input {
           padding: 10px 20px;
           width: 500px;
+          background-color: #F1EDE2;
           border: solid #1F1F1F 2px;
           border-radius: 0;
           filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
         main .home-newsletter .newsletter-content form .button {
           padding: 20px 30px;
-          background: #BC4749;
+          background: #778d79;
           color: #F1EDE2;
-          justify-content: space-between; }
+          justify-content: space-between;
+          cursor: pointer; }
           main .home-newsletter .newsletter-content form .button img {
             filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
           main .home-newsletter .newsletter-content form .button:hover {
-            cursor: pointer;
-            background-color: #778d79; }
+            background-color: #D8B56E;
+            color: #1F1F1F; }
+            main .home-newsletter .newsletter-content form .button:hover img {
+              filter: none; }
     @media only screen and (max-width: 1070px) {
       main .home-newsletter {
         padding: 20px; }
@@ -6137,11 +6172,13 @@ main {
           padding: 20px; }
           main .home-newsletter .newsletter-content p {
             font-size: 1.1rem; }
-          main .home-newsletter .newsletter-content form .button:hover {
-            background: #BC4749;
-            color: #F1EDE2; }
-            main .home-newsletter .newsletter-content form .button:hover img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
+          main .home-newsletter .newsletter-content form {
+            gap: 5px; }
+            main .home-newsletter .newsletter-content form .button:hover {
+              background: #778d79;
+              color: #F1EDE2; }
+              main .home-newsletter .newsletter-content form .button:hover img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
     @media only screen and (max-width: 480px) {
       main .home-newsletter form input {
         max-width: 85%; } }
@@ -6184,12 +6221,13 @@ main {
       main .taproom-address {
         flex-direction: column;
         height: auto;
-        background-color: rgba(119, 141, 121, 0.5); }
+        background-color: rgba(119, 141, 121, 0.8); }
         main .taproom-address .taproom-photo {
           height: 250px;
           position: unset;
           border-bottom: solid #1F1F1F 3px; }
         main .taproom-address .taproom-info {
+          background: none;
           padding: 25px 0;
           padding-top: 0;
           border-right: none; }

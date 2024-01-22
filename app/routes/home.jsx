@@ -9,6 +9,7 @@ import { Hours } from './../components/Hours';
 // asset imports
 import logo from './../../public/assets/thb-logo.png';
 import barSketch from './../../public/assets/bar-sketch.png';
+import barSketch2 from './../../public/assets/bar-sketch-2.png';
 import exteriorPhoto from './../../public/assets/exterior-photo.png';
 import clock from './../../public/assets/icons/clock.svg';
 import beer from './../../public/assets/icons/beer.svg';
@@ -143,7 +144,8 @@ export default function Homepage() {
         </section>
         <section className="home-taproom">
           <div className="sketch-address">
-            <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" />
+            {/* <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" /> */}
+            <img src={barSketch2} className="bar-sketch-2" alt="A black and white sketch of the True History taproom bar" />
             <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
           </div>
           <hr/>
@@ -163,7 +165,7 @@ export default function Homepage() {
             <ul className="events-list">
               {formattedEvents}
             </ul>
-            <Link to="/taproom#calendar" className='button button-primary'>Full events calendar <img src={calendar} className="button-icon" /></Link>
+            <Link to="/taproom#calendar" className='button button-primary'>Check out our calendar <img src={calendar} className="button-icon" /></Link>
           </div>
         </section>
         <section className="home-newsletter">
