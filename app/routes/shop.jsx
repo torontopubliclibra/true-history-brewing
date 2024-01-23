@@ -17,15 +17,7 @@ export const meta = () => {
 /**
  * @param {LoaderFunctionArgs}
  */
-export async function loader({context, request}) {
-  // const {storefront} = context;
-  // const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
-  // let shopCollections = collections.nodes;
-  // const featuredCollection = collections.nodes[0];
-  // const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
-
-  // return defer({shopCollections, featuredCollection, recommendedProducts});
-
+export async function loader({ context, request }) {
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 4,
   });
@@ -34,41 +26,50 @@ export async function loader({context, request}) {
     variables: paginationVariables,
   });
 
-  return json({collections});
+  const collectionHandles = collections.nodes.map((collection) => collection.handle);
+
+  const collectionTitles = collections.nodes.map((collection) => collection.title);
+
+  const collectionData = await Promise.all(
+    collectionHandles.map((handle) =>
+      context.storefront.query(COLLECTION_QUERY, {
+        variables: { handle, ...paginationVariables },
+      })
+    )
+  );
+
+  return json({collectionTitles, collectionData});
 }
 
 export default function Homepage() {
 
   /** @type {LoaderReturnData} */
-  const { collections } = useLoaderData();
+  const {collectionTitles, collectionData} = useLoaderData();
 
   let [ shopCollections, setShopCollections ] = useState({});
-  let [ shopCategories, setShopCategories ] = useState(["Beer"]);
-  let [ selectedCategory, setSelectedCategory ] = useState("Beer");
+  let [ shopCategories, setShopCategories ] = useState(["Beers"]);
+  let [ selectedCategory, setSelectedCategory ] = useState("Beers");
 
   useEffect(() => {
 
-    if (collections.nodes !== shopCollections) {
-      setShopCollections(collections.nodes);
+    if (collectionData !== shopCollections) {
+      setShopCollections(collectionData);
+    }
+
+    if (shopCategories !== collectionTitles) {
+      setShopCategories(collectionTitles);
     }
 
   }, []);
 
   useEffect(() => {
 
-    let newCategories = [];
-    for (let i = 0; i < shopCollections.length; i++) {
-      let category = shopCollections[i].title.split("-")[0];
-      
-      if (!shopCategories.includes(category)) {
-        newCategories.push(category);
-      }
-    }
-    newCategories.sort((a, b) => a === "Beer" ? -1 : b === "Beer" ? 1 : 0);
+    let newCategories = collectionTitles;
+    newCategories.sort((a, b) => a === "Beers" ? -1 : b === "Beers" ? 1 : 0);
 
     setShopCategories(newCategories);
 
-  }, [shopCollections]);
+  }, [collectionTitles]);
 
   let handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -112,7 +113,7 @@ export default function Homepage() {
         </ul>
       </section>
       <section className="shop">
-        <SelectedCollection selectedCategory={selectedCategory} shopCollections={shopCollections} />
+        <SelectedCollection selectedCategory={selectedCategory} collectionData={collectionData} />
       </section>
       <section className="shop-disclaimers">
         <div className="text-box">
@@ -124,47 +125,40 @@ export default function Homepage() {
   );
 }
 
-function SelectedCollection({selectedCategory, shopCollections}) {
+function SelectedCollection({selectedCategory, collectionData}) {
 
-  let collection = {};
-  
-  if (shopCollections) {
-    for (let i = 0; i < shopCollections.length; i++) {
+  let collectionProducts = {};
 
-      let category = shopCollections[i].title.split("-")[0];
-      if (category == selectedCategory) {
-        collection = shopCollections[i];
-      }
+  for (let i = 0; i < collectionData.length; i++) {
+    let collection = collectionData[i].collection;
+    if (collection.title === selectedCategory) {
+      collectionProducts = collection.products;
     }
   }
 
+  console.log(collectionProducts)
+
   return (
     <div className="recommended-products">
-      <h2>{collection.title}</h2>
-        <h3>Currently under construction</h3>
-      {/* <Suspense fallback={<div>Loading...</div>}>
-        <Await resolve={products}>
-          {({products}) => (
-            <div className="recommended-products-grid">
-              {products.nodes.map((product) => (
-                <Link
-                  key={product.id}
-                  className="recommended-product"
-                  to={`/products/${product.handle}`}
-                >
-                  <Image
-                    data={product.images.nodes[0]}
-                  />
-                  <h4>{product.title}</h4>
-                  <small>
-                    <Money data={product.priceRange.minVariantPrice} />
-                  </small>
-                </Link>
-              ))}
-            </div>
-          )}
-        </Await>
-      </Suspense> */}
+      <h2>{selectedCategory}</h2>
+        {/* <h3>Currently under construction</h3> */}
+        <div className="recommended-products-grid">
+          {collectionProducts.nodes.map((product) => (
+            <Link
+              key={product.id}
+              className="recommended-product"
+              to={`/products/${product.handle}`}
+            >
+              <Image
+                data={product.featuredImage}
+              />
+              <h4>{product.title}</h4>
+              <small>
+                <Money data={product.priceRange.minVariantPrice} />
+              </small>
+            </Link>
+          ))}
+        </div>
       <br />
     </div>
   )
@@ -282,6 +276,77 @@ const COLLECTIONS_QUERY = `#graphql
         hasPreviousPage
         startCursor
         endCursor
+      }
+    }
+  }
+`;
+
+const PRODUCT_ITEM_FRAGMENT = `#graphql
+  fragment MoneyProductItem on MoneyV2 {
+    amount
+    currencyCode
+  }
+  fragment ProductItem on Product {
+    id
+    handle
+    title
+    featuredImage {
+      id
+      altText
+      url
+      width
+      height
+    }
+    priceRange {
+      minVariantPrice {
+        ...MoneyProductItem
+      }
+      maxVariantPrice {
+        ...MoneyProductItem
+      }
+    }
+    variants(first: 1) {
+      nodes {
+        selectedOptions {
+          name
+          value
+        }
+      }
+    }
+  }
+`;
+
+const COLLECTION_QUERY = `#graphql
+  ${PRODUCT_ITEM_FRAGMENT}
+  query Collection(
+    $handle: String!
+    $country: CountryCode
+    $language: LanguageCode
+    $first: Int
+    $last: Int
+    $startCursor: String
+    $endCursor: String
+  ) @inContext(country: $country, language: $language) {
+    collection(handle: $handle) {
+      id
+      handle
+      title
+      description
+      products(
+        first: $first,
+        last: $last,
+        before: $startCursor,
+        after: $endCursor
+      ) {
+        nodes {
+          ...ProductItem
+        }
+        pageInfo {
+          hasPreviousPage
+          hasNextPage
+          endCursor
+          startCursor
+        }
       }
     }
   }

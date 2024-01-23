@@ -667,7 +667,7 @@ export function ErrorBoundary() {
       </head>
       <body>
         <Layout {...rootData}>
-          <main className="route-error">
+          <section className="route-error">
             <div className="error-message">
               <h1>{errorStatus} Error</h1>
               <h2>{errorMessage}</h2>
@@ -675,7 +675,7 @@ export function ErrorBoundary() {
                 Go back to the homepage
               </a>
             </div>
-          </main>
+          </section>
         </Layout>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />

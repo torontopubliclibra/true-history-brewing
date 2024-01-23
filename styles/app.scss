@@ -54,6 +54,9 @@
       * {
         animation: none;
       }
+      .overlay {
+        display: none;
+      }
     }
 
     header, header * {
@@ -446,7 +449,7 @@ main {
             }
           }
 
-          input:checked ~ .radio-button {
+          input.selected ~ .radio-button {
             background-color: $color1;
           }
 
@@ -456,8 +459,9 @@ main {
             display: none;
           }
 
-          input:checked ~ .radio-button:after {
+          input.selected ~ .radio-button:after {
             display: block;
+            margin-top: 1px;
           }
         }
       }
@@ -654,10 +658,10 @@ main {
     .updated-date {
       font-style: italic;
       font-size: 1.15rem;
-      color: $black;
+      color: $light;
       padding: 5px 100px;
       text-align: center;
-      background-color: $color2;
+      background-color: $color4;
       filter: $default-shadow;
       border: $default-border;
       border-radius: 25px;

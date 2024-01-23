@@ -16,6 +16,10 @@
   animation: $secondary-animation;
 }
 
+.fc-day-mon {
+  background-color: rgba($black, 0.1) !important;
+}
+
 .calendar {
   .fc-button-active {
     background-color: $color1 !important;

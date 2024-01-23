@@ -51,7 +51,7 @@ header, footer {
 }
 
 .shop, .product {
-    color: $light;
+    color: $black;
 }
 
 footer {
@@ -252,7 +252,7 @@ aside {
         }
         span {
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
     }
     .cart-summary-aside {
@@ -273,7 +273,7 @@ aside {
                 font-weight: 800;
             }
             a {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -387,6 +387,17 @@ main {
                 font-size: 1.2rem;
                 font-family: "Bogue-Regular";
                 margin: 0;
+
+                h4 {
+                    font-size: 1.3rem;
+                }
+                ul {
+                    list-style-type: unset;
+                    li {
+                        margin-left: 30px;
+                        padding-left: 10px;
+                    }
+                }
             }
             button {
                 padding: 20px 30px;
@@ -490,8 +501,6 @@ main {
 }
 
 .route-error {
-    border-radius: 25px;
-
     .error-message {
         display: flex;
         flex-direction: column;
@@ -517,6 +526,8 @@ main {
             padding: 10px 0;
         }
         .button {
+            background-color: $color4;
+            color: $light;
             max-width: 50%;
         }
     }
@@ -674,7 +685,7 @@ main {
 }
 
 .button-secondary, .button-tertiary {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {

@@ -37,6 +37,16 @@ export default function Homepage() {
     return yyyy + '-' + mm + '-' + dd;
   }
 
+  let maxDate = () => {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1;
+    let yyyy = today.getFullYear() + 1;
+    if ( dd < 10 ){ dd = '0' + dd}
+    if( mm < 10 ){ mm= '0' + mm }
+    return yyyy + '-' + mm + '-' + dd;
+  }
+
   let ContactForm = () => {
 
     let [ submitStatus, setSubmitStatus ] = useState('Send email');
@@ -46,7 +56,7 @@ export default function Homepage() {
     let [ message, setMessage ] = useState("");
     let [ businessName, setBusinessName ] = useState("");
     let [ businessAddress, setBusinessAddress ] = useState("");
-    let [ eventDate, setEventDate ] = useState(minDate());
+    let [ eventDate, setEventDate ] = useState("");
     let [ guests, setGuests ] = useState(0);
     let [ dining, setDining ] = useState(false);
     let [ special, setSpecial ] = useState("");
@@ -84,7 +94,13 @@ export default function Homepage() {
         setGuests(guestValue);
       }
       if (field == "dining") {
-        setDining(event.target.value);
+        if (dining) {
+          setDining(false);
+          console.log(false)
+        } else {
+          setDining(true);
+          console.log(true)
+        }
       }
       if (field == "special") {
         setSpecial(event.target.value);
@@ -228,7 +244,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus == "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
+          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
         </form>
       );
     } else if (contactForm == "events") {
@@ -257,7 +273,8 @@ export default function Homepage() {
             <input
               type="date"
               id="date"
-              min={eventDate}
+              min={minDate()}
+              max={maxDate()}
               value={eventDate}
               onChange={(event) => handleFieldChange("eventDate", event)}
               required />
@@ -276,6 +293,23 @@ export default function Homepage() {
             <div className="small-field">
               <label htmlFor="dining" className="radio">
                 Dining?
+                { !dining
+                  ? <input
+                      type="radio"
+                      id="dining"
+                      value={dining}
+                      onClick={(event) => handleFieldChange("dining", event)}
+                      required
+                    />
+                  : <input
+                      type="radio"
+                      id="dining"
+                      className="selected"
+                      value={dining}
+                      onClick={(event) => handleFieldChange("dining", event)}
+                      required
+                    />
+                  }
                 <input
                   type="radio"
                   id="dining"
@@ -303,7 +337,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("special", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus == "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
+          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
         </form>
       );
     }
