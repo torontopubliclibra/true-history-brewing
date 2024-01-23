@@ -77,6 +77,7 @@ export default function Homepage() {
     } else {
       setSelectedItems("beers");
     }
+    setRetailItems(retail);
   }, [])
 
   useEffect(() => {

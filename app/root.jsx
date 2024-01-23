@@ -167,12 +167,13 @@ export default function App() {
   // update aside open state
   const updateAsideOpen = (aside, open) => {
 
-    window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
+    if (open) {
 
-    setTimeout(() => {
-      if (open) {
+      window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
+
+      setTimeout(() => {
         setHtmlState("aside-open");
-  
+
         if (aside === "menu") {
   
           setBodyTags("menu-open");
@@ -190,21 +191,23 @@ export default function App() {
             open: true,
             aside: "cart"
           });
-        }} else {
-
-          setHtmlState("aside-closed");
-          setBodyTags("default-body");
-          setAsideOpen({
-            open: false,
-            aside: ""
-          });
-          
-          if (window.location.hash) {
-            window.location.hash = '';
-          }
-    
         }
-    }, 250);
+      }, 250);
+    
+    } else {
+
+        setHtmlState("aside-closed");
+        setBodyTags("default-body");
+        setAsideOpen({
+          open: false,
+          aside: ""
+        });
+        
+        if (window.location.hash) {
+          window.location.hash = '';
+        }
+  
+      }
   }
 
   // initial hours

@@ -558,6 +558,7 @@ main {
 
       .button {
         min-width: 60%;
+        justify-content: space-between;
       }
     }
 
@@ -574,13 +575,17 @@ main {
       height: 100%;
 
       .retail-photo {
-        height: 70%;
-        max-height: 250px;
+        height: 250px;
         width: 100%;
       }
 
       .retail-buttons {
-        display: none;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        border-right: none;
+        border-top: $default-border;
+        // display: none;
       }
     }
   }
@@ -711,7 +716,7 @@ main {
           }
 
           p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             width: 90%;
   
             &.description {
@@ -720,7 +725,7 @@ main {
             }
   
             &.price {
-              font-size: 1rem;
+              font-size: 1.1rem;
               font-weight: 800;
             }
           }
@@ -1266,11 +1271,11 @@ main {
         h4 {
           width: 90%;
           text-transform: uppercase;
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
         
         p {
-          font-size: 1.1rem;
+          font-size: 0.9rem;
           width: 90%;
 
           &.description {
@@ -1300,6 +1305,14 @@ main {
 
           h4 {
             margin-bottom: 5px;
+            font-size: 1.1rem;
+          }
+          p {
+            font-size: 1rem;
+  
+            &.price {
+              font-size: 1.1rem;
+            }
           }
         }
       }
@@ -1318,12 +1331,38 @@ main {
       }
     }
   }
+  .mobile-taproom-buttons {
+    display: none;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+      display: block;
+      padding: 30px 0;
+      width: 100%;
+      background-color: rgba($color1, 0.8);
+      border-bottom: $default-border;
+  
+      .buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+  
+        .button {
+          width: 60%;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
   .taproom-events {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba($less-light, 0.9);
+    background-color: rgba($less-light, 0.8);
     hr {
       background-color: $color3;
       width: 95%;

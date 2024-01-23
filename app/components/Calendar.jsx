@@ -26,7 +26,8 @@ export function Calendar() {
                 buttonIcons={false}
                 buttonText={{
                     month: 'Calendar',
-                    list: 'List'
+                    list: 'List',
+                    today: 'This Month'
                   }}
                 events={events}
             />

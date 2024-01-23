@@ -27,6 +27,16 @@ export default function Homepage() {
     }
   }
 
+  let minDate = () => {
+    let today = new Date();
+    let dd = today.getDate() + 2;
+    let mm = today.getMonth() + 1;
+    let yyyy = today.getFullYear();
+    if ( dd < 10 ){ dd = '0' + dd}
+    if( mm < 10 ){ mm= '0' + mm }
+    return yyyy + '-' + mm + '-' + dd;
+  }
+
   let ContactForm = () => {
 
     let [ submitStatus, setSubmitStatus ] = useState('Send email');
@@ -36,6 +46,7 @@ export default function Homepage() {
     let [ message, setMessage ] = useState("");
     let [ businessName, setBusinessName ] = useState("");
     let [ businessAddress, setBusinessAddress ] = useState("");
+    let [ eventDate, setEventDate ] = useState(minDate());
     let [ guests, setGuests ] = useState(0);
     let [ dining, setDining ] = useState(false);
     let [ special, setSpecial ] = useState("");
@@ -56,6 +67,9 @@ export default function Homepage() {
       }
       if (field == "businessAddress") {
         setBusinessAddress(event.target.value);
+      }
+      if (field == "eventDate") {
+        setEventDate(event.target.value);
       }
       if (field == "guests") {
 
@@ -242,6 +256,16 @@ export default function Homepage() {
               id="email"
               value={email}
               onChange={(event) => handleFieldChange("email", event)}
+              required />
+          </div>
+          <div className="form-field">
+            <label htmlFor="date">Date:</label>
+            <input
+              type="date"
+              id="date"
+              min={eventDate}
+              value={eventDate}
+              onChange={(event) => handleFieldChange("eventDate", event)}
               required />
           </div>
           <div className="double-field">

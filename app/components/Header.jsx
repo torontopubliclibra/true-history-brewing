@@ -1,5 +1,5 @@
 import { Suspense, useState, useEffect } from 'react';
-import { Await, NavLink } from '@remix-run/react';
+import { Await, Link, NavLink } from '@remix-run/react';
 // import { useRootLoaderData } from '~/root';
 import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
@@ -165,6 +165,10 @@ function HeaderSubmenu({cart, aside, updateAsideOpen}) {
     <nav className="header-submenu" role="navigation">
       <CartToggle cart={cart} aside={aside} updateAsideOpen={updateAsideOpen} />
       <HeaderMenuMobileToggle aside={aside} updateAsideOpen={updateAsideOpen} />
+      <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary mobile-hide'>
+        Instagram
+        <img src={instagram} className="button-icon" />
+      </Link>
     </nav>
   );
 }
