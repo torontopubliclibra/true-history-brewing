@@ -29,7 +29,7 @@ export default function Homepage() {
 
   let minDate = () => {
     let today = new Date();
-    let dd = today.getDate() + 1;
+    let dd = today.getDate() + 2;
     let mm = today.getMonth() + 1;
     let yyyy = today.getFullYear();
     if ( dd < 10 ){ dd = '0' + dd}
@@ -46,6 +46,7 @@ export default function Homepage() {
     let [ message, setMessage ] = useState("");
     let [ businessName, setBusinessName ] = useState("");
     let [ businessAddress, setBusinessAddress ] = useState("");
+    let [ eventDate, setEventDate ] = useState(minDate());
     let [ guests, setGuests ] = useState(0);
     let [ dining, setDining ] = useState(false);
     let [ special, setSpecial ] = useState("");
@@ -66,6 +67,9 @@ export default function Homepage() {
       }
       if (field == "businessAddress") {
         setBusinessAddress(event.target.value);
+      }
+      if (field == "eventDate") {
+        setEventDate(event.target.value);
       }
       if (field == "guests") {
 
@@ -259,8 +263,9 @@ export default function Homepage() {
             <input
               type="date"
               id="date"
-              value={minDate()}
-              // onChange={(event) => handleFieldChange("email", event)}
+              min={eventDate}
+              value={eventDate}
+              onChange={(event) => handleFieldChange("eventDate", event)}
               required />
           </div>
           <div className="double-field">
