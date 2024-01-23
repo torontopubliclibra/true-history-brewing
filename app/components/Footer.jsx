@@ -17,6 +17,38 @@ export function Footer() {
     });
   }
 
+  let footerButtons = (
+    <div className="footer-buttons">
+      <div className='button button-primary selected'>
+        <img src={contact} className="button-icon" />
+      </div>
+      <a onClick={scrollTop} className='button button-primary'>
+        Scroll to top
+        <img src={arrowUp} className="button-icon" />
+      </a>
+      <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
+        <img src={instagram} className="button-icon" />
+      </Link>
+    </div>
+  )
+
+  if (location.pathname.includes('/contact')) {
+    footerButtons = (
+      <div className="footer-buttons">
+        <div className='button button-primary selected'>
+          <img src={contact} className="button-icon" />
+        </div>
+        <a onClick={scrollTop} className='button button-primary'>
+          Scroll to top
+          <img src={arrowUp} className="button-icon" />
+        </a>
+        <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
+          <img src={instagram} className="button-icon" />
+        </Link>
+      </div>
+    )
+  }
+
   if (location.pathname === '/') {
     
     return (
@@ -24,23 +56,13 @@ export function Footer() {
       </footer>
     )
 
-  } else if (location.pathname.includes('/contact')) {
+  } else {
       return (
         <footer className="footer">
-          <div className="footer-buttons">
-            <div className='button button-primary selected'>
-              <img src={contact} className="button-icon" />
-            </div>
-            <a onClick={scrollTop} className='button button-primary'>
-              Scroll to top
-              <img src={arrowUp} className="button-icon" />
-            </a>
-            <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
-              <img src={instagram} className="button-icon" />
-            </Link>
-          </div>
+          {footerButtons}
           <hr/>
           <div className="credit">
+            <p>Film photography by <a href="https://instagram.com/bea.utifulloser" target="_blank">Ciarán Bailey</a></p>
             <p>Website designed by <a href="https://danateagle.com" target="_blank">Dana Teagle</a></p>
           </div>
           <div className="copyright">
@@ -48,32 +70,5 @@ export function Footer() {
           </div>
         </footer>
       )
-  
-    } else {
-
-    return (
-      <footer className="footer">
-        <div className="footer-buttons">
-          <Link to="/contact" className='button button-primary'>
-            <img src={contact} className="button-icon" />
-          </Link>
-          <a onClick={scrollTop} className='button button-primary'>
-            Scroll to top
-            <img src={arrowUp} className="button-icon" />
-          </a>
-          <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
-            <img src={instagram} className="button-icon" />
-          </Link>
-        </div>
-        <hr/>
-        <div className="credit">
-          <p>Website designed by <a href="https://danateagle.com" target="_blank">Dana Teagle</a></p>
-        </div>
-        <div className="copyright">
-          <p>© True History Brewing, 2024</p>
-        </div>
-      </footer>
-    )
-
-  };
+    };
 };

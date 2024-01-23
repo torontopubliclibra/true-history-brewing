@@ -1,4 +1,5 @@
 import { useState } from "react";
+import mail from './../../public/assets/icons/mail.svg';
 
 /**
  * @type {MetaFunction}
@@ -177,10 +178,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
-          { submitStatus === "Send email"
-            ? <button className="button" type="submit">{submitStatus}</button>
-            : <button className="button" type="submit" disabled>{submitStatus}</button>
-          }
+          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
         </form>
       );
     } else if (contactForm == "licensee") {
@@ -230,10 +228,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
-          { submitStatus === "Send email"
-            ? <button className="button" type="submit">{submitStatus}</button>
-            : <button className="button" type="submit" disabled>{submitStatus}</button>
-          }
+          <button className="button" type="submit" disabled={submitStatus == "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
         </form>
       );
     } else if (contactForm == "events") {
@@ -308,10 +303,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("special", event)}
               required />
           </div>
-          { submitStatus === "Send email"
-            ? <button className="button" type="submit">{submitStatus}</button>
-            : <button className="button" type="submit" disabled>{submitStatus}</button>
-          }
+          <button className="button" type="submit" disabled={submitStatus == "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
         </form>
       );
     }

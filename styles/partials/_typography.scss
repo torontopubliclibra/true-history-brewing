@@ -67,6 +67,18 @@ footer {
           a {
             font-family: "Saudagar";
             text-decoration: underline;
+            transition: color 0.4s;
+
+            &:hover {
+                color: $color1;
+            }
+
+            // responsive to tablet
+            @media only screen and (max-width: $tablet) {
+                &:hover {
+                    color: $black;
+                }
+            }
           }
         }
     }
@@ -74,9 +86,14 @@ footer {
     .credit p {
         font-size: 1rem;
     }
+
+    .copyright {
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
     
     .copyright p {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
     }
 }
 
