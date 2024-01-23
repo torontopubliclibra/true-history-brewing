@@ -8,7 +8,6 @@ header, footer {
 
 header {
     height: 140px;
-    border-bottom: $default-border;
     padding: 20px;
     padding-bottom: 0;
     top: 0;
@@ -156,12 +155,13 @@ header {
 footer {
     background-color: rgba($light, 0.75);
     filter: $default-shadow;
-    height: 225px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: $default-border;
+    border-top: none;
     margin-top: 0;
     margin-bottom: 75px;
 
@@ -175,6 +175,7 @@ footer {
     .footer-buttons {
         display: flex;
         gap: 15px;
+        padding-top: 25px;
 
         .button {
             height: 20px !important;
@@ -205,39 +206,8 @@ footer {
             }
         }
     }
-
-    &.landing-footer {
-        background: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
-        margin-bottom: 0;
-
-        // responsive to mobile
-        @media only screen and (max-width: $mobile) {
-            background: unset;
-            background-image: url('./../../public/assets/wallpaper.png');
-            background-size: 100%;
-            background-position: -150px;
-        }
-    }
 }
 
-.landing-header {
-    height: 100px;
-
-    // responsive to tablet
-    @media only screen and (max-width: $tablet) {
-        height: calc(50vh - 228px);
-    }
-}
-.landing-footer {
+.landing-header, .landing-footer {
     display: none;
-    border-top: none;
-
-    // responsive to tablet
-    @media only screen and (max-width: $tablet) {
-        display: initial;
-        height: calc(50vh - 228px);
-    }
 }

@@ -13,14 +13,35 @@
   background-size: 100%;
   background-color: $light;
   width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &.aside-closed {
     header * {
       animation: none;
+    }
+  }
+
+  &.landing {
+    background-image: url('./../../public/assets/wallpaper.png') !important;
+
+    body {
+      padding-top: 2.5vh;
+      padding-bottom: 2.5vh;
+    }
+
+    .overlay, #cart-aside, #mobile-menu-aside {
+      display: none;
+      min-height: 100vh !important;
     }
   }
 
@@ -50,7 +71,14 @@
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
       body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         height: calc(100vh + 50px);
+
+        header {
+          border-bottom: $default-border;
+        }
 
         main, footer {
           display: none;
@@ -80,6 +108,19 @@ body {
   height: 100%;
   margin-left: -5px;
   margin-right: -5px;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+
+  // responsive to mobile
+  @media only screen and (max-width: $smaller-desktop) {
+    width: 100vw;
+    padding: 0;
+
+    header, main, footer {
+      border-left: none !important;
+      border-right: none !important;
+    }
+  }
 
   #mobile-menu-aside {
     display: none !important;
@@ -218,8 +259,7 @@ h3.demo-text {
 main {
   background-image: url('./../../public/assets/wooden-bg.png');
   background-size: 100%;
-  border-left: $default-border;
-  border-right: $default-border;
+  border: $default-border;
   filter: $default-shadow;
   z-index: 200;
 
@@ -303,6 +343,7 @@ main {
       padding-left: 10px;
 
       .button {
+        justify-content: space-between;
         margin-top: 30px;
         margin-left: 50px;
       }
@@ -453,7 +494,7 @@ main {
       }
 
       .button {
-        width: 300px;
+        width: 250px;
         padding: 20px 30px;
         background: $color4;
         color: $light;

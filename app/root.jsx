@@ -198,18 +198,26 @@ export default function App() {
 
       window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
 
-      setTimeout(() => {
-        setHtmlState("aside-closed");
-        setBodyTags("default-body");
-        setAsideOpen({
-          open: false,
-          aside: ""
-        });
+      if (location.pathname === '/') {
+        setBodyTags("landing");
+        setHtmlState("landing");
         
-        if (window.location.hash) {
-          window.location.hash = '';
-        }
-      }, 250);
+      } else {
+        setTimeout(() => {
+
+          setBodyTags("default-body");
+          setHtmlState("aside-closed");  
+  
+          setAsideOpen({
+            open: false,
+            aside: ""
+          });
+          
+          if (window.location.hash) {
+            window.location.hash = '';
+          }
+        }, 250);
+      }
     }
   }
 
@@ -599,8 +607,10 @@ export default function App() {
 
     if (location.pathname === '/') {
       setBodyTags("landing");
+      setHtmlState("landing");
     } else {
       setBodyTags("default-body");
+      setHtmlState("default-html");
     }
 
   }, []);
