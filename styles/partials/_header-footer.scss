@@ -48,6 +48,13 @@ header {
             margin-left: auto;
 
             // responsive to mobile
+            @media only screen and (max-width: $tablet) {
+                .mobile-hide {
+                    display: none;
+                }
+            }
+
+            // responsive to mobile
             @media only screen and (max-width: $mobile) {
                 .button {
                     &:hover {
@@ -76,13 +83,13 @@ header {
             }
         
             .menu-toggle, .menu-active {
-            display: none;
+                display: none;
         
-            // responsive to mobile
-            @media only screen and (max-width: $tablet) {
-            display: flex;
+                // responsive to mobile
+                @media only screen and (max-width: $tablet) {
+                    display: flex;
+                }
             }
-        }
         }
 
         &.header-menu-desktop {
@@ -169,6 +176,10 @@ footer {
         display: flex;
         gap: 15px;
 
+        .button {
+            height: 20px !important;
+        }
+
         .selected {
             background-color: $color1;
             color: $light;
@@ -185,6 +196,14 @@ footer {
         border-right: none;
         border-bottom: none;
         margin-bottom: 0;
+
+        .footer-buttons {
+            gap: 5px;
+
+            .button {
+                height: 15px !important;
+            }
+        }
     }
 
     &.landing-footer {

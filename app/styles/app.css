@@ -328,7 +328,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -431,7 +430,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -872,7 +875,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -975,7 +977,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -1512,7 +1518,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -1615,7 +1620,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -2079,7 +2088,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -2182,7 +2190,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -2324,6 +2336,9 @@ header {
     display: flex;
     grid-gap: 1rem;
     margin-left: auto; }
+    @media only screen and (max-width: 1070px) {
+      header nav.header-submenu .mobile-hide {
+        display: none; } }
     @media only screen and (max-width: 480px) {
       header nav.header-submenu .button:hover {
         color: #1F1F1F;
@@ -2408,6 +2423,8 @@ footer {
   footer .footer-buttons {
     display: flex;
     gap: 15px; }
+    footer .footer-buttons .button {
+      height: 20px !important; }
     footer .footer-buttons .selected {
       background-color: #778d79;
       color: #F1EDE2; }
@@ -2419,7 +2436,11 @@ footer {
       border-left: none;
       border-right: none;
       border-bottom: none;
-      margin-bottom: 0; } }
+      margin-bottom: 0; }
+      footer .footer-buttons {
+        gap: 5px; }
+        footer .footer-buttons .button {
+          height: 15px !important; } }
   footer.landing-footer {
     background: none;
     border-left: none;
@@ -2777,7 +2798,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -2880,7 +2900,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -3643,7 +3667,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -3746,7 +3769,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -4224,7 +4251,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -4327,7 +4353,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -4930,7 +4960,6 @@ main .taproom-menus .updated-date {
 
 main .taproom-menus .menu-nav .button {
   height: 40px;
-  font-size: 1.2rem;
   padding: 20px 30px;
   cursor: pointer; }
   main .taproom-menus .menu-nav .button.selected {
@@ -5033,7 +5062,11 @@ main .taproom-menus .menu-nav .button {
 
 @media only screen and (max-width: 1070px) {
   .hours h4 {
-    font-size: 2.25rem; } }
+    font-size: 2rem; }
+  .hours .schedule li {
+    font-size: 1.25rem;
+    letter-spacing: 2.75px;
+    line-height: 1.5; } }
 
 .button {
   background: #D8B56E;
@@ -5162,7 +5195,13 @@ nav.header-menu-desktop a {
         gap: 0; }
         .shop-nav ul .button {
           width: 90vw;
-          max-width: 350px; } }
+          max-width: 350px; }
+          .shop-nav ul .button:hover {
+            background-color: #D8B56E;
+            color: #1F1F1F; }
+          .shop-nav ul .button.selected:hover {
+            background-color: #BC4749;
+            color: #F1EDE2; } }
   .shop-nav .button {
     height: 40px;
     cursor: pointer; }
@@ -5774,7 +5813,8 @@ main {
       padding: 20px;
       animation: none; }
       main .retail-info .retail-buttons .button {
-        min-width: 60%; }
+        min-width: 60%;
+        justify-content: space-between; }
     main .retail-info .retail-photo {
       animation: fade-in 0.8s ease-in-out;
       height: 350px;
@@ -5785,11 +5825,14 @@ main {
         flex-direction: column-reverse;
         height: 100%; }
         main .retail-info .retail-photo {
-          height: 70%;
-          max-height: 250px;
+          height: 250px;
           width: 100%; }
         main .retail-info .retail-buttons {
-          display: none; } }
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+          border-right: none;
+          border-top: solid #1F1F1F 3px; } }
   main .retail-content {
     background-color: rgba(121, 79, 62, 0.8);
     min-height: 450px;
@@ -5883,13 +5926,13 @@ main {
             main .retail-content .fridge-list .mobile-line-item h4 {
               font-size: 1.2rem; }
             main .retail-content .fridge-list .mobile-line-item p {
-              font-size: 1.1rem;
+              font-size: 1rem;
               width: 90%; }
               main .retail-content .fridge-list .mobile-line-item p.description {
                 font-style: italic;
                 margin-bottom: 6px; }
               main .retail-content .fridge-list .mobile-line-item p.price {
-                font-size: 1rem;
+                font-size: 1.1rem;
                 font-weight: 800; }
             main .retail-content .fridge-list .mobile-line-item:last-of-type {
               margin-bottom: 0;
@@ -6287,9 +6330,9 @@ main {
         main .taproom-menus .menu li h4 {
           width: 90%;
           text-transform: uppercase;
-          font-size: 1.2rem; }
+          font-size: 1rem; }
         main .taproom-menus .menu li p {
-          font-size: 1.1rem;
+          font-size: 0.9rem;
           width: 90%; }
           main .taproom-menus .menu li p.description {
             font-style: italic;
@@ -6308,7 +6351,12 @@ main {
             justify-content: center;
             text-align: center; }
             main .taproom-menus .menu li h4 {
-              margin-bottom: 5px; }
+              margin-bottom: 5px;
+              font-size: 1.1rem; }
+            main .taproom-menus .menu li p {
+              font-size: 1rem; }
+              main .taproom-menus .menu li p.price {
+                font-size: 1.1rem; }
         main .taproom-menus .menu-nav {
           width: 85%;
           flex-direction: column;
@@ -6319,12 +6367,31 @@ main {
             main .taproom-menus .menu-nav li .button {
               width: 100%;
               margin: 0; } }
+  main .mobile-taproom-buttons {
+    display: none; }
+    @media only screen and (max-width: 1070px) {
+      main .mobile-taproom-buttons {
+        display: block;
+        padding: 30px 0;
+        width: 100%;
+        background-color: rgba(119, 141, 121, 0.8);
+        border-bottom: solid #1F1F1F 3px; }
+        main .mobile-taproom-buttons .buttons {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px; }
+          main .mobile-taproom-buttons .buttons .button {
+            width: 60%;
+            justify-content: space-between; } }
   main .taproom-events {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(214, 208, 192, 0.9); }
+    background-color: rgba(214, 208, 192, 0.8); }
     main .taproom-events hr {
       background-color: #C28165;
       width: 95%;

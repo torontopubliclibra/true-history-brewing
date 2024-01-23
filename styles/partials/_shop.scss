@@ -25,6 +25,16 @@
       .button {
         width: 90vw;
         max-width: 350px;
+
+        &:hover {
+          background-color: $color2;
+          color: $black;
+        }
+
+        &.selected:hover {
+          background-color: $color4;
+          color: $light;
+        }
       }
     }
   }

@@ -17,6 +17,7 @@ import drink from './../../public/assets/icons/drink.svg';
 import food from './../../public/assets/icons/food.svg';
 import compass from './../../public/assets/icons/compass.svg';
 import retail from './../../public/assets/icons/retail.svg';
+import basket from './../../public/assets/icons/basket.svg';
 
 /**
  * @type {MetaFunction}
@@ -147,6 +148,7 @@ export default function Homepage() {
     } else {
       setSelectedMenu("beers");
     }
+    setMenuItems(menus);
   }, [])
 
   useEffect(() => {
@@ -197,6 +199,13 @@ export default function Homepage() {
           <ul className='menu'>
             {formattedMenus[selectedMenu]}
           </ul>
+        </section>
+        <section className="mobile-taproom-buttons">
+          <div className="buttons">
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Directions<img src={compass} className="button-icon"/></Link>
+            <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Retail items<img src={retail} className="button-icon"/></Link>
+            <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon"/></Link>
+          </div>
         </section>
         <section className="taproom-events" id="calendar">
           <h3>Events</h3>
