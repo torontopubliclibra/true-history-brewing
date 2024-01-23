@@ -35,18 +35,16 @@
       }
     }
 
-    header * {
-      animation: $secondary-animation !important;
+    header, header * {
+      animation: none !important;
     }
   }
 
   &.aside-open {
     overflow-y: hidden;
 
-    header {
-      * {
-        animation: none;
-      }
+    header * {
+      animation: none;
     }
 
     // responsive to mobile
@@ -70,6 +68,10 @@
 
 body, header, footer, main, section {
   animation: none;
+}
+
+aside {
+  animation: $secondary-animation;
 }
 
 body {
@@ -580,12 +582,17 @@ main {
       }
 
       .retail-buttons {
+        gap: 10px;
         width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 40px 0;
         border-right: none;
         border-top: $default-border;
-        // display: none;
+        
+        
+        .button {
+          margin: 0;
+          width: 60%;
+        }
       }
     }
   }
@@ -619,7 +626,7 @@ main {
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
         font-size: 1.2rem;
-        margin-bottom: 30px;
+        margin-bottom: 0;
         padding: 5px 20px;
         width: 105%;
         border-radius: 0;
@@ -698,6 +705,7 @@ main {
       @media only screen and (max-width: $tablet) {
         max-width: 80%;
         outline: solid $color1 12px;
+        margin-top: 10px;
 
         .mobile-line-item {
           padding-top: 10px;
@@ -828,11 +836,6 @@ main {
       margin: 15px;
       margin-bottom: 0;
       .bar-sketch {
-        width: 95%;
-        filter: $default-shadow;
-        padding-bottom: 5px;
-      }
-      .bar-sketch-2 {
         object-fit: cover;
         width: 95%;
         height: calc(100% - 90px);
@@ -883,11 +886,6 @@ main {
         margin: 0;
 
         .bar-sketch {
-          max-width: 500px;
-          padding: 30px 20px;
-          padding-bottom: 10px;
-        }
-        .bar-sketch-2 {
           height: 350px;
           width: 100%;
           border-radius: 0;
@@ -1099,6 +1097,21 @@ main {
               filter: none;
             }
           }
+          &:disabled {
+            cursor: default;
+            background: $color1;
+            color: $light;
+            img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            }
+            &:hover {
+              background: $color1;
+              color: $light;
+              img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+              }
+            }
+          }
         }
       }
     }
@@ -1231,9 +1244,10 @@ main {
       width: 95%;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
 
       li {
+        margin: 0;
         animation: $secondary-animation;
         display: flex;
         flex-direction: column;
@@ -1243,7 +1257,7 @@ main {
         filter: $default-shadow;
         font-family: "Saudagar";
         color: $black;
-        height: 100%;
+        min-height: 100%;
         border: $default-border;
         border-radius: 40px;
         padding: 20px;
@@ -1297,11 +1311,13 @@ main {
 
       .menu {
         gap: 5px;
+        margin-top: 20px;
         margin-bottom: 20px;
         li {
           width: 80% !important;
           justify-content: center;
           text-align: center;
+          margin-bottom: 10px;
 
           h4 {
             margin-bottom: 5px;
@@ -1320,9 +1336,10 @@ main {
         width: 85%;
         flex-direction: column;
         align-items: center;
-        gap: 5px;
+        gap: 10px;
         li {
           width: 100%;
+          margin: 0;
           .button {
             width: 100%;
             margin: 0;
@@ -1337,7 +1354,7 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       display: block;
-      padding: 30px 0;
+      padding: 40px 0;
       width: 100%;
       background-color: rgba($color1, 0.8);
       border-bottom: $default-border;
@@ -1351,6 +1368,7 @@ main {
         gap: 10px;
   
         .button {
+          margin: 0;
           width: 60%;
           justify-content: space-between;
         }

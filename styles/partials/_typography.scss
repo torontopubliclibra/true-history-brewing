@@ -36,8 +36,11 @@
 
 * {
     font-family: "Bogue-Regular", sans-serif;
-    animation: $default-animation;
 };
+
+body * {
+    animation: $default-animation;
+}
 
 header, footer {
     .button-primary {
@@ -455,7 +458,9 @@ main {
                 font-size: 1.2rem;
                 text-align: center;
                 width: 100%;
+                padding: 5px 20px 5px 20px;
                 border: $default-border;
+                border-radius: 0;
                 border-left: 0;
                 border-right: 0;
                 margin-bottom: 15px;

@@ -111,6 +111,7 @@ export function HeaderMenu({viewport}) {
         prefetch="intent"
         className={activeLinkStyle}
         to="/taproom"
+        state={{ selectedMenu: "beers" }}
         >
         <span className="nav-text">Taproom</span>
         <img src={beer} className="button-icon" />
@@ -121,6 +122,7 @@ export function HeaderMenu({viewport}) {
         prefetch="intent"
         className={activeLinkStyle}
         to="/retail"
+        state={{ selectedItems: "beers" }}
         >
         <span className="nav-text">Retail</span>
         <img src={retail} className="button-icon" />
