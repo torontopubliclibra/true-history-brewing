@@ -72,16 +72,21 @@ export default function Homepage() {
   }
 
   useEffect(() => {
+
+    setRetailItems(retail);
     if (location.state) {
       setSelectedItems(location.state.selectedItems);
     } else {
       setSelectedItems("beers");
     }
-    setRetailItems(retail);
+
   }, [])
 
   useEffect(() => {
+
     setRetailItems(retail);
+    setSelectedItems("beers");
+    
   }, [retail])
 
   return (

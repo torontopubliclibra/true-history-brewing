@@ -1,4 +1,3 @@
-import { specifiedScalarTypes } from "graphql";
 import { useState } from "react";
 
 /**

@@ -30,7 +30,8 @@ export const meta = () => {
 export default function Homepage() {
 
   const { events, currentDate } = useContext(StrapiContext);
-  const [ newsletterBtn, setNewsletterBtn ] = useState('Subscribe');
+  const [ subscribeActive, setSubscribeActive ] = useState(true);
+  let [ email, setEmail ] = useState("");
 
   // parse time from string
   let parseDate = (string) => {
@@ -120,18 +121,17 @@ export default function Homepage() {
     }
   })
 
-  let handleSubscribe = async (event) => {
+  let handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
+
+  let handleSubscribe = (event) => {
 
     event.preventDefault();
 
-    let { email } = event.target.elements;
-    console.log(email.value + ' is now subscribed');
-    setNewsletterBtn('Subscribed');
+    console.log(email + ' is now subscribed');
     event.target.reset();
-
-    setTimeout(() => {
-      setNewsletterBtn('Subscribe');
-    }, 3000);
+    setSubscribeActive(false);
   }
 
   return (
@@ -143,8 +143,7 @@ export default function Homepage() {
         </section>
         <section className="home-taproom">
           <div className="sketch-address">
-            {/* <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" /> */}
-            <img src={barSketch} className="bar-sketch-2" alt="A black and white sketch of the True History taproom bar" />
+            <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" />
             <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
           </div>
           <hr/>
@@ -171,8 +170,17 @@ export default function Homepage() {
           <div className="newsletter-content">
             <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
             <form onSubmit={handleSubscribe}>
-              <input type="email" placeholder="Enter your email address" required />
-              <button type="submit" className='button button-primary' >{newsletterBtn} <img src={mail} className="button-icon" /></button>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                onChange={(event) => handleEmailChange(event)}
+                disabled={!subscribeActive}
+                required
+              />
+              { subscribeActive
+                ? <button type="submit" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" /></button>
+                : <button type="submit" className='button button-primary' disabled >Subscribed! <img src={mail} className="button-icon" /></button>
+              }
             </form>
           </div>
         </section>

@@ -196,6 +196,9 @@ export default function App() {
     
     } else {
 
+      window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
+
+      setTimeout(() => {
         setHtmlState("aside-closed");
         setBodyTags("default-body");
         setAsideOpen({
@@ -206,8 +209,8 @@ export default function App() {
         if (window.location.hash) {
           window.location.hash = '';
         }
-  
-      }
+      }, 250);
+    }
   }
 
   // initial hours

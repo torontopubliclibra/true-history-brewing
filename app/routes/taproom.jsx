@@ -143,16 +143,21 @@ export default function Homepage() {
   }
 
   useEffect(() => {
+
+    setMenuItems(menus);
     if (location.state) {
       setSelectedMenu(location.state.selectedMenu);
     } else {
       setSelectedMenu("beers");
     }
-    setMenuItems(menus);
+
   }, [])
 
   useEffect(() => {
+
     setMenuItems(menus);
+    setSelectedMenu("beers");
+    
   }, [menus])
 
   return (
