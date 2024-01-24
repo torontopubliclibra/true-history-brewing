@@ -3069,7 +3069,6 @@ aside {
       aside header .close:hover {
         opacity: 1; }
   aside main {
-    overflow-y: scroll;
     height: calc(100% + 250px) !important;
     background-color: rgba(214, 208, 192, 0.25);
     border-left: 0;
@@ -3079,10 +3078,12 @@ aside {
       margin-top: 10px;
       margin-bottom: 20px; }
     aside main .cart-main {
-      min-height: auto;
-      height: 100% !important;
-      max-height: auto;
-      padding-bottom: 125px !important;
+      overflow-y: scroll;
+      min-height: unset;
+      height: calc(100vh - 150px) !important;
+      max-height: unset;
+      padding-top: 20px !important;
+      padding-bottom: 150px !important;
       width: auto;
       height: unset;
       max-height: none;
@@ -3150,12 +3151,23 @@ aside {
           aside main .cart-main .cart-line button img {
             filter: none; }
           aside main .cart-main .cart-line button:hover, aside main .cart-main .cart-line button:disabled {
-            cursor: pointer; }
+            cursor: pointer;
+            background-color: #778d79; }
+            aside main .cart-main .cart-line button:hover img, aside main .cart-main .cart-line button:disabled img {
+              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+          aside main .cart-main .cart-line button:disabled {
+            cursor: default !important; }
           @media only screen and (max-width: 1070px) {
             aside main .cart-main .cart-line button:hover {
-              cursor: pointer; }
+              cursor: pointer;
+              background-color: #D8B56E; }
+              aside main .cart-main .cart-line button:hover img {
+                filter: none; }
             aside main .cart-main .cart-line button:disabled:hover {
-              cursor: pointer; } }
+              cursor: pointer;
+              background-color: #778d79; }
+              aside main .cart-main .cart-line button:disabled:hover img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
         aside main .cart-main .cart-line img {
           height: 100%;
           display: block;
@@ -3196,7 +3208,7 @@ aside {
 
 .overlay {
   animation: none;
-  overflow-x: hidden;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
@@ -3250,9 +3262,6 @@ aside {
 .overlay:target aside {
   transform: translateX(calc(400px * -1)); }
 
-#cart-aside main .cart-main {
-  padding-top: 25px; }
-
 @media only screen and (max-width: 1070px) {
   #cart-aside {
     position: fixed;
@@ -3274,12 +3283,9 @@ aside {
     #cart-aside aside {
       width: 100vw;
       max-width: 100vw;
-      height: calc(100% - 204px);
-      padding-top: 20px; }
+      height: calc(100% - 204px); }
       #cart-aside aside main {
-        padding-top: 0 !important; }
-        #cart-aside aside main .cart-main {
-          padding-top: 0 !important; } }
+        padding-top: 0 !important; } }
 
 #mobile-menu-aside {
   display: none;
@@ -5616,7 +5622,8 @@ nav.header-menu-desktop a {
     :root.aside-open header * {
       animation: none; }
     :root.aside-open body {
-      overflow-y: hidden; }
+      overflow-y: hidden;
+      position: relative; }
     @media only screen and (max-width: 480px) {
       :root.aside-open body {
         display: flex;
