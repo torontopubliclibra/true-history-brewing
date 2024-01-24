@@ -19,9 +19,9 @@ export function Footer() {
 
   let footerButtons = (
     <div className="footer-buttons">
-      <div className='button button-primary selected'>
-        <img src={contact} className="button-icon" />
-      </div>
+      <Link to="/contact" className='button button-primary'>
+       <img src={contact} className="button-icon" />
+      </Link>
       <a onClick={scrollTop} className='button button-primary'>
         Scroll to top
         <img src={arrowUp} className="button-icon" />

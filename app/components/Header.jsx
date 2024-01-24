@@ -1,6 +1,5 @@
 import { Suspense, useState, useEffect } from 'react';
 import { Await, Link, NavLink } from '@remix-run/react';
-// import { useRootLoaderData } from '~/root';
 import { useLocation } from 'react-router-dom';
 import icon from './../../public/assets/thb-icon.png';
 import cart from './../../public/assets/icons/cart.svg';

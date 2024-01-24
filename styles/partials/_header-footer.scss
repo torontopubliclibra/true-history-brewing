@@ -54,17 +54,17 @@ header {
             }
 
             // responsive to mobile
-            @media only screen and (max-width: $mobile) {
-                .button {
-                    &:hover {
-                        color: $black;
-                        background-color: $color2;
-                        img {
-                            filter: none;
-                        }
-                    }
-                }
-            }
+            // @media only screen and (max-width: $mobile) {
+            //     .button {
+            //         &:hover {
+            //             color: $black;
+            //             background-color: $color2;
+            //             img {
+            //                 filter: none;
+            //             }
+            //         }
+            //     }
+            // }
 
             .cart-active, .menu-active {
                 color: $white;
@@ -72,13 +72,13 @@ header {
                 img {
                 filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
                 }
-                &:hover {
-                    color: $white;
-                    background-color: $color1;
-                    img {
-                        filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-                    }
-                }
+                // &:hover {
+                //     color: $white;
+                //     background-color: $color1;
+                //     img {
+                //         filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+                //     }
+                // }
             }
         
             .menu-toggle, .menu-active {
@@ -120,7 +120,7 @@ header {
                 margin-left: -2px;
                 margin-right: -2px;
                 transform: perspective(8px) rotateX(1deg);
-                transition: background-color 0.4s, color 0.4s, margin 0.4s;
+                transition: background-color 0.4s, margin 0.4s, font-style 0.4s;
                 background-color: $least-light;
                 border: $default-border;
                 border-radius: 25px 25px 0 0;
@@ -135,6 +135,7 @@ header {
                     z-index: 100;
 
                     &:hover {
+                        font-style: normal;
                         background-color: $light;
                         margin-left: -2px;
                         margin-right: -2px;
@@ -142,6 +143,7 @@ header {
                 }
 
                 &:hover {
+                    font-style: italic;
                     text-decoration: none;
                     background-color: $less-light;
                     margin-left: 5px;

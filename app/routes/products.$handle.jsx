@@ -4,6 +4,8 @@ import { defer, redirect } from '@shopify/remix-oxygen';
 import { Await, Link, useLoaderData } from '@remix-run/react';
 import { Image, Money, VariantSelector, getSelectedProductOptions, CartForm } from '@shopify/hydrogen';
 import { getVariantUrl } from '~/utils';
+import arrowLeft from './../../public/assets/icons/arrow-left.svg';
+import basket from './../../public/assets/icons/basket.svg';
 
 /**
  * @type {MetaFunction<typeof loader>}
@@ -96,20 +98,28 @@ function redirectToFirstVariant({product, request}) {
   );
 }
 
-export default function Product({updateAsideOpen}) {
+export default function Product() {
   /** @type {LoaderReturnData} */
   const {product, variants} = useLoaderData();
   const {selectedVariant} = product;
   return (
-    <div className="product">
-      <ProductImage image={selectedVariant?.image} />
-      <ProductMain
-        selectedVariant={selectedVariant}
-        product={product}
-        variants={variants}
-        updateAsideOpen={updateAsideOpen}
-      />
-    </div>
+    <>
+      <div className="product">
+        <ProductImage image={selectedVariant?.image} />
+        <ProductMain
+          selectedVariant={selectedVariant}
+          product={product}
+          variants={variants}
+        />
+      </div>
+      <section className="product-nav">
+        <ul>
+          <li>
+            <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" />Back</Link>
+          </li>
+        </ul>
+      </section>
+    </>
   );
 }
 
@@ -138,7 +148,7 @@ function ProductImage({image}) {
  *   variants: Promise<ProductVariantsQuery>;
  * }}
  */
-function ProductMain({selectedVariant, product, variants, updateAsideOpen}) {
+function ProductMain({selectedVariant, product, variants}) {
   const {title, descriptionHtml} = product;
   return (
     <div className="product-main">
@@ -152,7 +162,6 @@ function ProductMain({selectedVariant, product, variants, updateAsideOpen}) {
             product={product}
             selectedVariant={selectedVariant}
             variants={[]}
-            updateAsideOpen={updateAsideOpen}
           />
         }
       >
@@ -165,7 +174,6 @@ function ProductMain({selectedVariant, product, variants, updateAsideOpen}) {
               product={product}
               selectedVariant={selectedVariant}
               variants={data.product?.variants.nodes || []}
-              updateAsideOpen={updateAsideOpen}
             />
           )}
         </Await>
@@ -207,7 +215,7 @@ function ProductPrice({selectedVariant}) {
  *   variants: Array<ProductVariantFragment>;
  * }}
  */
-function ProductForm({product, selectedVariant, variants, updateAsideOpen}) {
+function ProductForm({product, selectedVariant, variants}) {
   return (
     <div className="product-form">
       <VariantSelector
@@ -219,13 +227,6 @@ function ProductForm({product, selectedVariant, variants, updateAsideOpen}) {
       </VariantSelector>
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
-        // onClick={() => {
-        //   if (window.location.href.includes('#')) {
-        //     window.location.href = window.location.href + 'cart-aside';
-        //   } else {
-        //     window.location.href = window.location.href + '#cart-aside';
-        //   }
-        // }}
         lines={
           selectedVariant
             ? [
@@ -236,7 +237,6 @@ function ProductForm({product, selectedVariant, variants, updateAsideOpen}) {
               ]
             : []
         }
-        updateAsideOpen={updateAsideOpen}
       >
         {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
       </AddToCartButton>
@@ -285,7 +285,7 @@ function ProductOptions({option}) {
  *   onClick?: () => void;
  * }}
  */
-function AddToCartButton({analytics, children, disabled, lines, onClick, updateAsideOpen}) {
+function AddToCartButton({analytics, children, disabled, lines, onClick}) {
   return (
     <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
       {(fetcher) => (
@@ -297,9 +297,7 @@ function AddToCartButton({analytics, children, disabled, lines, onClick, updateA
           />
           <button
             type="submit"
-            onClick={
-              () => updateAsideOpen("cart", true)
-            }
+            onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
             className='button button-primary'
           >

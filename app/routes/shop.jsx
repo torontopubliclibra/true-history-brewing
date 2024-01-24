@@ -17,15 +17,7 @@ export const meta = () => {
 /**
  * @param {LoaderFunctionArgs}
  */
-export async function loader({context, request}) {
-  // const {storefront} = context;
-  // const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
-  // let shopCollections = collections.nodes;
-  // const featuredCollection = collections.nodes[0];
-  // const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
-
-  // return defer({shopCollections, featuredCollection, recommendedProducts});
-
+export async function loader({ context, request }) {
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 4,
   });
@@ -34,41 +26,50 @@ export async function loader({context, request}) {
     variables: paginationVariables,
   });
 
-  return json({collections});
+  const collectionHandles = collections.nodes.map((collection) => collection.handle);
+
+  const collectionTitles = collections.nodes.map((collection) => collection.title);
+
+  const collectionData = await Promise.all(
+    collectionHandles.map((handle) =>
+      context.storefront.query(COLLECTION_QUERY, {
+        variables: { handle, ...paginationVariables },
+      })
+    )
+  );
+
+  return json({collectionTitles, collectionData});
 }
 
 export default function Homepage() {
 
   /** @type {LoaderReturnData} */
-  const { collections } = useLoaderData();
+  const {collectionTitles, collectionData} = useLoaderData();
 
   let [ shopCollections, setShopCollections ] = useState({});
-  let [ shopCategories, setShopCategories ] = useState(["Beer"]);
-  let [ selectedCategory, setSelectedCategory ] = useState("Beer");
+  let [ shopCategories, setShopCategories ] = useState(["Beers"]);
+  let [ selectedCategory, setSelectedCategory ] = useState("Beers");
 
   useEffect(() => {
 
-    if (collections.nodes !== shopCollections) {
-      setShopCollections(collections.nodes);
+    if (collectionData !== shopCollections) {
+      setShopCollections(collectionData);
+    }
+
+    if (shopCategories !== collectionTitles) {
+      setShopCategories(collectionTitles);
     }
 
   }, []);
 
   useEffect(() => {
 
-    let newCategories = [];
-    for (let i = 0; i < shopCollections.length; i++) {
-      let category = shopCollections[i].title.split("-")[0];
-      
-      if (!shopCategories.includes(category)) {
-        newCategories.push(category);
-      }
-    }
-    newCategories.sort((a, b) => a === "Beer" ? -1 : b === "Beer" ? 1 : 0);
+    let newCategories = collectionTitles;
+    newCategories.sort((a, b) => a === "Beers" ? -1 : b === "Beers" ? 1 : 0);
 
     setShopCategories(newCategories);
 
-  }, [shopCollections]);
+  }, [collectionTitles]);
 
   let handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -112,140 +113,58 @@ export default function Homepage() {
         </ul>
       </section>
       <section className="shop">
-        <SelectedCollection selectedCategory={selectedCategory} shopCollections={shopCollections} />
+        <SelectedCollection selectedCategory={selectedCategory} collectionData={collectionData} />
       </section>
       <section className="shop-disclaimers">
         <div className="text-box">
           <h3>Delivery & Pickup Conditions</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat laboris nisi ut tempor incididunt ut.</p>
         </div>
       </section>
     </>
   );
 }
 
-function SelectedCollection({selectedCategory, shopCollections}) {
+function SelectedCollection({selectedCategory, collectionData}) {
 
-  let collection = {};
-  
-  if (shopCollections) {
-    for (let i = 0; i < shopCollections.length; i++) {
+  let collectionProducts = {};
 
-      let category = shopCollections[i].title.split("-")[0];
-      if (category == selectedCategory) {
-        collection = shopCollections[i];
-      }
+  for (let i = 0; i < collectionData.length; i++) {
+    let collection = collectionData[i].collection;
+    if (collection.title === selectedCategory) {
+      collectionProducts = collection.products;
     }
   }
 
+  console.log(collectionProducts)
+
   return (
-    <div className="recommended-products">
-      <h2>{collection.title}</h2>
-        <h3>Currently under construction</h3>
-      {/* <Suspense fallback={<div>Loading...</div>}>
-        <Await resolve={products}>
-          {({products}) => (
-            <div className="recommended-products-grid">
-              {products.nodes.map((product) => (
-                <Link
-                  key={product.id}
-                  className="recommended-product"
-                  to={`/products/${product.handle}`}
-                >
-                  <Image
-                    data={product.images.nodes[0]}
-                  />
-                  <h4>{product.title}</h4>
-                  <small>
-                    <Money data={product.priceRange.minVariantPrice} />
-                  </small>
-                </Link>
-              ))}
-            </div>
-          )}
-        </Await>
-      </Suspense> */}
+    <div className="collection-products">
+      <h2>{selectedCategory}</h2>
+      <hr/>
+        {/* <h3>Currently under construction</h3> */}
+        <div className="collection-products-grid">
+          {collectionProducts.nodes.map((product) => (
+            <Link
+              key={product.id}
+              className="collection-product"
+              to={`/products/${product.handle}`}
+            >
+              <Image
+                data={product.featuredImage}
+                size={500}
+              />
+              <h4>{product.title}</h4>
+              <small>
+                <Money data={product.priceRange.minVariantPrice} />
+              </small>
+            </Link>
+          ))}
+        </div>
       <br />
     </div>
   )
-
-//  if (!collection) return null;
-//  const image = collection?.image;
-//  return (
-//    <Link
-//      className="featured-collection"
-//      to={`/collections/${collection.handle}`}
-//    >
-//      {image && (
-//        <div className="featured-collection-image">
-//          <Image data={image} sizes="100vw" />
-//        </div>
-//      )}
-//      <h1>{collection.title}</h1>
-//    </Link>
-//  );
 }
-
-// /**
-//  * @param {{
-//  *   collection: FeaturedCollectionFragment;
-//  * }}
-//  */
-// function FeaturedCollection({collection}) {
-
-//   if (!collection) return null;
-//   const image = collection?.image;
-//   return (
-//     <Link
-//       className="featured-collection"
-//       to={`/collections/${collection.handle}`}
-//     >
-//       {image && (
-//         <div className="featured-collection-image">
-//           <Image data={image} sizes="100vw" />
-//         </div>
-//       )}
-//       <h1>{collection.title}</h1>
-//     </Link>
-//   );
-// }
-
-// /**
-//  * @param {{
-//  *   products: Promise<RecommendedProductsQuery>;
-//  * }}
-//  */
-// function RecommendedProducts({products}) {
-//   return (
-//     <div className="recommended-products">
-//       <h2>Beers</h2>
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <Await resolve={products}>
-//           {({products}) => (
-//             <div className="recommended-products-grid">
-//               {products.nodes.map((product) => (
-//                 <Link
-//                   key={product.id}
-//                   className="recommended-product"
-//                   to={`/products/${product.handle}`}
-//                 >
-//                   <Image
-//                     data={product.images.nodes[0]}
-//                   />
-//                   <h4>{product.title}</h4>
-//                   <small>
-//                     <Money data={product.priceRange.minVariantPrice} />
-//                   </small>
-//                 </Link>
-//               ))}
-//             </div>
-//           )}
-//         </Await>
-//       </Suspense>
-//       <br />
-//     </div>
-//   );
-// }
 
 const COLLECTIONS_QUERY = `#graphql
   fragment Collection on Collection {
@@ -287,59 +206,76 @@ const COLLECTIONS_QUERY = `#graphql
   }
 `;
 
-// const FEATURED_COLLECTION_QUERY = `#graphql
-//   fragment FeaturedCollection on Collection {
-//     id
-//     title
-//     image {
-//       id
-//       url
-//       altText
-//       width
-//       height
-//     }
-//     handle
-//   }
-//   query FeaturedCollection($country: CountryCode, $language: LanguageCode)
-//     @inContext(country: $country, language: $language) {
-//     collections(first: 1, sortKey: UPDATED_AT, reverse: true) {
-//       nodes {
-//         ...FeaturedCollection
-//       }
-//     }
-//   }
-// `;
+const PRODUCT_ITEM_FRAGMENT = `#graphql
+  fragment MoneyProductItem on MoneyV2 {
+    amount
+    currencyCode
+  }
+  fragment ProductItem on Product {
+    id
+    handle
+    title
+    featuredImage {
+      id
+      altText
+      url
+      width
+      height
+    }
+    priceRange {
+      minVariantPrice {
+        ...MoneyProductItem
+      }
+      maxVariantPrice {
+        ...MoneyProductItem
+      }
+    }
+    variants(first: 1) {
+      nodes {
+        selectedOptions {
+          name
+          value
+        }
+      }
+    }
+  }
+`;
 
-// const RECOMMENDED_PRODUCTS_QUERY = `#graphql
-//   fragment RecommendedProduct on Product {
-//     id
-//     title
-//     handle
-//     priceRange {
-//       minVariantPrice {
-//         amount
-//         currencyCode
-//       }
-//     }
-//     images(first: 1) {
-//       nodes {
-//         id
-//         url
-//         altText
-//         width
-//         height
-//       }
-//     }
-//   }
-//   query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
-//     @inContext(country: $country, language: $language) {
-//     products(first: 4, sortKey: UPDATED_AT, reverse: true) {
-//       nodes {
-//         ...RecommendedProduct
-//       }
-//     }
-//   }
-// `;
+const COLLECTION_QUERY = `#graphql
+  ${PRODUCT_ITEM_FRAGMENT}
+  query Collection(
+    $handle: String!
+    $country: CountryCode
+    $language: LanguageCode
+    $first: Int
+    $last: Int
+    $startCursor: String
+    $endCursor: String
+  ) @inContext(country: $country, language: $language) {
+    collection(handle: $handle) {
+      id
+      handle
+      title
+      description
+      products(
+        first: $first,
+        last: $last,
+        before: $startCursor,
+        after: $endCursor
+      ) {
+        nodes {
+          ...ProductItem
+        }
+        pageInfo {
+          hasPreviousPage
+          hasNextPage
+          endCursor
+          startCursor
+        }
+      }
+    }
+  }
+`;
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @template T @typedef {import('@remix-run/react').MetaFunction<T>} MetaFunction */

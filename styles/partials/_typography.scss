@@ -51,7 +51,7 @@ header, footer {
 }
 
 .shop, .product {
-    color: $light;
+    color: $black;
 }
 
 footer {
@@ -252,7 +252,7 @@ aside {
         }
         span {
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
     }
     .cart-summary-aside {
@@ -273,7 +273,7 @@ aside {
                 font-weight: 800;
             }
             a {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -373,13 +373,12 @@ main {
     .product {
         .product-main {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
                 font-family: "Saudagar";
-                text-transform: uppercase;
                 margin: 0;
             }
             .product-price {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 font-family: "Bogue-ExtraBold";
                 margin: 0;
             }
@@ -387,13 +386,38 @@ main {
                 font-size: 1.2rem;
                 font-family: "Bogue-Regular";
                 margin: 0;
+
+                h4 {
+                    font-size: 1.3rem;
+                }
+                ul {
+                    list-style-type: unset;
+                    li {
+                        margin-left: 30px;
+                        padding-left: 10px;
+                    }
+                }
             }
             button {
                 padding: 20px 30px;
                 margin-top: 20px;
                 cursor: pointer;
-                &:hover {
-                    background-color: $color4;
+            }
+
+            // responsive to tablet
+            @media only screen and (max-width: $tablet) {
+                h1 {
+                    font-size: 1.75rem;
+                }
+                .product-price {
+                    font-size: 1.3rem;
+                }
+                .product-description {
+                    font-size: 1.15rem;
+    
+                    h4 {
+                        font-size: 1.2rem;
+                    }
                 }
             }
         }
@@ -455,9 +479,8 @@ main {
                 color: $white;
                 background-color: $color1;
                 cursor: default;
-                
                 img {
-                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+                    filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
                 }
             }
         }
@@ -490,8 +513,6 @@ main {
 }
 
 .route-error {
-    border-radius: 25px;
-
     .error-message {
         display: flex;
         flex-direction: column;
@@ -517,6 +538,8 @@ main {
             padding: 10px 0;
         }
         .button {
+            background-color: $color4;
+            color: $light;
             max-width: 50%;
         }
     }
@@ -613,14 +636,40 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in;
+
+    img {
+        transition: transform 0.2s ease-in;
+    }
     &:hover {
-      background: $color1;
-      color: $light;
-      text-decoration: none;
-      transition: background 0.2s ease-in;
-      img {
-        filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-      }
+        font-style: italic;
+        filter: $secondary-shadow;
+        transform: translate(2px, -2px);
+    //   background: $color1;
+    //   color: $light;
+        text-decoration: none;
+        img {
+            transform: skewX(-10deg);
+        }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+        font-style: normal;
+        filter: $default-shadow;
+        transform: none;
+            img {
+                transform: none;
+            }
+        }
+    &.selected:hover {
+        cursor: default;
+        font-style: normal;
+        filter: $default-shadow;
+        transform: none;
+            img {
+                transform: none;
+            }
+        }
     }
   
     &.decorative {
@@ -645,13 +694,13 @@ main {
     width: 170px;
     height: 100%;
     margin-top: 10px;
-    &:hover {
-      background: $color3;
-      color: $black;
-      img {
-        filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%);
-      }
-    }
+    // &:hover {
+    //   background: $color3;
+    //   color: $black;
+    //   img {
+    //     filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%);
+    //   }
+    // }
 }
 
 .button-tertiary {
@@ -660,21 +709,21 @@ main {
     img {
         filter: none;
     }
-    &:hover {
-    background: $color4;
-    color: $light;
-        img {
-            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-        }
-    }
+    // &:hover {
+    // background: $color4;
+    // color: $light;
+    //     img {
+    //         filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+    //     }
+    // }
 }
 
-.button-quaternary:hover {
-    background-color: $color4;
-}
+// .button-quaternary:hover {
+//     background-color: $color4;
+// }
 
 .button-secondary, .button-tertiary {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
@@ -684,13 +733,6 @@ main {
 
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
-    .button:hover {
-      background: $color2;
-      color: $black;
-      img {
-        filter: none;
-      }
-    }
     .button.cart, .button.menu-toggle {
       display: flex;
       flex-direction: row;
@@ -698,20 +740,20 @@ main {
     .button.menu-active {
       flex-direction: row-reverse;
     }
-    .button-secondary:hover {
-      background: $color1;
-      color: $black;
-      img {
-        filter: none;
-      }
-    }
-    .button-tertiary:hover {
-        background: $color2;
-        color: $black;
-        img {
-            filter: none !important;
-        }
-    }
+    // .button-secondary:hover {
+    //   background: $color1;
+    //   color: $black;
+    //   img {
+    //     filter: none;
+    //   }
+    // }
+    // .button-tertiary:hover {
+    //     background: $color2;
+    //     color: $black;
+    //     img {
+    //         filter: none !important;
+    //     }
+    // }
 }
 
 nav.header-submenu {

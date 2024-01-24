@@ -156,7 +156,6 @@ export default function Homepage() {
   useEffect(() => {
 
     setMenuItems(menus);
-    setSelectedMenu("beers");
     
   }, [menus])
 

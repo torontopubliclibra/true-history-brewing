@@ -16,12 +16,11 @@
   animation: $secondary-animation;
 }
 
+.fc-day-mon {
+  background-color: rgba($black, 0.1) !important;
+}
+
 .calendar {
-  .fc-button-active {
-    background-color: $color1 !important;
-    color: $white !important;
-    box-shadow: none !important;
-  }
   .fc-button {
     text-transform: uppercase;
     font-weight: 800;
@@ -33,18 +32,60 @@
     filter: $default-shadow;
     border-radius: 0;
     min-width: 75px;
-    transition: background-color 0.4s, color 0.4s;
+    transition: font-style 0.4s, filter 0.4s, transform 0.4s;
     &:hover, &:active, &:focus {
-      background-color: $color1 !important;
-      color: $white !important;
       box-shadow: none !important;
+      background-color: $color2 !important;
+      color: $black !important;
+    }
+    &:hover {
+      background-color: $color2;
+      color: $black;
+      font-style: italic;
+      filter: $secondary-shadow;
+      transform: translate(2px, -2px);
+
+      // responsive to tablet
+      @media only screen and (max-width: $tablet) {
+        background-color: $color1;
+        color: $black !important;
+        font-style: normal;
+        filter: $default-shadow;
+        transform: none;
+      }
     }
     &:disabled {
       opacity: 1;
       border: $default-border;
-      background-color: $color1;
+      background-color: $color1 !important;
       color: $white !important;
-      cursor: pointer;
+      cursor: default;
+
+      &:hover, &:active, &:focus {
+        background-color: $color1;
+        color: $white !important;
+        font-style: normal;
+        filter: $default-shadow;
+        transform: none;
+      }
+    }
+  }
+  .fc-button.fc-button-active {
+    color: $white !important;
+    cursor: default;
+    background-color: $color1 !important;
+    color: $white !important;
+    box-shadow: none !important;
+    &:hover {
+      background-color: $color1 !important;
+      color: $white !important;
+      font-style: normal !important;
+      filter: $default-shadow !important;
+      transform: none !important;
+    }
+    &:active, &:focus {
+      background-color: $color1 !important;
+      color: $white !important;
     }
   }
   .fc-toolbar-title {

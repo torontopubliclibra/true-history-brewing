@@ -93,47 +93,47 @@ export default function Homepage() {
     <>
       <section className="heading retail-heading">
         <h2>Retail</h2>
-        </section>
-        <section className="retail-info">
-          <div className="retail-buttons">
-            <Link to="/taproom#info" className='button button-quaternary'>Taproom hours<img src={clock} className="button-icon"/></Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-quaternary'>Beers on tap<img src={beer} className="button-icon"/></Link>
-            <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon"/></Link>
-          </div>
-          <img src={beerCans} className="retail-photo" alt="" />
-        </section>
-        <section className="retail-content" id="items">
-          <h3>What's in the Fridge?</h3>
-          {
-            formattedItems[selectedItems].length > 0
-            ? <>
-              <ul className="fridge-list">
-                <li className='line-item header'>
-                  <ul>
-                    <li className="title">
-                      Name
-                    </li>
-                    <li className="style">
-                      Style
-                    </li>
-                    <li className="abv">
-                      ABV
-                    </li>
-                    <li className="ml">
-                      Size
-                    </li>
-                    <li className="price">
-                      Price
-                    </li>
-                  </ul>
-                </li>
-                {formattedItems[selectedItems]}
-              </ul>
-              <p className='updated-date'>{updatedDate(retailItems.beers.updatedAt)}</p>
-            </>
-            : null
-          }
-        </section>
+      </section>
+      <section className="retail-info">
+        <div className="retail-buttons">
+          <Link to="/taproom#info" className='button button-quaternary'>Taproom hours<img src={clock} className="button-icon"/></Link>
+          <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-quaternary'>Beers on tap<img src={beer} className="button-icon"/></Link>
+          <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon"/></Link>
+        </div>
+        <img src={beerCans} className="retail-photo" alt="" />
+      </section>
+      <section className="retail-content" id="items">
+        <h3>What's in the Fridge?</h3>
+        {
+          formattedItems[selectedItems].length > 0
+          ? <>
+            <ul className="fridge-list">
+              <li className='line-item header'>
+                <ul>
+                  <li className="title">
+                    Name
+                  </li>
+                  <li className="style">
+                    Style
+                  </li>
+                  <li className="abv">
+                    ABV
+                  </li>
+                  <li className="ml">
+                    Size
+                  </li>
+                  <li className="price">
+                    Price
+                  </li>
+                </ul>
+              </li>
+              {formattedItems[selectedItems]}
+            </ul>
+            <p className='updated-date'>{updatedDate(retailItems.beers.updatedAt)}</p>
+          </>
+          : null
+        }
+      </section>
     </>
   );
 };

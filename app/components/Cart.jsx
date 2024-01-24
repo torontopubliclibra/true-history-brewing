@@ -99,10 +99,8 @@ function CartLineItem({layout, line}) {
       {image && (
         <Image
           alt={title}
-          aspectRatio="1.5/1"
           data={image}
           loading="lazy"
-          width={125}
         />
       )}
       <div className="cart-line-content">
@@ -132,7 +130,7 @@ function CartCheckoutActions({checkoutUrl}) {
 
   return (
     <div>
-      <a href={checkoutUrl} target="_self">
+      <a href={checkoutUrl} target="_self" className="checkout-button">
         <p>Checkout now</p>
       </a>
     </div>
