@@ -44,7 +44,6 @@ aside {
     }
   
     main {
-      overflow-y: scroll;
       height: calc(100% + 250px) !important;
       background-color: rgba($less-light, 0.25);
       border-left: 0;
@@ -57,10 +56,12 @@ aside {
       }
   
       .cart-main {
-        min-height: auto;
-        height: 100% !important;
-        max-height: auto;
-        padding-bottom: 125px !important;
+        overflow-y: scroll;
+        min-height: unset;
+        height: calc(100vh - 150px) !important;
+        max-height: unset;
+        padding-top: 20px !important;
+        padding-bottom: 150px !important;
         width: auto;
       
         hr {
@@ -146,26 +147,29 @@ aside {
             transition: background-color 0.4s, color 0.4s;
             &:hover, &:disabled {
               cursor: pointer;
-              // background-color: $color1;
-              // img {
-              //   filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-              // }
+              background-color: $color1;
+              img {
+                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+              }
+            }
+            &:disabled {
+              cursor: default !important;
             }
             // responsive to tablet
             @media only screen and (max-width: $tablet) {
               &:hover {
                 cursor: pointer;
-                // background-color: $color2;
-                // img {
-                //   filter: none;
-                // }
+                background-color: $color2;
+                img {
+                  filter: none;
+                }
               }
               &:disabled:hover {
                 cursor: pointer;
-                // background-color: $color1;
-                // img {
-                //   filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-                // }
+                background-color: $color1;
+                img {
+                  filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+                }
               }
             }
           }
@@ -249,7 +253,7 @@ aside {
 
 .overlay {
   animation: none;
-  overflow-x: hidden;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
@@ -314,12 +318,6 @@ aside {
   .overlay:target aside {
     transform: translateX(calc(400px * -1));
 }
-
-#cart-aside {
-    main .cart-main {
-      padding-top: 25px;
-    }
-  }
   
 // responsive to tablet
 @media only screen and (max-width: $tablet) {
@@ -358,14 +356,9 @@ aside {
             width: 100vw;
             max-width: 100vw;
             height: calc(100% - 204px);
-            padding-top: 20px;
 
             main {
-                padding-top: 0 !important;
-
-                .cart-main {
-                    padding-top: 0 !important;
-                }
+              padding-top: 0 !important;
             }
         }
     }

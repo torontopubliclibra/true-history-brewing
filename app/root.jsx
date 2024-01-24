@@ -192,7 +192,7 @@ export default function App() {
             aside: "cart"
           });
         }
-      }, 250);
+      }, 400);
     
     } else {
 
@@ -216,7 +216,7 @@ export default function App() {
           if (window.location.hash) {
             window.location.hash = '';
           }
-        }, 250);
+        }, 400);
       }
     }
   }
