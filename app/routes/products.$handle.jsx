@@ -104,13 +104,6 @@ export default function Product() {
   const {selectedVariant} = product;
   return (
     <>
-      <section className="product-nav">
-        <ul>
-          <li>
-            <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" />Back to the shop<img src={basket} className="button-icon"/></Link>
-          </li>
-        </ul>
-      </section>
       <div className="product">
         <ProductImage image={selectedVariant?.image} />
         <ProductMain
@@ -119,11 +112,12 @@ export default function Product() {
           variants={variants}
         />
       </div>
-      <section className="shop-disclaimers">
-        <div className="text-box">
-          <h3>Delivery & Pickup Conditions</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+      <section className="product-nav">
+        <ul>
+          <li>
+            <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" />Back</Link>
+          </li>
+        </ul>
       </section>
     </>
   );
@@ -233,13 +227,6 @@ function ProductForm({product, selectedVariant, variants}) {
       </VariantSelector>
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
-        onClick={() => {
-          if (window.location.href.includes('#')) {
-            window.location.href = window.location.href + 'cart-aside';
-          } else {
-            window.location.href = window.location.href + '#cart-aside';
-          }
-        }}
         lines={
           selectedVariant
             ? [

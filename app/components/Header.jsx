@@ -45,6 +45,7 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
     
     return (
       <header className="landing-header">
+        <h3 className="demo-text">Demo Version</h3>
       </header>
     )
 
@@ -58,7 +59,7 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
         >
           <img src={icon} className="thb-icon" alt="True History Brewing icon" />
         </a>
-        {/* <h3 className="demo-text">Demo Version</h3> */}
+        <h3 className="demo-text">Demo Version</h3>
         <HeaderMenu
           menu={menu}
           viewport="desktop"

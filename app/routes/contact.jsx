@@ -269,7 +269,7 @@ export default function Homepage() {
               required />
           </div>
           <div className="form-field">
-            <label htmlFor="date">Date:</label>
+            <label htmlFor="date">Event date:</label>
             <input
               type="date"
               id="date"

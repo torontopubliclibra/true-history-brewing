@@ -118,7 +118,7 @@ export default function Homepage() {
       <section className="shop-disclaimers">
         <div className="text-box">
           <h3>Delivery & Pickup Conditions</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat laboris nisi ut tempor incididunt ut.</p>
         </div>
       </section>
     </>
@@ -139,18 +139,20 @@ function SelectedCollection({selectedCategory, collectionData}) {
   console.log(collectionProducts)
 
   return (
-    <div className="recommended-products">
+    <div className="collection-products">
       <h2>{selectedCategory}</h2>
+      <hr/>
         {/* <h3>Currently under construction</h3> */}
-        <div className="recommended-products-grid">
+        <div className="collection-products-grid">
           {collectionProducts.nodes.map((product) => (
             <Link
               key={product.id}
-              className="recommended-product"
+              className="collection-product"
               to={`/products/${product.handle}`}
             >
               <Image
                 data={product.featuredImage}
+                size={500}
               />
               <h4>{product.title}</h4>
               <small>
@@ -162,84 +164,7 @@ function SelectedCollection({selectedCategory, collectionData}) {
       <br />
     </div>
   )
-
-//  if (!collection) return null;
-//  const image = collection?.image;
-//  return (
-//    <Link
-//      className="featured-collection"
-//      to={`/collections/${collection.handle}`}
-//    >
-//      {image && (
-//        <div className="featured-collection-image">
-//          <Image data={image} sizes="100vw" />
-//        </div>
-//      )}
-//      <h1>{collection.title}</h1>
-//    </Link>
-//  );
 }
-
-// /**
-//  * @param {{
-//  *   collection: FeaturedCollectionFragment;
-//  * }}
-//  */
-// function FeaturedCollection({collection}) {
-
-//   if (!collection) return null;
-//   const image = collection?.image;
-//   return (
-//     <Link
-//       className="featured-collection"
-//       to={`/collections/${collection.handle}`}
-//     >
-//       {image && (
-//         <div className="featured-collection-image">
-//           <Image data={image} sizes="100vw" />
-//         </div>
-//       )}
-//       <h1>{collection.title}</h1>
-//     </Link>
-//   );
-// }
-
-// /**
-//  * @param {{
-//  *   products: Promise<RecommendedProductsQuery>;
-//  * }}
-//  */
-// function RecommendedProducts({products}) {
-//   return (
-//     <div className="recommended-products">
-//       <h2>Beers</h2>
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <Await resolve={products}>
-//           {({products}) => (
-//             <div className="recommended-products-grid">
-//               {products.nodes.map((product) => (
-//                 <Link
-//                   key={product.id}
-//                   className="recommended-product"
-//                   to={`/products/${product.handle}`}
-//                 >
-//                   <Image
-//                     data={product.images.nodes[0]}
-//                   />
-//                   <h4>{product.title}</h4>
-//                   <small>
-//                     <Money data={product.priceRange.minVariantPrice} />
-//                   </small>
-//                 </Link>
-//               ))}
-//             </div>
-//           )}
-//         </Await>
-//       </Suspense>
-//       <br />
-//     </div>
-//   );
-// }
 
 const COLLECTIONS_QUERY = `#graphql
   fragment Collection on Collection {
@@ -351,60 +276,6 @@ const COLLECTION_QUERY = `#graphql
     }
   }
 `;
-
-// const FEATURED_COLLECTION_QUERY = `#graphql
-//   fragment FeaturedCollection on Collection {
-//     id
-//     title
-//     image {
-//       id
-//       url
-//       altText
-//       width
-//       height
-//     }
-//     handle
-//   }
-//   query FeaturedCollection($country: CountryCode, $language: LanguageCode)
-//     @inContext(country: $country, language: $language) {
-//     collections(first: 1, sortKey: UPDATED_AT, reverse: true) {
-//       nodes {
-//         ...FeaturedCollection
-//       }
-//     }
-//   }
-// `;
-
-// const RECOMMENDED_PRODUCTS_QUERY = `#graphql
-//   fragment RecommendedProduct on Product {
-//     id
-//     title
-//     handle
-//     priceRange {
-//       minVariantPrice {
-//         amount
-//         currencyCode
-//       }
-//     }
-//     images(first: 1) {
-//       nodes {
-//         id
-//         url
-//         altText
-//         width
-//         height
-//       }
-//     }
-//   }
-//   query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
-//     @inContext(country: $country, language: $language) {
-//     products(first: 4, sortKey: UPDATED_AT, reverse: true) {
-//       nodes {
-//         ...RecommendedProduct
-//       }
-//     }
-//   }
-// `;
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @template T @typedef {import('@remix-run/react').MetaFunction<T>} MetaFunction */

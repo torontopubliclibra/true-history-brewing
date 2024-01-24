@@ -279,13 +279,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -305,8 +304,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -474,14 +481,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -498,25 +522,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -525,26 +536,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -847,13 +843,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -873,8 +868,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -1042,14 +1045,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -1066,25 +1086,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -1093,26 +1100,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -1510,13 +1502,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -1536,8 +1527,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -1705,14 +1704,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -1729,25 +1745,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -1756,26 +1759,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -2100,13 +2088,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -2126,8 +2113,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -2295,14 +2290,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -2319,25 +2331,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -2346,26 +2345,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -2420,22 +2404,11 @@ header {
     @media only screen and (max-width: 1070px) {
       header nav.header-submenu .mobile-hide {
         display: none; } }
-    @media only screen and (max-width: 480px) {
-      header nav.header-submenu .button:hover {
-        color: #1F1F1F;
-        background-color: #D8B56E; }
-        header nav.header-submenu .button:hover img {
-          filter: none; } }
     header nav.header-submenu .cart-active, header nav.header-submenu .menu-active {
       color: #F6F6F6;
       background-color: #778d79; }
       header nav.header-submenu .cart-active img, header nav.header-submenu .menu-active img {
         filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-      header nav.header-submenu .cart-active:hover, header nav.header-submenu .menu-active:hover {
-        color: #F6F6F6;
-        background-color: #778d79; }
-        header nav.header-submenu .cart-active:hover img, header nav.header-submenu .menu-active:hover img {
-          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
     header nav.header-submenu .menu-toggle, header nav.header-submenu .menu-active {
       display: none; }
       @media only screen and (max-width: 1070px) {
@@ -2465,7 +2438,7 @@ header {
       margin-left: -2px;
       margin-right: -2px;
       transform: perspective(8px) rotateX(1deg);
-      transition: background-color 0.4s, color 0.4s, margin 0.4s;
+      transition: background-color 0.4s, margin 0.4s, font-style 0.4s;
       background-color: #c8c4b8;
       border: solid #1F1F1F 3px;
       border-radius: 25px 25px 0 0;
@@ -2476,10 +2449,12 @@ header {
         background-color: #F1EDE2;
         z-index: 100; }
         header nav.header-menu-desktop a.active-link:hover {
+          font-style: normal;
           background-color: #F1EDE2;
           margin-left: -2px;
           margin-right: -2px; }
       header nav.header-menu-desktop a:hover {
+        font-style: italic;
         text-decoration: none;
         background-color: #D6D0C0;
         margin-left: 5px;
@@ -2809,13 +2784,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -2835,8 +2809,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -3004,14 +2986,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -3028,25 +3027,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -3055,26 +3041,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -3128,35 +3099,28 @@ aside {
       aside header .close:hover {
         opacity: 1; }
   aside main {
-    height: 100vh;
+    overflow-y: scroll;
+    height: calc(100% + 250px) !important;
     background-color: rgba(214, 208, 192, 0.25);
     border-left: 0;
     border-right: 0; }
-    aside main .cart-main {
-      height: 100%;
-      max-height: calc(100vh - 250px);
-      overflow-y: auto;
-      width: auto; }
-      aside main .cart-main hr {
-        margin: 25px 0;
-        border: solid #1F1F1F 2px; }
-      aside main .cart-main .cart-details {
-        margin-top: 30px; }
-    @media only screen and (max-width: 1070px) {
-      aside main {
-        height: calc(100vh - 102px); } }
     aside main hr {
       height: 4px;
       margin-top: 10px;
       margin-bottom: 20px; }
-    @media only screen and (max-width: 1070px) {
-      aside main {
-        height: calc(100vh - 102px); } }
     aside main .cart-main {
+      min-height: auto;
+      height: 100% !important;
+      max-height: auto;
+      padding-bottom: 125px !important;
+      width: auto;
       height: unset;
       max-height: none;
       padding: 25px;
       padding-top: 0; }
+      aside main .cart-main hr {
+        margin: 25px 0;
+        border: solid #1F1F1F 2px; }
       aside main .cart-main .button {
         font-size: 0.9rem; }
       aside main .cart-main .cart-details {
@@ -3164,7 +3128,7 @@ aside {
         aside main .cart-main .cart-details .button {
           margin-top: 20px; }
       aside main .cart-main .cart-empty-text {
-        background-color: #F1EDE2;
+        background-color: rgba(241, 237, 226, 0.8);
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         padding: 40px 30px;
         border: solid #1F1F1F 2px;
@@ -3177,7 +3141,7 @@ aside {
         text-align: center;
         justify-content: space-evenly;
         gap: 10px;
-        background-color: #F1EDE2;
+        background-color: rgba(241, 237, 226, 0.8);
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
         border: solid #1F1F1F 2px;
         border-radius: 25px;
@@ -3187,7 +3151,9 @@ aside {
         margin-top: 15px; }
         aside main .cart-main .cart-line img {
           width: 45%;
-          max-width: 150px; }
+          max-width: 150px;
+          aspect-ratio: 2/1.25 !important;
+          object-fit: cover; }
         aside main .cart-main .cart-line span {
           padding: 0 15px;
           background-color: #F1EDE2;
@@ -3214,21 +3180,12 @@ aside {
           aside main .cart-main .cart-line button img {
             filter: none; }
           aside main .cart-main .cart-line button:hover, aside main .cart-main .cart-line button:disabled {
-            cursor: pointer;
-            background-color: #778d79; }
-            aside main .cart-main .cart-line button:hover img, aside main .cart-main .cart-line button:disabled img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+            cursor: pointer; }
           @media only screen and (max-width: 1070px) {
             aside main .cart-main .cart-line button:hover {
-              cursor: pointer;
-              background-color: #D8B56E; }
-              aside main .cart-main .cart-line button:hover img {
-                filter: none; }
+              cursor: pointer; }
             aside main .cart-main .cart-line button:disabled:hover {
-              cursor: pointer;
-              background-color: #778d79; }
-              aside main .cart-main .cart-line button:disabled:hover img {
-                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
+              cursor: pointer; } }
         aside main .cart-main .cart-line img {
           height: 100%;
           display: block;
@@ -3239,7 +3196,7 @@ aside {
         aside main .cart-main .cart-line:nth-of-type(1) {
           margin-top: 0; }
       aside main .cart-main .cart-summary-aside {
-        background-color: #F1EDE2;
+        background-color: rgba(241, 237, 226, 0.8);
         padding: 15px 30px;
         border: solid #1F1F1F 2px;
         border-radius: 25px;
@@ -3254,17 +3211,18 @@ aside {
           align-items: center;
           transition: background-color 0.4s, color 0.4s;
           filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
-          aside main .cart-main .cart-summary-aside div a:hover {
-            background-color: #778d79; }
         aside main .cart-main .cart-summary-aside .checkout-button p {
           font-size: 0.9rem !important; }
         aside main .cart-main .cart-summary-aside .cart-subtotal {
           align-items: center;
           display: flex;
           justify-content: space-between; }
-        @media only screen and (max-width: 1070px) {
-          aside main .cart-main .cart-summary-aside div a:hover {
-            background-color: #D8B56E; } }
+    @media only screen and (max-width: 1070px) {
+      aside main {
+        height: calc(100vh - 102px);
+        border-top: none; }
+        aside main .cart-main {
+          padding-bottom: 40px !important; } }
 
 .overlay {
   animation: none;
@@ -3709,13 +3667,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -3735,8 +3692,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -3904,14 +3869,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -3928,25 +3910,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -3955,26 +3924,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -4314,13 +4268,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -4340,8 +4293,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -4509,14 +4470,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -4533,25 +4511,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -4560,26 +4525,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -4616,11 +4566,6 @@ nav.header-menu-desktop a {
 .fc-day-mon {
   background-color: rgba(31, 31, 31, 0.1) !important; }
 
-.calendar .fc-button-active {
-  background-color: #778d79 !important;
-  color: #F6F6F6 !important;
-  box-shadow: none !important; }
-
 .calendar .fc-button {
   text-transform: uppercase;
   font-weight: 800;
@@ -4632,17 +4577,52 @@ nav.header-menu-desktop a {
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   border-radius: 0;
   min-width: 75px;
-  transition: background-color 0.4s, color 0.4s; }
+  transition: font-style 0.4s, filter 0.4s, transform 0.4s; }
   .calendar .fc-button:hover, .calendar .fc-button:active, .calendar .fc-button:focus {
-    background-color: #778d79 !important;
-    color: #F6F6F6 !important;
-    box-shadow: none !important; }
+    box-shadow: none !important;
+    background-color: #D8B56E !important;
+    color: #1F1F1F !important; }
+  .calendar .fc-button:hover {
+    background-color: #D8B56E;
+    color: #1F1F1F;
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px); }
+    @media only screen and (max-width: 1070px) {
+      .calendar .fc-button:hover {
+        background-color: #778d79;
+        color: #1F1F1F !important;
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; } }
   .calendar .fc-button:disabled {
     opacity: 1;
     border: solid #1F1F1F 3px;
-    background-color: #778d79;
+    background-color: #778d79 !important;
     color: #F6F6F6 !important;
-    cursor: pointer; }
+    cursor: default; }
+    .calendar .fc-button:disabled:hover, .calendar .fc-button:disabled:active, .calendar .fc-button:disabled:focus {
+      background-color: #778d79;
+      color: #F6F6F6 !important;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+
+.calendar .fc-button.fc-button-active {
+  color: #F6F6F6 !important;
+  cursor: default;
+  background-color: #778d79 !important;
+  color: #F6F6F6 !important;
+  box-shadow: none !important; }
+  .calendar .fc-button.fc-button-active:hover {
+    background-color: #778d79 !important;
+    color: #F6F6F6 !important;
+    font-style: normal !important;
+    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)) !important;
+    transform: none !important; }
+  .calendar .fc-button.fc-button-active:active, .calendar .fc-button.fc-button-active:focus {
+    background-color: #778d79 !important;
+    color: #F6F6F6 !important; }
 
 .calendar .fc-toolbar-title {
   font-family: "Bogue-Regular"; }
@@ -5047,13 +5027,12 @@ main .home-events .home-events-content .events-list {
     margin-top: 20px; } }
 
 main .product .product-main h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Saudagar";
-  text-transform: uppercase;
   margin: 0; }
 
 main .product .product-main .product-price {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Bogue-ExtraBold";
   margin: 0; }
 
@@ -5073,8 +5052,16 @@ main .product .product-main button {
   padding: 20px 30px;
   margin-top: 20px;
   cursor: pointer; }
-  main .product .product-main button:hover {
-    background-color: #BC4749; }
+
+@media only screen and (max-width: 1070px) {
+  main .product .product-main h1 {
+    font-size: 1.75rem; }
+  main .product .product-main .product-price {
+    font-size: 1.3rem; }
+  main .product .product-main .product-description {
+    font-size: 1.15rem; }
+    main .product .product-main .product-description h4 {
+      font-size: 1.2rem; } }
 
 main .taproom-address .address {
   width: 85%;
@@ -5242,14 +5229,31 @@ main .taproom-menus .menu-nav .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+  transition: transform 0.2s ease-in, font-style 0.2s ease-in, filter 0.2s ease-in; }
+  .button img {
+    transition: transform 0.2s ease-in; }
   .button:hover {
-    background: #778d79;
-    color: #F1EDE2;
-    text-decoration: none;
-    transition: background 0.2s ease-in; }
+    font-style: italic;
+    filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+    transform: translate(2px, -2px);
+    text-decoration: none; }
     .button:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+      transform: skewX(-10deg); }
+    @media only screen and (max-width: 1070px) {
+      .button:hover {
+        font-style: normal;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        transform: none; }
+        .button:hover img {
+          transform: none; } }
+    .button:hover.selected:hover {
+      cursor: default;
+      font-style: normal;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      transform: none; }
+      .button:hover.selected:hover img {
+        transform: none; }
   .button.decorative {
     padding: 10px 20px; }
   .button .button-icon {
@@ -5266,25 +5270,12 @@ main .taproom-menus .menu-nav .button {
   width: 170px;
   height: 100%;
   margin-top: 10px; }
-  .button-secondary:hover {
-    background: #C28165;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: invert(4%) sepia(5%) saturate(169%) hue-rotate(314deg) brightness(100%) contrast(82%); }
 
 .button-tertiary {
   background: #D8B56E;
   color: #1F1F1F; }
   .button-tertiary img {
     filter: none; }
-  .button-tertiary:hover {
-    background: #BC4749;
-    color: #F1EDE2; }
-    .button-tertiary:hover img {
-      filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-
-.button-quaternary:hover {
-  background-color: #BC4749; }
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
@@ -5293,26 +5284,11 @@ main .taproom-menus .menu-nav .button {
       font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
-  .button:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button:hover img {
-      filter: none; }
   .button.cart, .button.menu-toggle {
     display: flex;
     flex-direction: row; }
   .button.menu-active {
-    flex-direction: row-reverse; }
-  .button-secondary:hover {
-    background: #778d79;
-    color: #1F1F1F; }
-    .button-secondary:hover img {
-      filter: none; }
-  .button-tertiary:hover {
-    background: #D8B56E;
-    color: #1F1F1F; }
-    .button-tertiary:hover img {
-      filter: none !important; } }
+    flex-direction: row-reverse; } }
 
 @media only screen and (max-width: 480px) {
   nav.header-submenu .button {
@@ -5334,6 +5310,76 @@ nav.header-menu-desktop a {
   nav.header-menu-desktop a .button-icon {
     display: none; }
 
+.shop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(214, 208, 192, 0.8);
+  padding: 30px; }
+  .shop a {
+    transition: font-style 0.2s; }
+    .shop a img {
+      transition: filter 0.2s, transform 0.2s; }
+    .shop a:hover {
+      text-decoration: none;
+      font-style: italic; }
+      .shop a:hover img {
+        filter: drop-shadow(-6px 6px 2px rgba(31, 31, 31, 0.5));
+        transform: translate(2px, -2px); }
+      @media only screen and (max-width: 1070px) {
+        .shop a:hover {
+          font-style: normal; }
+          .shop a:hover img {
+            filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+            transform: none; } }
+  .shop hr {
+    background-color: #C28165;
+    margin-bottom: 50px; }
+  .shop .collection-product {
+    width: 30%;
+    max-width: 550px;
+    text-align: center; }
+    .shop .collection-product img {
+      width: 98%;
+      height: auto;
+      border: solid 3px #1F1F1F;
+      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+      border-radius: 0;
+      aspect-ratio: 6/3;
+      object-fit: cover; }
+    .shop .collection-product h4 {
+      font-family: "Saudagar";
+      font-weight: 800;
+      font-size: 1.25rem; }
+    .shop .collection-product small {
+      font-size: 1rem;
+      line-height: 0.75; }
+    .shop .collection-product:hover small div {
+      text-decoration: none; }
+    @media only screen and (max-width: 1070px) {
+      .shop .collection-product {
+        max-width: 90%; } }
+  .shop h1 {
+    display: none;
+    margin: 0;
+    padding-top: 20px; }
+  .shop h2 {
+    color: #1F1F1F;
+    font-weight: 1000;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-style: normal;
+    margin-top: 0; }
+  @media only screen and (max-width: 1070px) {
+    .shop {
+      text-align: center; }
+      .shop .collection-product {
+        width: 100%;
+        margin: 0 auto; }
+      .shop h2 {
+        margin-bottom: 20px; } }
+
 .shop-nav {
   padding: 20px;
   background-color: rgba(119, 141, 121, 0.8);
@@ -5352,19 +5398,10 @@ nav.header-menu-desktop a {
         gap: 0; }
         .shop-nav ul .button {
           width: 90vw;
-          max-width: 350px; }
-          .shop-nav ul .button:hover {
-            background-color: #D8B56E;
-            color: #1F1F1F; }
-          .shop-nav ul .button.selected:hover {
-            background-color: #BC4749;
-            color: #F1EDE2; } }
+          max-width: 350px; } }
   .shop-nav .button {
     height: 40px;
     cursor: pointer; }
-    .shop-nav .button:hover {
-      background-color: #BC4749;
-      color: #F1EDE2; }
     .shop-nav .button.selected {
       background-color: #BC4749;
       color: #F1EDE2; }
@@ -5385,8 +5422,7 @@ nav.header-menu-desktop a {
   align-items: center;
   background-color: rgba(214, 208, 192, 0.8); }
   .product .product-image img {
-    width: 30%;
-    max-width: 600px;
+    max-width: 450px;
     height: auto;
     object-fit: cover;
     border: solid #1F1F1F 3px;
@@ -5402,7 +5438,7 @@ nav.header-menu-desktop a {
     .product .product-main hr {
       background-color: #BC4749;
       margin: 10px 0;
-      height: 4px; }
+      height: 3px; }
   @media only screen and (max-width: 1070px) {
     .product {
       flex-direction: column;
@@ -5415,8 +5451,6 @@ nav.header-menu-desktop a {
         .product .product-main button {
           margin: 20px auto 0;
           width: 80%; }
-          .product .product-main button:hover {
-            background-color: #D8B56E; }
       .product .product-image img {
         width: 100%; } }
 
@@ -5454,55 +5488,6 @@ nav.header-menu-desktop a {
         .shop-disclaimers .text-box p {
           max-width: 100%; } }
 
-.shop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(214, 208, 192, 0.8);
-  padding: 30px; }
-  .shop .recommended-product {
-    max-width: 350px; }
-    .shop .recommended-product img {
-      border: solid 3px #1F1F1F;
-      filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-      border-radius: 0;
-      aspect-ratio: 6/3;
-      object-fit: cover; }
-    .shop .recommended-product h4 {
-      font-family: "Saudagar";
-      font-weight: 800;
-      font-size: 24px; }
-    .shop .recommended-product small {
-      font-size: 16px;
-      line-height: 0.75; }
-    .shop .recommended-product:hover small div {
-      text-decoration: none; }
-    @media only screen and (max-width: 1070px) {
-      .shop .recommended-product {
-        max-width: 90%; } }
-  .shop h1 {
-    display: none;
-    margin: 0;
-    padding-top: 20px; }
-  .shop h2 {
-    color: #1F1F1F;
-    font-size: 50px;
-    text-transform: uppercase;
-    font-style: normal;
-    margin-top: 0; }
-  @media only screen and (max-width: 1070px) {
-    .shop {
-      text-align: center; }
-      .shop .recommended-product {
-        width: 100%;
-        margin: 0 auto; }
-        .shop .recommended-product small {
-          font-size: 18px; }
-      .shop h2 {
-        font-size: 40px;
-        margin-bottom: 20px; } }
-
 .cart-main.with-discount {
   max-height: calc(100vh - 300px); }
 
@@ -5539,22 +5524,42 @@ nav.header-menu-desktop a {
   max-height: 100%;
   object-fit: cover; }
 
-.recommended-products-grid {
+.collection-products {
   display: flex;
-  max-width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%; }
+  .collection-products h3 {
+    font-family: "Saudagar";
+    color: #F1EDE2;
+    background-color: #778d79;
+    border: solid #1F1F1F 3px;
+    font-size: 2.5rem;
+    padding: 20px 50px;
+    max-width: 100%;
+    text-align: center; }
+    @media only screen and (max-width: 1070px) {
+      .collection-products h3 {
+        width: 70%;
+        font-size: 1.5rem;
+        padding: 50px;
+        margin: 0; } }
+
+.collection-products-grid {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 95%;
   min-width: 360px;
   gap: 30px; }
   @media only screen and (max-width: 1070px) {
-    .recommended-products-grid {
+    .collection-products-grid {
       flex-direction: column;
       min-width: 90%; } }
 
-.recommended-product img {
-  height: auto; }
-
 .collections-grid {
   display: grid;
-  grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
   margin-bottom: 2rem; }
 
@@ -5576,19 +5581,18 @@ nav.header-menu-desktop a {
 
 .product-item img {
   height: auto;
-  width: 100%; }
+  width: 98%; }
 
 .product-nav {
+  width: 100%;
+  padding: 15px 5%;
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: rgba(119, 141, 121, 0.8);
-  border-bottom: solid #1F1F1F 3px; }
+  border-top: solid #1F1F1F 3px; }
   .product-nav .button {
-    width: 500px; }
-  @media only screen and (max-width: 1070px) {
-    .product-nav .button {
-      width: 300px; } }
+    max-width: 100%;
+    font-size: 0.9rem; }
 
 .product h1 {
   margin-top: 0; }
@@ -5618,10 +5622,8 @@ nav.header-menu-desktop a {
   padding: 0.25rem 0.5rem; }
 
 @media only screen and (max-width: 1070px) {
-  .recommended-products {
-    min-width: 95%; }
-  .recommended-products-grid {
-    grid-template-columns: repeat(1, 1fr); } }
+  .collection-products {
+    min-width: 95%; } }
 
 :root {
   background-image: url("./../../public/assets/wallpaper.png");
@@ -5661,6 +5663,8 @@ nav.header-menu-desktop a {
     overflow-y: hidden; }
     :root.aside-open header * {
       animation: none; }
+    :root.aside-open body {
+      overflow-y: hidden; }
     @media only screen and (max-width: 480px) {
       :root.aside-open body {
         display: flex;
@@ -5810,9 +5814,6 @@ main {
       main .contact-nav ul .button {
         height: 40px;
         cursor: pointer; }
-        main .contact-nav ul .button:hover {
-          background-color: #BC4749;
-          color: #F1EDE2; }
         main .contact-nav ul .button.selected {
           background-color: #BC4749;
           color: #F1EDE2; }
@@ -5823,13 +5824,7 @@ main {
           gap: 0; }
           main .contact-nav ul .button {
             width: 90vw;
-            max-width: 350px; }
-            main .contact-nav ul .button:hover {
-              background-color: #D8B56E;
-              color: #1F1F1F; }
-            main .contact-nav ul .button.selected:hover {
-              background-color: #BC4749;
-              color: #F1EDE2; } }
+            max-width: 350px; } }
   main .contact-content {
     background-color: rgba(121, 79, 62, 0.8);
     padding: 30px 10%; }
@@ -5961,8 +5956,7 @@ main {
         main .contact-content .contact-form .button img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
         main .contact-content .contact-form .button:hover {
-          cursor: pointer;
-          background-color: #778d79; }
+          cursor: pointer; }
     @media only screen and (max-width: 1070px) {
       main .contact-content {
         padding: 20px; }
@@ -5980,29 +5974,7 @@ main {
           max-width: 70%;
           width: 100%;
           margin-left: 0;
-          margin-top: 15px !important; }
-          main .contact-content .button:hover {
-            background-color: #BC4749 !important; } }
-  main .recommended-products {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    main .recommended-products h3 {
-      font-family: "Saudagar";
-      color: #F1EDE2;
-      background-color: #778d79;
-      border: solid #1F1F1F 3px;
-      font-size: 2.5rem;
-      padding: 20px 50px;
-      max-width: 100%;
-      text-align: center; }
-      @media only screen and (max-width: 1070px) {
-        main .recommended-products h3 {
-          width: 70%;
-          font-size: 1.5rem;
-          padding: 50px;
-          margin: 0; } }
+          margin-top: 15px !important; } }
   main .retail-info {
     display: flex;
     height: 350px;
@@ -6282,9 +6254,7 @@ main {
             main .home-taproom .menu-buttons .button img {
               width: 20px; }
             main .home-taproom .menu-buttons .button.mobile-only {
-              display: flex; }
-            main .home-taproom .menu-buttons .button:hover img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
+              display: flex; } }
   main .taproom-banner {
     margin: 0;
     padding: 0;
@@ -6325,11 +6295,6 @@ main {
         margin-left: 40px; }
         main .home-events .home-events-content .button img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-        main .home-events .home-events-content .button:hover {
-          background-color: #D8B56E;
-          color: #1F1F1F; }
-          main .home-events .home-events-content .button:hover img {
-            filter: none; }
       main .home-events .home-events-content hr {
         background-color: #C28165;
         border-left: none;
@@ -6347,11 +6312,6 @@ main {
           width: 70% !important;
           margin: 15px auto !important;
           margin-top: 20px !important; }
-          main .home-events .button:hover {
-            background-color: #BC4749 !important;
-            color: #F1EDE2 !important; }
-            main .home-events .button:hover img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important; }
         main .home-events .events-photo {
           height: 350px;
           max-width: 100%;
@@ -6407,22 +6367,12 @@ main {
           cursor: pointer; }
           main .home-newsletter .newsletter-content form .button img {
             filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-          main .home-newsletter .newsletter-content form .button:hover {
-            background-color: #D8B56E;
-            color: #1F1F1F; }
-            main .home-newsletter .newsletter-content form .button:hover img {
-              filter: none; }
           main .home-newsletter .newsletter-content form .button:disabled {
             cursor: default;
             background: #778d79;
             color: #F1EDE2; }
             main .home-newsletter .newsletter-content form .button:disabled img {
               filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
-            main .home-newsletter .newsletter-content form .button:disabled:hover {
-              background: #778d79;
-              color: #F1EDE2; }
-              main .home-newsletter .newsletter-content form .button:disabled:hover img {
-                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
     @media only screen and (max-width: 1070px) {
       main .home-newsletter {
         padding: 20px; }
@@ -6431,12 +6381,7 @@ main {
           main .home-newsletter .newsletter-content p {
             font-size: 1.1rem; }
           main .home-newsletter .newsletter-content form {
-            gap: 5px; }
-            main .home-newsletter .newsletter-content form .button:hover {
-              background: #778d79;
-              color: #F1EDE2; }
-              main .home-newsletter .newsletter-content form .button:hover img {
-                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); } }
+            gap: 5px; } }
     @media only screen and (max-width: 480px) {
       main .home-newsletter form input {
         max-width: 85%; } }
@@ -6633,13 +6578,7 @@ main {
         align-items: center;
         justify-content: center;
         height: 70px;
-        margin-top: 10px; }
-      main .taproom-events .fc-button:hover, main .taproom-events .fc-button:focus {
-        background-color: #D8B56E !important;
-        color: #1F1F1F !important; }
-      main .taproom-events .fc-button:disabled:hover {
-        background-color: #778d79 !important;
-        color: #F6F6F6 !important; } }
+        margin-top: 10px; } }
 
 @media only screen and (max-width: 1070px) {
   * {

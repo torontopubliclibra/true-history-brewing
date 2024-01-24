@@ -71,6 +71,10 @@
       animation: none;
     }
 
+    body {
+      overflow-y: hidden;
+    }
+
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
       body {
@@ -290,10 +294,6 @@ main {
         height: 40px;
         cursor: pointer;
 
-        &:hover {
-          background-color: $color4;
-          color: $light;
-        }
         &.selected {
           background-color: $color4;
           color: $light;
@@ -310,14 +310,14 @@ main {
           width: 90vw;
           max-width: 350px;
 
-          &:hover {
-            background-color: $color2;
-            color: $black;
-          }
-          &.selected:hover {
-            background-color: $color4;
-            color: $light;
-          }
+          // &:hover {
+          //   background-color: $color2;
+          //   color: $black;
+          // }
+          // &.selected:hover {
+          //   background-color: $color4;
+          //   color: $light;
+          // }
         }
       }
     }
@@ -509,7 +509,7 @@ main {
 
         &:hover {
           cursor: pointer;
-          background-color: $color1;
+          // background-color: $color1;
         }
       }
     }
@@ -540,9 +540,9 @@ main {
         margin-left: 0;
         margin-top: 15px !important;
 
-        &:hover {
-          background-color: $color4 !important;
-        }
+        // &:hover {
+        //   background-color: $color4 !important;
+        // }
       }
     }
 
@@ -557,31 +557,6 @@ main {
         
     //   }
     // }
-  }
-
-  .recommended-products {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h3 {
-      font-family: "Saudagar";
-      color: $light;
-      background-color: $color1;
-      border: $default-border;
-      font-size: 2.5rem;
-      padding: 20px 50px;
-      max-width: 100%;
-      text-align: center;
-
-      // responsive to tablet
-      @media only screen and (max-width: $tablet) {
-        width: 70%;
-        font-size: 1.5rem;
-        padding: 50px;
-        margin: 0;
-      }
-    }
   }
 
   .retail-info {
@@ -970,11 +945,6 @@ main {
           &.mobile-only {
             display: flex;
           }
-          &:hover {
-            img {
-              filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-            }
-          }
         }
       }
     }
@@ -1026,13 +996,13 @@ main {
         img {
           filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
         }
-        &:hover {
-          background-color: $color2;
-          color: $black;
-          img {
-            filter: none;
-          }
-        }
+        // &:hover {
+        //   background-color: $color2;
+        //   color: $black;
+        //   img {
+        //     filter: none;
+        //   }
+        // }
       }
       hr {
         background-color: $color3;
@@ -1057,13 +1027,13 @@ main {
         width: 70% !important;
         margin: 15px auto !important;
         margin-top: 20px !important;
-        &:hover {
-          background-color: $color4 !important;
-          color: $light !important;
-          img {
-            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important;
-          }
-        }
+        // &:hover {
+        //   background-color: $color4 !important;
+        //   color: $light !important;
+        //   img {
+        //     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important;
+        //   }
+        // }
       }
 
       .events-photo {
@@ -1135,13 +1105,13 @@ main {
           }
           justify-content: space-between;
           cursor: pointer;
-          &:hover {
-            background-color: $color2;
-            color: $black;
-            img {
-              filter: none;
-            }
-          }
+          // &:hover {
+          //   background-color: $color2;
+          //   color: $black;
+          //   img {
+          //     filter: none;
+          //   }
+          // }
           &:disabled {
             cursor: default;
             background: $color1;
@@ -1149,13 +1119,13 @@ main {
             img {
               filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
             }
-            &:hover {
-              background: $color1;
-              color: $light;
-              img {
-                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-              }
-            }
+            // &:hover {
+            //   background: $color1;
+            //   color: $light;
+            //   img {
+            //     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            //   }
+            // }
           }
         }
       }
@@ -1174,13 +1144,13 @@ main {
         form {
           gap: 5px;
           .button {
-            &:hover {
-              background: $color1;
-              color: $light;
-              img {
-                filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-              }
-            }
+            // &:hover {
+            //   background: $color1;
+            //   color: $light;
+            //   img {
+            //     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+            //   }
+            // }
           }
         }
       }
@@ -1455,16 +1425,16 @@ main {
         height: 70px;
         margin-top: 10px;
       }
-      .fc-button {
-        &:hover, &:focus {
-          background-color: $color2 !important;
-          color: $black !important;
-        }
-        &:disabled:hover {
-          background-color: $color1 !important;
-          color: $white !important;
-        }
-      }
+      // .fc-button {
+      //   &:hover, &:focus {
+      //     background-color: $color2 !important;
+      //     color: $black !important;
+      //   }
+      //   &:disabled:hover {
+      //     background-color: $color1 !important;
+      //     color: $white !important;
+      //   }
+      // }
     }
   }
 }
