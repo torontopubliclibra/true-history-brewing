@@ -31,13 +31,13 @@ export function Hours() {
     };
 
     return <div className="hours">
-      <h4>Taproom Hours</h4>
+      <h3>Taproom Hours</h3>
       <div className="diamond-border">
-        <img src={diamond} className="button-icon" />
-        <img src={diamond} className="button-icon" />
-        <img src={diamond} className="button-icon" />
-        <img src={diamond} className="button-icon" />
-        <img src={diamond} className="button-icon" />
+        <img src={diamond} className="button-icon" alt="decorative diamond icon" />
+        <img src={diamond} className="button-icon" alt="decorative diamond icon" />
+        <img src={diamond} className="button-icon" alt="decorative diamond icon" />
+        <img src={diamond} className="button-icon" alt="decorative diamond icon" />
+        <img src={diamond} className="button-icon" alt="decorative diamond icon" />
       </div>
       <ul className='schedule'>
         { formattedHours }

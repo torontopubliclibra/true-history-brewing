@@ -25,10 +25,10 @@ import appStyles from './styles/app.css';
 
 // asset imports
 import favicon from '../public/favicon.svg';
-import wallpaper from '../public/assets/wallpaper.png';
-import woodenBackground from '../public/assets/wooden-bg.png';
-import logo from '../public/assets/thb-logo.png';
-import icon from '../public/assets/thb-icon.png';
+import wallpaper from '../public/assets/wallpaper.webp';
+import woodenBackground from '../public/assets/wooden-bg.webp';
+import logo from '../public/assets/thb-logo.webp';
+import icon from '../public/assets/thb-icon.webp';
 
 // should revalidate function
 /**
@@ -195,8 +195,6 @@ export default function App() {
       }, 400);
     
     } else {
-
-      window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
 
       if (location.pathname === '/') {
         setBodyTags("landing");

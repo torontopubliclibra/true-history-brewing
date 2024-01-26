@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom'
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
-import beerCans from './../../public/assets/beer-cans.png';
+import beerCans from './../../public/assets/beer-cans.webp';
 import clock from './../../public/assets/icons/clock.svg';
 import beer from './../../public/assets/icons/beer.svg';
 import basket from './../../public/assets/icons/basket.svg';
@@ -12,8 +12,8 @@ import basket from './../../public/assets/icons/basket.svg';
  */
 export const meta = () => {
   return [
-    {title: 'Retail | True History Brewing'},
-    {description: 'Brewing Low & Slow'},
+    {title: 'True History Brewing | Retail'},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 
@@ -96,11 +96,11 @@ export default function Homepage() {
       </section>
       <section className="retail-info">
         <div className="retail-buttons">
-          <Link to="/taproom#info" className='button button-quaternary'>Taproom hours<img src={clock} className="button-icon"/></Link>
-          <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-quaternary'>Beers on tap<img src={beer} className="button-icon"/></Link>
-          <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon"/></Link>
+          <Link to="/taproom#info" className='button button-quaternary'>Taproom hours<img src={clock} className="button-icon" alt="clock icon" /></Link>
+          <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-quaternary'>Beers on tap<img src={beer} className="button-icon" alt="beer icon" /></Link>
+          <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon" alt="shopping basket icon" /></Link>
         </div>
-        <img src={beerCans} className="retail-photo" alt="" />
+        <img src={beerCans} className="retail-photo" alt="Film photo of a selection of THB beer cans on a wooden ledge" />
       </section>
       <section className="retail-content" id="items">
         <h3>What's in the Fridge?</h3>

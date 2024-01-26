@@ -7,9 +7,9 @@ import { Link } from '@remix-run/react';
 import { Hours } from './../components/Hours';
 
 // asset imports
-import logo from './../../public/assets/thb-logo.png';
-import barSketch from './../../public/assets/bar-sketch.png';
-import exteriorPhoto from './../../public/assets/exterior-photo.png';
+import logo from './../../public/assets/thb-logo.webp';
+import barSketch from './../../public/assets/bar-sketch.webp';
+import exteriorPhoto from './../../public/assets/exterior-photo.webp';
 import clock from './../../public/assets/icons/clock.svg';
 import beer from './../../public/assets/icons/beer.svg';
 import retail from './../../public/assets/icons/retail.svg';
@@ -23,7 +23,7 @@ import mail from './../../public/assets/icons/mail.svg';
 export const meta = () => {
   return [
     {title: 'True History Brewing'},
-    {description: 'Brewing Low & Slow'},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 
@@ -143,16 +143,16 @@ export default function Homepage() {
         </section>
         <section className="home-taproom">
           <div className="sketch-address">
-            <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom bar" />
+            <img src={barSketch} className="bar-sketch" alt="A black and white sketch of the True History taproom" />
             <p className='address'>1154 St. Clair Avenue West, Toronto, Ontario</p>
           </div>
           <hr/>
           <Hours/>
           <div className="menu-buttons">
-            <Link to="/taproom#info" className='button button-tertiary mobile-only'>"What are your hours?"<img src={clock} className="button-icon"/></Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>"What's on tap right now?"<img src={beer} className="button-icon"/></Link>
-            <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-tertiary'>"What's in the fridge?"<img src={retail} className="button-icon"/></Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary'>"Do you guys have food?"<img src={food} className="button-icon"/></Link>
+            <Link to="/taproom#info" className='button button-tertiary mobile-only'>"What are your hours?"<img src={clock} className="button-icon" alt="clock icon" /></Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>"What's on tap right now?"<img src={beer} className="button-icon" alt="beer icon" /></Link>
+            <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-tertiary'>"What's in the fridge?"<img src={retail} className="button-icon" alt="retail shop icon" /></Link>
+            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary' alt="knife and fork icon" >"Do you guys have food?"<img src={food} className="button-icon" alt="knife and fork icon" /></Link>
           </div>
         </section>
         <section className="home-events">
@@ -163,7 +163,7 @@ export default function Homepage() {
             <ul className="events-list">
               {formattedEvents}
             </ul>
-            <Link to="/taproom#calendar" className='button button-primary'>Check out our calendar <img src={calendar} className="button-icon" /></Link>
+            <Link to="/taproom#calendar" className='button button-primary'>Check out our calendar <img src={calendar} className="button-icon" alt="calendar icon" /></Link>
           </div>
         </section>
         <section className="home-newsletter">
@@ -178,8 +178,8 @@ export default function Homepage() {
                 required
               />
               { subscribeActive
-                ? <button type="submit" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" /></button>
-                : <button type="submit" className='button button-primary' disabled >Subscribed! <img src={mail} className="button-icon" /></button>
+                ? <button type="submit" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" alt="email icon" /></button>
+                : <button type="submit" className='button button-primary' disabled >Subscribed! <img src={mail} className="button-icon" alt="email icon" /></button>
               }
             </form>
           </div>

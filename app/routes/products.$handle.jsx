@@ -5,13 +5,15 @@ import { Await, Link, useLoaderData } from '@remix-run/react';
 import { Image, Money, VariantSelector, getSelectedProductOptions, CartForm } from '@shopify/hydrogen';
 import { getVariantUrl } from '~/utils';
 import arrowLeft from './../../public/assets/icons/arrow-left.svg';
-import basket from './../../public/assets/icons/basket.svg';
 
 /**
  * @type {MetaFunction<typeof loader>}
  */
 export const meta = ({data}) => {
-  return [{title: `${data?.product.title ?? ''} | True History Brewing`}];
+  return [
+    {title: `True History Brewing | Online shop | ${data?.product.title ?? ''}`},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
+  ];
 };
 
 /**
@@ -104,20 +106,20 @@ export default function Product() {
   const {selectedVariant} = product;
   return (
     <>
-      <div className="product">
+      <section className="product-nav">
+        <ul>
+          <li>
+            <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" alt="left arrow icon" />Back</Link>
+          </li>
+        </ul>
+      </section>
+      <section className="product">
         <ProductImage image={selectedVariant?.image} />
         <ProductMain
           selectedVariant={selectedVariant}
           product={product}
           variants={variants}
         />
-      </div>
-      <section className="product-nav">
-        <ul>
-          <li>
-            <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" />Back</Link>
-          </li>
-        </ul>
       </section>
     </>
   );

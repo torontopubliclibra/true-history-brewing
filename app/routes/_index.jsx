@@ -6,7 +6,7 @@ import { Link } from '@remix-run/react';
 import BarLoader from "react-spinners/BarLoader";
 
 // asset imports
-import icon from './../../public/assets/thb-icon.png';
+import icon from './../../public/assets/thb-icon.webp';
 import flourishLeft from './../../public/assets/icons/flourish-left.svg';
 import flourishRight from './../../public/assets/icons/flourish-right.svg';
 
@@ -16,7 +16,7 @@ import flourishRight from './../../public/assets/icons/flourish-right.svg';
 export const meta = () => {
   return [
     {title: 'True History Brewing'},
-    {description: 'Brewing Low & Slow'},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 
@@ -62,9 +62,9 @@ export default function Homepage() {
         <p>By clicking Enter, you verify that you are 19 years of age or older</p>
         <div className="landing-buttons">
           <Link onClick={() => handleAgeVerification()} to="/home" className='button button-primary decorative'>
-            <img src={flourishLeft} className="flourish" />
+            <img src={flourishLeft} className="flourish" alt="button flourish" />
             Enter
-            <img src={flourishRight} className="flourish" />
+            <img src={flourishRight} className="flourish" alt="button flourish" />
           </Link>
           <Link to="https://google.com" className='button button-primary'>
             Exit

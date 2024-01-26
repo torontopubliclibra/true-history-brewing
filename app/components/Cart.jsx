@@ -179,7 +179,7 @@ function CartLineRemoveButton({lineIds}) {
       inputs={{lineIds}}
     >
       <button type="submit">
-        <img src={remove} className="cart-icon" />
+        <img src={remove} className="cart-icon" alt="remove from cart icon" />
       </button>
     </CartForm>
   );
@@ -203,7 +203,7 @@ function CartLineQuantity({line}) {
           name="decrease-quantity"
           value={prevQuantity}
         >
-          <img src={subtract} className="cart-icon" />
+          <img src={subtract} className="cart-icon" alt="decrease quantity icon" />
         </button>
       </CartLineUpdateButton>
       &nbsp;
@@ -213,7 +213,7 @@ function CartLineQuantity({line}) {
           name="increase-quantity"
           value={nextQuantity}
         >
-          <img src={add} className="cart-icon" />
+          <img src={add} className="cart-icon" alt="increase quantity icon" />
         </button>
       </CartLineUpdateButton>
       &nbsp;
@@ -270,7 +270,7 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
         }}
       >
         Start shopping
-        <img src={basket} className="button-icon" />
+        <img src={basket} className="button-icon" alt="shopping basket icon"  />
       </Link>
     </div>
   );

@@ -196,7 +196,7 @@
     margin: 0;
 
     hr {
-      background-color: $color4;
+      background-color: $color3;
       margin: 10px 0;
       height: 3px;
     }
@@ -392,7 +392,7 @@
   display: flex;
   align-items: center;
   background-color: rgba($color1, 0.8);
-  border-top: $default-border;
+  border-bottom: $default-border;
 
   .button {
     max-width: 100%;

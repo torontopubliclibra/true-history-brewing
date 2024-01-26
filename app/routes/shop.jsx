@@ -9,8 +9,8 @@ import { Image, getPaginationVariables, Money } from '@shopify/hydrogen';
  */
 export const meta = () => {
   return [
-    {title: 'Online Shop | True History Brewing'},
-    {description: 'Brewing Low & Slow'},
+    {title: 'True History Brewing | Online shop'},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 
