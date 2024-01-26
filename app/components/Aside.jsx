@@ -45,7 +45,7 @@ function CloseAside({updateAsideOpen}) {
       onClick={
         () => updateAsideOpen("", false)
       }>
-      <img src={arrowRight} className="button-icon" />
+      <img src={arrowRight} className="button-icon" alt="right arrow icon"  />
     </a>
   );
 }

@@ -9,7 +9,7 @@
 @import 'partials/shop';
 
 :root {
-  background-image: url('./../../public/assets/wallpaper.png');
+  background-image: url('./../../public/assets/wallpaper.webp');
   background-size: 100%;
   background-color: $light;
   width: 100vw;
@@ -32,7 +32,7 @@
   }
 
   &.landing {
-    background-image: url('./../../public/assets/wallpaper.png') !important;
+    background-image: url('./../../public/assets/wallpaper.webp') !important;
 
     body {
       padding-top: 2.5vh;
@@ -47,7 +47,7 @@
 
   // responsive to mobile
   @media only screen and (max-width: $mobile) {
-    background-image: url('./../../public/assets/wooden-bg.png');
+    background-image: url('./../../public/assets/wooden-bg.webp');
     background-size: 100%;
 
     &.aside-closed {
@@ -66,6 +66,8 @@
 
   &.aside-open {
     overflow-y: hidden;
+    position: absolute;
+    top: 0;
 
     header * {
       animation: none;
@@ -73,7 +75,6 @@
 
     body {
       overflow-y: hidden;
-      position: relative;
     }
 
     // responsive to mobile
@@ -265,7 +266,7 @@ h3.demo-text {
 }
 
 main {
-  background-image: url('./../../public/assets/wooden-bg.png');
+  background-image: url('./../../public/assets/wooden-bg.webp');
   background-size: 100%;
   border: $default-border;
   filter: $default-shadow;
@@ -310,15 +311,6 @@ main {
         .button {
           width: 90vw;
           max-width: 350px;
-
-          // &:hover {
-          //   background-color: $color2;
-          //   color: $black;
-          // }
-          // &.selected:hover {
-          //   background-color: $color4;
-          //   color: $light;
-          // }
         }
       }
     }
@@ -368,10 +360,17 @@ main {
       }
 
       .double-field {
-        min-width: 75%;
+        min-width: 75% !important;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+          min-width: 100% !important;
+          justify-content: center;
+          gap: 15%;
+        }
       }
 
       .medium-field {
@@ -381,14 +380,24 @@ main {
         input {
           width: 100%;
         }
+
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+          width: 40%;
+        }
       }
 
       .small-field {
-        width: 25%;
+        width: 35%;
         justify-content: left;
 
         input {
           width: 100%;
+        }
+
+        // responsive to mobile
+        @media only screen and (max-width: $mobile) {
+          width: 30%;
         }
 
         .radio {
@@ -501,16 +510,9 @@ main {
       .button {
         width: 250px;
         padding: 20px 30px;
-        background: $color4;
-        color: $light;
-
-        img {
-          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-        }
 
         &:hover {
           cursor: pointer;
-          // background-color: $color1;
         }
       }
     }
@@ -540,24 +542,8 @@ main {
         width: 100%;
         margin-left: 0;
         margin-top: 15px !important;
-
-        // &:hover {
-        //   background-color: $color4 !important;
-        // }
       }
     }
-
-    // // responsive to mobile
-    // @media only screen and (max-width: $tablet) {
-    //   .contact-form {
-    //     max-width: 70%;
-    //     width: 100%;
-    //     margin: 20px auto;
-    //     margin-left: 7%;
-
-        
-    //   }
-    // }
   }
 
   .retail-info {
@@ -858,6 +844,7 @@ main {
       margin-bottom: 0;
       .bar-sketch {
         object-fit: cover;
+        max-width: 650px;
         width: 95%;
         height: calc(100% - 90px);
         background-color: $light;
@@ -980,6 +967,7 @@ main {
     .events-photo {
       animation: $secondary-animation;
       max-width: 45%;
+      max-height: 550px;
       border-right: $default-border;
       border-radius: 0;
       object-fit: cover;
@@ -990,20 +978,8 @@ main {
       .button {
         max-width: 75%;
         justify-content: space-between;
-        background-color: $color4;
-        color: $light;
         margin-top: 15px;
         margin-left: 40px;
-        img {
-          filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-        }
-        // &:hover {
-        //   background-color: $color2;
-        //   color: $black;
-        //   img {
-        //     filter: none;
-        //   }
-        // }
       }
       hr {
         background-color: $color3;
@@ -1028,13 +1004,6 @@ main {
         width: 70% !important;
         margin: 15px auto !important;
         margin-top: 20px !important;
-        // &:hover {
-        //   background-color: $color4 !important;
-        //   color: $light !important;
-        //   img {
-        //     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%) !important;
-        //   }
-        // }
       }
 
       .events-photo {
@@ -1099,34 +1068,13 @@ main {
         }
         .button {
           padding: 20px 30px;
-          background: $color1;
-          color: $light;
-          img {
-            filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-          }
           justify-content: space-between;
           cursor: pointer;
-          // &:hover {
-          //   background-color: $color2;
-          //   color: $black;
-          //   img {
-          //     filter: none;
-          //   }
-          // }
           &:disabled {
             cursor: default;
-            background: $color1;
-            color: $light;
             img {
               filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
             }
-            // &:hover {
-            //   background: $color1;
-            //   color: $light;
-            //   img {
-            //     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-            //   }
-            // }
           }
         }
       }

@@ -12,7 +12,10 @@ import { CartMain } from '~/components/Cart';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: `True History Brewing - Online Store - Cart`}];
+  return [
+    {title: 'True History Brewing | Online shop | Cart'},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
+  ];
 };
 
 /**

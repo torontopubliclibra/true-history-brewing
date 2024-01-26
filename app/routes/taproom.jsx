@@ -9,8 +9,8 @@ import { Hours } from './../components/Hours';
 import { Calendar } from './../components/Calendar';
 
 // asset imports
-import patioPhoto from './../../public/assets/patio-photo.png';
-import taproomPhoto from './../../public/assets/taproom-photo.png';
+import patioPhoto from './../../public/assets/patio-photo.webp';
+import taproomPhoto from './../../public/assets/taproom-photo.webp';
 import beer from './../../public/assets/icons/beer.svg';
 import wine from './../../public/assets/icons/wine.svg';
 import drink from './../../public/assets/icons/drink.svg';
@@ -24,8 +24,8 @@ import basket from './../../public/assets/icons/basket.svg';
  */
 export const meta = () => {
   return [
-    {title: 'Taproom | True History Brewing'},
-    {description: 'Brewing Low & Slow'},
+    {title: 'True History Brewing | Taproom'},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 
@@ -170,8 +170,8 @@ export default function Homepage() {
             <Hours/>
             <p className="address">1154 St. Clair Avenue West, Toronto, Ontario</p>
             <div className="taproom-buttons">
-              <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Directions<img src={compass} className="button-icon"/></Link>
-              <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Bottle shop<img src={retail} className="button-icon"/></Link>
+              <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Directions<img src={compass} className="button-icon" alt="compass icon" /></Link>
+              <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Bottle shop<img src={retail} className="button-icon" alt="retail shop icon" /></Link>
             </div>
           </div>
         </section>
@@ -181,22 +181,22 @@ export default function Homepage() {
           <ul className='menu-nav'>
             <li>
               <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
-                Beers <img src={beer} className="button-icon"/>
+                Beers <img src={beer} className="button-icon" alt="beer icon" />
               </button>
             </li>
             <li>
               <button onClick={() => handleMenuChange("wineSeltzersEtc")} className={buttonClass("wineSeltzersEtc")}>
-                Wine, Seltzers, Etc. <img src={wine} className="button-icon"/>
+                Wine, Seltzers, Etc. <img src={wine} className="button-icon" alt="stemmed glass icon" />
               </button>
             </li>
             <li>
               <button onClick={() => handleMenuChange("nonAlc")} className={buttonClass("nonAlc")}>
-                Non-alcoholic <img src={drink} className="button-icon"/>
+                Non-alcoholic <img src={drink} className="button-icon" alt="drink icon" />
               </button>
             </li>
             <li>
               <button onClick={() => handleMenuChange("food")} className={buttonClass("food")}>
-                Food <img src={food} className="button-icon"/>
+                Food <img src={food} className="button-icon" alt="knife and fork icon" />
               </button>
             </li>
           </ul>
@@ -206,9 +206,9 @@ export default function Homepage() {
         </section>
         <section className="mobile-taproom-buttons">
           <div className="buttons">
-            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Directions<img src={compass} className="button-icon"/></Link>
-            <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Retail items<img src={retail} className="button-icon"/></Link>
-            <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon"/></Link>
+            <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Directions<img src={compass} className="button-icon" alt="compass icon" /></Link>
+            <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Retail items<img src={retail} className="button-icon" alt="retail shop icon" /></Link>
+            <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon" alt="shopping basket icon" /></Link>
           </div>
         </section>
         <section className="taproom-events" id="calendar">

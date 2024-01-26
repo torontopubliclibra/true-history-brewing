@@ -1,7 +1,7 @@
 import { Suspense, useState, useEffect } from 'react';
 import { Await, Link, NavLink } from '@remix-run/react';
 import { useLocation } from 'react-router-dom';
-import icon from './../../public/assets/thb-icon.png';
+import icon from './../../public/assets/thb-icon.webp';
 import cart from './../../public/assets/icons/cart.svg';
 import home from './../../public/assets/icons/home.svg';
 import beer from './../../public/assets/icons/beer.svg';
@@ -102,7 +102,7 @@ export function HeaderMenu({viewport}) {
         to="/home"
         >
         <span className="nav-text">Home</span>
-        <img src={home} className="button-icon" />
+        <img src={home} className="button-icon" alt="home icon"  />
       </NavLink>
       <NavLink
         end
@@ -113,7 +113,7 @@ export function HeaderMenu({viewport}) {
         state={{ selectedMenu: "beers" }}
         >
         <span className="nav-text">Taproom</span>
-        <img src={beer} className="button-icon" />
+        <img src={beer} className="button-icon" alt="beer icon" />
       </NavLink>
       <NavLink
         end
@@ -124,7 +124,7 @@ export function HeaderMenu({viewport}) {
         state={{ selectedItems: "beers" }}
         >
         <span className="nav-text">Retail</span>
-        <img src={retail} className="button-icon" />
+        <img src={retail} className="button-icon" alt="retail shop icon" />
       </NavLink>
       <NavLink
         end
@@ -134,7 +134,7 @@ export function HeaderMenu({viewport}) {
         to="/shop"
         >
         <span className="nav-text">Online Shop</span>
-        <img src={basket} className="button-icon" />
+        <img src={basket} className="button-icon" alt="shopping basket icon" />
       </NavLink>
       <NavLink
         end
@@ -144,14 +144,14 @@ export function HeaderMenu({viewport}) {
         to="/contact"
         >
         <span className="nav-text">Contact</span>
-        <img src={contact} className="button-icon" />
+        <img src={contact} className="button-icon" alt="message icon" />
       </NavLink>
       <div className="mobile-only-links">
         <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
-          <img src={compass} className="button-icon compass" />
+          <img src={compass} className="button-icon compass" alt="compass icon" />
         </a>
         <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
-          <img src={instagram} className="button-icon" />
+          <img src={instagram} className="button-icon" alt="Instagram icon" />
         </a>
       </div>
     </nav>
@@ -168,7 +168,7 @@ function HeaderSubmenu({cart, aside, updateAsideOpen}) {
       <HeaderMenuMobileToggle aside={aside} updateAsideOpen={updateAsideOpen} />
       <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary mobile-hide'>
         Instagram
-        <img src={instagram} className="button-icon" />
+        <img src={instagram} className="button-icon" alt="Instagram icon" />
       </Link>
     </nav>
   );
@@ -178,14 +178,14 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
   if (aside.open && aside.id === "menu") {
     return (
       <a className="button button-primary menu-toggle menu-active" onClick={() => updateAsideOpen("menu", false)}>
-        <img src={mobileMenu} className="button-icon" />
+        <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
         <span className="button-label">Menu</span>
       </a>
     );
   } else if (aside.open && aside.id !== "cart") {
     return (
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
-        <img src={mobileMenu} className="button-icon" />
+        <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
         <span className="button-label">Menu</span>
       </a>
     );
@@ -193,7 +193,7 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
     return (
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
         <span className="button-label">Menu</span>
-        <img src={mobileMenu} className="button-icon" />
+        <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
       </a>
     );
   }
@@ -211,21 +211,21 @@ function CartBadge({count, aside, updateAsideOpen}) {
     return (
       <a className="button button-primary cart cart-active" onClick={() => updateAsideOpen("cart", false)}>
         <span className="button-label">Cart</span>({count})
-        <img src={cart} className="button-icon" />
+        <img src={cart} className="button-icon" alt="shopping cart icon" />
       </a>
     );
   } else if (aside.open && aside.id !== "cart") {
     return (
       <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
-        <img src={cart} className="button-icon" />
+        <img src={cart} className="button-icon" alt="shopping cart icon" />
       </a>
     );
   } else {
     return (
       <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
-        <img src={cart} className="button-icon" />
+        <img src={cart} className="button-icon" alt="shopping cart icon" />
       </a>
     );
   }

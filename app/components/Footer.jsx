@@ -20,14 +20,14 @@ export function Footer() {
   let footerButtons = (
     <div className="footer-buttons">
       <Link to="/contact" className='button button-primary'>
-       <img src={contact} className="button-icon" />
+       <img title="Link to contact page" src={contact} className="button-icon" alt="message icon" />
       </Link>
       <a onClick={scrollTop} className='button button-primary'>
         Scroll to top
-        <img src={arrowUp} className="button-icon" />
+        <img src={arrowUp} className="button-icon" alt="up arrow icon" />
       </a>
       <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
-        <img src={instagram} className="button-icon" />
+        <img title="Link to Instagram page" src={instagram} className="button-icon" alt="Instagram icon" />
       </Link>
     </div>
   )
@@ -36,14 +36,14 @@ export function Footer() {
     footerButtons = (
       <div className="footer-buttons">
         <div className='button button-primary selected'>
-          <img src={contact} className="button-icon" />
+          <img title="Link to contact page" src={contact} className="button-icon" alt="message icon" />
         </div>
         <a onClick={scrollTop} className='button button-primary'>
           Scroll to top
-          <img src={arrowUp} className="button-icon" />
+          <img src={arrowUp} className="button-icon" alt="up arrow icon" />
         </a>
         <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>
-          <img src={instagram} className="button-icon" />
+          <img title="Link to Instagram page" src={instagram} className="button-icon" alt="Instagram icon" />
         </Link>
       </div>
     )

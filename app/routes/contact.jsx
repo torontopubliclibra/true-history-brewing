@@ -6,8 +6,8 @@ import mail from './../../public/assets/icons/mail.svg';
  */
 export const meta = () => {
   return [
-    {title: 'Contact | True History Brewing'},
-    {description: 'Brewing Low & Slow'},
+    {title: 'True History Brewing | Contact'},
+    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 
@@ -57,6 +57,7 @@ export default function Homepage() {
     let [ businessName, setBusinessName ] = useState("");
     let [ businessAddress, setBusinessAddress ] = useState("");
     let [ eventDate, setEventDate ] = useState("");
+    let [ eventTime, setEventTime ] = useState("");
     let [ guests, setGuests ] = useState(0);
     let [ dining, setDining ] = useState(false);
     let [ special, setSpecial ] = useState("");
@@ -80,6 +81,9 @@ export default function Homepage() {
       }
       if (field == "eventDate") {
         setEventDate(event.target.value);
+      }
+      if (field == "eventTime") {
+        setEventTime(event.target.value);
       }
       if (field == "guests") {
 
@@ -194,7 +198,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
+          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" alt="email icon" /></button>
         </form>
       );
     } else if (contactForm == "licensee") {
@@ -244,10 +248,10 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
+          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" alt="email icon" /></button>
         </form>
       );
-    } else if (contactForm == "events") {
+    } else if (contactForm == "bookings") {
       return (
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-field">
@@ -268,16 +272,29 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("email", event)}
               required />
           </div>
-          <div className="form-field">
-            <label htmlFor="date">Event date:</label>
-            <input
-              type="date"
-              id="date"
-              min={minDate()}
-              max={maxDate()}
-              value={eventDate}
-              onChange={(event) => handleFieldChange("eventDate", event)}
-              required />
+          <div className="double-field">
+            <div className="medium-field">
+              <label htmlFor="date">Date:</label>
+              <input
+                type="date"
+                id="date"
+                min={minDate()}
+                max={maxDate()}
+                value={eventDate}
+                onChange={(event) => handleFieldChange("eventDate", event)}
+                required />
+            </div>
+            <div className="small-field">
+              <label htmlFor="date">Time:</label>
+              <input
+                type="time"
+                id="time"
+                min="12:00"
+                max="22:00"
+                value={eventTime}
+                onChange={(event) => handleFieldChange("eventTime", event)}
+                required />
+            </div>
           </div>
           <div className="double-field">
             <div className="medium-field">
@@ -337,7 +354,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("special", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" /></button>
+          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" alt="email icon" /></button>
         </form>
       );
     }
@@ -356,8 +373,8 @@ export default function Homepage() {
               </button>
             </li>
             <li>
-              <button onClick={() => handleContactChange("events")} className={buttonClass("events")}>
-                Event requests
+              <button onClick={() => handleContactChange("bookings")} className={buttonClass("bookings")}>
+                Booking requests
               </button>
             </li>
             <li>
