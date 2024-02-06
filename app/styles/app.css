@@ -5409,9 +5409,11 @@ nav.header-menu-desktop a {
       text-transform: uppercase;
       margin: 0;
       margin-bottom: 10px; }
+    .shop-disclaimers .text-box a {
+      text-decoration: underline; }
     .shop-disclaimers .text-box p {
       margin: 0;
-      font-size: 0.9rem; }
+      font-size: 1rem; }
   @media only screen and (max-width: 1070px) {
     .shop-disclaimers {
       padding: 20px; }
