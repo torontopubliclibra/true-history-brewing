@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { send } from 'emailjs-com';
 import mail from './../../public/assets/icons/mail.svg';
 
 /**
@@ -50,7 +51,6 @@ export default function Homepage() {
   let ContactForm = () => {
 
     let [ submitStatus, setSubmitStatus ] = useState('Send email');
-    let [ messageDetails, setMessageDetails ] = useState({});
     let [ name, setName ] = useState("");
     let [ email, setEmail ] = useState("");
     let [ message, setMessage ] = useState("");
@@ -115,41 +115,58 @@ export default function Homepage() {
 
       event.preventDefault();
       setSubmitStatus("Sending...");
-  
-      let newMessageDetails = {
-        name: name,
-        email: email,
-        message: message,
-      }
-      if (businessName) {
-        newMessageDetails.businessName = businessName;
-      }
-      if (businessAddress) {
-        newMessageDetails.businessAddress = businessAddress;
-      }
-      if (guests) {
-        newMessageDetails.guests = guests;
-      }
+
+      let newMessage = "";
+      
+      let diningStatus = "";
+
       if (dining) {
-        newMessageDetails.dining = dining;
-      }
-      if (special) {
-        newMessageDetails.special = special;
+        diningStatus = " (dining)";
       }
 
-      console.log(newMessageDetails);
-      setMessageDetails(newMessageDetails);
-  
-      // setMessageDetails(newMessageDetails);
-      // let response = await fetch("http://localhost:5000/contact", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json;charset=utf-8",
-      //   },
-      //   body: JSON.stringify(details),
-      // });
-      
-      setTimeout(() => {
+      if (contactForm == "general") {
+
+        newMessage = 
+        `Name: ${name}\n
+        Email address: ${email}\n
+        Message: ${message}`
+
+      } else if (contactForm == "licensee") {
+
+        newMessage = 
+        `Business name: ${businessName}\n
+        Business address: ${businessAddress}\n
+        Name: ${name}\n
+        Email address: ${email}\n
+        Message: ${message}`
+
+      } else if (contactForm == "bookings") {
+
+        newMessage = 
+        `Name: ${name}\n
+        Email address: ${email}\n
+        Date: ${eventDate}\n
+        Time: ${eventTime}\n
+        Number of guests: ${guests}${diningStatus}\n
+        Special requests: ${special}\n
+        Message: ${message}`
+
+      }
+
+      let messageDetails = {
+        name: name,
+        email: email,
+        message: newMessage,
+        message_type: contactForm,
+      }
+
+      send(
+        'service_6zkrsuq',
+        'template_d5dmvqm',
+        messageDetails,
+        '_7uAM_thaYesriP1U'
+      )
+      .then((response) => {
         setName("");
         setEmail("");
         setMessage("");
@@ -159,14 +176,15 @@ export default function Homepage() {
         setDining(false);
         setSpecial("");
         setSubmitStatus("Sent!");
-      }, 1000);
+        console.log('Sent!', response.status, response.text);
+      })
+      .catch((err) => {
+        console.log('Failed to send!', err);
+      });
 
       setTimeout(() => {
         setSubmitStatus("Send email");
       }, 5000);
-
-      // let result = await response.json();
-      // alert(result.status);
     };
 
     if (contactForm == "general") {

@@ -10,6 +10,7 @@ The website is built with React Remix, and uses [Hydrogen](https://shopify.dev/c
 - [Remix framework](https://remix.run)
 - [Hydrogen/Oxygen storefront](https://shopify.dev/custom-storefronts/hydrogen)
 - [Strapi CMS](https://strapi.io)
+- [EmailJS](https://emailjs.com)
 - [FullCalendar](https://fullcalendar.io)
 - [react-spinners](https://www.npmjs.com/package/react-spinners)
 - [RemixIcon](https://remixicon.com)

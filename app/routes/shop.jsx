@@ -118,7 +118,7 @@ export default function Homepage() {
       <section className="shop-disclaimers">
         <div className="text-box">
           <h3>Delivery & Pickup Conditions</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat laboris nisi ut tempor incididunt ut.</p>
+          <p>Products are shipped via <a href="https://shipnoble.com/" target="_blank">Ship Noble</a>. Minimum orders of $15. A $10 flat delivery rate applies for all orders under $100. Deliveries are fulfilled within 5 business days, and pickup is available within 24 hours at True History Brewing (1154 St. Clair Avenue West, Toronto, Ontario).</p>
         </div>
       </section>
     </>
