@@ -71,7 +71,7 @@ export default function Homepage() {
           </Link>
         </div>
         <div className="remember-user">
-          <label for="remember-user">
+          <label htmlFor="remember-user">
             Remember me on this device:
             <input
               type="checkbox"
@@ -80,7 +80,7 @@ export default function Homepage() {
               className={rememberUser ? "checked" : ""}
               onChange={handleCheckboxChange}
             />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
         </div>
       </div>
