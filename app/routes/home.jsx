@@ -128,7 +128,7 @@ export default function Homepage() {
   let handleSubscribe = async (event) => {
     event.preventDefault();
 
-    const response = await fetch('https://beer.us17.list-manage.com/subscribe/post?u=55337f4b502b69807ffce3fb4&id=3474a4e3a4&f_id=009949e0f0', {
+    const response = await fetch('/mailchimp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
