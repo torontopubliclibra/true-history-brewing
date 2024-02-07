@@ -125,13 +125,27 @@ export default function Homepage() {
     setEmail(event.target.value);
   }
 
-  let handleSubscribe = (event) => {
-
+  let handleSubscribe = async (event) => {
     event.preventDefault();
 
-    console.log(email + ' is now subscribed');
-    event.target.reset();
-    setSubscribeActive(false);
+    const response = await fetch('https://beer.us17.list-manage.com/subscribe/post?u=55337f4b502b69807ffce3fb4&id=3474a4e3a4&f_id=009949e0f0', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        EMAIL: email,
+      }).toString(),
+    });
+
+    if (response.ok) {
+      console.log(email + ' is now subscribed');
+      event.target.reset();
+      setSubscribeActive(false);
+    } else {
+      console.error('Failed to subscribe:', response.status);
+      // Handle error case
+    }
   }
 
   return (
