@@ -30,8 +30,8 @@ export const meta = () => {
 export default function Homepage() {
 
   const { events, currentDate } = useContext(StrapiContext);
-  const [ subscribeActive, setSubscribeActive ] = useState(true);
-  let [ email, setEmail ] = useState("");
+  // const [ subscribeActive, setSubscribeActive ] = useState(true);
+  // let [ email, setEmail ] = useState("");
 
   // parse time from string
   let parseDate = (string) => {
@@ -121,18 +121,35 @@ export default function Homepage() {
     }
   })
 
-  let handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  }
+  // let handleEmailChange = (event) => {
+  //   setEmail(event.target.value);
+  // }
 
-  let handleSubscribe = (event) => {
+  // let handleSubscribe = async (event) => {
 
-    event.preventDefault();
+  //   let subscriptionEmail = email;
 
-    console.log(email + ' is now subscribed');
-    event.target.reset();
-    setSubscribeActive(false);
-  }
+  //   event.preventDefault();
+
+  //   const response = await fetch('/mailchimp', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded',
+  //     },
+  //     body: new URLSearchParams({
+  //       EMAIL: subscriptionEmail,
+  //     }).toString(),
+  //   });
+
+  //   if (response.ok) {
+  //     console.log(email + ' is now subscribed');
+  //     event.target.reset();
+  //     setSubscribeActive(false);
+  //   } else {
+  //     console.error('Failed to subscribe:', response.status);
+  //     // Handle error case
+  //   }
+  // }
 
   return (
     <>
@@ -169,7 +186,8 @@ export default function Homepage() {
         <section className="home-newsletter">
           <div className="newsletter-content">
             <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
-            <form onSubmit={handleSubscribe}>
+            <a href="https://beer.us17.list-manage.com/subscribe/post?u=55337f4b502b69807ffce3fb4&id=3474a4e3a4" target="_blank" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" alt="email icon" /></a>
+            {/* <form onSubmit={handleSubscribe}>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -181,7 +199,7 @@ export default function Homepage() {
                 ? <button type="submit" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" alt="email icon" /></button>
                 : <button type="submit" className='button button-primary' disabled >Subscribed! <img src={mail} className="button-icon" alt="email icon" /></button>
               }
-            </form>
+            </form> */}
           </div>
         </section>
     </>
