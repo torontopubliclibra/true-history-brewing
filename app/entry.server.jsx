@@ -1,4 +1,4 @@
-// entry.server.jsx
+// imports
 import { RemixServer } from '@remix-run/react';
 import isbot from 'isbot';
 import { renderToReadableStream } from 'react-dom/server';
