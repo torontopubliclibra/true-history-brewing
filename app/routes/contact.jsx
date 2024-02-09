@@ -99,10 +99,8 @@ export default function Homepage() {
       if (field == "dining") {
         if (dining) {
           setDining(false);
-          console.log(false)
         } else {
           setDining(true);
-          console.log(true)
         }
       }
       if (field == "special") {
@@ -173,11 +171,11 @@ export default function Homepage() {
         setGuests(0);
         setDining(false);
         setSpecial("");
-        console.log('Sent!', response.status, response.text);
+        console.log('Email sent!', response.status, response.text);
         setContactForm("sent");
       })
       .catch((err) => {
-        console.log('Failed to send!', err);
+        console.log('Failed to send email!', err);
         setContactForm("error");
       });
     };

@@ -600,12 +600,13 @@ export default function App() {
     fetchWineSeltzersEtcMenus();
     fetchNonAlcMenus();
     fetchFoodMenus();
-    
-    updateAsideOpen("", false)
 
     if (location.pathname === '/') {
       setBodyTags("landing");
       setHtmlState("landing");
+    } else if (location.hash === "#cart-aside" || location.hash === "#mobile-menu-aside") {
+      setHtmlState("aside-open");
+      setBodyTags("menu-open");
     } else {
       setBodyTags("default-body");
       setHtmlState("default-html");
