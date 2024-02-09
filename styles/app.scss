@@ -328,8 +328,7 @@ main {
       border: $default-border;
       padding: 40px;
       padding-bottom: 20px;
-      margin: 0 auto;
-      margin-top: 20px;
+      margin: 20px auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1041,6 +1040,10 @@ main {
       border: $default-border;
       padding: 40px;
       padding-bottom: 20px;
+
+      hr {
+        margin-bottom: 25px;
+      }
 
       p {
         font-family: "Saudagar";
