@@ -30,8 +30,8 @@ export const meta = () => {
 export default function Homepage() {
 
   const { events, currentDate } = useContext(StrapiContext);
-  // const [ subscribeActive, setSubscribeActive ] = useState(true);
-  // let [ email, setEmail ] = useState("");
+  const [ subscribeStatus, setSubscribeStatus ] = useState('active');
+  let [ email, setEmail ] = useState("");
 
   // parse time from string
   let parseDate = (string) => {
@@ -121,35 +121,33 @@ export default function Homepage() {
     }
   })
 
-  // let handleEmailChange = (event) => {
-  //   setEmail(event.target.value);
-  // }
+  let handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
 
-  // let handleSubscribe = async (event) => {
+let handleSubscribe = async (event) => {
+  event.preventDefault();
 
-  //   let subscriptionEmail = email;
+  const response = await fetch('https://thb-data-3vd2n.ondigitalocean.app/api/newsletter-emails', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      "data": { email }
+    }),
+  });
 
-  //   event.preventDefault();
-
-  //   const response = await fetch('/mailchimp', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //     body: new URLSearchParams({
-  //       EMAIL: subscriptionEmail,
-  //     }).toString(),
-  //   });
-
-  //   if (response.ok) {
-  //     console.log(email + ' is now subscribed');
-  //     event.target.reset();
-  //     setSubscribeActive(false);
-  //   } else {
-  //     console.error('Failed to subscribe:', response.status);
-  //     // Handle error case
-  //   }
-  // }
+  if (response.ok) {
+    event.target.reset();
+    console.log(email + ' is now subscribed');
+    setSubscribeStatus('subscribed');
+  } else {
+    event.target.reset();
+    console.error('Failed to subscribe:', response.status);
+    setSubscribeStatus('error');
+  }
+}
 
   return (
     <>
@@ -186,20 +184,32 @@ export default function Homepage() {
         <section className="home-newsletter">
           <div className="newsletter-content">
             <p>Join our newsletter to stay up to date with all the goings on at the taproom, as well as be the first to hear about new releases, events, and special offers!</p>
-            <a href="https://beer.us17.list-manage.com/subscribe/post?u=55337f4b502b69807ffce3fb4&id=3474a4e3a4" target="_blank" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" alt="email icon" /></a>
-            {/* <form onSubmit={handleSubscribe}>
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                onChange={(event) => handleEmailChange(event)}
-                disabled={!subscribeActive}
-                required
-              />
-              { subscribeActive
-                ? <button type="submit" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" alt="email icon" /></button>
-                : <button type="submit" className='button button-primary' disabled >Subscribed! <img src={mail} className="button-icon" alt="email icon" /></button>
-              }
-            </form> */}
+            { subscribeStatus === "active"
+              ? <form onSubmit={handleSubscribe}>
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    onChange={(event) => handleEmailChange(event)}
+                    required
+                  />
+                  <button type="submit" className='button button-primary' >Subscribe now <img src={mail} className="button-icon" alt="email icon" /></button>
+                </form>
+              : null
+            }
+            { subscribeStatus === "subscribed"
+              ? <>
+                  <hr/>
+                  <p>Thanks! You've been added to the list!</p>
+                </>
+              : null
+            }
+            { subscribeStatus === "error"
+              ? <>
+                  <hr/>
+                  <p>Something went wrong! Try again later.</p>
+                </>
+              : null
+            }
           </div>
         </section>
     </>
