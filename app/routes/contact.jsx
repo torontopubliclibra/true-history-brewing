@@ -50,7 +50,6 @@ export default function Homepage() {
 
   let ContactForm = () => {
 
-    let [ submitStatus, setSubmitStatus ] = useState('Send email');
     let [ name, setName ] = useState("");
     let [ email, setEmail ] = useState("");
     let [ message, setMessage ] = useState("");
@@ -114,7 +113,6 @@ export default function Homepage() {
     let handleSubmit = (event) => {
 
       event.preventDefault();
-      setSubmitStatus("Sending...");
 
       let newMessage = "";
       
@@ -175,16 +173,13 @@ export default function Homepage() {
         setGuests(0);
         setDining(false);
         setSpecial("");
-        setSubmitStatus("Sent!");
         console.log('Sent!', response.status, response.text);
+        setContactForm("sent");
       })
       .catch((err) => {
         console.log('Failed to send!', err);
+        setContactForm("error");
       });
-
-      setTimeout(() => {
-        setSubmitStatus("Send email");
-      }, 5000);
     };
 
     if (contactForm == "general") {
@@ -216,7 +211,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" alt="email icon" /></button>
+          <button className="button" type="submit" >Send email <img src={mail} className="button-icon" alt="email icon" /></button>
         </form>
       );
     } else if (contactForm == "licensee") {
@@ -266,7 +261,7 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("message", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" alt="email icon" /></button>
+          <button className="button" type="submit" >Send email <img src={mail} className="button-icon" alt="email icon" /></button>
         </form>
       );
     } else if (contactForm == "bookings") {
@@ -372,8 +367,20 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("special", event)}
               required />
           </div>
-          <button className="button" type="submit" disabled={submitStatus !== "Send email" ? true : false} >{submitStatus} <img src={mail} className="button-icon" alt="email icon" /></button>
+          <button className="button" type="submit" >Send email <img src={mail} className="button-icon" alt="email icon" /></button>
         </form>
+      );
+    } else if (contactForm == "sent") {
+      return (
+        <div className="contact-form">
+          <p>Thanks! Your email has been sent and we will be in touch.</p>
+        </div>
+      );
+    } else if (contactForm == "error") {
+      return (
+        <div className="contact-form">
+          <p>Something went wrong! Try again later.</p>
+        </div>
       );
     }
   };
