@@ -109,7 +109,6 @@ function CartLineItem({layout, line}) {
           to={lineItemUrl}
           onClick={() => {
             if (layout === 'aside') {
-              // close the drawer
               window.location.href = lineItemUrl;
             }
           }}
@@ -276,64 +275,64 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
   );
 }
 
-/**
- * @param {{
- *   discountCodes: CartApiQueryFragment['discountCodes'];
- * }}
- */
-function CartDiscounts({discountCodes}) {
-  const codes =
-    discountCodes
-      ?.filter((discount) => discount.applicable)
-      ?.map(({code}) => code) || [];
+// /**
+//  * @param {{
+//  *   discountCodes: CartApiQueryFragment['discountCodes'];
+//  * }}
+//  */
+// function CartDiscounts({discountCodes}) {
+//   const codes =
+//     discountCodes
+//       ?.filter((discount) => discount.applicable)
+//       ?.map(({code}) => code) || [];
 
-  return (
-    <div>
-      {/* Have existing discount, display it with a remove option */}
-      <dl hidden={!codes.length}>
-        <div>
-          <dt>Discount(s)</dt>
-          <UpdateDiscountForm>
-            <div className="cart-discount">
-              <code>{codes?.join(', ')}</code>
-              &nbsp;
-              <button className="button button-primary">Remove</button>
-            </div>
-          </UpdateDiscountForm>
-        </div>
-      </dl>
+//   return (
+//     <div>
+//       {/* Have existing discount, display it with a remove option */}
+//       <dl hidden={!codes.length}>
+//         <div>
+//           <dt>Discount(s)</dt>
+//           <UpdateDiscountForm>
+//             <div className="cart-discount">
+//               <code>{codes?.join(', ')}</code>
+//               &nbsp;
+//               <button className="button button-primary">Remove</button>
+//             </div>
+//           </UpdateDiscountForm>
+//         </div>
+//       </dl>
 
-      {/* Show an input to apply a discount */}
-      <UpdateDiscountForm discountCodes={codes}>
-        <div>
-          <input className="discount" type="text" name="discountCode" placeholder="Discount code" />
-          &nbsp;
-          <button className="button button-primary" type="submit">Apply</button>
-        </div>
-      </UpdateDiscountForm>
-    </div>
-  );
-}
+//       {/* Show an input to apply a discount */}
+//       <UpdateDiscountForm discountCodes={codes}>
+//         <div>
+//           <input className="discount" type="text" name="discountCode" placeholder="Discount code" />
+//           &nbsp;
+//           <button className="button button-primary" type="submit">Apply</button>
+//         </div>
+//       </UpdateDiscountForm>
+//     </div>
+//   );
+// }
 
-/**
- * @param {{
- *   discountCodes?: string[];
- *   children: React.ReactNode;
- * }}
- */
-function UpdateDiscountForm({discountCodes, children}) {
-  return (
-    <CartForm
-      route="/cart"
-      action={CartForm.ACTIONS.DiscountCodesUpdate}
-      inputs={{
-        discountCodes: discountCodes || [],
-      }}
-    >
-      {children}
-    </CartForm>
-  );
-}
+// /**
+//  * @param {{
+//  *   discountCodes?: string[];
+//  *   children: React.ReactNode;
+//  * }}
+//  */
+// function UpdateDiscountForm({discountCodes, children}) {
+//   return (
+//     <CartForm
+//       route="/cart"
+//       action={CartForm.ACTIONS.DiscountCodesUpdate}
+//       inputs={{
+//         discountCodes: discountCodes || [],
+//       }}
+//     >
+//       {children}
+//     </CartForm>
+//   );
+// }
 
 /**
  * @param {{

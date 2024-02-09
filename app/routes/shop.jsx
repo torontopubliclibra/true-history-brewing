@@ -136,8 +136,6 @@ function SelectedCollection({selectedCategory, collectionData}) {
     }
   }
 
-  console.log(collectionProducts)
-
   return (
     <div className="collection-products">
       <h2>{selectedCategory}</h2>
