@@ -109,7 +109,7 @@ export default function Product() {
       <section className="product-nav">
         <ul>
           <li>
-            <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" alt="left arrow icon" />Back</Link>
+            <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" alt="left arrow icon" />Back to the shop</Link>
           </li>
         </ul>
       </section>
@@ -138,6 +138,7 @@ function ProductImage({image}) {
         alt={image.altText || 'Product Image'}
         data={image}
         key={image.id}
+        width="500px"
       />
     </div>
   );
