@@ -45,7 +45,6 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
     
     return (
       <header className="landing-header">
-        <h3 className="demo-text">Demo Version</h3>
       </header>
     )
 
@@ -59,7 +58,6 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
         >
           <img src={icon} className="thb-icon" alt="True History Brewing icon" />
         </a>
-        <h3 className="demo-text">Demo Version</h3>
         <HeaderMenu
           menu={menu}
           viewport="desktop"
@@ -126,7 +124,7 @@ export function HeaderMenu({viewport}) {
         <span className="nav-text">Retail</span>
         <img src={retail} className="button-icon" alt="retail shop icon" />
       </NavLink>
-      <NavLink
+      {/* <NavLink
         end
         onClick={closeAside}
         prefetch="intent"
@@ -135,7 +133,7 @@ export function HeaderMenu({viewport}) {
         >
         <span className="nav-text">Online Shop</span>
         <img src={basket} className="button-icon" alt="shopping basket icon" />
-      </NavLink>
+      </NavLink> */}
       <NavLink
         end
         onClick={closeAside}
@@ -164,7 +162,7 @@ export function HeaderMenu({viewport}) {
 function HeaderSubmenu({cart, aside, updateAsideOpen}) {
   return (
     <nav className="header-submenu" role="navigation">
-      <CartToggle cart={cart} aside={aside} updateAsideOpen={updateAsideOpen} />
+      {/* <CartToggle cart={cart} aside={aside} updateAsideOpen={updateAsideOpen} /> */}
       <HeaderMenuMobileToggle aside={aside} updateAsideOpen={updateAsideOpen} />
       <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary mobile-hide'>
         Instagram
