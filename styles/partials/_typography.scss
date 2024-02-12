@@ -40,6 +40,11 @@
 
 body * {
     animation: $default-animation;
+
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        animation: $secondary-animation;
+    }
 }
 
 header, footer {
