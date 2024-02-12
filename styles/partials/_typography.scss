@@ -82,6 +82,13 @@ footer {
             }
           }
         }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+            p {
+                font-size: 0.75rem;
+            }
+        }
     }
 
     .credit p {

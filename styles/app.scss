@@ -784,6 +784,10 @@ main {
     .button {
       justify-content: space-between;
       margin-top: 10px;
+
+      img {
+        filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
+      }
     }
 
     // responsive to mobile

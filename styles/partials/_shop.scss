@@ -392,7 +392,7 @@
 
 .product-nav {
   width: 100%;
-  padding: 15px 5%;
+  padding: 15px 0;
   display: flex;
   align-items: center;
   background-color: rgba($color1, 0.8);
@@ -401,6 +401,7 @@
   .button {
     max-width: 100%;
     font-size: 0.9rem;
+    margin-left: 20px;
   }
 }
 
