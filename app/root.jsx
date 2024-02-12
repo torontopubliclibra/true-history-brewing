@@ -29,6 +29,7 @@ import wallpaper from '../public/assets/wallpaper.webp';
 import woodenBackground from '../public/assets/wooden-bg.webp';
 import logo from '../public/assets/thb-logo.webp';
 import icon from '../public/assets/thb-icon.webp';
+import arrowLeft from '../public/assets/icons/arrow-left.svg';
 
 // should revalidate function
 /**
@@ -671,6 +672,7 @@ export function ErrorBoundary() {
               <h1>{errorStatus} Error</h1>
               <h2>{errorMessage}</h2>
               <a href="/home" className='button button-tertiary'>
+                <img src={arrowLeft} className="button-icon" alt="left arrow icon" />
                 Go back to the homepage
               </a>
             </div>
