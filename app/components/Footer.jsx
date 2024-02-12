@@ -63,7 +63,7 @@ export function Footer() {
           <hr/>
           <div className="credit">
             <p>Wallpaper design by <a href="https://www.kategolding.ca/" target="_blank">Kate Golding</a>. Film photography by <a href="https://instagram.com/bea.utifulloser" target="_blank">Ciarán Bailey</a>.</p>
-            <p>Website designed and developed by <a href="https://danateagle.com" target="_blank">Dana Teagle</a>.</p>
+            <p>Website developed by <a href="https://danateagle.com" target="_blank">Dana Teagle</a>.</p>
           </div>
           <div className="copyright">
             <p>© True History Brewing, 2024</p>

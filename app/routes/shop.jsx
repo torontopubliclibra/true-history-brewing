@@ -150,7 +150,7 @@ function SelectedCollection({selectedCategory, collectionData}) {
             >
               <Image
                 data={product.featuredImage}
-                size={500}
+                width="500px"
               />
               <h4>{product.title}</h4>
               <small>
