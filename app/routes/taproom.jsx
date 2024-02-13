@@ -7,6 +7,7 @@ import { Link } from '@remix-run/react';
 // component imports
 import { Hours } from './../components/Hours';
 import { Calendar } from './../components/Calendar';
+import BarLoader from "react-spinners/BarLoader";
 
 // asset imports
 import patioPhoto from './../../public/assets/patio-photo.webp';
@@ -31,10 +32,19 @@ export const meta = () => {
 
 export default function Homepage() {
 
-  const { menus } = useContext(StrapiContext);
-  const [ selectedMenu, setSelectedMenu ] = useState("beers");
-  const [ menuItems, setMenuItems ] = useState({});
-  const location = useLocation();
+  let { menus } = useContext(StrapiContext);
+  let [ selectedMenu, setSelectedMenu ] = useState("beers");
+  let [ menuItems, setMenuItems ] = useState({});
+  let [ menuLoading, setMenuLoading ] = useState(true);
+  let location = useLocation();
+
+  const loaderStyle = {
+    backgroundColor: "#1F1F1F",
+    display: "block",
+    margin: "100px auto 125px auto",
+    width: "500px",
+    height: '6px'
+  };
 
   let updatedDate = (datetimeString) => {
     let day = datetimeString.substring(2, 4);
@@ -144,6 +154,10 @@ export default function Homepage() {
 
   useEffect(() => {
 
+    if (formattedMenus[selectedMenu].length > 0) {
+      setMenuLoading(false);
+    }
+
     setMenuItems(menus);
     if (location.state) {
       setSelectedMenu(location.state.selectedMenu);
@@ -177,32 +191,45 @@ export default function Homepage() {
         </section>
         <section className="taproom-menus" id="menu">
           <h3>Menus</h3>
-          <p className='updated-date'>{timeStamps[selectedMenu]}</p>
-          <ul className='menu-nav'>
-            <li>
-              <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
-                Beers <img src={beer} className="button-icon" alt="beer icon" />
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleMenuChange("wineSeltzersEtc")} className={buttonClass("wineSeltzersEtc")}>
-                Wine, Seltzers, Etc. <img src={wine} className="button-icon" alt="stemmed glass icon" />
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleMenuChange("nonAlc")} className={buttonClass("nonAlc")}>
-                Non-alcoholic <img src={drink} className="button-icon" alt="drink icon" />
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleMenuChange("food")} className={buttonClass("food")}>
-                Food <img src={food} className="button-icon" alt="knife and fork icon" />
-              </button>
-            </li>
-          </ul>
-          <ul className='menu'>
-            {formattedMenus[selectedMenu]}
-          </ul>
+          {
+            formattedMenus[selectedMenu].length > 0
+              ? <>
+                  <p className='updated-date'>{timeStamps[selectedMenu]}</p>
+                  <ul className='menu-nav'>
+                    <li>
+                      <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
+                        Beers <img src={beer} className="button-icon" alt="beer icon" />
+                      </button>
+                    </li>
+                    <li>
+                      <button onClick={() => handleMenuChange("wineSeltzersEtc")} className={buttonClass("wineSeltzersEtc")}>
+                        Wine, Seltzers, Etc. <img src={wine} className="button-icon" alt="stemmed glass icon" />
+                      </button>
+                    </li>
+                    <li>
+                      <button onClick={() => handleMenuChange("nonAlc")} className={buttonClass("nonAlc")}>
+                        Non-alcoholic <img src={drink} className="button-icon" alt="drink icon" />
+                      </button>
+                    </li>
+                    <li>
+                      <button onClick={() => handleMenuChange("food")} className={buttonClass("food")}>
+                        Food <img src={food} className="button-icon" alt="knife and fork icon" />
+                      </button>
+                    </li>
+                  </ul>
+                  <ul className='menu'>
+                    {formattedMenus[selectedMenu]}
+                  </ul>
+                </>
+              : <BarLoader
+                  color='#778d79'
+                  loading={menuLoading}
+                  cssOverride={loaderStyle}
+                  className='loader menu-loader'
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+          }
         </section>
         <section className="mobile-taproom-buttons">
           <div className="buttons">
