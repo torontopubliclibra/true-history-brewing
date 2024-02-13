@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom'
 import { StrapiContext } from '../root';
 import { Link } from '@remix-run/react';
+import BarLoader from "react-spinners/BarLoader";
 import beerCans from './../../public/assets/beer-cans.webp';
 import clock from './../../public/assets/icons/clock.svg';
 import beer from './../../public/assets/icons/beer.svg';
@@ -22,7 +23,16 @@ export default function Homepage() {
   const { retail } = useContext(StrapiContext);
   const [ selectedItems, setSelectedItems ] = useState("beers");
   const [ retailItems, setRetailItems ] = useState({});
+  let [ itemsLoading, setItemsLoading ] = useState(true);
   const location = useLocation();
+
+  const loaderStyle = {
+    backgroundColor: "#1F1F1F",
+    display: "block",
+    margin: "100px auto 125px auto",
+    width: "500px",
+    height: '6px'
+  };
 
   let updatedDate = (datetimeString) => {
     let day = datetimeString.substring(2, 4);
@@ -80,6 +90,10 @@ export default function Homepage() {
       setSelectedItems("beers");
     }
 
+    if (formattedItems[selectedItems].length > 0) {
+      setItemsLoading(false);
+    }
+
   }, [])
 
   useEffect(() => {
@@ -131,8 +145,15 @@ export default function Homepage() {
             </ul>
             <p className='updated-date'>{updatedDate(retailItems.beers.updatedAt)}</p>
           </>
-          : null
-        }
+          : <BarLoader
+            color='#778d79'
+            loading={itemsLoading}
+            cssOverride={loaderStyle}
+            className='loader menu-loader'
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+      }
       </section>
     </>
   );
