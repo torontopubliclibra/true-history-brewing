@@ -167,26 +167,32 @@ export default function Homepage() {
       setMenuLoading(false);
     }
 
-    setTimeout(() => {
-      if (formattedMenus[selectedMenu].length > 0 && menuLoading) {
-        setMenuLoading(false);
-      }
-    }, 5000);
-
-    setTimeout(() => {
-      if (formattedMenus[selectedMenu].length === 0 && menuLoading) {
-        setMenuLoading(false);
-        setLoadingError(true);
-      }
-    }, 7500);
-
   }, [])
 
   useEffect(() => {
 
-    setMenuItems(menus);
-    
-  }, [menus])
+    let firstTimeout;
+    let secondTimeout;
+
+    if (menuLoading) {
+      firstTimeout = setTimeout(() => {
+        if (formattedMenus[selectedMenu].length > 0) {
+          setMenuLoading(false);
+        }
+      }, 5000);
+      secondTimeout = setTimeout(() => {
+        if (formattedMenus[selectedMenu].length === 0) {
+          setLoadingError(true);
+        }
+      }, 7500);
+    }
+
+    return () => {
+      clearTimeout(firstTimeout);
+      clearTimeout(secondTimeout);
+    };
+
+  }, [formattedMenus]);
 
   return (
     <>
@@ -206,49 +212,46 @@ export default function Homepage() {
         </section>
         <section className="taproom-menus" id="menu">
           <h3>Menus</h3>
-          {
-            formattedMenus[selectedMenu].length > 0
-              ? <>
-                  <p className='updated-date'>{timeStamps[selectedMenu]}</p>
-                  <ul className='menu-nav'>
-                    <li>
-                      <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
-                        Beers <img src={beer} className="button-icon" alt="beer icon" />
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => handleMenuChange("wineSeltzersEtc")} className={buttonClass("wineSeltzersEtc")}>
-                        Wine, Seltzers, Etc. <img src={wine} className="button-icon" alt="stemmed glass icon" />
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => handleMenuChange("nonAlc")} className={buttonClass("nonAlc")}>
-                        Non-alcoholic <img src={drink} className="button-icon" alt="drink icon" />
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => handleMenuChange("food")} className={buttonClass("food")}>
-                        Food <img src={food} className="button-icon" alt="knife and fork icon" />
-                      </button>
-                    </li>
-                  </ul>
-                  <ul className='menu'>
-                    {formattedMenus[selectedMenu]}
-                  </ul>
-                </>
-              : <BarLoader
-                  color='#778d79'
-                  loading={menuLoading}
-                  cssOverride={loaderStyle}
-                  className='loader menu-loader'
-                  aria-label="Loading Spinner"
-                  data-testid="loader"
-                />
-            }
             {
               loadingError
               ? <p className='error-message'>Sorry, there was an error loading the menu. Please try again later.</p>
-              : null
+              : formattedMenus[selectedMenu].length > 0
+                  ? <>
+                      <p className='updated-date'>{timeStamps[selectedMenu]}</p>
+                      <ul className='menu-nav'>
+                        <li>
+                          <button onClick={() => handleMenuChange("beers")} className={buttonClass("beers")}>
+                            Beers <img src={beer} className="button-icon" alt="beer icon" />
+                          </button>
+                        </li>
+                        <li>
+                          <button onClick={() => handleMenuChange("wineSeltzersEtc")} className={buttonClass("wineSeltzersEtc")}>
+                            Wine, Seltzers, Etc. <img src={wine} className="button-icon" alt="stemmed glass icon" />
+                          </button>
+                        </li>
+                        <li>
+                          <button onClick={() => handleMenuChange("nonAlc")} className={buttonClass("nonAlc")}>
+                            Non-alcoholic <img src={drink} className="button-icon" alt="drink icon" />
+                          </button>
+                        </li>
+                        <li>
+                          <button onClick={() => handleMenuChange("food")} className={buttonClass("food")}>
+                            Food <img src={food} className="button-icon" alt="knife and fork icon" />
+                          </button>
+                        </li>
+                      </ul>
+                      <ul className='menu'>
+                        {formattedMenus[selectedMenu]}
+                      </ul>
+                    </>
+                  : <BarLoader
+                      color='#778d79'
+                      loading={menuLoading}
+                      cssOverride={loaderStyle}
+                      className='loader menu-loader'
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                    />
             }
         </section>
         <section className="mobile-taproom-buttons">
