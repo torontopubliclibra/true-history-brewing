@@ -24,6 +24,7 @@ export default function Homepage() {
   const [ selectedItems, setSelectedItems ] = useState("beers");
   const [ retailItems, setRetailItems ] = useState({});
   let [ itemsLoading, setItemsLoading ] = useState(true);
+  let [ loadingError, setLoadingError ] = useState(false);
   const location = useLocation();
 
   const loaderStyle = {
@@ -95,12 +96,24 @@ export default function Homepage() {
       setItemsLoading(false);
     }
 
+    setTimeout(() => {
+      if (formattedItems[selectedItems].length > 0 && itemsLoading) {
+        setItemsLoading(false);
+      }
+    }, 5000);
+
+    setTimeout(() => {
+      if (formattedItems[selectedItems].length === 0 && itemsLoading) {
+        setItemsLoading(false);
+        setLoadingError(true);
+      }
+    }, 7500);
+
   }, [])
 
   useEffect(() => {
 
     setRetailItems(retail);
-    setSelectedItems("beers");
     
   }, [retail])
 
@@ -154,6 +167,11 @@ export default function Homepage() {
             aria-label="Loading Spinner"
             data-testid="loader"
           />
+      }
+      {
+        loadingError
+        ? <p className='error-message'>Sorry, there was an error loading the retail items. Please try again later.</p>
+        : null
       }
       </section>
     </>

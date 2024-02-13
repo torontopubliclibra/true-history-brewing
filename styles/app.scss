@@ -649,6 +649,16 @@ main {
     flex-direction: column;
     align-items: center;
 
+    .error-message {
+      color: $black;
+      background-color: $light;
+      border: $default-border;
+      border-radius: 25px;
+      filter: $default-shadow;
+      padding: 20px 40px;
+      margin: 75px auto 100px auto;
+    }
+
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       padding-top: 40px;
@@ -1138,15 +1148,6 @@ main {
   
         form {
           gap: 5px;
-          // .button {
-            // &:hover {
-            //   background: $color1;
-            //   color: $light;
-            //   img {
-            //     filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-            //   }
-            // }
-          // }
         }
       }
     }
@@ -1239,6 +1240,16 @@ main {
     color: $light;
     background-color: rgba($dark, 0.8);
     border-bottom: $default-border;
+
+    .error-message {
+      color: $black;
+      background-color: $light;
+      border: $default-border;
+      border-radius: 25px;
+      filter: $default-shadow;
+      padding: 20px 40px;
+      margin: 75px auto;
+    }
 
     .menu-nav {
       display: flex;
