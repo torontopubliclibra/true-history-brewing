@@ -96,26 +96,32 @@ export default function Homepage() {
       setItemsLoading(false);
     }
 
-    setTimeout(() => {
-      if (formattedItems[selectedItems].length > 0 && itemsLoading) {
-        setItemsLoading(false);
-      }
-    }, 5000);
-
-    setTimeout(() => {
-      if (formattedItems[selectedItems].length === 0 && itemsLoading) {
-        setItemsLoading(false);
-        setLoadingError(true);
-      }
-    }, 7500);
-
   }, [])
 
   useEffect(() => {
 
-    setRetailItems(retail);
-    
-  }, [retail])
+    let firstTimeout;
+    let secondTimeout;
+
+    if (itemsLoading) {
+      firstTimeout = setTimeout(() => {
+        if (formattedItems[selectedItems].length > 0) {
+          setItemsLoading(false);
+        }
+      }, 5000);
+      secondTimeout = setTimeout(() => {
+        if (formattedItems[selectedItems].length === 0) {
+          setLoadingError(true);
+        }
+      }, 7500);
+    }
+
+    return () => {
+      clearTimeout(firstTimeout);
+      clearTimeout(secondTimeout);
+    };
+
+  }, [formattedItems]);
 
   return (
     <>
@@ -132,46 +138,43 @@ export default function Homepage() {
       </section>
       <section className="retail-content" id="items">
         <h3>What's in the Fridge?</h3>
-        {
-          formattedItems[selectedItems].length > 0
-          ? <>
-            <ul className="fridge-list">
-              <li className='line-item header'>
-                <ul>
-                  <li className="title">
-                    Name
-                  </li>
-                  <li className="style">
-                    Style
-                  </li>
-                  <li className="abv">
-                    ABV
-                  </li>
-                  <li className="ml">
-                    Size
-                  </li>
-                  <li className="price">
-                    Price
-                  </li>
-                </ul>
-              </li>
-              {formattedItems[selectedItems]}
-            </ul>
-            <p className='updated-date'>{updatedDate(retailItems.beers.updatedAt)}</p>
-          </>
-          : <BarLoader
-            color='#778d79'
-            loading={itemsLoading}
-            cssOverride={loaderStyle}
-            className='loader menu-loader'
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-      }
       {
         loadingError
         ? <p className='error-message'>Sorry, there was an error loading the retail items. Please try again later.</p>
-        : null
+        : formattedItems[selectedItems].length > 0
+        ? <>
+          <ul className="fridge-list">
+            <li className='line-item header'>
+              <ul>
+                <li className="title">
+                  Name
+                </li>
+                <li className="style">
+                  Style
+                </li>
+                <li className="abv">
+                  ABV
+                </li>
+                <li className="ml">
+                  Size
+                </li>
+                <li className="price">
+                  Price
+                </li>
+              </ul>
+            </li>
+            {formattedItems[selectedItems]}
+          </ul>
+          <p className='updated-date'>{updatedDate(retailItems.beers.updatedAt)}</p>
+        </>
+        : <BarLoader
+          color='#778d79'
+          loading={itemsLoading}
+          cssOverride={loaderStyle}
+          className='loader menu-loader'
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
       }
       </section>
     </>
