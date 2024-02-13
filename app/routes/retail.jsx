@@ -84,6 +84,7 @@ export default function Homepage() {
   useEffect(() => {
 
     setRetailItems(retail);
+
     if (location.state) {
       setSelectedItems(location.state.selectedItems);
     } else {
