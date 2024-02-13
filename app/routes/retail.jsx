@@ -92,17 +92,15 @@ export default function Homepage() {
       setSelectedItems("beers");
     }
 
-    if (formattedItems[selectedItems].length > 0) {
-      setItemsLoading(false);
-    }
-
   }, [])
 
   useEffect(() => {
 
-    setRetailItems(retail);
+    if (formattedItems[selectedItems].length > 0) {
+      setItemsLoading(false);
+    }
 
-  }, [retail])
+  }, [retail, formattedItems])
 
   useEffect(() => {
 

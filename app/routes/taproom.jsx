@@ -163,17 +163,15 @@ export default function Homepage() {
       setSelectedMenu("beers");
     }
 
-    if (formattedMenus[selectedMenu].length > 0) {
-      setMenuLoading(false);
-    }
-
   }, [])
 
   useEffect(() => {
 
-    setMenuItems(menus);
+    if (formattedMenus[selectedMenu].length > 0) {
+      setMenuLoading(false);
+    }
 
-  }, [menus])
+  }, [menus, formattedMenus])
 
   useEffect(() => {
 
