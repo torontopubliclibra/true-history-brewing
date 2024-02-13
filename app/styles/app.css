@@ -1794,15 +1794,6 @@ nav.header-menu-desktop a {
     width: 200px;
     height: auto;
     filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5)); }
-  .loading .loader {
-    margin-top: 20px !important;
-    border: solid #1F1F1F 3px;
-    filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-    width: 225px;
-    background: none; }
-    .loading .loader span {
-      height: 6px !important;
-      border-radius: 0 !important; }
 
 @keyframes fade-up {
   0% {
@@ -5681,6 +5672,21 @@ nav.header-menu-desktop a {
         :root.aside-open body aside main {
           display: initial !important; } }
 
+.loader {
+  margin-top: 20px;
+  border: solid #1F1F1F 3px;
+  filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+  width: 225px;
+  background: none; }
+  .loader span {
+    height: 6px !important;
+    border-radius: 0 !important; }
+  .loader.menu-loader {
+    width: 500px; }
+    @media only screen and (max-width: 600px) {
+      .loader.menu-loader {
+        width: 300px !important; } }
+
 body, header, footer, main, section {
   animation: none; }
 
@@ -6037,7 +6043,6 @@ main {
             width: 60%; } }
   main .retail-content {
     background-color: rgba(121, 79, 62, 0.8);
-    min-height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center; }
@@ -6458,7 +6463,6 @@ main {
             padding: 20px 10%;
             width: 80%; } }
   main .taproom-menus {
-    min-height: 300px;
     position: relative;
     display: flex;
     flex-direction: column;

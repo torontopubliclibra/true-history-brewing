@@ -103,6 +103,28 @@
   }
 }
 
+.loader {
+  margin-top: 20px;
+  border: $default-border;
+  filter: $default-shadow;
+  width: 225px;
+  background: none;
+
+  span {
+      height: 6px !important;
+      border-radius: 0 !important;
+  }
+
+  &.menu-loader {
+    width: 500px;
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+      width: 300px !important;
+    }
+  }
+}
+
 body, header, footer, main, section {
   animation: none;
 }
@@ -623,7 +645,6 @@ main {
 
   .retail-content {
     background-color: rgba($dark, 0.8);
-    min-height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1211,7 +1232,6 @@ main {
     }
   }
   .taproom-menus {
-    min-height: 300px;
     position: relative;
     display: flex;
     flex-direction: column;
