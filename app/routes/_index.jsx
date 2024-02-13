@@ -33,7 +33,7 @@ export default function Homepage() {
   const loaderStyle = {
     backgroundColor: "#1F1F1F",
     display: "block",
-    margin: "0 auto",
+    margin: "20px auto",
     width: "225px",
     height: '6px'
   };

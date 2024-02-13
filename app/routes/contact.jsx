@@ -56,7 +56,8 @@ export default function Homepage() {
     let [ businessName, setBusinessName ] = useState("");
     let [ businessAddress, setBusinessAddress ] = useState("");
     let [ eventDate, setEventDate ] = useState("");
-    let [ eventTime, setEventTime ] = useState("");
+    let [ eventStart, setEventStart ] = useState("");
+    let [ eventEnd, setEventEnd ] = useState("");
     let [ guests, setGuests ] = useState(0);
     let [ dining, setDining ] = useState(false);
     let [ special, setSpecial ] = useState("");
@@ -81,8 +82,11 @@ export default function Homepage() {
       if (field == "eventDate") {
         setEventDate(event.target.value);
       }
-      if (field == "eventTime") {
-        setEventTime(event.target.value);
+      if (field == "eventStart") {
+        setEventStart(event.target.value);
+      }
+      if (field == "eventEnd") {
+        setEventEnd(event.target.value);
       }
       if (field == "guests") {
 
@@ -114,7 +118,7 @@ export default function Homepage() {
 
       let newMessage = "";
       
-      let diningStatus = "";
+      let diningStatus = " (not dining)";
 
       if (dining) {
         diningStatus = " (dining)";
@@ -142,7 +146,7 @@ export default function Homepage() {
         `Name: ${name}\n
         Email address: ${email}\n
         Date: ${eventDate}\n
-        Time: ${eventTime}\n
+        Time: ${eventStart} - ${eventEnd}\n
         Number of guests: ${guests}${diningStatus}\n
         Special requests: ${special}\n
         Message: ${message}`
@@ -157,7 +161,7 @@ export default function Homepage() {
       }
 
       send(
-        'service_6zkrsuq',
+        'service_ldt2kgh',
         'template_d5dmvqm',
         messageDetails,
         '_7uAM_thaYesriP1U'
@@ -283,27 +287,38 @@ export default function Homepage() {
               onChange={(event) => handleFieldChange("email", event)}
               required />
           </div>
+          <div className="form-field">
+            <label htmlFor="date">Date:</label>
+            <input
+              type="date"
+              id="date"
+              min={minDate()}
+              max={maxDate()}
+              value={eventDate}
+              onChange={(event) => handleFieldChange("eventDate", event)}
+              required />
+          </div>
           <div className="double-field">
             <div className="medium-field">
-              <label htmlFor="date">Date:</label>
-              <input
-                type="date"
-                id="date"
-                min={minDate()}
-                max={maxDate()}
-                value={eventDate}
-                onChange={(event) => handleFieldChange("eventDate", event)}
-                required />
-            </div>
-            <div className="small-field">
-              <label htmlFor="date">Time:</label>
+              <label htmlFor="date">Start time:</label>
               <input
                 type="time"
                 id="time"
                 min="12:00"
                 max="22:00"
-                value={eventTime}
-                onChange={(event) => handleFieldChange("eventTime", event)}
+                value={eventStart}
+                onChange={(event) => handleFieldChange("eventStart", event)}
+                required />
+            </div>
+            <div className="medium-field">
+              <label htmlFor="date">End time:</label>
+              <input
+                type="time"
+                id="time"
+                min="12:00"
+                max="22:00"
+                value={eventEnd}
+                onChange={(event) => handleFieldChange("eventEnd", event)}
                 required />
             </div>
           </div>

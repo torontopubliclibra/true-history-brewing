@@ -103,6 +103,28 @@
   }
 }
 
+.loader {
+  margin-top: 20px;
+  border: $default-border;
+  filter: $default-shadow;
+  width: 225px;
+  background: none;
+
+  span {
+      height: 6px !important;
+      border-radius: 0 !important;
+  }
+
+  &.menu-loader {
+    width: 500px;
+
+    // responsive to mobile
+    @media only screen and (max-width: $mobile) {
+      width: 300px !important;
+    }
+  }
+}
+
 body, header, footer, main, section {
   animation: none;
 }
@@ -337,6 +359,13 @@ main {
       padding: 40px;
       padding-left: 10px;
 
+      p {
+        font-size: 1.15rem;
+        margin: 20px;
+        margin-right: 0;
+        text-align: center;
+      }
+
       .button {
         justify-content: space-between;
         margin-top: 30px;
@@ -364,11 +393,14 @@ main {
         flex-direction: row;
         justify-content: space-between;
 
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          min-width: 85% !important;
+        }
+
         // responsive to mobile
         @media only screen and (max-width: $mobile) {
-          min-width: 100% !important;
-          justify-content: center;
-          gap: 15%;
+          max-width: 85% !important;
         }
       }
 
@@ -380,23 +412,31 @@ main {
           width: 100%;
         }
 
-        // responsive to mobile
-        @media only screen and (max-width: $mobile) {
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
           width: 40%;
+
+          input {
+            width: 80%;
+          }
         }
       }
 
       .small-field {
-        width: 35%;
+        width: 45%;
         justify-content: left;
 
         input {
           width: 100%;
         }
 
-        // responsive to mobile
-        @media only screen and (max-width: $mobile) {
-          width: 30%;
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          width: 40%;
+
+          input {
+            width: 80%;
+          }
         }
 
         .radio {
@@ -605,7 +645,6 @@ main {
 
   .retail-content {
     background-color: rgba($dark, 0.8);
-    min-height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1193,7 +1232,6 @@ main {
     }
   }
   .taproom-menus {
-    min-height: 300px;
     position: relative;
     display: flex;
     flex-direction: column;
