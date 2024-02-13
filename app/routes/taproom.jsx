@@ -36,6 +36,7 @@ export default function Homepage() {
   let [ selectedMenu, setSelectedMenu ] = useState("beers");
   let [ menuItems, setMenuItems ] = useState({});
   let [ menuLoading, setMenuLoading ] = useState(true);
+  let [ loadingError, setLoadingError ] = useState(false);
   let location = useLocation();
 
   const loaderStyle = {
@@ -166,6 +167,19 @@ export default function Homepage() {
       setMenuLoading(false);
     }
 
+    setTimeout(() => {
+      if (formattedMenus[selectedMenu].length > 0 && menuLoading) {
+        setMenuLoading(false);
+      }
+    }, 5000);
+
+    setTimeout(() => {
+      if (formattedMenus[selectedMenu].length === 0 && menuLoading) {
+        setMenuLoading(false);
+        setLoadingError(true);
+      }
+    }, 7500);
+
   }, [])
 
   useEffect(() => {
@@ -230,7 +244,12 @@ export default function Homepage() {
                   aria-label="Loading Spinner"
                   data-testid="loader"
                 />
-          }
+            }
+            {
+              loadingError
+              ? <p className='error-message'>Sorry, there was an error loading the menu. Please try again later.</p>
+              : null
+            }
         </section>
         <section className="mobile-taproom-buttons">
           <div className="buttons">
