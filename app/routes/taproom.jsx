@@ -154,15 +154,16 @@ export default function Homepage() {
 
   useEffect(() => {
 
-    if (formattedMenus[selectedMenu].length > 0) {
-      setMenuLoading(false);
-    }
-
     setMenuItems(menus);
+
     if (location.state) {
       setSelectedMenu(location.state.selectedMenu);
     } else {
       setSelectedMenu("beers");
+    }
+
+    if (formattedMenus[selectedMenu].length > 0) {
+      setMenuLoading(false);
     }
 
   }, [])
