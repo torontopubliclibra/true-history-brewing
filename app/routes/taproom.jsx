@@ -171,6 +171,12 @@ export default function Homepage() {
 
   useEffect(() => {
 
+    setMenuItems(menus);
+
+  }, [menus])
+
+  useEffect(() => {
+
     let firstTimeout;
     let secondTimeout;
 

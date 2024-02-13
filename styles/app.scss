@@ -657,6 +657,11 @@ main {
       filter: $default-shadow;
       padding: 20px 40px;
       margin: 75px auto 100px auto;
+
+      // responsive to mobile
+      @media only screen and (max-width: $mobile) {
+        margin: 50px 30px 100px 30px;
+      }
     }
 
     // responsive to tablet
@@ -1248,7 +1253,12 @@ main {
       border-radius: 25px;
       filter: $default-shadow;
       padding: 20px 40px;
-      margin: 75px auto;
+      margin: 50px auto 75px auto;
+
+      // responsive to mobile
+      @media only screen and (max-width: $mobile) {
+        margin: 30px 30px 50px 30px;
+      }
     }
 
     .menu-nav {

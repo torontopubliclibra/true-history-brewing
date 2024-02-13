@@ -100,6 +100,12 @@ export default function Homepage() {
 
   useEffect(() => {
 
+    setRetailItems(retail);
+
+  }, [retail])
+
+  useEffect(() => {
+
     let firstTimeout;
     let secondTimeout;
 
