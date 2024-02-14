@@ -171,10 +171,6 @@ export default function Homepage() {
       setMenuLoading(false);
     }
 
-  }, [menus, formattedMenus])
-
-  useEffect(() => {
-
     let firstTimeout;
     let secondTimeout;
 
@@ -196,7 +192,7 @@ export default function Homepage() {
       clearTimeout(secondTimeout);
     };
 
-  }, [formattedMenus]);
+  }, [menuItems, formattedMenus])
 
   return (
     <>

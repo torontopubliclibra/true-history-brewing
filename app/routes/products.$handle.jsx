@@ -106,7 +106,7 @@ export default function Product() {
   const {selectedVariant} = product;
   return (
     <>
-      <section className="product-nav">
+      {/* <section className="product-nav">
         <ul>
           <li>
             <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" alt="left arrow icon" />Back to the shop</Link>
@@ -120,6 +120,15 @@ export default function Product() {
           product={product}
           variants={variants}
         />
+      </section> */}
+      <section className="route-error">
+        <div className="error-message">
+          <h1>Under Construction</h1>
+          <a href="/home" className='button button-tertiary'>
+            <img src={arrowLeft} className="button-icon" alt="left arrow icon" />
+            Go back to the homepage
+          </a>
+        </div>
       </section>
     </>
   );

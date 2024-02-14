@@ -3,6 +3,7 @@ import { Await, useLoaderData, Link } from '@remix-run/react';
 import { json } from '@shopify/remix-oxygen';
 import { useState, useEffect, Suspense } from 'react';
 import { Image, getPaginationVariables, Money } from '@shopify/hydrogen';
+import arrowLeft from './../../public/assets/icons/arrow-left.svg';
 
 /**
  * @type {MetaFunction}
@@ -104,7 +105,7 @@ export default function Homepage() {
 
   return (
     <>
-      <section className="heading shop-heading">
+      {/* <section className="heading shop-heading">
         <h2>Online Shop</h2>
       </section>
       <section className="shop-nav">
@@ -119,6 +120,15 @@ export default function Homepage() {
         <div className="text-box">
           <h3>Delivery & Pickup Conditions</h3>
           <p>Products are shipped via <a href="https://shipnoble.com/" target="_blank">Ship Noble</a>. Minimum orders of $15. A $10 flat delivery rate applies for all orders under $100. Deliveries are usually fulfilled within 5 business days, and pickup is available within 24 hours at True History Brewing, 1154 St. Clair Avenue West, Toronto, Ontario.</p>
+        </div>
+      </section> */}
+      <section className="route-error">
+        <div className="error-message">
+          <h1>Under Construction</h1>
+          <a href="/home" className='button button-tertiary'>
+            <img src={arrowLeft} className="button-icon" alt="left arrow icon" />
+            Go back to the homepage
+          </a>
         </div>
       </section>
     </>
