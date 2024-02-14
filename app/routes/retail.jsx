@@ -100,10 +100,6 @@ export default function Homepage() {
       setItemsLoading(false);
     }
 
-  }, [retail, formattedItems])
-
-  useEffect(() => {
-
     let firstTimeout;
     let secondTimeout;
 
@@ -125,7 +121,7 @@ export default function Homepage() {
       clearTimeout(secondTimeout);
     };
 
-  }, [formattedItems]);
+  }, [retailItems, formattedItems])
 
   return (
     <>
