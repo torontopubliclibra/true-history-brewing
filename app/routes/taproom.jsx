@@ -163,25 +163,13 @@ export default function Homepage() {
       setSelectedMenu("beers");
     }
 
-    if (formattedMenus[selectedMenu].length > 0) {
-      setMenuLoading(false);
-    }
-
-    let timeout;
-
-    if (menuLoading) {
-      timeout = setTimeout(() => {
-        if (formattedMenus[selectedMenu].length > 0) {
-          setMenuLoading(false);
-        }
-      }, 5000);
-    }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-
   }, [])
+
+  useEffect(() => {
+
+    setMenuItems(menus);
+
+  }, [menus])
 
   useEffect(() => {
 
