@@ -163,6 +163,10 @@ export default function Homepage() {
       setSelectedMenu("beers");
     }
 
+    if (formattedMenus[selectedMenu].length > 0) {
+      setMenuLoading(false);
+    }
+
   }, [])
 
   useEffect(() => {

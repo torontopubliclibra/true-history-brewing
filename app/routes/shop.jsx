@@ -127,7 +127,7 @@ export default function Homepage() {
           <h1>Under Construction</h1>
           <a href="/home" className='button button-tertiary'>
             <img src={arrowLeft} className="button-icon" alt="left arrow icon" />
-            Go back to the homepage
+            Back to the homepage
           </a>
         </div>
       </section>

@@ -845,7 +845,7 @@ main {
     }
 
     // responsive to mobile
-    @media only screen and (max-width: $tablet) {
+    @media only screen and (max-width: $mobile) {
       padding: 0;
 
       .button {

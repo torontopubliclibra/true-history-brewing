@@ -92,6 +92,10 @@ export default function Homepage() {
       setSelectedItems("beers");
     }
 
+    if (formattedItems[selectedItems].length > 0) {
+      setItemsLoading(false);
+    }
+
   }, [])
 
   useEffect(() => {
@@ -132,7 +136,7 @@ export default function Homepage() {
         <div className="retail-buttons">
           <Link to="/taproom#info" className='button button-quaternary'>Taproom hours<img src={clock} className="button-icon" alt="clock icon" /></Link>
           <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-quaternary'>Beers on tap<img src={beer} className="button-icon" alt="beer icon" /></Link>
-          <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon" alt="shopping basket icon" /></Link>
+          {/* <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon" alt="shopping basket icon" /></Link> */}
         </div>
         <img src={beerCans} className="retail-photo" alt="Film photo of a selection of THB beer cans on a wooden ledge" />
       </section>

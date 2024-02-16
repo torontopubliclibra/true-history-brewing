@@ -530,6 +530,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        text-align: center;
         align-items: center;
         width: 80%;
         margin: 50px auto;
@@ -555,6 +556,7 @@ main {
             color: $light;
             max-width: 50%;
         }
+
     }
 }
 
