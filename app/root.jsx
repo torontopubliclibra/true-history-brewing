@@ -673,7 +673,7 @@ export function ErrorBoundary() {
               <h2>{errorMessage}</h2>
               <a href="/home" className='button button-tertiary'>
                 <img src={arrowLeft} className="button-icon" alt="left arrow icon" />
-                Go back to the homepage
+                Back to the homepage
               </a>
             </div>
           </section>
