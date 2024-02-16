@@ -34,7 +34,19 @@ export default function Homepage() {
 
   let { menus } = useContext(StrapiContext);
   let [ selectedMenu, setSelectedMenu ] = useState("beers");
-  let [ menuItems, setMenuItems ] = useState(menus);
+  let [ menuItems, setMenuItems ] = useState({});
+  let [ formattedMenus, setFormattedMenus ] = useState({
+    beers: [],
+    food: [],
+    nonAlc: [],
+    wineSeltzersEtc: []
+  })
+  let [ timeStamps, setTimeStamps ] = useState({
+    beers: "",
+    food: "",
+    nonAlc: "",
+    wineSeltzersEtc: ""
+  })
   let [ menuLoading, setMenuLoading ] = useState(true);
   let [ loadingError, setLoadingError ] = useState(false);
   let location = useLocation();
@@ -69,93 +81,7 @@ export default function Homepage() {
     }
   }
 
-  let formattedMenus = {
-    beers: [],
-    food: [],
-    nonAlc: [],
-    wineSeltzersEtc: []
-  }
-
-  let timeStamps = {
-    beers: "",
-    food: "",
-    nonAlc: "",
-    wineSeltzersEtc: ""
-  }
-
-  if (menuItems.beers) {
-    menuItems.beers.items.forEach((beer, index) => {
-      formattedMenus.beers.push(
-        <li key={`beer-` + index} className='beer'>
-          <h4>
-            {beer.title} ({beer.abv})
-          </h4>
-          {beer.description ? <p className='description'>{beer.description}</p> : null}
-          <p className='price'>
-            {beer.price} / {beer.ml}ml
-          </p>
-        </li>
-      );
-      timeStamps.beers = updatedDate(menuItems.beers.updatedAt);
-    });
-  }
-
-  if (menuItems.food) {
-    menuItems.food.items.forEach((item, index) => {
-      formattedMenus.food.push(
-        <li key={`food-` + index} className={`food ` + item.size}>
-          <h4>
-            {item.title}
-          </h4>
-          {item.description ? <p className='description'>{item.description}</p> : null}
-          <p className='price'>
-            {item.price}
-          </p>
-        </li>
-      );
-      timeStamps.food = updatedDate(menuItems.food.updatedAt);
-    });
-  }
-
-  if (menuItems.nonAlc) {
-    menuItems.nonAlc.items.forEach((beverage, index) => {
-      formattedMenus.nonAlc.push(
-        <li key={`non-alc-` + index} className='non-alc'>
-          <h4>
-            {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
-          </h4>
-          {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-          <p className='price'>
-            {beverage.price}
-            {beverage.ml ? ` / ${beverage.ml}ml` : null}
-          </p>
-        </li>
-      );
-      timeStamps.nonAlc = updatedDate(menuItems.nonAlc.updatedAt);
-    });
-  }
-
-  if (menuItems.wineSeltzersEtc) {
-    menuItems.wineSeltzersEtc.items.forEach((beverage, index) => {
-      formattedMenus.wineSeltzersEtc.push(
-        <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
-          <h4>
-            {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
-          </h4>
-          {beverage.description ? <p className='description'>{beverage.description}</p> : null}
-          <p className='price'>
-            {beverage.price}
-            {beverage.ml ? ` / ${beverage.ml}ml` : null}
-          </p>
-        </li>
-      );
-      timeStamps.wineSeltzersEtc = updatedDate(menuItems.wineSeltzersEtc.updatedAt);
-    });
-  }
-
   useEffect(() => {
-
-    setMenuItems(menus);
 
     if (location.state) {
       setSelectedMenu(location.state.selectedMenu);
@@ -163,13 +89,104 @@ export default function Homepage() {
       setSelectedMenu("beers");
     }
 
+    setTimeout(() => {
+
+      setMenuItems(menus);
+
+    }, 2000);
+
   }, [])
 
   useEffect(() => {
 
-    setMenuItems(menus);
+    let newFormattedMenus = {
+      beers: [],
+      food: [],
+      nonAlc: [],
+      wineSeltzersEtc: []
+    }
 
-  }, [menus])
+    let newTimeStamps = {
+      beers: "",
+      food: "",
+      nonAlc: "",
+      wineSeltzersEtc: ""
+    };
+  
+    if (menuItems.beers) {
+      menuItems.beers.items.forEach((beer, index) => {
+        newFormattedMenus.beers.push(
+          <li key={`beer-` + index} className='beer'>
+            <h4>
+              {beer.title} ({beer.abv})
+            </h4>
+            {beer.description ? <p className='description'>{beer.description}</p> : null}
+            <p className='price'>
+              {beer.price} / {beer.ml}ml
+            </p>
+          </li>
+        );
+        newTimeStamps.beers = updatedDate(menuItems.beers.updatedAt);
+      });
+    }
+  
+    if (menuItems.food) {
+      menuItems.food.items.forEach((item, index) => {
+        newFormattedMenus.food.push(
+          <li key={`food-` + index} className={`food ` + item.size}>
+            <h4>
+              {item.title}
+            </h4>
+            {item.description ? <p className='description'>{item.description}</p> : null}
+            <p className='price'>
+              {item.price}
+            </p>
+          </li>
+        );
+        newTimeStamps.food = updatedDate(menuItems.food.updatedAt);
+      });
+    }
+  
+    if (menuItems.nonAlc) {
+      menuItems.nonAlc.items.forEach((beverage, index) => {
+        newFormattedMenus.nonAlc.push(
+          <li key={`non-alc-` + index} className='non-alc'>
+            <h4>
+              {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+            </h4>
+            {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+            <p className='price'>
+              {beverage.price}
+              {beverage.ml ? ` / ${beverage.ml}ml` : null}
+            </p>
+          </li>
+        );
+        newTimeStamps.nonAlc = updatedDate(menuItems.nonAlc.updatedAt);
+      });
+    }
+  
+    if (menuItems.wineSeltzersEtc) {
+      menuItems.wineSeltzersEtc.items.forEach((beverage, index) => {
+        newFormattedMenus.wineSeltzersEtc.push(
+          <li key={`wine-seltzers-etc-` + index} className='wine-seltzers-etc'>
+            <h4>
+              {beverage.title}{beverage.abv ? ` (${beverage.abv})` : ``}
+            </h4>
+            {beverage.description ? <p className='description'>{beverage.description}</p> : null}
+            <p className='price'>
+              {beverage.price}
+              {beverage.ml ? ` / ${beverage.ml}ml` : null}
+            </p>
+          </li>
+        );
+        newTimeStamps.wineSeltzersEtc = updatedDate(menuItems.wineSeltzersEtc.updatedAt);
+      });
+    }
+
+    setFormattedMenus(newFormattedMenus);
+    setTimeStamps(newTimeStamps);
+
+  }, [menuItems])
 
   useEffect(() => {
 
@@ -198,7 +215,7 @@ export default function Homepage() {
       clearTimeout(secondTimeout);
     };
 
-  }, [menuItems, formattedMenus])
+  }, [formattedMenus])
 
   return (
     <>

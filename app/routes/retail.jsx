@@ -20,12 +20,15 @@ export const meta = () => {
 
 export default function Homepage() {
 
-  const { retail } = useContext(StrapiContext);
-  const [ selectedItems, setSelectedItems ] = useState("beers");
-  const [ retailItems, setRetailItems ] = useState(retail);
+  let { retail } = useContext(StrapiContext);
+  let [ selectedItems, setSelectedItems ] = useState("beers");
+  let [ retailItems, setRetailItems ] = useState({});
+  let [ formattedItems, setFormattedItems ] = useState({
+    beers: []
+  })
   let [ itemsLoading, setItemsLoading ] = useState(true);
   let [ loadingError, setLoadingError ] = useState(false);
-  const location = useLocation();
+  let location = useLocation();
 
   const loaderStyle = {
     backgroundColor: "#1F1F1F",
@@ -45,46 +48,7 @@ export default function Homepage() {
     return `Last updated: ${day}/${month}/${year}`
   }
 
-  let formattedItems = {
-    beers: []
-  }
-
-  if (retailItems.beers) {
-    retailItems.beers.items.forEach((beer, index) => {
-      formattedItems.beers.push(
-        <>
-        <li key={`beer-` + index} className='line-item'>
-          <ul>
-            <li className="title">
-              {beer.title}
-            </li>
-            <li className="style">
-              {beer.style}
-            </li>
-            <li className="abv">
-              {beer.abv}
-            </li>
-            <li className="ml">
-              {beer.ml}ml
-            </li>
-            <li className="price">
-              {beer.price}
-            </li>
-          </ul>
-        </li>
-        <div className="mobile-line-item">
-          <h4>{beer.title} ({beer.abv})</h4>
-          <p className="description">{beer.style}</p>
-          <p className="price">{beer.price} / {beer.ml}ml</p>
-        </div>
-        </>
-      );
-    });
-  }
-
   useEffect(() => {
-
-    setRetailItems(retail);
 
     if (location.state) {
       setSelectedItems(location.state.selectedItems);
@@ -92,15 +56,59 @@ export default function Homepage() {
       setSelectedItems("beers");
     }
 
+    setTimeout(() => {
+
+      setRetailItems(retail);
+
+    }, 2000);
+
   }, [])
 
   useEffect(() => {
+  
+    let newFormattedItems = {
+      beers: []
+    }
+  
+    if (retailItems.beers) {
+      retailItems.beers.items.forEach((beer, index) => {
+        newFormattedItems.beers.push(
+          <>
+          <li key={`beer-` + index} className='line-item'>
+            <ul>
+              <li className="title">
+                {beer.title}
+              </li>
+              <li className="style">
+                {beer.style}
+              </li>
+              <li className="abv">
+                {beer.abv}
+              </li>
+              <li className="ml">
+                {beer.ml}ml
+              </li>
+              <li className="price">
+                {beer.price}
+              </li>
+            </ul>
+          </li>
+          <div className="mobile-line-item">
+            <h4>{beer.title} ({beer.abv})</h4>
+            <p className="description">{beer.style}</p>
+            <p className="price">{beer.price} / {beer.ml}ml</p>
+          </div>
+          </>
+        );
+      });
+  
+      setFormattedItems(newFormattedItems);
+    }
 
-    setRetailItems(retail);
-
-  }, [retail])
+  }, [retailItems])
 
   useEffect(() => {
+
 
     if (formattedItems[selectedItems].length > 0) {
       setItemsLoading(false);
@@ -127,7 +135,7 @@ export default function Homepage() {
       clearTimeout(secondTimeout);
     };
 
-  }, [retailItems, formattedItems])
+  }, [formattedItems])
 
   return (
     <>
