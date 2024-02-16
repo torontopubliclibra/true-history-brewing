@@ -22,7 +22,7 @@ export default function Homepage() {
 
   const { retail } = useContext(StrapiContext);
   const [ selectedItems, setSelectedItems ] = useState("beers");
-  const [ retailItems, setRetailItems ] = useState({});
+  const [ retailItems, setRetailItems ] = useState(retail);
   let [ itemsLoading, setItemsLoading ] = useState(true);
   let [ loadingError, setLoadingError ] = useState(false);
   const location = useLocation();
@@ -95,6 +95,20 @@ export default function Homepage() {
     if (formattedItems[selectedItems].length > 0) {
       setItemsLoading(false);
     }
+
+    let timeout;
+
+    if (itemsLoading) {
+      timeout = setTimeout(() => {
+        if (formattedItems[selectedItems].length > 0) {
+          setItemsLoading(false);
+        }
+      }, 5000);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
 
   }, [])
 

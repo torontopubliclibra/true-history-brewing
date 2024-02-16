@@ -34,7 +34,7 @@ export default function Homepage() {
 
   let { menus } = useContext(StrapiContext);
   let [ selectedMenu, setSelectedMenu ] = useState("beers");
-  let [ menuItems, setMenuItems ] = useState({});
+  let [ menuItems, setMenuItems ] = useState(menus);
   let [ menuLoading, setMenuLoading ] = useState(true);
   let [ loadingError, setLoadingError ] = useState(false);
   let location = useLocation();
@@ -166,6 +166,20 @@ export default function Homepage() {
     if (formattedMenus[selectedMenu].length > 0) {
       setMenuLoading(false);
     }
+
+    let timeout;
+
+    if (menuLoading) {
+      timeout = setTimeout(() => {
+        if (formattedMenus[selectedMenu].length > 0) {
+          setMenuLoading(false);
+        }
+      }, 5000);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
 
   }, [])
 
