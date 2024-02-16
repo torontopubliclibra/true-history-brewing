@@ -92,25 +92,13 @@ export default function Homepage() {
       setSelectedItems("beers");
     }
 
-    if (formattedItems[selectedItems].length > 0) {
-      setItemsLoading(false);
-    }
-
-    let timeout;
-
-    if (itemsLoading) {
-      timeout = setTimeout(() => {
-        if (formattedItems[selectedItems].length > 0) {
-          setItemsLoading(false);
-        }
-      }, 5000);
-    }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-
   }, [])
+
+  useEffect(() => {
+
+    setRetailItems(retail);
+
+  }, [retail])
 
   useEffect(() => {
 
