@@ -156,18 +156,18 @@ body {
   #mobile-menu-aside {
     display: none !important;
     
-    animation: $secondary-animation;
+    animation: $tertiary-animation;
     * {
-      animation: $secondary-animation;
+      animation: $tertiary-animation;
     }
   }
 
   #cart-aside {
     z-index: 250;
 
-    animation: $secondary-animation;
+    animation: $tertiary-animation;
     * {
-      animation: $secondary-animation;
+      animation: $tertiary-animation;
     }
   }
 
