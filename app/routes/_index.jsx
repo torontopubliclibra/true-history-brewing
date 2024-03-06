@@ -1,5 +1,5 @@
 // imports
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from '@remix-run/react';
 
 // component imports
@@ -26,8 +26,11 @@ export default function Homepage() {
   let [ ageVerified, setAgeVerified ] = useState(false);
   let [ rememberUser, setRememberUser ] = useState(false);
 
+  let checkbox = useRef(null);
+
   const handleCheckboxChange = () => {
     setRememberUser(!rememberUser);
+    checkbox.current.blur();
   };
 
   const loaderStyle = {
@@ -76,6 +79,7 @@ export default function Homepage() {
             <input
               type="checkbox"
               id="remember-user"
+              ref={checkbox}
               checked={rememberUser}
               className={rememberUser ? "checked" : ""}
               onChange={handleCheckboxChange}
