@@ -60,12 +60,12 @@ export default function Homepage() {
   };
 
   let updatedDate = (datetimeString) => {
-    let day = datetimeString.substring(2, 4);
-    let month = datetimeString.substring(0, 1);
-    if (month < 10) {
-      month = `0${month}`;
-    }
-    let year = datetimeString.substring(5, 9);
+
+    console.log(datetimeString)
+
+    let day = datetimeString.substring(3, 5);
+    let month = datetimeString.substring(0, 2);
+    let year = datetimeString.substring(6, 10);
     return `Last updated: ${day}/${month}/${year}`
   }
 
