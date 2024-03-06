@@ -397,7 +397,7 @@ export default function App() {
     let updatedAt = new Date(data.data[0].attributes.updatedAt);
     let newBeers = {
       items: [],
-      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York", day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'})
     }
     if (beerItemsData) {
       beerItemsData.forEach((beer) => {
@@ -427,7 +427,7 @@ export default function App() {
     let updatedAt = new Date(data.data[0].attributes.updatedAt);
     let newBeers = {
       items: [],
-      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York", day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'})
     }
     if (beerMenuData) {
       beerMenuData.forEach((beer) => {
@@ -461,7 +461,7 @@ export default function App() {
     let updatedAt = new Date(data.data[0].attributes.updatedAt);
     let newWineSeltzersEtc = {
       items: [],
-      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York", day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'})
     }
     if (wineSeltzersEtcMenuData) {
       wineSeltzersEtcMenuData.forEach((beverage) => {
@@ -497,7 +497,7 @@ export default function App() {
     let updatedAt = new Date(data.data[0].attributes.updatedAt);
     let newNonAlc = {
       items: [],
-      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York", day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'})
     }
     if (nonAlcMenuData) {
       nonAlcMenuData.forEach((beverage) => {
@@ -533,7 +533,7 @@ export default function App() {
     let updatedAt = new Date(data.data[0].attributes.updatedAt);
     let newFoods = {
       items: [],
-      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York", day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'})
     }
     if (foodMenusData) {
       foodMenusData.forEach((item) => {
@@ -563,7 +563,7 @@ export default function App() {
     let updatedAt = new Date(data.data[0].attributes.updatedAt);
     let newEvents = {
       events: [],
-      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York"})
+      updatedAt: updatedAt.toLocaleString("en-US", {timeZone: "America/New_York", day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'})
     };
 
     if (eventsData) {
