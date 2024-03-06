@@ -98,7 +98,7 @@ export default function Homepage() {
       window.localStorage.setItem("ageVerified", "true");
     }
 
-    window.location.replace("./home");
+    window.location.assign("./home");
   }
 
   useEffect(() => {
@@ -107,7 +107,7 @@ export default function Homepage() {
     setTimeout(() => {
       if (savedAgeVerified === "true") {
         setAgeVerified(true);
-        window.location.replace("./home");
+        window.location.assign("./home");
       } else {
         setLoading(false);
       }
