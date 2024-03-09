@@ -293,6 +293,8 @@ main {
   border: $default-border;
   filter: $default-shadow;
   z-index: 200;
+  display: flex;
+  flex-direction: column;
 
   // responsive to mobile
   @media only screen and (max-width: $tablet) {
@@ -999,6 +1001,7 @@ main {
     padding: 0;
     height: 500px;
     border-top: $default-border;
+    order: 8;
     .banner-photo {
       animation: $secondary-animation;
       width: 100%;
@@ -1337,7 +1340,9 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+      order: 6;
       padding-top: 0;
+      border-top: $default-border;
 
       .menu {
         gap: 5px;
@@ -1387,7 +1392,7 @@ main {
       padding: 40px 0;
       width: 100%;
       background-color: rgba($color1, 0.8);
-      border-bottom: $default-border;
+      order: 7;
   
       .buttons {
         width: 100%;

@@ -281,7 +281,7 @@ export default function Homepage() {
           <div className="buttons">
             <Link to="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className='button button-quaternary'>Directions<img src={compass} className="button-icon" alt="compass icon" /></Link>
             <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Retail items<img src={retail} className="button-icon" alt="retail shop icon" /></Link>
-            <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon" alt="shopping basket icon" /></Link>
+            {/* <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon" alt="shopping basket icon" /></Link> */}
           </div>
         </section>
         <section className="taproom-events" id="calendar">
