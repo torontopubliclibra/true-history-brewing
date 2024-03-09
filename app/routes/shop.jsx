@@ -104,7 +104,7 @@ export default function Homepage() {
 
   return (
     <>
-      {/* <section className="heading shop-heading">
+      <section className="heading shop-heading">
         <h2>Online Shop</h2>
       </section>
       <section className="shop-nav">
@@ -120,8 +120,8 @@ export default function Homepage() {
           <h3>Delivery & Pickup Conditions</h3>
           <p>Products are shipped via <a href="https://shipnoble.com/" target="_blank">Ship Noble</a>. Minimum orders of $15. A $10 flat delivery rate applies for all orders under $100. Deliveries are usually fulfilled within 5 business days, and pickup is available within 24 hours at True History Brewing, 1154 St. Clair Avenue West, Toronto, Ontario.</p>
         </div>
-      </section> */}
-      <section className="route-error">
+      </section>
+      {/* <section className="route-error">
         <div className="error-message">
           <h1>Under Construction</h1>
           <a href="/home" className='button button-tertiary'>
@@ -129,7 +129,7 @@ export default function Homepage() {
             Back to the homepage
           </a>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

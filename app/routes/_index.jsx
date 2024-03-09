@@ -1,6 +1,5 @@
 // imports
 import { useState, useEffect, useRef } from 'react';
-import { Link } from '@remix-run/react';
 
 // component imports
 import BarLoader from "react-spinners/BarLoader";

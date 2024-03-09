@@ -84,55 +84,23 @@ export function HeaderMenu() {
   return (
     <>
       <nav className="header-menu-mobile" role="navigation">
-      <a
-          // end
-          // onClick={closeAside("./home")}
-          // prefetch="intent"
-          // className={activeLinkStyle}
-          href="./home"
-          >
+      <a href="./home">
           <span className="nav-text">Home</span>
           <img src={home} className="button-icon" alt="home icon"  />
         </a>
-        <a
-          // end
-          // onClick={closeAside("./taproom")}
-          // prefetch="intent"
-          // className={activeLinkStyle}
-          href="./taproom"
-          // state={{ selectedMenu: "beers" }}
-          >
+        <a href="./taproom">
           <span className="nav-text">Taproom</span>
           <img src={beer} className="button-icon" alt="beer icon" />
         </a>
-        <a
-          // end
-          // onClick={closeAside("./retail")}
-          // prefetch="intent"
-          // className={activeLinkStyle}
-          href="./retail"
-          // state={{ selectedItems: "beers" }}
-          >
+        <a href="./retail">
           <span className="nav-text">Retail</span>
           <img src={retail} className="button-icon" alt="retail shop icon" />
         </a>
-        {/* <Link
-          end
-          onClick={closeAside(event, "./shop")}
-          prefetch="intent"
-          className={activeLinkStyle}
-          to="./shop"
-          >
+        <a href="./shop">
           <span className="nav-text">Online Shop</span>
           <img src={basket} className="button-icon" alt="shopping basket icon" />
-        </Link> */}
-        <a
-          // end
-          // onClick={closeAside("./contact")}
-          // prefetch="intent"
-          // className={activeLinkStyle}
-          href="./contact"
-          >
+        </a>
+        <a href="./contact">
           <span className="nav-text">Contact</span>
           <img src={contact} className="button-icon" alt="message icon" />
         </a>
@@ -175,7 +143,7 @@ export function HeaderMenu() {
           <span className="nav-text">Retail</span>
           <img src={retail} className="button-icon" alt="retail shop icon" />
         </NavLink>
-        {/* <NavLink
+        <NavLink
           end
           prefetch="intent"
           className={activeLinkStyle}
@@ -183,7 +151,7 @@ export function HeaderMenu() {
           >
           <span className="nav-text">Online Shop</span>
           <img src={basket} className="button-icon" alt="shopping basket icon" />
-        </NavLink> */}
+        </NavLink>
         <NavLink
           end
           prefetch="intent"
@@ -204,7 +172,7 @@ export function HeaderMenu() {
 function HeaderSubmenu({cart, aside, updateAsideOpen}) {
   return (
     <nav className="header-submenu" role="navigation">
-      {/* <CartToggle cart={cart} aside={aside} updateAsideOpen={updateAsideOpen} /> */}
+      <CartToggle cart={cart} aside={aside} updateAsideOpen={updateAsideOpen} />
       <HeaderMenuMobileToggle aside={aside} updateAsideOpen={updateAsideOpen} />
       <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary mobile-hide'>
         Instagram

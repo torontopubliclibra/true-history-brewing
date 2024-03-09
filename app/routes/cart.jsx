@@ -99,7 +99,7 @@ export default function Cart() {
 
   return (
     <>
-      {/* <section className="product-nav">
+      <section className="product-nav">
         <ul>
           <li>
             <Link to="/shop" className='button button-quaternary'><img src={arrowLeft} className="button-icon" alt="left arrow icon" />Back to the shop</Link>
@@ -118,8 +118,8 @@ export default function Cart() {
             }}
           </Await>
         </Suspense>
-      </div> */}
-      <section className="route-error">
+      </div>
+      {/* <section className="route-error">
         <div className="error-message">
           <h1>Under Construction</h1>
           <a href="/home" className='button button-tertiary'>
@@ -127,7 +127,7 @@ export default function Cart() {
             Go back to the homepage
           </a>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
