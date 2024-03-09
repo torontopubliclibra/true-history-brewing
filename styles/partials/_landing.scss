@@ -103,6 +103,12 @@
                             &:after {
                                 display: block;
                             }
+                            // responsive to tablet
+                            @media only screen and (max-width: $tablet) {
+                                &:hover {
+                                    background-color: $color4;
+                                }
+                            }
                         }
                     }
                 }
@@ -111,9 +117,13 @@
                     input[type="checkbox"] {
                         ~ .checkmark {
                             background-color: rgba($color4, 0.5);
+
+                            // responsive to tablet
+                            @media only screen and (max-width: $tablet) {
+                                background-color: $light;
+                            }
                         }
                     }
-                    
                 }
             }
         }
