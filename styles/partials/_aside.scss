@@ -12,6 +12,10 @@ aside {
     right: calc(-1 * 400px);
     top: 0;
 
+    .header-menu-desktop {
+      display: none;
+    }
+
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
       background-image: none;

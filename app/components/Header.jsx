@@ -48,7 +48,7 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
       </header>
     )
 
-  } else {
+  } else { 
 
     return (
       <header>
@@ -81,53 +81,177 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
  * }}
  */
 export function HeaderMenu({viewport}) {
-  const className = `header-menu-${viewport}`;
+  // const className = `header-menu-${viewport}`;
 
   // function closeAside(event) {
-  //   if (viewport === 'mobile') {
-  //     event.preventDefault();
-  //     window.location.assign(event.currentTarget.href);
-  //   }
+  //   event.preventDefault();
+  //   window.location.assign(event.currentTarget.href);
   // }
 
-  let MobileMenu = () => {
-    return (
-      <>
-        <Link
-          end
-          onClick={() => updateAsideOpen("menu", false)}
-          prefetch="intent"
-          className={activeLinkStyle}
-          to="./home"
+  // let MobileMenu = () => {
+  //   return (
+  //     <>
+  //       <a
+  //         // end
+  //         // onClick={closeAside("./home")}
+  //         // prefetch="intent"
+  //         // className={activeLinkStyle}
+  //         href="./home"
+  //         >
+  //         <span className="nav-text">Home</span>
+  //         <img src={home} className="button-icon" alt="home icon"  />
+  //       </a>
+  //       <a
+  //         // end
+  //         // onClick={closeAside("./taproom")}
+  //         // prefetch="intent"
+  //         // className={activeLinkStyle}
+  //         href="./taproom"
+  //         // state={{ selectedMenu: "beers" }}
+  //         >
+  //         <span className="nav-text">Taproom</span>
+  //         <img src={beer} className="button-icon" alt="beer icon" />
+  //       </a>
+  //       <a
+  //         // end
+  //         // onClick={closeAside("./retail")}
+  //         // prefetch="intent"
+  //         // className={activeLinkStyle}
+  //         href="./retail"
+  //         // state={{ selectedItems: "beers" }}
+  //         >
+  //         <span className="nav-text">Retail</span>
+  //         <img src={retail} className="button-icon" alt="retail shop icon" />
+  //       </a>
+  //       {/* <Link
+  //         end
+  //         onClick={closeAside(event, "./shop")}
+  //         prefetch="intent"
+  //         className={activeLinkStyle}
+  //         to="./shop"
+  //         >
+  //         <span className="nav-text">Online Shop</span>
+  //         <img src={basket} className="button-icon" alt="shopping basket icon" />
+  //       </Link> */}
+  //       <a
+  //         // end
+  //         // onClick={closeAside("./contact")}
+  //         // prefetch="intent"
+  //         // className={activeLinkStyle}
+  //         href="./contact"
+  //         >
+  //         <span className="nav-text">Contact</span>
+  //         <img src={contact} className="button-icon" alt="message icon" />
+  //       </a>
+  //       <div className="mobile-only-links">
+  //         <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
+  //           <img src={compass} className="button-icon compass" alt="compass icon" />
+  //         </a>
+  //         <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
+  //           <img src={instagram} className="button-icon" alt="Instagram icon" />
+  //         </a>
+  //       </div>
+  //     </>
+  //   )
+  // }
+
+  // let DesktopMenu = () => {
+  //   return (
+  //     <>
+  //       <NavLink
+  //         end
+  //         onClick={closeAside}
+  //         prefetch="intent"
+  //         className={activeLinkStyle}
+  //         to="./home"
+  //         >
+  //         <span className="nav-text">Home</span>
+  //         <img src={home} className="button-icon" alt="home icon"  />
+  //       </NavLink>
+  //       <NavLink
+  //         end
+  //         onClick={closeAside}
+  //         prefetch="intent"
+  //         className={activeLinkStyle}
+  //         to="./taproom"
+  //         state={{ selectedMenu: "beers" }}
+  //         >
+  //         <span className="nav-text">Taproom</span>
+  //         <img src={beer} className="button-icon" alt="beer icon" />
+  //       </NavLink>
+  //       <NavLink
+  //         end
+  //         onClick={closeAside}
+  //         prefetch="intent"
+  //         className={activeLinkStyle}
+  //         to="./retail"
+  //         state={{ selectedItems: "beers" }}
+  //         >
+  //         <span className="nav-text">Retail</span>
+  //         <img src={retail} className="button-icon" alt="retail shop icon" />
+  //       </NavLink>
+  //       {/* <NavLink
+  //         end
+  //         onClick={closeAside}
+  //         prefetch="intent"
+  //         className={activeLinkStyle}
+  //         to="./shop"
+  //         >
+  //         <span className="nav-text">Online Shop</span>
+  //         <img src={basket} className="button-icon" alt="shopping basket icon" />
+  //       </NavLink> */}
+  //       <NavLink
+  //         end
+  //         onClick={closeAside}
+  //         prefetch="intent"
+  //         className={activeLinkStyle}
+  //         to="./contact"
+  //         >
+  //         <span className="nav-text">Contact</span>
+  //         <img src={contact} className="button-icon" alt="message icon" />
+  //       </NavLink>
+  //     </>
+  //   )
+  // }
+  
+  return (
+    <>
+      <nav className="header-menu-mobile" role="navigation">
+      <a
+          // end
+          // onClick={closeAside("./home")}
+          // prefetch="intent"
+          // className={activeLinkStyle}
+          href="./home"
           >
           <span className="nav-text">Home</span>
           <img src={home} className="button-icon" alt="home icon"  />
-        </Link>
-        <Link
-          end
-          onClick={() => updateAsideOpen("menu", false)}
-          prefetch="intent"
-          className={activeLinkStyle}
-          to="./taproom"
-          state={{ selectedMenu: "beers" }}
+        </a>
+        <a
+          // end
+          // onClick={closeAside("./taproom")}
+          // prefetch="intent"
+          // className={activeLinkStyle}
+          href="./taproom"
+          // state={{ selectedMenu: "beers" }}
           >
           <span className="nav-text">Taproom</span>
           <img src={beer} className="button-icon" alt="beer icon" />
-        </Link>
-        <Link
-          end
-          onClick={() => updateAsideOpen("menu", false)}
-          prefetch="intent"
-          className={activeLinkStyle}
-          to="./retail"
-          state={{ selectedItems: "beers" }}
+        </a>
+        <a
+          // end
+          // onClick={closeAside("./retail")}
+          // prefetch="intent"
+          // className={activeLinkStyle}
+          href="./retail"
+          // state={{ selectedItems: "beers" }}
           >
           <span className="nav-text">Retail</span>
           <img src={retail} className="button-icon" alt="retail shop icon" />
-        </Link>
+        </a>
         {/* <Link
           end
-          onClick={() => updateAsideOpen("menu", false)}
+          onClick={closeAside(event, "./shop")}
           prefetch="intent"
           className={activeLinkStyle}
           to="./shop"
@@ -135,16 +259,16 @@ export function HeaderMenu({viewport}) {
           <span className="nav-text">Online Shop</span>
           <img src={basket} className="button-icon" alt="shopping basket icon" />
         </Link> */}
-        <Link
-          end
-          onClick={() => updateAsideOpen("menu", false)}
-          prefetch="intent"
-          className={activeLinkStyle}
-          to="./contact"
+        <a
+          // end
+          // onClick={closeAside("./contact")}
+          // prefetch="intent"
+          // className={activeLinkStyle}
+          href="./contact"
           >
           <span className="nav-text">Contact</span>
           <img src={contact} className="button-icon" alt="message icon" />
-        </Link>
+        </a>
         <div className="mobile-only-links">
           <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
             <img src={compass} className="button-icon compass" alt="compass icon" />
@@ -153,16 +277,11 @@ export function HeaderMenu({viewport}) {
             <img src={instagram} className="button-icon" alt="Instagram icon" />
           </a>
         </div>
-      </>
-    )
-  }
-
-  let DesktopMenu = () => {
-    return (
-      <>
-        <NavLink
+      </nav>
+      <nav className="header-menu-desktop" role="navigation">
+      <NavLink
           end
-          // onClick={() => updateAsideOpen("menu", false)}
+          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./home"
@@ -172,7 +291,7 @@ export function HeaderMenu({viewport}) {
         </NavLink>
         <NavLink
           end
-          // onClick={() => updateAsideOpen("menu", false)}
+          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./taproom"
@@ -183,7 +302,7 @@ export function HeaderMenu({viewport}) {
         </NavLink>
         <NavLink
           end
-          // onClick={() => updateAsideOpen("menu", false)}
+          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./retail"
@@ -204,7 +323,7 @@ export function HeaderMenu({viewport}) {
         </NavLink> */}
         <NavLink
           end
-          // onClick={() => updateAsideOpen("menu", false)}
+          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./contact"
@@ -212,77 +331,8 @@ export function HeaderMenu({viewport}) {
           <span className="nav-text">Contact</span>
           <img src={contact} className="button-icon" alt="message icon" />
         </NavLink>
-      </>
-    )
-  }
-  
-  return (
-    <nav className={className} role="navigation">
-      {viewport === 'mobile'
-        ? <MobileMenu />
-        : <DesktopMenu />
-      }
-      <NavLink
-        end
-        onClick={() => updateAsideOpen("menu", false)}
-        prefetch="intent"
-        className={activeLinkStyle}
-        to="./home"
-        >
-        <span className="nav-text">Home</span>
-        <img src={home} className="button-icon" alt="home icon"  />
-      </NavLink>
-      <NavLink
-        end
-        onClick={() => updateAsideOpen("menu", false)}
-        prefetch="intent"
-        className={activeLinkStyle}
-        to="./taproom"
-        state={{ selectedMenu: "beers" }}
-        >
-        <span className="nav-text">Taproom</span>
-        <img src={beer} className="button-icon" alt="beer icon" />
-      </NavLink>
-      <NavLink
-        end
-        onClick={() => updateAsideOpen("menu", false)}
-        prefetch="intent"
-        className={activeLinkStyle}
-        to="./retail"
-        state={{ selectedItems: "beers" }}
-        >
-        <span className="nav-text">Retail</span>
-        <img src={retail} className="button-icon" alt="retail shop icon" />
-      </NavLink>
-      {/* <NavLink
-        end
-        onClick={closeAside}
-        prefetch="intent"
-        className={activeLinkStyle}
-        to="./shop"
-        >
-        <span className="nav-text">Online Shop</span>
-        <img src={basket} className="button-icon" alt="shopping basket icon" />
-      </NavLink> */}
-      <NavLink
-        end
-        onClick={() => updateAsideOpen("menu", false)}
-        prefetch="intent"
-        className={activeLinkStyle}
-        to="./contact"
-        >
-        <span className="nav-text">Contact</span>
-        <img src={contact} className="button-icon" alt="message icon" />
-      </NavLink>
-      <div className="mobile-only-links">
-        <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
-          <img src={compass} className="button-icon compass" alt="compass icon" />
-        </a>
-        <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
-          <img src={instagram} className="button-icon" alt="Instagram icon" />
-        </a>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
 
