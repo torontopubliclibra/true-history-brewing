@@ -640,12 +640,13 @@ main {
     border: $default-border;
     filter: $default-shadow;
     color: $black;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: "Bogue-Regular";
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
     line-height: 1.15;
+    letter-spacing: .75px;
     height: 20px;
     padding: 10px 30px 10px 30px;
     margin: 5px;
@@ -741,11 +742,6 @@ main {
 
 .button-secondary, .button-tertiary {
     font-size: 0.9rem;
-
-    // responsive to tablet
-    @media only screen and (max-width: $tablet) {
-        font-size: 1rem;
-    }
 }
 
 // responsive to tablet

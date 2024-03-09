@@ -474,12 +474,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -531,9 +532,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -1038,12 +1036,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -1095,9 +1094,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -1703,12 +1699,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -1760,9 +1757,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -2280,12 +2274,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -2337,9 +2332,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -2976,12 +2968,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -3033,9 +3026,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -3872,12 +3862,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -3929,9 +3920,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -4473,12 +4461,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -4530,9 +4519,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -5232,12 +5218,13 @@ main .taproom-menus .menu-nav .button {
   border: solid #1F1F1F 3px;
   filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
   color: #1F1F1F;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Bogue-Regular";
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: .75px;
   height: 20px;
   padding: 10px 30px 10px 30px;
   margin: 5px;
@@ -5289,9 +5276,6 @@ main .taproom-menus .menu-nav .button {
 
 .button-secondary, .button-tertiary {
   font-size: 0.9rem; }
-  @media only screen and (max-width: 1070px) {
-    .button-secondary, .button-tertiary {
-      font-size: 1rem; } }
 
 @media only screen and (max-width: 1070px) {
   .button.cart, .button.menu-toggle {
@@ -6359,6 +6343,9 @@ main {
         justify-content: space-between;
         margin-top: 15px;
         margin-left: 40px; }
+        @media only screen and (max-width: 1070px) {
+          main .home-events .home-events-content .button {
+            padding: 15px 20px; } }
       main .home-events .home-events-content hr {
         background-color: #C28165;
         border-left: none;
@@ -6509,7 +6496,7 @@ main {
     align-items: center;
     color: #F1EDE2;
     background-color: rgba(121, 79, 62, 0.8);
-    border-bottom: solid #1F1F1F 3px; }
+    border-top: solid #1F1F1F 3px; }
     main .taproom-menus .error-message {
       color: #1F1F1F;
       background-color: #F1EDE2;
@@ -6575,7 +6562,7 @@ main {
       main .taproom-menus {
         order: 6;
         padding-top: 0;
-        border-top: solid #1F1F1F 3px; }
+        border-bottom: solid #1F1F1F 3px; }
         main .taproom-menus .menu {
           gap: 5px;
           margin-top: 20px;
