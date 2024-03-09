@@ -14,7 +14,6 @@ import basket from './../../public/assets/icons/basket.svg';
 export const meta = () => {
   return [
     {title: 'True History Brewing | Retail'},
-    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 

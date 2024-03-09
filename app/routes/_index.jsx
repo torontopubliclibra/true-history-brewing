@@ -16,7 +16,6 @@ import flourishRight from './../../public/assets/icons/flourish-right.svg';
 export const meta = () => {
   return [
     {title: 'True History Brewing'},
-    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 

@@ -14,13 +14,9 @@ header {
     position: relative;
     z-index: 150;
 
-    // responsive to mobile
-    @media only screen and (max-width: $tablet) {
-        animation: none;
-    }
-
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+        animation: none;
         background-image: url('./../../public/assets/wallpaper.webp');
         background-size: 100%;
         height: 100px;
@@ -46,25 +42,12 @@ header {
             grid-gap: 1rem;
             margin-left: auto;
 
-            // responsive to mobile
+            // responsive to tablet
             @media only screen and (max-width: $tablet) {
                 .mobile-hide {
                     display: none;
                 }
             }
-
-            // responsive to mobile
-            // @media only screen and (max-width: $mobile) {
-            //     .button {
-            //         &:hover {
-            //             color: $black;
-            //             background-color: $color2;
-            //             img {
-            //                 filter: none;
-            //             }
-            //         }
-            //     }
-            // }
 
             .cart-active, .menu-active {
                 color: $white;
@@ -72,13 +55,6 @@ header {
                 img {
                 filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
                 }
-                // &:hover {
-                //     color: $white;
-                //     background-color: $color1;
-                //     img {
-                //         filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%);
-                //     }
-                // }
             }
         
             .menu-toggle, .menu-active {
@@ -192,13 +168,24 @@ footer {
         }
     }
 
+    .line-break {
+        br {
+            margin-bottom: 15px;
+        }
+    }
+
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+        .line-break {
+            display: none;
+        }
+
         filter: none;
         border-left: none;
         border-right: none;
         border-bottom: none;
         margin-bottom: 0;
+        padding: 0 5%;
 
         .footer-buttons {
             gap: 5px;

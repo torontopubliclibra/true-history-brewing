@@ -15,7 +15,6 @@ import { CartMain } from '~/components/Cart';
 export const meta = () => {
   return [
     {title: 'True History Brewing | Online shop | Cart'},
-    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 

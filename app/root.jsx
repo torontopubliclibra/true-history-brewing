@@ -620,9 +620,16 @@ export default function App() {
   return (
     <html lang="en" className={htmlState}>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta charSet="UTF-8" />
+        <meta property="og:title" content="True History Brewing" />
         <meta property="og:image" content={metaBanner} />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="theme-color" content="#778d79"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="Brewery and taproom in Toronto, Ontario | Brewing Low & Slow" />
+        <meta property="og:description" content="Brewery and taproom in Toronto, Ontario | Brewing Low & Slow" />
+        <meta name="author" content="True History Brewing" />
+        <meta name="keywords" content=" True History Brewing, brewery, independent brewery, craft brewery, taproom, bottle shop, craft beer, brewing, beer, traditional beers, Toronto brewery, Ontario brewery, St Clair West, north Toronto" />
         <Meta />
         <style data-fullcalendar />
         <Links />

@@ -60,7 +60,6 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
         </a>
         <HeaderMenu
           menu={menu}
-          viewport="desktop"
           primaryDomainUrl={header.shop.primaryDomain.url}
         />
         <HeaderSubmenu
@@ -80,139 +79,7 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
  *   viewport: Viewport;
  * }}
  */
-export function HeaderMenu({viewport}) {
-  // const className = `header-menu-${viewport}`;
-
-  // function closeAside(event) {
-  //   event.preventDefault();
-  //   window.location.assign(event.currentTarget.href);
-  // }
-
-  // let MobileMenu = () => {
-  //   return (
-  //     <>
-  //       <a
-  //         // end
-  //         // onClick={closeAside("./home")}
-  //         // prefetch="intent"
-  //         // className={activeLinkStyle}
-  //         href="./home"
-  //         >
-  //         <span className="nav-text">Home</span>
-  //         <img src={home} className="button-icon" alt="home icon"  />
-  //       </a>
-  //       <a
-  //         // end
-  //         // onClick={closeAside("./taproom")}
-  //         // prefetch="intent"
-  //         // className={activeLinkStyle}
-  //         href="./taproom"
-  //         // state={{ selectedMenu: "beers" }}
-  //         >
-  //         <span className="nav-text">Taproom</span>
-  //         <img src={beer} className="button-icon" alt="beer icon" />
-  //       </a>
-  //       <a
-  //         // end
-  //         // onClick={closeAside("./retail")}
-  //         // prefetch="intent"
-  //         // className={activeLinkStyle}
-  //         href="./retail"
-  //         // state={{ selectedItems: "beers" }}
-  //         >
-  //         <span className="nav-text">Retail</span>
-  //         <img src={retail} className="button-icon" alt="retail shop icon" />
-  //       </a>
-  //       {/* <Link
-  //         end
-  //         onClick={closeAside(event, "./shop")}
-  //         prefetch="intent"
-  //         className={activeLinkStyle}
-  //         to="./shop"
-  //         >
-  //         <span className="nav-text">Online Shop</span>
-  //         <img src={basket} className="button-icon" alt="shopping basket icon" />
-  //       </Link> */}
-  //       <a
-  //         // end
-  //         // onClick={closeAside("./contact")}
-  //         // prefetch="intent"
-  //         // className={activeLinkStyle}
-  //         href="./contact"
-  //         >
-  //         <span className="nav-text">Contact</span>
-  //         <img src={contact} className="button-icon" alt="message icon" />
-  //       </a>
-  //       <div className="mobile-only-links">
-  //         <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
-  //           <img src={compass} className="button-icon compass" alt="compass icon" />
-  //         </a>
-  //         <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
-  //           <img src={instagram} className="button-icon" alt="Instagram icon" />
-  //         </a>
-  //       </div>
-  //     </>
-  //   )
-  // }
-
-  // let DesktopMenu = () => {
-  //   return (
-  //     <>
-  //       <NavLink
-  //         end
-  //         onClick={closeAside}
-  //         prefetch="intent"
-  //         className={activeLinkStyle}
-  //         to="./home"
-  //         >
-  //         <span className="nav-text">Home</span>
-  //         <img src={home} className="button-icon" alt="home icon"  />
-  //       </NavLink>
-  //       <NavLink
-  //         end
-  //         onClick={closeAside}
-  //         prefetch="intent"
-  //         className={activeLinkStyle}
-  //         to="./taproom"
-  //         state={{ selectedMenu: "beers" }}
-  //         >
-  //         <span className="nav-text">Taproom</span>
-  //         <img src={beer} className="button-icon" alt="beer icon" />
-  //       </NavLink>
-  //       <NavLink
-  //         end
-  //         onClick={closeAside}
-  //         prefetch="intent"
-  //         className={activeLinkStyle}
-  //         to="./retail"
-  //         state={{ selectedItems: "beers" }}
-  //         >
-  //         <span className="nav-text">Retail</span>
-  //         <img src={retail} className="button-icon" alt="retail shop icon" />
-  //       </NavLink>
-  //       {/* <NavLink
-  //         end
-  //         onClick={closeAside}
-  //         prefetch="intent"
-  //         className={activeLinkStyle}
-  //         to="./shop"
-  //         >
-  //         <span className="nav-text">Online Shop</span>
-  //         <img src={basket} className="button-icon" alt="shopping basket icon" />
-  //       </NavLink> */}
-  //       <NavLink
-  //         end
-  //         onClick={closeAside}
-  //         prefetch="intent"
-  //         className={activeLinkStyle}
-  //         to="./contact"
-  //         >
-  //         <span className="nav-text">Contact</span>
-  //         <img src={contact} className="button-icon" alt="message icon" />
-  //       </NavLink>
-  //     </>
-  //   )
-  // }
+export function HeaderMenu() {
   
   return (
     <>
@@ -281,7 +148,6 @@ export function HeaderMenu({viewport}) {
       <nav className="header-menu-desktop" role="navigation">
       <NavLink
           end
-          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./home"
@@ -291,7 +157,6 @@ export function HeaderMenu({viewport}) {
         </NavLink>
         <NavLink
           end
-          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./taproom"
@@ -302,7 +167,6 @@ export function HeaderMenu({viewport}) {
         </NavLink>
         <NavLink
           end
-          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./retail"
@@ -313,7 +177,6 @@ export function HeaderMenu({viewport}) {
         </NavLink>
         {/* <NavLink
           end
-          onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./shop"
@@ -323,7 +186,6 @@ export function HeaderMenu({viewport}) {
         </NavLink> */}
         <NavLink
           end
-          // onClick={closeAside}
           prefetch="intent"
           className={activeLinkStyle}
           to="./contact"
@@ -377,10 +239,6 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
   }
 }
 
-// function SearchToggle() {
-//   return <a href="#search-aside">Search</a>;
-// }
-
 /**
  * @param {{count: number}}
  */
@@ -425,48 +283,6 @@ function CartToggle({cart, aside, updateAsideOpen}) {
   );
 }
 
-const FALLBACK_HEADER_MENU = {
-  id: 'gid://shopify/Menu/199655587896',
-  items: [
-    {
-      id: 'gid://shopify/MenuItem/461609500728',
-      resourceId: null,
-      tags: [],
-      title: 'Collections',
-      type: 'HTTP',
-      url: '/collections',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609533496',
-      resourceId: null,
-      tags: [],
-      title: 'Blog',
-      type: 'HTTP',
-      url: '/blogs/journal',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609566264',
-      resourceId: null,
-      tags: [],
-      title: 'Policies',
-      type: 'HTTP',
-      url: '/policies',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609599032',
-      resourceId: 'gid://shopify/Page/92591030328',
-      tags: [],
-      title: 'About',
-      type: 'PAGE',
-      url: '/pages/about',
-      items: [],
-    },
-  ],
-};
-
 /**
  * @param {{
  *   isActive: boolean;
@@ -477,7 +293,6 @@ function activeLinkStyle({isActive}) {
 }
 
 /** @typedef {Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>} HeaderProps */
-/** @typedef {'desktop' | 'mobile'} Viewport */
 
 /** @typedef {import('storefrontapi.generated').HeaderQuery} HeaderQuery */
 /** @typedef {import('./Layout').LayoutProps} LayoutProps */

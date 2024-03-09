@@ -69,12 +69,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;
@@ -627,12 +626,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;
@@ -1286,12 +1284,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;
@@ -1857,12 +1854,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;
@@ -2357,9 +2353,7 @@ header {
   z-index: 150; }
   @media only screen and (max-width: 1070px) {
     header {
-      animation: none; } }
-  @media only screen and (max-width: 1070px) {
-    header {
+      animation: none;
       background-image: url("./../../public/assets/wallpaper.webp");
       background-size: 100%;
       height: 100px;
@@ -2461,13 +2455,18 @@ footer {
       color: #F1EDE2; }
       footer .footer-buttons .selected img {
         filter: invert(100%) sepia(97%) saturate(265%) hue-rotate(27deg) brightness(111%) contrast(88%); }
+  footer .line-break br {
+    margin-bottom: 15px; }
   @media only screen and (max-width: 1070px) {
     footer {
       filter: none;
       border-left: none;
       border-right: none;
       border-bottom: none;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding: 0 5%; }
+      footer .line-break {
+        display: none; }
       footer .footer-buttons {
         gap: 5px; }
         footer .footer-buttons .button {
@@ -2547,12 +2546,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;
@@ -3437,12 +3435,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;
@@ -4032,12 +4029,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;
@@ -4785,12 +4781,11 @@ footer .credit p, footer .copyright p {
       footer .credit p a:hover, footer .copyright p a:hover {
         color: #1F1F1F; } }
 
-@media only screen and (max-width: 1070px) {
-  footer .credit p, footer .copyright p {
-    font-size: 0.75rem; } }
-
 footer .credit p {
   font-size: 1rem; }
+  @media only screen and (max-width: 1070px) {
+    footer .credit p {
+      font-size: 0.95rem; } }
 
 footer .copyright {
   padding-top: 10px;

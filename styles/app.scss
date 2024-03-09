@@ -142,7 +142,7 @@ body {
   padding-left: 2.5vw;
   padding-right: 2.5vw;
 
-  // responsive to mobile
+  // responsive to smaller desktop
   @media only screen and (max-width: $smaller-desktop) {
     width: 100vw;
     padding: 0;
@@ -275,7 +275,7 @@ h3.demo-text {
   height: auto;
   margin: 40px 0;
 
-  // responsive to mobile
+  // responsive to tablet
   @media only screen and (max-width: $tablet) {
     width: 80%;
     margin: 10px 0;
@@ -296,7 +296,7 @@ main {
   display: flex;
   flex-direction: column;
 
-  // responsive to mobile
+  // responsive to tablet
   @media only screen and (max-width: $tablet) {
     z-index: 100;
     border-left: none;
@@ -866,7 +866,7 @@ main {
       max-width: 85%;
       background-color: $color3;
     }
-    // responsive to mobile
+    // responsive to tablet
     @media only screen and (max-width: $tablet) {
       background: $light !important;
       border-bottom: 0 !important;
@@ -1455,16 +1455,6 @@ main {
         height: 70px;
         margin-top: 10px;
       }
-      // .fc-button {
-      //   &:hover, &:focus {
-      //     background-color: $color2 !important;
-      //     color: $black !important;
-      //   }
-      //   &:disabled:hover {
-      //     background-color: $color1 !important;
-      //     color: $white !important;
-      //   }
-      // }
     }
   }
 }

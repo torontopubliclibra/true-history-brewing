@@ -8,7 +8,6 @@ import mail from './../../public/assets/icons/mail.svg';
 export const meta = () => {
   return [
     {title: 'True History Brewing | Contact'},
-    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 

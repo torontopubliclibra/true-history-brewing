@@ -12,7 +12,6 @@ import arrowLeft from './../../public/assets/icons/arrow-left.svg';
 export const meta = ({data}) => {
   return [
     {title: `True History Brewing | Online shop | ${data?.product.title ?? ''}`},
-    {description: 'Brewery and taproom in Toronto, Ontario'},
   ];
 };
 
