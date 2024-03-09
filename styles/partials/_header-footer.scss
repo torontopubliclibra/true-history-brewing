@@ -90,10 +90,14 @@ header {
                 }
             }
         }
+        
+        &.header-menu-mobile {
+            display: none;
+        }
 
         &.header-menu-desktop {
-            animation: $secondary-animation;
             display: flex;
+            animation: $secondary-animation;
             width: 100%;
             justify-content: center;
             position: absolute;
@@ -102,10 +106,6 @@ header {
             // responsive to mobile
             @media only screen and (max-width: $tablet) {
                 display: none;
-            }
-
-            .mobile-only-links {
-                display: none !important;
             }
 
             a {

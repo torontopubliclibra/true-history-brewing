@@ -233,6 +233,11 @@ export default function Homepage() {
             </div>
           </div>
         </section>
+        <section className="taproom-events" id="calendar">
+          <h3>Events</h3>
+          <hr/>
+          <Calendar/>
+        </section>
         <section className="taproom-menus" id="menu">
           <h3>Menus</h3>
             {
@@ -283,11 +288,6 @@ export default function Homepage() {
             <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-quaternary'>Retail items<img src={retail} className="button-icon" alt="retail shop icon" /></Link>
             {/* <Link to="/shop" className='button button-quaternary'>Online shop<img src={basket} className="button-icon" alt="shopping basket icon" /></Link> */}
           </div>
-        </section>
-        <section className="taproom-events" id="calendar">
-          <h3>Events</h3>
-          <hr/>
-          <Calendar/>
         </section>
         <section className="taproom-banner">
           <img src={patioPhoto} className="banner-photo" alt="A photo of people enjoying themselves on the True History patio" />
