@@ -1004,7 +1004,6 @@ main {
     padding: 0;
     height: 500px;
     border-top: $default-border;
-    order: 8;
     .banner-photo {
       animation: $secondary-animation;
       width: 100%;
@@ -1015,6 +1014,9 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+      order: 7;
+      border-top: none;
+      border-bottom: $default-border;
       height: 250px;
       .banner-photo {
         height: 250px;
@@ -1395,7 +1397,7 @@ main {
       padding: 40px 0;
       width: 100%;
       background-color: rgba($color1, 0.8);
-      order: 7;
+      order: 8;
   
       .buttons {
         width: 100%;

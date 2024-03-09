@@ -6310,8 +6310,7 @@ main {
     margin: 0;
     padding: 0;
     height: 500px;
-    border-top: solid #1F1F1F 3px;
-    order: 8; }
+    border-top: solid #1F1F1F 3px; }
     main .taproom-banner .banner-photo {
       animation: fade-in 0.8s ease-in-out;
       width: 100%;
@@ -6320,6 +6319,9 @@ main {
       object-fit: cover; }
     @media only screen and (max-width: 1070px) {
       main .taproom-banner {
+        order: 7;
+        border-top: none;
+        border-bottom: solid #1F1F1F 3px;
         height: 250px; }
         main .taproom-banner .banner-photo {
           height: 250px; } }
@@ -6596,7 +6598,7 @@ main {
         padding: 40px 0;
         width: 100%;
         background-color: rgba(119, 141, 121, 0.8);
-        order: 7; }
+        order: 8; }
         main .mobile-taproom-buttons .buttons {
           width: 100%;
           display: flex;
