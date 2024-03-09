@@ -293,6 +293,8 @@ main {
   border: $default-border;
   filter: $default-shadow;
   z-index: 200;
+  display: flex;
+  flex-direction: column;
 
   // responsive to mobile
   @media only screen and (max-width: $tablet) {
@@ -621,6 +623,9 @@ main {
     @media only screen and (max-width: $tablet) {
       flex-direction: column-reverse;
       height: 100%;
+      order: 3;
+      border-bottom: none;
+      border-top: $default-border;
 
       .retail-photo {
         height: 250px;
@@ -1009,6 +1014,9 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+      order: 7;
+      border-top: none;
+      border-bottom: $default-border;
       height: 250px;
       .banner-photo {
         height: 250px;
@@ -1337,7 +1345,9 @@ main {
 
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
+      order: 6;
       padding-top: 0;
+      border-top: $default-border;
 
       .menu {
         gap: 5px;
@@ -1387,7 +1397,7 @@ main {
       padding: 40px 0;
       width: 100%;
       background-color: rgba($color1, 0.8);
-      border-bottom: $default-border;
+      order: 8;
   
       .buttons {
         width: 100%;

@@ -1,5 +1,5 @@
 // imports
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from '@remix-run/react';
 
 // component imports
@@ -26,8 +26,11 @@ export default function Homepage() {
   let [ ageVerified, setAgeVerified ] = useState(false);
   let [ rememberUser, setRememberUser ] = useState(false);
 
+  let checkbox = useRef(null);
+
   const handleCheckboxChange = () => {
     setRememberUser(!rememberUser);
+    checkbox.current.blur();
   };
 
   const loaderStyle = {
@@ -61,7 +64,7 @@ export default function Homepage() {
       <div className="landing-main">
         <p>By clicking Enter, you verify that you are 19 years of age or older</p>
         <div className="landing-buttons">
-          <Link onClick={() => handleAgeVerification()} to="/home" className='button button-primary decorative'>
+          <Link onClick={() => handleAgeVerification()} to="./home" className='button button-primary decorative'>
             <img src={flourishLeft} className="flourish" alt="button flourish" />
             Enter
             <img src={flourishRight} className="flourish" alt="button flourish" />
@@ -76,6 +79,7 @@ export default function Homepage() {
             <input
               type="checkbox"
               id="remember-user"
+              ref={checkbox}
               checked={rememberUser}
               className={rememberUser ? "checked" : ""}
               onChange={handleCheckboxChange}
@@ -94,7 +98,7 @@ export default function Homepage() {
       window.localStorage.setItem("ageVerified", "true");
     }
 
-    window.location.replace("/home");
+    window.location.assign("./home");
   }
 
   useEffect(() => {
@@ -103,7 +107,7 @@ export default function Homepage() {
     setTimeout(() => {
       if (savedAgeVerified === "true") {
         setAgeVerified(true);
-        window.location.replace("/home");
+        window.location.assign("./home");
       } else {
         setLoading(false);
       }

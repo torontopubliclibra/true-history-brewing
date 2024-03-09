@@ -213,7 +213,7 @@ export default function App() {
           });
           
           if (window.location.hash) {
-            window.location.hash = '';
+            window.location.assign(window.location.href.replace(window.location.hash, ''));
           }
         }, 400);
       }

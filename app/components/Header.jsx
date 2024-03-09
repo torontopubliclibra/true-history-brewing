@@ -86,7 +86,7 @@ export function HeaderMenu({viewport}) {
   function closeAside(event) {
     if (viewport === 'mobile') {
       event.preventDefault();
-      window.location.href = event.currentTarget.href;
+      window.location.assign(event.currentTarget.href);
     }
   }
   
@@ -97,7 +97,7 @@ export function HeaderMenu({viewport}) {
         onClick={closeAside}
         prefetch="intent"
         className={activeLinkStyle}
-        to="/home"
+        to="./home"
         >
         <span className="nav-text">Home</span>
         <img src={home} className="button-icon" alt="home icon"  />
@@ -107,7 +107,7 @@ export function HeaderMenu({viewport}) {
         onClick={closeAside}
         prefetch="intent"
         className={activeLinkStyle}
-        to="/taproom"
+        to="./taproom"
         state={{ selectedMenu: "beers" }}
         >
         <span className="nav-text">Taproom</span>
@@ -118,7 +118,7 @@ export function HeaderMenu({viewport}) {
         onClick={closeAside}
         prefetch="intent"
         className={activeLinkStyle}
-        to="/retail"
+        to="./retail"
         state={{ selectedItems: "beers" }}
         >
         <span className="nav-text">Retail</span>
@@ -129,7 +129,7 @@ export function HeaderMenu({viewport}) {
         onClick={closeAside}
         prefetch="intent"
         className={activeLinkStyle}
-        to="/shop"
+        to="./shop"
         >
         <span className="nav-text">Online Shop</span>
         <img src={basket} className="button-icon" alt="shopping basket icon" />
@@ -139,7 +139,7 @@ export function HeaderMenu({viewport}) {
         onClick={closeAside}
         prefetch="intent"
         className={activeLinkStyle}
-        to="/contact"
+        to="./contact"
         >
         <span className="nav-text">Contact</span>
         <img src={contact} className="button-icon" alt="message icon" />
