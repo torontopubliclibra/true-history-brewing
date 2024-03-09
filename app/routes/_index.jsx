@@ -64,14 +64,14 @@ export default function Homepage() {
       <div className="landing-main">
         <p>By clicking Enter, you verify that you are 19 years of age or older</p>
         <div className="landing-buttons">
-          <Link onClick={() => handleAgeVerification()} to="./home" className='button button-primary decorative'>
+          <a onClick={() => handleAgeVerification()} className='button button-primary decorative'>
             <img src={flourishLeft} className="flourish" alt="button flourish" />
             Enter
             <img src={flourishRight} className="flourish" alt="button flourish" />
-          </Link>
-          <Link to="https://google.com" className='button button-primary'>
+          </a>
+          <a href="https://google.com" className='button button-primary'>
             Exit
-          </Link>
+          </a>
         </div>
         <div className="remember-user">
           <label htmlFor="remember-user">

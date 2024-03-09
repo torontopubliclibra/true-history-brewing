@@ -83,18 +83,18 @@ export function Header({header, cart, asideOpen, updateAsideOpen}) {
 export function HeaderMenu({viewport}) {
   const className = `header-menu-${viewport}`;
 
-  function closeAside(event) {
-    if (viewport === 'mobile') {
-      event.preventDefault();
-      window.location.assign(event.currentTarget.href);
-    }
-  }
+  // function closeAside(event) {
+  //   if (viewport === 'mobile') {
+  //     event.preventDefault();
+  //     window.location.assign(event.currentTarget.href);
+  //   }
+  // }
   
   return (
     <nav className={className} role="navigation">
       <NavLink
         end
-        onClick={closeAside}
+        onClick={() => updateAsideOpen("menu", false)}
         prefetch="intent"
         className={activeLinkStyle}
         to="./home"
@@ -104,7 +104,7 @@ export function HeaderMenu({viewport}) {
       </NavLink>
       <NavLink
         end
-        onClick={closeAside}
+        onClick={() => updateAsideOpen("menu", false)}
         prefetch="intent"
         className={activeLinkStyle}
         to="./taproom"
@@ -115,7 +115,7 @@ export function HeaderMenu({viewport}) {
       </NavLink>
       <NavLink
         end
-        onClick={closeAside}
+        onClick={() => updateAsideOpen("menu", false)}
         prefetch="intent"
         className={activeLinkStyle}
         to="./retail"
@@ -136,7 +136,7 @@ export function HeaderMenu({viewport}) {
       </NavLink> */}
       <NavLink
         end
-        onClick={closeAside}
+        onClick={() => updateAsideOpen("menu", false)}
         prefetch="intent"
         className={activeLinkStyle}
         to="./contact"
