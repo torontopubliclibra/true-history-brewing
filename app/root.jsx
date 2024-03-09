@@ -25,6 +25,7 @@ import appStyles from './styles/app.css';
 
 // asset imports
 import favicon from '../public/favicon.svg';
+import metaBanner from '../public/assets/meta-banner.png';
 import wallpaper from '../public/assets/wallpaper.webp';
 import woodenBackground from '../public/assets/wooden-bg.webp';
 import logo from '../public/assets/thb-logo.webp';
@@ -621,6 +622,7 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta property="og:image" content={metaBanner} />
         <Meta />
         <style data-fullcalendar />
         <Links />
