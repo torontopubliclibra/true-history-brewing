@@ -171,30 +171,26 @@ export default function App() {
 
     if (open) {
 
-      window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
+      setHtmlState("aside-open");
 
-      setTimeout(() => {
-        setHtmlState("aside-open");
+      if (aside === "menu") {
 
-        if (aside === "menu") {
-  
-          setBodyTags("menu-open");
-          window.location.hash = "mobile-menu-aside";
-          setAsideOpen({
-            open: true,
-            aside: "menu"
-          });
-  
-        } else if (aside === "cart") {
-  
-          setBodyTags("cart-open");
-          window.location.hash = "cart-aside";
-          setAsideOpen({
-            open: true,
-            aside: "cart"
-          });
-        }
-      }, 400);
+        setBodyTags("menu-open");
+        window.location.hash = "mobile-menu-aside";
+        setAsideOpen({
+          open: true,
+          aside: "menu"
+        });
+
+      } else if (aside === "cart") {
+
+        setBodyTags("cart-open");
+        window.location.hash = "cart-aside";
+        setAsideOpen({
+          open: true,
+          aside: "cart"
+        });
+      }
     
     } else {
 
@@ -203,20 +199,17 @@ export default function App() {
         setHtmlState("landing");
         
       } else {
-        setTimeout(() => {
+        setBodyTags("default-body");
+        setHtmlState("aside-closed");  
 
-          setBodyTags("default-body");
-          setHtmlState("aside-closed");  
-  
-          setAsideOpen({
-            open: false,
-            aside: ""
-          });
-          
-          if (window.location.hash) {
-            window.location.assign(window.location.href.replace(window.location.hash, ''));
-          }
-        }, 400);
+        setAsideOpen({
+          open: false,
+          aside: ""
+        });
+        
+        if (window.location.hash) {
+          window.location.hash = '';
+        }
       }
     }
   }
