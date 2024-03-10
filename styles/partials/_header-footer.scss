@@ -155,7 +155,9 @@ footer {
     }
 
     .footer-buttons {
+        width: 100%;
         display: flex;
+        justify-content: center;
         gap: 15px;
         padding-top: 25px;
 
@@ -193,10 +195,6 @@ footer {
 
         .footer-buttons {
             gap: 5px;
-
-            .button {
-                height: 15px !important;
-            }
         }
     }
 }

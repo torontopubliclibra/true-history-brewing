@@ -23,7 +23,7 @@ export function Footer() {
        <img title="Link to contact page" src={contact} className="button-icon" alt="message icon" />
       </Link>
       <a onClick={scrollTop} className='button button-primary'>
-        Scroll to top
+        Back to top
         <img src={arrowUp} className="button-icon" alt="up arrow icon" />
       </a>
       <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary'>

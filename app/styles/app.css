@@ -2460,7 +2460,9 @@ footer {
     max-width: 90%;
     margin: 25px 0; }
   footer .footer-buttons {
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 15px;
     padding-top: 25px; }
     footer .footer-buttons .button {
@@ -2483,9 +2485,7 @@ footer {
       footer .line-break {
         display: none; }
       footer .footer-buttons {
-        gap: 5px; }
-        footer .footer-buttons .button {
-          height: 15px !important; } }
+        gap: 5px; } }
 
 .landing-header, .landing-footer {
   display: none; }
