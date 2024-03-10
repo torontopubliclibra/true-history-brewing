@@ -164,9 +164,9 @@ let handleSubscribe = async (event) => {
           <Hours/>
           <div className="menu-buttons">
             <Link to="/taproom#info" className='button button-tertiary mobile-only'>"What are your hours?"<img src={clock} className="button-icon" alt="clock icon" /></Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "beers" }} className='button button-tertiary'>"What's on tap right now?"<img src={beer} className="button-icon" alt="beer icon" /></Link>
+            <Link to="/taproom#menus" state={{ selectedMenu: "beers" }} className='button button-tertiary'>"What's on tap right now?"<img src={beer} className="button-icon" alt="beer icon" /></Link>
             <Link to="/retail#items" state={{ selectedItems: "beers" }} className='button button-tertiary'>"What's in the fridge?"<img src={retail} className="button-icon" alt="retail shop icon" /></Link>
-            <Link to="/taproom#menu" state={{ selectedMenu: "food" }}  className='button button-tertiary' alt="knife and fork icon" >"Do you guys have food?"<img src={food} className="button-icon" alt="knife and fork icon" /></Link>
+            <Link to="/taproom#menus" state={{ selectedMenu: "food" }}  className='button button-tertiary' alt="knife and fork icon" >"Do you guys have food?"<img src={food} className="button-icon" alt="knife and fork icon" /></Link>
           </div>
         </section>
         <section className="home-events">
@@ -177,7 +177,7 @@ let handleSubscribe = async (event) => {
             <ul className="events-list">
               {formattedEvents}
             </ul>
-            <Link to="/taproom#calendar" className='button button-primary'>Check out our calendar <img src={calendar} className="button-icon" alt="calendar icon" /></Link>
+            <Link to="/taproom#events" className='button button-primary'>Check out our calendar <img src={calendar} className="button-icon" alt="calendar icon" /></Link>
           </div>
         </section>
         <section className="home-newsletter">

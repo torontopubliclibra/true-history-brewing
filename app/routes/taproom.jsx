@@ -232,12 +232,12 @@ export default function Homepage() {
             </div>
           </div>
         </section>
-        <section className="taproom-events" id="calendar">
+        <section className="taproom-events" id="events">
           <h3>Events</h3>
           <hr/>
           <Calendar/>
         </section>
-        <section className="taproom-menus" id="menu">
+        <section className="taproom-menus" id="menus">
           <h3>Menus</h3>
             {
               loadingError

@@ -836,6 +836,8 @@ main {
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
         font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 40px;
       }
     }
   }
@@ -1253,7 +1255,7 @@ main {
         }
         .address {
           order: -1;
-          padding: 20px 10%;
+          padding: 15px 10%;
           width: 80%;
         }
       }
@@ -1453,16 +1455,14 @@ main {
     // responsive to tablet
     @media only screen and (max-width: $tablet) {
       hr {
-        background-color: $color3;
-        width: 90%;
-        margin: 10px auto;
+        display: none;
       }
       h3 {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 70px;
-        margin-top: 10px;
+        margin-top: 20px;
       }
     }
   }
