@@ -9,6 +9,11 @@
     justify-content: center;
     align-items: center;
     height: 453px;
+    
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        border-top: $default-border;
+    }
 
     .thb-icon {
         width: 200px;

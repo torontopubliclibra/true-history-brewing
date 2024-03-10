@@ -6,6 +6,11 @@
     flex-direction: column;
     padding: 0;
 
+    // responsive to tablet
+    @media only screen and (max-width: $tablet) {
+        border-top: $default-border;
+    }
+
     .landing-welcome {
         animation: $secondary-animation;
         display: flex;

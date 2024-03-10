@@ -1116,6 +1116,9 @@ nav.header-menu-desktop a {
   display: flex;
   flex-direction: column;
   padding: 0; }
+  @media only screen and (max-width: 1070px) {
+    .landing-section {
+      border-top: solid #1F1F1F 3px; } }
   .landing-section .landing-welcome {
     animation: fade-in 0.8s ease-in-out;
     display: flex;
@@ -1778,6 +1781,9 @@ nav.header-menu-desktop a {
   justify-content: center;
   align-items: center;
   height: 453px; }
+  @media only screen and (max-width: 1070px) {
+    .loading {
+      border-top: solid #1F1F1F 3px; } }
   .loading .thb-icon {
     width: 200px;
     height: auto;
@@ -5614,6 +5620,8 @@ nav.header-menu-desktop a {
     :root.landing body {
       padding-top: 2.5vh;
       padding-bottom: 2.5vh; }
+    :root.landing main {
+      margin-top: 0; }
     :root.landing .overlay, :root.landing #cart-aside, :root.landing #mobile-menu-aside {
       display: none;
       min-height: 100vh !important; }

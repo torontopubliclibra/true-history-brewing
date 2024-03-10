@@ -39,6 +39,10 @@
       padding-bottom: 2.5vh;
     }
 
+    main {
+      margin-top: 0;
+    }
+
     .overlay, #cart-aside, #mobile-menu-aside {
       display: none;
       min-height: 100vh !important;
