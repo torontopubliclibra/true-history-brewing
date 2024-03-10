@@ -599,9 +599,20 @@ export default function App() {
     if (location.pathname === '/') {
       setBodyTags("landing");
       setHtmlState("landing");
-    } else if (location.hash === "#cart-aside" || location.hash === "#mobile-menu-aside") {
+    } else if (location.hash === "#cart-aside") {
       setHtmlState("aside-open");
       setBodyTags("menu-open");
+      setAsideOpen({
+        open: true,
+        aside: "cart"
+      })
+    } else if (location.hash === "#mobile-menu-aside") {
+      setHtmlState("aside-open");
+      setBodyTags("menu-open");
+      setAsideOpen({
+        open: true,
+        aside: "menu"
+      })
     } else {
       setBodyTags("default-body");
       setHtmlState("default-html");
