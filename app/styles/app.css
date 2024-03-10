@@ -1158,57 +1158,60 @@ nav.header-menu-desktop a {
       gap: 10px;
       margin-top: 10px;
       margin-bottom: 15px; }
-    .landing-section .landing-main .remember-user label {
-      height: 30px;
+    .landing-section .landing-main .remember-user {
       display: flex;
-      align-items: center;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: pointer; }
-      .landing-section .landing-main .remember-user label .checkmark {
-        margin-left: 10px;
-        margin-bottom: 2px;
-        height: 20px;
-        width: 20px;
-        border: solid #1F1F1F 3px;
-        background-color: #F1EDE2;
-        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-        transition: background-color 0.4s; }
-        .landing-section .landing-main .remember-user label .checkmark:after {
-          content: "";
-          position: absolute;
-          display: none;
-          left: 7px;
-          top: 3px;
-          width: 3px;
-          height: 8px;
-          border: solid #F1EDE2;
-          border-width: 0 3px 3px 0;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg); }
-      .landing-section .landing-main .remember-user label input[type="checkbox"] {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0; }
-        .landing-section .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark {
-          background-color: #BC4749; }
-          .landing-section .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark:after {
-            display: block; }
-          @media only screen and (max-width: 1070px) {
-            .landing-section .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark:hover {
-              background-color: #BC4749; } }
-      .landing-section .landing-main .remember-user label:hover {
+      width: 350px; }
+      .landing-section .landing-main .remember-user label {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         cursor: pointer; }
-        .landing-section .landing-main .remember-user label:hover input[type="checkbox"] ~ .checkmark {
-          background-color: rgba(188, 71, 73, 0.5); }
-          @media only screen and (max-width: 1070px) {
-            .landing-section .landing-main .remember-user label:hover input[type="checkbox"] ~ .checkmark {
-              background-color: #F1EDE2; } }
+        .landing-section .landing-main .remember-user label .checkmark {
+          margin-left: 15px;
+          margin-bottom: 2px;
+          height: 20px;
+          width: 20px;
+          border: solid #1F1F1F 3px;
+          background-color: #F1EDE2;
+          filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+          transition: background-color 0.4s; }
+          .landing-section .landing-main .remember-user label .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 7px;
+            top: 3px;
+            width: 3px;
+            height: 8px;
+            border: solid #F1EDE2;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+        .landing-section .landing-main .remember-user label input[type="checkbox"] {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0; }
+          .landing-section .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark {
+            background-color: #BC4749; }
+            .landing-section .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark:after {
+              display: block; }
+            @media only screen and (max-width: 1070px) {
+              .landing-section .landing-main .remember-user label input[type="checkbox"].checked ~ .checkmark:hover {
+                background-color: #BC4749; } }
+        .landing-section .landing-main .remember-user label:hover {
+          cursor: pointer; }
+          .landing-section .landing-main .remember-user label:hover input[type="checkbox"] ~ .checkmark {
+            background-color: rgba(188, 71, 73, 0.5); }
+            @media only screen and (max-width: 1070px) {
+              .landing-section .landing-main .remember-user label:hover input[type="checkbox"] ~ .checkmark {
+                background-color: #F1EDE2; } }
     @media only screen and (max-width: 1070px) {
       .landing-section .landing-main {
         height: 250px;
@@ -1216,6 +1219,7 @@ nav.header-menu-desktop a {
         .landing-section .landing-main .landing-buttons {
           justify-content: center; }
         .landing-section .landing-main .remember-user {
+          justify-content: center;
           margin: 0 auto; } }
 
 @keyframes fade-up {
