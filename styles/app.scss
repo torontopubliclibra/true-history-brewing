@@ -192,7 +192,6 @@ body {
     margin: 0;
 
     header {
-      position: sticky;
       z-index: 1000;
     }
     .landing-header {
@@ -301,6 +300,12 @@ main {
     z-index: 100;
     border-left: none;
     border-right: none;
+    border-top: none;
+  }
+
+  // responsive to mobile
+  @media only screen and (max-width: $mobile) {
+    margin-top: 100px;
   }
 
   .contact-nav {

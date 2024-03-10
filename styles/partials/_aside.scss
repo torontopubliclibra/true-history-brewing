@@ -354,7 +354,8 @@ aside {
 // responsive to mobile
 @media only screen and (max-width: $mobile) {
     #cart-aside {
-        position: absolute;
+      position: absolute;
+      min-height: 100%;
 
         aside {
             width: 100vw;
@@ -377,111 +378,115 @@ aside {
     @media only screen and (max-width: $tablet) {
       display: initial;
       position: fixed;
-    }
-  
-    // responsive to tablet
-    @media only screen and (max-width: $tablet) {
-      position: absolute;
-    }
-  
-    aside {
-      position: absolute;
-      top: 102px;
-  
-    // responsive to tablet
-    @media only screen and (max-width: $tablet) {
-      height: calc(100vh - 142px);
-
-      main {
-        padding-top: 30px;
-      }
+      border-top: $default-border;
     }
   
     // responsive to mobile
     @media only screen and (max-width: $mobile) {
-        width: 100vw;
-        max-width: 100vw;
-        padding-top: 75px;
-        height: calc(100% - 204px);
+      position: fixed;
+      min-height: 100%;
+      border-top: none;
     }
   
-    .header-menu-mobile {
-
+    aside {
+      position: absolute;
+      // top: 102px;
+      top: 50px;
+  
       // responsive to tablet
       @media only screen and (max-width: $tablet) {
-        height: calc(90% - 204px);
-      }
+        height: calc(100vh - 50px);
 
+        main {
+          padding-top: 30px;
+        }
+      }
+    
       // responsive to mobile
       @media only screen and (max-width: $mobile) {
-        height: 90%;
+          width: 100vw;
+          max-width: 100vw;
+          height: calc(100vh - 100px);
+          bottom: 0;
       }
+    
+      .header-menu-mobile {
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      grid-gap: 10px;
-
-      a {
-        display: flex;
-        gap: 10px;
-        justify-content: space-between;
-        align-items: center;
-        height: 30px;
-        width: 60%;
-        min-width: 250px;
-        background: $light;
-        color: $black;
-        border: $default-border;
-        filter: $default-shadow;
-        padding: 10px 30px 10px 30px;
-        margin: 5px;
-        &:hover {
-          text-decoration: none;
-        }
-
-        .button-icon {
-          width: 20px;
-
-          &.compass {
-            width: 27px;
-          }
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          height: calc(90% - 204px);
         }
 
         // responsive to mobile
         @media only screen and (max-width: $mobile) {
-          width: 70vw;
+          height: 100vh;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 10px;
+
+        a {
+          display: flex;
+          gap: 10px;
+          justify-content: space-between;
+          align-items: center;
+          height: 30px;
+          width: 60%;
+          min-width: 250px;
+          background: $light;
+          color: $black;
+          border: $default-border;
+          filter: $default-shadow;
+          padding: 10px 30px 10px 30px;
+          margin: 5px;
+          &:hover {
+            text-decoration: none;
+          }
 
           .button-icon {
-              width: 22px;
-              padding-bottom: 3px;
-          }
-        }
-      }
-        
-      // responsive to tablet
-      @media only screen and (max-width: $tablet) {
-        .mobile-only-links {
-          display: flex;
-          justify-content: center;
-          gap: 15px;
-          margin-top: 30px;
-          a {
-            display: flex;
-            max-width: unset;
-            min-width: unset;
-            width: 100%;
-            padding: 10px 20px;
-            background-color: $color2 !important;
-          }
-        }
-      }
-    }
+            width: 20px;
 
-    header {
-      display: none;
-      height: 0;
+            &.compass {
+              width: 27px;
+            }
+          }
+
+          // responsive to mobile
+          @media only screen and (max-width: $mobile) {
+            width: 70vw;
+
+            .button-icon {
+                width: 22px;
+                padding-bottom: 3px;
+            }
+          }
+        }
+          
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          .mobile-only-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            a {
+              display: flex;
+              max-width: unset;
+              min-width: unset;
+              width: 100%;
+              padding: 10px 20px;
+              background-color: $color2 !important;
+            }
+          }
+        }
+      }
+
+      header {
+        display: none;
+        height: 0;
+      }
     }
-}
 }

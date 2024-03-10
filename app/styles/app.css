@@ -2358,12 +2358,16 @@ header {
       background-size: 100%;
       height: 100px;
       align-items: center;
-      padding-top: 0; }
+      padding-top: 0;
+      border-bottom: solid #1F1F1F 3px; }
       header a {
         display: flex; } }
   @media only screen and (max-width: 600px) {
-    header .button-label {
-      display: none; } }
+    header {
+      position: fixed;
+      width: 92%; }
+      header .button-label {
+        display: none; } }
   header nav.header-submenu {
     display: flex;
     grid-gap: 1rem;
@@ -3276,7 +3280,8 @@ aside {
 
 @media only screen and (max-width: 600px) {
   #cart-aside {
-    position: absolute; }
+    position: absolute;
+    min-height: 100%; }
     #cart-aside aside {
       width: 100vw;
       max-width: 100vw;
@@ -3291,24 +3296,27 @@ aside {
   @media only screen and (max-width: 1070px) {
     #mobile-menu-aside {
       display: initial;
-      position: fixed; } }
-  @media only screen and (max-width: 1070px) {
+      position: fixed;
+      border-top: solid #1F1F1F 3px; } }
+  @media only screen and (max-width: 600px) {
     #mobile-menu-aside {
-      position: absolute; } }
+      position: fixed;
+      min-height: 100%;
+      border-top: none; } }
   #mobile-menu-aside aside {
     position: absolute;
-    top: 102px; }
+    top: 50px; }
     @media only screen and (max-width: 1070px) {
       #mobile-menu-aside aside {
-        height: calc(100vh - 142px); }
+        height: calc(100vh - 50px); }
         #mobile-menu-aside aside main {
           padding-top: 30px; } }
     @media only screen and (max-width: 600px) {
       #mobile-menu-aside aside {
         width: 100vw;
         max-width: 100vw;
-        padding-top: 75px;
-        height: calc(100% - 204px); } }
+        height: calc(100vh - 100px);
+        bottom: 0; } }
     #mobile-menu-aside aside .header-menu-mobile {
       display: flex;
       flex-direction: column;
@@ -3320,7 +3328,7 @@ aside {
           height: calc(90% - 204px); } }
       @media only screen and (max-width: 600px) {
         #mobile-menu-aside aside .header-menu-mobile {
-          height: 90%; } }
+          height: 100vh; } }
       #mobile-menu-aside aside .header-menu-mobile a {
         display: flex;
         gap: 10px;
@@ -5698,7 +5706,6 @@ body {
     body {
       margin: 0; }
       body header {
-        position: sticky;
         z-index: 1000; }
       body .landing-header {
         position: unset; }
@@ -5779,7 +5786,11 @@ main {
     main {
       z-index: 100;
       border-left: none;
-      border-right: none; } }
+      border-right: none;
+      border-top: none; } }
+  @media only screen and (max-width: 600px) {
+    main {
+      margin-top: 100px; } }
   main .contact-nav {
     padding: 20px;
     background-color: rgba(119, 141, 121, 0.8);

@@ -217,6 +217,7 @@ function HeaderSubmenu({cart, aside, updateAsideOpen}) {
 function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
   if (aside.open && aside.id === "menu") {
     return (
+      /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary menu-toggle menu-active" onClick={() => updateAsideOpen("menu", false)}>
         <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
         <span className="button-label">Menu</span>
@@ -224,6 +225,7 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
     );
   } else if (aside.open && aside.id !== "cart") {
     return (
+      /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
         <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
         <span className="button-label">Menu</span>
@@ -231,6 +233,7 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
     );
   } else {
     return (
+      /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
         <span className="button-label">Menu</span>
         <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
@@ -245,6 +248,7 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
 function CartBadge({count, aside, updateAsideOpen}) {
   if (aside.open && aside.id === "cart") {
     return (
+      /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary cart cart-active" onClick={() => updateAsideOpen("cart", false)}>
         <span className="button-label">Cart</span>({count})
         <img src={cart} className="button-icon" alt="shopping cart icon" />
@@ -252,6 +256,7 @@ function CartBadge({count, aside, updateAsideOpen}) {
     );
   } else if (aside.open && aside.id !== "cart") {
     return (
+      /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
         <img src={cart} className="button-icon" alt="shopping cart icon" />
@@ -259,6 +264,7 @@ function CartBadge({count, aside, updateAsideOpen}) {
     );
   } else {
     return (
+      /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
         <img src={cart} className="button-icon" alt="shopping cart icon" />

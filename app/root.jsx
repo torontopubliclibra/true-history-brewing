@@ -171,7 +171,7 @@ export default function App() {
 
     if (open) {
 
-      window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
+      // window.scrollTo({top: 0, behavior: 'smooth', duration: 200});
 
       setTimeout(() => {
         setHtmlState("aside-open");
@@ -214,7 +214,7 @@ export default function App() {
           });
           
           if (window.location.hash) {
-            window.location.assign(window.location.href.replace(window.location.hash, ''));
+            window.location.hash = '';
           }
         }, 400);
       }
