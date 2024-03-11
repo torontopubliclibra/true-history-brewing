@@ -1268,7 +1268,6 @@ main {
     align-items: center;
     color: $light;
     background-color: rgba($dark, 0.8);
-    border-top: $default-border;
 
     .error-message {
       color: $black;
@@ -1437,6 +1436,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgba($less-light, 0.8);
+    border-bottom: $default-border;
     hr {
       background-color: $color3;
       width: 95%;
