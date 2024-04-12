@@ -65,6 +65,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }
@@ -641,6 +644,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }
@@ -1325,6 +1331,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }
@@ -1917,6 +1926,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }
@@ -2633,6 +2645,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }
@@ -3545,6 +3560,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }
@@ -4158,6 +4176,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }
@@ -4929,6 +4950,9 @@ header .button-primary, footer .button-primary {
 .food-menu-description p {
   font-size: 16px;
   font-style: italic; }
+  .food-menu-description p a {
+    color: #F6F6F6;
+    text-decoration: underline; }
   @media only screen and (max-width: 1070px) {
     .food-menu-description p {
       font-size: 14px; } }

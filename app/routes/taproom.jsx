@@ -271,7 +271,7 @@ export default function Homepage() {
                         { selectedMenu === 'food'
                           ? <div className="food-menu-description">
                               <h4>Beisl</h4>
-                              <p>Slang for 'bistro' in Vienna, Beisl focuses on Viennese-style classics. Traditional and nostalgic. Modern and exciting. Caleb grew up in Vienna with this food, and when we met we knew this was the perfect match for the beer we make and love.</p>
+                              <p>Slang for 'bistro' in Vienna, Beisl focuses on Viennese-style classics. Traditional and nostalgic. Modern and exciting. Caleb grew up in Vienna with this food, and when we met we knew this was the perfect match for the beer we make and love. Learn more about Beisl on <a href="https://instagram.com/beisltoronto" target="_blank">Instagram</a>.</p>
                             </div>
                           : null
                         }
