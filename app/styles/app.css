@@ -6581,6 +6581,8 @@ main {
           gap: 5px;
           margin-top: 20px;
           margin-bottom: 20px; }
+          main .taproom-menus .menu .food-menu-description {
+            width: 80%; }
           main .taproom-menus .menu li {
             width: 80% !important;
             justify-content: center;

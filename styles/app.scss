@@ -1395,6 +1395,11 @@ main {
         gap: 5px;
         margin-top: 20px;
         margin-bottom: 20px;
+
+        .food-menu-description {
+          width: 80%;
+        }
+
         li {
           width: 80% !important;
           justify-content: center;
