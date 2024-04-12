@@ -377,6 +377,15 @@ main {
         text-align: center;
       }
 
+      small {
+        font-size: 0.8rem;
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          font-size: 0.7rem;
+        }
+      }
+
       .button {
         justify-content: space-between;
         margin-top: 30px;
@@ -1396,6 +1405,7 @@ main {
 
         .food-menu-description {
           width: 80%;
+          margin-bottom: 35px;
         }
 
         li {

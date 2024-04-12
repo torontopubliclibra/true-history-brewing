@@ -6004,6 +6004,11 @@ main {
         margin: 20px;
         margin-right: 0;
         text-align: center; }
+      main .contact-content .contact-form small {
+        font-size: 0.8rem; }
+        @media only screen and (max-width: 1070px) {
+          main .contact-content .contact-form small {
+            font-size: 0.7rem; } }
       main .contact-content .contact-form .button {
         justify-content: space-between;
         margin-top: 30px;
@@ -6725,7 +6730,8 @@ main {
           margin-top: 20px;
           margin-bottom: 20px; }
           main .taproom-menus .menu .food-menu-description {
-            width: 80%; }
+            width: 80%;
+            margin-bottom: 35px; }
           main .taproom-menus .menu li {
             width: 80% !important;
             justify-content: center;
