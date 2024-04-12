@@ -270,7 +270,8 @@ export default function Homepage() {
                       <ul className='menu'>
                         { selectedMenu === 'food'
                           ? <div className="food-menu-description">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                              <h4>Beisl</h4>
+                              <p>Slang for 'bistro' in Vienna, Beisl focuses on Viennese-style classics. Traditional and nostalgic. Modern and exciting. Caleb grew up in Vienna with this food, and when we met we knew this was the perfect match for the beer we make and love.</p>
                             </div>
                           : null
                         }

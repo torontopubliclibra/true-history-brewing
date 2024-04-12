@@ -1314,16 +1314,14 @@ main {
       gap: 15px;
 
       .food-menu-description {
-        width: 95%;
-        background-color: rgba($light, 0.9);
+        width: 80%;
+        background-color: rgba($color4, 0.9);
         border: $default-border;
         filter: $default-shadow;
-        color: $black;
+        color: $white;
         padding: 30px;
         margin-bottom: 20px;
-        p {
-          text-align: center;
-        }
+        text-align: center;
       }
 
       li {

@@ -13,6 +13,10 @@
     font-family: "Bogue-ExtraBold";
     src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype");
 };
+@font-face {
+    font-family: "GermaniaOne-Regular";
+    src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype");
+};
 
 // typographic styles
 :root {
@@ -53,6 +57,25 @@ header, footer {
 
 .shop, .product {
     color: $black;
+}
+
+.food-menu-description {
+    h4 {
+        font-family: "GermaniaOne-Regular", serif;
+        font-size: 50px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        filter: drop-shadow(-3px 3px 0.5px rgba($black, 0.8));
+    }
+    p {
+        font-size: 16px;
+        font-style: italic;
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+            font-size: 14px;
+        }
+    }
 }
 
 footer {

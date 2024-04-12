@@ -24,6 +24,10 @@
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -50,6 +54,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -582,6 +600,10 @@ nav.header-menu-desktop a {
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -608,6 +630,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -1248,6 +1284,10 @@ nav.header-menu-desktop a {
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -1274,6 +1314,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -1822,6 +1876,10 @@ nav.header-menu-desktop a {
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -1848,6 +1906,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -2520,6 +2592,10 @@ footer {
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -2546,6 +2622,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -3414,6 +3504,10 @@ aside {
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -3440,6 +3534,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -4009,6 +4117,10 @@ nav.header-menu-desktop a {
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -4035,6 +4147,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -4762,6 +4888,10 @@ nav.header-menu-desktop a {
   font-family: "Bogue-ExtraBold";
   src: url(./../../public/fonts/bogue-extrabold.ttf) format("truetype"); }
 
+@font-face {
+  font-family: "GermaniaOne-Regular";
+  src: url(./../../public/fonts/GermaniaOne-Regular.ttf) format("truetype"); }
+
 :root {
   font-size: 18px;
   letter-spacing: 0.75px; }
@@ -4788,6 +4918,20 @@ header .button-primary, footer .button-primary {
 
 .shop, .product {
   color: #1F1F1F; }
+
+.food-menu-description h4 {
+  font-family: "GermaniaOne-Regular", serif;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  filter: drop-shadow(-3px 3px 0.5px rgba(31, 31, 31, 0.8)); }
+
+.food-menu-description p {
+  font-size: 16px;
+  font-style: italic; }
+  @media only screen and (max-width: 1070px) {
+    .food-menu-description p {
+      font-size: 14px; } }
 
 footer .credit p, footer .copyright p {
   font-family: "Saudagar";
@@ -6525,15 +6669,14 @@ main {
       align-items: center;
       gap: 15px; }
       main .taproom-menus .menu .food-menu-description {
-        width: 95%;
-        background-color: rgba(241, 237, 226, 0.9);
+        width: 80%;
+        background-color: rgba(188, 71, 73, 0.9);
         border: solid #1F1F1F 3px;
         filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
-        color: #1F1F1F;
+        color: #F6F6F6;
         padding: 30px;
-        margin-bottom: 20px; }
-        main .taproom-menus .menu .food-menu-description p {
-          text-align: center; }
+        margin-bottom: 20px;
+        text-align: center; }
       main .taproom-menus .menu li {
         margin: 0;
         animation: fade-in 0.8s ease-in-out;
