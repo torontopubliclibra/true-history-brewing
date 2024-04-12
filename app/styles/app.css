@@ -6524,6 +6524,16 @@ main {
       justify-content: center;
       align-items: center;
       gap: 15px; }
+      main .taproom-menus .menu .food-menu-description {
+        width: 95%;
+        background-color: rgba(241, 237, 226, 0.9);
+        border: solid #1F1F1F 3px;
+        filter: drop-shadow(-3px 3px 2px rgba(31, 31, 31, 0.5));
+        color: #1F1F1F;
+        padding: 30px;
+        margin-bottom: 20px; }
+        main .taproom-menus .menu .food-menu-description p {
+          text-align: center; }
       main .taproom-menus .menu li {
         margin: 0;
         animation: fade-in 0.8s ease-in-out;
