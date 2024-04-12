@@ -306,7 +306,7 @@ export default function Homepage() {
                 type="time"
                 id="time"
                 min="12:00"
-                max="22:00"
+                max="23:00"
                 value={eventStart}
                 onChange={(event) => handleFieldChange("eventStart", event)}
                 required />
@@ -317,7 +317,7 @@ export default function Homepage() {
                 type="time"
                 id="time"
                 min="12:00"
-                max="22:00"
+                max="23:00"
                 value={eventEnd}
                 onChange={(event) => handleFieldChange("eventEnd", event)}
                 required />
@@ -367,7 +367,7 @@ export default function Homepage() {
               </label>
             </div>
           </div>
-          <small className="field-text">Please select the size of your group (between 10—100 guests) and indicate if you are planning to order food.</small>
+          <small className="field-text">Please select between 10—100 guests and indicate if you are dining in. Groups of 9 or fewer do not require a booking and are first come, first served.</small>
           <div className="form-field">
             <label htmlFor="message">Message:</label>
             <textarea

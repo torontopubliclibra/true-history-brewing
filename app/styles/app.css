@@ -5876,7 +5876,7 @@ main {
         align-items: flex-start; }
       main .contact-content .contact-form .field-text {
         width: 75%;
-        margin-bottom: 15px; }
+        margin-bottom: 10px; }
         main .contact-content .contact-form .field-text a {
           text-decoration: underline; }
         @media only screen and (max-width: 1070px) {
