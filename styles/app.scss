@@ -377,6 +377,15 @@ main {
         text-align: center;
       }
 
+      small {
+        font-size: 0.8rem;
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          font-size: 0.7rem;
+        }
+      }
+
       .button {
         justify-content: space-between;
         margin-top: 30px;
@@ -396,6 +405,20 @@ main {
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
+      }
+
+      .field-text {
+        width: 75%;
+        margin-bottom: 10px;
+
+        a {
+          text-decoration: underline;
+        }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          width: 85% !important;
+        }
       }
 
       .double-field {
@@ -1299,6 +1322,17 @@ main {
       align-items: center;
       gap: 15px;
 
+      .food-menu-description {
+        width: 80%;
+        background-color: rgba($color4, 0.9);
+        border: $default-border;
+        filter: $default-shadow;
+        color: $white;
+        padding: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
       li {
         margin: 0;
         animation: $secondary-animation;
@@ -1368,6 +1402,12 @@ main {
         gap: 5px;
         margin-top: 20px;
         margin-bottom: 20px;
+
+        .food-menu-description {
+          width: 80%;
+          margin-bottom: 35px;
+        }
+
         li {
           width: 80% !important;
           justify-content: center;

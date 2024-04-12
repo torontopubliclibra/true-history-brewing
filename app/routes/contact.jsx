@@ -57,7 +57,7 @@ export default function Homepage() {
     let [ eventDate, setEventDate ] = useState("");
     let [ eventStart, setEventStart ] = useState("");
     let [ eventEnd, setEventEnd ] = useState("");
-    let [ guests, setGuests ] = useState(0);
+    let [ guests, setGuests ] = useState(10);
     let [ dining, setDining ] = useState(false);
     let [ special, setSpecial ] = useState("");
 
@@ -93,8 +93,10 @@ export default function Homepage() {
 
         if (guestValue.length > 1 && guestValue.startsWith("0")) {
           guestValue = guestValue.substring(1);
-        } else if (guestValue > 40) {
-          guestValue = 40;
+        } else if (guestValue < 10) {
+          guestValue = 10;
+        } else if (guestValue > 100) {
+          guestValue = 100;
         }
 
         setGuests(guestValue);
@@ -304,7 +306,7 @@ export default function Homepage() {
                 type="time"
                 id="time"
                 min="12:00"
-                max="22:00"
+                max="23:00"
                 value={eventStart}
                 onChange={(event) => handleFieldChange("eventStart", event)}
                 required />
@@ -315,19 +317,21 @@ export default function Homepage() {
                 type="time"
                 id="time"
                 min="12:00"
-                max="22:00"
+                max="23:00"
                 value={eventEnd}
                 onChange={(event) => handleFieldChange("eventEnd", event)}
                 required />
             </div>
           </div>
+          <small className="field-text">Please select a date and time during <a href="/taproom#info" target="_blank">our regularly scheduled business hours</a>.</small>
           <div className="double-field">
             <div className="medium-field">
-              <label htmlFor="guests"># of guests:</label>
+              <label htmlFor="guests"># of guests</label>
               <input
                 type="number"
                 id="guests"
-                max="40"
+                min="10"
+                max="100"
                 value={guests}
                 onChange={(event) => handleFieldChange("guests", event)}
                 required />
@@ -363,6 +367,7 @@ export default function Homepage() {
               </label>
             </div>
           </div>
+          <small className="field-text">Please select between 10—100 guests and indicate if you are dining in. Groups of 9 or fewer do not require a booking and are first come, first served.</small>
           <div className="form-field">
             <label htmlFor="message">Message:</label>
             <textarea
