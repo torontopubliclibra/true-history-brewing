@@ -398,6 +398,20 @@ main {
         align-items: flex-start;
       }
 
+      .field-text {
+        width: 75%;
+        margin-bottom: 15px;
+
+        a {
+          text-decoration: underline;
+        }
+
+        // responsive to tablet
+        @media only screen and (max-width: $tablet) {
+          width: 85% !important;
+        }
+      }
+
       .double-field {
         min-width: 75% !important;
         display: flex;

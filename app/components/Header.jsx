@@ -92,7 +92,7 @@ export function HeaderMenu() {
           href="./home"
           >
           <span className="nav-text">Home</span>
-          <img src={home} className="button-icon" alt="home icon"  />
+          <img src={home} className="button-icon" alt="home icon"  aria-hidden="true" focusable="false" />
         </a>
         <a
           // end
@@ -103,7 +103,7 @@ export function HeaderMenu() {
           // state={{ selectedMenu: "beers" }}
           >
           <span className="nav-text">Taproom</span>
-          <img src={beer} className="button-icon" alt="beer icon" />
+          <img src={beer} className="button-icon" alt="beer icon"  aria-hidden="true" focusable="false" />
         </a>
         <a
           // end
@@ -114,7 +114,7 @@ export function HeaderMenu() {
           // state={{ selectedItems: "beers" }}
           >
           <span className="nav-text">Retail</span>
-          <img src={retail} className="button-icon" alt="retail shop icon" />
+          <img src={retail} className="button-icon" alt="retail shop icon"  aria-hidden="true" focusable="false" />
         </a>
         {/* <Link
           end
@@ -134,14 +134,14 @@ export function HeaderMenu() {
           href="./contact"
           >
           <span className="nav-text">Contact</span>
-          <img src={contact} className="button-icon" alt="message icon" />
+          <img src={contact} className="button-icon" alt="message icon"  aria-hidden="true" focusable="false" />
         </a>
         <div className="mobile-only-links">
           <a href="https://maps.app.goo.gl/uyUZFimEhq7YmVrD8" target="_blank" className="mobile-only">
-            <img src={compass} className="button-icon compass" alt="compass icon" />
+            <img src={compass} className="button-icon compass" alt="compass icon"  aria-hidden="true" focusable="false" />
           </a>
           <a href="https://instagram.com/truehistorybrewing" target="_blank" className="mobile-only">
-            <img src={instagram} className="button-icon" alt="Instagram icon" />
+            <img src={instagram} className="button-icon" alt="Instagram icon"  aria-hidden="true" focusable="false" />
           </a>
         </div>
       </nav>
@@ -153,7 +153,7 @@ export function HeaderMenu() {
           to="./home"
           >
           <span className="nav-text">Home</span>
-          <img src={home} className="button-icon" alt="home icon"  />
+          <img src={home} className="button-icon" alt="home icon"  aria-hidden="true" focusable="false" />
         </NavLink>
         <NavLink
           end
@@ -163,7 +163,7 @@ export function HeaderMenu() {
           state={{ selectedMenu: "beers" }}
           >
           <span className="nav-text">Taproom</span>
-          <img src={beer} className="button-icon" alt="beer icon" />
+          <img src={beer} className="button-icon" alt="beer icon"  aria-hidden="true" focusable="false" />
         </NavLink>
         <NavLink
           end
@@ -173,7 +173,7 @@ export function HeaderMenu() {
           state={{ selectedItems: "beers" }}
           >
           <span className="nav-text">Retail</span>
-          <img src={retail} className="button-icon" alt="retail shop icon" />
+          <img src={retail} className="button-icon" alt="retail shop icon"  aria-hidden="true" focusable="false" />
         </NavLink>
         {/* <NavLink
           end
@@ -191,7 +191,7 @@ export function HeaderMenu() {
           to="./contact"
           >
           <span className="nav-text">Contact</span>
-          <img src={contact} className="button-icon" alt="message icon" />
+          <img src={contact} className="button-icon" alt="message icon"  aria-hidden="true" focusable="false" />
         </NavLink>
       </nav>
     </>
@@ -208,7 +208,7 @@ function HeaderSubmenu({cart, aside, updateAsideOpen}) {
       <HeaderMenuMobileToggle aside={aside} updateAsideOpen={updateAsideOpen} />
       <Link to="https://instagram.com/truehistorybrewing" target="_blank" className='button button-primary mobile-hide'>
         Instagram
-        <img src={instagram} className="button-icon" alt="Instagram icon" />
+        <img src={instagram} className="button-icon" alt="Instagram icon"  aria-hidden="true" focusable="false" />
       </Link>
     </nav>
   );
@@ -219,7 +219,7 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
     return (
       /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary menu-toggle menu-active" onClick={() => updateAsideOpen("menu", false)}>
-        <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
+        <img src={mobileMenu} className="button-icon" alt="mobile menu icon"  aria-hidden="true" focusable="false" />
         <span className="button-label">Menu</span>
       </a>
     );
@@ -227,7 +227,7 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
     return (
       /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
-        <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
+        <img src={mobileMenu} className="button-icon" alt="mobile menu icon"  aria-hidden="true" focusable="false" />
         <span className="button-label">Menu</span>
       </a>
     );
@@ -236,7 +236,7 @@ function HeaderMenuMobileToggle({aside, updateAsideOpen}) {
       /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary menu-toggle" onClick={() => updateAsideOpen("menu", true)}>
         <span className="button-label">Menu</span>
-        <img src={mobileMenu} className="button-icon" alt="mobile menu icon" />
+        <img src={mobileMenu} className="button-icon" alt="mobile menu icon"  aria-hidden="true" focusable="false" />
       </a>
     );
   }
@@ -251,7 +251,7 @@ function CartBadge({count, aside, updateAsideOpen}) {
       /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary cart cart-active" onClick={() => updateAsideOpen("cart", false)}>
         <span className="button-label">Cart</span>({count})
-        <img src={cart} className="button-icon" alt="shopping cart icon" />
+        <img src={cart} className="button-icon" alt="shopping cart icon"  aria-hidden="true" focusable="false" />
       </a>
     );
   } else if (aside.open && aside.id !== "cart") {
@@ -259,7 +259,7 @@ function CartBadge({count, aside, updateAsideOpen}) {
       /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
-        <img src={cart} className="button-icon" alt="shopping cart icon" />
+        <img src={cart} className="button-icon" alt="shopping cart icon"  aria-hidden="true" focusable="false" />
       </a>
     );
   } else {
@@ -267,7 +267,7 @@ function CartBadge({count, aside, updateAsideOpen}) {
       /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
       <a className="button button-primary cart" onClick={() => updateAsideOpen("cart", true)}>
         <span className="button-label">Cart</span> ({count})
-        <img src={cart} className="button-icon" alt="shopping cart icon" />
+        <img src={cart} className="button-icon" alt="shopping cart icon"  aria-hidden="true" focusable="false" />
       </a>
     );
   }
