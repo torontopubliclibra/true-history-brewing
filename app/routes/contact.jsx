@@ -89,17 +89,7 @@ export default function Homepage() {
       }
       if (field == "guests") {
 
-        let guestValue = event.target.value;
-
-        if (guestValue.length > 1 && guestValue.startsWith("0")) {
-          guestValue = guestValue.substring(1);
-        } else if (guestValue < 10) {
-          guestValue = 10;
-        } else if (guestValue > 100) {
-          guestValue = 100;
-        }
-
-        setGuests(guestValue);
+        setGuests(event.target.value);
       }
       if (field == "dining") {
         if (dining) {
