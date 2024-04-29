@@ -223,17 +223,17 @@ export default function App() {
     },
     tues: {
       service: "open",
-      start: "4pm",
+      start: "12pm",
       end: "11pm"
     },
     weds: {
       service: "open",
-      start: "4pm",
+      start: "12pm",
       end: "11pm"
     },
     thurs: {
       service: "open",
-      start: "4pm",
+      start: "12pm",
       end: "11pm"
     },
     fri: {
